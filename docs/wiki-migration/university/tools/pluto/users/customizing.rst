@@ -389,7 +389,7 @@ After this is done you can use the ``device_persistent_keys`` command to permane
 Changing the USB Ethernet Compatibility Mode
 --------------------------------------------
 
-Starting with PlutoSDR Firmware version :git-plutosdr-fw:`releases/tag/v0.33`, M2k (:git-m2k-fw:`releases/tag/v0.27`) there is now support for selecting the USB Ethernet Compatibility Mode by setting/changing the ``usb_ethernet_mode`` variable. The main industry protocols are (in chronological order): Remote NDIS (`RNDIS <https://en.wikipedia.org/wiki/RNDIS>`_, a Microsoft vendor protocol), Ethernet Control Model (`ECM <https://en.wikipedia.org/wiki/Ethernet_over_USB>`_), and Network Control Model (`NCM <https://en.wikipedia.org/wiki/Ethernet_over_USB>`_) - all supported by both Pluto and M2k. You may need to change this based on your host PC operating system type:
+Starting with PlutoSDR Firmware version `v0.33 <https://github.com/analogdevicesinc/plutosdr-fw/releases/tag/v0.33>`_, M2k (`v0.27 <https://github.com/analogdevicesinc/m2k-fw/releases/tag/v0.27>`_) there is now support for selecting the USB Ethernet Compatibility Mode by setting/changing the ``usb_ethernet_mode`` variable. The main industry protocols are (in chronological order): Remote NDIS (`RNDIS <https://en.wikipedia.org/wiki/RNDIS>`_, a Microsoft vendor protocol), Ethernet Control Model (`ECM <https://en.wikipedia.org/wiki/Ethernet_over_USB>`_), and Network Control Model (`NCM <https://en.wikipedia.org/wiki/Ethernet_over_USB>`_) - all supported by both Pluto and M2k. You may need to change this based on your host PC operating system type:
 
 =============== ======= ===== ===== ====== =======
 \               Windows Linux MacOS iPadOS Android

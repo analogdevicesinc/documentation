@@ -21,13 +21,13 @@ After writing the image, on the boot partition FMCOMMS8 specific files can be ad
 
 -  `FMCOMMS8 with ADRV9009-ZU11EG HW Rev.B boot files (2019_R2 Relase) <https://swdownloads.analog.com/cse/boot_partition_files/2019_R2/latest_boot_partition.tar.xz>`_ - from folder zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8
 
-   -  `ADRV9009-ZU11EG HDL Project source files <https://wiki.analog.com/https/github.com/analogdevicesinc/hdl/tree/master/projects/adrv9009zu11eg/adrv2crr_fmcomms8>`_.
-   -  `Linux source files <https://wiki.analog.com/https/github.com/analogdevicesinc/linux/tree/master>`_
+   -  :git-hdl:`ADRV9009-ZU11EG HDL Project source files <projects/adrv9009zu11eg/adrv2crr_fmcomms8>`.
+   -  :git-linux:`Linux source files <tree/master>`
 
 -  `FMCOMMS8 with ZCU102 boot files (2019_R2 Relase) <https://swdownloads.analog.com/cse/boot_partition_files/2019_R2/latest_boot_partition.tar.xz>`_ - from folder zynqmp-zcu102-rev10-adrv9009-fmcomms8
 
-   -  `ZCU102 HDL Project source files <https://wiki.analog.com/https/github.com/analogdevicesinc/hdl/tree/master/projects/fmcomms8/zcu102>`_
-   -  `Linux source files <https://wiki.analog.com/https/github.com/analogdevicesinc/linux/tree/master>`_
+   -  :git-hdl:`ZCU102 HDL Project source files <projects/fmcomms8/zcu102>`
+   -  :git-linux:`Linux source files <tree/master>`
 
 Copy:
 

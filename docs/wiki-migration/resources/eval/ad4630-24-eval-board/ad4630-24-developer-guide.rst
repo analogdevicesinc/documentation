@@ -56,9 +56,9 @@ Two use cases are supported for developing a custom application using the EVAL-A
    -  **LibIIO subsystem** - a library of IIO functions that are used to create custom device drivers that run within the Linux system (see :doc:`LibIIO </wiki-migration/resources/tools-software/linux-software/libiio>` for more details). These drivers have already been generated for the AD463x/AD4030x and incorporated in the uImage file.
    -  **IIOD** - An IIO daemon that exposes IIO devices over a network connection to a remote host.
 
-::
 
-     (More information on the general Kuiper Linux distribution can be found at **[[/resources/tools-software/linux-software/kuiper-linux|ADI Kuiper Linux]]**
+
+(More information on the general Kuiper Linux distribution can be found at **\ :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`**
    **Device tree file** that describes the attributes of the AD4630/AD4030 configuration. The attributes of the ADC node in the device tree set the clocking mode (SPI or Echo), data rate (single or dual edge), output data format (see data sheet), and number of active lanes per channel (1, 2, or 4). During boot, the system loads the device.dtb file contained in the boot directory. If the operating configuration of the ADC needs to be changed, the device tree must be updated with the new ADC attributes. Instructions for changing the operating configuration of the ADC and HDL are provided in a later section of this guide.
    **BOOT.BIN** files that are used to configure the FPGA. The default boot.bin file in the boot directory will correspond to a specific interface operating mode, distinguished by clocking mode (SPI vs. Echo), number of active lanes per channel (1, 2, or 4), and data rate (SDR vs. DDR). **The boot.bin must be synchronized to the ADC attributes in the device tree**. Unique boot.bin files have been pre-generated and stored on the SD card for several different configurations. Table 2 lists the available configurations (boot.bin files) that correspond to clocking modes, lanes, data rate mode. These files are available on the SD card in sub-directories that are labeled according to the configuration. This simplifies the HDL architecture and avoids the introduction of bugs due to unnecessary complexity.
 
@@ -158,12 +158,12 @@ Installation
 
 These instructions assume a fresh installation of all required software
 
--  Download `latest version <https://wiki.analog.com/https/www.python.org/downloads>`_ of python3. The Python downloader should recognize the host operating system and then download the appropriate installer. If downloading for a different machine select the Python installer accordingly. (Do not run installer yet)
+-  Download `latest version <https://www.python.org/downloads/>`_ of python3. The Python downloader should recognize the host operating system and then download the appropriate installer. If downloading for a different machine select the Python installer accordingly. (Do not run installer yet)
 -  Run the installer as Administrator. During installation, **check "Add Python 3.x,x to PATH" before clicking "Install Now"**
 
 |image3|
 
--  Optional Python install: download and install a Python distribution such as `Anaconda <https://www.anaconda.com/products/distribution>`_. Ensure to select the proper Python version and host operating system. Recommended - install a Python editor (eg. `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ **community version**). One can also use `Spyder <https://wiki.analog.com/https/www.spyder-ide.org>`_ that comes with Anaconda.
+-  Optional Python install: download and install a Python distribution such as `Anaconda <https://www.anaconda.com/products/distribution>`_. Ensure to select the proper Python version and host operating system. Recommended - install a Python editor (eg. `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ **community version**). One can also use `Spyder <https://www.spyder-ide.org/>`_ that comes with Anaconda.
 -  Recommended - If using Anaconda, create a virtual environment for each project. Once the environment is created and activated, then:
 -  Install **pyadi-iio**. If running Anaconda in Windows, run the Anaconda prompt and enter **pip install pyadi-iio**. Detailed py-adi installation guide can be found :doc:`here. </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  PyADI-IIO updates are published quarterly. It is recommended to run **pip** quarterly to get the latest updates.

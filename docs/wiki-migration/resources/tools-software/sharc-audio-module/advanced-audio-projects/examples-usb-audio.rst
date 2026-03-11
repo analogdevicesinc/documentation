@@ -98,7 +98,7 @@ Audio Connection Setup
 
 --------------
 
-`Application Examples - Analog Audio#.|Advanced Audio Projects#.examples-wav-audio|Application Examples - Wave Audio <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.examples-analog-audio>`_
+`Application Examples - Analog Audio#.|Advanced Audio Projects#.examples-wav-audio|Application Examples - Wave Audio <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.examples-analog-audio>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld2.png
    :width: 400px

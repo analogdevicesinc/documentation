@@ -34,9 +34,8 @@ Using the LT1054 to generate negative voltages such as -5 V and -9.0 V from the 
 
 A third power supply related component is the :adi:`isolated μModule <en/products/power-management/umodule-regulators/isolated-umodule-converters/ltm8047.html#product-overview>` (Power Module) DC/DC Converter break-out board that can take a 3.1 V to 32V input. A trim pot on the breakout board allows the output voltage to be adjusted from 2.5V to 12V. Because the output voltage pins are fully isolated the voltage can be either positive or negative depending on which pin is connected to ground. The output current can be as much as 440 mA (when V\ :sub:`OUT` = 2.5V).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig2.png
-   :align: center
-   :width: 350px
+
+|image1|
 
 .. container:: centeralign
 
@@ -54,24 +53,22 @@ Before building any circuits that operate from power supplies outside the native
 
 The limitation on the allowable voltages that can be measured directly can be expanded through the use of an external voltage divider. The input capacitance, C\ :sub:`INT`, of the analog inputs in the high Z mode is approximately 390 pF (for the rev D design and slightly higher for the rev F design). This relatively large capacitance along with relatively high resistance dividers can significantly lower the frequency response. In figure 1.1 we revisit the input structure of the ADALM1000 and connecting an external resistive voltage divider R\ :sub:`1` and R\ :sub:`2,3`. The contents of the blue box represent the input of the ADALM1000 in Hi-Z mode. To introduce an optional DC offset for measuring negative voltages resistor R\ :sub:`2` is included and could be connected to either the fixed 2.5V or 5V supplies on the ADALM1000. The C\ :sub:`INT` and effective resistance of the divider network form a low pass pole in the frequency response. To give you a rough idea let's use 400 pF for C\ :sub:`INT` and 1 MΩ for the resistor divider. That would result in a low pass response with a 3 dB roll-off starting at around 400 Hz, A capacitor would generally be needed across the input resistor R\ :sub:`1` to :doc:`frequency compensate the divider </wiki-migration/university/courses/alm1k/circuits1/alm-cir-voltage-divider>`. Such a hardware solution generally requires the capacitor (or alternatively the divider resistors) to be adjustable.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-1.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 1.1, External voltage divider options.
 
 
-It would be nice to not have to use a compensation capacitor, adjustable or otherwise. The ALICE Desktop can adjust for any DC gain and offset when using an external divider. A digital (software) frequency compensation feature is also included in the ALICE 1.2 Desktop software package (down load the latest version from :git-alice:`GitHub <releases>`).
+It would be nice to not have to use a compensation capacitor, adjustable or otherwise. The ALICE Desktop can adjust for any DC gain and offset when using an external divider. A digital (software) frequency compensation feature is also included in the ALICE 1.2 Desktop software package (down load the latest version from `GitHub <https://github.com/analogdevicesinc/alice/releases>`_).
 
 The software frequency compensation for each channel consists of a cascade of two adjustable `first order high pass filters <https://en.wikipedia.org/wiki/High-pass_filter#Algorithmic_implementation>`_. The time constant and the gain of each stage can be adjusted. Normal first order high pass filters do not pass DC so a DC gain of 1 path is added to the overall second order high pass software compensation filter. This structure is often called a shelving filter because of the shape of its frequency response.
 
 In figure 1.2 we show the controls for the input frequency compensation. To turn on and off the compensation for Channels A and B check boxes are added under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using new entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-2.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -93,9 +90,8 @@ As we can see in figure 1.3, the DC gain setting is slightly more than 2 which i
 
 The input gain factor of 2 (2.17 to be exact) increases the allowable measurement range from 0 to +5 V to about 0 to +10 V. Enough to work with circuits powered from a 9 V battery for example. The stage 1 filter Time Constant is adjusted to correct for the majority of the AC rolloff and the stage 2 filter Time Constant and Gain are tweeked to take out the remaining higher frequency (2nd order) roll off. A number of TC and Gain combinations are potentially possible and there may be more than one "right answer". The following screen shot in figure 1.4 shows the before and after response to a square wave input from AWG Channel A with and without compensation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -104,9 +100,9 @@ The input gain factor of 2 (2.17 to be exact) increases the allowable measuremen
 
 A factor of 2X might not be enough of an increase in the maximum voltage to be measured. We might also like to measure negative voltages. For a second example we use two 470 KΩ resistors for R\ :sub:`2` and R\ :sub:`3` along with the 1 MΩ R\ :sub:`1`. R\ :sub:`2` is connected to the fixed +5V supply to introduce some positive offset.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-5.png
-   :align: center
-   :width: 500px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -117,9 +113,8 @@ As we can see in figure 1.5, the DC gain setting is slightly more than 6 based o
 
 The Screen shot in figure 1.6 shows the step response for this divider configuration with and without compensation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -128,9 +123,9 @@ The Screen shot in figure 1.6 shows the step response for this divider configura
 
 For a third example with an even bigger input voltage range we can use a 200 KΩ resistor for R\ :sub:`2` and a 470 KΩ resistor R\ :sub:`3` along with the 1 MΩ R\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-7.png
-   :align: center
-   :width: 500px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -141,9 +136,8 @@ As we can see in figure 1.7, the DC gain setting is slightly more than 9 now whi
 
 The Screen shot in figure 1.8 shows the step response for this divider configuration with and without compensation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -152,18 +146,16 @@ The Screen shot in figure 1.8 shows the step response for this divider configura
 
 Finally, a common 10X (passive) scope probe can be used. To connect the probe to the Channel B input of the M1k just a BNC connector with short leads terminated in male pins is used. The input end of the probe is connected to the Channel A output to test/calibrate the divider as shown in the photo 1.9. It is difficult to inject a DC offset when using the probe so the input voltage range will be just positive voltages up to 10X the 0-5 V native range of the M1k or 0 to +50 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-9.png
-   :align: center
-   :width: 500px
+
+
+|image9|
 
 .. container:: centeralign
 
    Figure 1.9, scope probe connected to M1k
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-10.png
-   :align: center
-   :width: 500px
+   |image10|
 
 .. container:: centeralign
 
@@ -172,9 +164,9 @@ Finally, a common 10X (passive) scope probe can be used. To connect the probe to
 
 The step response of the 10X probe without compensation is very poor. With compensation the step response lines up with the output of Channel A. The Screen shot in figure 1.11 shows the step response for 10X scope probe configuration with and without compensation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -188,9 +180,8 @@ With the software frequency compensation feature in ALICE 1.2 and a couple of re
 
 One of the simplest ways to create just about any supply voltage, positive or negative, is with the LTM8067 isolated μModule (Power Module) DC/DC Converter break-out board. Because the positive and negative output terminals are isolated from the input terminals the output voltage can be referenced to ground in either direction as shown in figure 2.1. The output voltage can be adjusted to any voltage from 3 V to 15 V with the on board potentiometer.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig2-1.png
-   :align: center
-   :width: 550px
+
+|image12|
 
 .. container:: centeralign
 
@@ -199,9 +190,9 @@ One of the simplest ways to create just about any supply voltage, positive or ne
 
 To use the LTM8067 module with the ADALM1000 built-in +5 V supply an inductor must be connected in series with the V\ :sub:`IN` terminal as shown in figure 2.2. Any value equal to or larger than 100 uH (marked 101) is sufficient to isolate the switching noise generated by the DC-DC converter from affecting the built-in +5 V supply driver.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig2-2.png
-   :align: center
-   :width: 400px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -223,9 +214,8 @@ Directions:
 
 The first and simplest configuration for the LT1054 is the voltage inverter shown in figure 3.1. It can generate -5 V from the +5 volt power supply using just two capacitors. C\ :sub:`1` is typically 10 uF and C\ :sub:`2` can be anything larger than 47uF. When using electrolytic capacitors be sure to observe the polarity and connect the capacitor with the correct polarity. If connected backward, at best the circuit won't work, at worst you can damage either the capacitor or LT1054.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-1.png
-   :align: center
-   :width: 450px
+
+|image14|
 
 .. container:: centeralign
 
@@ -234,9 +224,9 @@ The first and simplest configuration for the LT1054 is the voltage inverter show
 
 The negative output voltage can be adjusted from approximately 0 to – 5 V by adding a potentiometer circuit as shown in figure 3.2. Resistor R\ :sub:`1` is 10 KΩ, resistor R\ :sub:`2` is 20 KΩ and potentiometer R\ :sub:`POT` is 50 KΩ. Noise filter capacitor C\ :sub:`3` is 0.01 uF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-2.png
-   :align: center
-   :width: 500px
+
+
+|image15|
 
 .. container:: centeralign
 
@@ -245,9 +235,9 @@ The negative output voltage can be adjusted from approximately 0 to – 5 V by a
 
 A second configuration for the LT1054 is the positive voltage doubler shown in figure 3.3. This scheme does not generate the full +10 V output because of the forward drop of the two diodes. Using Schottky diodes such as the 1N5819 for D\ :sub:`1` and D\ :sub:`2` can reduce this voltage loss to around 0.5 V rather than as much as 1.2 V with conventional diodes. C\ :sub:`1` is typically 10 uF and C\ :sub:`2` can be anything larger than 47uF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-3.png
-   :align: center
-   :width: 450px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -256,9 +246,9 @@ A second configuration for the LT1054 is the positive voltage doubler shown in f
 
 The configuration shown in figure 3.4, can generate both positive and negative voltages and is useful when working with non rail-to-rail amplifiers. The added 1.3 volts outside the 0 and 5 volts generally means that the amplifier output can still swing all the way from 0 to 5 V. Note that the polarity of D\ :sub:`3` and D\ :sub:`4` are reversed with respect to D\ :sub:`1` and D\ :sub:`2` to generate a negative voltage. Again using Schottky diodes such as the 1N5819 for D\ :sub:`1`, D\ :sub:`2`, D\ :sub:`3` and D\ :sub:`4` can reduce the voltage loss to around 0.5 V and generate closer to +7 V and -2 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-4.png
-   :align: center
-   :width: 600px
+
+
+|image17|
 
 .. container:: centeralign
 
@@ -267,9 +257,9 @@ The configuration shown in figure 3.4, can generate both positive and negative v
 
 A second set of voltage doubling diodes and boosting capacitor can be added to the configuration of figure 2.2 to make an even larger positive voltage as shown in figure 3.5. Again using Schottky diodes such as the 1N5819 for D\ :sub:`1`, D\ :sub:`2`, D\ :sub:`3` and D\ :sub:`4` can reduce the total voltage loss to around 2 times 0.5 V and generate closer to +9.5 V and +14.0 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-5.png
-   :align: center
-   :width: 600px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -278,9 +268,9 @@ A second set of voltage doubling diodes and boosting capacitor can be added to t
 
 With the LT1054 connected to generate -5V and the diodes of the voltage doubler referenced to -5 V the configuration shown in figure 3.6, generates –9 volts.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-6.png
-   :align: center
-   :width: 500px
+
+
+|image19|
 
 .. container:: centeralign
 
@@ -289,9 +279,9 @@ With the LT1054 connected to generate -5V and the diodes of the voltage doubler 
 
 Combining parts from figure 3.3 and figure 3.6 we can build the +/- 9 volt supply circuit shown in figure 2.7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-7.png
-   :align: center
-   :width: 500px
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -306,3 +296,44 @@ Option 4, Linear Regulators:
 `Voltage multiplier <https://en.wikipedia.org/wiki/Voltage_multiplier>`_ `Charge pump <https://en.wikipedia.org/wiki/Charge_pump>`_ `Voltage doubler <https://en.wikipedia.org/wiki/Voltage_doubler>`_ :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>` :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig2.png
+   :width: 350px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-1.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-2.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-9.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-10.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/input-comp-figure-11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig2-1.png
+   :width: 550px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig2-2.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-1.png
+   :width: 450px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-2.png
+   :width: 500px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-3.png
+   :width: 450px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-4.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-5.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-6.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-external-power-supplies-fig3-7.png
+   :width: 500px

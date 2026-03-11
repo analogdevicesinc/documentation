@@ -105,13 +105,17 @@ If you are using the ADICUP3029 development board with the EVAL-M355-ARDZ-INT ad
 
 -  Set the SWD_DEBUG_CH_SW(S1) of EVAL-M355-ARDZ-INT initially at CH1
 -  Set the UART switch(S2) on the EVAL-ADICUP3029 to the "USB" position in order to stream data back to the serial terminal.
--  Place EVAL-M355-ARDZ-INT on top of the EVAL-ADICUP3029\
+-  Place EVAL-M355-ARDZ-INT on top of the EVAL-ADICUP3029
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/shield_board_to_adicup_connections_actual.png
+   :align: center
+   :width: 600px
 
 -  Placed on the desired number of ADuCM355 sensor daughter board on top of the interposer board(up to 4).
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/sensor_shield_connections_actual.png
+   :align: center
+   :width: 600px
 
 -  Plug in EVAL-ADICUP3029 into USB port of computer using the micro USB cable. (You may need to wait for the ADICUP3029 device drivers to install if this is the first time the device was plugged in.)
 
@@ -171,7 +175,3 @@ Registration
    :width: 400px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/adicup3029_secondary_cut.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/shield_board_to_adicup_connections_actual.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-aducm355-ardz-int/sensor_shield_connections_actual.png
-   :width: 600px

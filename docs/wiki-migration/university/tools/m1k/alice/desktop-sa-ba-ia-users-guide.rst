@@ -14,9 +14,8 @@ Spectrum Aanlyzer Window Setup:
 
 When the Spectrum window button is clicked in the ALICE Main Window the Spectrum display Window should appear, as shown in figure 1. It is sub divided into 2 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/spectrum-window.png
-   :align: center
-   :width: 750px
+
+|image1|
 
 .. container:: centeralign
 
@@ -112,8 +111,8 @@ Bode Plotting Window Setup:
 
 Before you perform a frequency response test to produce a gain and phase Bode plot, you should have a basic understanding of the test setup parameters in the ALICE Bode Plot menu. When the Bode Plot window button is clicked in the ALICE Main Window the Bode Plot display Window should appear, as shown in figure 2. It is sub divided into 2 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-main-window.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
@@ -128,9 +127,8 @@ Used to select an FFT window function. It is generally better not to select the 
 
 The Curves button allows the selection of which signal waveforms will be displayed. The All button selects all four curves to be displayed and the None button clears all four curves. The Marker option turns on a text marker which displays the amplitude and frequency at the peak of the displayed signal. Options to display the difference ( subtraction ) of the CA-dBV – CB-dBV traces or the CB-dBV – CA-dBV traces. It is also possible to select which of the possible stored reference traces, if saved via the Store trace option, will be displayed.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-curves-drop-down.png
-   :align: center
-   :width: 350px
+
+|image3|
 
 .. container:: centeralign
 
@@ -141,9 +139,8 @@ The color of the CA-dBV and CB-dBV traces will turn red if the input signal goes
 
 Under the Curves Drop down menu there are selectors for displaying the F cursor ( frequency ) and dB cursor ( amplitude ). When selected if you right click anywhere within the display grid either a vertical or horizontal cursor line, or both, will be drawn at that location. The vertical, horizontal, or both values for that point will be displayed. Scrolling with the mouse wheel will move the vertical line left–right when only the F cursor is selected and the horizontal up-down when only the dB cursor is selected. When both are selected the mouse wheel moves the vertical line left–right.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-cursors-drop-down.png
-   :align: center
-   :width: 350px
+
+|image4|
 
 .. container:: centeralign
 
@@ -182,9 +179,8 @@ Lastly, there is a radio button selector for single or continuous sweep. The fre
 
 The standard Bode plot for a parallel LC tank circuit is shown in figure 5, where the relative gain or CB-dBV – CA-dBV trace and relative Phase B-A trace are plotted on the log frequency axis.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-example-window.png
-   :align: center
-   :width: 700px
+
+|image5|
 
 .. container:: centeralign
 
@@ -193,9 +189,9 @@ The standard Bode plot for a parallel LC tank circuit is shown in figure 5, wher
 
 It is also possible to plot the relative gain and relative phase measurement on a polar axis as the frequency is swept. Figure 6 plots the CB-dBV – CA-dBV gain trace as a function of the relative phase angle.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-polar-plot.png
-   :align: center
-   :width: 400px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -204,9 +200,9 @@ It is also possible to plot the relative gain and relative phase measurement on 
 
 It is also possible to plot the relative gain and relative phase measurement on a rectangular axis as the frequency is swept. Figure 7 plots the CB-dBV – CA-dBV gain trace (vertical) as a function of the relative phase angle (horizontal).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-rectangular-plot.png
-   :align: center
-   :width: 400px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -218,9 +214,8 @@ Spectrum Examples:
 
 The following example shows a technique where the ALICE spectrum analyzer tool can be used to measure the amplitude vs frequency response of two simple RLC configurations. Shown in figure E1, first on the left is a parallel LC bandpass configuration and second on the right is a series LC bandstop configuration. Indicated by the green boxes are the connections to the ALM1000. Channel A is setup to output the driving function of the network. Channel B is setup as an input to measure the response seen across the LC network. For this example R\ :sub:`1` is 1 KΩ, L\ :sub:`1` is 6.5 mH and C\ :sub:`1` is either 0.47 uF or 1.0 uF.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-sa-fig-e1.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -245,9 +240,8 @@ Other Settings: FFT Window – Flat top ( has a wide FFT bandwidth which is wide
 
 Below in figure E2 is a screen shot for the bandpass RLC configuration of figure E11. The green trace for channel A is the narrow pulse forcing function response. The light and dark orange traces are the output responses seen by channel B for C1 = 0.47 uF and 1.0 uF respectively. The light and dark magenta traces are the subtraction of the Channel A trace ( in dBV ) and the Channel B trace ( in dBV ). As we know subtraction in dB ( logs ) is the same as division in magnitude. The magenta traces are the actual input to output transfer function of the RLC network. The Yellow trace is the phase response.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/band-pass-response.png
-   :align: center
-   :width: 750px
+
+|image9|
 
 .. container:: centeralign
 
@@ -256,9 +250,9 @@ Below in figure E2 is a screen shot for the bandpass RLC configuration of figure
 
 Similarly in figure E3 is a screen shot for the bandstop RLC configuration of figure E11.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/band-stop-response.png
-   :align: center
-   :width: 750px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -281,9 +275,8 @@ The resistor, R\ :sub:`EXT`, is a known value. For the audio frequency range mea
 
 The unknown impedance to be measured is modeled as a series circuit consisting of an unknown series resistance, R\ :sub:`X`, and an unknown series reactance, jX\ :sub:`X`. The magnitude of the impedance is Z\ :sub:`X`.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig1.png
-   :align: center
-   :width: 400px
+
+|image11|
 
 .. container:: centeralign
 
@@ -294,9 +287,8 @@ Three voltages are measured: 1. VA is the applied voltage ( from Channel A of th
 
 These three voltages are actually vectors and indicated in figure 24.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig2.png
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -346,9 +338,8 @@ Making Measurements:
 
 Connections to the ALM1000 and the network to be measured are shown in figure 18. In this case we show a simple series connected resistor and capacitor. R\ :sub:`EXT` is 1000 Ohms and the series resistor R\ :sub:`S` is 100 Ohms and the capacitor C\ :sub:`S` is 1 uF. The channel A AWG generator output should always be set to be in source voltage mode (SVMI) and with a sine wave shape. The user can control the output voltage amplitude and offset with the Min and Max entry slots as when using the scope and spectrum analyzer displays. A good place to start is with Min set to 1.086 and Max set to 3.914 which produces a 1 Vrms amplitude centered on 2.5 V DC. The Channel B analog input is set in the Hi-Z mode when using the Impedance Analyzer and it always considered as an input.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig3.png
-   :align: center
-   :width: 400px
+
+|image13|
 
 .. container:: centeralign
 
@@ -362,9 +353,8 @@ Window Setup:
 
 The main impedance analyzer window should appear, as in figure 19. It is sub divided into 2 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-window.png
-   :align: center
-   :width: 750px
+
+|image14|
 
 .. container:: centeralign
 
@@ -398,9 +388,8 @@ Save Screen button. Command for saving the graphics display area to an encapsula
 
 Cut-DC, an option that will remove the DC component from the sampled data record. It sample by sample subtracts the average value of the sample record. Any DC offset in the FFT could result in that being the peak amplitude and resulting in meaningless measurements. The program starts up with this turned on. This is important given the 0 to 5 V analog input range of the ALM1000 and the inherent 2.5 V DC offset.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ia-options-drop-down.png
-   :align: center
-   :width: 400px
+
+|image15|
 
 .. container:: centeralign
 
@@ -429,9 +418,8 @@ Impedance Analyzer Examples:
 
 As an example to show the frequency dependent impedance of a series LC circuit we will use the ALICE impedance analyzer tool to examine the combination shown in figure E4 with L\ :sub:`1` equal to 6.5 mH and C\ :sub:`1` equal to 1 uF. We will use a 1000 Ω R\ :sub:`EXT` to be in line with the expected impedance level of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige1.png
-   :align: center
-   :width: 375px
+
+|image16|
 
 .. container:: centeralign
 
@@ -440,9 +428,9 @@ As an example to show the frequency dependent impedance of a series LC circuit w
 
 The LC circuit is tested at three different frequencies, the first much lower than the resonate frequency where the impedance is dominated by the capacitor shown in figure E5.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-1.png
-   :align: center
-   :width: 650px
+
+
+|image17|
 
 .. container:: centeralign
 
@@ -451,9 +439,9 @@ The LC circuit is tested at three different frequencies, the first much lower th
 
 The second much higher than the resonate frequency where the impedance is dominated by the inductor shown in figure E6.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-2.png
-   :align: center
-   :width: 650px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -462,9 +450,9 @@ The second much higher than the resonate frequency where the impedance is domina
 
 The third at the resonate frequency where the negative impedance of the capacitor nearly cancels the positive impedance of the inductor shown in figure E7.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-3.png
-   :align: center
-   :width: 650px
+
+
+|image19|
 
 .. container:: centeralign
 
@@ -477,9 +465,8 @@ In these cases the series R measured stays nearly the same at about 11 Ω.
 
 We can use ALICE Desktop to measure the input capacitance of channel B. We know that the input capacitance is small so we will need to use a large value for R\ :sub:`EXT` and measure at a high frequency. In figure E8 we show the connections used which is simply to connect CHA to CHB with a 47 KΩ resistor.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige2.png
-   :align: center
-   :width: 500px
+
+|image20|
 
 .. container:: centeralign
 
@@ -488,9 +475,9 @@ We can use ALICE Desktop to measure the input capacitance of channel B. We know 
 
 In the ALICE Impedance Analyzer screen shot shown in figure E9 we see that Ext Res is set to 47000 and the test frequency is set to 19000 Hz. The calculated capacitance is 394 pF which agrees nicely with the capacitance reported in the document on the ALM1000 analog inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-4.png
-   :align: center
-   :width: 650px
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -501,9 +488,8 @@ If we use the formula from Calculating Parallel Impedance to convert the series 
 
 To measure capacitors around the same value as the input capacitance or even smaller it would be useful to null out this stray parasitic capacitance. This can be done using the Gain Cor and Phase Cor Entry widgets to enter correction factors for the gain and offset. If we enter 7.74 (dB) from the measured Gain for the Gain Cor entry and 65.35 (degrees) for the Phase Cor entry we get the result shown in figure E10.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-5.png
-   :align: center
-   :width: 650px
+
+|image22|
 
 .. container:: centeralign
 
@@ -512,9 +498,9 @@ To measure capacitors around the same value as the input capacitance or even sma
 
 Now the Measured Gain difference is -0.02 dB and the Measured Phase difference is -0.13 degrees. The calculated capacitance is 1.0pF. If we now add a 39 pF ceramic cap, from the Analog Parts Kit, from the channel B input to ground we get the results shown in figure E11.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-6.png
-   :align: center
-   :width: 650px
+
+
+|image23|
 
 .. container:: centeralign
 
@@ -549,9 +535,8 @@ From the Bode plot Curves Drop Down (Figure 14C) along with the CHB – CHA dB g
 
 In the Impedance Analyzer Options Drop Down the Sweep On and Save Sweep options are selected. The external test resistance is the same 1000 ohms and the Ohms / Div is set to 100. When a sweep is run we get the following two plots in the Bode window, figure E12, and the Impedance Analyzer window figure E13.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-sweep-bode.png
-   :align: center
-   :width: 600px
+
+|image24|
 
 .. container:: centeralign
 
@@ -560,9 +545,9 @@ In the Impedance Analyzer Options Drop Down the Sweep On and Save Sweep options 
 
 The plot colors might be a little confusing in figure E12. The magenta curve is the same relative gain in dB from the earlier Bode plot example (CB dB – CA dB) and uses the green dB vertical scale. The purple and darkish green curves are the impedance magnitude in ohms and phase in degrees respectively and use the magenta ohms and cyan angle vertical scales respectively.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-sweep-polar.png
-   :align: center
-   :width: 600px
+
+
+|image25|
 
 .. container:: centeralign
 
@@ -583,9 +568,8 @@ An FFT windowing function weights the samples from the beginning of the array to
 
 The reason why we need an FFT window can be seen figures 8-15 in the various spectrums using different FFT window functions. No FFT window (also called a Rectangular window), generates many side bands in the spectrum of the FFT calculation. That is very visible in the first spectrum plot of the Rectangular ( dark orange ) and Cosine ( light orange ) window functions. Very low amplitude signals close to the main signal cannot be measured. So the dynamic range around the large main signal is low. By using an FFT window, the side bands are much more attenuated, how much depends on the type of FFT window. The increased side band suppression is at the expense of the selectivity. FFT windows with a very high side band suppression and therefore a very high dynamic range, have much less selectivity.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
-   :align: center
-   :width: 550px
+
+|image26|
 
 .. container:: centeralign
 
@@ -594,36 +578,30 @@ The reason why we need an FFT window can be seen figures 8-15 in the various spe
 
 A Cosine window is a good compromise between a good selectivity and a good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
-   :align: center
-   :width: 550px
+
+
+|image27|
 
 .. container:: centeralign
 
    Figure 9, Rectangular vs Triangle window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
-   :align: center
-   :width: 550px
+   |image28|
 
 .. container:: centeralign
 
    Figure 10, Rectangular vs Hann window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
-   :align: center
-   :width: 550px
+   |image29|
 
 .. container:: centeralign
 
    Figure 11, Rectangular vs Blackman window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
-   :align: center
-   :width: 550px
+   |image30|
 
 .. container:: centeralign
 
@@ -632,9 +610,9 @@ A Cosine window is a good compromise between a good selectivity and a good dynam
 
 At the expense of a little wider bandwidth the Nuttall window function provides the best side band reduction and may be the optimal compromise between good selectivity and good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
-   :align: center
-   :width: 550px
+
+
+|image31|
 
 .. container:: centeralign
 
@@ -652,9 +630,8 @@ Zero Stuffing
 
 With the menu button "Setup" you can set the factor for the Zero stuffing. What problem are trying to solve by Zero stuffing? The bandwidth of the FFT depends on the choice of the FFT window function. For a narrow FFT filter, the bandwidth is slightly larger than the difference between 2 FFT frequency bins. When the signal frequency is exactly between the 2 FFT frequency bins, the signal will be displayed lower than its actual value because half of the signal appears in each of the two bins. Figure 21 shows good example of this. The signal is slightly more than 1 KHz and lies exactly between the two FFT frequency bins. The actual peak value should be equal to 0 dB, but the displayed value of the two adjacent samples is lower. The signal level is not displayed correctly by either of the FFT frequency bins. This is called Scalloping loss.
 
-.. image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
-   :align: center
-   :width: 550px
+
+|image32|
 
 .. container:: centeralign
 
@@ -663,9 +640,9 @@ With the menu button "Setup" you can set the factor for the Zero stuffing. What 
 
 Zero stuffing provides a simple solution to this problem. For 1x Zero Stuffing, we double the size of the time sample array. The original array was say 2048 samples. We add 2048 samples with the value zero and we get a new array with 4096 samples. This may seem counterintuitive, when we add zero’s we do not add extra measurement data. However, something happens in the FFT calculation with twice as many samples. The effect can be seen in figure 22. Extra FFT frequency bins have been added. Coincidentally, here the extra frequency bin coincides with the frequency of the signal and the level of the signal is displayed correctly. Also even if the signal frequency does not coincide with the frequency of the extra FFT bin, the measured error will be smaller. As we add samples with the value zero, the bandwidth of the FFT filter remains the same.
 
-.. image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
-   :align: center
-   :width: 550px
+
+
+|image33|
 
 .. container:: centeralign
 
@@ -679,3 +656,69 @@ In the program, you can choose a value between 0 and 5 for the Zero Stuffing. As
 `Circuit measures capacitance or inductance <https://www.radiolocman.com/review/article.html?di=643359>`_
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/spectrum-window.png
+   :width: 750px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-main-window.png
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-curves-drop-down.png
+   :width: 350px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-cursors-drop-down.png
+   :width: 350px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-example-window.png
+   :width: 700px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-polar-plot.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bode-rectangular-plot.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/alice-sa-fig-e1.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/band-pass-response.png
+   :width: 750px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/band-stop-response.png
+   :width: 750px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig1.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig2.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig3.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-window.png
+   :width: 750px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ia-options-drop-down.png
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige1.png
+   :width: 375px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-1.png
+   :width: 650px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-2.png
+   :width: 650px
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-3.png
+   :width: 650px
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige2.png
+   :width: 500px
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-4.png
+   :width: 650px
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-5.png
+   :width: 650px
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-exp-6.png
+   :width: 650px
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-sweep-bode.png
+   :width: 600px
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impedance-sweep-polar.png
+   :width: 600px
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
+   :width: 550px
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
+   :width: 550px
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
+   :width: 550px
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
+   :width: 550px
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
+   :width: 550px
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
+   :width: 550px
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
+   :width: 550px
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
+   :width: 550px

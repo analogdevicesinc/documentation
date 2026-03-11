@@ -39,9 +39,8 @@ Referring to the simulation schematic shown in figure 2, the various functions o
 
 Switches pins S3A and S4A perform the same function alternately connecting the AC coupled output (at C2) of the amplifier stage to the output low pass filter (C3 and R3) and a common mode level (+2.5V) through pin Ca-.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/auto-zero-amplifier_fig2.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -68,9 +67,8 @@ Directions:
 
 Connect the components on your breadboard as indicated in figure 3 to build one auto-zero amplifier section. The listed resistor and capacitor values should provide working results but you may like to experiment with the values of certain component to see how changes can affect your results.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/auto-zero-amplifier_fig3.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -96,9 +94,8 @@ As was pointed out in the background section, two offset-cancelled amps running 
 
 Build the second auto-zero amplifier as shown in figure 4 on your breadboard. Note that the amplifier stage used in this case is a PNP emitter follower. We do this to help reinforce the idea that any offset in the amplifier is zeroed out no matter if it is positive or negative.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/auto-zero-amplifier_fig4.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -119,3 +116,10 @@ Plot or present the DC transfer characteristic of the offset-cancelled amplifier
 :adi:`LTC1043 datasheet <media/en/technical-documentation/data-sheets/1043fa.pdf>` `MT-088: Analog Switches and Multiplexer Basics <http://www.analog.com/media/en/training-seminars/tutorials/MT-088.pdf>`_ :adi:`Demystifying Auto-Zero Amplifiers—Part 1 <media/en/analog-dialogue/volume-34/number-1/articles/demystifying-auto-zero-amplifiers-part-1.pdf>` :adi:`Demystifying Auto-Zero Amplifiers—Part 2 <media/en/analog-dialogue/volume-34/number-1/articles/demystifying-auto-zero-amplifiers-part-2.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/auto-zero-amplifier_fig2.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/auto-zero-amplifier_fig3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/auto-zero-amplifier_fig4.png
+   :width: 600px

@@ -266,4 +266,4 @@ High  ``TWI1``
 
 --------------
 
-`Hardware Reference#..|Hardware Reference#..audioproj-fin|Audio Project Fin <https://wiki.analog.com/_media/navigation SHARC Audio Module#..>`_
+`Hardware Reference#..|Hardware Reference#..audioproj-fin|Audio Project Fin <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/main-board/navigation SHARC Audio Module#..>`_

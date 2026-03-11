@@ -16,9 +16,8 @@ Directions:
 
 The current vs. voltage characteristics of the base-emitter junction of an NPN transistor can be measured using the ADALM2000 Lab hardware and the following connections. Set up the breadboard with waveform generator, W1, attached to one end of resistor R\ :sub:`1`. Also connect scope input 2+ here. Connect the base and collector of Q\ :sub:`1` to the opposite end of R\ :sub:`1` as shown in the diagram. The emitter of Q\ :sub:`1` is connected to ground. Connect scope input 2- and scope input 1+ to the base - collector node of Q\ :sub:`1`. (Scope input 1- can be optionally grounded as well).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,7 +30,7 @@ Hardware Setup:
 The waveform generator should be configured for a 100 Hz triangle wave with 6 volt amplitude peak-to-peak and 0 offset. The differential scope channel 2 (2+, 2-) measures the current in the resistor (and in the transistor). Scope channel 1 (1+) is connected to measure the voltage across the diode connected transistor. The current flowing through the transistor, is the voltage difference 2+ and 2- (which is the channel 2 voltage) divided by the resistor value (1KΩ).
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -43,15 +42,15 @@ Procedure:
 
 Load the captured data in to a spreadsheet program like Excel and calculate the current. Plot the current vs. the voltage across the transistor (V\ :sub:`BE`). No current flows in the reverse direction. In the forward conduction region, the voltage, current relationship is logarithmic. If the current is plotted on a log scale the line should be straight.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/npn_diode_c_vs_v-wav.png
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3 NPN diode XY plot
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/npn_diode-wav.png
-   :align: center
+   |image4|
 
 .. container:: centeralign
 
@@ -82,7 +81,7 @@ Directions:
 Set up the breadboard with the waveform generator output attached to one end of the series connected resistor 100Ω R\ :sub:`1` and base and collector of Q\ :sub:`1` as shown in figure 2. The emitter is connected to the negative 5 Volt fixed power supply. Scope channel 1 (1+) is connected to the base - collector node while 1- is connected to the emitter node. Scope channel 2 measures the voltage across R\ :sub:`1` and thus the current through Q\ :sub:`1`. The PNP 2N3906 is chosen over the NPN 2N3904 because the PNP emitter base breakdown voltage is less than the +10 V max that can be generated using ADALM2000 while the NPN's is likely to be higher than 10 V.
 
 
-|image2|
+|image5|
 
 .. container:: centeralign
 
@@ -95,7 +94,7 @@ Hardware Setup:
 The waveform generator should be configured for a 100 Hz triangle wave with 10 volt amplitude peak-to-peak and 0 volt offset. Scope channel 1 (1+) is used to measure the voltage across the transistor. The setup should be configured with channel 2 connected across resistor R\ :sub:`1` (2+, 2-). Both channels should be set to 1 V per division. The current flowing through the transistor is the voltage difference between 2+ and 2- divided by the resistor value (100Ω).
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -108,7 +107,7 @@ Procedure:
 The Lab hardware power supplies limits the maximum voltage available to less than 10 volts. The emitter base reverse breakdown voltage of many transistors is larger than this. In the configuration shown voltages between 0 volts and 10 volts ( W1 peak to peak swing ) can be measured.
 
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
@@ -142,9 +141,8 @@ Directions:
 
 Set up the breadboard with waveform generator W1 attached to one end of the series connected resistor R\ :sub:`1` and collector of NPN Q\ :sub:`1` and the base of PNP Q\ :sub:`2` as shown in the diagram. The emitter of Q\ :sub:`1` is connected to ground. The collector of Q\ :sub:`2`\ is connected to Vn (-5V). The first end of Resistor R\ :sub:`2` is connected to Vp (+5V). The second end of R\ :sub:`2` is connected to the base of Q\ :sub:`1` and the emitter of Q\ :sub:`2`. Single ended input of scope channel 2 (2+) is connected to the collector of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f3.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -157,7 +155,7 @@ Hardware Setup:
 The waveform generator should be configured for a 100 Hz triangle wave with 8 volt amplitude peak-to-peak and 2 volt offset. Scope channel 2 (2+) is used to measure the voltage across the transistor. The current flowing through the transistor, is the voltage difference between scope input 1+ and 1- divided by the resistor value (1K?).
 
 
-|image5|
+|image9|
 
 .. container:: centeralign
 
@@ -170,7 +168,7 @@ Procedure:
 The turn on voltage of the "diode" is now about 100mV compared to 650mV for the simple diode connection in the first example. Plot the V\ :sub:`CE` of Q\ :sub:`1` as W1 is swept.
 
 
-|image6|
+|image10|
 
 .. container:: centeralign
 
@@ -202,9 +200,8 @@ Directions:
 
 Set up the breadboard with waveform generator W1 attached to one end of resistor R\ :sub:`1` as indicated in figure 4. The emitter of Q\ :sub:`1` is connected to ground. Resistors R\ :sub:`2`, R\ :sub:`3` and R\ :sub:`4` form a voltage divider with the wiper of potentiometer R\ :sub:`3` connected to the base of Q\ :sub:`1`. The collector of Q\ :sub:`1` is connected to the second end of R\ :sub:`1` and the top of the voltage divider at R\ :sub:`2`. Scope channel 2 (2+) is connected to the collector of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f4.png
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -217,7 +214,7 @@ Hardware Setup:
 The waveform generator should be configured for a 100 Hz triangle wave with 4 volt amplitude peak-to-peak and 2V offset. The Single ended input of scope channel 2+ is used to measure the voltage across the transistor. The setup should be configured with channel 1+ connected to display the output of generator W1 and channel 2+ connected to display the collector voltage of Q\ :sub:`1`. The current flowing through the transistor, is the voltage difference between the W1 measured by scope input 1+ and scope input 2+ divided by the resistor value (1KΩ).
 
 
-|image7|
+|image12|
 
 .. container:: centeralign
 
@@ -230,7 +227,7 @@ Procedure:
 Starting with the potentiometer R\ :sub:`3` set at the middle of its range the voltage at the collector of Q\ :sub:`2` should be about 2 times V\ :sub:`BE`. With R\ :sub:`3` set to its minimum the voltage at the collector should be 9/2 (or 4.5) times V\ :sub:`BE`. With R\ :sub:`3` set to its maximum the voltage at the collector should be 9/7 times V\ :sub:`BE`.
 
 
-|image8|
+|image13|
 
 .. container:: centeralign
 
@@ -257,12 +254,20 @@ Aside from the position of the pot wiper, do the values of R\ :sub:`2`, R\ :sub:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/npn_diode-bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f1.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/pnp_emitter-bb.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/pnp_emitter-wav.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/loweff_vdrop-bb.png
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/loweff_vdrop-wav.png
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-bb.png
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/npn_diode-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/npn_diode_c_vs_v-wav.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/npn_diode-wav.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f2.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/pnp_emitter-bb.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/pnp_emitter-wav.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f3.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/loweff_vdrop-bb.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/loweff_vdrop-wav.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a3_f4.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-bb.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav.png

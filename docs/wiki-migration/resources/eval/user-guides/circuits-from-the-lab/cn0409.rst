@@ -44,7 +44,7 @@ The photodiodes(DS1 and DS2) and LEDs(D1 and D2) should be bend slightly backwar
 
 |image1|
 
-The test vial should be screwed into the EVAL-CN0409-ARDZ board, by lining up the holes in the vial holder with the holes in the board, using the screws provided.\
+The test vial should be screwed into the EVAL-CN0409-ARDZ board, by lining up the holes in the vial holder with the holes in the board, using the screws provided.
 
 
 |image2|

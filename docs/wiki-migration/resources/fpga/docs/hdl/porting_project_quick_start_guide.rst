@@ -201,6 +201,6 @@ Threads that discuss this issue:
 References
 ----------
 
--  :git-hdl:`releases`
+-  https://github.com/analogdevicesinc/hdl/releases
 -  :doc:`/wiki-migration/resources/fpga/docs/hdl`
--  https://github.com/analogdevicesinc/hdl
+-  :git-hdl:`hdl`

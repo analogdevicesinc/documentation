@@ -53,10 +53,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :align: center
+   :width: 500px
 
 -  Connect the **EVAL-CN0216-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect your weigh scale to the EVAL-CN0216-ARDZ via **()**, make sure you pay attention to the pinout which can be found on the :doc:`CN0216 hardware page </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0216>`.
@@ -89,7 +90,7 @@ The software for the **ADuCM360_demo_cn0216** demo can be found here:
    Prebuilt CN0216 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0216.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0216.bin>`
+   -  `ADuCM360_demo_cn0216.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0216.bin>`_
    
    Complete CN0216 Source Files
    
@@ -184,6 +185,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px

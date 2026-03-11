@@ -142,4 +142,4 @@ Algorithm Details
 | Parameter RAM              | 46                                                                   |
 +----------------------------+----------------------------------------------------------------------+
 
-.. |standardindpic1.png| image:: https://wiki.analog.com/_media/standardindpic1.png
+.. |standardindpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/standardindpic1.png

@@ -42,14 +42,17 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Connect the :adi:`EVAL-CN0569-PMDZ` to the :adi:`EVAL-ADICUP3029` via the P9 connector. Use pins 3-6 on the **CN0569** PMOD connector to connect to the top row of the P9 PMOD connector on the ADICUP3029 board. Pins 1 an 2 will remain unconnected towards the center of the motherboard. Your setup should look like in the picture below.\
+-  Connect the :adi:`EVAL-CN0569-PMDZ` to the :adi:`EVAL-ADICUP3029` via the P9 connector. Use pins 3-6 on the **CN0569** PMOD connector to connect to the top row of the P9 PMOD connector on the ADICUP3029 board. Pins 1 an 2 will remain unconnected towards the center of the motherboard. Your setup should look like in the picture below.
 
-
-|System Overview|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569_system_picture.jpg
+   :alt: System Overview
+   :align: center
 
 -  Use a mother-to-father breadboard wire to connect pin 1 from the CN0569 to pin 5 on the ADICUP3029 P7 header. The connection should look like in the below picture. What this does is connecting the GPIO0 of the APDP1080 to one of the interrupt GPIOs from the ADuCM3029. We will use theis to calibrate the system clocks.
 
-|GPIO connection|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569_gpio_connection_picture.jpg
+   :alt: GPIO connection
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of the :adi:`EVAL-ADICUP3029` and connect it to a computer.
 
@@ -101,7 +104,7 @@ Compilation Using Platform-Specific Tools
 Running the example
 -------------------
 
-After the controller has been programmed and the firmware is running on the ADICUP3029 the IIO server is up and a connection to it can be established. This can be done either by using :git-iio-oscilloscope>`__ or the `pyadi-iio code <https::`IIO-Oscilloscope </github.com/analogdevicesinc/pyadi-iio/tree/master/examples/cn0569>`.
+After the controller has been programmed and the firmware is running on the ADICUP3029 the IIO server is up and a connection to it can be established. This can be done either by using :git-iio-oscilloscope:`IIO-Oscilloscope <iio-oscilloscope>` or the :git-pyadi-iio:`pyadi-iio code <examples/cn0569>`.
 
 To use the gesture sensor and theremin examples, the python library must be installed first using pip:
 
@@ -137,7 +140,7 @@ The software for the **ADuCM3029_demo_cn0569** can be found here:
    
    **Prebuilt CN0569 Hex File for the EVAL-ADICUP3029**
    
-   -  :git-no-OS:`Release Folder <releases/tag/Latest>`
+   -  `Release Folder <https://github.com/analogdevicesinc/no-OS/releases/tag/Latest>`_
    
    .. important::
 
@@ -173,6 +176,3 @@ Useful Links
 -  :adi:`ADPD2140`
 
 // End of Document //
-
-.. |System Overview| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569_system_picture.jpg
-.. |GPIO connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569_gpio_connection_picture.jpg

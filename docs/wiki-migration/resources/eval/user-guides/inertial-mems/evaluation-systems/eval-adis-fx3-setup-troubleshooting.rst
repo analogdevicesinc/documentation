@@ -110,22 +110,18 @@ Expand the table below to find the breakout board for your specific IMU.
 Downloading and Installing the FX3 Drivers and Software
 -------------------------------------------------------
 
-The :adi:`EVAL-ADIS-FX3` includes a laundry list of hardware and software features designed to enable in-depth test and characterization of iSensor IMUs. To get started, we suggest you first download the :git-iSensor-FX3-Eval:`latest Evaluation GUI <releases>` and FX3 :git-iSensor-FX3-Eval:`device drivers <drivers>` from our GitHub page.
+The :adi:`EVAL-ADIS-FX3` includes a laundry list of hardware and software features designed to enable in-depth test and characterization of iSensor IMUs. To get started, we suggest you first download the `latest Evaluation GUI <https://github.com/analogdevicesinc/iSensor-FX3-Eval/releases>`_ and FX3 :git-iSensor-FX3-Eval:`device drivers <drivers>` from our GitHub page.
 
 Once downloaded, double click on ``FX3DriverSetup.exe`` and follow the install prompts. Once complete, the signed Analog Devices driver should be installed on your PC.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/driver1.png
-   :width: 420px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/driver2.png
-   :width: 420px
+|image1| |image2|
 
 .. important::
 
    The root cause of most FX3 driver issues is user permissions. The driver installer **must** be executed using native Windows administrator privileges. Running the installer using privilege elevation tools such as BeyondTrust (`link <https://beyondtrust.com>`_) will likely cause issues once the Windows Kernel attempts to load the driver.
 
 
-   |image1|
+   |image3|
 
 Every FX3 Evaluation GUI release is packaged inside of a .zip archive. We recommend extracting the archive somewhere convenient on your PC (like your desktop), where it can easily be accessed.
 
@@ -142,8 +138,8 @@ Once extracted, double click on ``iSensorFX3Eval.exe`` to launch the GUI. Before
 
 Select the product ID/model number of the sensor you're connecting to and click on "Apply Device Settings."
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/select_dut_dropdown.png
-   :width: 250px
+
+|image4|
 
 .. important::
 
@@ -157,8 +153,10 @@ Select the product ID/model number of the sensor you're connecting to and click 
 
 Once you've selected the correct FX3 board, the main screen should like the image below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/main_screen_disconnected.jpg
-   :alt: main_screen_disconnected.jpg
+   
+
+
+|main_screen_disconnected.jpg|
 
 .. warning::
 
@@ -319,4 +317,11 @@ If the Eval GUI ever encounters an exception, an error log will be generated and
 
 Click :doc:`HERE </wiki-migration/resources/eval/user-guides/inertial-mems/evaluation-systems/eval-adis-fx3>` to go back to the :adi:`EVAL-ADIS-FX3` landing page.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/runasadmin.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/driver1.png
+   :width: 420px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/driver2.png
+   :width: 420px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/runasadmin.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/select_dut_dropdown.png
+   :width: 250px
+.. |main_screen_disconnected.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/main_screen_disconnected.jpg

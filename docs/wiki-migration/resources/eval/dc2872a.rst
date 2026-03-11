@@ -92,7 +92,7 @@ Test Points
 Quick Start Procedure
 ---------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_1.jpg
 
 .. container:: leftalign
 
@@ -105,7 +105,7 @@ Quick Start Procedure
 -  Run the DC2872A demo software downloaded from its product page.
 
 | The demo software helps program and run the LTM2985. It can configure, check and save the configuration, run the LTM2985, output the results into
-| a file, and even create Linduino ready C code based on the configuration. Refer to software manual LTC2986-LTM2985DSM for more detailed information. |image2|
+| a file, and even create Linduino ready C code based on the configuration. Refer to software manual LTC2986-LTM2985DSM for more detailed information. |image1|
 
 .. container:: leftalign
 
@@ -124,7 +124,8 @@ Hardware Setup
 DC2211 Universal Temperature Measurement Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_3_-_dc2211.jpg
+   :width: 200px
 
 .. container:: leftalign
 
@@ -168,7 +169,8 @@ The external interface on the universal temperature measurement board is an 8-po
 DC2212 Thermocouple Daughter Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_4_-_dc2212.jpg
+   :width: 200px
 
 .. container:: leftalign
 
@@ -199,7 +201,8 @@ The thermocouple board demonstrates the flexibility, accuracy, and low noise fea
 DC2213 Dedicated RTD Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_5_-_dc2213.jpg
+   :width: 200px
 
 .. container:: leftalign
 
@@ -236,7 +239,8 @@ DC2213 Dedicated RTD Board
 DC2214 Dedicated Thermistor Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_6_-_dc2214.jpg
+   :width: 200px
 
 .. container:: leftalign
 
@@ -279,7 +283,10 @@ DC2214 Dedicated Thermistor Board
 DC2210 Experimenter Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| |image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_7_-_dc2210.jpg
+   :width: 200px
+
+
 
 .. container:: leftalign
 
@@ -292,16 +299,5 @@ The DC2210 experimenter board brings all LTM2985 channels plus the COM connectio
 
 :adi:`DC2210 Schematics and Design Files (part of LTC2986-1 Kit, cannot be bought standalone) <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2608a.html>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_1.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_2.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_2.jpg
    :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_3_-_dc2211.jpg
-   :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_4_-_dc2212.jpg
-   :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_5_-_dc2213.jpg
-   :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_6_-_dc2214.jpg
-   :width: 200px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dc2872a_figure_7_-_dc2210.jpg
-   :width: 200px

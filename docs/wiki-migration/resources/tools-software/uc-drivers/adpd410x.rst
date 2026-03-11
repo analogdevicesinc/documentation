@@ -451,15 +451,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADPD410X Driver. <drivers/photo-electronic/adpd410x/adpd410x.c>`
+   -  :git-no-OS:`Header file of ADPD410X Driver. <drivers/photo-electronic/adpd410x/adpd410x.h>`
    
-   |Implementation of ADPD410X Driver.|
 
-   -
-
-   |Header file of ADPD410X Driver.|
-
-.. |Implementation of ADPD410X Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/photo-electronic/adpd410x/adpd410x`.c
-.. |Header file of ADPD410X Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/photo-electronic/adpd410x/adpd410x`.h

@@ -547,9 +547,8 @@ Simple inductor and switch DC/DC Converter:
 
 Build the circuit in figure 1 on your solder-less breadboard. Note that in this inductor based DC to DC converter the spikes of current needed may exceed the limits of the onboard +5V supply causing it to shut down. You should use a standalone wall powered bench supply or batteries. You can use a 1N4001 or a 1N3064 for the rectifier diode. Start with a load resistance of 100 kΩ and a switching frequency of 2 kHz which can be supplied by the channel A voltage generator CA-V. What is the DC voltage of the "boosted" output? Record the value for your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f1.png
-   :align: center
-   :width: 650px
+
+|image1|
 
 .. container:: centeralign
 
@@ -567,9 +566,8 @@ Gated Oscillator Integrated Circuit
 
 Note that the DC to DC converter in figure 1 requires a square-wave generator to drive it. Ordinarily this square-wave generator is part of the circuit and also powered by the input supply, so that the conversion circuit is self-contained. A place to perhaps obtain a gated oscillator integrated circuit with a built in NMOS FET switch is a :ez:`solar powered garden stake light <community/university-program/blog/2014/11/14/hacking-an-led-solar-garden-light>` such as shown in figure 2:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_a4.png
-   :align: center
-   :width: 250px
+
+|image2|
 
 .. container:: centeralign
 
@@ -578,9 +576,9 @@ Note that the DC to DC converter in figure 1 requires a square-wave generator to
 
 Inside these lights is a DC-DC boost LED diver integrated circuit which increases the voltage of a 1.2 V rechargeable AAA battery to the approximately 3 V needed to dive the white LED. Many versions contain a four pin voltage boosting integrated circuit marked YX8018. Some other versions contain a functionally equivalent 4 pin IC mounted under black epoxy directly on the PC board. Either version can be used in this Lab. The complete circuit is shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f3.png
-   :align: center
-   :width: 500px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -589,9 +587,9 @@ Inside these lights is a DC-DC boost LED diver integrated circuit which increase
 
 The YX8018 comes in a 4 pin transistor style TO-94 package and the pin configuration and block diagram is shown in figure 4. A low voltage near the negative battery voltage (GND) on the CE input of the YX8018 gates off the oscillator. A high voltage near the positive battery voltage (V\ :sub:`DD`) conversely gates the oscillator on. Other versions of these LED drivers may work opposite so be sure to check your particular IC to confirm how the CE control input operates.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f4.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -606,9 +604,8 @@ We can learn more about inductor based DC-DC Converters by building various conf
 
 In figure 2 the current pulses from the inductor return to the battery through the LED to the ground side of the battery. We can also connect the LED across the inductor so that the inductor current returns directly to the inductor as shown in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -617,9 +614,9 @@ In figure 2 the current pulses from the inductor return to the battery through t
 
 The basic configurations in figures 3 and 5 drive the LED with pulses of current at the oscillator frequency. This is fine because the frequency is way above anything the eye can perceive as flicker. These pulses can be rectified and filtered into a DC voltage to drive the LED as shown in figure 6. Rectifying diode D\ :sub:`1` can be a standard diode such as a 1N914 but a more efficient choice for these low voltages would be a Schottky diode. At these high frequencies, filter capacitor C\ :sub:`1` does not need to be very large, a 0.1uF or 1.0uF value will work well.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f6.png
-   :align: center
-   :width: 500px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -630,9 +627,8 @@ Applying a pulse width modulated square wave using one of the generator output c
 
 By adding another diode and capacitor, negative output voltages can be generated as shown in figure 7. A negative voltage is not necessarily needed to drive the LED. This is more a demonstration of how DC-DC converters can also generate negative voltages from positive voltages. Capacitor C\ :sub:`1` and diode D\ :sub:`1` level shift the positive peaks of the voltage waveform at pin 1 and clamp the voltage seen at the junction of D\ :sub:`1` and D\ :sub:`2` to a diode above ground. This now negative going waveform is rectified by D\ :sub:`2` and filtered by C\ :sub:`2`. Again a more efficient design would be to use Schottky diodes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f7.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -654,9 +650,8 @@ L\ :sub:`1` Inductor value Output Current
 
 Another option is to replace the simple inductor with a transformer. The Coilcraft Hexapath 6 winding HPH1-1400L has a winding inductance of 200 uH so it falls in the range of values listed in the table. In figure 6 the HPH1-1400L is configured as a 1:5 step up transformer and the circuit can deliver 1 mA of current to a 15 KΩ load resistor ( or 15 V DC ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f8.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -668,9 +663,8 @@ Adding active regulation:
 
 Adding a voltage comparator to drive the CE input with feedback from the boosted output adds regulation to the circuit. A regulation scheme which includes a fixed voltage reference and an error amplifier is more complex but a simpler version can be made by adding just a couple of resistors and an NPN transistor to figure 6 which demonstrates the concept. Figure 9 shows the additional circuitry.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f9.png
-   :align: center
-   :width: 500px
+
+|image9|
 
 .. container:: centeralign
 
@@ -684,3 +678,22 @@ The regulated output voltage will be N times the V\ :sub:`BE` of Q\ :sub:`1` (a 
 http://en.wikipedia.org/wiki/Boost_converter
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f1.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_a4.png
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f9.png
+   :width: 500px

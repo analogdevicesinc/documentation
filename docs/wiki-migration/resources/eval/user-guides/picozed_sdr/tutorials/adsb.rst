@@ -469,8 +469,8 @@ To install the Analog Devices BSP, set the MATLAB current folder to the */vendor
 
 in the MATLAB command window. After the installation process is complete, run *ver* in the MATLAB command window to list all the installed packages. If the installation was successful, the *HDL Coder BSP Tools* and *HDL Coder BSP: Analog Devices Inc* should appear in the list, as shown below:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/install.png
-   :alt: Block diagram
+
+|image2|
 
 .. tip::
 
@@ -536,8 +536,8 @@ Then, run each task including Step 4.2. In the end of Step 4.2, you will see a s
 
 In Step 4.3, select **Custom** for Tcl file for synthesis build, and use *adi_build.tcl* from *\\ADSB\\hdl_prj\\vivado_ip_prj\\projects\\scripts\\* folder:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step4.3.png
-   :alt: Block diagram
+
+|image3|
 
 .. tip::
 
@@ -573,8 +573,8 @@ The generated C code contains the implementation of the ADS-B data decoding algo
 
 To transfer the files to your Linux system. You can use tools such as `WinSCP <https://winscp.net/eng/docs/guide_install>`_:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/winscp.png
-   :alt: Block diagram
+
+|image4|
 
 .. tip::
 
@@ -608,8 +608,8 @@ On Linux side, open a terminal and run the following command:
 
 You will see the following results almost immediately after you execute the command:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/oscverify_results.png
-   :alt: Block diagram
+
+|image5|
 
 .. tip::
 
@@ -629,8 +629,8 @@ Note: lat and lon are latitude and longitude of your current location.
 
 Wait a few seconds to a few minutes, depending on your local air traffic, and you will observe the decoded ADSB messages in the terminal, such as following:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/result.png
-   :alt: Block diagram
+
+|image6|
 
 .. tip::
 
@@ -685,10 +685,10 @@ Reference
 
 “\ **Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio**\ ” Article Series
 
--  Di Pu, Andrei Cozma, and Tom Hill. "Part 1 - the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools". :adi:`Analog Dialogue, Volume 49, Number 3 </library/analogDialogue/archives/49-09/four-step-sdr-01.html>`.
+-  Di Pu, Andrei Cozma, and Tom Hill. "Part 1 - the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools". :adi:`Analog Dialogue, Volume 49, Number 3 <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`.
 -  Mike Donovan, Andrei Cozma, and Di Pu. "Part 2 - Mode-S Detection and Decoding Using MATLAB and Simulink". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`.
--  Di Pu, and Andrei Cozma. "Part 3 - Mode-S Signals Decoding Algorithm Validation using Hardware in the Loop". :adi:`Analog Dialogue, Volume 49, Number 4 </library/analogDialogue/archives/49-11/four-step-sdr-03.html>`.
--  Mike Donovan, Andrei Cozma, and Di Pu. "Part 4 - Rapid Prototyping using the Zynq SDR Kit and Simulink Code Generation Workflow". :adi:`Analog Dialogue, Volume 49, Number 4 </library/analogDialogue/archives/49-12/four-step-sdr-04.html>`.
+-  Di Pu, and Andrei Cozma. "Part 3 - Mode-S Signals Decoding Algorithm Validation using Hardware in the Loop". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`.
+-  Mike Donovan, Andrei Cozma, and Di Pu. "Part 4 - Rapid Prototyping using the Zynq SDR Kit and Simulink Code Generation Workflow". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`.
 
 Support
 =======
@@ -697,7 +697,12 @@ If you have any questions about PicoZed / AD9361 or ADI BSP workflow, please ask
 
 If you have any questions about ADS-B receiver algorithm or HW/SW Co-Design workflow, please contact MathWorks. `MathWorks Support <https://www.mathworks.com/support/>`_
 
-.. |Block diagram| image:: https://wiki.analog.com/_media/fig8.png
+.. |Block diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/fig8.png
    :width: 700px
-.. |image1| image:: https://wiki.analog.com/_media/table.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/table.png
    :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/install.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/step4.3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/winscp.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/oscverify_results.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picozed_sdr/tutorials/result.png

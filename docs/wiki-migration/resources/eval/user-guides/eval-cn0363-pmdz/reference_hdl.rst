@@ -52,7 +52,7 @@ FPGA Reference Designs on GitHub :
    
    -  Main repository with latest changes (always synced with the latest release)
    
-      -  https://github.com/analogdevicesinc/hdl
+      -  :git-hdl:`hdl`
    
    -  Releases (the used tool version can be found in README.md)
    

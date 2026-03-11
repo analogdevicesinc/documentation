@@ -64,6 +64,6 @@ GUI Controls
 | Decay            | 0             | 0 to 16777215     | This value dictates the ramp slope from Min Gain to Max Gain. The display shows this value in ms.                                                                |
 +------------------+---------------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |limiter1.png| image:: https://wiki.analog.com/_media/limiter1.png
-.. |limiteren.png| image:: https://wiki.analog.com/_media/limiteren.png
+.. |limiter1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiter1.png
+.. |limiteren.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiteren.png
    :width: 500px

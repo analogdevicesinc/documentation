@@ -66,7 +66,7 @@ This section briefs on the usage of MBED firmware. This also explains the steps 
    Source code is hosted here:
 
    
-   -  `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
+   -  :git-precision-converters-firmware:`precision-converters-firmware`
    
    Build Guide for Precision Converters MBED firmware (Use below link):
    

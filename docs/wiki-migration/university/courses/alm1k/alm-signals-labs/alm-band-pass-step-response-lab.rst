@@ -30,9 +30,8 @@ Materials:
 
 ADALM1000 hardware module Solderless Breadboard 1 - 2 KΩ resistor (made from 2 1 KΩ in series) 1 – 4.7 KΩ resistor 1 – AD8542 dual op-amp 2 - 0.1 µF capacitors
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -58,9 +57,8 @@ The reciprocal of the time constant T is the decay rate, α, of the exponential 
 
 T \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ α \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -93,9 +91,8 @@ LTspice Example: Band-Pass Filter Pulse response
 
 This LTSpice simulation uses the AD8542 model from the opamp library. It is easy to use and requires power supply connections.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-spice-fig.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -106,9 +103,8 @@ The source Vpulse is set to produce a 2 mS pulse with a repetition rate of 4 mS.
 
 The high-pass and overall band-pass filter's pulse response is plotted below in figure 3. Note that the 2 millisecond pulse width allows the filter's response to return to steady state in between each pulse.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig3.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -118,3 +114,12 @@ The high-pass and overall band-pass filter's pulse response is plotted below in 
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-spice-fig.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-bp-step-lab-fig3.png
+   :width: 600px

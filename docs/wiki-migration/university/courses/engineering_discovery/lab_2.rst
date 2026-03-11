@@ -30,10 +30,12 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard; note the polarity of the 47 μF capacitor\
+-  Construct the following circuit on the solderless breadboard; note the polarity of the 47 μF capacitor
 
-
-|lab_2_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_2_image_1.png
+   :alt: lab_2_image_1.png
+   :align: center
+   :width: 300px
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -42,9 +44,12 @@ Procedure
 -  Connect a wire from Channel A to the unconnected side of the 100 KΩ resistor while monitoring the voltage on Channel B
 -  Observe the voltage on Channel B increase slowly
 -  Change the output voltage from Channel A to 0 V and measure how long it takes the voltage on Channel B to reach 0 V (theoretically the capacitor voltage never gets to 0 V, but we can get a good estimation within the measurement limitations of the M1K)
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
-|lab_2_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_2_image_3.png
+   :alt: lab_2_image_3.png
+   :align: center
+   :width: 300px
 
 -  Set up Channel A to source a 100 Hz square wave that swings between 0 V and 5 V.
 -  Observe the shape of the waveform across the capacitor. Can you describe the general shape of the edges?
@@ -87,8 +92,3 @@ Observations and Conclusions
 -  A commonly accepted time for a capacitor to fully charge is equal to five time constants
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_2_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_2_image_1.png
-   :width: 300px
-.. |lab_2_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_2_image_3.png
-   :width: 300px

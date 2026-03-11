@@ -20,7 +20,7 @@ Build Linux kernel
 
 ::
 
-   analog@debian:~$ **git clone https://github.com/analogdevicesinc/linux**
+   analog@debian:~$ **git clone :git-linux**:`linux**`
    analog@debian:~$ **cd ./linux**
    analog@debian:~/linux$ **git checkout altera_adxcvr_master**
    analog@debian:~/linux$ **make adi_stratix10_defconfig**
@@ -67,7 +67,7 @@ Generate .sof (SRAM Object File) and .jic (JTAG Indirect Configuration) files
 
 ::
 
-   analog@debian:~$ **git clone https://github.com/analogdevicesinc/hdl**
+   analog@debian:~$ **git clone :git-hdl**:`hdl**`
    analog@debian:~$ **cd hdl/projects/ad9213_dual_ebz/s10soc**
    analog@debian:~/hdl/projects/ad9213_dual_ebz/s10soc$ **make**
    Building ad9213_dual_ebz_s10soc [/home/analog/hdl/projects/ad9213_dual_ebz/s10soc/ad9213_dual_ebz_s10soc_quartus.log] ... OK

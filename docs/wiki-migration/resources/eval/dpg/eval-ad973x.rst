@@ -11,14 +11,16 @@ This guide shows how AD9736-DPG2-EBZ works with SDP-H1 or ADS7-V2 controller boa
 Typical Setup
 -------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736-sdph1.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 1a. EVAL-AD9736 Setup with SDP-H1*\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -35,7 +37,7 @@ Helpful Files:
 
 -  Download the `AD9736 Update <https://wiki.analog.com/_media/resources/eval/dpg/hsdacupdate_ad9736_1.0.4686.25855.exe.zip>`_ for DPG3 users
 -  Data Sheet: :adi:`AD973X Data Sheet <static/imported-files/data_sheets/AD9734_9735_9736.pdf>`
--  IBIS Model: :adi:`AD9736 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9736.ibs>`, :adi:`AD9735 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9735.ibs>`, :adi:`AD9734 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9734.ibs>`
+-  IBIS Model: :adi:`AD9736 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9736.ibs>`, :adi:`AD9735 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9735.ibs>`, :adi:`AD9734 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9734.ibs>`
 -  `Schematic <https://wiki.analog.com/_media/resources/eval/dpg/ad9736-dpg2-ebz_revc_schematic.pdf>`_
 -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/dpg/ad9736-dpg2-ebz_revc_bom_customer.xls>`_
 -  `PCB Gerber files <https://wiki.analog.com/_media/resources/eval/dpg/ad9736-dpg2-ebz_revc_gerber_files.zip>`_
@@ -88,7 +90,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image3|\ *Figure 2. ACE Chip View Initial Configuration Wizard*\
+   \ |image2|\ *Figure 2. ACE Chip View Initial Configuration Wizard*\
 
 
 -  Start DPG Lite or DPG Downloader. At the SDP-H1 or ADS7-V2 settings, ensure that **Evaluation board** is equal to AD9736 and DCO frequency of around 250 MHz should be displayed.
@@ -97,12 +99,12 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image4|\ *Figure 3a. DPG Lite session for SDP-H1*\
+   \ |image3|\ *Figure 3a. DPG Lite session for SDP-H1*\
 
 
 .. container:: centeralign
 
-   \ |image5|\ *Figure 3b. DPG Lite session for ADS7-V2*\
+   |image4|\ *Figure 3b. DPG Lite session for ADS7-V2*\
 
 
 -  Select the Single tone from the **Data Vector** pulldown menu
@@ -110,7 +112,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image6|\ *Figure 4. EVAL-AD9736 FFT for Data Rate = 500 MHz, Fout = 50 MHz*\
+   \ |image5|\ *Figure 4. EVAL-AD9736 FFT for Data Rate = 500 MHz, Fout = 50 MHz*\
 
 
 Troubleshooting
@@ -125,15 +127,13 @@ This section lists items to check and practices to use when debugging any unexpe
 -  Check on the Spectrum Analyzer if the DAC clock inputs are properly driven. For 500MHz clock, the spectrum analyzer should detect a weak signal at 500MHz. If not detected, check properly the clock source and connections.
 -  Disconnect and reconnect the SDP-H1 /ADS7-V2 and AD9736 evaluation board. Reopen DPG Lite software.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736-sdph1.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_ads7.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_ads7.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_ace_chip_view.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_ace_chip_view.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_dpglite_sdp-h1.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_dpglite_sdp-h1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_dpglite_ads7.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_dpglite_ads7.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_output_fft.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9736_output_fft.png
    :width: 600px

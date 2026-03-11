@@ -1,10 +1,7 @@
 Evaluating AD400X and ADAQ400X devices
 ======================================
 
-**Evaluation Board for the ADAQ4003, 18-Bit, 2 MSPS, μModule Data Acquisition Solution**
-
-
-|adi>en/\_/media/analog/en/evaluation-board-images/images/eval-adaq400xpmdztop-web.gif|
+**Evaluation Board for the ADAQ4003, 18-Bit, 2 MSPS, μModule Data Acquisition Solution** :adi:`eval-adaq400xpmdztop-web.gif <en/_/media/analog/en/evaluation-board-images/images/eval-adaq400xpmdztop-web.gif>`
 
 Supported Evaluation Boards
 ---------------------------
@@ -191,7 +188,7 @@ Copy the following files onto the BOOT partition to configure the SD card:
 Get BOOT.BIN from HDL project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To achieve high performance with ADAQ4003, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support ADAQ4003, ADI engineers provide :git-hdl>`__ from which we will use the `pulsar project <https::`HDL reference projects </github.com/analogdevicesinc/hdl/tree/main/projects/pulsar_adc_pmdz>`.
+To achieve high performance with ADAQ4003, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support ADAQ4003, ADI engineers provide :git-hdl:`HDL reference projects <hdl>` from which we will use the :git-hdl:`pulsar project <projects/pulsar_adc_pmdz>`.
 
 If there is no directory with boot files for your platform of choice under the SD BOOT partition, follow the build instructions on the :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>` page to build the pulsar project and generate a BOOT.BIN file from that.
 
@@ -219,8 +216,6 @@ The next example shows the effect of increasing the sample rate on characterizin
 
 .. image:: https://wiki.analog.com/_media/resources/eval/iio_osc_adaq4003_buff_2msps.gif
 
-.. |adi>en/\_/media/analog/en/evaluation-board-images/images/eval-adaq400xpmdztop-web.gif| image:: https://wiki.analog.com/_media/adi>en/_/media/analog/en/evaluation-board-images/images/eval-adaq400xpmdztop-web.gif
-   :width: 600px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/m2k_probe_adapt.jpg
    :width: 200px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/adaq4003_input_adapt.jpg

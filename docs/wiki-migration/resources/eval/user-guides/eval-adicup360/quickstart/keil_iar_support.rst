@@ -84,8 +84,8 @@ Open **IAR Embedded Workbench**, go to **Project** tab and select Create New Pro
 
 Select project in left window -> **Project** and select Add Group - to create project folders and for each folder create new files (**File** -> New -> File) or you can add files (**Project** -> Add files):
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_2.png
-   :width: 650px
+
+|image1|
 
 .. note::
 
@@ -106,8 +106,8 @@ Select project in the left window -> **Project** -> Options:
 
 -  C/C++ Compiler -> **Preprocessor** tab -> *Additional include directories* - add path for all include files that will be used in the project:
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_5.png
+   :width: 650px
 
 .. note::
 
@@ -162,5 +162,5 @@ Select **Target 1** -> go to Options button -> Debug tab -> select *CMSIS-DAP De
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_keil_4.png
    :width: 650px
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_5.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/demo_iar_2.png
    :width: 650px

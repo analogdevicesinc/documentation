@@ -68,7 +68,7 @@ Set the firmware name through sysfs
 
 .. note::
 
-   The blinky_Core1_sc589.ldr is one SHARC LED blinking application generated through ADI :adi:`CrossCore® Embedded Studio <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>`. Refer this page for ``How to generate remoteproc LDR file in CCES``.
+   The blinky_Core1_sc589.ldr is one SHARC LED blinking application generated through ADI :adi:`CrossCore® Embedded Studio <en/design-center/evaluation-hardware-and-software/software/adswt-cces.html>`. Refer this page for :doc:`How to generate remoteproc LDR file in CCES </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/remoteproc/remoteproc_ldr_generate>`.
 
 
 Start the SHARC Application

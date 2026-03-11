@@ -97,9 +97,8 @@ The law is based on the conservation of charge whereby the charge (measured in c
 
 This law is sometimes referred to as Kirchhoff's second law, Kirchhoff's loop (or mesh) rule, and Kirchhoff's second rule.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f2.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -173,9 +172,8 @@ Figure 1.6.1 Any black box containing only voltage sources, current sources, and
 
 The Superposition Theorem is one of those strokes of genius that takes a complex subject and simplifies it in a way that makes perfect sense. The strategy used in the Superposition Theorem is to eliminate all but one source of power within a network at a time, using series/parallel analysis to determine voltage drops (and/or currents) within the modified network for each power source separately. Then, once voltage drops and/or currents have been determined for each power source working separately, the values are all "superimposed" on top of each other (added algebraically) to find the actual voltage drops/currents with all sources active. To understand the concept we will analyze the following example circuit and apply the Superposition Theorem to it:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f5.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -186,9 +184,8 @@ There are two sources of power in this circuit, figure 1.7.1, therefore we will 
 
 The first set is done for the circuit with the 5 volt source removed and replaced with a short circuit, and only the 2.6 volt source remaining, figure 1.7.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f6.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -197,9 +194,9 @@ The first set is done for the circuit with the 5 volt source removed and replace
 
 For the second set we replace the 2.6 volt source with a short and with only the 5 volt source remaining, figure 1.7.3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f7.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -220,9 +217,8 @@ Analyzing the circuit with only the 2.6 volt source, we obtain the following val
 
 Table 1.7.1
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f8.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -243,9 +239,8 @@ Analyzing the circuit with only the 5 volt battery, we obtain another set of val
 
 Table 1.7.2
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f9.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -266,9 +261,8 @@ Table 1.7.3
 
 Applying these superimposed voltages to the circuit, the end result looks something like this:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f10.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -289,9 +283,8 @@ Table 1.7.4
 
 Once again applying these superimposed figures to our circuit:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f11.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -315,3 +308,20 @@ Section Review:
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-2>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f2.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f5.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f6.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f7.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f8.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f9.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f10.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr1-f11.png
+   :width: 500px

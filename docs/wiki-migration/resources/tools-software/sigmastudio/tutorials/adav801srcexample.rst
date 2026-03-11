@@ -88,9 +88,9 @@ To verify the correct output, a probe was placed on the LRCLK pin of the Record 
 
 |OutputFreq.png| |fft.png| |levels.png|
 
-.. |OutputFreq.png| image:: https://wiki.analog.com/_media/OutputFreq.png
+.. |OutputFreq.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/OutputFreq.png
    :width: 600px
-.. |fft.png| image:: https://wiki.analog.com/_media/fft.png
+.. |fft.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/fft.png
    :width: 600px
-.. |levels.png| image:: https://wiki.analog.com/_media/levels.png
+.. |levels.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/levels.png
    :width: 600px

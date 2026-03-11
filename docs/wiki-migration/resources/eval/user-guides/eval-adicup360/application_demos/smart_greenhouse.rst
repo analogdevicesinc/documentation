@@ -128,7 +128,7 @@ The software for the **ADuCM360_demo_Smart_Greenhouse** demo can be found here:
    Prebuilt Smart Greenhouse Demo Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_Smart_Greenhouse.Bin <releases/download/Release-1.0/ADuCM360_demo_Smart_Greenhouse.bin>`
+   -  `ADuCM360_demo_Smart_Greenhouse.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_Smart_Greenhouse.bin>`_
    
    Complete Smart Greenhouse Demo Source Files
    

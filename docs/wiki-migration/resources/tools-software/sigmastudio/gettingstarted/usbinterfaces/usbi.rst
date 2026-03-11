@@ -31,8 +31,8 @@ Using USBi in SigmaStudio:
 
 To communication between SigmaStudio and the USBi board, a communication channel block must be added to the Schematic design. To locate the block, select the Hardware Configuration Tab, int the ToolBox or Tree ToolBox window choose the "Communication Channels" category, and select the USBi block.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/gettingstarted/usbinterfaces/usbi1.png
-   :alt: usbi1.png
+
+|usbi1.png|
 
 .. tip::
 
@@ -44,3 +44,5 @@ This block provides connections for multiple processors (ICs / DSPs), allowing y
 **The default USBi protocol is I²C, to enable SPI, you must first select an SPI address in the block's drop down menu and then perform three write operations (e.g. press the write button the Register Read/Write Window 3 times). The USBi hardware has LEDs which indicate the current mode, I²C or SPI.
 
 See the EVAL-ADUSB2 data sheet for more information, www.analog.com/sigmadsp.
+
+.. |usbi1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/gettingstarted/usbinterfaces/usbi1.png

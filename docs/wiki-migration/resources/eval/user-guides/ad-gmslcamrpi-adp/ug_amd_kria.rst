@@ -67,7 +67,7 @@ GMSL SerDes Evaluation Kits Validation and Switch Setup
 System setup
 ------------
 
--  Write the :git-gmsl#platforms-user-guides-sd-card-images-and-build-instructions>`__ on a 8GB (or more) SD card
+-  Write the :git-gmsl:`AMD KV260-based latest SD card image <gmsl>` on a 8GB (or more) SD card
 -  Plug the SD card into the KV260 SD card slot
 -  Connect the HDMI cable from the monitor to the HDMI connector of the KV260 evaluation kit
 -  Connect the 2 Tier 4 C1 cameras to INA and INB of the deserializer kit (if you have only one camera, connect it to the INA port of the deserializer)
@@ -75,7 +75,7 @@ System setup
 -  Connect the 22 pin flex cable
 -  Connect the **KV260 evaluation kit** to the power supply
 -  Connect the **MAX96724 evaluation kit** to the power supply and put the corresponding switch in the **"ON"** position
--  KV260 will boot by default from QSPI. It must be forced to boot from SD card to correctly load the custom BOOT.BIN. For this please follow the guide `here <https::`AMD KV260-based latest SD card image </xilinx.github.io/kria-apps-docs/creating_applications/2022.1/build/html/docs/bootmodes.html>` and run **boot_sd** boot mode
+-  KV260 will boot by default from QSPI. It must be forced to boot from SD card to correctly load the custom BOOT.BIN. For this please follow the guide `here <https://xilinx.github.io/kria-apps-docs/creating_applications/2022.1/build/html/docs/bootmodes.html>`_ and run **boot_sd** boot mode
 -  Connect a USB mouse and keyboard to the KV260 evaluation kit. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard
 
 .. note::
@@ -88,9 +88,7 @@ System setup
    To change the number of cameras that would be used in the setup, you would need to change the default devicetree binary that is located in the boot partition of the SD card to the corresponding number of cameras (between 1 and 2), by overwriting the system.dtb to an one from the corresponding directory. The devicetree binary options are located in the bootfs partiiton (in **nr_cams/1cam or 2cams directory/system.dtb**). The **bootfs** partition can be mounted by using the mount utility: e.g. **mount /dev/mmcblk1p1 /mnt**.
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/kria_adapter.jpg
-   :align: left
-   :width: 1000px
+   |image3|
 
 .. note::
 
@@ -134,12 +132,12 @@ Power off sequence
 Getting the software
 --------------------
 
-The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl>`__.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL github repository <gmsl>`.
 
 HDL Project
 -----------
 
-The project and the project's overview can be found at the following links: `project's link <https::`Analog Devices GMSL github repository </github.com/analogdevicesinc/hdl/tree/main/projects/max96724/kv260>` :doc:`overview's link </wiki-migration/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_amd_kria/hdl>`.
+The project and the project's overview can be found at the following links: :git-hdl:`project's link <projects/max96724/kv260>` :doc:`overview's link </wiki-migration/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_amd_kria/hdl>`.
 
 --------------
 
@@ -150,3 +148,5 @@ The project and the project's overview can be found at the following links: `pro
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/deser_interposer.jpg
    :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/kria_adapter.jpg
+   :width: 1000px

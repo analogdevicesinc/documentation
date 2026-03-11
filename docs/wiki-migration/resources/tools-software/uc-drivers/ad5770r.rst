@@ -176,15 +176,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD5770R Driver. <drivers/dac/ad5770r/ad5770r.c>`
+   -  :git-no-OS:`Header file of AD5770R Driver. <drivers/dac/ad5770r/ad5770r.h>`
    
-   |Implementation of AD5770R Driver.|
 
-   -
-
-   |Header file of AD5770R Driver.|
-
-.. |Implementation of AD5770R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5770r/ad5770r`.c
-.. |Header file of AD5770R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5770r/ad5770r`.h

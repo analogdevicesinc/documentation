@@ -54,11 +54,13 @@ Setting up the Hardware
 -  Set up the **EVAL-CN0537-ARDZ** as shown in the :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0537>`.
 -  Connect **EVAL-CN0537-ARDZ** board to the **EVAL-ADICUP3029**.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_arduino.jpg
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_system_pc.jpg
+   :align: center
 
 Programming the Firmware
 ------------------------
@@ -67,9 +69,8 @@ This application software is used with the ADICUP3029 to demonstrate the capabil
 
 Upon connection, the hardware should appear as a DAPLINK drive on the computer. Drag and drop the ADuCM3029_demo_cn0537.hex file to the DAPLINK drive to program the ADICUP3029.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_uploading_hex_file.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. admonition:: Download
    :class: download
@@ -162,5 +163,5 @@ Using both the EVAL-CN0537-ARDZ and the EVAL-CN0537-ALGO (now referred as ADSW-S
 // End of Document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_initialization.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_arduino.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0537_system_pc.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_uploading_hex_file.png
+   :width: 600px

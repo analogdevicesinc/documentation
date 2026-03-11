@@ -37,18 +37,18 @@ MATLAB / Simulink
 
    -  Depending on who you are, and where you are, you already may have access to a license.
 
-      -  If you are a student or faculty at a post-secondary institution (University, Community College, etc), check out MathWorks `Academic <https://www.mathworks.com/academia.html>`_ section. Many schools provide a `Total Academic Headcount (TAH) <https://www.mathworks.com//academia/tah-support-program/eligibility/?s_tid=srctitle>`_ license or some require/ask their students to obtain `Student version <https://www.mathworks.com//academia/student_version.html>`_\  [2]_
-      -  If you are a hobbyist, enthusiast or maker, check out `MATLAB Home <https://www.mathworks.com//products/matlab-home.html>`_.
+      -  If you are a student or faculty at a post-secondary institution (University, Community College, etc), check out MathWorks `Academic <https://www.mathworks.com/academia.html>`_ section. Many schools provide a `Total Academic Headcount (TAH) <https://www.mathworks.com/academia/tah-support-program/eligibility/?s_tid=srctitle>`_ license or some require/ask their students to obtain `Student version <https://www.mathworks.com/academia/student_version.html>`_\  [2]_
+      -  If you are a hobbyist, enthusiast or maker, check out `MATLAB Home <https://www.mathworks.com/products/matlab-home.html>`_.
       -  There are many license options, if you are unsure, check out the MathWorks `store <https://www.mathworks.com/store>`_
 
-   -  You need to have a host computer, which supports the minimum `System Requirements for MATLAB <https://www.mathworks.com//support/sysreq.html>`_.
+   -  You need to have a host computer, which supports the minimum `System Requirements for MATLAB <https://www.mathworks.com/support/sysreq.html>`_.
    -  No matter which license you have [3]_, the following toolboxes are required to use MATLAB with the PlutoSDR:
 
       -  `DSP System Toolbox <https://www.mathworks.com/products/dsp-system.html>`_
       -  `Signal Processing Toolbox <https://www.mathworks.com/products/signal.html>`_
       -  `Communications System Toolbox <https://www.mathworks.com/products/communications.html>`_
 
-   -  You also will need a `supported and compatible compiler <https://www.mathworks.com//support/compilers.html>`_, many which are zero cost, or free.
+   -  You also will need a `supported and compatible compiler <https://www.mathworks.com/support/compilers.html>`_, many which are zero cost, or free.
    -  We have verified things on a subset of what MATHWORKS supports, including Windows 10, Windows 8.1, Windows 8, Windows 7 Service Pack 1, macOS Sierra 10.12, macOS El Capitan 10.11, macOS Yosemite 10.10, Ubuntu 14.04 LTS and 16.04 LTS, Debian 7.x, 8.x.
 
 GNU Radio

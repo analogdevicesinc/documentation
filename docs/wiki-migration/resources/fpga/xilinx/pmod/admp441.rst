@@ -97,13 +97,7 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 If programming was successful, you should see messages in the UART terminal.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu1.jpg
-   :alt: UART
-   :width: 600px
-
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu2.jpg
-   :alt: Data Capture
-   :width: 600px
+|UART| |Data Capture|
 
 .. important::
 
@@ -157,6 +151,10 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+.. |UART| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu1.jpg
+   :width: 600px
+.. |Data Capture| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodmic2_menu2.jpg
+   :width: 600px

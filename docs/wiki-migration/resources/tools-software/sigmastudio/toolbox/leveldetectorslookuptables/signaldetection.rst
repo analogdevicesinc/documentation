@@ -93,4 +93,4 @@ Algorithm Details
 | Parameter RAM              | 3                                                                |
 +----------------------------+------------------------------------------------------------------+
 
-.. |signaldetection.png| image:: https://wiki.analog.com/_media/signaldetection.png
+.. |signaldetection.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/signaldetection.png

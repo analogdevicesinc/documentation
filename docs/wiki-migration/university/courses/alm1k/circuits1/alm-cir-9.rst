@@ -38,9 +38,8 @@ The Band Width of frequencies passed is given by:
 
 All the frequencies below f\ :sub:`L`\ and above f\ :sub:`H` are attenuated and the frequencies between are passed by the filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -59,18 +58,15 @@ OR
 
 To show how a circuit responds to a range of frequencies a plot of the magnitude ( amplitude ) of the output voltage of the filter as a function of the frequency can be drawn. It is generally used to characterize the range of frequencies in which the filter is designed to operate within. Figure 2 shows a typical frequency response of a Band Pass filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2, Band Pass Filter Frequency Response
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bpf_conn.png
-   :align: center
-   :width: 500px
+   |image3|
 
 .. container:: centeralign
 
@@ -87,9 +83,8 @@ Procedure:
 
 1. Set up the filter circuit as shown in figure 1 on your solderless breadboard, with the component values R\ :sub:`1` = 1 KΩ, C\ :sub:`1` = 0.047 µF, L\ :sub:`1` =20 mH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bpf_bb.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -123,9 +118,8 @@ You should now be able to press the green Run button and run the frequency sweep
 
 Record the results and save the Bode Plot using your favorite screen capture tool and include it in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-screen1.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -134,9 +128,9 @@ Record the results and save the Bode Plot using your favorite screen capture too
 
 To better understand the frequency characteristics of this parallel LC filter plot the low pass frequency response with just the capacitor (i.e. remove the inductor). Make the same frequency sweep and take a snap-shot of the gain ( CB-db - CA-dB ) and relative phase ( CA-CB ). Now plot the high pass frequency response with just the inductor (i.e. put the inductor back and remove the capacitor). The Bode plot in figure 6 shows these results. Note that the frequency where the low pass and high pass gain is the same and the relative phase sums to zero ( at about +70 and -70 degrees) is at the resonate frequency.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-screen2.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -160,3 +154,16 @@ Questions:
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` `LC filter calculator <http://circuitcalculator.com/lcfilter.htm>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bpf_conn.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bpf_bb.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-screen1.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab9-screen2.png
+   :width: 600px

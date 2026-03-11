@@ -76,7 +76,7 @@ To control the EVAL-ADA4356EBZ through ACE, the host PC must first be physically
 Using IIO Oscilloscope
 ----------------------
 
-ADI's IIO Oscilloscope can be downloaded :git-iio-oscilloscope:`here <releases>`. Install this in the host PC.
+ADI's IIO Oscilloscope can be downloaded `here <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_. Install this in the host PC.
 
 -  Start IIO Oscilloscope. (Note: It may take a little time for the window to appear after it is launched; do not click multiple times).
 

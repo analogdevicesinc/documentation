@@ -23,9 +23,8 @@ Directions:
 
 The breadboard connections are shown in figure 1. The output of the channel A voltage generator, CA-V, is connected to the base terminal of Q\ :sub:`1`. The collector terminal is connected to the positive (+5 V) supply. The emitter terminal is connected to both the 2.2 KΩ load resistor and the channel B scope input CB-H. The other end of the load resistor is connected to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,9 +56,8 @@ Additional Materials:
 
 1 - 1 KΩ Resistor 1 - small signal NPN transistor ( Q\ :sub:`1` 2N3904) 2 - small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best V\ :sub:`BE` matching
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f2a.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -84,9 +82,8 @@ Directions:
 
 The circuit configuration shown in figure 3 adds a resistor R\ :sub:`2` to inject a test signal from channel A into the emitter (output) of Q\ :sub:`1`. The input, base of Q\ :sub:`1`, is tied to the fixed 2.5 V supply rail.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f3a.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -118,9 +115,8 @@ Directions:
 
 The breadboard connections are shown in figure 4. The output of the channel A generator is connected to the base terminal of PNP transistor Q\ :sub:`1`. The collector terminal of Q\ :sub:`1` is connected to diode connected NPN Q\ :sub:`3` which is the input of a current mirror. The emitter terminal is connected to both resistor R\ :sub:`1`\ and the base terminal of NPN transistor Q\ :sub:`2`. Scope channel B is connected to both the emitter of Q\ :sub:`2` and the Collector of Q\ :sub:`4`. The emitters of both Q\ :sub:`3` and Q\ :sub:`4` are connected to ground. For best matching use the SSM2212 matched NPN pair for Q\ :sub:`3` and Q\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f4a.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -173,3 +169,12 @@ The concept in this circuit is that R\ :sub:`2` acts as current sense resistor. 
 http://en.wikipedia.org/wiki/Common_collector
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f2a.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f3a.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11_f4a.png
+   :width: 500px

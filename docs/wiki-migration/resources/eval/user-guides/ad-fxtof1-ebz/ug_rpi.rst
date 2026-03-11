@@ -17,14 +17,14 @@ Required hardware
 Power on sequence
 ~~~~~~~~~~~~~~~~~
 
--  Plug the SD card into the Raspberry Pi SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the :git-aditof_sdk#supported-embedded-platforms>`__
+-  Plug the SD card into the Raspberry Pi SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the :git-aditof_sdk:`latest SD card image <aditof_sdk>`
 -  Connect the HDMI cable from the monitor to the Raspberry Pi HDMI connector
 -  Connect the 25 pins flex cable between the camera and the interposer
 -  Connect the 15 pins camera cable between the RPi and the P1 connector of the interposer. **Make sure to use the cable with contacts on opposite sides.**
 
 .. important::
 
-   Some of the AD-FXTOF1-EBZ kits are missing the correct 15 pins cable to connect to Raspberry Pi or the Nvidia platforms. If in your box there is only one 15 pins cable having the contacts on the same side, please get a new cable with contacts on opposite sides (e.g. `15 pins cable, contacts on opposite sides <https::`latest SD card image </www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/686715152001/4573357>`)
+   Some of the AD-FXTOF1-EBZ kits are missing the correct 15 pins cable to connect to Raspberry Pi or the Nvidia platforms. If in your box there is only one 15 pins cable having the contacts on the same side, please get a new cable with contacts on opposite sides (e.g. `15 pins cable, contacts on opposite sides <https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/686715152001/4573357>`_)
 
 
 -  Connect the interposer to the power supply

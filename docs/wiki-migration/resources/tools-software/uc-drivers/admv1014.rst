@@ -58,15 +58,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADMV1014 Driver. <drivers/frequency/admv1014/admv1014.c>`
+   -  :git-no-OS:`Header file of ADMV1014 Driver. <drivers/frequency/admv1014/admv1014.h>`
    
-   |Implementation of ADMV1014 Driver.|
 
-   -
-
-   |Header file of ADMV1014 Driver.|
-
-.. |Implementation of ADMV1014 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/admv1014/admv1014`.c
-.. |Header file of ADMV1014 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/admv1014/admv1014`.h

@@ -51,8 +51,8 @@ Downloading and Installing the Software
 
 Click the software download link for your target device and save the archive somewhere convenient (like your desktop). Once extracted, the download file will contain three separate files: The CAB file (ADIS16135_Rev_4.cab), the setup file (setup.exe), and the setup list.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-zipfile-download.png
-   :width: 600px
+
+|image1|
 
 .. tip::
 
@@ -79,11 +79,11 @@ USB Driver Installation
 
 The .cab file contains USB drivers that are compatible with both 32-bit and 64-bit Windows systems. The drivers are unpacked at the same time the software application is loaded by double-clicking the setup.exe file. The first time the :adi:`ADISUSB` board is plugged into the computer (using the included USB mini cable) the hardware will be recognized and loaded. The Windows **Hardware Wizard** will find and install the drivers by following the steps below.
 
-|image1| |image2|
+|image2| |image3|
 
 The following pictures show the final steps for the USB driver install. Click on **Next** then click on **Finish** completing the installation.
 
-|image3| |image4|
+|image4| |image5|
 
 .. important::
 
@@ -102,7 +102,7 @@ Main Window
 
 Once the Evaluation Software starts-up, the Main Window will appear and look like the following picture. The second picture provides color-coded boxes to support further discussion of each function in this screen.
 
-|image5| |image6|
+|image6| |image7|
 
 - The orange box identifies the drop-down menus, which provide a number of useful features. The **Devices** option provides a list of products for :adi:`ADIS1613x <ADIS16136>` Evaluation, click on **Devices** and then select **ADIS16133/5/6**.
 
@@ -149,7 +149,7 @@ Data Capture Menu
 
 The Data Capture function supports synchronous data acquisition, based on the data-ready signal from the :adi:`ADIS1613x <ADIS16136>`. The following picture represents the Data Capture window, right after opening it from the **Main Window** and the second picture provides color-coded boxes, in order to support further discussion of each function that is associated with this screen.
 
-|image7| |image8|
+|image8| |image9|
 
 - The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a checkmark when it has been selected.
 
@@ -157,19 +157,21 @@ The Data Capture function supports synchronous data acquisition, based on the da
 
 - The yellow box identifies a number of configuration options for the data acquisition process. The **Samples per File** is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file after the acquisition process completes. After each update to the **Record Length** box, the software calculates then displays the total **Capture Time**. The **Numeric Data Only...No File Header** option allows the user to add or remove the header in the data storage file. The **No Scale LSB's Only** causes the software to convert the decimal, twos complement number into its representative value. For example, when enabling **No Scale LSB's Only,** the gyroscope outputs will be in units of degrees/second.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-zipfile-download.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-foundnewhardware.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-install.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-hardware-wizard.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adisusb-driver-complete-wizard.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-main_screen.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-main_screen.png
    :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-main_screen-defined.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-main_screen-defined.png
    :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-datalog.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-datalog.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-datalog-defined.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/13x-adisusb-datalog-defined.png
    :width: 400px

@@ -20,7 +20,7 @@ EV-21568-SOM with EV-SOM-CRR EZ-Kit Connections
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image2|\
 
 
 .. container:: centeralign

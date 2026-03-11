@@ -16,7 +16,7 @@ The AD594x is a high precision, low power analog front end (AFE) designed for ap
    -  :doc:`How to Download AD594x Source Code </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/downloading_source_code>`
    -  :doc:`How to Port AD594x Source Code to Another MCU </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/porting_source_code>`
    -  `AD594x IDD Calculator <https://wiki.analog.com/ftp/ftp.analog.com/pub/microconverter/adxxxxv2.0/ad594x_idd_calculator.xlsm>`_
-   -  `Impedance Profiling 2wireIEC.xls <https://wiki.analog.com/ftp/ftp.analog.com/pub/microconverter/adxxxxv2.0/impedance_profiling_2wireiec.xls>`_
+   -  `Impedance Profiling 2wireIEC.xls <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/microconverter/adxxxxv2.0/impedance_profiling_2wireiec.xls>`_
 
 -  :doc:`Hardware Details </wiki-migration/resources/eval/user-guides/eval-ad5940/hardware>`
 

@@ -48,7 +48,7 @@ Equipment
 
 The following hardware is required to use the evaluation tool.
 
--  :adi:`SmartMesh IP Manager (DC2274A) </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2274a-a.html#eb-overview>`
+-  :adi:`SmartMesh IP Manager (DC2274A) <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2274a-a.html#eb-overview>`
 
 ::
 
@@ -83,10 +83,8 @@ In addition, a firmware guide with greater detail on the inner workings of the p
    :class: download
 
    
-   ::
-   
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/cbm_setup.pdf|cbm_setup.pdf]]
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/wcbm-01_firmware_guide.pdf|wcbm-01_firmware_guide.pdf]]
+   -  `cbm_setup.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/cbm_setup.pdf>`_
+   -  `wcbm-01_firmware_guide.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/wcbm-01_firmware_guide.pdf>`_
    
 
 
@@ -111,9 +109,7 @@ Note, this web page will be downloaded as a ".htm" file if you are using Google 
    :class: download
 
    
-   ::
-   
-      *[[/ftp/ftp.analog.com/pub/imu/imu_ftp_directory.htm|Software Download Directory]]
+   -  `Software Download Directory <https://wiki.analog.com/ftp/ftp.analog.com/pub/imu/imu_ftp_directory.htm>`_
    
 
 

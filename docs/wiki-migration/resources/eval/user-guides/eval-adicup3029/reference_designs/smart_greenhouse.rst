@@ -60,29 +60,30 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Move the **S2 switch** to the **WiFi** position on the **EVAL-ADICUP3029**.\
+-  Move the **S2 switch** to the **WiFi** position on the **EVAL-ADICUP3029**.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
+   :align: center
+   :width: 900px
 
 -  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B or Rev C version of the ADICUP3029, you will need to solder a small fly wire from the 3.3V pin to the enable pin.
-   |image2| |image3|
+   |image1| |image2|
    \* Plug the **ESP8266** in the **P1** connector on the **EVAL-ADICUP3029**.
 -  Configure the EVAL-CN0398-ARDZ CS option by setting the pin jumper of **P5** to **pin 1** and **2**. Set **P8** moisture power supply to **3V3** and **VIN** Supply to **5V**.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398.jpg
 
--  Configure CS jumper for **CN0397** to pins **3** and **4**.\
+-  Configure CS jumper for **CN0397** to pins **3** and **4**.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397.jpg
 
--  Configure CS jumper on **P21** for **CN0410** to pins **1** and **2**. An external power supply must be used to power the board and the jumper on **P20** must be set to **1** and **2**.\
+-  Configure CS jumper on **P21** for **CN0410** to pins **1** and **2**. An external power supply must be used to power the board and the jumper on **P20** must be set to **1** and **2**.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171020_115358_hdr.jpg
 
--   The Led Bar must be connected to the CN0410 board to enable power to the leds. Also to select the leds we want to controll we have to place the jumpers to pins 1 and 2. In this picture only RLED1, GLED1 and BLED1 are selected.\
+-   The Led Bar must be connected to the CN0410 board to enable power to the leds. Also to select the leds we want to controll we have to place the jumpers to pins 1 and 2. In this picture only RLED1, GLED1 and BLED1 are selected.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171023_110559.jpg
 
 IBM Watson Smart Greenhouse Source Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +105,7 @@ The software for the **ADuCM3029_IBMWatson_Greenhouse** can be found here:
    Prebuilt IBM Watson Greenhouse Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_IBMWatson_Greenhouse.Hex <releases/download/Latest/ADuCM3029_IBMWatson_Greenhouse.hex>`
+   -  `ADuCM3029_IBMWatson_Greenhouse.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_IBMWatson_Greenhouse.hex>`_
    
    Complete IBM Watson Greenhouse Source Files
    
@@ -123,17 +124,17 @@ Creating an IBM Watson account
 The first step is to get an IBM account for IoT projects. Acces this link https://www.ibm.com/cloud/#/ibmssolanding and click Sign Up.
 
 
-|image8|
+|image3|
 
 After login you will arrive at the dashboard page.
 
 
-|image9|
+|image4|
 
 Choose to create a resource and select the Internet of Things platform.
 
 
-|image10|
+|image5|
 
 Give the resource a Service name and create it. After this the last step is to launch the resource.
 
@@ -147,7 +148,7 @@ Create a device
 The next now is to create a device inside IBM Watson in order to recognize our physical device. Click on the Devices option from the side tab.
 
 
-|image11|
+|image6|
 
 **To add the device please follow this tutorial** https://developer.ibm.com/recipes/tutorials/how-to-register-devices-in-ibm-iot-foundation/
 
@@ -157,7 +158,7 @@ Setting WIFI connection
 In order to establish the connection to the **WIFI** we have to set the **aWifiSSID** and **aWifiPassword** to connect to the access point (wifi router). This is done modifying **ADuCM3029_IBMWatson.h**.
 
 
-|image12|
+|image7|
 
 Establishing the connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,7 +168,7 @@ The last step is to connect our device to the IBM platform. There still are few 
 First let's set the MQTT username and password. The username is always **use-token-auth**. For the password use the **Authentication token** when you created the device in the tutorial above.
 
 
-|image13|
+|image8|
 
 The last step is to set the MQTT configuration. The broker ip is the same as you IBM Watson IoT platform link. it should be something similar to this **0qqrd7.internetofthings.ibmcloud.com** where 0qqrd7 is the Organization ID. Replace the address from **ADuCM3029_IBMWatson.h**, **aMQTTBrokerIp** with your own. The port is always 1883.
 
@@ -178,7 +179,7 @@ The final thing to do is set the Topic name and the Subscribe Topic. We will nee
 -  **Compose the Topic name**: **iot-2/evt/DeviceID/fmt/json** in our case we have d:0qqed7:C_Client:ADI_GreenHouse
 -  **Compose Subscribe topic**: **iot-2/cmd/DeviceID/fmt/json** this is you subscribe topic iot-2/cmd/ADI_GreenHouse_cmd/fmt/json
 
-For an application creation you will need to create a Node Red starter pack inside IBM following this link https://console.bluemix.net/catalog/starters/node-red-starter |image14| Click on **visit App URL** then just go to Node Red Editor. This is an application example using Node Red dashboard pack. |image15| For more documentation on NodeRed just visit https://nodered.org/ and follow the documentation.
+For an application creation you will need to create a Node Red starter pack inside IBM following this link https://console.bluemix.net/catalog/starters/node-red-starter |image9| Click on **visit App URL** then just go to Node Red Editor. This is an application example using Node Red dashboard pack. |image10| For more documentation on NodeRed just visit https://nodered.org/ and follow the documentation.
 
 IBM Watson Smart Greenhouse Software Flow/Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -210,12 +211,12 @@ Output Data
 Data from the device can be visualized inside the IBM Watson IoT platform. Just navigate to devices and click on the one you created.
 
 
-|image16|
+|image11|
 
 Also can be visualized in nodeRed with the dashboard pack. This will create a more visual way is displaying data.
 
 
-|image17|
+|image12|
 
 For nodered documentation follow https://nodered.org/.
 
@@ -257,26 +258,27 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Move the **S2 switch** to the **USB** position on the **EVAL-ADICUP3029**.\
+-  Move the **S2 switch** to the **USB** position on the **EVAL-ADICUP3029**.
 
-
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
+   :align: center
+   :width: 900px
 
 -  Configure the EVAL-CN0398-ARDZ CS option by setting the pin jumper of **P5** to **pin 1** and **2**. Set **P8** moisture power supply to **3V3** and **VIN** Supply to **5V**.
 
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398.jpg
 
--  Configure CS jumper for **CN0397** to pins **3** and **4**.\
+-  Configure CS jumper for **CN0397** to pins **3** and **4**.
 
-|image20|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397.jpg
 
--  Configure CS jumper on **P21** for **CN0410** to pins **1** and **2**. An external power supply must be used to power the board and the jumper on **P20** must be set to **1** and **2**.\
+-  Configure CS jumper on **P21** for **CN0410** to pins **1** and **2**. An external power supply must be used to power the board and the jumper on **P20** must be set to **1** and **2**.
 
-|image21|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171020_115358_hdr.jpg
 
--   The Led Bar must be connected to the CN0410 board to enable power to the leds. Also to select the leds we want to control we have to place the jumpers to pins 1 and 2. In this picture only RLED1, GLED1 and BLED1 are selected.\
+-   The Led Bar must be connected to the CN0410 board to enable power to the leds. Also to select the leds we want to control we have to place the jumpers to pins 1 and 2. In this picture only RLED1, GLED1 and BLED1 are selected.
 
-|image22|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171023_110559.jpg
 
 Serial Terminal Smart Greenhouse Source Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -298,7 +300,7 @@ The software for the **ADuCM3029_Local_Greenhouse** can be found here:
    Prebuilt Local Greenhouse Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_Local_Greenhouse.Hex <releases/download/Latest/ADuCM3029_Local_Greenhouse.hex>`
+   -  `ADuCM3029_Local_Greenhouse.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_Local_Greenhouse.hex>`_
    
    Complete Local Greenhouse Source Files
    
@@ -340,12 +342,12 @@ Output Data
 Data is represented in json format and sent over UART. Use a **Putty** service set to **9600** baud rate.
 
 
-|image23|
+|image13|
 
 After sending a command we can read again the values of the sensors to see the intensity change.
 
 
-|image24|
+|image14|
 
 How to use the Tools
 --------------------
@@ -364,43 +366,31 @@ For more detailed instructions on importing this application/demo example into t
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
-   :width: 900px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
    :width: 385px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171020_115358_hdr.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171023_110559.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ibm_signup.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ibm_signup.png
    :width: 700px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ibm_afterlogin.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ibm_afterlogin.png
    :width: 900px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ibm_resource.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ibm_resource.png
    :width: 700px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/device_creation.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/device_creation.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/wifi_ibm.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/wifi_ibm.png
    :width: 700px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/mqtt_username.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/mqtt_username.png
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/nodered.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/nodered.png
    :width: 800px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/nodered_example.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/nodered_example.png
    :width: 700px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_ibm.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_ibm.png
    :width: 900px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_nodered.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_nodered.png
    :width: 900px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
-   :width: 900px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398.jpg
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397.jpg
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171020_115358_hdr.jpg
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20171023_110559.jpg
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_serial.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_serial.png
    :width: 700px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_aftercommand2.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/data_aftercommand2.png
    :width: 700px

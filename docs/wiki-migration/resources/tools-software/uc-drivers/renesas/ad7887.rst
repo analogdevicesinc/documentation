@@ -50,7 +50,8 @@ There are three functions which are called by the AD7887 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -112,7 +113,7 @@ Reference Project Overview
 The reference project initializes the device, reads the ADC conversion result and displays it on the LCD.
 
 
-|image2|
+|image1|
 
 Software Project Setup
 ----------------------
@@ -130,11 +131,9 @@ More information
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
-
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7887_rx63n_screen.jpg
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7887_rx63n_screen.jpg

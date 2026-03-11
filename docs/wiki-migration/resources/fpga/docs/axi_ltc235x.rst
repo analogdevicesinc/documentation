@@ -8511,7 +8511,7 @@ The example design uses a processor to program all the registers. If no processo
 Software Guidelines
 -------------------
 
-Linux is supported also using `ADI Linux repository <https://github.com/analogdevicesinc/linux>`_
+Linux is supported also using :git-linux:`ADI Linux repository <linux>`
 
 References
 ----------

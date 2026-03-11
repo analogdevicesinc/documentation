@@ -11,9 +11,8 @@ Background:
 
 The variable analog outputs supplied by the Discovery hardware are voltages. The BJT collector current is controlled by the base current. The AWG output voltage must be converted into a suitable current to drive the base terminal of the device under investigation. A simple resistor can be used to convert a voltage into a current, as shown in figure 1. However, only if the voltage across the resistor is known or controlled in some way. In this simple circuit, the base current I\ :sub:`B` = (V\ :sub:`AWG2` - V\ :sub:`BE`)/100KΩ. We can set V\ :sub:`AWG2` to known values but we don't know the exact value of V\ :sub:`BE`. We can of course remove an estimate of the V\ :sub:`BE` mathematically. This is still only an estimate.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-curves-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -54,9 +53,8 @@ To measure the PNP device, alter the characteristic curve measurement circuit as
 
 You can use the same 5 step staircase waveform you generated for the NPN device to drive the base current for the PNP device. You will need to set the amplitude to 2 V again but set the offset to -2.6 V. The waveform in the display should now start at -0.6 V and decrease in 1 V increments to -4.6 V (-0.6, -1.6, -2.6, -3.6, -4.6) Each step should be 5 mSec long for a total of 25 mSec. In AWG channel 1 change the triangle wave with an amplitude of 2.5 V to an offset of -2.5V (wave should swing from 0 to -5V). Check to make sure that the triangle wave in channel 1 goes through one cycle from 0 to -5 V and back to zero during the time of one step in the waveform in channel 2. Change the phase of channel 1 if necessary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-curves-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -68,3 +66,8 @@ You can use the same 5 step staircase waveform you generated for the NPN device 
 Waveform file: `5_steps.csv <https://wiki.analog.com/_media/university/courses/eps/5_steps.zip>`_
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-curves-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-curves-f2.png
+   :width: 500px

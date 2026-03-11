@@ -29,7 +29,7 @@ The digital interface consists of a Quad SPI port running at 15/60MHz depending 
 DAC Interface
 -------------
 
-The DAC data may be sourced from an internal data generator (DDS or pattern), from the external DDR via DMA or from the ADC. The source control selection can be made by updating the `REG_CHAN_CNTRL_7 (DAC Channel) <https://wiki.analog.com/https/wiki.analog.com/resources/fpga/docs/hdl/regmap>`_ register.
+The DAC data may be sourced from an internal data generator (DDS or pattern), from the external DDR via DMA or from the ADC. The source control selection can be made by updating the `REG_CHAN_CNTRL_7 (DAC Channel) <:doc:`/wiki-migration/resources/fpga/docs/hdl/regmap`)>`_ register.
 
 ADC Interface
 -------------

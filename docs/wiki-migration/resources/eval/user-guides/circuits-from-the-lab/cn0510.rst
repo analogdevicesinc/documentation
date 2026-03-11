@@ -101,20 +101,22 @@ Embedded Firmware Development
 
 -  Configure the default measurement parameters to your requirements.
 
-   -  Use the AD5940BATStructInit(void) function.\
+   -  Use the AD5940BATStructInit(void) function.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/serial-terminal.png
+   :align: center
+   :width: 300px
 
-   |image1|
+::
 
-      -  The data structure AppBATCfg_Type contains the configurable parameters for the application.
-      -  *Note, the hardware is optimized for frequencies above 1Hz. Measurements below this value are noisier due in part to the 1/f noise of the external amplifiers.*
-
--  Build and compile the example project into a .BIN or .HEX file that can be used to flash the embedded target.
+     * The data structure AppBATCfg_Type contains the configurable parameters for the application.
+       * //Note, the hardware is optimized for frequencies above 1Hz. Measurements below this value are noisier due in part to the 1/f noise of the external amplifiers.//
+   * Build and compile the example project into a .BIN or .HEX file that can be used to flash the embedded target.
 
 Serial Terminal Output
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The measurement results are sent to the PC via UART. To establish connection over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029 board. A serial terminal program is required to display the results. |image2| The following is the UART configuration:
+The measurement results are sent to the PC via UART. To establish connection over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029 board. A serial terminal program is required to display the results. |image1| The following is the UART configuration:
 
 ::
 
@@ -137,7 +139,7 @@ Battery Test and Results
 Below is an example of the Nyquist plot obtained for a Lithium Ion battery measured using the EVAL-AD5941BATZ.
 
 
-|image3|
+|image2|
 
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
@@ -165,9 +167,7 @@ Registration
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/serial-terminal.png
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/terminal-output.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/terminal-output.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/nyquist-plot.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/nyquist-plot.png
    :width: 400px

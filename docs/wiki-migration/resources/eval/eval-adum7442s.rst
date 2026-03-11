@@ -21,7 +21,7 @@ Evaluation Board Features
 Helpful Documents
 -----------------
 
--  :adi:`ADuM7442S Data Sheet </media/en/technical-documentation/data-sheets/ADUM7442S.pdf>`
+-  :adi:`ADuM7442S Data Sheet <media/en/technical-documentation/data-sheets/ADUM7442S.pdf>`
 -  :adi:`"Bits Per Second Make My Head Hertz" <analog-dialogue/raqs/raq-issue-101.html>`, *Analog Dialogue Article, Rarely Asked Questions - Issue 101, January 2014*
 -  :adi:`an-1109` Application Note, *Recommendations for Control of Radiated Emissions with iCoupler Devices*
 
@@ -40,9 +40,8 @@ The :adi:`EVAL-ADuM7442S <adum7442s>` (shown in Figure 1 below) supports the :ad
 
 The board follows best printed circuit board (PCB) design practices for 4-layer boards, including a full power and ground plane on each side of the isolation barrier. While the PCB does implement a distributed capacitive bypass (consisting of closely spaced power and ground planes on the inner layers) to minimize noise and EMI transmission, no other mitigation design features are included. In cases of high speed operation or when ultralow emissions are required, please refer to the :adi:`an-1109` Application Note for additional board layout techniques.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/eval-adum7442s.png
-   :align: center
-   :width: 450px
+
+|image1|
 
 .. container:: centeralign
 
@@ -67,9 +66,8 @@ SMA connectors are provided for each Data I/O Channel with positions available f
 
 P1 and P2 terminal blocks are provided for power connection although power can be wired directly to the PCB via the P9 and P10 through-hole connectors. Each through-hole pair provides a power ground pair with power on the Pin 1 hole. The pin spacing of each through-hole connector is 200 mils between centers. This matches the pin spacing required for Tektronix active scope probes. If a scope probe connection is desired, the header (Samtec Part # MTSW-202-12-G-S-730) shown in Figure 2 below can be soldered into the through-hole positions. Note that the signal pin must be trimmed to match the height requirement of the probe.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/tek_active_probe.png
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -120,3 +118,8 @@ Bypass On The PCB
 Several positions and structures are provided that result in optimum bypass of the evaluation board. 10uF 0805 capacitors are installed at the power connectors (with options for through-hole capacitors if desired) to compensate for long cables to the power supply. For isolator decoupling, .1uF 0603 capacitors are installed on the top side of the PCB at each V\ :sub:`DDXX` pin.
 
 A distributed capacitive bypass (consisting of tightly coupled power and ground planes on the inner layers) is implemented on the PCB to supplement the standard bypass capacitors. This helps to minimize noise and EMI transmission without using complex design features.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/eval-adum7442s.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/tek_active_probe.png
+   :width: 300px

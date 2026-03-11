@@ -38,7 +38,7 @@ Required Equipment
    -  CN0194 SDP Evaluation Software
 
       -  Supplied with CD
-      -  `CN0194_Evaluation_Software.zip <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_
+      -  `CN0194_Evaluation_Software.zip <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_
 
 Connecting the Hardware
 -----------------------
@@ -59,7 +59,7 @@ Installing the Software
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0194_Evaluation_Software.zip <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\** *(in 64-bit operational system)*, and all National Instruments products to **C:\\Program Files\\National Instruments\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\National Instruments\\** *(in 64-bit operational system)*
+   \ **NOTE:** It is recommended that you install the `CN0194_Evaluation_Software.zip <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0194/2.1.0/cn0194_evaluation_software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\** *(in 64-bit operational system)*, and all National Instruments products to **C:\\Program Files\\National Instruments\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\National Instruments\\** *(in 64-bit operational system)*
 
 
    |image2|

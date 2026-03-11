@@ -289,7 +289,9 @@ The SDP-H1 supplies 3.3 V to power the rails for the different components on the
    *Table 1. Default Power Supplies*
 
 
-   |image22|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/power_supplies.svg
+   :align: center
+   :width: 600px
 
 Each supply is decoupled at the PGIA + ADAQ4003 Data Acquisition Board entrance and device connection. A single, on-board ground plane minimizes the effect of the high frequency noise interference.
 
@@ -305,7 +307,7 @@ Take the following steps to set up the PGIA + ADAQ4003 Data Acquisition Board wh
 
 .. container:: centeralign
 
-   |image23| *Figure 22. External Supply Optional Connections*
+   |image22| *Figure 22. External Supply Optional Connections*
 
 
 The evaluation kit is now ready to use. Note that by default, the PGIA + ADAQ4003 Data Acquisition Board are set up to accept a differential input with a 22 V range.
@@ -328,7 +330,7 @@ Measure the true dynamic range of the board by connecting the two inputs to the 
 
 .. container:: centeralign
 
-   |image24| *Figure 23. Short the inputs to ground using SMA terminators to measure the Signal Chain Dynamic Range*
+   |image23| *Figure 23. Short the inputs to ground using SMA terminators to measure the Signal Chain Dynamic Range*
 
 
 For dynamic performance, a fast Fourier transform (FFT) test can be performed by applying a low distortion AC source. For low frequency testing, the audio precision source, such as the APx500 series, can be used directly with the evaluation boards. Different precision sources can be used with additional filtering.
@@ -343,7 +345,9 @@ Set the multiple link options correctly for the appropriate operating setup befo
    *Table 1. Jumper Details with Factory Default Setting*
 
 
-   |image25|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/link_config.svg
+   :align: center
+   :width: 600px
 
 Precision Medium Bandwidth Data Acquisition Solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -355,7 +359,7 @@ This Data Acquisition Solution has 4 gain options, as shown in Table 2. The gain
    *Table 2. System Gain and Input Range*
 
 
-   |image26|
+   |image24|
 
 DC Performance
 ^^^^^^^^^^^^^^
@@ -363,7 +367,7 @@ DC Performance
 Figure 24 shows the DNL vs. Gain Performance of the data acquisition solution.
 
 
-|image27|
+|image25|
 
 .. container:: centeralign
 
@@ -374,7 +378,7 @@ Figure 25 shows the INL vs. Gain Performance of the data acquisition solution.
 
 
 
-|image28|
+|image26|
 
 .. container:: centeralign
 
@@ -387,7 +391,7 @@ AC Performance
 Figure 26 shows the Dynamic Range vs. Gain Performance of the data acquisition solution.
 
 
-|image29|
+|image27|
 
 .. container:: centeralign
 
@@ -398,7 +402,7 @@ Figure 27 shows the Signal-to-Noise Ratio (SNR) vs. Frequency vs. Gain Performan
 
 
 
-|image30|
+|image28|
 
 .. container:: centeralign
 
@@ -409,7 +413,7 @@ Figure 28 shows the Total Harmonic Distortion (THD) vs. Frequency vs. Gain Perfo
 
 
 
-|image31|
+|image29|
 
 .. container:: centeralign
 
@@ -429,7 +433,7 @@ After installing the :adi:`ADSKPMB10-EV-FMCZ` Evaluation Software Installer (see
 
 .. container:: centeralign
 
-   |image32|\ *Figure 29. Launching the Software*
+   |image30|\ *Figure 29. Launching the Software*
 
 
 Establishing Hardware Connection
@@ -441,7 +445,7 @@ If the software does not detect a valid :adi:`ADSKPMB10-EV-FMCZ` evaluation boar
 
 .. container:: centeralign
 
-   |image33|\ *Figure 29. Connectivity Error Dialog Box*
+   |image31|\ *Figure 29. Connectivity Error Dialog Box*
 
 
 Navigating the Evaluation Software
@@ -449,7 +453,7 @@ Navigating the Evaluation Software
 
 .. container:: centeralign
 
-   |image34| *Figure 30. ADSKPMB10-EV-FMCZ Evaluation Software Front Panel (Configure Tab View)*
+   |image32| *Figure 30. ADSKPMB10-EV-FMCZ Evaluation Software Front Panel (Configure Tab View)*
 
 
 Front Panel Overview
@@ -538,7 +542,7 @@ Waveform Tab View
 
 .. container:: centeralign
 
-   |image35| *Figure 31. Waveform Tab View*
+   |image33| *Figure 31. Waveform Tab View*
 
 
 Figure 31 shows the **Waveform** tab view. The **Waveform** tab view shows the time domain representation of the conversion results from the connected device, as well as several analysis items. The **Waveform** tab view contains the following controls and indicators:
@@ -560,7 +564,7 @@ Histogram Tab View
 
 .. container:: centeralign
 
-   |image36| *Figure 32. Histogram Tab View*
+   |image34| *Figure 32. Histogram Tab View*
 
 
 Figure 32 shows the **Histogram** tab view. The **Histogram** tab is useful for performing statistical analysis of the device conversion results, especially when measuring DC signals. The histogram graph shows the distribution of the conversion results as well as various statistical analysis items. The **Histogram** tab contains the following controls and indicators:
@@ -584,7 +588,7 @@ FFT Tab View
 
 .. container:: centeralign
 
-   |image37| *Figure 33. FFT Tab View*
+   |image35| *Figure 33. FFT Tab View*
 
 
 Figure 33 shows the **FFT** tab view. The **FFT** tab displays the calculated FFT representation of the conversions results from the connected device and common AC performance metrics. The **FFT** tab contains the following controls and indicators:
@@ -619,7 +623,7 @@ Summary Tab View
 
 .. container:: centeralign
 
-   |image38| *Figure 34. Summary Tab View*
+   |image36| *Figure 34. Summary Tab View*
 
 
 Figure 34 shows the Summary tab view. The Summary tab simultaneously displays the waveform, histogram, and FFT graphs and analysis for the device conversion results on the screen. The Summary tab contains the following controls and indicators:
@@ -652,9 +656,9 @@ The tools described below allow users to control the different chart displays wi
 ========= ====================================================
 Symbol    Description
 ========= ====================================================
-|image39| This tool controls the cursor, if present.
-|image40| This tool zooms in and out of the data on the graph.
-|image41| This tool is used for panning.
+|image37| This tool controls the cursor, if present.
+|image38| This tool zooms in and out of the data on the graph.
+|image39| This tool is used for panning.
 ========= ====================================================
 
 Saving and Loading Sessions
@@ -768,32 +772,28 @@ Registration
 .. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/checking_that_the_evb_is_connected_to_the_pc_correctly.png
 .. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/option_fmc_side_vio.png
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/option_pmod_vcc.png
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/power_supplies.svg
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/external_supply.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/terminator.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/input_range.svg
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/external_supply.png
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/terminator.png
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/link_config.svg
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/05_dnl_across_gains.svg
    :width: 600px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/input_range.svg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/06_inl_across_gains.svg
    :width: 600px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/05_dnl_across_gains.svg
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/dynamic_range_last.svg
    :width: 600px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/06_inl_across_gains.svg
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/snr_vs_frequency_vs_gain.svg
    :width: 600px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/dynamic_range_last.svg
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/thd_vs_frequency_vs_gain.svg
    :width: 600px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/snr_vs_frequency_vs_gain.svg
-   :width: 600px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/thd_vs_frequency_vs_gain.svg
-   :width: 600px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/launching_the_software.png
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/connectivity_error.png
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/configure_tab_view.png
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/waveform_tab_view.png
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/histogram_tab_view.png
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fft_tab_view.png
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/summary_tab_view.png
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/gui_cursor.png
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/gui_pan.png
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/gui_zoom.png
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/launching_the_software.png
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/connectivity_error.png
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/configure_tab_view.png
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/waveform_tab_view.png
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/histogram_tab_view.png
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fft_tab_view.png
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/summary_tab_view.png
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/gui_cursor.png
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/gui_pan.png
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/gui_zoom.png
 .. |export_to_excel.png| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/export_to_excel.png

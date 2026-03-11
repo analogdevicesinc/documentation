@@ -41,7 +41,7 @@ More information
 ----------------
 
 -  :adi:`AD9833 Product Info <AD9833>` - pricing, samples, datasheet
--  :adi:`EVAL-AD9833SDZ evaluation board user guide </static/imported-files/user_guides/UG-272.pdf>`
+-  :adi:`EVAL-AD9833SDZ evaluation board user guide <static/imported-files/user_guides/UG-272.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

@@ -20,9 +20,8 @@ The ALICE Phase Analyzer virtual instrument display mode.
 
 The corresponding time domain scope display is shown first in figure 1 for comparison.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,9 @@ The corresponding time domain scope display is shown first in figure 1 for compa
 
 The Phase Analyzer uses the Time domain waveform data to calculate an FFT and extracts amplitude and phase information from that. The Time display must be actively running to display Phase information. The Phase display for the time waveforms in figure 1 is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,9 +49,8 @@ RC and RL Circuits
 
 In the circuit example shown in figure 2A, we have the CH-A output driving a series RL circuit (R=100 L=20 mH) and the CH-B output is driving a series RC circuit (R=120 C=2 uF). The CH-A voltage vector is used as the reference phase (set to 0). The sine wave amplitude for both channels is set to 1 Vrms (CH-A green vector, CH-B orange vector) and the current for channel CH-A in mArms is the blue vector. In the AWG controls the CH-B phase is set to 0 degrees relative to CH-A. The current for CH-B channel in mArms is the yellow vector. The two voltage vectors are both at 0 degrees and are plotted on top of each other.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig2a.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -61,9 +59,9 @@ In the circuit example shown in figure 2A, we have the CH-A output driving a ser
 
 In the first example the two SMU channels are used independently to measure two separate circuits. In the second example SMU Channel A is connected to the same RL circuit but Channel B is now put in the Hi-Z mode and connected to measure the voltage seen across just the inductor. We also select the B voltage as the reference phase in order to measure the relative phase between the inductor current (cyan vector) and the inductor voltage (orange vector).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig3.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -81,9 +79,8 @@ A very good use case example where the extra inputs is very helpful is looking a
 
 Below in figure 4 we show the M1k with the mux board connected to one of the LC transmission line boards at 5 different taps more or less evenly spaced along the line.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig4.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -92,9 +89,9 @@ Below in figure 4 we show the M1k with the mux board connected to one of the LC 
 
 The screen shot in figure 5 shows the results. The green reference phase (always Ch A) is the first tap. The other four are more or less evenly spaced along the line with the last input, the yellow vector, on the final end tap. The line was terminated with a resistor = line impedance (no reflections). Frequency of the input set to about 6 Khz which seems to be about where 1/4 the wavelength = the line length (90 degree phase shift at the final tap).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig5.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -103,9 +100,9 @@ The screen shot in figure 5 shows the results. The green reference phase (always
 
 It is also possible to plot the Channel A current vector at the same time which shows how "resistive" (or not) the input port of the line looks. In figure 6 the transmission line input current phase and amplitude with the end shorted is plotted along with the voltage amplitude and phase for the first 5 taps.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig6.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -120,9 +117,8 @@ One of the features in the Phase analyzer is the ability to save any or all of t
 
 To gather data for the entire transmission line, the four Mux inputs were moved along the taps in groups of four. The values for three conditions, terminated, open and shorted, were saved to files. It is then possible to plot the values from the saved files back onto the grid. Figure 7 plots the amplitude and phase values for all 21 taps of the terminated line.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig7.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -131,9 +127,9 @@ To gather data for the entire transmission line, the four Mux inputs were moved 
 
 The csv file was then loaded into Excel and after some minor editing a plot of the amplitude vs tap position was made as shown in figure 8.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig8.png
-   :align: center
-   :width: 600px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -142,18 +138,16 @@ The csv file was then loaded into Excel and after some minor editing a plot of t
 
 The same process was repeated for the open line case.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig9.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
    Figure 9, Phasor plot for all taps, open line.
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig10.png
-   :align: center
-   :width: 600px
+   |image11|
 
 .. container:: centeralign
 
@@ -162,18 +156,16 @@ The same process was repeated for the open line case.
 
 For the open line condition we can clearly see the standing wave pattern along the taps of the line with peaks at the beginning middle and end of the line as you would expect. The same process was repeated for the shorted line case.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig11.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
    Figure 11, Phasor plot for all taps, shorted line.
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig12.png
-   :align: center
-   :width: 600px
+   |image13|
 
 .. container:: centeralign
 
@@ -185,3 +177,30 @@ For the shorted line condition we can clearly see the different standing wave pa
 **For Further Reading:**
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig2a.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig3.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig4.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig5.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig6.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig7.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig8.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig9.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig10.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig11.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/phan-fig12.png
+   :width: 600px

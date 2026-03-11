@@ -66,8 +66,9 @@ Unfortunately - nothing on your host understands the what the IP address of the 
 
 You should see something like this when you goto -> System Preferences -> Network.
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/screen_shot_2017-01-12_at_2.36.55_pm.png
-   :width: 400px
+
+
+|image1|
 
 .. container:: box
 
@@ -146,3 +147,6 @@ if you have ``sshpass`` installed, you can use that so you dont need to type in 
    
 
 
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/drivers/screen_shot_2017-01-12_at_2.36.55_pm.png
+   :width: 400px

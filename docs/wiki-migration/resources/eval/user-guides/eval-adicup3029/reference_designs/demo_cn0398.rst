@@ -95,24 +95,29 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Make sure the **S2** switch on the board is set on position **3**\ (**WiFi**).\
+-  Make sure the **S2** switch on the board is set on position **3**\ (**WiFi**).
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
+   :align: center
+   :width: 700px
 
-|image2|
+-  Plug in the ESP8266 module in the **P1** connector.
 
--  Plug in the ESP8266 module in the **P1** connector.\
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_esp8266.png
+   :align: center
+   :width: 700px
 
 -  The ESP8266 Enable Pin needs to be tied directly to 3.3V or pulled high to the GPIO via a 10K ohm resistor. Because this is not currently on the Rev B or Rev C version of the ADICUP3029, you will need to solder a small fly wire from the 3.3V pin to the enable pin.
-   |image4|\ |image5|
+   |image2|\ |image3|
    \* Connect the **EVAL-CN0398-ARDZ** shield to the board.
 -  Connect the pH sensor to the **J1** connector of the EVAL-CN0398-ARDZ.
 -  Connect the RTD sensor to the **P1** connector of the EVAL-CN0398-ARDZ.\ :doc:`(see connection details) </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0398>`
 -  Connect the moisture sensor to the **P2** connector of the EVAL-CN0398-ARDZ.\ :doc:`(see connection details) </wiki-migration/resources/eval/user-guides/eval-adicup360/hardware/cn0398>`
--  Set the jumpers on the **EVAL-CN0398-ARDZ** to the position shown below.(**P8 SENSOR** to **3.3V**; **VIN SUPPLY** to **5V**; **P5** to **10 on DIG11**)\
+-  Set the jumpers on the **EVAL-CN0398-ARDZ** to the position shown below.(**P8 SENSOR** to **3.3V**; **VIN SUPPLY** to **5V**; **P5** to **10 on DIG11**)
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_jumper_positions.jpg
+   :align: center
+   :width: 700px
 
 -  Connect the board to the PC via Micro-USB to USB cable.
 
@@ -183,21 +188,25 @@ This example uses the `Eclipse Mosquitto <https://mosquitto.org>`_ which is an o
 -  Make sure these additional programs are installed before you continue
 -  Click next and finish the installation.
 
-   -  You may run into an issue that says "VCRUNTIME140.dll is missing. In order to proceed you must first have this installed.\
+   -  You may run into an issue that says "VCRUNTIME140.dll is missing. In order to proceed you must first have this installed.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_vcruntime_dll_missing.png
+   :align: center
+   :width: 600px
 
-   |image7|
-
-      -  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. //Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process. //
-      -  `How to fix VCRUNTIME140.DLL Missing Video <https://www.youtube.com/watch?v=-R3LuYNQf98>`_
-      -  `VCRUNTIME140.DLL Download <http://www.sts-tutorial.com/sites/downloadCenter.php?vcruntime140>`_
-      -  Re-Run the Mosquitto.exe file, inorder to complete the installation process.
+-  After looking around, I found a great website to download the DLL files from, as well as a great video that shows you have to fix the issue, and it did work for me. //Please note, that this solution is **NOT** affiliated with Analog Devices, and Analog Devices assumes no responsibility for any problems or damages occurred during this process. //
+-  `How to fix VCRUNTIME140.DLL Missing Video <https://www.youtube.com/watch?v=-R3LuYNQf98>`_
+-  `VCRUNTIME140.DLL Download <http://www.sts-tutorial.com/sites/downloadCenter.php?vcruntime140>`_
+-  Re-Run the Mosquitto.exe file, inorder to complete the installation process.
 
 Setting up Mosquitto to Receive MQTT Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  With Mosquitto and other software properly installed, you should be able to run mosquitto. Open a Command Prompt and navigate to the folder where mosquitto is installed. The default location is C:\\Program Files (x86)\\mosquitto. In this case it was installed in C:\\MosquittoMQTT.
--  Type mosquitto.exe -v to start the broker in verbose mode. The code may look like this: <code> C:\\MosquittoMQTT>mosquitto.exe -v </code> It should look like the following picture\ |image8|\
+-  Type mosquitto.exe -v to start the broker in verbose mode. The code may look like this: <code> C:\\MosquittoMQTT>mosquitto.exe -v </code> It should look like the following picture
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_open_mqtt_broker.png
+   :align: left
 
 .. important::
 
@@ -213,9 +222,10 @@ Setting up Mosquitto to Receive MQTT Data
    uint8_t aMQTTBrokerIp[] = "***";
    /* Port of the broker to publish to. */
    uint8_t aMQTTBrokerPort[] = "1883";``
--  Open a third Command Prompt and navigate to the folder where mosquitto is installed and type this command and hit the <ENTER> key:<code> C:\\MosquittoMQTT>mosquitto_sub.exe -t cn0398 </code> This command subscribes to the topic and will display the cn0398 data. It should look similar to the image below.\
+-  Open a third Command Prompt and navigate to the folder where mosquitto is installed and type this command and hit the <ENTER> key:<code> C:\\MosquittoMQTT>mosquitto_sub.exe -t cn0398 </code> This command subscribes to the topic and will display the cn0398 data. It should look similar to the image below.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_mqtt_subscriber.png
+   :align: left
 
 Outputting Data
 ---------------
@@ -224,11 +234,16 @@ Outputting Data
 -  If everything works fine you should see the calibration prompt on the **MQTT subscriber** to the *cn0398* topic. Use publisher commands to publish on the *comm_channel* to communicate with the application. To input commands with the publisher use a **Command Prompt** to navigate to **Mosquitto** install folder and input code that looks like this: <code> C:\\MosquittoMQTT>mosquitto_pub.exe -m y -t comm_channel </code>
 -  A calibration sequence should look like this:
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_calibration.png
+   :align: center
 
--  After the calibration sequence the program will start to publish data that can be seen with a **MQTT subscriber** to the *cn0398* topic. |image11|\
+-  After the calibration sequence the program will start to publish data that can be seen with a **MQTT subscriber** to the *cn0398* topic.
 
-|image12|
+
+|image4|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_cces_good_console_1.png
+   :align: center
 
 Obtaining the Software
 ----------------------
@@ -250,7 +265,7 @@ The software for the **ADuCM3029_demo_cn0398** can be found here:
    Prebuilt CN0398 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0398.Hex <releases/download/Latest/ADuCM3029_demo_cn0398.hex>`
+   -  `AduCM3029_demo_cn0398.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0398.hex>`_
    
    Complete CN0398 Source Files
    
@@ -275,20 +290,8 @@ For more detailed instructions on importing this application/demo example into t
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_demo_shield_front_sensors_attached_adicup3029.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_switch.png
-   :width: 700px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adicup3029_esp8266.png
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_back.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_esp8266_hw_mod_front.png
    :width: 385px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_jumper_positions.jpg
-   :width: 700px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/reference_design_vcruntime_dll_missing.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_open_mqtt_broker.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_mqtt_subscriber.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_calibration.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_data.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_cces_good_console_1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0398_data.png

@@ -27,9 +27,8 @@ Directions:
 
 Build the simple half wave rectifier circuit shown in figure 1 on your solder-less breadboard. An active gate drive circuit, such as shown in the figure, uses an op-amp (AD8541) to sense when the AC input waveform, from the output of the AWG, is more positive than the output voltage, V\ :sub:`OUT`, and turn on the PMOS transistor, M\ :sub:`1`. The circuit provides active rectification for AC voltages as low as the minimum power supply voltage for the op-amp ( 2.7 volts for the AD8541 ) or the gate threshold voltage of the PMOS device ( typically 1.5 V for the ZVP2110A ). At lower input voltages, the MOSFET's back-gate to drain diode takes over as an ordinary diode rectifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/aar_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -61,8 +60,8 @@ Hardware Setup:
 
 AWG1 is connected as V\ :sub:`IN` and should be configured as a sine wave with an amplitude greater than 6 volts peak-to-peak, zero offset and a frequency of 100 Hz. The scope inputs are used to monitor various points around the circuit such as V\ :sub:`IN`, V\ :sub:`OUT`, the voltage across R\ :sub:`S` and thus the current through R\ :sub:`S`, and the gate of M\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/active_rectifiers_hardware_setup.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
@@ -77,14 +76,14 @@ Start by using the large value 220 uF capacitor for C\ :sub:`1`. The 220 uF and 
 Use the two scope inputs to monitor the input AC waveform at V\ :sub:`IN` and the DC output wave form at V\ :sub:`OUT`. VOUT should be very close to the peak value of V\ :sub:`IN`. Now replace the large 220 uF capacitor with the much smaller 4.7 uF capacitor. Observe the change in the waveform seen at V\ :sub:`OUT`. When is V\ :sub:`OUT` closest in value to V\ :sub:`IN` and compare that interval of the AC input cycle with the voltage at the gate of transistor M\ :sub:`1`.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
    Figure 3 Vout and Vin at 220uF capacitor
 
 
-   |image2|
+   |image4|
 
 .. container:: centeralign
 
@@ -124,5 +123,8 @@ http://en.wikipedia.org/wiki/Active_rectification
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/active_rectifiers_scopeshot_220uf.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/active_rectifiers_scopeshot_4.7uf.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/aar_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/active_rectifiers_hardware_setup.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/active_rectifiers_scopeshot_220uf.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/active_rectifiers_scopeshot_4.7uf.png

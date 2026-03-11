@@ -172,8 +172,8 @@ Testcase M8, L4
 
 The 4 MxFE Rx and Tx links are connected to a single transceiver block having 16 Rx and 16 Tx lanes in total. The 4 Rx links merge into a single receive link layer and a single transport layer having a compatible configuration to L=4;M=8;F=4;S=1 Similarly to Rx, the single transmit link layer and transport layer handles the 4 Tx links.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad_quadmxfe1_ebz/ad9081_quad_block_diagram_1.png
-   :align: center
+
+|image1|
 
 .. important::
 
@@ -213,9 +213,8 @@ The 4 MxFE Rx and Tx links are connected to a single transceiver block having 8 
 
 The number of lanes on Rx is reduces to half in order to keep the same lane rate as the Tx link (which has double the channels count of Rx).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad_quadmxfe1_ebz/ad9081_quad_204c.png
-   :alt: MxFE 204C
-   :align: center
+
+|MxFE 204C|
 
 .. important::
 
@@ -256,7 +255,7 @@ Clock sources
 The clock sources are depicted on the below diagrams:
 
 
-|image1|
+|image2|
 
 Bandwidth considerations
 ------------------------
@@ -334,4 +333,6 @@ Support
 
 Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad_quadmxfe1_ebz/ad9081_quad_vcu118_clocking.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad_quadmxfe1_ebz/ad9081_quad_block_diagram_1.png
+.. |MxFE 204C| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad_quadmxfe1_ebz/ad9081_quad_204c.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad_quadmxfe1_ebz/ad9081_quad_vcu118_clocking.png

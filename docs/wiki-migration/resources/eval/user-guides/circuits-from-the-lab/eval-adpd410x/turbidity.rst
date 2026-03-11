@@ -69,8 +69,8 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
    
    Pre-built hex files can be found here:
    
-   -  :git-EVAL-ADICUP3029:`EVAL-ADPD4100-ARDZ .Hex File (ADuCM3029_demo_adpd410x_spi_waterquality.hex) <releases/download/Latest/ADuCM3029_demo_adpd410x_spi_waterquality.hex>`
-   -  :git-EVAL-ADICUP3029:`EVAL-ADPD4101-ARDZ .Hex File (ADuCM3029_demo_adpd410x_i2c_waterquality.hex) <releases/download/Latest/ADuCM3029_demo_adpd410x_i2c_waterquality.hex>`
+   -  `EVAL-ADPD4100-ARDZ .Hex File (ADuCM3029_demo_adpd410x_spi_waterquality.hex) <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adpd410x_spi_waterquality.hex>`_
+   -  `EVAL-ADPD4101-ARDZ .Hex File (ADuCM3029_demo_adpd410x_i2c_waterquality.hex) <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adpd410x_i2c_waterquality.hex>`_
    
    The latest source code can be found here:
    

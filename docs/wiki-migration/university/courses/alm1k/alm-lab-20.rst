@@ -21,9 +21,8 @@ Background:
 
 A CMOS inverter can also be viewed as a high gain amplifier. It consists of one PMOS device, M\ :sub:`1` and one NMOS device M\ :sub:`2`. Generally the CMOS fabrication process is designed such that the threshold voltage, V\ :sub:`TH`, of the NMOS and PMOS devices are roughly equal i.e. complementary. The designer of the inverter then adjusts the width to length ratio, W/L, of the NMOS and PMOS devices such that their respective transconductance is also equal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,18 +39,15 @@ Directions:
 
 First build the simple example shown figure 2 to test the input to output transfer function of the simple CMOS amplifier. The green boxes indicate connections to the connector on ALM1000. Connect +5V power supply to V\ :sub:`CC` (pin 14) and ground to GND (pin 7). Connect the output of the channel A voltage generator to one of the inverter inputs (pin 1) and connect the inverter output (pin 2) to channel B scope input CB-H in Hi-Z mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2 amplifier transfer function
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f3.png
-   :align: center
-   :width: 500px
+   |image3|
 
 .. container:: centeralign
 
@@ -73,9 +69,8 @@ Measure the DC input offset where the gain in the highest. Measure the slope of 
 
 On your solder-less breadboard construct the amplifier circuit shown in figure 4 below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -104,9 +99,8 @@ What is the gain from the input source, CV-A, to the output CV-B seen at the inv
 
 On your solder-less breadboard construct the amplifier circuit shown in figure 5 below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -135,9 +129,8 @@ Appendix: Making an inverter with the CD4007 transistor array
 
 Below is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 420px
+
+|image6|
 
 .. container:: centeralign
 
@@ -159,3 +152,16 @@ These three inverters can be used to construct the three stage amplifier in sect
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 420px

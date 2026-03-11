@@ -33,4 +33,4 @@ Below are error graphs for the 3- (below top) and 4-iteration (below bottom) alg
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic3.png
    :alt: divisionpic3.png
 
-.. |divisionpic1.png| image:: https://wiki.analog.com/_media/divisionpic1.png
+.. |divisionpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic1.png

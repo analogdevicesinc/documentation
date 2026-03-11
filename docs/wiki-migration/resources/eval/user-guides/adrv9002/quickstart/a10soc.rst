@@ -17,7 +17,7 @@ Instructions on how to build the Zynq Linux kernel and devicetrees from source c
 Required Software
 -----------------
 
--  SD Card 16GB image using the instructions here: :doc:`SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. Use 2020_r1 or later release. (Pre-released files, built using Vivado 2020.1 can be downloaded from `here <https://wiki.analog.com/https/swdownloads.analog.com/cse/prebuilt/socfpga_arria10_socdk_adrv9002_rx2tx2.zip>`_)
+-  SD Card 16GB image using the instructions here: :doc:`SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. Use 2020_r1 or later release. (Pre-released files, built using Vivado 2020.1 can be downloaded from `here <https://swdownloads.analog.com/cse/prebuilt/socfpga_arria10_socdk_adrv9002_rx2tx2.zip>`_)
 -   Copy next boot files from ``socfpga_arria10_socdk_adrv9002`` directory directly on SD Card ``BOOT`` partition :
 
    -  ``socfpga_arria10_socdk.rbf``
@@ -93,22 +93,26 @@ Testing
    
    On an ADRV9002 Card, there is a red LED close to the FMC connector. The role of this LED is to indicate if VADJ voltage exceeded 2.0V level. If that was the case this LED will be ON. If this LED does not turn off after few seconds after boot, then there is an issue and while the board might still operate this is exceeding the recommended level for VADJ, decreasing board lifetime and can lead to permanent damage of the IC in the worst case.
 
-   
-   |image1|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_a10soc_vadj_jumper.png
+   :align: center
 
 -  Connect the :adi:`ADRV9002NP/W1/PCBZ <EVAL-ADRV9002>` or :adi:`ADRV9002NP/W2/PCBZ <EVAL-ADRV9002>` FMC board to the FMCA carrier socket -.
 -  On the FMC card set switch to select clock source between:
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_vadj_led.png
+   :align: right
+   :width: 200px
 
-   -  an on-board 38.4MHz VCTCXO (default)
-   -  external (thru J501) 10MHz to 1000MHz / +13dBm
+::
 
--  Connect USB UART (Mini USB) to your host PC.
--  Insert SD card into socket.
--  Configure\ `Arria10 SoC Development Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_ for SD Card booting (Set the Jumpers and Switches accordingly).
--  Turn on the power switch on the FPGA board.
--  Observe kernel and serial console messages on your terminal.
+     * an on-board 38.4MHz VCTCXO (default)
+     * external (thru J501) 10MHz to 1000MHz / +13dBm
+   * Connect USB UART (Mini USB) to your host PC.
+   * Insert SD card into socket.
+   * Configure`Arria10 SoC Development Kit <https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html>`_ for SD Card booting (Set the Jumpers and Switches accordingly).
+   * Turn on the power switch on the FPGA board.
+   * Observe kernel and serial console messages on your terminal.
 
 Messages
 --------
@@ -566,7 +570,7 @@ For more on device modes, check :doc:`device modes. </wiki-migration/resources/t
 Pyadi-iio Example
 -----------------
 
-Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio>`__. An example of using adrv9002 can be checked `here <https::`Pyadi-iio </github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adrv9002_example.py>`
+Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio:`Pyadi-iio <pyadi-iio>`. An example of using adrv9002 can be checked :git-pyadi-iio:`here <examples/adrv9002_example.py>`
 
 IIO Oscilloscope Remote
 -----------------------
@@ -584,7 +588,7 @@ Once the application is launched goto Settings -> Connect and enter the IP addre
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
 
-   |image3|
+   |image1|
 
 More Information
 ----------------
@@ -646,8 +650,5 @@ Software resources
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_a10soc_vadj_jumper.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/adrv9002_vadj_led.png
-   :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px

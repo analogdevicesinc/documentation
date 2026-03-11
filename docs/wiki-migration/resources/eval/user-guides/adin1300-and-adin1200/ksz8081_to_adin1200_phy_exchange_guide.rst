@@ -155,10 +155,12 @@ PHY Exchange Guide, KSZ8081RNB/MNX to ADIN1200 10/100Mb
    
    .. container:: half column
 
-         
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/ksz_table8.png
-            :width: 600px
-         
+
+   
+      ..
+
+   |image6|
+
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/ksz_table9.png
             :width: 600px
          
@@ -168,7 +170,7 @@ PHY Exchange Guide, KSZ8081RNB/MNX to ADIN1200 10/100Mb
          Selection of Auto-MDIX for the ADIN1200 is done using one pin, (MDIX_MODE) with 4-level strapping. In the KSZ8081 Auto-MDI/MDI-X is enabled by default and can be disabled/configured with an MDIO write.
 
          
-         |image6|
+         |image7|
 
          **MAC Interface Selection**
 
@@ -258,7 +260,7 @@ Side by Side Package/Pinout Comparison
 The following is a side-by-side comparison of the package and pinouts, showing the position of the corresponding functional pins on each device.
 
 
-|image7|
+|image8|
 
 --------------
 
@@ -300,6 +302,8 @@ The following list summarizes an RMII auto negotiate, 10 Mbps or 100 Mbps full d
    :width: 600px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/ksz_table7.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/ksz_table10.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/ksz_table8.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/pinoutcomparison.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/ksz_table10.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/pinoutcomparison.png

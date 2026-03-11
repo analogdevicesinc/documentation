@@ -16,9 +16,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1 below. The output of the AWG1 drives one end of resistor R\ :sub:`1`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as in previous zero gain amplifier section. Since the V\ :sub:`BE` of Q\ :sub:`2` is always smaller than the V\ :sub:`BE` of Q\ :sub:`1`, you should, if possible, select Q\ :sub:`1` and Q\ :sub:`2` from your inventory of devices such that (at the same collector current) Q\ :sub:`2`'s V\ :sub:`BE` is less than Q\ :sub:`1`'s V\ :sub:`BE`. The base of transistor Q\ :sub:`2` is connected to the zero gain output at the collector of Q\ :sub:`1`. R\ :sub:`3`, connected between the Vp supply and the collector of Q\ :sub:`2`, is used along with the 2+ (Single Ended) scope input to measure the collector current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a8_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -44,7 +43,7 @@ The zero gain amplifier can be used to create a stabilized current source. Becau
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -54,7 +53,7 @@ The zero gain amplifier can be used to create a stabilized current source. Becau
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -62,9 +61,7 @@ The zero gain amplifier can be used to create a stabilized current source. Becau
    Figure 4 Q\ :sub:`2` collector current vs. W1 voltage Scopy plot
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a8_f2.png
-   :align: center
-   :width: 500px
+   |image4|
 
 .. container:: centeralign
 
@@ -101,7 +98,11 @@ The output current has a narrow peak. How could multiple copies of the peaking c
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/bjt_stabilized_cs-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a8_f1.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/bjt_stabilized_cs-wav2.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/bjt_stabilized_cs-wav.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/bjt_stabilized_cs-wav2.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a8_f2.png
    :width: 500px

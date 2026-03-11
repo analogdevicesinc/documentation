@@ -24,37 +24,53 @@ Installing the AD7124 Eval+ Software
 -  Download the Eval+ Software from the link given above.
 -  Once the software has been downloaded, extract the downloaded files to a convenient location.
 -  Navigate to these files and go to the **Volume** directory (AD7124 Eval+ Installer -> Volume).
--  Run **setup.exe**, as shown below.\
+-  Run **setup.exe**, as shown below.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_1.png
+   :align: center
+   :width: 800px
 
 -  In the 'Destination Directory' windows, check that both the 'Directory for AD7124 Eval+' and 'Directory for National Instruments products' are both set to the Program Files directory (or a preferred directory of your choosing) and click 'Next >>'.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/dir_screen.jpg
+   :align: center
+   :width: 400px
 
 -  You will then be prompted to accept ADI's license agreement. Read the agreement and check the 'I accept' box. Hit 'Next >>' to continue.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/license_agree.jpg
+   :align: center
+   :width: 400px
 
 -  Next you will have to read and agree to the National Instruments license agreement. Check the 'I accept' box. Hit 'Next >>' box to continue.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/ni_license_agree.jpg
+   :align: center
+   :width: 400px
 
 -  In the next pop-up screen you will be asked to disable Windows fast start. National Instruments recommends disabling fast start as it can cause hardware issues. For more information click the link provided in the pop-up, or alternatively `here <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P9ErSAK&l=en-IE>`_. In this example, it has been disabled. Hit 'Next >>' box to continue.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/fast_start_up.jpg
+   :align: center
+   :width: 400px
 
 -  The next screen you will see is a summary table of what is going to be installed on your machine. Verify that this is indeed the AD7124 Eval software and click 'Next >>'.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/start.jpg
+   :align: center
+   :width: 400px
 
 -  The software will then begin installing.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install.jpg
+   :align: center
+   :width: 400px
 
 -  Once the installation has completed, the following screen will appear. Click 'Next >>'. The software is now installed.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_fin.jpg
+   :align: center
+   :width: 400px
 
 Once the software is set up an installed the tutorials bellow describe how to get the AD7124 Evaluation board set up with various sensors.
 
@@ -67,7 +83,7 @@ Configuration Tab
 The Configuration tab (Label 1) shows a block diagram of the AD7124-8. It allows the user to set up the ADC, reset the ADC, read the diagnostics to view errors present, as well as configure the device for different demo modes. The Configuration tab is shown in more detail below, along with explanations of the features on this tab.
 
 
-|image9|
+|image1|
 
 Board Selection (2)
 ~~~~~~~~~~~~~~~~~~~
@@ -290,7 +306,9 @@ This page provides a step by step guide to launching and using ADI's new Virtual
 -  Navigate to the Virtual Eval tool by clicking this link: http://beta-tools.analog.com/virtualeval/ or alternatively, by going to the AD7124 homepage on analog.com and finding the link there.
 -  Select the AD7124-8 by going to 'Precision ADC < 10MSPS' and finding the part there.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/v_eval_start.png
+   :align: center
+   :width: 500px
 
 -  Now you are ready to start using the tool.
 
@@ -300,29 +318,11 @@ Tutorial
 There is an online video walkthrough on using the tool in conjunction with the AD7124-4, the 8 channel version of the AD7124-. This part works the same way as the AD7124-8, therefore the tutorial is suitable for both parts. Once logged into the Virtual Eval Tool and selecting the AD7124-8, navigate to the 'Help' tab. Here you will find the walkthrough video.
 
 
-|image11|
+|image2|
 
 :doc:`Continue to Hardware Guide </wiki-migration/resources/eval/user-guides/ad7124-x/hardware_guide>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_1.png
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/dir_screen.jpg
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/license_agree.jpg
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/ni_license_agree.jpg
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/fast_start_up.jpg
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/start.jpg
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install.jpg
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_fin.jpg
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/eval_plus_home_labels.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/eval_plus_home_labels.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/v_eval_start.png
-   :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/v_eval_vid.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/v_eval_vid.png
    :width: 500px

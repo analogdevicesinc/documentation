@@ -61,16 +61,15 @@ Hardware Setup
 
 Build the circuit shown in figure 2, preferably using your solder-less breadboard. The loudspeaker can be in an enclosure or not.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/alz_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2: Speaker measurement set up
 
 
-   |image2|
+   |image3|
 
 .. container:: centeralign
 
@@ -85,7 +84,7 @@ In Scopy, start the Signal generator and generate a sine waveform with 8V peak-t
 Start the Voltmeter and set both channels to AC (20Hz-800Hz). Using the Voltmeter tool we can calculate the speaker impedance Z at a single frequency by dividing the RMS voltage across the speaker (channel 1 RMS voltage) by the RMS current through the speaker, (channel 2 RMS current). The RMS current can be computed as the RMS voltage on channel 2 divided to the parallel equivalent resistance of R1 and R2. Try setting the signal generator to a few different frequencies and see how the voltage across the speaker and the calculated Z changes.
 
 
-|image3|
+|image4|
 
 .. container:: centeralign
 
@@ -94,9 +93,9 @@ Start the Voltmeter and set both channels to AC (20Hz-800Hz). Using the Voltmete
 
 You can plot the calculated impedance Z vs Frequency. The frequency of the signal generator is set in steps of 100 Hz and for each frequency you compute Z. The speaker impedance is small, approximately equal to the DC resistance in the linear region but is much higher at the resonance frequency F\ :sub:`S`. An example plot is shown in Figure 5. Your speaker will probably look different than this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/plot_of_calculated_impedance.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -112,7 +111,7 @@ Hardware Setup
 In order to plot the frequency response make the connections as shown in Figure 6.
 
 
-|image4|
+|image6|
 
 .. container:: centeralign
 
@@ -124,9 +123,8 @@ Procedure
 
 In the Network analyzer tool you will do a logarithmic sweep. Set the start frequency to 100 Hz and the stop frequency to 1 kHz. Set the phase to vary from -30 to 30 degrees and the magnitude from 0 to 10 dB.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/freq-resp_100ohm.png
-   :align: center
-   :width: 900px
+
+|image7|
 
 .. container:: centeralign
 
@@ -160,9 +158,15 @@ http://en.wikipedia.org/wiki/Electrical_characteristics_of_dynamic_loudspeakers
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_model.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_bb_voltage_meas.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/alz_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_bb_voltage_meas.png
    :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/voltmeter_8vpp_100ohm.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/voltmeter_8vpp_100ohm.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_bb_freq_resp.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/plot_of_calculated_impedance.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/loudspeaker_bb_freq_resp.png
+   :width: 900px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/freq-resp_100ohm.png
    :width: 900px

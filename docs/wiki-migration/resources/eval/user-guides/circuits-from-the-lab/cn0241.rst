@@ -24,7 +24,7 @@ Required Equipment
 
 -  :adi:`EVAL-CN0241-SDPZ Evaluation Board <CN0241>`
 -  :adi:`EVAL-SDP-CB1Z Controller Board (SDP-B Board) <EVAL-SDP-CB1Z>`
--  `CN0241 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_
+-  `CN0241 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_
 -  DC power supply capable of driving 6 V/1 A
 -  DC power supply capable of driving 5 V/2.5 A
 -  2 Ω/12 W load resistor
@@ -55,11 +55,11 @@ Block Assignments
 Installing the Evaluation Software
 ----------------------------------
 
--  Download and extract the file `CN0241 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_ and open **setup.exe**
+-  Download and extract the file `CN0241 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_ and open **setup.exe**
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0241 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0241\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ **NOTE:** It is recommended that you install the `CN0241 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0241\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
    |image1|

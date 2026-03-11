@@ -84,18 +84,25 @@ Software Control and Indicator Descriptions
    :align: center
    :width: 600px
 
+
+
+-**LDAC COntrol**
+-  Always check the box before starting any test
+-**Write to DAC Button**
+-  Enter the digital input code in “DIN”
+-  When “WRITE TO DAC” button is clicked, the digital input code is sent to the DAC
+-**Output Indicator**
+-  The LED string indicates the digital input code being written to the DAC (from bit 15 to bit 0)
+-**System Status String / LED Indicator**
+-  The string indicator displays a message to the user detailing the current state of the software
+-  The LED indicator displays the current state of the software in the form of an LED. There are three status LED colors\\ |resources-eval-user-guides-circuits-from-the-lab-black_led_button.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-green_led_button.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-red_led_button.png|Error\\  \\
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software2.png
+   :align: center
+   :width: 600px
+
 ::
 
-   -**LDAC COntrol**
-   * Always check the box before starting any test
-   -**Write to DAC Button**
-   * Enter the digital input code in “DIN”
-   * When “WRITE TO DAC” button is clicked, the digital input code is sent to the DAC
-   -**Output Indicator**
-   * The LED string indicates the digital input code being written to the DAC (from bit 15 to bit 0)
-   -**System Status String / LED Indicator**
-   * The string indicator displays a message to the user detailing the current state of the software
-   * The LED indicator displays the current state of the software in the form of an LED. There are three status LED colors\\ {{:resources:eval:user-guides:circuits-from-the-lab:black_led_button.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:green_led_button.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:red_led_button.png?nolink&|}}Error\\  \\ {{ :resources:eval:user-guides:circuits-from-the-lab:software2.png?nolink&600 |}}
    -**Code Step Control**
    * Enter the code step between each digital input to be written to the DAC
    -**Agilent 3458A GPIB Address Control**
@@ -106,9 +113,23 @@ Software Control and Indicator Descriptions
    -**File Directory Control**
    * This allows you to enter the file directory and name to save the INL/DNL measurement data
    -**INL / DNL measurement graphs**
-   * These graphs display the INL and DNL vs. input digital code when data collection is done\\ \\  {{ :resources:eval:user-guides:circuits-from-the-lab:software3.png?nolink&600 |}}
+   * These graphs display the INL and DNL vs. input digital code when data collection is done\\ \\
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software3.png
+   :align: center
+   :width: 600px
+
+::
+
    -**Transfer Function Graph**
-   * This graph shows the transfer function of the DAC output voltage vs. input digital code\\ \\  {{ :resources:eval:user-guides:circuits-from-the-lab:software4.png?nolink&600 |}}
+   * This graph shows the transfer function of the DAC output voltage vs. input digital code\\ \\
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software4.png
+   :align: center
+   :width: 600px
+
+::
+
    -**SDP Board Firmware Information**
    * This gives you the up to date information on the SDP board firmware
 
@@ -157,3 +178,7 @@ Registration
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install2.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install3.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0348-install4.png
+
+.. |resources-eval-user-guides-circuits-from-the-lab-black_led_button.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/black_led_button.png
+.. |resources-eval-user-guides-circuits-from-the-lab-green_led_button.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/green_led_button.png
+.. |resources-eval-user-guides-circuits-from-the-lab-red_led_button.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/red_led_button.png

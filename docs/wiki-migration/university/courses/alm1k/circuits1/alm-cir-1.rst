@@ -20,9 +20,8 @@ Background:
 
 Loop 1: -Vs +V\ :sub:`1` +V\ :sub:`2` +V\ :sub:`5` = 0 Loop 2: -V\ :sub:`2` +V\ :sub:`3` +V\ :sub:`4` = 0
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab1-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -82,3 +81,6 @@ DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools
 :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab1-fig1.png
+   :width: 500px

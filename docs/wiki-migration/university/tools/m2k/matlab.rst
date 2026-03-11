@@ -225,4 +225,4 @@ Support
 
 For support questions please post them on EngineerZone under the :ez:`Virtual Classroom Forum <adieducation/university-program>`.
 
-If you find any bugs please report them on the :git-libm2k:`libm2k issues tracker on GitHub <issues>`.
+If you find any bugs please report them on the `libm2k issues tracker on GitHub <https://github.com/analogdevicesinc/libm2k/issues>`_.

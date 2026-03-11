@@ -15,8 +15,8 @@ The four possible discovery methods are
 
 **Advanced:** Even before a node is initialized the host tries to discover the next node. The time for the next node to be discovered is used to initialize the current node. Synchronous data exchange can start as soon as a main and sub node 0 is initialized (Not supported for AD243x main).
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties.png
-   :align: right
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,7 +43,7 @@ The Line Fault settings allow user to enable fault diagnostic feature of the sof
 -  **Tracing:** Logs key information and network events during the stack execution to a text file. User can configure the required ‘Level’ and ‘Domain’ for tracing.
 -  **Sequence Chart:** Sequence Chart captures network transactions in the form of a rich graphical sequence diagram. The sequence chart enables easy understanding of the discovery flow, fault analysis and various other interactions within the system thus enabling quick debugging.
 
-The Refresh |image1| button checks and updates the discovery status of connected A2B Nodes upon a click.
+The Refresh |image2| button checks and updates the discovery status of connected A2B Nodes upon a click.
 
 .. note::
 
@@ -58,8 +58,8 @@ Trace
 
 The Trace option in the Network properties window show in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties>` enables user to log various transactions and network events into a .txt file. Upon enabling this feature the A2B stack running inside SigmaStudio+ captures all transactions as per the ‘Level’ and ‘Domain’ set. :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties>` shows a sample Trace file generated for selected Level (Debug, Info, Trace3) and Domain (Plugin, Message, I2C). The Trace file gets saved inside the ‘Settings’ folder corresponding to the A2B schematic project file location.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_trace_file.png
-   :align: center
+
+|image3|
 
 .. container:: centeralign
 
@@ -94,8 +94,9 @@ Following prerequisites shall be ensured to generate the sequence chart upon dis
 
 If the prerequisites are met and sequence chart option is enabled in the Network properties tab, then upon successful discovery of A2B network, the Sequence chart will be generated which can be viewed by clicking on the View button. A Sequence chart generated for a 3 node sample demo schematic is shown in Figure below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sequence_chart.png
-   :align: center
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -104,8 +105,9 @@ If the prerequisites are met and sequence chart option is enabled in the Network
 
 If the prerequisites are not met, then a pop up window will display the error message as shown in Figure below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/error_message_sequence_chart_prerequisites_not_met.png
-   :align: center
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -118,7 +120,7 @@ Network Analysis and Debug
 SigmaStudio+ allows user to estimate important network parameters like Bandwidth and power consumption. It also allows user to monitor real-time bit errors in the system using pseudo or actual bit stream. This option can be accessed using the Right-Click menu of the Main Transceiver node as shown in below figure. Note that calculate… option is accessible only if the A2B schematic is ‘Link’ed after the last schematic modification. Save schematic and click on the ‘Link’ icon if the option is disabled.
 
 
-|image2|
+|image6|
 
 .. container:: Centeralign
 
@@ -137,7 +139,8 @@ The following steps are involved in Bandwidth calculation
 -  Enter required details (Cable delay and Sampling Rate parameters) for calculation. Other values required for Bandwidth calculation like Slot format, data width and number of upstream /downstream slots etc. will be picked up from the device properties window settings.
 -  Press Run button to get the bandwidth information as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties>`
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bwpage.png
+   :align: center
 
 .. container:: centeralign
 
@@ -173,7 +176,8 @@ The following steps are involved in Power calculation
 -  Create an A2B schematic (or open an existing A2B Schematic project) in SigmaStudio+.
 -  Set power source and cable length in the Node ‘Device Properties’ window as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties>`
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/power_source.png
+   :align: center
 
 .. container:: centeralign
 
@@ -184,7 +188,8 @@ The following steps are involved in Power calculation
 -  Provide values for power calculation parameters of each A2B node in the system. Select the desired power calculation Mode.
 -  Press Run button to get the power consumption information as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties>`
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/screenshot_2024-10-08_145916.png
+   :align: center
 
 .. container:: centeralign
 
@@ -225,8 +230,8 @@ The following steps are involved in Bandwidth calculation
 
 -  Press Run button to get the bit error information as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties>`.
 
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bert_calculation.png
+   :align: center
 
 .. container:: centeralign
 
@@ -237,10 +242,10 @@ The following steps are involved in Bandwidth calculation
 -  Press Save button to store the results in a text file.
 -  Optionally, Reset button can be pressed to clear the results and restart the calculation.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/refresh.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/networkproperties.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/refresh.png
    :width: 20px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/bndcal.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bwpage.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/power_source.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/screenshot_2024-10-08_145916.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bert_calculation.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_trace_file.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sequence_chart.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/error_message_sequence_chart_prerequisites_not_met.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/bndcal.png

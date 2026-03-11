@@ -18,7 +18,9 @@ ADZS2433-MINI
 -  AD2433 A2B transceiver
 -  512K Self-Boot Memory (EEPROM)
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/adzs-ad2433mini.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -80,8 +82,8 @@ Connections
 
 To run the sample demo, the following setup connections are to be made.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_using_pc_host_.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -117,14 +119,13 @@ Audio In/out for ADSP-21569 and PC as a host – multi-main
 -  Connect an audio source (e.g., output from an iPod) to ‘Audio Line- in’ port, shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433-with-som-carrier-ez-kit>`\ (Audio Input).
 -  Connect separate audio sink such as headphones to line out as shown in the :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433-with-som-carrier-ez-kit>`.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ad2433_multimain.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    \ **Figure:** Sample audio setup
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/adzs-ad2433mini.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ad2433_multimain.png
-   :width: 800px
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_using_pc_host_.png

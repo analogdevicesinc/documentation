@@ -78,15 +78,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD463x Driver. <drivers/adc/ad463x/ad463x.c>`
+   -  :git-no-OS:`Header file of AD463x Driver. <drivers/adc/ad463x/ad463x.h>`
    
-   |Implementation of AD463x Driver.|
 
-   -
-
-   |Header file of AD463x Driver.|
-
-.. |Implementation of AD463x Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad463x/ad463x`.c
-.. |Header file of AD463x Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad463x/ad463x`.h

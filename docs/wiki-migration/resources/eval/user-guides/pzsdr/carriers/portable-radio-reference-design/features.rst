@@ -310,28 +310,24 @@ Application Menu
 
       -  A brief synopsis of the real time battery conditions.
 
-         -
+         -  
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable_radio_concept/charge_menu.jpg
+   :width: 300px
 
 
-         |image3|
 
-   -  IMU
+-  IMU
+  * This menu displays the temperature and acceleration measurements performed by the IMU.
+    *
 
-      -  This menu displays the temperature and acceleration measurements performed by the IMU.
+    |resources-eval-user-guides-pzsdr-carriers-adrv1cc-box-imu.jpg|
 
-         -
-
-
-         |image4|
-
-   -  GPS
-
-      -  Provides real time GPS coordinates after synchronization.
-
--  Push Button Switch - A ring illuminated switch to control the ADRV1CC-Box turn-on and turn-off.
-
-   -  The LED will blink twice in quick succession, every second (think heartbeat) when operating normally.
-   -  The LED will then blink faster if any fault is detected.
+-  GPS
+  * Provides real time GPS coordinates after synchronization.
+   * Push Button Switch - A ring illuminated switch to control the ADRV1CC-Box turn-on and turn-off.
+     * The LED will blink twice in quick succession, every second (think heartbeat) when operating normally.
+     * The LED will then blink faster if any fault is detected.
 
 Miscellaneous
 -------------
@@ -365,12 +361,12 @@ GPS
    -  A `Dome Antenna <https://www.inventeksys.com/products-page/gps-antennas/antdom-05-01-wpm-gps-antenna/>`_ with 5 meter cable is used to receive the GPS signals, verify position and time.
    -
 
-   |image5|
+   |image3|
 
    -  `To verify the reading <https://mynasadata.larc.nasa.gov/latitudelongitude-finder/>`_ Analog Devices has an office at 831 Woburn Street, Wilmington MA 01887.
    -
 
-   |image6|
+   |image4|
 
    -  If you are unfamiliar with GPS, or simply need a refresher... `Global Positioning System Basics <https://en.wikipedia.org/wiki/Global_Positioning_System#Basic_concept_of_GPS>`_
 
@@ -384,7 +380,7 @@ Audio
    -  For more information regarding how the tip, ring, ring, sleeve standard works. `TRRS Audio Standards <https://en.wikipedia.org/wiki/Phone_connector_(audio)#TRRS_standards>`_
    -
 
-   |image7|
+   |image5|
 
 Real Time Clock
 ~~~~~~~~~~~~~~~
@@ -409,15 +405,13 @@ The I2C connection is found on JX2, pins 17 and 19. This is common between the A
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable_radio_concept/radio_menu.jpg
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable_radio_concept/charge_menu.jpg
-   :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/imu.jpg
-   :width: 300px
 .. |Unit being tested to make sure nothing malfunctions, breaks or shakes loose| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/imu_being_tested.jpg
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/gps1.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/gps1.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/gps3.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/gps3.jpg
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/audio_standards.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/audio_standards.jpg
    :width: 600px
+
+.. |resources-eval-user-guides-pzsdr-carriers-adrv1cc-box-imu.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/imu.jpg

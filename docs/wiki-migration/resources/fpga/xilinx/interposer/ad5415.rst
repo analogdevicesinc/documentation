@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5415 Product Info <AD5415>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5415SDZ evaluation board user guide </static/imported-files/user_guides/UG-296.pdf>`
+-  :adi:`EVAL-AD5415SDZ evaluation board user guide <static/imported-files/user_guides/UG-296.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started
@@ -93,7 +93,7 @@ Hardware setup
 .. important::
 
    
-   To power on the EVAL-AD5415 evaluation board, you need to provide external +12V VDD and -12V VSS supply voltage used to power the output amplifier (for more information see: :adi:`EVAL-AD5415SDZ evaluation board user guide </static/imported-files/user_guides/UG-296.pdf>`) and a +5V supply used to power the DAC and transceivers.
+   To power on the EVAL-AD5415 evaluation board, you need to provide external +12V VDD and -12V VSS supply voltage used to power the output amplifier (for more information see: :adi:`EVAL-AD5415SDZ evaluation board user guide <static/imported-files/user_guides/UG-296.pdf>`) and a +5V supply used to power the DAC and transceivers.
 
 
 Reference Project Overview

@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
+   These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
 
 Configuring Peripherals for the ADSP-SC5xx When Using Linux and SHARC Applications

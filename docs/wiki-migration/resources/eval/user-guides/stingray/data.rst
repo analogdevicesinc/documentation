@@ -16,9 +16,7 @@ Gain, Return Loss
    \ **Figure 1: Gain and Return Loss vs. Frequency, at Maximum Gain, Receive Channel**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_rx_gain_gain.png
-   :align: center
-   :width: 600px
+   |image1|
 
 .. container:: centeralign
 
@@ -67,7 +65,9 @@ Transmit Mode
 Gain, Return Loss
 -----------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_spars_maxgain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -77,7 +77,9 @@ Gain, Return Loss
 Noise Figure
 ------------
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_nf_over_gain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -87,7 +89,9 @@ Noise Figure
 Output IP3
 ----------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_oip3_maxgain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -97,7 +101,9 @@ Output IP3
 Output P1dB
 -----------
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_p1db_maxgain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -107,7 +113,9 @@ Output P1dB
 Output Power vs Input Power
 ---------------------------
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_poutvspin_maxgain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -121,45 +129,38 @@ This measurement was conducted using a single cell (1x ADAR1000, 4x ADTR1107) on
 
 Pulse characteristics are a 1 kHz pulse repetition frequency with a 50 us pulse width (5% duty cycle).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_rxtx_m25dbm_input.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
    \ **Figure 11: Rx-Tx Switching Time, 4 Coherently Combined Channels, 10 GHz RF, -25 dBm Input Power**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_txrx_m25dbm_input.png
-   :align: center
+   |image3|
 
 .. container:: centeralign
 
    \ **Figure 12: Tx-Rx Switching Time, 4 Coherently Combined Channels, 10 GHz RF, -25 dBm Input Power**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_rxtx_m7dbm_input_200nsdiv.png
-   :align: center
+   |image4|
 
 .. container:: centeralign
 
    \ **Figure 13: Rx-Tx Switching Time, 4 Coherently Combined Channels, 10 GHz RF, -7 dBm Input Power**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_txrx_m7dbm_input_200nsdiv.png
-   :align: center
+   |image5|
 
 .. container:: centeralign
 
    \ **Figure 14: Tx-Rx Switching Time, 4 Coherently Combined Channels, 10 GHz RF, -7 dBm Input Power**\
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_spars_maxgain.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_rx_gain_gain.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_nf_over_gain.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_oip3_maxgain.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_p1db_maxgain.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_tx_poutvspin_maxgain.png
-   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_rxtx_m25dbm_input.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_txrx_m25dbm_input.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_rxtx_m7dbm_input_200nsdiv.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/stingray_pulsemeasurement_1khz_pri_50us_pw_4channels_txrx_m7dbm_input_200nsdiv.png

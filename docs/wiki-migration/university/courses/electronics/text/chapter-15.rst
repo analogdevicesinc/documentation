@@ -13,9 +13,8 @@ Enhancement mode MOSFET based analog switches use the transistor channel as a lo
 
 This analog switch uses a four-terminal simple, generally enhancement mode, MOSFET of either P or N type. In the case of an N-type switch, the body or back gate terminal is connected to the most negative supply (usually GND in single power supply systems) and the gate is used as the switch control. Whenever the gate voltage exceeds the source voltage by at least a threshold voltage, the MOSFET conducts. The higher the gate voltage with respect to the source, the lower the resistance of the switch will be. An NMOS switch passes all voltages less than (V\ :sub:`gate`-V\ :sub:`tn`). When the switch is conducting, it typically operates in the linear (or triode) region of operation, since the source and drain voltages will typically be nearly equal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -24,9 +23,9 @@ This analog switch uses a four-terminal simple, generally enhancement mode, MOSF
 
 In the case of a PMOS, the body or back gate is connected to the most positive voltage, and the gate is brought to a lower potential to turn the switch on. The PMOS switch passes all voltages higher than (V\ :sub:`gate`\ +|V\ :sub:`tp`\ \|). Threshold voltage (V\ :sub:`tp`) is typically negative in the case of PMOS.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -35,9 +34,9 @@ In the case of a PMOS, the body or back gate is connected to the most positive v
 
 A PMOS switch will have about three times the resistance of an NMOS device of equal dimensions because electrons have about three times the mobility of holes in silicon.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f3.png
-   :align: center
-   :width: 500px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -49,9 +48,8 @@ A PMOS switch will have about three times the resistance of an NMOS device of eq
 
 This "complementary" or CMOS type of switch uses one PMOS and one NMOS FET to counteract the turn on limitations of the single-type switch. The FETs have their drains and sources connected in parallel, the body of the PMOS is connected to the high potential (V\ :sub:`DD`) and the body of the NMOS is connected to the low potential (GND). To turn the switch on the gate of the PMOS is driven to the low potential and the gate of the NMOS is driven to the high potential. For voltages between (V\ :sub:`DD`-V\ :sub:`tn`) and (GND+V\ :sub:`tp`) both FETs conduct the signal, for voltages less than (GND+V\ :sub:`tp`) the NMOS conducts alone and for voltages greater than (V\ :sub:`DD`-V\ :sub:`tn`) the PMOS conducts alone.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -76,9 +74,8 @@ For the lowest offset and drift performance, chopper-stabilized ( or auto-zero )
 
 A basic chopper amplifier circuit is shown in figure 15.2.1 below. This is a common example where the CMOS analog switch we just discussed in section 15.1 can be put to good use. When the switches are in the "Z" (auto-zero) position, capacitors C\ :sub:`2` and C\ :sub:`3` are charged to the amplifier input and output offset voltage, respectively. When the switches are in the "S" (sample) position, V\ :sub:`IN` is connected to V\ :sub:`OUT` through the path comprised of R\ :sub:`1`, R\ :sub:`2`, C\ :sub:`2`, the amplifier, C\ :sub:`3`, and R\ :sub:`3`. The frequency used to chop is usually between a few hundred Hz and several kHz, and it should be noted that because this is a sampling system, the input frequency must be much less than one-half the chopping frequency in order to prevent errors due to aliasing. The R\ :sub:`1`-C\ :sub:`1` combination serves as an antialiasing filter. It is also assumed that after a steady state condition is reached, there is only a minimal amount of charge transferred during the switching cycles. The output "hold" capacitor, C\ :sub:`4`, and the load, R\ :sub:`L`, must be chosen such that there is minimal V\ :sub:`OUT` droop during the auto-zero cycle.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -92,9 +89,8 @@ A basic chopper amplifier circuit is shown in figure 15.2.1 below. This is a com
 
 The basic chopper amplifier of figure 15.2.1 can pass only frequencies lower than one half the chopping frequency because of the input filtering required to prevent aliasing. In contrast to this, the chopper-stabilized architecture shown in figure 15.2.2 is most often used in chopper op amp implementations.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -122,9 +118,8 @@ A switched capacitor is an electronic circuit element used in discrete time sign
 
 The most basic switched capacitor circuit as illustrated in figure 15.3.1, is the switched capacitor resistor. It consists of one capacitor C\ :sub:`1` and two switches S\ :sub:`1` and S\ :sub:`2` which connect the capacitor alternately to the input, V\ :sub:`IN` and the output, V\ :sub:`OUT`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f7.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -174,9 +169,8 @@ This same circuit can be used in discrete time systems (such as analog to digita
 
 Now we can examine an example circuit using the Switched Capacitor as a resistor. By adding a second capacitor C\ :sub:`2` across the output of figure 15.3.1, we get the RC low pass circuit shown in figure 15.3.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f8.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -199,18 +193,15 @@ So we can see that the 3 dB frequency response is directly related to the clock 
 
 The following two graphs plot the frequency response for the basic switched capacitor low pass filter from figure 15.3.2 with the value of C\ :sub:`1` equal to 100pF and with the value of C\ :sub:`2` equal to 4.7nF for a C\ :sub:`1` to C\ :sub:`2` ratio of 1 to 47. Figure 15.3.3 plots the amplitude vs. frequency response for F\ :sub:`clock` equal to 100 KHz, 200 KHz and 500 KHz. Figure 15.3.4 plots the phase vs. frequency for the same three clock frequencies.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
    Figure 15.3.3 Filter output amplitude vs frequency plot for three different switching frequencies
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f10.png
-   :align: center
-   :width: 600px
+   |image10|
 
 .. container:: centeralign
 
@@ -226,9 +217,8 @@ Note that the amplitude curve for 200 KHz switching frequency crosses the -5 dB 
 
 A switched capacitor differential to single ended configuration is shown in figure 15.3.5. In this circuit capacitor C\ :sub:`1` is charged to the differential voltage applied to V\ :sub:`IN :math:`s`\ +\ :math:`s`` and V\ :sub:`IN :math:`s`-:math:`s`` during the first half of the clock cycle when switches S\ :sub:`1` and S\ :sub:`2` are closed as shown in the figure, to position 1. During the second half of the clock cycle switches S\ :sub:`1` and S\ :sub:`2` are moved to position 2 connecting capacitor C\ :sub:`1` in parallel with capacitor C\ :sub:`2`. One end of C\ :sub:`2` is connected to ground so that the voltage seen at V\ :sub:`OUT` is referenced to ground and will, in steady state, be equal to V\ :sub:`IN :math:`s`\ +\ :math:`s`` - V\ :sub:`IN :math:`s`-:math:`s``. The values of capacitors C\ :sub:`1` and C\ :sub:`2` can in general be in any ratio but often they are equal or C\ :sub:`2` is sized to be larger than C\ :sub:`1` depending on the nature of the load the circuit might be required to drive at V\ :sub:`OUT`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f11.png
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -243,9 +233,8 @@ In addition to the differential to single ended function we saw in figure 15.3.5
 
 The first is a voltage inverter where the output voltage V\ :sub:`OUT` is the negative of V\ :sub:`IN`, V\ :sub:`OUT` = -V\ :sub:`IN` shown in figure 15.3.6. Very similar to the first configuration but with what was V\ :sub:`IN :math:`s`-:math:`s`` now connected to ground and ground on the output side now connected to one terminal of S\ :sub:`1` and the now inverted output voltage taken at one terminal of S\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f12.png
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -254,9 +243,9 @@ The first is a voltage inverter where the output voltage V\ :sub:`OUT` is the ne
 
 The flying capacitor circuit can also be configured as a precession divide by 2 voltage divider as we see in figure 15.3.7. During the first half of the clock cycle, with switches S\ :sub:`1` and S\ :sub:`2` in position 1, the two capacitors, C\ :sub:`1` and C\ :sub:`2`, are placed in series across V\ :sub:`IN`. If C\ :sub:`1` is exactly equal to C\ :sub:`2` then they will act as a voltage divider with V\ :sub:`OUT` equal to one half V\ :sub:`IN`. This assumes that there was no preexisting charge on either capacitor. During the second half of the clock cycle when S1 and S2 are in position 2, the two capacitors are connected in parallel. This will cause the voltage across both capacitors to be equal and thus redistribute any preexisting charge difference to redistribute equally between the two capacitors. After a few clock cycles the voltage across each capacitor will be equal to each other and equal to one half of V\ :sub:`IN`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f13.png
-   :align: center
-   :width: 500px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -265,9 +254,9 @@ The flying capacitor circuit can also be configured as a precession divide by 2 
 
 Similarly, the circuit in figure 15.3.7 can be configured as a precession multiply by 2 voltage multiplier as we see in figure 15.3.8. In this example, capacitor C\ :sub:`1` is charged to V\ :sub:`IN` during the first half clock cycle when switches S\ :sub:`1` and S\ :sub:`2` are in position 1. During the second half clock cycle when switches S\ :sub:`1` and S\ :sub:`2` are in position 2, the previously grounded end of C\ :sub:`1` is now connected to V\ :sub:`IN`. The other end of C\ :sub:`1` which was previously connected to V\ :sub:`IN` is now connected to V\ :sub:`OUT`. Now V\ :sub:`OUT` will be equal to V\ :sub:`IN` plus the V\ :sub:`IN` stored on capacitor C\ :sub:`1` or 2xV\ :sub:`IN`. Capacitor C\ :sub:`2` will take a few clock cycles to charge up to 2xV\ :sub:`IN` and will serve to store or hold the voltage at V\ :sub:`OUT` at 2xV\ :sub:`IN` while the switches are in position 1, sampling V\ :sub:`IN` onto C\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f14.png
-   :align: center
-   :width: 500px
+
+
+|image14|
 
 .. container:: centeralign
 
@@ -278,9 +267,8 @@ So far in this section we have been assuming that V\ :sub:`IN` is some varying a
 
 The basic concept of a capacitor based DC to DC power converter is shown below in figure 15.3.9. As we said these are often referred to as "flying capacitor" or "charge-pump" DC/DC converters. The operation alternates between the two configurations shown in figure 15.3.9 which is in effect two copies of the circuit we saw in figure 15.3.8. On the left, switches S\ :sub:`1` and S\ :sub:`5` are closed connecting C\ :sub:`1` between ground and V\ :sub:`IN`. On the right, switches S\ :sub:`4` and S\ :sub:`8` are closed connecting C\ :sub:`2` between V\ :sub:`IN` and V\ :sub:`OUT`. For the half cycle shown capacitor C\ :sub:`1` is charged to the voltage at V\ :sub:`IN` and V\ :sub:`OUT` is the sum of the voltage at V\ :sub:`IN` and the voltage on capacitor C\ :sub:`2`. For the second half cycle the switches are reversed. Now with S\ :sub:`2` and S\ :sub:`6` closed C\ :sub:`1` is connected between V\ :sub:`IN` and V\ :sub:`OUT`. Also switches S\ :sub:`3` and S\ :sub:`7` will now be closed connecting C\ :sub:`2` between ground and V\ :sub:`IN`. So now we can see that after a few cycles V\ :sub:`OUT`, the voltage across capacitor C\ :sub:`3` will be equal to twice V\ :sub:`IN`. As you can see the capacitors "fly" back and forth between V\ :sub:`IN` and V\ :sub:`OUT`, thus the name "flying capacitor". One can also see that what is in effect happening is the charge on capacitors C\ :sub:`1` and C\ :sub:`2` is alternately transferred or pumped onto capacitor C\ :sub:`3` charging it up to two times V\ :sub:`IN`. This action gives rise to the second "charge pump" name.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f15.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -289,9 +277,9 @@ The basic concept of a capacitor based DC to DC power converter is shown below i
 
 We will now replace the ideal switches in the diagram with MOSFET switches. The next diagram figure 15.3.10, shows a direct substitution of NMOS ( S\ :sub:`1`,S\ :sub:`3`,S\ :sub:`5`,S\ :sub:`7` ) and PMOS ( S\ :sub:`2`,S\ :sub:`4`,S\ :sub:`6`,S\ :sub:`8` ) devices for the switches in the first diagram. It can be noted that switches S\ :sub:`1` and S\ :sub:`2` form a complementary pair and take the same form as a CMOS inverter logic gate. The other three sets of switches form similar complementary pairs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f16.png
-   :align: center
-   :width: 600px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -303,3 +291,36 @@ We will now replace the ideal switches in the diagram with MOSFET switches. The 
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-16>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f11.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f12.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f13.png
+   :width: 500px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f14.png
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f15.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr15_f16.png
+   :width: 600px

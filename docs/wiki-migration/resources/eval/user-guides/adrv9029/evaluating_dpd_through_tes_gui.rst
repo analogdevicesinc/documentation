@@ -74,15 +74,13 @@ Adjust the digital scaling if required and hit the "Submit" button to load the w
 
 -  Browse to the DFE Tab in the ADRV9029 TES GUI. Load a DPD model by clicking the "Load Model from file" button in the "DPD Model Setup" User Interface. The DPD model is a polynomial function that models the PA through memory terms(i,j) and polynomial degree 'k'. ADI provides a set of pre-calculated DPD models that can be accessed in the "Resources" folder of the ADRV9029 TES GUI Installation directory. After loading the DPD model, set the linear term coefficient corresponding to (i=1,j=1,k=0) to 1 + j0 as shown in the figure below. For evaluation purposes, any model can be chosen. To optimize the DPD model for a particular PA, follow the instructions on the DPD Model Optimization page.
 
-::
 
-         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpd_modelload.png?800 |}}
+|resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png|
 
 -  Configure ‘DPD Tracking Config’ parameters (default values provide a good starting point).
 
-::
 
-         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingconfig.png?400 |}}
+|resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingconfig.png|
 
 -  In the "DPD functions" window under the DFE Tab of ADRV9029 TES GUI, select desired Tx channel to apply settings(In this example Tx1 is selected).
 
@@ -94,9 +92,8 @@ Adjust the digital scaling if required and hit the "Submit" button to load the w
 
             -  Click ‘Enable DPD on selected channels (only)’ to enable DPD Tracking.
 
-::
 
-           {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingcal_enable.png?400 |}}
+            |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png|
 
 -  Now the DPD tracking must be enabled and running. The DPD status can be monitored by selecting the Tx channel and clicking the "Get DPD Status and Statistics" button. Ensure that the error status returns "No Error" and the "Iteration Count" and "Update Count" fields are incrementing
 
@@ -106,3 +103,7 @@ Adjust the digital scaling if required and hit the "Submit" button to load the w
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#prerequisites
    :alt: Getting Started#resources:eval:user-guides:adrv9029|main page#dpd_error_troubleshooting|DPD error troubleshooting
+
+.. |resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_modelload.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingcal_enable.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingconfig.png

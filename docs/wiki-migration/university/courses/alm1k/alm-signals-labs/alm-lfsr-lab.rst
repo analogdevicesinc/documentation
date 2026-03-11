@@ -51,9 +51,8 @@ Directions:
 
 On your solder-less breadboard, build the linear feedback shift register circuit shown in figure 1, with the feedback taken at the 3rd and 4th bits. The 74HC273 octal D-type register is used to make (up to) an 8 bit shift register as shown but any other similar shift register with parallel outputs could be substituted. A two input XOR gate can also be constructed using individual logic gates or the CD4007 CMOS transistor array as shown in the lab activity on the :doc:`XOR gate </wiki-migration/university/courses/alm1k/alm-lab-30>`. Connect the positive 5 volt power and ground to the circuit as shown. Be sure that both digital chips receive power and ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -70,9 +69,8 @@ Procedure:
 
 Start the ALICE Desktop software. Connect the channel B scope input to any one of the shift register outputs. Hit the Run button. You should see a string of pulse of what looks like randomly changing width. We can use a low pass filter to get an idea as to the average width, or length of time, the output is high or low. A simple RC low pass stage as shown in figure 2 can be used to generate an analog representation of the average.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -81,9 +79,9 @@ Start the ALICE Desktop software. Connect the channel B scope input to any one o
 
 The same pattern should appear at all the outputs of the shift register but delayed by different numbers of clock cycles depending on where along the shift register you are looking. Try feeding back different outputs of the 8 bit shift register to make a different length shift register to make a longer or shorter pseudo-random sequence. Also try combining different combinations of taps with the XOR to make different patterns. We can't look at more than one output at a time using the channel B scope input. The following show some ways to observe multiple digital outputs by combining them in an analog fashion into one signal. The first scheme is to extend the idea in figure 2 to sum multiple digital signals using equal value resistors as in figure 3. The output voltage as measured by scope channel B is proportional to the number of 1's. If all the digital outputs are low (0 V) then the output is 0V. If all the digital outputs are High (5 V) then the output is 5 V. If 4 digital outputs are low (0 V) and 4 digital outputs are High (5 V) then the output is 2.5 V. We won't know which outputs are high and low just how many.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_3.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -92,9 +90,9 @@ The same pattern should appear at all the outputs of the shift register but dela
 
 If we use more resistors to apply different weights to each digital output we can produce analog output values that represent different combinations of the outputs. In figure 4 we have used a combination of series and parallel connections for resistors from the ADALP2000 parts kit to weight each digital output in a binary fashion then there will be 256 unique output voltages. We needed to create 8 different resistor values each twice as big as the previous value. This can require a number of different resistors of widely differing values.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -103,9 +101,9 @@ If we use more resistors to apply different weights to each digital output we ca
 
 We can also create binary weights by using an R/2R resistor network as in figure 5. This technique uses only 2 resistors values and can be built using resistors of the same value by using either 2 in parallel or 2 in series to make the other value.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_5.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -124,9 +122,8 @@ Appendix:
 
 **74HC273 functional block diagram**
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
-   :align: center
-   :width: 250px
+
+|image6|
 
 .. container:: centeralign
 
@@ -138,3 +135,16 @@ Appendix:
 `XOR_gate <https://en.wikipedia.org/wiki/XOR_gate>`_ `Shift_register <https://en.wikipedia.org/wiki/Shift_register>`_ `Linear_feedback_shift_register <https://en.wikipedia.org/wiki/Linear_feedback_shift_register>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
+   :width: 250px

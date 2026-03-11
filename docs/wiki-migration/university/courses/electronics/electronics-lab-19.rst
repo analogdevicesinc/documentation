@@ -16,9 +16,8 @@ The switched capacitor resistor:
 
 The most simple switched capacitor circuit is shown in figure 1, the switched capacitor resistor. It consists of one capacitor C\ :sub:`1` and two switches S\ :sub:`1` and S\ :sub:`2` which connect the capacitor alternately to the input, V\ :sub:`IN` and the output, V\ :sub:`OUT`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ Example Circuit
 
 The next step is to build an example circuit using the Switched Capacitor as a resistor. By adding a second capacitor C\ :sub:`2` across the output of figure 1, we get the RC low pass circuit shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -57,9 +55,8 @@ ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - CD4007 
 
 Below in figure 3 is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/cd4007.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -71,9 +68,8 @@ Directions:
 
 The breadboard connections are as shown in figure 4. If you are using the power supplies from the ADALM2000 hardware be sure that they are turned off or disconnected while you construct the circuit. The scope inputs should be connected to measure the input and output of the RC filter. The circuit will operate from the +/- 5V supplies provided from the ADALM2000 board but better performance will be observed if a +/- 5V bench power supply is used. A +/- 5V square wave digital signal from AWG2 drives the CD4007 inverter input at pin 6 and the gate of switch devices M\ :sub:`5` and M\ :sub:`6`. The inverted output at pins 8,13 drives the gates of switch devices M\ :sub:`3` and M\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f4.png
-   :align: center
-   :width: 550px
+
+|image4|
 
 .. container:: centeralign
 
@@ -90,18 +86,15 @@ Procedure:
 
 Turn on the power supplies and enable both AWG channels. Using the oscilloscope display observe the output amplitude of the filter relative to the input as you change the input frequency, AWG1. Also note any changes in the output amplitude as you change the switching frequency by adjusting the frequency of AWG2. Stop and close the Oscilloscope screen and now open the Network Analyzer instrument ( Bode plotter ). You will need to disable AWG channel 1 on the waveform generator screen but keep channel 2 enabled and set to 100 KHz, 10 V amplitude peak-to-peak, zero offset as it was previously. Set up the Analyzer to sweep the filter input from 100 Hz to 10 KHz. Run sweeps with AWG2 set to 100 KHz, 200 KHz and 500 KHz. Export the data for each sweep to a .csv file and using a spreadsheet program like Excel make plots of the amplitude and phase vs. frequency similar to the plots in figure 5 and 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f5.png
-   :align: center
-   :width: 550px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5 Amplitude plot
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f6.png
-   :align: center
-   :width: 550px
+   |image6|
 
 .. container:: centeralign
 
@@ -130,9 +123,8 @@ Materials:
 
 1 - CD4053B triple analog SPDT switch 2 - 1 nF capacitors (102 )
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/cd4053.png
-   :align: center
-   :width: 550px
+
+|image7|
 
 .. container:: centeralign
 
@@ -146,9 +138,8 @@ A switched capacitor differential to single ended configuration is shown in figu
 
 Switch control signals for both switches A and B should both be connected to digital pin DIO 0. Be sure to connect the inhibit input ( pin 6 ) to ground to enable all the switches. It is probably also a good idea to ground the unused C control input as well.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f8.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -178,3 +169,20 @@ For Further Reading
 http://en.wikipedia.org/wiki/Switched_capacitor
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/cd4007.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f4.png
+   :width: 550px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f5.png
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f6.png
+   :width: 550px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/cd4053.png
+   :width: 550px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a19_f8.png
+   :width: 500px

@@ -41,10 +41,16 @@ Downloads
    :class: download
 
    
-   -  {{\|Rev B Schematics}}
-   -  {{\|Rev B Gerbers}} (This file is `compressed <http://www.7-zip.org/7z.html>`_)
-   -  {{\|Rev B Bill of materials}}
-   -  {{\|Rev B Allegro Board File}} (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
+   
+   .. image:: https://wiki.analog.com/_media/\
+      :alt: Rev B Schematics
+   
+   -  |\| (This file is `compressed <http://www.7-zip.org/7z.html>`_)
+   
+   .. image:: https://wiki.analog.com/_media/\
+      :alt: Rev B Bill of materials
+   
+   -  |\| (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
    
 
 
@@ -52,3 +58,5 @@ Downloads
    :width: 300px
 .. |4| image:: https://wiki.analog.com/_media/university/tools/jtaguart/uartjtagcablepluspins.png
    :width: 200px
+
+.. |\| image:: https://wiki.analog.com/_media/\

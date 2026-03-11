@@ -23,7 +23,7 @@ Required Software
 
 -  You need a Host PC (Linux)
 -  A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
--  `IIO Oscilloscope <https://wiki.analog.com/https/github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+-  `IIO Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 Creating the Micro-SD Card
 --------------------------
@@ -101,16 +101,21 @@ Setting up the hardware (Terasic C5 SoCkit)
 
 You will need to:
 
-::
 
-   -Get the [[https://www.arrow.com/en/products/sockit/arrow-development-tools | Terasic C5 SoCkit]]
-   {{  resources:eval:user-guides:arradio:quickstart:terasic_c5_sockit.jpg?600 }}
-   -Insert the Micro-SD Card into the Micro-SD Card  Connector
-   -Connect the ARRADIO board to the FPGA carrier HSMC connector
-   -Plug your monitor device into the VGA Video Connector
-   -Plug your USB mouse/keyboard into the USB 2.0 OTG Port
-   -Plug the Power Supply into 12V Power Supply connector (DO NOT turn the device on)
-   -Set the jumpers according to the following table:
+
+-Get the ` Terasic C5 SoCkit <https://www.arrow.com/en/products/sockit/arrow-development-tools >`_
+
+
+
+
+|resources-eval-user-guides-arradio-quickstart-terasic_c5_sockit.jpg|
+
+-Insert the Micro-SD Card into the Micro-SD Card  Connector
+-Connect the ARRADIO board to the FPGA carrier HSMC connector
+-Plug your monitor device into the VGA Video Connector
+-Plug your USB mouse/keyboard into the USB 2.0 OTG Port
+-Plug the Power Supply into 12V Power Supply connector (DO NOT turn the device on)
+-Set the jumpers according to the following table:
 
 ======= ========= ========= ======== ======== ========
 \       CLOCKSEL0 CLOCKSEL1 BOOTSEL0 BOOTSEL1 BOOTSEL2
@@ -222,30 +227,30 @@ Useful links
 
 ::
 
-         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
-         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
-        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
-   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
-        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
-        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+         - :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         - :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+         - :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         - :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           - :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+         - :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         - :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   * :doc:`MATLAB Support </wiki-migration/resources/tools-software/hsx-toolbox>`
+        * MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`
+   * :doc:`Python Support </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+        * PYTHON support is provided through the :doc:`Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` 
+        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
+        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
    * Product Datasheet
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
+       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
+       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
+   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
 
 Support
 -------
@@ -262,3 +267,5 @@ Software support
    :width: 550px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px
+
+.. |resources-eval-user-guides-arradio-quickstart-terasic_c5_sockit.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arradio/quickstart/terasic_c5_sockit.jpg

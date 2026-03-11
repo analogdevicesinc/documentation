@@ -68,7 +68,7 @@ Software Requirements
 
 -  Downloaded and installed:
 
-   -  :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+   -  `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
    -  `AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`_
    -  `ADI Wireless Sensor Hub Standalone Software for Flowmeter Application <https://wiki.analog.com/_media/{{ /resources/eval/user-guides/ad-max32sxwise-sl/demo/wisehub_flowmeterversion.zip>`_
    -  `UART serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`_
@@ -89,7 +89,8 @@ Block Diagram
    The block diagram of the overall setup is shown below.
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_demo_block_diagram.png
+   :align: center
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -112,11 +113,11 @@ Sensor Board Assembly
 
 -   Insert one **CR123A battery (3 V to 4.7 V)** into the battery holder (BT1) of the :adi:`MAX32670-SX-ARDZ` Base Board.
 
-|image2| To **check for the battery polarity** in the BT1 connector, refer to the figure above (right). The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.
+|image1| To **check for the battery polarity** in the BT1 connector, refer to the figure above (right). The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.
 
 -   Connect the :adi:`EV-FLOWMETER-ARDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 
-|image3| 
+|image2| 
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
 
@@ -131,12 +132,14 @@ Sensor Board Assembly
 
    <details><summary>**How to flash the firmware image in the MAX32625PICO**
 
--  Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+-  Download the firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
    -  Do not connect the :adi:`MAX32625PICO` to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
    -  Press the button on the :adi:`MAX32625PICO`. **Do not release the button until the MAINTENANCE drive is mounted**.
-
-   |image4|
-
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+      :align: center
+      :width: 300px
+   
    -  While holding the button, connect the :adi:`MAX32625PICO` to the Host PC using the micro USB to USB cable.
    -  Release the button once the MAINTENANCE drive is mounted.
    -  Drag and drop (to the MAINTENANCE drive) the firmware image.
@@ -151,7 +154,7 @@ Sensor Board Assembly
 
 -   Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
-|image5| 
+|image3| 
 
 .. container:: indent
 
@@ -176,11 +179,15 @@ Gateway Assembly
 -  Insert the RAK5146 SPI module into the mPCIe slot on the RAK2287 Pi HAT. Make sure the card fits snugly into the connector.
 -  Gently press the SPI module down and fasten it using the screws provided.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_1.png
+   :align: center
+   :width: 400px
 
 -  Connect the RAK5146 PiHAT to the Raspberry Pi using the 40-pin connector.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rpi_4_with_rak5146_hat.png
+   :align: center
+   :width: 400px
 
 -  Connect the Raspberry Pi to the Host PC using the LAN cable.
 -   Power on the Raspberry Pi using the Raspberry Pi 4 Power Supply Adapter.
@@ -219,7 +226,7 @@ Environment Assembly
 
 -   Connect the wires of the **Flow Transducer with Pipe** and the **resistive temperature detector (RTD)** to the sensor board.
 
-|image8| Follow the connections shown above. Repeat this step for the other sensor board and transducer.
+|image4| Follow the connections shown above. Repeat this step for the other sensor board and transducer.
 
 .. important::
 
@@ -230,7 +237,7 @@ Environment Assembly
 
 -   Set up the **water container** as shown below.
 
-|image9| |image10|
+|image5| |image6|
 
 .. tip::
 
@@ -297,7 +304,7 @@ Configuring the Sensor Board
 
 The **flow folder** should contain the BIN, ELF, and HEX file.
 
-|image11| 
+|image7| 
 
 -   Go to My Computer and search for the **DAPLINK drive**. Drag and drop (or copy and paste) the **.bin firmware file** directly into the DAPLINK drive.
 
@@ -325,7 +332,7 @@ The **flow folder** should contain the BIN, ELF, and HEX file.
    -  **Display formatting**: set to **ANSI**
    -  **Enable Scrollback**: set to **200**.
 
-   |image12|
+   |image8|
 
 
 
@@ -360,14 +367,18 @@ Imaging the SD Card with ChirpStack OS
 -  Insert the micro SD card into the Host PC.
 -  Click **Flash from file** from the options shown in the interface.
 
-|image13|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card.png
+   :align: center
+   :width: 600px
 
 -  Navigate to the location where the downloaded `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_ is saved.
 -  Select target and choose the targeted micro SD card drive.
 -  Click **Flash** to start the burning process of the image in the chosen SD card.
 -   Wait until it is done.
 
-|image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card_2.png
+   :align: center
+   :width: 600px
 
 .. tip::
 
@@ -426,8 +437,9 @@ Configuring the Gateway
 
 -  Once connected, check the assigned ChirpStack IP by typing **ifconfig**.
 
-
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_ip.png
+   :align: center
+   :width: 600px
 
 -   This will show all configs, look for **eth0** and **save the IP address assigned to it**.
 
@@ -509,7 +521,7 @@ Setting up a Self-Hosted Application Server
 
    <details><summary>**Step-by-step configuration of a new ChirpStack Inbound Rule**
 
-|image16| |image17| |image18| |image19| |image20| |image21| |image22|
+|image9| |image10| |image11| |image12| |image13| |image14| |image15|
 
 .. raw:: html
 
@@ -553,8 +565,9 @@ Setting up a Self-Hosted Application Server
 
 -  This will open the login page. Enter the same credentials we used to establish an SSH connection with the ChirpStack Gateway.
 
-
-|image23|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/log_in_page.png
+   :align: center
+   :width: 600px
 
 Connecting a Sensor Node to the Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -576,7 +589,8 @@ Connecting a Sensor Node to the Gateway
 -  Click **Device profiles** under the **Tenant** category.
 -  Click on the **Add device profile** button.
 
-|image24|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/add_device_profile.png
+   :align: center
 
 -   Answer all required information under the **General** tab, and then click **Submit** once done.
 
@@ -618,7 +632,9 @@ The following shows the configuration required to add a sensor node:
 -  Click on the **Add application** button.
 -  Write the desired **Application Name** on the space provided. Hit **Submit** once done.
 
-|image25|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/submit_application.png
+   :align: center
+   :width: 600px
 
 -   Open the Application created and **add a device**.
 
@@ -633,7 +649,7 @@ The following details are also needed:
    In naming the devices, you must include a **specific keyword** (not case-sensitive) to distinguish the sensor nodes shown on the GUI. In this case, the two sensor nodes can be named **flow-1** and **flow-2** respectively.
 
 
-|image26| 
+|image16| 
 
 -   Once done, click **Submit**. Then, **repeat steps 5 and 6** for the other sensor board.
 
@@ -649,8 +665,8 @@ The following details are also needed:
 
 -   Enter the **Application key** and hit **Submit** once done.
 
-
-|image27|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/app_key.png
+   :align: center
 
 .. tip::
 
@@ -670,12 +686,13 @@ The following details are also needed:
 -  In the Applications tab, select and open **WiSe_Sensors**.
 -   Inside the **ADI_SENSOR_NODE** application, navigate to the **Integrations** tab.
 
-|image28| 
+|image17| 
 
 -  In the **Integrations** tab, select the **edit** button in the **HTTP Configuration** section.
 -   Change the **Event Endpoint URL** to the IP of the adapter your gateway is connected.
 
-|image29|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/http_integration.png
+   :align: center
 
 .. tip::
 
@@ -690,7 +707,9 @@ The following details are also needed:
 -  After updating the HTTP Integration endpoint URL, submit the changes by pressing **Submit**.
 -  A pop-up message will appear saying **HTTP Integration updated**.
 
-|image30|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/http_integration_success.png
+   :align: center
+   :width: 600px
 
 -  Open your browser and **enter the URL** http://localhost:5050. Now you’ll be able to see and monitor your active nodes.
 
@@ -750,53 +769,31 @@ For questions and more information about this product, connect with us through t
    :ez:`EngineerZone Support Community <reference-designs>`
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_demo_block_diagram.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_battery_attachment.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_mount_boards.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_pico_attachment.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_1.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rpi_4_with_rak5146_hat.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_board_connections.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_environment_front.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_environment_top.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files_2.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_battery_attachment.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_mount_boards.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_pico_attachment.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_board_connections.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_environment_front.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/smart_water_meter_environment_top.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files_2.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/1.png
-   :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card.png
-   :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card_2.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_ip.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/1.png
    :width: 600px
 .. |\|| image:: /resources/eval/user-guides/longrangewirelessradio/advance_firewall_settings.png
    :width: 700px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_2.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_2.png
    :width: 700px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config.png
    :width: 700px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_2.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_2.png
    :width: 700px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_3.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_3.png
    :width: 700px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_4.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_4.png
    :width: 700px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_5.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_5.png
    :width: 700px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_6.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_6.png
    :width: 700px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/log_in_page.png
-   :width: 600px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/add_device_profile.png
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/submit_application.png
-   :width: 600px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/device_details.png
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/app_key.png
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/integration.png
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/http_integration.png
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/http_integration_success.png
-   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/device_details.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/integration.png

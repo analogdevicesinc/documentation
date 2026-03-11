@@ -18,18 +18,15 @@ Background:
 
 The impedance of an inductor is proportional to frequency and the impedance of a capacitor is inversely proportional to frequency. These characteristics can be used to select or reject certain frequencies of an input signal. This selection and rejection of frequencies is called filtering, and a circuit which does this is called a filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1: Low Pass RC filter.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-fig2.png
-   :align: center
-   :width: 500px
+   |image2|
 
 .. container:: centeralign
 
@@ -50,9 +47,8 @@ For RL filters:
 
 Frequency Response: It is a graph of magnitude of the output voltage of the filter as a function of the frequency. It is generally used to characterize the range of frequencies in which the filter is designed to operate within.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -69,9 +65,8 @@ Procedure:
 
 A. Low pass RC filter:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rc_lpf_bb.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -88,9 +83,8 @@ A. Low pass RC filter:
 
 B. High-Pass RL filter
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rl_hpf_bb.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,9 +119,8 @@ Use the Start Frequency entry to set the frequency sweep to start at 100 Hz and 
 
 You should now be able to press the green Run button and run the frequency sweep. After the sweep is completed you should see something like the screen shot in figure A1. You may want to use the LVL and dB/div buttons to optimize the plots to best fit the screen grid.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-screen1.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -144,3 +137,16 @@ You should now be able to press the green Run button and run the frequency sweep
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rc_lpf_bb.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rl_hpf_bb.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab8-screen1.png
+   :width: 600px

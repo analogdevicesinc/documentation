@@ -20,9 +20,8 @@ A resonant circuit, also called a tuned circuit consists of an inductor and a ca
 
 A network is in resonance when the voltage and current at the network input terminals are in phase and the input impedance of the network is purely resistive.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,18 +56,15 @@ First a quick diversion to examine using a diode as a switch.
 
 Set up the circuit shown in figure 2 on your solder-less breadboard. Configure the AWG CH-A to output a sine wave with a frequency 100 Hz and Min value of 0.5 V and a Max value of 4.5 V (p-p = 4V). Set up the horizontal time scale to view two full cycles of the sine wave on Channel A and so that the signal looks as large as possible without going off the screen. Configure Channel B in Hi-Z mode and connect it to where R\ :sub:`1` connects to D\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2. Diode test circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/diode_test_bb.png
-   :align: center
-   :width: 500px
+   |image3|
 
 .. container:: centeralign
 
@@ -93,18 +89,15 @@ Switch the AWG A shape to square wave output and make sure the oscilloscope show
 
 Reconfigure the breadboard circuit with the diode, inductor and capacitor as shown in figure 4. As above, connect Channel A to the diode and channel B across the capacitor and inductor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f3.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4. LC resonator test circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/lc_res_bb.png
-   :align: center
-   :width: 500px
+   |image5|
 
 .. container:: centeralign
 
@@ -186,18 +179,15 @@ Compare the trace you get with the calculated capacitor current ( and by the sam
 
 How could you use this measurement technique to directly measure the current in the capacitor?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f5.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6. Directly measuring the Inductor current
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/dir_meas_bb.png
-   :align: center
-   :width: 500px
+   |image7|
 
 .. container:: centeralign
 
@@ -227,9 +217,8 @@ In your Lab Report, List all 7 questions/tasks. Provide the annotated data for e
 
 Figure 8 is a representative example of self-resonance waveform for a 4.7mH inductor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f4.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -246,3 +235,20 @@ Figure 8 is a representative example of self-resonance waveform for a 4.7mH indu
 `Inductor <https://en.wikipedia.org/wiki/Inductor>`_ `Damped sine wave <https://en.wikipedia.org/wiki/Damped_sine_wave>`_ `Self-resonant frequency <https://en.wikipedia.org/wiki/Self-resonant_frequency>`_ `Parasitic capacitance <https://en.wikipedia.org/wiki/Parasitic_capacitance>`_ http://www.coilcraft.com/pdfs/Doc363_MeasuringSRF.pdf http://www.coilcraft.com/pdfs/doc671_Selecting_RF_Inductors.pdf http://www.coilcraft.com/pdfs/doc119_TestAppFreq.pdf
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/diode_test_bb.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f3.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/lc_res_bb.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f5.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/dir_meas_bb.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-f4.png
+   :width: 600px

@@ -27,5 +27,5 @@ In the following example, the words 0x000000AA and 0x0000000F have the AND logic
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/bitwiselogicexample.jpg
    :alt: bitwiselogicexample.jpg
 
-.. |logicpic1.png| image:: https://wiki.analog.com/_media/logicpic1.png
-.. |logicpic2.png| image:: https://wiki.analog.com/_media/logicpic2.png
+.. |logicpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/logicpic1.png
+.. |logicpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/logicpic2.png

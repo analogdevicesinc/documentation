@@ -12,10 +12,10 @@ The device is calibrated by taking a set of measurements according to the proced
 
 .. important::
 
-   Calibration support is available only stating from :git-Pixelpulse2:`Pixelpulse v0.88 <releases/latest>` and :git-m1k-fw>`__ (You don't need to look at the firmware unless you want to - it's only added here for completeness).
+   Calibration support is available only stating from `Pixelpulse v0.88 <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_ and :git-m1k-fw:`firmware version v2.06 <m1k-fw>` (You don't need to look at the firmware unless you want to - it's only added here for completeness).
 
    
-   Make sure to `update the firmware <https::`firmware version v2.06 </wiki.analog.com/firmware-upgrade>` on your device and Pixelpulse before starting the calibration procedure.
+   Make sure to `update the firmware <https://wiki.analog.com/firmware-upgrade>`_ on your device and Pixelpulse before starting the calibration procedure.
 
 
 Calibration file
@@ -84,7 +84,8 @@ The example calibration file can be downloaded from the link below. This file as
 .. admonition:: Download
    :class: download
 
-   |ADALM1000 default calibration file|
+   :git-libsmu:`ADALM1000 default calibration file <contrib/calib.txt>`
+
 
 .. important::
 
@@ -120,7 +121,7 @@ Instructions on how to build, install and use libsmu can be found :doc:`here </w
 .. admonition:: Download
    :class: download
 
-   libsmu installer: :git-libsmu:`libsmu-setup.exe <releases/latest>`
+   libsmu installer: `libsmu-setup.exe <https://github.com/analogdevicesinc/libsmu/releases/latest>`_
 
 
 .. important::
@@ -205,5 +206,3 @@ Semi-automated Procedure
 ------------------------
 
 The :doc:`ALICE 1.3 DeskTop Software </wiki-migration/university/tools/m1k/alice/self-calibration-user-guide>` includes a semi-automated method to calibrate the ADALM1000 using the AD584 precision 2.5 V reference from the ADALP2000 Analog Parts Kit. Just wire up an AD584 for a 2.5 V output, powered from the fixed 5V supply from the ALM1000 and follow the steps as outlined in the ALICE desktop user's guide. No DMM needed (except to maybe verify the output of the AD584).
-
-.. |ADALM1000 default calibration file| image:: https://wiki.analog.com/_media/:git-libsmu:`contrib/calib`.txt

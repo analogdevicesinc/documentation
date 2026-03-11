@@ -163,11 +163,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`PulSAR ADC HDL Project. <projects/pulsar_adc>`
    
-   |PulSAR ADC HDL Project.|
+
 
 No-OS Downloads
 ---------------
@@ -176,11 +174,6 @@ No-OS Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`PulSAR ADC No-OS Project. <drivers/adc/pulsar_adc>`
    
-   |PulSAR ADC No-OS Project.|
 
-.. |PulSAR ADC HDL Project.| image:: https://wiki.analog.com/_media/repo>hdl/tree/main/projects/pulsar_adc
-.. |PulSAR ADC No-OS Project.| image:: https://wiki.analog.com/_media/repo>no-OS/tree/main/drivers/adc/pulsar_adc

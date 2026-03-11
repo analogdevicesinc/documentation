@@ -10,9 +10,8 @@ Using the AWG by Itself
 
 Most arbitrary waveform generators can produce a DC offset along with their output waveforms, as shown in figure 1. The digital to analog converter (DAC) in an arbitrary waveform generator can be programed to produce an output signal with a combined DC offset plus waveform signal voltage in the full scale range of the DAC which is 0 to +5V for the ADLM1000 and -5 to +5V for the ADALM2000. Therefore, you can set the arbitrary waveform generators to produce a small waveform with a DC offset as large as for example 4.995 V. While this is the most convenient way to produce a signal riding on top of a DC offset, your application may require even higher DC offsets. If you need to generate a signal with a larger DC offset than is available from your signal source, you need to employ a different technique.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -28,9 +27,8 @@ If you set a voltage V\ :sub:`SET` with R\ :sub:`L` = 50Ω: V\ :sub:`OUT` = V\ :
 
 If you set a voltage V\ :sub:`SET`\ t with R\ :sub:`L` = ∞ Ω: V\ :sub:`OUT`\ t= V\ :sub:`SET` [∞/(50+∞)] = V\ :sub:`SET`
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_2.png
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,9 +40,8 @@ Using a Signal Generator in Series with a Power Supply
 
 If the need is to produce a test signal riding on top of a DC offset, but requires a DC offset larger than the AWG can deliver, place a DC power supply in series with the function generator output, as shown in figure 3. This technique offers you the function generator’s full bandwidth capabilities in addition to having flexibility in the DC level provided by the power supply. However, this technique has a few important limitations. One or both the AWG and DC power supply must be fully isolated from earth (USB cable) ground. The AWG outputs, in the case of the ADALM1000 and ADALM2000, are not internally isolated (floating) from earth (USB cable) ground. This means that if you put a DC power supply in series with the AWG output, the DC power supply must be isolated. The :adi:`LTM8067` isolated μModule (Power Module) DC/DC Converter break-out board is provided in the ADALP2000 Analog Parts Kit. It can take a 3.1 V to 32V input (likely from a wall plug power adapter “wall wart”). A trim pot on the breakout board allows the output voltage to be adjusted from 3V to 15V. Because the output voltage pins are fully isolated the voltage can be either positive or negative depending on which pin is connected to the AWG output. The output current can be as much as 440 mA depending on the input and output voltage setting.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -65,9 +62,8 @@ Another way to produce a signal with a large DC offset is using a power supply t
 
 However, the performance of most DC power supplies can impose significant bandwidth limitations. While most AWG generators produce waveforms in the KHz or even MHz range, the output voltage of most DC power supplies has a bandwidth of only a few Hz depending on the output decoupling capacitors. So, when this technique is used, the signal on the power supply’s output (consisting of the DC offset plus a waveform) has a bandwidth of only a few Hz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -78,18 +74,15 @@ There are many small (low cost) power supply modules available based on DC-DC co
 
 A Buck-Boost module is the most versatile choice in that the output can be either higher or lower than the input voltage where in the case of a Buck converter the output can only be lower than the input voltage and for a Boost converter the output can only be higher than the input voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5, Example adjustable Buck, Buck-Boost and Boost Modules.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_6.png
-   :align: center
-   :width: 650px
+   |image6|
 
 .. container:: centeralign
 
@@ -105,9 +98,8 @@ To get the full output voltage and current benefits of a power supply combined w
 
 There are some limitations to this technique. First, select a current transformer that can support the needed bandwidth. Also ensure that the transformer can support the maximum DC current you expect to flow through it to the load. The transformer winding resistance will cause the average DC voltage seen at the load to be lower than the DC output of the power supply. Note that the inherent galvanic primary to secondary isolation of the transformer windings allows the DC power supply voltage to be very high with respect to the common ground of the AWG.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_7.png
-   :align: center
-   :width: 550px
+
+|image7|
 
 .. container:: centeralign
 
@@ -120,3 +112,18 @@ Summary
 A variety of lab testing applications require adding a DC offset to an AC signal generator output. There are several different ways to accomplish this. Each method has advantages and disadvantages affecting the range of output voltage, output current, output bandwidth, and the ease of implementation. Ultimately, the method you choose depends on your specific requirements, the equipment at your disposal, and the time you can commit to designing a solution.
 
 Active Learning Module arbitrary waveform generators can produce DC offsets across their entire output voltage range, even with small amplitude waveforms.
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_2.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_6.png
+   :width: 650px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/tutorials/awg-dc-offset-fig_7.png
+   :width: 550px

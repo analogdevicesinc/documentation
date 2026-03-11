@@ -30,9 +30,8 @@ While it is potentially possible to construct a 20 section LC transmission line 
 
 The experiment PC board shown figure 1 is from the education tools on the `ADI GitHub repository <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_ and has 20 unit LC sections. The specific board shown is populated with 100 uH surface mount inductors and 47 nF thru-hole capacitors. The PC board can be populated with either SMD or thru-hole components. The above L and C values give a characteristic line impedance of close to 50 ohms so 47 ohm source and termination resistors are used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -45,9 +44,8 @@ The AC common node of the transmission line appears on Pins U2 and L2 as well as
 
 Open stub lengths of 20, JP5 shorted, or 10, JP5 open, are possible. Shorted stubs of any length (2, to 20) are possible by shorting the appropriate tap point to the AC common node.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -59,9 +57,8 @@ Directions:
 
 A common way to measure the response of a filter is to apply an impulse function. Impulse functions contain a wide spectrum of frequencies and a Sin X/X (or Sinc) impulse function will contain equally spaced, equal amplitude frequency components starting at the fundamental frequency. The frequencies will be spaced at both even and odd harmonics of the fundamental. The ALICE desktop software has a Sin X/X (or Sinc) impulse function built into the AWG wave shapes. For this specific filter we will be measuring the response from 500 Hz to 50 KHz. If we use the settings shown in figure 3 the spectrum of the Sinc impulse will start at 500 Hz and have 100 “harmonics” up to 50 KHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -70,9 +67,9 @@ A common way to measure the response of a filter is to apply an impulse function
 
 We can view the Sinc Impulse in the time domain with the Scope screen settings shown in figure 4. Note that the sample rate is 200 KSPS and Smooth option is turned on. The green CA-V trace is the output of the AWG and the orange CB-V trace is the waveform seen at the beginning of the transmission line.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -83,9 +80,8 @@ We can now open the Spectrum Analyzer tool and also view the impulse response in
 
 The Magenta trace is the CH B dB – CH A dB gain and the cyan is the relative phase between CH A and CH B. The darker straight lines are for reference purposes and show the response of an ideal lossless terminated transmission line. The lighter traces are for the actual line when the 47 ohm Rt is connected across the end of the full 20 section long line.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -94,9 +90,9 @@ The Magenta trace is the CH B dB – CH A dB gain and the cyan is the relative p
 
 In figure 6 we keep the terminated stub case as the darker reference traces and add the open stub case as the lighter traces. Note that the amplitude or gain is a maximum at the lowest frequency and there are periodic dips or notches in the gain. Also note that the relative phase seen at the stub passes through zero at the peaks and valleys of the gain trace.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig6.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -105,9 +101,9 @@ In figure 6 we keep the terminated stub case as the darker reference traces and 
 
 In figure 7 we keep the open stub case as the darker reference traces and add the shorted stub case as the lighter traces. Note that opposite of the open stub case, for the shorted stub case the amplitude or gain is a minimum at the lowest frequency. The periodic dips or notches in the gain happen where the peaks are for the open stub case.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig7.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -116,18 +112,16 @@ In figure 7 we keep the open stub case as the darker reference traces and add th
 
 It is interesting to go back and look at the time domain waveforms for the open and shorted cases as shown in figure 8 for the open stub case and figure 9 for the shorted stub case. We can see the positive reflected voltage impulse when it returns to the input end of the transmission line for the open case and the negative reflected voltage impulse for the shorted case.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig8.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
    Figure 8, impulse reflection open stub L=20
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig9.png
-   :align: center
-   :width: 600px
+   |image9|
 
 .. container:: centeralign
 
@@ -136,9 +130,9 @@ It is interesting to go back and look at the time domain waveforms for the open 
 
 In figure 10 we look at the open and shorted stub cases for a line length of 10. The notches will happen at higher frequencies (shorter wave length) for the shorter line length. The first notch happens at approximately twice the frequency as the 20 section long line.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig10.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -147,9 +141,9 @@ In figure 10 we look at the open and shorted stub cases for a line length of 10.
 
 In figure 11 we show the different notch frequencies when shorting the 15th and 16th taps. Changing the length of the line tunes the frequency of the filter notches.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -169,3 +163,26 @@ Appendix:
 `Transmission Line Stub <https://en.wikipedia.org/wiki/Stub_(electronics)>`_ `Distributed-element Filter <https://en.wikipedia.org/wiki/Distributed-element_filter>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-tl-filter-fig11.png
+   :width: 600px

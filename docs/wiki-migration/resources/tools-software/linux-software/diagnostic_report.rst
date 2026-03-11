@@ -175,7 +175,7 @@ Installation
    The pre-build Linux images for the Analog Devices reference designs come with the diagnostic report tool pre-installed.
 
 
-The source code for the diagnostic report tool can be downloaded from the `Analog Devices GitHub account <https://github.com/orgs/analogdevicesinc/dashboard>`_ `diagnostic_report repository <https://github.com/analogdevicesinc/diagnostic_report>`_.
+The source code for the diagnostic report tool can be downloaded from the `Analog Devices GitHub account <https://github.com/orgs/analogdevicesinc/dashboard>`_ :git-diagnostic_report:`diagnostic_report repository <diagnostic_report>`.
 
 <div> **Install the Diagnostic Report Tool**
 

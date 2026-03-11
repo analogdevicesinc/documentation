@@ -20,9 +20,8 @@ Applying solid state technology to this traditional device results in circuit br
 
 The electronic circuit breaker combines several analog building blocks: a current-sense or shunt resistor, a differential amplifier with accurate scaling resistors for measuring and scaling the voltage across this resistor; a comparator circuit to trigger a latch at a preset current value, and a FET switch in series with the current path in the power supply line being monitored, figure 1. There is usually a Reset Input of some sort to reset the circuit breaker. Some designs automatically reset when over current fault is removed.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -38,9 +37,8 @@ A very simple example circuit, LTspice simulation shown in figure 2, uses the R\
 
 The circuit is reset by removing the input power supply or the load. The circuit draws essentially no current until it is tripped.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -59,18 +57,15 @@ Directions:
 
 On your solder-less bread board construct the circuit as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3, Electronic Circuit Breaker
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-4.png
-   :align: center
-   :width: 250px
+   |image4|
 
 .. container:: centeralign
 
@@ -89,9 +84,8 @@ Procedure:
 
 When the channel A voltage is equal to 5 V no current flows in the load resistor. As the channel A voltage ramps down the load current increases until the current trip level is reached. Q1 turns on and drives Vgate high (to 5 V) turning off MOS switch M1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -102,9 +96,8 @@ The trigger point can be adjusted (reduced) by pre-biasing the base of Q1 slight
 
 Connect a second ZVP2110A transistor in parallel with M1. Be careful to connect S to S, G to G and D to D. The current level where the circuit trips should now be approximately doubled. Why? Depending on the On resistance of your FETs you may need to reduce the value of R\ :sub:`LOAD` slightly to reach the trigger current point.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -113,9 +106,9 @@ Connect a second ZVP2110A transistor in parallel with M1. Be careful to connect 
 
 The simple PNP based current sensor trips when a voltage greater than V\ :sub:`BE` is dropped across M1. This will be about 600 mV at room temperature and will change over temperature. The temperature coefficient of the V\ :sub:`BE` of a silicon BJT transistor is about -2 mV/°C. The trip current will not be very predictable, stable or accurate. To improve on this design we and add a more complex and accurate sense amplifier and comparator as shown in the LTspice simulation schematic in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-7.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -126,9 +119,8 @@ The first half of the AD8542 dual op-amp, U1A, along with resistors R4,5,6,7 for
 
 Add the difference amplifier and comparator to you breadboard circuit as shown in figure 8. Use a 10 KΩ pot as the voltage divider.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -142,9 +134,8 @@ The example circuits so far have used PMOS devices for the switch. NMOS power de
 
 As with the PMOS version the base of the NPN transistor Q1 is slightly pre-biased by the adjustable R4,5 combination.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -168,9 +159,8 @@ Requiring that the NMOS switch be in the ground leg is very inconvenient, but ne
 
 Be careful to also note that the source and drain orientation of the switch device is now reversed compared to the version when the switch is in the ground leg. Current generally flows from drain to source in NMOS devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -184,9 +174,8 @@ To generate a higher voltage for the gate we can use a diode voltage "booster". 
 
 Build the circuit shown in figure 11 on your solderless breadboard. Because the boosted voltage is higher than +5 V and will be above the maximum allowed input voltage of the ALM1000 a 1 megaOhm resistor, R4 is included in series with the AIN input pin. This external resistor along with the internal 1 megaOhm resistor provides a divide by 2 attenuation of the Vboost voltage. To correct for the voltage division, set the channel A V gain to 2 (rather than 1). The channel A voltage trace will now read the correct measured voltage level.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-11.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -195,9 +184,9 @@ Build the circuit shown in figure 11 on your solderless breadboard. Because the 
 
 As with the PMOS design in figures 7 and 8 we can add the difference amplifier for sensing the current and the comparator stages for better accuracy and control of the trigger current level. Note the simulation and breadboard schematic in figures 12 and 13.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-12.png
-   :align: center
-   :width: 700px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -206,9 +195,9 @@ As with the PMOS design in figures 7 and 8 we can add the difference amplifier f
 
 Note the use of an additional NMOS transistor, M2, that level shifts and inverts the output signal of the comparator before driving the gate of the switch.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-13.png
-   :align: center
-   :width: 700px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -225,18 +214,15 @@ Appendix:
 
 PMOS and NMOS On resistance curves.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-a1.png
-   :align: center
-   :width: 400px
+
+|image14|
 
 .. container:: centeralign
 
    Figure A1, ZVP2110A On-resistance vs drain current
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-a1.png
-   :align: center
-   :width: 400px
+   |image15|
 
 .. container:: centeralign
 
@@ -248,3 +234,34 @@ PMOS and NMOS On resistance curves.
 No R\ :sub:`SENSE`\ ™ :adi:`Electronic Circuit Breaker <media/en/technical-documentation/data-sheets/4213f.pdf>` :adi:`Electronic Circuit Breaker in Small DFN Package Eliminates Sense Resistor <media/en/reference-design-documentation/design-notes/dn402.pdf>` :adi:`LT1153 Auto-Reset Electronic Circuit Breaker <media/en/technical-documentation/data-sheets/lt1153.pdf>` :adi:`ADM1177 digital power monitor <media/en/technical-documentation/data-sheets/ADM1177.pdf>`
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-4.png
+   :width: 250px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-12.png
+   :width: 700px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-13.png
+   :width: 700px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-a1.png
+   :width: 400px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuit-breaker-fig-a1.png
+   :width: 400px

@@ -19,9 +19,7 @@ In order to identify a DPD model for that is optimum for a Power Amplifier, the 
 -  At this stage the user can download the DPD model sweep script provided by ADI at `this link <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodelsweep_sw6p0.zip>`_. The model sweep script automates the process of picking the most suitable model for the PA by iterating through the DPD model library and picking the DPD model that produces the least amount of error between pre-DPD actuator Tx and post PA observed ORx data.
 -  Load the script downloaded in Step 4 into the Iron Python tab of the ADRV9029 TES GUI by clicking on **File->Load** in the Iron Python tab of the ADRV9029 GUI as shown in the figure below and browsing to the location where you have stored the script on your PC.
 
-::
-
-     {{ :resources:eval:user-guides:adrv9029:adrv9029_loadingscript.png?direct |}}
+|resources-eval-user-guides-adrv9029-adrv9029_loadingscript.png|
 
 6. After loading the script, execute the script by clicking **Build->Run** in the Iron Python tab of ADRV9029 TES GUI
 
@@ -33,3 +31,5 @@ In order to identify a DPD model for that is optimum for a Power Amplifier, the 
 
 
 Once the DpdModelOptimized.txt is obtained from the script, user can continue DPD evaluation by loading this DPD model as described in :doc:`ADRV9029 DPD Evaluation through TES GUI </wiki-migration/resources/eval/user-guides/adrv9029/evaluating_dpd_through_tes_gui>`
+
+.. |resources-eval-user-guides-adrv9029-adrv9029_loadingscript.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_loadingscript.png

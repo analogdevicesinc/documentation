@@ -19,7 +19,7 @@ Software
 -  :doc:`Terminal program for serial and ssh connection (PuTTY) </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
-   -  :git-iio-oscilloscope:`adi-osc-setup.exe (Latest build) <releases>`
+   -  `adi-osc-setup.exe (Latest build) <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 -  :doc:`Required System Boot Files </wiki-migration/resources/eval/user-guides/quadmxfe/quick-start>`
 
@@ -620,12 +620,12 @@ There are a few command line tools that are included with the libIIO.
 
 When using remote backend please install libiio for your platform.
 
--  :git-libiio:`releases`
+-  https://github.com/analogdevicesinc/libiio/releases
 
 Windows Example
 ---------------
 
--  Download and install: :git-libiio:`releases/download/v0`.18/libiio-0.18.g4e22517-Windows-setup.exe
+-  Download and install: https://github.com/analogdevicesinc/libiio/releases/download/v0.18/libiio-0.18.g4e22517-Windows-setup.exe
 -  Open windows command prompt: cmd
 
 .. tip::
@@ -749,7 +749,7 @@ Documentation can be found here:
 
 The MxFE AD9081 plugin is included in the official OSC release, which can be downloaded from here:
 
--  :git-iio-oscilloscope:`adi-osc-setup.exe <releases>`
+-  `adi-osc-setup.exe <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 Instructions and Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -952,7 +952,7 @@ Get Linux kernel source
    
    ::
    
-      $ git clone https://github.com/analogdevicesinc/linux.git
+      $ git clone :git-linux:`linux`
       Cloning into 'linux'...
       remote: Counting objects: 2757163, done.
       remote: Compressing objects: 100% (495484/495484), done.

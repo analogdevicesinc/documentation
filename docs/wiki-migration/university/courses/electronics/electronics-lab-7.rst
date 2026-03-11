@@ -18,9 +18,8 @@ Directions:
 
 The breadboard connections are as shown in the diagram below. The waveform generator W1 output drives one end of resistor R\ :sub:`1`. Resistor R\ :sub:`2` is connected between the base and collector of transistor Q\ :sub:`1` with the other end of resistor R\ :sub:`1` connected to the base as well. The emitter of Q\ :sub:`1` is grounded.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -32,7 +31,8 @@ Hardware Setup:
 
 The waveform generator 1 should be configured for a 1 KHz triangle wave with 3 volt amplitude peak-to-peak and 1.5V offset. Connect scope Channel 1 to display output W1 of the AWG generator. The Single ended input of scope channel 2 (2+) is used to measure alternately the base and collector voltage of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain-bb.png
+
+|image2|
 
 .. container:: centeralign
 
@@ -48,7 +48,7 @@ In the figure below we have a transistor biased into conduction with a collector
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image3|\
 
 
 .. container:: centeralign
@@ -58,7 +58,7 @@ In the figure below we have a transistor biased into conduction with a collector
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image4|\
 
 
 .. container:: centeralign
@@ -66,18 +66,14 @@ In the figure below we have a transistor biased into conduction with a collector
    Figure 4 Scopy Plot V\ :sub:`CE`
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f2.png
-   :align: center
-   :width: 500px
+   |image5|
 
 .. container:: centeralign
 
    Figure 5 Excel Plot comparing V\ :sub:`BE` and V\ :sub:`CE`
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f3.png
-   :align: center
-   :width: 500px
+   |image6|
 
 .. container:: centeralign
 
@@ -109,9 +105,8 @@ Directions:
 
 The breadboard connections are as shown in figure 7 below. The output of the AWG generator drives one end of resistor R\ :sub:`1` as well as the 2+ input of scope channel 2. The emitter of Q\ :sub:`1` is connected to ground. The base and collector of Q\ :sub:`1` are connected to the emitter of Q\ :sub:`2`. The base and collector of Q\ :sub:`2` are connected to the other end of R\ :sub:`1` and to the 2- input of scope channel 2 and the 1+ input of scope channel 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f4.png
-   :align: center
-   :width: 300px
+
+|image7|
 
 .. container:: centeralign
 
@@ -135,7 +130,7 @@ Procedure:
 
 .. container:: centeralign
 
-   \ |image3|\
+   \ |image8|\
 
 
 .. container:: centeralign
@@ -143,9 +138,7 @@ Procedure:
    Figure 9 Scopy Voltage vs. current
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f5.png
-   :align: center
-   :width: 500px
+   |image9|
 
 .. container:: centeralign
 
@@ -169,9 +162,8 @@ Directions:
 
 The breadboard connections are as shown in the diagram below. The output of the waveform generator drives one end of resistor R\ :sub:`1` as well as the 2+ input of scope channel 2. The emitter of Q\ :sub:`1` is connected to ground. Resistor R\ :sub:`3` is connected between the base of Q\ :sub:`1` and ground. One end of resistor R\ :sub:`2` connected to the other end of R\ :sub:`1` and to the 2- input of scope channel 2 and one end and the wiper of potentiometer R\ :sub:`4` 1+. The opposite end of R\ :sub:`2` is connected to the base of Q\ :sub:`1`. The collector of Q\ :sub:`2` is connected to the remaining end of R\ :sub:`4` and the 1+ input of scope channel 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f6.png
-   :align: center
-   :width: 300px
+
+|image10|
 
 .. container:: centeralign
 
@@ -197,7 +189,7 @@ Start out with variable resistor R\ :sub:`4` set to its minimum value of nearly 
 
 .. container:: centeralign
 
-   \ |image4|\
+   \ |image11|\
 
 
 .. container:: centeralign
@@ -205,9 +197,7 @@ Start out with variable resistor R\ :sub:`4` set to its minimum value of nearly 
    Figure 13 Scopy plot - R\ :sub:`4` set to zero ohms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f7.png
-   :align: center
-   :width: 500px
+   |image12|
 
 .. container:: centeralign
 
@@ -218,7 +208,7 @@ Let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:`4` and
 
 .. container:: centeralign
 
-   \ |image5|\
+   \ |image13|\
 
 
 .. container:: centeralign
@@ -226,9 +216,7 @@ Let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:`4` and
    Figure 15 Scopy plot - R\ :sub:`4` set to approximately 100 ohms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f8.png
-   :align: center
-   :width: 500px
+   |image14|
 
 .. container:: centeralign
 
@@ -250,9 +238,8 @@ Directions:
 
 The breadboard connections are as shown in the diagram below in figure 17. Version 3 is made from version 2 by removing 10KΩ resistor R\ :sub:`2` and replacing it with diode connected NPN Q\ :sub:`2` as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f9.png
-   :align: center
-   :width: 300px
+
+|image15|
 
 .. container:: centeralign
 
@@ -281,16 +268,14 @@ Again start out with variable resistor R\ :sub:`4` set to its minimum value of n
    \
 
 
-   |image6|
+   |image16|
 
 .. container:: centeralign
 
    Figure 19
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f10.png
-   :align: center
-   :width: 500px
+   |image17|
 
 .. container:: centeralign
 
@@ -304,16 +289,14 @@ Again, let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:
    \
 
 
-   |image7|
+   |image18|
 
 .. container:: centeralign
 
    Figure 22
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f11.png
-   :align: center
-   :width: 500px
+   |image19|
 
 .. container:: centeralign
 
@@ -322,9 +305,9 @@ Again, let’s apply the concept of the zero gain amplifier. Now adjust R\ :sub:
 
 Optional extra credit problem:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f12.png
-   :align: center
-   :width: 500px
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -348,17 +331,42 @@ Answer: using a potentiometer for R\ :sub:`2` the above curve was generated with
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain_vbe-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain_vbe-wav.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain_vce-wav.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/zero_gain_vce-wav.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_circuit-wav.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f2.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav1.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f3.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav2.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f4.png
+   :width: 300px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_circuit-wav.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe-multiplier3-wav1.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f5.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe-multiplier3-wav2.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f6.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav1.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f7.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe_multiplier-wav2.png
+   :width: 500px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f8.png
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f9.png
+   :width: 300px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe-multiplier3-wav1.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f10.png
+   :width: 500px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/vbe-multiplier3-wav2.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f11.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a7_f12.png
    :width: 500px

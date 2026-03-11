@@ -5,26 +5,26 @@ For those attending the :adi:`PlutoSDR` workshop at European GNU Radio Days 2019
 
 -  **libIIO library:**
 
-   -  Packages for Linux and Windows are available here: :git-libiio:`releases/latest`
-   -  Source available here: https://github.com/analogdevicesinc/libiio. If you want to build from source, feel free; master works fine.
+   -  Packages for Linux and Windows are available here: https://github.com/analogdevicesinc/libiio/releases/latest
+   -  Source available here: :git-libiio:`libiio`. If you want to build from source, feel free; master works fine.
    -  Documentation: :doc:`What is libiio? </wiki-migration/resources/tools-software/linux-software/libiio>`
 
 -  **libad9361-iio library**
 
-   -  for linux users only, you will need the https://github.com/analogdevicesinc/libad9361-iio library.
+   -  for linux users only, you will need the :git-libad9361-iio:`libad9361-iio` library.
    -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
 -  **IIO-Scope:**
 
-   -  Windows installers are available here: :git-iio-oscilloscope:`releases`
-   -  Linux users will need to build from source: https://github.com/analogdevicesinc/iio-oscilloscope. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+   -  Windows installers are available here: https://github.com/analogdevicesinc/iio-oscilloscope/releases
+   -  Linux users will need to build from source: :git-iio-oscilloscope:`iio-oscilloscope`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
    -  Documentation: :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 
 -  **GNU Radio with IIO support:**
 
    -  A prebuilt binary for Windows users is available here: https://ci.appveyor.com/api/buildjobs/3cigr6q3sb6tb7li/artifacts/gnuradio_3_7_11_iiosupport.msi
 
-      -  If you need the Windows version of GNU Radio, you likely need the Windows driver from :git-plutosdr-m2k-drivers-win:`releases/latest`.
+      -  If you need the Windows version of GNU Radio, you likely need the Windows driver from https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases/latest.
 
    -  Installation instructions for Linux users are here: :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
 

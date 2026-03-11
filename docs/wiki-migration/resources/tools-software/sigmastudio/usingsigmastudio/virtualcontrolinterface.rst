@@ -214,5 +214,5 @@ ALPHA v1.0
 -  Schematic view name changes, both hierarchy boards or algorithm cells will not update the Virtual Interface Control and assignment is lost. All renamed cell(s) must be manually re-assigned to the virtual control. (will be addressed in 1.1 release).
 -  Virtual Interface assignment is only available for cell GUI controls (algorithm parameters without a schematic view GUI control cannot be assigned). Also a cell’s GUI parameters must support the UI “settings” feature of SigmaStudio (some legacy cells and interim custom cells may not support this feature). Can be addresses on a case-by-case basis as needed.
 
-.. |vci.png| image:: https://wiki.analog.com/_media/vci.png
-.. |vci1.png| image:: https://wiki.analog.com/_media/vci1.png
+.. |vci.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci.png
+.. |vci1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vci1.png

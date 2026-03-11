@@ -28,21 +28,26 @@ This user guide describes the :adi:`AD6674` evaluation board :adi:`AD6674-1000EB
 AD6674 Evaluation Board
 -----------------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9680evb2.jpg
+   :align: center
 
 .. container:: centeralign
 
    *Figure 1a.* :adi:`AD6674` *Evaluation Board for full 2GHz Input Bandwidth*\
 
 
-|image2|\
+   |image1|
 
 .. container:: centeralign
 
    *Figure 1b.* :adi:`AD6674` *Low Frequency Evaluation Board up to 1GHz Input Bandwidth*\
 
 
-Figure 2 below compares the bandwidth available on the :adi:`AD6674` normal evaluation boards and the **"LF"** boards\ |image3|\
+Figure 2 below compares the bandwidth available on the :adi:`AD6674` normal evaluation boards and the **"LF"** boards
+
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,14 +57,17 @@ Figure 2 below compares the bandwidth available on the :adi:`AD6674` normal eval
 Typical Measurement Setup
 -------------------------
 
-The :adi:`AD6674-1000EBZ <AD6674>` can be evaluated using the :adi:`ADS7-V1EBZ <eval-ads7-v1>` or :adi:`ADS7-V2EBZ <eval-ads7-v2>` FPGA data capture boards. Figures 3 and 4 below show the :adi:`AD6674-1000EBZ <AD6674>` connected to the :adi:`ADS7-V1EBZ <eval-ads7-v1>` and :adi:`ADS7-V2EBZ <eval-ads7-v2>` respectively. |image4|\
+The :adi:`AD6674-1000EBZ <AD6674>` can be evaluated using the :adi:`ADS7-V1EBZ <eval-ads7-v1>` or :adi:`ADS7-V2EBZ <eval-ads7-v2>` FPGA data capture boards. Figures 3 and 4 below show the :adi:`AD6674-1000EBZ <AD6674>` connected to the :adi:`ADS7-V1EBZ <eval-ads7-v1>` and :adi:`ADS7-V2EBZ <eval-ads7-v2>` respectively.
+
+
+|image3|
 
 .. container:: centeralign
 
    *Figure 3a. Evaluation Board Connection—*\ :adi:`AD6674-1000EBZ <AD6674>`\ *(on Left) and* :adi:`ADS7-V1EBZ <eval-ads7-v1>` *(on Right)*
 
 
-|image5|\
+   |image4|
 
 .. container:: centeralign
 
@@ -129,7 +137,11 @@ Before using the software for testing, configure the evaluation board as follows
 -  Connect the evaluation board to the :adi:`ADS7-V2EBZ <eval-ads7-v2>`/:adi:`ADS7-V1EBZ <eval-ads7-v1>` data capture board, as shown in Figures 1a and 1b.
 -  Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01 supplied) to P4 on the :adi:`ADS7-V2EBZ <eval-ads7-v2>`/:adi:`ADS7-V1EBZ <eval-ads7-v1>` board. Connect the Standard-B USB port of the :adi:`ADS7-V2EBZ <eval-ads7-v2>`/:adi:`ADS7-V1EBZ <eval-ads7-v1>` board to the PC with the supplied USB cable.
 -  Turn on the :adi:`ADS7-V2EBZ <eval-ads7-v2>`/:adi:`ADS7-V1EBZ <eval-ads7-v1>`.
--  The :adi:`ADS7-V2EBZ <eval-ads7-v2>`/:adi:`ADS7-V1EBZ <eval-ads7-v1>` will appear in the Device Manager.\ |image6|\
+-  The :adi:`ADS7-V2EBZ <eval-ads7-v2>`/:adi:`ADS7-V1EBZ <eval-ads7-v1>` will appear in the Device Manager.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/fig2_devmgr.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -191,7 +203,7 @@ Software Setup
 
 .. container:: centeralign
 
-   }\ |image7|\ *Figure 5. ACE's AD6674 Plug-in*\
+   }\ |image5|\ *Figure 5. ACE's AD6674 Plug-in*\
 
 
 -  If the AD6674 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.
@@ -207,7 +219,7 @@ Software Setup
 
 .. container:: centeralign
 
-   \ |image8|\ *Figure 6. AD6674 Board View*\
+   \ |image6|\ *Figure 6. AD6674 Board View*\
 
 
 
@@ -223,7 +235,7 @@ Software Setup
 
 .. container:: centeralign
 
-   \ |image9|\ *Figure 7. AD6674 Chip View*\
+   \ |image7|\ *Figure 7. AD6674 Chip View*\
 
 .. raw:: html
 
@@ -239,67 +251,108 @@ Software Setup
 **Visual Analog Setup**
 
 -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog
--  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Dual** :math:`right` **AD6674** |image10|\
+-  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Dual** :math:`right` **AD6674**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_selecting_canvas.png
+   :align: center
 
 .. container:: centeralign
 
-   //Figure 8. Selecting the :adi:`AD6674` canvas *
+   //Figure 8. Selecting the :adi:`AD6674` canvas //
 
 
-- At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in Figure 9.\ \
+-  At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in Figure 9.
 
-.. container:: centeralign
-
-   *Figure 9. Programming the :adi:`ADS7-V2EBZ <eval-ads7-v2>`*
-
-
-- If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 10)\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/fpga_program_prompt.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
-   *Figure 10. Expanding Display in VA*
+   \ *Figure 9. Programming the* :adi:`ADS7-V2EBZ <eval-ads7-v2>`\
 
 
-- Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 11 \
+-  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 10)
 
-.. container:: centeralign
-
-   *Figure 11. Changing the ADC Capture Settings*
-
-
-- On the **General** tab make sure the clock frequency is set to **750MHz** *(or other clock frequency). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The* :adi:`ADS7-V2 <eval-ads7-v2>` *and* :adi:`ADS7-V1 <eval-ads7-v1>` *FPGA software supports up to 2M FFT capture (1M per channel)\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/fig4_expand_display.png
+   :align: center
 
 .. container:: centeralign
 
-   *Figure 12. Setting the clock frequency and Capture length*
+   \ *Figure 10. Expanding Display in VA*\
 
 
-- If the board did not Auto-program click on the **Capture Board** tab and browse to the **ad9680_ads7v1.bin** or the **ad9680_ads7v2.bin** file depending on which data capture board is being used. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the* :adi:`ADS7-V1 <eval-ads7-v1>` *board indicating that the FPGA has been correctly programmed. \* On the **Device** tab. Make sure that **Enable Alternate REFCLK** option is unchecked. \* Click **OK***SPI Controller Setup**\* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the **Global** tab, under the **Generic Read/Write** section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. \
+-  Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 11
 
-.. container:: centeralign
-
-   *Figure 13. Sending a Soft Reset to the AD6674*
-
-
-- The JESD204B quick configuration and Lane Rate registers are available in the **ADCBase3** tab. Set the Lane Rate setting register 0x56E to **Low Lane Rate Mode**\ *\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_capture_settings.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 14. Setting the JESD204B Lane Rate*
+   \ *Figure 11. Changing the ADC Capture Settings*\
 
 
-- Set the JESD204B Quick Configuration register 0x570. For 1000MSPS operation with with default conditions (*Noise Shaped Requantizer (NSR) Mode*), the values for **L.M.F** are **4.2.1**\ *\ \
+-  On the **General** tab make sure the clock frequency is set to **750MHz** (or other clock frequency). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The :adi:`ADS7-V2 <eval-ads7-v2>` and :adi:`ADS7-V1 <eval-ads7-v1>` FPGA software supports up to 2M FFT capture (1M per channel)
 
-.. container:: centeralign
-
-   *Figure 15. Setting the JESD204B Quick Configuration Register*
-
-
-- After the quick configuration setting is completed, the PLL Lock Detect register 0x56F will read 0x80 to denote a lock. The SPIController interface will show a "1" to denote a lock. \* Toggle the JESD204B link by checking and then unchecking the **JESD204B Serial Transmit Power Down** box \* Individual Channel control for **ADC A** and **ADC B** are done using the Device Index Register (0x008) in the Global tab.\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_capture_settings.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 16. Device Index for ADC Channel A and Channel B*
+   \ *Figure 12. Setting the clock frequency and Capture length*\
+
+
+-  If the board did not Auto-program click on the **Capture Board** tab and browse to the **ad9680_ads7v1.bin** or the **ad9680_ads7v2.bin** file depending on which data capture board is being used. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the :adi:`ADS7-V1 <eval-ads7-v1>` board indicating that the FPGA has been correctly programmed.
+-  On the **Device** tab. Make sure that **Enable Alternate REFCLK** option is unchecked.
+-  Click **OK**
+
+**SPI Controller Setup**
+
+-  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController
+-  Select the appropriate configuration file when prompted.
+-  In the **Global** tab, under the **Generic Read/Write** section, write 0x81 to register 0x000. This issues a Soft reset for the DUT.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_global.png
+   :align: center
+
+.. container:: centeralign
+
+   \ *Figure 13. Sending a Soft Reset to the AD6674*\
+
+
+-  The JESD204B quick configuration and Lane Rate registers are available in the **ADCBase3** tab. Set the Lane Rate setting register 0x56E to **Low Lane Rate Mode**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_adcbase3.png
+   :align: center
+
+.. container:: centeralign
+
+   \ *Figure 14. Setting the JESD204B Lane Rate*\
+
+
+-  Set the JESD204B Quick Configuration register 0x570. For 1000MSPS operation with with default conditions (*Noise Shaped Requantizer (NSR) Mode*), the values for **L.M.F** are **4.2.1**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_adcbase3.png
+   :align: center
+
+.. container:: centeralign
+
+   \ *Figure 15. Setting the JESD204B Quick Configuration Register*\
+
+
+-  After the quick configuration setting is completed, the PLL Lock Detect register 0x56F will read 0x80 to denote a lock. The SPIController interface will show a "1" to denote a lock.
+-  Toggle the JESD204B link by checking and then unchecking the **JESD204B Serial Transmit Power Down** box
+-  Individual Channel control for **ADC A** and **ADC B** are done using the Device Index Register (0x008) in the Global tab.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/fig10_devindex.png
+   :align: center
+
+.. container:: centeralign
+
+   \ *Figure 16. Device Index for ADC Channel A and Channel B*\
+
 
 -  Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:
 
@@ -334,7 +387,7 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 .. container:: centeralign
 
-   \ |image11|\ *Figure 17. Chip Settings*\
+   \ |image8|\ *Figure 17. Chip Settings*\
 
 
 -  Click **Apply** to apply the chip settings. Set the **reference clock** to **187.5 MHz** to match these settings and click AD6674 to be directed to chip view.
@@ -346,35 +399,55 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 
 
--  Click **Apply** at **AD6674 Configuration**, and then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.\ |image12|\
+-  Click **Apply** at **AD6674 Configuration**, and then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_read_all.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 18. Read All Button*\
 
 
--  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.\ |image13|\
+-  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_datapath_reset.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 19. Data Path Reset*\
 
 
--  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.\ |image14|\
+-  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_powerdown.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 20. PLL Lock, Link Power Down*\
 
 
--  Enable the **Link Control** again and **Apply Changes**.\ |image15|\
+-  Enable the **Link Control** again and **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_active.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 21. PLL Lock, Link Enable*\
 
 
--  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.\ |image16|\
+-  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -390,7 +463,11 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 
 
--  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75 MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at the desired level. NSR imposes a ~3dB loss in the signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT.\ |image17|\
+-  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75 MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at the desired level. NSR imposes a ~3dB loss in the signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_results.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -414,10 +491,14 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 .. container:: centeralign
 
-   \ |image18|\ *Figure 24. Default Application Mode - NSR/Decimation by 2*\
+   \ |image9|\ *Figure 24. Default Application Mode - NSR/Decimation by 2*\
 
 
--  The NSR mode settings are configured in the ADCA and ADCB tabs. The NSR defaults to 21% bandwidth mode with a tuning word of 0. Decimate by 2 is enabled by default also on the AD6674-750 and AD6674-1000 (and cannot be disabled in NSR mode).\ |image19|\
+-  The NSR mode settings are configured in the ADCA and ADCB tabs. The NSR defaults to 21% bandwidth mode with a tuning word of 0. Decimate by 2 is enabled by default also on the AD6674-750 and AD6674-1000 (and cannot be disabled in NSR mode).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_settings.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -426,14 +507,20 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 **Visual Analog Configuration**
 
--  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency.\ |image20|\
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_nsr_datacapturesettings.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 26. AD6674-750 FFT Data Capture Settings*\
 
 
--  In order to obtain an FFT with NSR enabled, Visual Analog must be configured correctly. Click on the settings button on the FFT Analysis block and configure the settings in Visual Analog to match the NSR settings that have been programmed into the AD6674. Under Advanced Calculation, click the Enable box, select AD6674 NSR, and then select the appropriate bandwidth mode and tuning word. Make sure to set the Bandwidth to match the mode. When finished, click the Apply button and then the OK button to apply the settings. |image21|\
+-  In order to obtain an FFT with NSR enabled, Visual Analog must be configured correctly. Click on the settings button on the FFT Analysis block and configure the settings in Visual Analog to match the NSR settings that have been programmed into the AD6674. Under Advanced Calculation, click the Enable box, select AD6674 NSR, and then select the appropriate bandwidth mode and tuning word. Make sure to set the Bandwidth to match the mode. When finished, click the Apply button and then the OK button to apply the settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fftanalysis_nsr_settings.png
+   :align: center
 
 .. container:: centeralign
 
@@ -441,7 +528,11 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 
 
 -  In this example, with an input clock of 750MHz, the output sample rate is 375MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The required REFCLK frequency is 187.5MHz (refer to step 7 in the section "Configuring the Board").
--  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image22|\
+-  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_nsr.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -451,14 +542,20 @@ The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a c
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.) NSR imposes a ~3dB loss in the signal, but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT in Visual Analog.
 -   To save the FFT plot do the following
 
-   -  Click on the Float Form button in the FFT window\ |image23|\
+   -  Click on the Float Form button in the FFT window
+
+.. image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 29. Floating the FFT window*\
 
 
--  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image24|\
+-  Click on File :math:`right` Save Form As button and save it to a location of choice
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
+   :align: center
 
 .. container:: centeralign
 
@@ -491,7 +588,7 @@ Sample Configuration 2: VDR Mode
 
 .. container:: centeralign
 
-   \ |image25|\ *Figure 31. Chip Settings*\
+   \ |image10|\ *Figure 31. Chip Settings*\
 
 
 -  Click **Apply** to apply the chip settings. Set the **reference clock** to **375 MHz** to match these settings and click AD6674 to be directed to chip view.
@@ -503,35 +600,55 @@ Sample Configuration 2: VDR Mode
 
 
 
--  In the chip view, set **Tuning Word** to **0** and click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.\ |image26|\
+-  In the chip view, set **Tuning Word** to **0** and click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_read_all.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 32. Read All Button*\
 
 
--  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.\ |image27|\
+-  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_datapath_reset.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 33. Data Path Reset*\
 
 
--  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.\ |image28|\
+-  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_powerdown.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 34. PLL Lock, Link Power Down*\
 
 
--  Enable the **Link Control** again and **Apply Changes**.\ |image29|\
+-  Enable the **Link Control** again and **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_active.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 35. PLL Lock, Link Enable*\
 
 
--  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.\ |image30|\
+-  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -547,7 +664,11 @@ Sample Configuration 2: VDR Mode
 
 
 
--  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. |image31|\
+-  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_results.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -569,21 +690,33 @@ Sample Configuration 2: VDR Mode
 
 **SPI Controller Configuration**
 
--  The settings in the ADCBase0 tab must be changed to configure the AD6674 into VDR mode. To set up the AD6674 for VDR mode change the Chip Application Mode in register 0x200 to Variable Dynamic Range (VDR) Mode and set the Chip Decimation Ratio in register 0x201 to Full Sample Rate. |image32|\
+-  The settings in the ADCBase0 tab must be changed to configure the AD6674 into VDR mode. To set up the AD6674 for VDR mode change the Chip Application Mode in register 0x200 to Variable Dynamic Range (VDR) Mode and set the Chip Decimation Ratio in register 0x201 to Full Sample Rate.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_adcglobal.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    \ *Figure 38. Set Application Mode to VDR*\
 
 
--  The VDR mode tuning word can be configured in the ADC A and ADC B tabs. VDR defaults to 25% bandwidth complex mode with a tuning word of 0. The tuning word can be changed using the VDR Tuner Frequency selection (register 0x434). See the AD6674 data sheet for more details on the available bandwidth modes and tuning words. |image33|\
+-  The VDR mode tuning word can be configured in the ADC A and ADC B tabs. VDR defaults to 25% bandwidth complex mode with a tuning word of 0. The tuning word can be changed using the VDR Tuner Frequency selection (register 0x434). See the AD6674 data sheet for more details on the available bandwidth modes and tuning words.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_tuningword.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    \ *Figure 39. Channel A and Channel B VDR Settings*\
 
 
--  Using the default lane configuration in the AD6674 (L.M.F = 4.2.1) the JESD204B lane rate will be 7.5 Gbps which means the PLL must be set to Maximum Lane Rate Mode (0x56E) int he ADCBase3 tab in SPIController. |image34|\
+-  Using the default lane configuration in the AD6674 (L.M.F = 4.2.1) the JESD204B lane rate will be 7.5 Gbps which means the PLL must be set to Maximum Lane Rate Mode (0x56E) int he ADCBase3 tab in SPIController.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_pllencode_maxlanerate.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -592,16 +725,24 @@ Sample Configuration 2: VDR Mode
 
 **Visual Analog Configuration**
 
--  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency.\ |image35|\
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_nsr_datacapturesettings.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 41. AD6674-750 FFT Data Capture Settings*\
 
 
--  In this example, with an input clock of 750MHz, the output sample rate is 750MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The required REFCLK frequency is 375MHz (refer to step 7 in the section "Configuring the Board").
+::
 
--  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image36|\
+     * In this example, with an input clock of 750MHz, the output sample rate is 750MSPS.  The default JESD204B lane configuration is 4.2.1 (L.M.F).  The required REFCLK frequency is 375MHz (refer to step 7 in the section "Configuring the Board").
+   * Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_vdr.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -611,14 +752,20 @@ Sample Configuration 2: VDR Mode
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.) VDR imposes no loss on the input signal so a -1.0 dBFS input signal will show as -1.0 dBFS in the FFT in Visual Analog.
 -   To save the FFT plot do the following
 
-   -  Click on the Float Form button in the FFT window\ |image37|\
+   -  Click on the Float Form button in the FFT window
+
+.. image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 43. Floating the FFT window*\
 
 
--  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image38|\
+-  Click on File :math:`right` Save Form As button and save it to a location of choice
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
+   :align: center
 
 .. container:: centeralign
 
@@ -645,14 +792,20 @@ Sample Configuration 2.1: VDR Mode - Use Control Bits as VDR Punish Bits and the
 
 **SPI Controller Configuration**
 
--  The first step, go to the ADCBase2 tab in SPIController to set up the control bits to select the VDR indicator bits. In this example Control Bit 2 is set to VDR Punish Bit 1, Control Bit 1 is set to VDR Punish Bit 0, and Control Bit 0 is set to the VDR High/Low resolution bit. (Similarly, the control bits may be set up to function as Overrange, Signal Monitor (SMON), or Fast Detect (FD) indicators.)\ |image39|\
+-  The first step, go to the ADCBase2 tab in SPIController to set up the control bits to select the VDR indicator bits. In this example Control Bit 2 is set to VDR Punish Bit 1, Control Bit 1 is set to VDR Punish Bit 0, and Control Bit 0 is set to the VDR High/Low resolution bit. (Similarly, the control bits may be set up to function as Overrange, Signal Monitor (SMON), or Fast Detect (FD) indicators.)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_bits_adcbase2.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 45. SPIController ADCBase2 Settings for VDR Indicators in the Control Bits*\
 
 
--  Next go to the ADCBase4 tab to set up the control bits to select the VDR indicator bits. In this example three control bits are sent per sample. In order to accommodate three control bits, the converter resolution (N) must be set to 13 bits (there are 16 available bits in the JESD204B data word and if three are used for control bits there are 13 bits available for the converter sample - in this example this means there will only be 13 bits available instead of the 14 bits of converter resolution.\ |image40|\
+-  Next go to the ADCBase4 tab to set up the control bits to select the VDR indicator bits. In this example three control bits are sent per sample. In order to accommodate three control bits, the converter resolution (N) must be set to 13 bits (there are 16 available bits in the JESD204B data word and if three are used for control bits there are 13 bits available for the converter sample - in this example this means there will only be 13 bits available instead of the 14 bits of converter resolution.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_bits_adcbase4.png
+   :align: center
 
 .. container:: centeralign
 
@@ -661,35 +814,50 @@ Sample Configuration 2.1: VDR Mode - Use Control Bits as VDR Punish Bits and the
 
 **Visual Analog Configuration**
 
--  The first step is to open a new Logic canvas in VisualAnalog. In the Logic canvas configure the Input Formatter to set the Resolution to 16 bits and the Alignment to 18 bits. This will create the space such that all three control bits can be visible in the Logic canvas.\ |image41|\
+-  The first step is to open a new Logic canvas in VisualAnalog. In the Logic canvas configure the Input Formatter to set the Resolution to 16 bits and the Alignment to 18 bits. This will create the space such that all three control bits can be visible in the Logic canvas.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_inputformatter.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 47. Input Formatter Settings for VDR Indicators in the Control Bits*\
 
 
--  Next configure the Logic Analysis block for the data alignement. Set the High Bit to 15 and the low bit to 0. This will align the canvas such that all three control bits can be visible in the Logic canvas.\ |image42|\
+-  Next configure the Logic Analysis block for the data alignement. Set the High Bit to 15 and the low bit to 0. This will align the canvas such that all three control bits can be visible in the Logic canvas.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logicanalysis.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 48. Logic Analysis Settings for Bit Alignment*\
 
 
--  These settings will create the space in the Logic Canvas display so that all three control bits available in the JESD204B data stream will be visible. (While the example here is for VDR the control bits may be set up to function as Overrange, Signal Monitor (SMON), or Fast Detect (FD) indicators and can be viewed in the output data in a similar manner.) |image43|\
+-  These settings will create the space in the Logic Canvas display so that all three control bits available in the JESD204B data stream will be visible. (While the example here is for VDR the control bits may be set up to function as Overrange, Signal Monitor (SMON), or Fast Detect (FD) indicators and can be viewed in the output data in a similar manner.)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 49. Logic Canvas Display Showing Available Control Bits*\
 
 
--  Once a signal is input that will trigger VDR to operate the VDR punish bits [1:0] and the VDR High/Low resolution bit can be seen in the Logic Canvas display. In this case control bit 2 is VDR punish bit 1, control bit 1 is VDR punish bit 0, and control bit 0 is the VDR High/Low resolution bit. |image44|\
+-  Once a signal is input that will trigger VDR to operate the VDR punish bits [1:0] and the VDR High/Low resolution bit can be seen in the Logic Canvas display. In this case control bit 2 is VDR punish bit 1, control bit 1 is VDR punish bit 0, and control bit 0 is the VDR High/Low resolution bit.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted_inputsignal.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 50. Logic Canvas Display Showing Control Bits [2:0] Indicating VDR Status*\
 
 
--  Note that the data alignment from the FPGA to VisualAnalog will fill in the control bits starting from the LSB location in the Logic Canvas display. In this example data bit two is control bit 2, data bit 1 is control bit 1, and data bit 0 is control bit 0. If only using control bit 2 then this would reside in the data bit 0 location in the Logic Canvas display. |image45|\
+-  Note that the data alignment from the FPGA to VisualAnalog will fill in the control bits starting from the LSB location in the Logic Canvas display. In this example data bit two is control bit 2, data bit 1 is control bit 1, and data bit 0 is control bit 0. If only using control bit 2 then this would reside in the data bit 0 location in the Logic Canvas display.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted_cb2only.png
+   :align: center
 
 .. container:: centeralign
 
@@ -723,7 +891,7 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 .. container:: centeralign
 
-   \ |image46|\ *Figure 52. Chip Settings*\
+   \ |image11|\ *Figure 52. Chip Settings*\
 
 
 -  Click **Apply** to apply the chip settings. Set the **reference clock** to **187.5 MHz** to match these settings and click AD6674 to be directed to chip view.
@@ -742,42 +910,66 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
    -  Gain Select: **6 dB**
    -  Mixer Select: **Real Mixer**
 
--  Click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.\ |image47|\
+-  Click **Apply** at **AD6674 Configuration**. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the **Read All button**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_read_all.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 53. Read All Button*\
 
 
--  After applying DDC settings, set **DDC Soft Reset** to **DDC Held in Reset** and **Apply Changes**, then return it back to **Normal Operation** and **Apply Changes**.\ |image48|\
+-  After applying DDC settings, set **DDC Soft Reset** to **DDC Held in Reset** and **Apply Changes**, then return it back to **Normal Operation** and **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_ddc_softreset.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 54. DDC Soft Reset*\
 
 
--  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.\ |image49|\
+-  Issue a **Data Path Reset** to the AD6674 by clicking its checkbox and then **Apply Changes**. The data path reset bit will automatically self-clear.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_datapath_reset.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 55. Data Path Reset*\
 
 
--  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.\ |image50|\
+-  If the **PLL Locked** indicator lights up, you can reset it by powering down the JESD link using the **Link Control** dropdown box, and clicking **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_powerdown.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 56. PLL Lock, Link Power Down*\
 
 
--  Enable the **Link Control** again and **Apply Changes**.\ |image51|\
+-  Enable the **Link Control** again and **Apply Changes**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_active.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 57. PLL Lock, Link Enable*\
 
 
--  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.\ |image52|\
+-  Click **Proceed to Analysis**. This is ACE's Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on **FFT** and **Run Once** to capture once.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -793,7 +985,11 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 
 
--  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. |image53|\
+-  **Channel A** and **Channel B** can be selected individually to display their **FFTs**. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_results.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -815,7 +1011,11 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 **SPI Controller Configuration**
 
--  The settings in the ADCBase0 tab must be changed to configure the AD6674 to use the DDCs. In this example the AD6674 is set up to use two DDCs (one per ADC channel) with real outputs and a decimation ratio of two. Set the Chip Application Mode in register 0x200 to Two Digital Down Converters and select the Only Real (I) Selected checkbox. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio. |image54|\
+-  The settings in the ADCBase0 tab must be changed to configure the AD6674 to use the DDCs. In this example the AD6674 is set up to use two DDCs (one per ADC channel) with real outputs and a decimation ratio of two. Set the Chip Application Mode in register 0x200 to Two Digital Down Converters and select the Only Real (I) Selected checkbox. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcglobal.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -838,7 +1038,11 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 -  Under DDCO CTRL and DDC1 CTRL in the ADCBase1 tab configure the DDCs to select 6dB Gain, Variable IF Mode, Real(I) Decimate by 2 Filter Selection, Both Input Sample Selections to Channel A for DDC0 and Channel B for DDC1, and the DDC Phase Increment to the calculated value of 512
 
-   -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300). |image55|\
+   -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcbase1.png
+   :align: center
+   :width: 650px
 
 .. container:: centeralign
 
@@ -849,16 +1053,24 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 
 **Visual Analog Configuration**
 
--  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 and DDC1 are being used in the AD6674 so this must be selected under the ADC Data Capture Settings.\ |image56|\
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 and DDC1 are being used in the AD6674 so this must be selected under the ADC Data Capture Settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_2ddcrealdec2_datacapturesettings.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 62. AD6674-750 FFT Data Capture Settings*\
 
 
--  In this example, with an input clock of 750MHz, the output sample rate is 375MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The required REFCLK frequency is 187.5MHz (refer to step 7 in the section "Configuring the Board").
+::
 
--  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image57|\
+     * In this example, with an input clock of 750MHz, the output sample rate is 375MSPS.  The default JESD204B lane configuration is 4.2.1 (L.M.F).  The required REFCLK frequency is 187.5MHz (refer to step 7 in the section "Configuring the Board").
+   * Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_2ddcrealdec2.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -868,14 +1080,20 @@ Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.) Real DDC operation imposes ~0.7 dB loss on the input signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -1.7 dBFS in the FFT in Visual Analog.
 -   To save the FFT plot do the following
 
-   -  Click on the Float Form button in the FFT window\ |image58|\
+   -  Click on the Float Form button in the FFT window
+
+.. image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 64. Floating the FFT window*\
 
 
--  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image59|\
+-  Click on File :math:`right` Save Form As button and save it to a location of choice
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
+   :align: center
 
 .. container:: centeralign
 
@@ -897,7 +1115,11 @@ Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 **SPI Controller Configuration**
 
--  The settings in the ADCBase0 tab must be changed to configure the AD6674 to use the DDC. In this example the AD6674 will be set up to use one DDCs with a complex ZIF output (NCO bypassed) and a decimation ration of two. Set the Chip Application Mode in register 0x200 to One Digital Down Converter and make sure the Only Real (I) Selected checkbox is **NOT** checked. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio. |image60|\
+-  The settings in the ADCBase0 tab must be changed to configure the AD6674 to use the DDC. In this example the AD6674 will be set up to use one DDCs with a complex ZIF output (NCO bypassed) and a decimation ration of two. Set the Chip Application Mode in register 0x200 to One Digital Down Converter and make sure the Only Real (I) Selected checkbox is **NOT** checked. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcglobal.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -906,7 +1128,11 @@ Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 -  The DDC settings must be configured under DDCO CTRL in the ADCBase1 tab configure the DDC to select Complex Mixer Selection, 0 Hz IF Mode, Decimate by 2 Filter Selection, Real (I) Input Sample Selection to Channel A for DDC0, and Complex (Q) Input Sample Selection to Channel B.
 
-   -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300). |image61|\
+   -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcbase1.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -917,23 +1143,35 @@ Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 
 **Visual Analog Configuration**
 
--  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 is being used in the AD6674 so this must be selected under the ADC Data Capture Settings.\ |image62|\
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 is being used in the AD6674 so this must be selected under the ADC Data Capture Settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_datacapturesettings.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 75. AD6674-750 FFT Data Capture Settings*\
 
 
--  In this example, with an input clock of 750MHz, the output sample rate is 750MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The output sample rate is 375MSPS and the required REFCLK frequency is 187.5MHz (refer to step 7 in the section "Configuring the Board").
+::
 
--  In order to exclude the image frequency from the SFDR measurements, configure Visual Analog to remove the image from its calculations. This is done under the FFT Analysis settings. Under the User-Defined tab add a new row by clicking Add. Name it ‘Image’. Use a symbol such as the # and set the Freq to ‘-fund’. Set the Single-Side Band to 3 Bins and set it as ‘Spur, Exclude’. Once done, select the row, and then hit the Move Up button to place this new row just below the row with Fund.\ |image63|\
+     * In this example, with an input clock of 750MHz, the output sample rate is 750MSPS.  The default JESD204B lane configuration is 4.2.1 (L.M.F).  The output sample rate is 375MSPS and the required REFCLK frequency is 187.5MHz  (refer to step 7 in the section "Configuring the Board").
+   * In order to exclude the image frequency from the SFDR measurements, configure Visual Analog to remove the image from its calculations.  This is done under the FFT Analysis settings.  Under the User-Defined tab add a new row by clicking Add.  Name it ‘Image’.  Use a symbol such as the # and set the Freq to ‘-fund’.  Set the Single-Side Band to 3 Bins and set it as ‘Spur, Exclude’.  Once done, select the row, and then hit the Move Up button to place this new row just below the row with Fund.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_fftanalysissettings.png
+   :align: center
+   :width: 700px
 
 .. container:: centeralign
 
    \ *Figure 76. AD6674-750 FFT Analysis Settings for Complex Image*\
 
 
--  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image64|\
+-  Click the Run button in Visual Analog and you should see the capture data similar to the plot below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_1ddccomplexdec2.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -943,14 +1181,20 @@ Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the “Fund Power” reading in the left panel of the VisualAnalog FFT window.) Complex DDC operation imposes ~1dB loss in the signal, but does not impact the dynamic range. A -1dBFS input signal will show as -2dBFS in Visual Analog.
 -   To save the FFT plot do the following
 
-   -  Click on the Float Form button in the FFT window\ |image65|\
+   -  Click on the Float Form button in the FFT window
+
+.. image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 78. Floating the FFT window*\
 
 
--  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image66|\
+-  Click on File :math:`right` Save Form As button and save it to a location of choice
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
+   :align: center
 
 .. container:: centeralign
 
@@ -1013,7 +1257,10 @@ DRVDD    TP410      1.25 V
 -  Ensure that the REFCLOCK is ON and set to the appropriate frequency.
 -  Ensure that JESD204B Configuration is correct and the Lane Line Rate is within PLL Range.
 -  Ensure that the ADC's PLL is locked by checking the status of the PLL lock detect register **0x56F**.
--  In VisualAnalog, be sure to configure the correct **sample rate** and output data selection. Click on the **Settings** button in the **ADC Data Capture** block, and verify that the **Clock Frequency** and **Output Data** are properly set.\ |image67|\
+-  In VisualAnalog, be sure to configure the correct **sample rate** and output data selection. Click on the **Settings** button in the **ADC Data Capture** block, and verify that the **Clock Frequency** and **Output Data** are properly set.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad6674_capture_settings.png
+   :align: center
 
 .. container:: centeralign
 
@@ -1028,111 +1275,22 @@ DRVDD    TP410      1.25 V
 -  Ensure that the clock to the ADC is supplied. Read clock status thru register **0x11C**.
 -  Ensure that the ADC's PLL is locked by checking the status of the PLL lock detect register **0x56F**.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9680evb2.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9680_lfboard.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/gain_flatness_compare_ce04b_ce02b_5178_image001.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9680_setup.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9680_lfboard.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/gain_flatness_compare_ce04b_ce02b_5178_image001.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9680_setup.jpg
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9680_setup-new_copy.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9680_setup-new_copy.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/fig2_devmgr.png
-   :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad6674_ace_start.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad6674_ace_start.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad6674_ace_board_view.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad6674_ace_chip_view.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad6674_ace_board_view.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad6674_ace_chip_view.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad6674_selecting_canvas.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_chip_settings.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_chip_settings.png
    :width: 200px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_read_all.png
-   :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_datapath_reset.png
-   :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_powerdown.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_active.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_results.png
-   :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_adcglobal.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_adcglobal.png
    :width: 800px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_settings.png
-   :width: 300px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ad6674_nsr_datacapturesettings.png
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fftanalysis_nsr_settings.png
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_nsr.png
-   :width: 800px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_chip_settings.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_chip_settings.png
    :width: 200px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_read_all.png
-   :width: 600px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_datapath_reset.png
-   :width: 600px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_powerdown.png
-   :width: 600px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_active.png
-   :width: 600px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
-   :width: 600px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_results.png
-   :width: 600px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_adcglobal.png
-   :width: 800px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_tuningword.png
-   :width: 300px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_pllencode_maxlanerate.png
-   :width: 600px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/ad6674_nsr_datacapturesettings.png
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_vdr.png
-   :width: 800px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_bits_adcbase2.png
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_bits_adcbase4.png
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_inputformatter.png
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logicanalysis.png
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted.png
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted_inputsignal.png
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted_cb2only.png
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_chip_settings.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_chip_settings.png
    :width: 200px
-.. |image47| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_read_all.png
-   :width: 600px
-.. |image48| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_ddc_softreset.png
-   :width: 600px
-.. |image49| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_datapath_reset.png
-   :width: 600px
-.. |image50| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_powerdown.png
-   :width: 600px
-.. |image51| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_active.png
-   :width: 600px
-.. |image52| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png
-   :width: 600px
-.. |image53| image:: https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_results.png
-   :width: 600px
-.. |image54| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcglobal.png
-   :width: 800px
-.. |image55| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcbase1.png
-   :width: 650px
-.. |image56| image:: https://wiki.analog.com/_media/resources/eval/ad6674_2ddcrealdec2_datacapturesettings.png
-.. |image57| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_2ddcrealdec2.png
-   :width: 800px
-.. |image58| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
-.. |image59| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
-.. |image60| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcglobal.png
-   :width: 800px
-.. |image61| image:: https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcbase1.png
-   :width: 400px
-.. |image62| image:: https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_datacapturesettings.png
-.. |image63| image:: https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_fftanalysissettings.png
-   :width: 700px
-.. |image64| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_1ddccomplexdec2.png
-   :width: 800px
-.. |image65| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
-.. |image66| image:: https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png
-.. |image67| image:: https://wiki.analog.com/_media/resources/eval/ad6674_capture_settings.png

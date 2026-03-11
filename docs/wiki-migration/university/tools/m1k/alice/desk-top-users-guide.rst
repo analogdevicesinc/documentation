@@ -52,12 +52,12 @@ Windows users who do not wish to install Python and the other required software 
    Download Windows installer here:
 
    
-   -  Version 1.3 :git-alice:`Windows executable <releases>` always use the latest release.
+   -  Version 1.3 `Windows executable <https://github.com/analogdevicesinc/alice/releases>`_ always use the latest release.
    
    Download Windows Libsmu installer here:
    
-   -  Version 1.0.4 for 64 bit systems :git-libsmu:`64 bit Libsmu installer <releases/download/v1.0.4/libsmu-1.0.4-setup-x64.exe>`
-   -  Version 1.0.4 for 32 bit systems :git-libsmu:`32 bit Libsmu installer <releases/download/v1.0.4/libsmu-1.0.4-setup-x86.exe>`
+   -  Version 1.0.4 for 64 bit systems `64 bit Libsmu installer <https://github.com/analogdevicesinc/libsmu/releases/download/v1.0.4/libsmu-1.0.4-setup-x64.exe>`_
+   -  Version 1.0.4 for 32 bit systems `32 bit Libsmu installer <https://github.com/analogdevicesinc/libsmu/releases/download/v1.0.4/libsmu-1.0.4-setup-x86.exe>`_
    
    The installer should include all required (python) packages but not the USB device drivers or low level interface library libsmu for the ADALM1000. The drivers can be installed by installing the Libsmu library and clicking on the install WinUSB driver box when prompted.
 
@@ -89,7 +89,7 @@ Manually installing libsmu / pysmu required by the ALICE Desktop Python source
    **For all Non-Windows Operating Systems**
 
    
-   If you are going to be using the ALICE Desktop software on a computer with an operating system other than Windows you will need to run the program from the Python source code (compatible with either Python 2 or 3). **DO NOT** proceed beyond this point without first installing the pysmu library (and the underlying libsmu package) following the instructions found in the readme file on the `Libsmu GitHub Repository <https://github.com/analogdevicesinc/libsmu>`_.** The Recommended Method for all non-Windows operating systems is to use Anaconda (Python) and the Conda installation packages as outlined here: :doc:`Conda Packages </wiki-migration/university/tools/conda>`\ \*\*
+   If you are going to be using the ALICE Desktop software on a computer with an operating system other than Windows you will need to run the program from the Python source code (compatible with either Python 2 or 3). **DO NOT** proceed beyond this point without first installing the pysmu library (and the underlying libsmu package) following the instructions found in the readme file on the :git-libsmu:`Libsmu GitHub Repository <libsmu>`.** The Recommended Method for all non-Windows operating systems is to use Anaconda (Python) and the Conda installation packages as outlined here: :doc:`Conda Packages </wiki-migration/university/tools/conda>`\ \*\*
 
 
 There are Python :git-libsmu:`test examples that can be found here <bindings/python/examples>` to assist in testing and confirming that you have a working version of pysmu installed.
@@ -143,9 +143,8 @@ Oscilloscope / Main Window:
 
 Be sure that the ALM1000 board is plugged into a USB port before starting the program. Once the program is running the main window, as shown in figure 1, should appear. This is the main desktop window and serves as the Oscilloscope Tool Window as well as controls for opening the other display windows and certain common control functions. It is sub divided into 4 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/main-window-1.png
-   :align: center
-   :width: 800px
+
+|image2|
 
 .. container:: centeralign
 
@@ -179,9 +178,8 @@ Digital I/O controls Windows:
 
 The ALM1000 hardware provides four 3.3V CMOS digital input / output pins. The four general purpose input/output pins along with ground and the 3.3V power supply are provided on the digital port connector as shown in figure 27.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f1.png
-   :align: center
-   :width: 300px
+
+|image3|
 
 .. container:: centeralign
 
@@ -190,18 +188,16 @@ The ALM1000 hardware provides four 3.3V CMOS digital input / output pins. The fo
 
 Part of the ALM1000 rev D schematic is shown in figure 28D and the rev F schematic is shown in figure 28F. As can be seen each of the four general purpose PIO pins ( connector P3 ) is connected to a 220 Ω and a 470 Ω resistor in rev D and in rev F 4.7K resistors in place of the 470 Ω resistors. The 220 Ω resistors connect to Port A pins 0-3 and the 470 Ω / 4.7k resistors connect to Port A pins 4-7. This configuration with two digital port pins connected though two different series resistors is unique and not generally typical of digital pins in other small portable USB based hardware such as the Analog Discovery module.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f2.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
    Figure 28D ALM1000 rev D digital interface input/output diagram
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/m1k-f-digital-outputs_f2.png
-   :align: center
-   :width: 600px
+   |image5|
 
 .. container:: centeralign
 
@@ -210,9 +206,9 @@ Part of the ALM1000 rev D schematic is shown in figure 28D and the rev F schemat
 
 The state of the Port A pins can be controlled using the simple digital control interface shown in figure 29. At this time only static hi / low functionality is supported. Eight rows of selectors are provided, one for each microcontroller pin for Port A ( PA0-PA7). Each port pin can be set to either a logic low, 0, a high-impedance or floating state, Z or a logic high, 1. When in the high-impedance or floating state that pin can be used as a logic input.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/digital-pio-window.png
-   :align: center
-   :width: 200px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -223,9 +219,8 @@ The state of the Port A pins can be controlled using the simple digital control 
 
 This configuration with two digital output drivers connected to a single connector pin through two different series resistors could be viewed in a different light. We might consider the CMOS output diver of the microcontroller pin as a three position single pole switch that can connect to ground or the 3.3 V supply or open circuit as shown in figure 30. This is more of an analog representation of the circuit. Looking at the circuit in this way it can perhaps be used in part to teach and learn concepts in DC resistor networks such as Thevenin and Norton equivalent circuits, series/parallel resistors, KVL, KCL, voltage dividers and nodal analysis etc.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f3.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -234,9 +229,9 @@ This configuration with two digital output drivers connected to a single connect
 
 There are nine possible combinations of the switches which give rise to the 8 Thevenin equivalent circuits shown in figure 31, with the ninth being of course an open circuit. It is important to note here that the resistance and voltage values given are for ideal nominal conditions and actual values may be noticeably different. It also assumes that the ON resistance of the MOS FET switches is zero which is actually never the case.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f4.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -247,9 +242,8 @@ The first four cases are obvious. The next two are for the case where the 220 �
 
 A 9 level DAC can be created on each output pin by connecting an external resistor divider, R1, R2, as shown in figure 32. Using two 1 KΩ resistors as shown presents effectively a 500 Ω resistance to 3.3/2 (1.65) volts on one of the PIO connector outputs. This effective resistance to 1.65 V and the switchable equivalent circuits from figure 31 results in the 9 different output voltages shown in figure 32. Other values for R1 and R2 of course can be used to produce different ranges of output voltage.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dio-dac-window.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -281,9 +275,8 @@ Multichannel analog interface for the ADALM1000
 
 The two analog input channels of the ADALM1000 provide a high input impedance and wide dynamic range which is very helpful for many of the measurements that a user would be making during laboratory activities. However, there are only the two analog inputs. Often, there are many more than two signals in the circuit under investigation that the user would like to monitor. Or there could be a number of low bandwidth sensors, such as ambient temperature or light levels around a room, that need to be measured or monitored over a long duration of time when gathering experimental data. As a solution to this need ALICE desktop provides the necessary software interface to control an external multi-channel analog multiplexer.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-curcuit.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -299,7 +292,7 @@ These two breakout boards from SparkFun based on `the 74HC4067 16:1 MUX <https:/
 -  For the :doc:`CD4052 dual 4:1 analog mux </wiki-migration/university/tools/m1k/alice-cd4052-analog-mux-ug>`
 -  For the :doc:`CD4053 triple 2:1 analog mux </wiki-migration/university/tools/m1k/alice-cd4053-analog-mux-ug>`
 
-|image2| |image3|
+|image11| |image12|
 
 .. container:: centeralign
 
@@ -312,9 +305,8 @@ global EnableMuxMode; EnableMuxMode = 1
 
 The analog Mux control window is shown in figure 36. The CB voltage and current controls on the main scope window no longer function when this window is open and are replaced by the four new sets of voltage controls. The check boxes select which of the four Mux input channels will be displayed. The Mux-Enb checkbox sets PIO-2 either low ( when not checked ) or high ( when checked ) for Muxes like the CD4052 with enable low inputs or the ADG609 with enable high inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-controls.png
-   :align: center
-   :width: 260px
+
+|image13|
 
 .. container:: centeralign
 
@@ -329,9 +321,8 @@ The analog Mux interface in ALICE desktop uses a technique common in analog CRT 
 
 A second Mux interface mode in the ALICE desktop uses another technique common in analog CRT oscilloscopes where two input signal are switched or chopped very quickly to the beam deflection circuits. In the case of the M1k we have a sampling system at 100 KSPS and we can use a square wave from the AWG channel A output to drive the Mux control input at 1/4 the system sample rate, or 25 KSPS. Thus each Mux input “gets” two samples. The software ignores the first of the two samples to allow for settling time and uses the second sample as the data. The software also up-samples the 25 KSPS data back to 100 KSPS using a 4X digital interpolation filter. The software automatically configures the channel A AWG settings. Once set these should not be changed while using the Chop Sweep mode.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-window.png
-   :align: center
-   :width: 720px
+
+|image14|
 
 .. container:: centeralign
 
@@ -347,9 +338,8 @@ The ALM1000 has 4 general purpose digital input/output pins which can be used as
 
 In figure 33 we see that it is a relatively simple matter to connect the MiniGen board to the digital connector on the ALM1000. If a 6 pin right angle male header is installed as shown, the FSYNC, SDATA, and SCLK pins connect to PIO 0, PIO 1, and PIO 3 respectively. The other three header pins are open connections on the MiniGen board and the ground and power GND, The VIN pin can be wired to 3.3V and GND to GND with jumper wires. The solder bridge jumper, which shorts out the on board LDO, for powering the board directly from 3.3V will also need to be soldered in as shown. Installing a two pin female right angle connector to the analog output connection points is needed as well.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/mini-gen-connections.png
-   :align: center
-   :width: 300px
+
+|image15|
 
 .. container:: centeralign
 
@@ -358,9 +348,9 @@ In figure 33 we see that it is a relatively simple matter to connect the MiniGen
 
 The MiniGen control window, figure 34, allows the four possible waveform shapes to be selected. The master clock frequency can be set, the board comes populated with a 16 MHz crystal oscillator. And of course the output frequency can be set.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png
-   :align: center
-   :width: 500px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -380,9 +370,8 @@ External serial 8 bit DAC Pmods
 
 The digital input/output pins can interface to the PmodDA1 4 channel DAC module sold through `Digilent <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,501&Prod=PMOD-DA1>`_ and other distributors such as `Mouser <http://www.mouser.com/ProductDetail/Digilent/410-063P/?qs=sGAEpiMZZMtWZAo%2fKf1JUOZxRUX4AaOJSE8oCSC4CQo%3d>`_.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-obl-400.png
-   :align: center
-   :width: 300px
+
+|image17|
 
 .. container:: centeralign
 
@@ -391,9 +380,9 @@ The digital input/output pins can interface to the PmodDA1 4 channel DAC module 
 
 The PmodDA1 has two AD7303 8 bit dual voltage output DACs as shown in the block diagram in figure 36.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-block-336.png
-   :align: center
-   :width: 350px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -406,9 +395,8 @@ There is no external access to the reference input voltage on the DACs so they m
 
 The AD7303 DACs are also available in 8 pin PDIP packages and could be used plugged into solder-less breadboards with other components of a circuit project.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod-da1-controls.png
-   :align: center
-   :width: 250px
+
+|image19|
 
 .. container:: centeralign
 
@@ -422,9 +410,8 @@ External digital potentiometers
 
 The AD8402 dual 10 KΩ and AD8403 quad 10 KΩ digital potentiometer have 8 bit resolution and are available in PDIP packages that work well in solder-less breadboards. How to connect the AD8402 to the ALM1000 is shown in figure 39. The single 8 bit 10 KΩ digital potentiometer, AD5160, based PmodDPOT, figure 38, is also compatible with the same 6 pin male connector which plugs directly into the digital port on the ADALM1000. Because of the “Top” component side of the ALM1000 actually facing down the PmodDPOT also needs to be plugged in with the “Top” component side facing down. Carefully note the pin labels on both boards before plugging in the Pmod.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod_dpot_top.png
-   :align: center
-   :width: 250px
+
+|image20|
 
 .. container:: centeralign
 
@@ -433,18 +420,16 @@ The AD8402 dual 10 KΩ and AD8403 quad 10 KΩ digital potentiometer have 8 bit
 
 Connections for the AD8402 dual pot are shown in figure 39. Connections for the AD8400 single and AD8403 quad are similar.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ad8402-connections.png
-   :align: center
-   :width: 500px
+
+
+|image21|
 
 .. container:: centeralign
 
    Figure 39, AD8402 connections
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dig-pot-controls.png
-   :align: center
-   :width: 290px
+   |image22|
 
 .. container:: centeralign
 
@@ -458,9 +443,8 @@ Generic 3 wire SPI output:
 
 The digital input/output pins can output serial data to generic 3 wire SPI serial input devices. The provided interface allows the user to configure any of the 4 PI/O digital pins ( 0 – 3 ) as either the SCLK, SData, or Latch ( sometimes called CS or SYNC ) outputs. The user can set the number of bits to be sent in each digital write. The data word to be sent can be entered in either decimal ( integer ) form or Hex by using the 0x00 format. The “resting” sense, i.e. the level between writes, of the latch output can be set as well ( Latch Phase selector ). Some serial devices operate on the rising edge of the Latch (CS, SYNC) signal or on the falling edge. It is possible to select order in which the serial bits are sent, either LSB first or MSB first. The current data value is sent or written each time the Send button is clicked.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/serial-out-controls.png
-   :align: center
-   :width: 300px
+
+|image23|
 
 .. container:: centeralign
 
@@ -476,9 +460,8 @@ global EnableCommandInterface; EnableCommandInterface = 1
 
 The interface is not complex to use if you are relatively familiar with Python syntax and the variable structure of ALICE. To execute more than function per line use a ; to separate commands on the single line. To execute the command line either hit the <enter> or <return> key or click on the Execute button. The last line successfully executed is displayed just below where it says Last command. A sequence of commands can be entered in a plain text file and run as a script by clicking on the Run Script button.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/command-line-window.png
-   :align: center
-   :width: 370px
+
+|image24|
 
 .. container:: centeralign
 
@@ -499,7 +482,49 @@ Where “my_data.csv” is the name of the destination file, VBuffA is of course
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/hookah-smoking_caterpillar.png
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/cd4052-analog-mux.png
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/main-window-1.png
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f1.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f2.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/m1k-f-digital-outputs_f2.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/digital-pio-window.png
+   :width: 200px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f3.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f4.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dio-dac-window.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-curcuit.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/adg609-analog-mux.png
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/cd4052-analog-mux.png
    :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/adg609-analog-mux.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-controls.png
+   :width: 260px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-window.png
+   :width: 720px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/mini-gen-connections.png
+   :width: 300px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-obl-400.png
+   :width: 300px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-block-336.png
+   :width: 350px
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod-da1-controls.png
+   :width: 250px
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod_dpot_top.png
+   :width: 250px
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ad8402-connections.png
+   :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dig-pot-controls.png
+   :width: 290px
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/serial-out-controls.png
+   :width: 300px
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/command-line-window.png
+   :width: 370px

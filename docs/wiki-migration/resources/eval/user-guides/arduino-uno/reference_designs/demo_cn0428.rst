@@ -62,12 +62,12 @@ Setting up the Hardware
 
 .. container:: centeralign
 
-   \ |image3|\
+   |image3|\
 
 
 .. container:: centeralign
 
-   \ |image4|\
+   |image4|\
 
 
 -  Connect the system to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN and ICSP of the Arduino Uno board.

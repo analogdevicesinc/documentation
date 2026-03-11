@@ -19,33 +19,33 @@ A2B Bus Analyzer - Current Release (Rev. 3.4.1)
 
 Released: March 2024
 
-|image1| ``a2b_bus_analyzer-3.4.61-latest-win-x64.exe``
+|image1| `a2b_bus_analyzer-3.4.61-latest-win-x64.exe <https://download.analog.com/A2BSW-07/3.4.1/a2b_bus_analyzer-3.4.61-latest-win-x64.exe>`_
 
-|image2| ``a2b_bus_analyzer-3.4.59-latest-linux-x86_64.AppImage``
+|image2| `a2b_bus_analyzer-3.4.59-latest-linux-x86_64.AppImage <https://download.analog.com/A2BSW-07/3.4.1/a2b_bus_analyzer-3.4.59-latest-linux-x86_64.AppImage>`_
 
-|image3| ``a2b_bus_analyzer-3.4.63-latest-macos-x64.pkg``
+|image3| `a2b_bus_analyzer-3.4.63-latest-macos-x64.pkg <https://download.analog.com/A2BSW-07/3.4.1/a2b_bus_analyzer-3.4.63-latest-macos-x64.pkg>`_
 
 A2B Bus Analyzer - Previous Release (Rev. 3.4.0)
 ------------------------------------------------
 
 Released: November 2023
 
-|image4| ``a2b_bus_analyzer-3.4.57-latest-win-x64.exe``
+|image4| `a2b_bus_analyzer-3.4.57-latest-win-x64.exe <https://download.analog.com/A2BSW-07/3.4.0/a2b_bus_analyzer-3.4.57-latest-win-x64.exe>`_
 
-|image5| ``a2b_bus_analyzer-3.4.54-latest-linux-x86_64.AppImage``
+|image5| `a2b_bus_analyzer-3.4.54-latest-linux-x86_64.AppImage <https://download.analog.com/A2BSW-07/3.4.0/a2b_bus_analyzer-3.4.54-latest-linux-x86_64.AppImage>`_
 
-|image6| ``a2b_bus_analyzer-3.4.56-latest-macos-x64.pkg``
+|image6| `a2b_bus_analyzer-3.4.56-latest-macos-x64.pkg <https://download.analog.com/A2BSW-07/3.4.0/a2b_bus_analyzer-3.4.56-latest-macos-x64.pkg>`_
 
 A2B Bus Analyzer - Older Release (Rev. 3.3.0)
 ---------------------------------------------
 
 Released: August 2023
 
-|image7| ``a2b_bus_analyzer-3.3.109-latest-win-x64.exe``
+|image7| `a2b_bus_analyzer-3.3.109-latest-win-x64.exe <https://download.analog.com/A2BSW-07/3.3.0/a2b_bus_analyzer-3.3.109-latest-win-x64.exe>`_
 
-|image8| ``a2b_bus_analyzer-3.3.91-latest-linux-x86_64.AppImage``
+|image8| `a2b_bus_analyzer-3.3.91-latest-linux-x86_64.AppImage <https://download.analog.com/A2BSW-07/3.3.0/a2b_bus_analyzer-3.3.91-latest-linux-x86_64.AppImage>`_
 
-|image9| ``a2b_bus_analyzer-3.3.60-latest-macos-x64.pkg``
+|image9| `a2b_bus_analyzer-3.3.60-latest-macos-x64.pkg <https://download.analog.com/A2BSW-07/3.3.0/a2b_bus_analyzer-3.3.60-latest-macos-x64.pkg>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png
    :width: 20px

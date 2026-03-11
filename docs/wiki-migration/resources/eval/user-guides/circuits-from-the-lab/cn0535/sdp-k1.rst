@@ -67,16 +67,22 @@ In order to communicate with the board using the SDP-K1 the user needs to instal
 
 -  Open Device Manager through the Windows control panel and plug the micro-controller board into the PC, when the board is detected it will appear in device manager, displaying as USB Serial Device. This also displays which port the board is connected to. (COM4 in this case)
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/device_manager.png
+   :align: center
+   :width: 450px
+
+-  Open the serial terminal application and enter the correct values to configure it to connect to the board. The serial line should be the COM port noted earlier and the speed should be set to 115200 to ensure data transfer works correctly. Also note the changes in the Terminal tab, this is required for the menu to display properly.\
+
 
 |image7|
 
--  Open the serial terminal application and enter the correct values to configure it to connect to the board. The serial line should be the COM port noted earlier and the speed should be set to 115200 to ensure data transfer works correctly. Also note the changes in the Terminal tab, this is required for the menu to display properly.\ |image8|\
-
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty2.png
+   :align: center
 
 -  Upon connection, the interface menu should appear. If not, press the reset button on the micro-controller board, this will call up the command menu for the user to interact with. **(Note: This does not work with the version A & B of the SDP-K1)**
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty_terminal.png
+   :align: center
 
 -  From here, the user should type the number corresponding to their desired choice and press 'Enter'. Note that many choices will create sub-menus, prompting the user to make another choice.
 
@@ -140,8 +146,4 @@ The following table shows every command along with a brief description. Some com
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link_2.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mbed_link_3.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/device_manager.png
-   :width: 450px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty1.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty2.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty_terminal.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/putty1.png

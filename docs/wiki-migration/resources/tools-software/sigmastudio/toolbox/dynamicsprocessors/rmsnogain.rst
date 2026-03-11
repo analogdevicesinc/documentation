@@ -90,8 +90,8 @@ RMS compressor with external detector input
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rms_ext_example1.png
    :align: left
 
-.. |rmsnopic3.png| image:: https://wiki.analog.com/_media/rmsnopic3.png
-.. |rmsnopic4.png| image:: https://wiki.analog.com/_media/rmsnopic4.png
-.. |rmsnopic5.png| image:: https://wiki.analog.com/_media/rmsnopic5.png
-.. |rmsnopic6.png| image:: https://wiki.analog.com/_media/rmsnopic6.png
-.. |rmsnopic7.png| image:: https://wiki.analog.com/_media/rmsnopic7.png
+.. |rmsnopic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnopic3.png
+.. |rmsnopic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnopic4.png
+.. |rmsnopic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnopic5.png
+.. |rmsnopic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnopic6.png
+.. |rmsnopic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnopic7.png

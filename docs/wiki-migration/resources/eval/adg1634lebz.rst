@@ -53,7 +53,9 @@ Revision History
 ADG1634L Evaluation Board Layout
 --------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/eval-adg1634lebz_top-web.gif
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -117,49 +119,51 @@ The parallel interface of the AD1634L is controlled manually using the link head
 Evaluation Board Schematics and Artwork
 ---------------------------------------
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/adg1634l_input-output_schematic.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    *Figure 2. EVAL-ADG1634LEBZ Schematic 1*
 
 
-   |image3|
+   |image1|
 
 .. container:: centeralign
 
    *Figure 3. EVAL-ADG1634LEBZ Schematic 2*
 
 
-   |image4|
+   |image2|
 
 .. container:: centeralign
 
    *Figure 4. EVAL-ADG1634LEBZ Silkscreen*
 
 
-   |image5|
+   |image3|
 
 .. container:: centeralign
 
    *Figure 5. EVAL-ADG1634LEBZ Top Layer*
 
 
-   |image6|
+   |image4|
 
 .. container:: centeralign
 
    *Figure 6. EVAL-ADG1634LEBZ Layer 2*
 
 
-   |image7|
+   |image5|
 
 .. container:: centeralign
 
    *Figure 7. EVAL-ADG1634LEBZ Layer 3*
 
 
-   |image8|
+   |image6|
 
 .. container:: centeralign
 
@@ -209,19 +213,15 @@ Bill of Materials
    
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/eval-adg1634lebz_top-web.gif
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_input-output_schematic.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_supply_pins.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_supply_pins.png
    :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_silkscreen.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_silkscreen.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l1.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l2.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l3.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l4.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/adg1634l_l4.png
    :width: 600px

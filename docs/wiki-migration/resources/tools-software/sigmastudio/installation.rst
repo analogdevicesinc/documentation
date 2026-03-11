@@ -76,7 +76,7 @@ In most cases, driver installation is performed alongside SigmaStudio. If your m
 Step 4: Hardware Configuration
 ------------------------------
 
--  Setup the Evaluation hardware jumpers and I/O configurations, refer to Evaluation Board documentation available on the web at :adi:`SigmaDSP Evaluation Boards </en/content/sigmadsp_evaluation_boards/fca.html>`.
+-  Setup the Evaluation hardware jumpers and I/O configurations, refer to Evaluation Board documentation available on the web at :adi:`SigmaDSP Evaluation Boards <en/content/sigmadsp_evaluation_boards/fca.html>`.
 -  For additional help, see the Evaluation Board Setup Examples.
 -  If you are using the USBi, there is a quick way to verify that the driver is installed properly. Make a new project and drag in a USBi object from the ToolBox. The "USBi" text is highlighted green when the USBi is detected, and red when disconnected.
 

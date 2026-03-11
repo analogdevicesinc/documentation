@@ -49,7 +49,7 @@ Model
    You can download the Simulink model from below:
 
    
-   -  `qpsknofilt_model.zip <https://wiki.analog.com/_media/qpsknofilt_model.zip>`_
+   -  `qpsknofilt_model.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsknofilt_model.zip>`_
    
 
 
@@ -83,7 +83,7 @@ Data
    You can download the generated data from below:
 
    
-   -  `qpsknofilt_data.zip <https://wiki.analog.com/_media/qpsknofilt_data.zip>`_
+   -  `qpsknofilt_data.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsknofilt_data.zip>`_
    
 
 
@@ -108,9 +108,8 @@ Model
 
 The figure below shows a QPSK transmission model with the pulse shaping filters. Since pulse shaping filters are often distributed as a matched pair between transmitter and receiver, we use the filter shape of ‘Square root’ [1]_.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/QPSKwithfilter.png
-   :alt: Subsystem diagram
-   :width: 900px
+
+|Subsystem diagram|
 
 .. admonition:: Download
    :class: download
@@ -118,7 +117,7 @@ The figure below shows a QPSK transmission model with the pulse shaping filters.
    You can download the Simulink model from below:
 
    
-   -  `qpskwithfilt_model.zip <https://wiki.analog.com/_media/qpskwithfilt_model.zip>`_
+   -  `qpskwithfilt_model.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilt_model.zip>`_
    
    The data rate is defined in the parameter ``Fs``.
 
@@ -133,9 +132,10 @@ The figure below shows a QPSK transmission model with the pulse shaping filters.
 
 In order to observe the effect of the pulse shaping filters, we use a “Spectrum Analyzer” block, as well as several "Constellation" blocks.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/resultwithfilt.png
-   :alt: Subsystem diagram
-   :width: 900px
+   
+
+
+|image1|
 
 .. note::
 
@@ -157,7 +157,7 @@ Data
    You can download the generated data from below:
 
    
-   -  `qpskwithfilt_txt.zip <https://wiki.analog.com/_media/qpskwithfilt_txt.zip>`_
+   -  `qpskwithfilt_txt.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilt_txt.zip>`_
    
    The data rate is 30.72 MSPS.
    
@@ -169,9 +169,8 @@ Data Verification
 
 Before you look at the IIO Oscilloscope  [2]_, make sure the sampling rate of ADC and DAC is set at 30.72 MSPS, as shown in the figure below. Otherwise, it may incur some problems. In this panel, there are quite a few other parameters you can tune (DCXO, RF Bandwidth, LO Frequency), in order to get the optimal transmission and reception performance for your system.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/iiosetting_new.png
-   :alt: iiosetting_new.png
-   :width: 500px
+
+|iiosetting_new.png|
 
 .. note::
 
@@ -192,9 +191,8 @@ However, with the ``save data`` function of the IIO application, we can now save
 
 Given the received data, we can now proceed to the Simulink receiver model to verify the data. After you launch MATLAB and the receiver model ``qpsk_receiver.slx``, the next step is to load the .mat file in workspace, because the ``Signal From Workspace`` blocks use the data as input. In this model, the data rate is the same as the generated data rate (30.72 MSPS), and the receive filter is the match of the transmit filter. When looking at the IIO scope, we found the constellation of the received signal from the AD9361 shows a rotation compared to the transmitted signal, so a ``Phase/Frequency Offset`` block is employed here to compensate for the phase offset. The value of the phase offset is calculated in Simulink Callbacks. According to the constellation plot below, it is very clear that the received data is a QPSK, so the AD9361 Tx/Rx chain gets verified.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsk_waveform_verify_new.png
-   :alt: qpsk_waveform_verify_new.png
-   :width: 450px
+
+|qpsk_waveform_verify_new.png|
 
 .. admonition:: Download
    :class: download
@@ -202,11 +200,11 @@ Given the received data, we can now proceed to the Simulink receiver model to ve
    You can download the saved mat data file from below:
 
    
-   -  `qpskwithfilt_mat.zip <https://wiki.analog.com/_media/qpskwithfilt_mat.zip>`_
+   -  `qpskwithfilt_mat.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilt_mat.zip>`_
    
    You can download the receiver model from below:
    
-   -  `qpsk_receiver_new.zip <https://wiki.analog.com/_media/qpsk_receiver_new.zip>`_
+   -  `qpsk_receiver_new.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsk_receiver_new.zip>`_
    
    Make sure you load the mat data file in the workspace first. Otherwise, the model will not run.
    
@@ -234,9 +232,8 @@ Model
 
 The figure below shows a 16-QAM transmission model with the square root raised cosine pulse shaping filters. In order to observe the effect of the pulse shaping filters, we use a “Spectrum Analyzer” block, as well as several “Constellation” blocks on one of the channels.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/16QAM.png
-   :alt: Subsystem diagram
-   :width: 900px
+
+|image2|
 
 .. admonition:: Download
    :class: download
@@ -244,7 +241,7 @@ The figure below shows a 16-QAM transmission model with the square root raised c
    You can download the Simulink model from below:
 
    
-   -  `qam16_model.zip <https://wiki.analog.com/_media/qam16_model.zip>`_
+   -  `qam16_model.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_model.zip>`_
    
    The data rate is defined in the parameter ``Fs``.
 
@@ -258,7 +255,7 @@ Data
    You can download the generated 16-QAM data from below:
 
    
-   -  `qam16_20Mdata.zip <https://wiki.analog.com/_media/qam16_20Mdata.zip>`_
+   -  `qam16_20Mdata.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_20Mdata.zip>`_
    
    It is in the same format as the data in previous sections and the data rate is 20M.
 
@@ -280,15 +277,16 @@ However, with the ``save data`` function of the IIO application, we can now save
    You can download the saved mat data file from below:
 
    
-   -  `qam16_20.zip <https://wiki.analog.com/_media/qam16_20.zip>`_
+   -  `qam16_20.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_20.zip>`_
    
 
 
 Given the received data, we can now proceed to the Simulink receiver model to verify the data. After you launch MATLAB and the receiver model ``qam16_receiver.slx``, the next step is to load the .mat file in workspace, because the ``Signal From Workspace`` blocks use the data as input. In this model, the data rate is the same as the generated data rate (20 MSPS), and the receive filter is the match of the transmit filter. When looking at the IIO scope, we found the received signal from AD9361 shows a 45 degree rotation compared to the transmitted signal, so a ``Phase/Frequency Offset`` block is employed here to compensate for the phase offset. According to the constellation plot, it is very clear that the received data is a 16-QAM, so the AD9361 Tx/Rx chain gets verified.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_verified.png
-   :alt: qam16_verified.png
-   :width: 700px
+   
+
+
+|qam16_verified.png|
 
 .. admonition:: Download
    :class: download
@@ -296,7 +294,7 @@ Given the received data, we can now proceed to the Simulink receiver model to ve
    You can download the receiver model from below:
 
    
-   -  `qam16_receiver.zip <https://wiki.analog.com/_media/qam16_receiver.zip>`_
+   -  `qam16_receiver.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_receiver.zip>`_
    
    The data rate is defined in the parameter ``Fs`` and the phase offset is defined in the parameter ``PhaseOffset``.
 
@@ -311,9 +309,8 @@ Model
 
 The figure below shows a MSK transmission model with the square root raised cosine pulse shaping filters. In order to observe the effect of the pulse shaping filters, we use a “Spectrum Analyzer” block, as well as several “Constellation” blocks on one of the channels.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk.png
-   :alt: Subsystem diagram
-   :width: 900px
+
+|image3|
 
 .. admonition:: Download
    :class: download
@@ -321,7 +318,7 @@ The figure below shows a MSK transmission model with the square root raised cosi
    You can download the Simulink model from below:
 
    
-   -  `msk_model.zip <https://wiki.analog.com/_media/msk_model.zip>`_
+   -  `msk_model.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_model.zip>`_
    
    The data rate is defined in the parameter ``Fs``.
 
@@ -335,7 +332,7 @@ Data
    You can download the generated MSK data from below:
 
    
-   -  `msk_20mdata.zip <https://wiki.analog.com/_media/msk_20mdata.zip>`_
+   -  `msk_20mdata.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_20mdata.zip>`_
    
    It is in the same format as the data in previous sections and the data rate is 20M.
 
@@ -357,15 +354,16 @@ With the ``save data`` function of the IIO application, we can now save the rece
    You can download the saved mat data file from below:
 
    
-   -  `msk_20.zip <https://wiki.analog.com/_media/msk_20.zip>`_
+   -  `msk_20.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_20.zip>`_
    
 
 
 Given the received data, we can now proceed to the Simulink receiver model to verify the data. After you launch MATLAB and the receiver model ``msk_receiver.slx``, the next step is to load the .mat file in workspace, because the ``Signal From Workspace`` blocks use the data as input. In this model, the data rate is the same as the generated data rate (20 MSPS), and the receive filter is the match of the transmit filter. According to the constellation plot, it is very clear that the received data is a MSK, so the AD9361 Tx/Rx chain gets verified.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_receiver.png
-   :alt: msk_receiver.png
-   :width: 700px
+   
+
+
+|msk_receiver.png|
 
 .. admonition:: Download
    :class: download
@@ -373,7 +371,7 @@ Given the received data, we can now proceed to the Simulink receiver model to ve
    You can download the receiver model from below:
 
    
-   -  `msk_receiver.zip <https://wiki.analog.com/_media/msk_receiver.zip>`_
+   -  `msk_receiver.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_receiver.zip>`_
    
    The data rate is defined in the parameter ``Fs`` and the phase offset is defined in the parameter ``PhaseOffset``. In this example, there is no rotation shown by the received signal, so ``PhaseOffset=0``.
 
@@ -410,7 +408,7 @@ After you run the model, the transmitted data named "Tx" will be saved in worksp
    You can download the Simulink model and the post-processing m-file from below:
 
    
-   -  `lte_model.zip <https://wiki.analog.com/_media/lte_model.zip>`_
+   -  `lte_model.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/lte_model.zip>`_
    
 
 
@@ -430,7 +428,7 @@ Data
    You can download the generated LTE data from below:
 
    
-   -  `lte_data.zip <https://wiki.analog.com/_media/lte_data.zip>`_
+   -  `lte_data.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/lte_data.zip>`_
    
    It is in the same format as the data in previous sections.
 
@@ -446,3 +444,20 @@ Data
 
 .. [4]
    `LTE PHY Downlink with Spatial Multiplexing <https://www.mathworks.com/help/comm/examples/lte-phy-downlink-with-spatial-multiplexing.html>`_
+
+.. |Subsystem diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/QPSKwithfilter.png
+   :width: 900px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/resultwithfilt.png
+   :width: 900px
+.. |iiosetting_new.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/iiosetting_new.png
+   :width: 500px
+.. |qpsk_waveform_verify_new.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsk_waveform_verify_new.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/16QAM.png
+   :width: 900px
+.. |qam16_verified.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_verified.png
+   :width: 700px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk.png
+   :width: 900px
+.. |msk_receiver.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_receiver.png
+   :width: 700px

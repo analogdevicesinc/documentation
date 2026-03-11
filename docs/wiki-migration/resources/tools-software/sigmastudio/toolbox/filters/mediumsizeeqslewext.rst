@@ -79,7 +79,7 @@ Handy for ear training, this is a quick and versatile block, as can be seen by c
 
 As with Peaking, Shelving parameters may be changed handily and the results immediately checked for audible effect.
 
-.. |medpic3.png| image:: https://wiki.analog.com/_media/medpic3.png
-.. |medpic6.png| image:: https://wiki.analog.com/_media/medpic6.png
-.. |medpic7.png| image:: https://wiki.analog.com/_media/medpic7.png
-.. |medpic8.png| image:: https://wiki.analog.com/_media/medpic8.png
+.. |medpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic3.png
+.. |medpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic6.png
+.. |medpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic7.png
+.. |medpic8.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic8.png

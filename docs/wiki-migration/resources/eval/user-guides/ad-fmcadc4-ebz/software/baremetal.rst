@@ -72,8 +72,10 @@ GUI
 
 -  The new **Empty Application project** should look like:
 
-
-|Empty application project|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
+   :alt: Empty application project
+   :align: center
+   :width: 650px
 
 .. important::
 
@@ -139,8 +141,6 @@ GUI
 
 -  Your new bare metal application should run
 
-.. |Empty application project| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
-   :width: 650px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ad9361_no_os_microblaze_heap_size.png
 
 

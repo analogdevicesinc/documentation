@@ -26,9 +26,8 @@ The phase difference, or phase angle, is the difference in phase between the sam
 
 The time (phase) relationship between two sine waves can of course be measured from a time domain plot such as figure 1. The Time measurement capabilities of most any Oscilloscope, the ADALM1000 and the ALICE software included, can display the relative phase between channel A and channel B in degrees and/or the time delay between A and B. The software scans the waveforms looking for the time points where they cross their average value (zero crossing with DC offset removed). It then uses those time points to report frequency, period, phase, delay, duty-cycle etc. Noise and jitter will introduce errors in the results.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/into-lissajou-curves-f1.png
-   :align: center
-   :width: 700px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,9 +36,9 @@ The time (phase) relationship between two sine waves can of course be measured f
 
 Old timers who have started out their careers using an analog oscilloscope probably remember using the classic Lissajous pattern to measure the phase difference of two sine waves. It can be measured by cross plotting the two sine waveforms on the X-Y display in ALICE as shown in Figure 2. In this figure, the voltage waveform on channel A provides the horizontal or X displacement. Channel B provides the vertical or Y deflection. The Lissajous pattern indicates the phase difference by the shape of the X-Y plot. A straight line indicates a 0º or 180º phase difference. The angle of the line depends on the difference in amplitude between the two signals, a line at 45º to the horizontal means the amplitudes are equal. While a circle indicates a 90º difference. It will only be a true circle if the amplitudes are equal. Phase differences between 0º and 90º appear as tilted ellipses and phase is determined by measuring the maximum vertical deflection (Ymax) and the vertical deflection at zero horizontal deflection (Yx=0). In Figure 2, cursors mark these two locations on the X-Y plot. Note that this is only valid if the X-Y plot is centered on 0,0. Any DC offset in the two waveforms must be removed first.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/into-lissajou-curves-f2.png
-   :align: center
-   :width: 500px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -74,9 +73,8 @@ Begin with both AWG generators set for 1.0 Min and 4.0 Max values and a frequenc
 
 You should see two nearly identical sine waves, both in phase with the other. Remember that the sine wave is defined by three parameters – amplitude, frequency and phase. Check to see that the vertical range and position settings for both channels are the same. (Use the V/Div to adjust this if needed.) If the amplitudes are not the same, the sine waves will not be the same amplitude. If the phases are not the same, the sine waves will not line up horizontally. If the frequencies are not the same, the wave the oscilloscope is triggered on will be stationary, while the other wave will move (slowly we hope) to the left or right. Figure 3 shows signals that have different amplitude and frequency (and DC offset).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/into-lissajou-curves-f3.png
-   :align: center
-   :width: 700px
+
+|image3|
 
 .. container:: centeralign
 
@@ -110,3 +108,10 @@ From this activity, you should see the value of comparing one signal against som
 `Lissajou Curves <http://datagenetics.com/blog/april22015/index.html>`_ `Lissajou Curves <https://en.wikipedia.org/wiki/Lissajous_curve>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/into-lissajou-curves-f1.png
+   :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/into-lissajou-curves-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/into-lissajou-curves-f3.png
+   :width: 700px

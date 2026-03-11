@@ -30,4 +30,4 @@ To change the name of hierarchy board block, double click on the block's label a
 
 See the Hierarchy Board :doc:`System Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/systemexamples>` for a sample hierarchy board design.
 
-.. |hierarchyboardpic1.png| image:: https://wiki.analog.com/_media/hierarchyboardpic1.png
+.. |hierarchyboardpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyboardpic1.png

@@ -57,26 +57,35 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image3|//Figure 2b. EVAL-AD9102 Default Board Configuration *
+   |image3|//Figure 2b. EVAL-AD9102 Default Board Configuration //
 
 
-- Click the AD9106 / AD9102 Chip to proceed to chip view. Apply the chip settings enumerated below and shown in Figure 3. \* DDS Output Frequency:**10MHz*** Waveform Selector Dropdown Menus:**Prestored*** Prestored Waveform Selector Dropdown Menus:**DDSx output*** DAC1 Dig Gain:**1*** DAC2 Dig Gain:**0.75*** DAC3 Dig Gain:**0.5*** DAC4 Dig Gain:**0.25** *
+-  Click the AD9106 / AD9102 Chip to proceed to chip view. Apply the chip settings enumerated below and shown in Figure 3.
 
-.. container:: centeralign
-
-   \ *Figure 3a. AD9106 Chip View*
-
-
-.. container:: centeralign
-
-   \ *Figure 3b. AD9102 Chip View*
-
-
-- Click **Apply Changes** to update SPI register values.
+   -  DDS Output Frequency: **10MHz**
+   -  Waveform Selector Dropdown Menus: **Prestored**
+   -  Prestored Waveform Selector Dropdown Menus: **DDSx output**
+   -  DAC1 Dig Gain: **1**
+   -  DAC2 Dig Gain: **0.75**
+   -  DAC3 Dig Gain: **0.5**
+   -  DAC4 Dig Gain: **0.25**
 
 .. container:: centeralign
 
-   \ *Figure 4. AD910x Apply Changes Button in Chip View*
+   \ |image4|\ *Figure 3a. AD9106 Chip View*\
+
+
+.. container:: centeralign
+
+   |image5|\ *Figure 3b. AD9102 Chip View*\
+
+
+-  Click **Apply Changes** to update SPI register values.
+
+.. container:: centeralign
+
+   \ |image6|\ *Figure 4. AD910x Apply Changes Button in Chip View*\
+
 
 -  Click **Trigger** to generate output waveforms. Waveform captures are shown in Figures 5a and 5b.
 
@@ -91,15 +100,17 @@ Loading Sample Waveforms
 
 There are six available sample waveform settings that can be loaded from the plugin to the device.
 
-::
 
-   -From chip view, click **Load Sample Waveforms** at lower left side of the window.
-   -Select an option from the sample waveforms shown in Figures 6a and 6b. Resulting waveforms are shown under  [[/resources/eval/dpg/eval-ad9106|Sample waveforms out of RF transformer and Onboard Amplifier]].
+
+-From chip view, click **Load Sample Waveforms** at lower left side of the window.
+-Select an option from the sample waveforms shown in Figures 6a and 6b. Resulting waveforms are shown under  :doc:`Sample waveforms out of RF transformer and Onboard Amplifier </wiki-migration/resources/eval/dpg/eval-ad9106>`.
 
 .. container:: centeralign
 
-   {{ :resources:eval:dpg:ad910x_samplewaveforms.png?800 |}}
 
+   ..
+
+|resources-eval-dpg-ad910x_samplewaveforms.png|
 
 .. container:: centeralign
 
@@ -174,7 +185,11 @@ From the SRAM Control Tab, select the vector file path in the Vector file text b
    SRAM registers are left justified. Data written to memory map are automatically shifted to the left by **4 bits** for AD9106 and **2 bits** for AD9102.
 
 
-==== Using the Vector Generator ==== The plugin also includes a :doc:`vector generation tool </wiki-migration/resources/tools-software/ace/vector-generation>` also accessible in the **SRAM Control Tab**\ |ad9106_vector_generator.jpg|\ |ad9102_vector_generator_tab.jpg|\
+==== Using the Vector Generator ==== The plugin also includes a :doc:`vector generation tool </wiki-migration/resources/tools-software/ace/vector-generation>` also accessible in the **SRAM Control Tab**\ |ad9106_vector_generator.jpg|
+
+
+
+|ad9102_vector_generator_tab.jpg|
 
 .. container:: centeralign
 
@@ -222,6 +237,12 @@ To Preview a Vector file
    :width: 600px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9102.png
    :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9106_chipview_.jpg
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9102_chipview.jpg
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_applychanges.png
+   :width: 600px
 .. |ad9106_50.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9106_50.jpg
 .. |ad910x_ace_macro.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_ace_macro.png
    :width: 600px
@@ -233,3 +254,5 @@ To Preview a Vector file
    :width: 390px
 .. |ad9102_vector_generator_tab.jpg| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9102_vector_generator_tab.jpg
    :width: 390px
+
+.. |resources-eval-dpg-ad910x_samplewaveforms.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_samplewaveforms.png

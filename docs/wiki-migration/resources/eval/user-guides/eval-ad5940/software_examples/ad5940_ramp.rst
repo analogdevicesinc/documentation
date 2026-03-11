@@ -33,9 +33,11 @@ Setting up the Hardware
 -----------------------
 
 -  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
--  Set S5 to Wall/USB to power the board from the USB cable\
+-  Set S5 to Wall/USB to power the board from the USB cable
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
+   :align: center
+   :width: 800px
 
 -  Place the **EVAL-AD5940ELCZ** on top of the **EVAL-ADICUP3029**.
 -  Ensure jumper on JP10 and JP11 is on PIN2 and PIN4 to connect the dummy sensor to the AD5940 (to use the USB connected probe with EVAL-AD5940ELCZ, JP9,JP10 and JP11 should be configured to position C - pins 5 and 6)
@@ -54,7 +56,7 @@ The source code and include files for the project can be found on Git
 .. admonition:: Download
    :class: download
 
-   `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
+   :git-ad5940-examples:`AD5940 Source Code <ad5940-examples>`
 
    
 
@@ -105,9 +107,7 @@ Following is the UART configuration.
 The data on the terminal indicates the index number of the data point and the current measured in µA.
 
 
-|image2|
+|image1|
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/realterm_ramp.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/realterm_ramp.png
    :width: 600px

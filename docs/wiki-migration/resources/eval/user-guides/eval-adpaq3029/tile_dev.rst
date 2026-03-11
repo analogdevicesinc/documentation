@@ -40,9 +40,18 @@ Installing Moduware App
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Install the basic version of the Moduware app that can be downloaded from the website https://Moduware.com/app/. The app is also available on play store.
--  Once the application is installed, launch the application. The following GUI is displayed when the application is opened.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile2.png>`_
--  Click on ``FIND MODUWARE`` option to scan the devices available near you. Select the right device (the mini-dev board) and pair it.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile3.png>`_
--  Once the connection is established between phone and the gateway, the screen appears as shown in the image. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile4.png>`_
+-  Once the application is installed, launch the application. The following GUI is displayed when the application is opened.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile2.png>`_
+
+-  Click on ``FIND MODUWARE`` option to scan the devices available near you. Select the right device (the mini-dev board) and pair it.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile3.png>`_
+
+-  Once the connection is established between phone and the gateway, the screen appears as shown in the image.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile4.png>`_
+
 -  Since the Moduware phone backpack supports up to 6 slots to connect 6 different modules, the application shows 6 tiles. Since there is no firmware in the module and no tile has been stored in the mobile device memory, a dummy tile is displayed on the screen.
 
 .. note::
@@ -62,9 +71,11 @@ Once Tile development is complete and ready to test/run on smartphone:
 -  Make sure that the tile project files are within the folder named ``Moduware.tile.example-name``, where “name” is any project name.
 -  Eject the smartphone drive and launch the moduware app again.
 -  Connect the module/gateway as explained previously.
--  Now you should be able to see the new Tile GUI showing ``DevMod``.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile5.png>`_
+-  Now you should be able to see the new Tile GUI showing ``DevMod``.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile5.png>`_
 
 .. note::
 
-   Many a times, there may be a dummy tile being dispalyed on the ``Moduware`` app as seen in the image. In this case, just disconnect the power cable from the modules and connect them back again.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile6.png>`_
+   Many a times, there may be a dummy tile being dispalyed on the ``Moduware`` app as seen in the image. In this case, just disconnect the power cable from the modules and connect them back again.\ `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile6.png>`_
 

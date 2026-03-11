@@ -60,15 +60,11 @@ The source code for MAX5380 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX5380 Driver <drivers/dac/max538x/max538x.h>`
    
-   |Header file of MAX5380 Driver|
+   -  :git-no-OS:`Implementation of MAX5380 Driver <drivers/dac/max538x/max538x.c>`
+   
 
-   -
-
-   |Implementation of MAX5380 Driver|
 
 This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
 
@@ -76,15 +72,10 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 Driver Description
 ------------------
@@ -113,11 +104,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for I2C Communication APIs|
+
 
 Code Documentation
 ------------------
@@ -204,8 +193,3 @@ Example Initialization Using Maxim SDK as Platform
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max9611pmb1.jpg
    :width: 400px
-.. |Header file of MAX5380 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/max538x/max538x`.h
-.. |Implementation of MAX5380 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/max538x/max538x`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

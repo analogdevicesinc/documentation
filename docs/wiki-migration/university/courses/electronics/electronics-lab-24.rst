@@ -24,9 +24,8 @@ Directions:
 
 Construct the circuit as shown in figure 1 on your solder-less breadboard. The green boxes indicate connections to the ADALM2000. Note: there is no input from the ADALM2000 board just the power supply. The first inverting amplifier stage consists of Q\ :sub:`1` with R\ :sub:`1` and the Red LED serving as the output load. The second inverting amplifier stage consists of Q\ :sub:`2` with R\ :sub:`2` and the Green LED serving as the load. C\ :sub:`1` couples the output of the first stage at the collector of Q\ :sub:`1` to the input of the second stage at the base of Q\ :sub:`2`. Similarly, C\ :sub:`2` couples the output of the second stage at the collector of Q\ :sub:`2` back to the input of the first stage at the base of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,7 +36,7 @@ Procedure:
 ----------
 
 | Turn on the Vp power supply only after you have completely built and checked the circuit. The red and green LEDs should alternately blink on and off at about a 1 second interval. You can also use the scope channels to monitor the output waveforms (Q and Qbar).
-| |image1|
+| |image2|
 
 .. container:: centeralign
 
@@ -48,14 +47,14 @@ The frequency of oscillation is very slow due to the large values of capacitors 
 
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
    Figure 3, Astable Multivibrator interval at 47uF capacitor
 
 
-   |image3|
+   |image4|
 
 .. container:: centeralign
 
@@ -87,16 +86,15 @@ Directions:
 
 Construct the circuit as shown in figure 2 on your solder-less breadboard. The green boxes indicate connections to the ADALM2000. Starting with the circuit from experiment 1, remove one of the 20K? resistors (old R\ :sub:`3`) and replace capacitor C\ :sub:`1` with a 47K? resistor (new R\ :sub:`3`). Add diode D\ :sub:`1` and resistor R\ :sub:`5` as shown to the base of Q\ :sub:`2`. Be sure to replace C\ :sub:`2` with the original 47 uF capacitor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f2.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5, Monostable Multivibrator
 
 
-   |image4|
+   |image6|
 
 .. container:: centeralign
 
@@ -109,7 +107,7 @@ Procedure:
 Turn on the Vp power supply only after you have completely built and checked the circuit. The red LED should be lit and the green LED should be dark. With a length of wire, momentarily touch the trigger input (end of R\ :sub:`5`) to Vp and immediately let go. The red LED should go out and the green LED come on for about a second and then go back to the stable state with the red on and green off. Try this a few times.
 
 
-|image5|
+|image7|
 
 .. container:: centeralign
 
@@ -139,17 +137,15 @@ Directions:
 
 Construct the circuit as shown in figure 3 on your solder-less breadboard. The green boxes indicate connections to theADALM2000.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f3.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 7, Bistable Multivibrator
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_bistable_hardware_setup.png
-   :align: center
+   |image9|
 
 .. container:: centeralign
 
@@ -162,14 +158,14 @@ Procedure:
 Turn on the Vp power supply only after you have completely built and checked the circuit. Either the red LED should be lit with the green LED dark or the green LED should be lit with the red LED dark. With a length of wire, momentarily touch the either the SET or RESET input (end of R\ :sub:`5` or R\ :sub:`6`) to Vp and immediately let go. The LEDs should change state or toggle back and forth depending which input is touched to Vp. Try this a few times.
 
 
-|image6|
+|image10|
 
 .. container:: centeralign
 
    Figure 9, Bistable Multivibrator behavior triggering Set pin
 
 
-   |image7|
+   |image11|
 
 .. container:: centeralign
 
@@ -207,9 +203,8 @@ To illustrate how the circuit operates we will assume the circuit is in one of i
 
 A negative going pulse on the Clock input, coupled through C\ :sub:`1` and C\ :sub:`2`, is steered to the base of Q\ :sub:`1` since D\ :sub:`1` is forward biased, but blocked from the base of Q\ :sub:`2` by reverse biased D\ :sub:`2`. Q\ :sub:`1` is turned off and Q\ :sub:`2` is turned on by the cross coupled connection through the parallel combination of C\ :sub:`3` and R\ :sub:`3`. This happens very quickly because of the positive feedback effect we saw earlier in the simple bistable multivibrator. The circuit is now in the other stable state with the Q output high and the QB output low. The circuit will remain in that state until the D input becomes high and after another negative going clock pulse arrives.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f4.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -222,7 +217,7 @@ Hardware setup:
 The AWG1 output should be connected to the input marked Clock in figure 4. The AWG2 output should be connected to the D input. The first scope channel 1 input should also be connected to Clock input. The second input scope channel 2 should be connected to the Q output of the flip-flop in figure 4. Both the AWG1 and AWG2 should be configured as a square wave with a 5 V amplitude peak-to-peak and 2.5 V offset ( 0 - 5V swing ). Set the frequency of AWG1 to 10 KHz and set the frequency of AWG2 to 5 KHz. Set the phase of AWG2 to 45 degrees. Be sure to configure the two AWG outputs to operate synchronously.
 
 
-|image8|
+|image13|
 
 .. container:: centeralign
 
@@ -235,14 +230,14 @@ Procedure:
 Turn on the Vp power supply and enable the AWG outputs only after you have completely built and checked the circuit. You should observe a square wave on the Q output which is aligned with the falling edge of the Clock input signal. Change the phase of AWG2 ( D input signal ) while observing this alignment. Does this change as the phase of the D input change? Move the channel 1 scope input to the D input. You should see a similar square wave signal but ahead in time with respect to the Q output. In other words the Q output is delayed until the falling edge of the Clock signal.
 
 
-|image9|
+|image14|
 
 .. container:: centeralign
 
    Figure 13: Plot of Q and Clock signal
 
 
-   |image10|
+   |image15|
 
 .. container:: centeralign
 
@@ -284,9 +279,8 @@ An external negative going pulse, coupled through C\ :sub:`1` and C\ :sub:`2`, i
 
 Since the collector voltage of Q\ :sub:`2` , the Q output node, changes state for every clock pulse, there is one pulse appearing at the output for every two clock input pulses. It can therefore be used as a divide by two circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f5.png
-   :align: center
-   :width: 600px
+
+|image16|
 
 .. container:: centeralign
 
@@ -298,8 +292,8 @@ Hardware setup:
 
 The AWG1 output and scope channel 1 input should both be connected to the input marked Clock in figure 13. The second input scope channel 2 should be connected to the Q output of the flip-flop in figure 5. The AWG1 should be configured as a square wave with a 5 V amplitude peak-to-peak and 2.5 V offset ( 0 - 5V swing ). Set the frequency to 10 KHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_divide_by_2_flipflop_hardware_setup.png
-   :align: center
+
+|image17|
 
 .. container:: centeralign
 
@@ -312,14 +306,14 @@ Procedure:
 Turn on the Vp power supply and enable AWG1 output only after you have completely built and checked the circuit. You should observe a square wave on the Q output which is one half the frequency of the AWG 1 signal. Move the channel 2 scope input to the QB output. You should see a similar square wave signal but inverted with respect to the Q output.
 
 
-|image11|
+|image18|
 
 .. container:: centeralign
 
    Figure 15: Plot of Clock and Q output
 
 
-   |image12|
+   |image19|
 
 .. container:: centeralign
 
@@ -351,15 +345,27 @@ http://en.wikipedia.org/wiki/Multivibrator
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_astable_hardware_setup.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_astable_scopeshot_1second_interval.png
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_astable_scopeshot_0.1ufcap.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_monostable_hardware_setup.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_monostable_scopeshot.png
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_bistable_scopeshot1.png
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_bistable_scopeshot2.png
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_dflipflop_hardware_setup.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_dflipflop_scopeshot1.png
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_dflipflop_scopeshot2.png
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_divide_by_2_flipflop_scopeshot1.png
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_divide_by_2_flipflop_scopeshot2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_astable_hardware_setup.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_astable_scopeshot_1second_interval.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_astable_scopeshot_0.1ufcap.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f2.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_monostable_hardware_setup.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_monostable_scopeshot.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f3.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_bistable_hardware_setup.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_bistable_scopeshot1.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_bistable_scopeshot2.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f4.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_dflipflop_hardware_setup.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_dflipflop_scopeshot1.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_dflipflop_scopeshot2.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a24_f5.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_divide_by_2_flipflop_hardware_setup.png
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_divide_by_2_flipflop_scopeshot1.png
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/bjtmultivibrators_divide_by_2_flipflop_scopeshot2.png

@@ -24,7 +24,9 @@ Installing the Firmware
 -  Go to the USB_TO_SPI_FIRMWARE directory and find the latest firmware.
 -  Drag and drop the appropriate firmware file (e.g., SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex or usb-to-spi-max32690.hex) onto the corresponding MCU's USB drive (e.g., SDP USB drive) to update the firmware.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/usb_spi_firmware_list.png
+   :align: center
+   :width: 700px
 
 .. tip::
 
@@ -40,12 +42,14 @@ Installing the Firmware
 
    <details><summary>**Click here for instructions on how to flash the firmware image using the MAX32625PICO**
 
--  Access the `MAX32625PICO Firmware Repository <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_ and download the image for the specific MCU (e.g., MAX32690).
+-  Access the :git-max32625pico-firmware-images:`MAX32625PICO Firmware Repository <max32625pico-firmware-images>` and download the image for the specific MCU (e.g., MAX32690).
 -  Do not connect the MAX32625PICO from the PC and the MCU board that you are using (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board).
 -  Plug the micro-USB cable only in the MAX32625PICO.
 -  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. (Do not release the button until the MAINTENANCE drive is mounted).
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
+   :align: center
+   :width: 400px
 
 -  Release the button once the MAINTENANCE drive is mounted.
 -  Drag and drop (to the MAINTENANCE drive) the firmware image.
@@ -99,7 +103,7 @@ Daisy Chain Connection
 The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI.
 
 
-|image3|
+|image1|
 
 -  **Select ADBMS Generation:**
 
@@ -137,7 +141,7 @@ Quick Measure
 The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
 
 
-|image4|
+|image2|
 
 -  **Preloaded Commands:**
 
@@ -172,7 +176,7 @@ Sequences
 The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top.
 
 
-|image5|
+|image3|
 
 -  **Load Existing Sequence:**
 
@@ -216,7 +220,7 @@ Scheduler
 The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization.
 
 
-|image6|
+|image4|
 
 -  **Timing Adjustments:**
 
@@ -255,7 +259,7 @@ Memory Map
 The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
 
 
-|image7|
+|image5|
 
 -  **Organized Data Display:**
 
@@ -286,7 +290,7 @@ Plots
 The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
 
 
-|image8|
+|image6|
 
 -  **Plot Selection:**
 
@@ -322,7 +326,7 @@ Data Recall
 The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run.
 
 
-|image9|
+|image7|
 
 -  **Access Data Recall Tab:**
 
@@ -352,7 +356,7 @@ Diagnostics
 The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device.
 
 
-|image10|
+|image8|
 
 -  **Access Diagnostics Tab:**
 
@@ -436,17 +440,13 @@ For questions and more information about this product, connect with us through t
 
 :doc:`Click here to read the EVAL-ADBMS6830BMSW Hardware User Guide </wiki-migration/resources/eval/user-guides/eval-adbms6830bmsw>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/usb_spi_firmware_list.png
-   :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/daisy_chain_connection_v.2.0.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/daisy_chain_connection_v.2.0.png
    :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/quick_measure_utility.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/quick_measure_utility.png
    :width: 900px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/sequences.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/scheduler_v2.0.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/memory_map_v2.0.0.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/plotfilter_v2.0.0.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/data_recall.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/diagnostics.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/sequences.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/scheduler_v2.0.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/memory_map_v2.0.0.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/plotfilter_v2.0.0.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/data_recall.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/diagnostics.png

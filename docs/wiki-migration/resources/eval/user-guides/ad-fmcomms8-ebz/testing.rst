@@ -139,10 +139,9 @@ First make sure all the required setup explained above is completed. Once the te
 
 -  Testing sequence can be started by selecting one of the menu items. In order to start testing an Ethernet cable should be connected between Raspberry Pi and DUT. At the beginning of every test the correct connection with DUT is checked. If the connection cannot be established the following error message will be printed:
 
-   
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-eth-conn.png
+   :align: center
+   :width: 800px
 
 .. tip::
 
@@ -171,5 +170,3 @@ First make sure all the required setup explained above is completed. Once the te
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/fmcomms8-ufl-complete.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-eth-conn.png
-   :width: 800px

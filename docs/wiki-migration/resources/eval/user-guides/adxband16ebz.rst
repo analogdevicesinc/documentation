@@ -155,72 +155,72 @@ Related Part Pages
 AD9084
 ^^^^^^
 
--  :adi:`AD9084 </en/products/ad9084.html>`
+-  :adi:`AD9084 <en/products/ad9084.html>`
 
 ADF4382A
 ^^^^^^^^
 
--  :adi:`ADF4382A </en/products/ADF4382A.html>`
+-  :adi:`ADF4382A <en/products/ADF4382A.html>`
 
 ADL8102
 ^^^^^^^
 
--  :adi:`ADL8102 </en/products/ADL8102.html>`
+-  :adi:`ADL8102 <en/products/ADL8102.html>`
 
 ADL8100
 ^^^^^^^
 
--  :adi:`ADL8100 </en/products/ADL8100.html>`
+-  :adi:`ADL8100 <en/products/ADL8100.html>`
 
 ADMV8913
 ^^^^^^^^
 
--  :adi:`ADMV8913 </en/products/ADMV8913.html>`
+-  :adi:`ADMV8913 <en/products/ADMV8913.html>`
 
 ADRF5730
 ^^^^^^^^
 
--  :adi:`ADRF5730 </en/products/ADRF5730.html>`
+-  :adi:`ADRF5730 <en/products/ADRF5730.html>`
 
 ADF4351
 ^^^^^^^
 
--  :adi:`ADF4351 </en/products/ADF4351.html>`
+-  :adi:`ADF4351 <en/products/ADF4351.html>`
 
 LTC6953
 ^^^^^^^
 
--  :adi:`LTC6953 </en/products/LTC6953.html>`
+-  :adi:`LTC6953 <en/products/LTC6953.html>`
 
 LTC6952
 ^^^^^^^
 
--  :adi:`LTC6952 </en/products/LTC6952.html>`
+-  :adi:`LTC6952 <en/products/LTC6952.html>`
 
 LT8627SP
 ^^^^^^^^
 
--  :adi:`LT8627SP </en/products/LT8627SP.html>`
+-  :adi:`LT8627SP <en/products/LT8627SP.html>`
 
 LTM8060
 ^^^^^^^
 
--  :adi:`LTM8060 </en/products/LTM8060.html>`
+-  :adi:`LTM8060 <en/products/LTM8060.html>`
 
 LTM4709
 ^^^^^^^
 
--  :adi:`LTM4709 </en/products/LTM4709.html>`
+-  :adi:`LTM4709 <en/products/LTM4709.html>`
 
 LTM8074
 ^^^^^^^
 
--  :adi:`LTM8074 </en/products/LTM8074.html>`
+-  :adi:`LTM8074 <en/products/LTM8074.html>`
 
 FPGA Evaluation Board Hardware
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Xilinx Virtex UltraScale+ FPGA VCU118 <https://www.xilinx.com//products/boards-and-kits/vcu118.html>`_
+-  `Xilinx Virtex UltraScale+ FPGA VCU118 <https://www.xilinx.com/products/boards-and-kits/vcu118.html>`_
 
 --------------
 

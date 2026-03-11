@@ -176,7 +176,7 @@ How to Import Existing Projects from the GIT Repository
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
 -  Clone the Git repository which contains all the latest code and projects associated with the ADuCM360. Populate the URI field with the following address.
 
-   -   **URI:** - https://github.com/analogdevicesinc/EVAL-ADICUP3029.git
+   -   **URI:** - :git-EVAL-ADICUP3029:`EVAL-ADICUP3029`
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
 
 -  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*
@@ -272,22 +272,26 @@ How to start and stop debugging an ADuCM3029 application
 
 -  Ensure that you have connected your EVAL-ADICUP3029 board to your computer via the **USB** port (the micro USB connected closest to the DC barrel jack).
 -  If you are already in the Debug Configurations dialog, then click *Debug*.
--  If you are in the C Perspective, then you can launch the last Debug session by clicking the *Beetle* Debug button on the toolbar.\
+-  If you are in the C Perspective, then you can launch the last Debug session by clicking the *Beetle* Debug button on the toolbar.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar.png
+   :align: center
 
--  You will be prompted to switch perspective to the Debug perspective. Click *Yes*. You can opt to not show this dialog again.\
+-  You will be prompted to switch perspective to the Debug perspective. Click *Yes*. You can opt to not show this dialog again.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-perspective.png
+   :align: center
 
--  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.\
+-  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
+   :align: center
 
 -  To change the semihosting settings please see the section on "Enabling/Disabling Semihosting" above.
--  If this is the first time you have launched OpenOCD, the Windows Firewall may pop-up a window asking for access. Click on "*Allow Access*".\
+-  If this is the first time you have launched OpenOCD, the Windows Firewall may pop-up a window asking for access. Click on "*Allow Access*".
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
+   :align: center
 
 -  If everything goes fine, in the Console window, you will see a report without errors.
 
@@ -311,22 +315,23 @@ How to start and stop debugging an ADuCM3029 application
       adapter speed: 1000 kHz
       Info : accepting 'gdb' connection on tcp/3333``
 
--  Your program's execution is stopped automatically at the first breakpoint which is at the beginning of main() loop. You can use the debug functions and features of the CCES environment. (Such as stepping through, breakpoints, register reads, variable values, etc.)\
+-  Your program's execution is stopped automatically at the first breakpoint which is at the beginning of main() loop. You can use the debug functions and features of the CCES environment. (Such as stepping through, breakpoints, register reads, variable values, etc.)
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debugging.png
+   :align: center
 
-|image5|
+-  To terminate a debug session, click on the red *Stop* button on the toolbar.
 
--  To terminate a debug session, click on the red *Stop* button on the toolbar.\
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar-stop.png
+   :align: center
 
 How to create an Intel Hex (.hex) file or Binary (.bin) file for an ADuCM3029 application
 -----------------------------------------------------------------------------------------
 
 -  Ensure that your program is built with semi-hosting disabled by visiting *Tools Settings \| Linker \| Libraries* and change *Semihosting support* to *nosys.specs* or *None*, depending on your application set-up.
--  Rebuild your application.\
+-  Rebuild your application.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
 
 -  Convert your application into Intel Hex (.hex) or Binary (.bin) format by visiting Tools Settings once more.
 -  Select the Build Steps tab.
@@ -340,11 +345,3 @@ How to create an Intel Hex (.hex) file or Binary (.bin) file for an ADuCM3029 ap
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_post_bin.gif
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-perspective.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debugging.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-toolbar-stop.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif

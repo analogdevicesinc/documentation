@@ -21,8 +21,8 @@ All changes required for RPi are applicable to Nvidia Xavier AGX. So please foll
 Prepare SD card
 ~~~~~~~~~~~~~~~
 
--  Download and flash on a SD card the latest image provided from the following link: :git-aditof_sdk#ad-96tof1-ebz>`__
--  Download L4T BSP `L4T BSP <https::`aditof_sdk#ad-96tof1-ebz </developer.nvidia.com/embedded/linux-tegra>` package (Tested release R32.3.1)
+-  Download and flash on a SD card the latest image provided from the following link: :git-aditof_sdk:`aditof_sdk#ad-96tof1-ebz <aditof_sdk>`
+-  Download L4T BSP `L4T BSP <https://developer.nvidia.com/embedded/linux-tegra>`_ package (Tested release R32.3.1)
 -  Extract kernel_src from BSP package
 -  ADI ToF camera driver and devicetree should be taken from ADI ToF camera driver and devicetree should be taken from :git-aditof_sdk:`aditof_sdk <misc/nvidia>`.
 -  Copy paste and replace content of kernel_src folder from L4T BSP with the one downloaded from ADI ToF Repository
@@ -44,7 +44,10 @@ Power on sequence
    Password for "analog" user is "analog". This user has sudo rights
 
 
-   |Jetson Xavier AGX connections rev. C|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/xavier-agx-ad96tof1.jpg
+   :alt: Jetson Xavier AGX connections rev. C
+   :align: center
+   :width: 400px
 
 Power off sequence
 ~~~~~~~~~~~~~~~~~~
@@ -114,6 +117,3 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
 
 .. image:: https://wiki.analog.com/_media/navigation AD-96TOF1-EBZ#none#./
    :alt: Overview#none#
-
-.. |Jetson Xavier AGX connections rev. C| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-96tof1-ebz/xavier-agx-ad96tof1.jpg
-   :width: 400px

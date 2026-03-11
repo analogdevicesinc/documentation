@@ -82,7 +82,7 @@ Steps for building the HDL design:
 Design Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
-The reference design uses a clock generator for the divison of the spi clock and a pwm generator for the conversion signal. The required parameters can be set in :git-hdl:`projects/pulsar_adc_pmdz/common/pulsar_adc_pmdz_bd`.tcl file using the following values, where the PULSE_0_PERIOD is computed as Tcyc_min/Tspi_clk:
+The reference design uses a clock generator for the divison of the spi clock and a pwm generator for the conversion signal. The required parameters can be set in :git-hdl:`projects/pulsar_adc_pmdz/common/pulsar_adc_pmdz_bd.tcl` file using the following values, where the PULSE_0_PERIOD is computed as Tcyc_min/Tspi_clk:
 
 .. admonition:: Download
    :class: download
@@ -121,10 +121,6 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`Pulsar ADC PMODs HDL Project. <projects/pulsar_adc_pmdz>`
    
-   |Pulsar ADC PMODs HDL Project.|
 
-.. |Pulsar ADC PMODs HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/pulsar_adc_pmdz`

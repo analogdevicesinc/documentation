@@ -29,61 +29,60 @@ Software Packs and Driver Setup
 -  Start IAR Embedded Workbench for ARM.
 -  Go to Project-> CMSIS-Pack-> Pack Installer.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png
+   :align: center
+   :width: 750px
 
 -  In **'CMSIS Pack Manager'** window, click 'Install local pack file'.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_2.png
+   :align: center
+   :width: 700px
 
 -  In 'Pack file to install' window navigate to the downloaded pack (as already done in step 1 of this section), select all the packs to install and click Open.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar-aducm3029-cmsis-packs-snapshot2.png
+   :align: center
 
 Running an Example Project
 --------------------------
 
 -  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a yellow LED turn on by default.
 
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/img_20171030_180904.jpg
+   :align: center
+   :width: 200px
 
 -  In IAR IDE, go to Project-> Create New Project...
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/create_new_project_1.png
+   :align: center
 
 -  In **'Create New Project'** window, Select **'CMSIS Pack Example'** and click 'OK'.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/example_run_1.png
+   :align: center
 
 -  Expand Analog Devices, select **ADuCM3029** and click 'Next'.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar-aducm3029-cmsis-example-mcu-select1.png
+   :align: center
+   :width: 700px
 
--  Select **button_press** example and click 'Finish'.\
+-  Select **button_press** example and click 'Finish'.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar-aducm3029-cmsis-example-buttonpress1.png
+   :align: center
+   :width: 700px
 
 -  Save the project to the desired location.
--  Click on 'Debug and Download' icon |image9|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029WZ using CMSIS-DAP.
--  Click on 'Run' icon |image10| to start the debug session.
+-  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029WZ using CMSIS-DAP.
+-  Click on 'Run' icon |image2| to start the debug session.
 -  Now press BTN1 or BTN2 on EV-COG-AD3029WZ and inspect corresponding LED
 
 You are all set!
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz/quickstart_1>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png
-   :width: 750px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_2.png
-   :width: 700px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar-aducm3029-cmsis-packs-snapshot2.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/img_20171030_180904.jpg
-   :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/create_new_project_1.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/example_run_1.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar-aducm3029-cmsis-example-mcu-select1.png
-   :width: 700px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/iar-aducm3029-cmsis-example-buttonpress1.png
-   :width: 700px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/debug_debug_button.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/run_button.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/debug_debug_button.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/run_button.png

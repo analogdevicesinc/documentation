@@ -21,7 +21,9 @@ Overview
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/cn0565_block_diagram-1.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -46,8 +48,9 @@ Connectors and Jumpers
 
 -  P7 (Chip Select Mapping) - leave this at default for the provided firmware
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/p7_connection.png
+   :align: center
+   :width: 700px
 
 .. container:: centeralign
 
@@ -56,9 +59,9 @@ Connectors and Jumpers
 
 -  P1 (DUT Connections) - shows the pin mapping diagram
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/p1_connection.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -88,13 +91,15 @@ Demo Requirements
 -  **Software**
 
    -  `CN0565 Embedded Firmware <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565_hex.zip>`_
-   -  :git-libiio:`Libiio <releases>` (necessary library)
+   -  `Libiio <https://github.com/analogdevicesinc/libiio/releases>`_ (necessary library)
    -  `Python 3 <https://www.python.org/downloads>`_ (to run the example scripts)
 
 Hardware Setup
 --------------
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/windows_hardware_bring-up_test.png
+   :align: center
+   :width: 3000px
 
 .. container:: centeralign
 
@@ -127,7 +132,7 @@ Python Installation Guide
 
 Assumes a fresh installation of all required software
 
--  Download `Python Latest Version <https://wiki.analog.com/https/www.python.org/downloads>`_. Choose the latest available version depending on the operating system.
+-  Download `Python Latest Version <https://www.python.org/downloads/>`_. Choose the latest available version depending on the operating system.
 -  Run installer as Administrator. During installation, check **"Add Python version to PATH"** before clicking **"Install Now"**
 -  To check if the download is successful, go to command prompt and type the command line below: <code> python --version </code>
 
@@ -141,7 +146,7 @@ Libiio is a library that has been developed by Analog Devices to ease the develo
 .. admonition:: Download
    :class: download
 
-   :git-libiio:`Libiio Latest Release <releases>`
+   `Libiio Latest Release <https://github.com/analogdevicesinc/libiio/releases>`_
 
 
 -  Install the libIIO bindings through pip <code> pip install pylibiio </code>
@@ -195,7 +200,7 @@ Using the Specific Electrode Pair Script
 Prompting these commands in the terminal will give you the **Amplitude, Frequency and Baud Rate**, **Electrode Pair, Rectangular and Polar Form Impedance**, and the **Real and Imaginary Impedance** for the specific electrode pair.
 
 
-|image6|
+|image2|
 
 <note 90%> The numbers 0, 1, 1, 0 indicate the electrode positions for Force Leads: F+, F-, and Sense Leads: S+, and S- 
 
@@ -208,14 +213,14 @@ Using the Electrode Tomography Script
 Prompting these commands in the terminal will give you the **Amplitude, Frequency and Baud Rate**, **Electrode Pair, Rectangular and Polar form impedance**. Then, the **Electrode Pair** followed by the **Rectangular and Polar Form Impedance** and the **Real and Imaginary Impedance** for each electrode pair that is being measured will display.
 
 
-|image7|
+|image3|
 
 After running the sample script, the program will prompt a question whether you like to generate a csv file that contains the raw data.
 
-Enter this command if you want to generate a .csv file: <code> Y </code> |image8| Enter this command if you don't need to generate a .csv file: <code> N </code>
+Enter this command if you want to generate a .csv file: <code> Y </code> |image4| Enter this command if you don't need to generate a .csv file: <code> N </code>
 
 
-|image9|
+|image5|
 
 .. note::
 
@@ -248,7 +253,7 @@ CN0565 Graphical User Interface (GUI) Test Example
    Disconnecting the board is necessary to run the GUI for another set of measurement. Once disconnected, proceed to Step 6.
 
 
-   |image10|
+   |image6|
 
 .. container:: centeralign
 
@@ -315,21 +320,13 @@ For questions and more information about this product, connect with us through t
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/eval-cn0565-ardz.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/cn0565_block_diagram-1.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/p7_connection.png
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/p1_connection.png
-   :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/windows_hardware_bring-up_test.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/example_single.png
    :width: 3000px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/example_single.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/example.png
    :width: 3000px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/example.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/y_n.png
    :width: 3000px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/y_n.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/n_y.png
    :width: 3000px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/n_y.png
-   :width: 3000px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/imaging.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/imaging.png
    :width: 600px

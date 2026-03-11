@@ -23,9 +23,8 @@ Directions:
 
 Plug the EPS board into the 30 pin connector on the Analog Discovery module as shown in figure 1. Be sure to orient the board so that the motor/generator is at the top, Discovery connector is to the left and the 8 position DIP switch, S1, and LEDs are at the bottom. Connect the 9 V battery ( or equivalent DC voltage source ) to the two pin male header marked 9V ( upper right corner of the board ). Be sure to observe the proper polarity as marked next to the header, "+9V" and "GND". Next connect the rechargeable battery to the two pin ( right angle ) header marked BAT in the lower right corner of the board closest to the mounting hole in the board. Be sure to connect the negative side, black wire, to the lower of the two pins marked GND. Just above this header is another two pin ( right angle ) header marked SP. This is where you connect the solar panel ( or solar panel simulator board ). Again be sure to observe the proper polarity by connecting the negative side of the panel connector, black wire, to the pin marked GND.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_12.jpg
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -62,9 +61,8 @@ In the first mode ( dot NOT showing ) the voltage across the motor terminals is 
 
 In the second mode ( dot showing ) the voltage at the load ( LEDs ) is set according to the on board reference or the AWG 1 output as in the first mode ( same gain of two factor ). The output of the generator is connected to the main load bus though a Schottky diode to prevent the rechargeable battery from driving the generator as a motor. In this configuration the full combined motor / generator set is included in the feedback path. The motor-generator will only supply current to the load if the voltage on the main load bus drops below the set point of the regulator, when the LED loads are switched on for example. It is not advisable to operate the board in this second mode without the rechargeable battery connected.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -89,9 +87,8 @@ After plugging all the hardware together insure that the left two DIP switches a
 
 Start the program by double clicking on the program file, eps_analog_discovery_interface_adg.pyw. In addition to the program itself two other files are needed, adi_logo.gif and eps_cal_file.txt. The first is self-explanatory and the second contains a list of the offset and scale (gain) calibration factors for each measurement channel. An example calibration file is listed in the Appendix.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f3.jpg
-   :align: center
-   :width: 450px
+
+|image3|
 
 .. container:: centeralign
 
@@ -119,9 +116,8 @@ Solar Panel Simulator.
 
 To test and use solar panels full sun light is needed. However, it is not always convenient to setup lab experiments when and where access to full sun light is possible. A workable solution would be to construct a solar panel hardware simulation. We can model the photovoltaic solar cell as shown in figure A1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -130,9 +126,9 @@ To test and use solar panels full sun light is needed. However, it is not always
 
 We can construct an equivalent circuit using a collection of transistors and resistors, including a photo resistor for modulating the current level based on the intensity of the ambient light. One possible configuration is shown in figure A2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f5.png
-   :align: center
-   :width: 500px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -149,9 +145,8 @@ ImainOffset = 0.5 # offset is in mA VmainOffset = 0.0 # offset is in Volts IgenO
 
 It is best to start with a file that sets all the offsets to 0, all the current scale factors to 100 and all the voltage scale factors to 2. Then observe the errors and adjust the values accordingly. The current measurement offset error for Imain, Igen, Isolar and Ibat can be observed by inserting shorting jumpers on IL, IGEN, ISP and IBAT respectively. A DVM can be used to measure the actual voltage values to determine scale factor calibration factors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -159,3 +154,16 @@ It is best to start with a file that sets all the offsets to 0, all the current 
 
 
 **Return to EPS Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_12.jpg
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f3.jpg
+   :width: 450px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/eps/eps_user_g_f6.png
+   :width: 500px

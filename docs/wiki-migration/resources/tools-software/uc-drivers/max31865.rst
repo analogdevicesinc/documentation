@@ -48,15 +48,11 @@ The source code for MAX31865 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX31865 Driver <drivers/temperature/max31865pmb1/max31865.h>`
    
-   |Header file of MAX31865 Driver|
+   -  :git-no-OS:`Implementation of MAX31865 Driver <drivers/temperature/max31865pmb1/max31865.c>`
+   
 
-   -
-
-   |Implementation of MAX31865 Driver|
 
 This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
 
@@ -64,15 +60,10 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 To use the MAX32865 No-OS Driver, you need to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the MAX31865 driver and have to be implemented:
 
@@ -108,11 +99,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
-   |Generic header file for SPI Communication APIs|
+
 
 Code Documentation
 ------------------
@@ -285,9 +274,3 @@ Example Initialization Using Maxim SDK as Platform
    max31865_remove(max31865_device);
 
    return 0;
-
-.. |Header file of MAX31865 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31865pmb1/max31865`.h
-.. |Implementation of MAX31865 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31865pmb1/max31865`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h

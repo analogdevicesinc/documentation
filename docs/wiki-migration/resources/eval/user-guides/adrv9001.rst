@@ -101,13 +101,11 @@ Binaries:
 
 Osc for windows can be downloaded directly from Github. Go to to the following link and download the latest release.
 
--  :git-iio-oscilloscope:`IIO-Scope <releases>`
+-  `IIO-Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 The latest boot files for adrv9002 (for all supported carriers) can be found in the latest Kuiper Image release (note one can choose between downloading the full image or just the boot partition):
 
-::
-
-   *[[/resources/tools-software/linux-software/adi-kuiper_images/release_notes#release_image|Kuiper Image]]
+-  :doc:`Kuiper Image </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
 
 
 
@@ -129,8 +127,8 @@ Source code have been posted on following branches on github, or has been alread
 
 -  :git-linux:`drivers/iio/adc/navassa`
 -  https://github.com/analogdevicesinc/hdl/tree/adrv9001_zcu102/projects/adrv9001
--  :git-iio-oscilloscope:`plugins/adrv9002`.c
--  :git-pyadi-iio:`examples/adrv9002_example`.py
+-  :git-iio-oscilloscope:`plugins/adrv9002.c`
+-  :git-pyadi-iio:`examples/adrv9002_example.py`
 
 Videos
 ------
@@ -140,8 +138,7 @@ Videos
 Software Defined Radio using the Linux IIO Framework
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
-   :alt: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
+`iiosdr.mp4 <http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 
 ADI Articles
 ~~~~~~~~~~~~

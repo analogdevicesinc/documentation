@@ -23,9 +23,8 @@ Option 0, Computer sound card outputs:
 
 One alternative would be to use some other signal generator. A possible source for the analog input and square wave drive signals might be the stereo audio (headphone) output from a computer, laptop, tablet, or smart phone. There are a number of function generator programs or apps available for download on the web. The ADALP2000 Analog Parts Kit contains an audio connector adapter break out board (BOB) that can be used with a male to male headphone extension cable (not part of the kit) to connect to the breadboard as shown in figure 1. The left and right outputs need to be AC coupled by two capacitors. Any value around 1 uF or larger should work. The DC level is biased to the center of the 0-5 V range of the ALM1000 by connecting the resistors to the fixed 2.5V supply. 47 KΩ is a good starting value for the resistors. If the caps are polarized the + end should be connected to the resistors that set the DC level equal to +2.5 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,9 +35,8 @@ It is important to note that the ground of the audio connector will likely be sh
 
 The ADALP2000 Analog Parts Kit includes a 3.5 mm audio connector break-out-board, figure 1a, that can be inserted in a solderless breadboard. The board pins are numbered 1-5. Pin 1 is the sleeve (ground), Pin 2 is the tip (left audio) and Pin 3 is the ring (right audio).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1a.png
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,18 +50,15 @@ The ADALP2000 Analog Parts Kit also includes an AD5626 12 bit DAC break-out-boar
 
 To use the AD5626 to set the DC offset of the audio signals, simply connect the end of the resistors in figure 1 to the DAC output rather than the fixed 2.5V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1b.png
-   :align: center
-   :width: 300px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 1b, AD5626 DAC break-out-board
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1c.png
-   :align: center
-   :width: 600px
+   |image4|
 
 .. container:: centeralign
 
@@ -85,9 +80,8 @@ Directions:
 
 Figure 2 shows a typical configuration where the frequency control voltage on pin 4 is supplied from the fixed +2.5 V supply and adjusted by potentiometer R\ :sub:`2`. Alternately, the frequency could be adjusted by using the output of the AD5626, figure 1c, in place of the fixed supply. Timing resistor R\ :sub:`5` and timing capacitor C\ :sub:`2` set the overall frequency.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig2.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -106,9 +100,8 @@ Additional Materials:
 
 1 – 68 KΩ or 100 KΩ gain set resistor (and optional 50 KΩ pot) 1 – AD8226 instrumentation amplifier
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig3.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -132,9 +125,8 @@ Directions:
 
 Shown in figure 4, R\ :sub:`1` provides positive feedback to the positive differential input to set the magnitude of the hysteresis. R\ :sub:`2` also influences the hysteresis and by connecting it to +2.5 sets the input common mode level. The combined series resistance of R\ :sub:`3` and the pot R\ :sub:`4` adjust the frequency. The minimum and maximum frequency can be set by changing capacitor C\ :sub:`1` and choosing different values for the resistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig4.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -158,9 +150,8 @@ Directions:
 
 Shown in figure 5, R\ :sub:`1` provides positive feedback to the positive differential input to set the magnitude of the hysteresis. R\ :sub:`2` also influences the hysteresis and by connecting it to +2.5 sets the input common mode level. The combined series resistance of R\ :sub:`3` and the pot R\ :sub:`4` adjust the frequency. The minimum and maximum frequency can be set by changing capacitor C\ :sub:`1` and choosing different values for the resistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig5.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -210,9 +201,8 @@ The Cosc pin can be used with an external capacitor, Cosc, connected from Pin 16
 
 There are four single-pole-double-throw (SPDT) switches in the LTC1043. By connecting the two ends of a switch to two different voltages, ground and +5 V for example, a square wave swinging between the two voltage levels will appear at the switch pole (center terminal) as shown in figure 7. The frequency of the output will of course be set by the value of C\ :sub:`OSC`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig7.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -228,9 +218,8 @@ The ADAPL2000 kit contains a number of inductors and capacitors that could be us
 
 In figure 8 is an example 1.5 KHz 5th order LC low pass filter. In this Pi configuration the two inductors, L\ :sub:`1` and L\ :sub:`2`, are the same value. For this example the 10 mH inductors from the kit are used. Capacitors C\ :sub:`1` and C\ :sub:`3` are the same value and two 1 uF caps are used. Capacitor C\ :sub:`2` needs to be about 2.4 uF so two 4.7 uF caps connected in series are used. With a 1.5 KHz square wave from the oscillator in figure 5 as the input, the harmonic distortion of the output sine wave is less than 2%. The second harmonic was the largest harmonic at about -32dB with respect to the amplitude of the fundamental.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig8.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -242,3 +231,24 @@ In figure 8 is an example 1.5 KHz 5th order LC low pass filter. In this Pi confi
 :adi:`AD5626 datasheet <AD5626>` :adi:`AD654 datasheet <AD654>` :adi:`AD8561 datasheet <AD8561>` :adi:`LTC1485 datasheet <LTC1485>` :adi:`LT1054 datasheet <en/products/power-management/inductorless-charge-pump-dc-dc-converters/regulated-step-up-charge-pumps/lt1054.html>` :adi:`LTC1043 datasheet <LTC1043>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1a.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1b.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig1c.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig2.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig3.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig4.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig5.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig7.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-signal-sources-fig8.png
+   :width: 600px

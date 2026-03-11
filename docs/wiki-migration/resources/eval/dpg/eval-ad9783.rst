@@ -18,7 +18,7 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |image2| *Figure 1b. EVAL-AD978x with ADS7-V2*\
+   |image2| *Figure 1b. EVAL-AD978x with ADS7-V2*\
 
 
 .. tip::
@@ -31,7 +31,7 @@ Helpful Files
 
 -  `Quick Start Guide <https://wiki.analog.com/_media/resources/eval/dpg/ad9783-dpg2_evaluation_board_quick_start_guide.pdf>`_ for DPG2/DPG3 users
 -  Data Sheet: :adi:`AD978x <static/imported-files/data_sheets/AD9780_9781_9783.pdf>`
--  IBIS Models: :adi:`AD9783 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9783.ibs>`, :adi:`AD9781 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9781.ibs>`, :adi:`AD9780 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9780.ibs>`
+-  IBIS Models: :adi:`AD9783 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9783.ibs>`, :adi:`AD9781 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9781.ibs>`, :adi:`AD9780 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9780.ibs>`
 -  Schematics: `AD9783-DPG2-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9783-dpg2-ebz_revb_schematic.pdf>`_ `AD9783-DUAL-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9783-dual-ebz_revb_schematic.pdf>`_
 -  Bill of Materials `AD9783-DPG2-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9783-dpg2-ebz_revb_bom.xls>`_ `AD9783-DUAL-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9783-dual-ebz_revb_bom.zip>`_
 -  PCB Gerber files: `AD9783-DPG2-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9783-dpg2-ebz_revb_gerber_files.zip>`_
@@ -80,55 +80,77 @@ Quick Start Guide
 -  Connect the evaluation board to PC via USB and to a **5Vdc 1A power supply** on **P5** and **P6**. Refer to Figures 1a and 1b.
 -  Connect continuous wave generator for clock input to **SMA J1** and DAC output from **SMA J5 (IOUT1P)** or **SMA J9 (IOUT2P)** to a signal/spectrum analyzer.
 -  Set clock input to **200MHz**, **3dBm**.
--  Open ACE. The board will be automatically recognized by the software. Click the plugin. Otherwise, install the :adi:`ACE plugin <plugins/ace/Board.AD9783.1.2019.43200.acezip>` for AD9783. |image3|\
+-  Open ACE. The board will be automatically recognized by the software. Click the plugin. Otherwise, install the :adi:`ACE plugin <plugins/ace/Board.AD9783.1.2019.43200.acezip>` for AD9783.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_board_detect.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   
-   //Figure 2. AD9783 Plugin *
+   //Figure 2. AD9783 Plugin //
 
 
-- On the ACE Board View, double click the AD9783 block to access the Chip View.\ \
+-  On the ACE Board View, double click the AD9783 block to access the Chip View.
 
-.. container:: centeralign
-
-   *Figure 3. AD9783 Chip View*
-
-
-- The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to* :adi:`AD978x <static/imported-files/data_sheets/AD9780_9781_9783.pdf>` *datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window. \
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_gui.jpg
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
-   *Figure 4. Apply Changes and Read All button*
+   //Figure 3. AD9783 Chip View //
+
+
+-  The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to :adi:`AD978x <static/imported-files/data_sheets/AD9780_9781_9783.pdf>` datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_apply.png
+   :align: center
+   :width: 400px
+
+.. container:: centeralign
+
+   //Figure 4. Apply Changes and Read All button //
+
 
 -  Start DPG Downloader Lite. The controller board (SDP-H1/ADS7-V2), the device part number and clock frequency should be displayed. Refer to Figures 5a and 5b.
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9783_dpg_window_sdp-h1.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    //Figure 5a. DPG Lite Session for EVAL-AD9783 with SDP-H1 //
 
 
-   |image5|
+   |image3|
 
 .. container:: centeralign
 
-   //Figure 5b. DPG Lite Session for EVAL-AD9783 with ADS7-V2 *
+   //Figure 5b. DPG Lite Session for EVAL-AD9783 with ADS7-V2 //
 
 
-- In DPG Downloader Lite, from the "Add Generator Waveforms" pulldown menu select **Single Tone** and apply the settings as shown in Figures 5a and 5b. Set the **Data Rate** to 200MHz and **Desired Frequency** to 16MHz. Set **DAC Resolution** to 16 for AD9783, 14 for AD9781, and 12 for AD9780. Uncheck the "Unsigned Data" box and Check the **Generate Complex Data (I & Q)**. * Select the I/Q tone from the **I/Q Data Vector** pulldown menu. \* Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer. \
+-  In DPG Downloader Lite, from the "Add Generator Waveforms" pulldown menu select **Single Tone** and apply the settings as shown in Figures 5a and 5b. Set the **Data Rate** to 200MHz and **Desired Frequency** to 16MHz. Set **DAC Resolution** to 16 for AD9783, 14 for AD9781, and 12 for AD9780. Uncheck the "Unsigned Data" box and Check the **Generate Complex Data (I & Q)**.
+-  Select the I/Q tone from the **I/Q Data Vector** pulldown menu.
+-  Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/c_ad9783_16mhz.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 6. Spectrum Output for AD9783; Fdac = 200MSPS, Fout = 16MHz*
+   *Figure 6. Spectrum Output for AD9783; Fdac = 200MSPS, Fout = 16MHz*\
+
 
 Using the ADL5375 Modulator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, solder jumpers JP4, JP5, JP6, and JP7 are configured to route the DAC outputs to SMA J5 (IOUT1P) and to J9 (IOUT2P). This jumper setting is shown on Figure 7a. To connect the DAC output to the filter that feeds into the ADL5375, the solder jumpers should be reconfigured as shown in Figure 7b. Source the desired LO of the modulator (i.e. 900 or 1800MHz, 3dBm) on SMA J2 (LO IN). The ADL5375 Modulator output can be observed on SMA J6 (RF OUT). |image6|\
+By default, solder jumpers JP4, JP5, JP6, and JP7 are configured to route the DAC outputs to SMA J5 (IOUT1P) and to J9 (IOUT2P). This jumper setting is shown on Figure 7a. To connect the DAC output to the filter that feeds into the ADL5375, the solder jumpers should be reconfigured as shown in Figure 7b. Source the desired LO of the modulator (i.e. 900 or 1800MHz, 3dBm) on SMA J2 (LO IN). The ADL5375 Modulator output can be observed on SMA J6 (RF OUT).
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -153,11 +175,7 @@ This section lists items to check and practices to use when debugging any unexpe
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9783_with_ads7.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_board_detect.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9783_dpg_window_sdp-h1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9783_dpg_window_ads7v2.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9783_dpg_window_ads7v2.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/jumper_config.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/jumper_config.jpg
    :width: 800px

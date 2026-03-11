@@ -11,9 +11,8 @@ Background:
 
 In figure 1(a) the simple zener diode circuit, consisting of R\ :sub:`Z` and D\ :sub:`Z` from the zener diode regulator lab activity[1], is used to produce a positive reference voltage, +V\ :sub:`REF`. In a positive voltage reference a non-inverting op-amp buffer is often included to scale the output voltage and supply any current needed in the load. The obvious method for generating a negative reference voltage is to instead use an inverting op-amp stage as shown in the figure. This approach requires two precision matched resistors, R\ :sub:`1` and R\ :sub:`2`. Errors in the matching, in addition to any offset voltage in the op-amp, will produce errors at the negative output -V\ :sub:`REF`. However, one potential side benefit of this inverting amplifier configuration is that -V\ :sub:`REF` need not have the same absolute value as +V\ :sub:`REF`. The negative reference voltage can be scaled up or down by altering the ratio of R\ :sub:`1` and R\ :sub:`2`. The alternate configuration we will be investigating in this lab activity is shown in figure 1(b). It generates a negative reference voltage without the dependence on ratio matched resistors, potentially providing higher accuracy with fewer components.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -39,9 +38,8 @@ The zener diode ( 1N4735 ) supplied in the ADALP2000 Analog Parts Kit is a 6.1 v
 
 Build both of the versions of the circuits in figure 1(a) and 1(b) as shown in figure 2 on your solder-less breadboard. Use two LEDs preferably of the same color. Green LEDs will have a higher forward voltage drop than red or yellow. We want the diode current, I\ :sub:`D`, to be about 1 mA and the as close to this same value in both versions of the circuit. In the case (b) I\ :sub:`D` will be +5/R\ :sub:`4` so a 4.7 KΩ resistor would give about 1 mA. In case (a) I\ :sub:`D` will be (+5-V\ :sub:`D`)/R\ :sub:`3`. If we use 2 V as an estimate for V\ :sub:`D`, then R\ :sub:`3` would be around 3 KΩ. You can get 3 KΩ by connecting two 1.5 KΩ resistors from the Parts Kit in series. Also for case (a) we need to pick values for R\ :sub:`1` and R\ :sub:`2`. We want the current in R\ :sub:`1` to be much smaller than the current in R\ :sub:`3`. So setting R\ :sub:`1` and R\ :sub:`2` to a much higher value such as 20 KΩ should satisfy that condition.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -54,7 +52,7 @@ Hardware setup:
 Open the voltage supply control and the voltmeter instrument windows from the Scopy software. A DMM, if available, could be useful to more accurately measure the DC voltages in the circuit than the Scopy voltmeter instrument.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -67,7 +65,7 @@ Procedure:
 Turn on both the positive and negative power supplies. Observe the two voltages at -V\ :sub:`REF`, pins 8 and 14 of the op amp and at +V\ :sub:`REF` on the LED.
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -84,9 +82,8 @@ Directions Step 2:
 
 Modify your breadboard setup from step 1 as shown in figure 3. Be sure to turn off the power supplies before making any modifications to your breadboard. Replace the LED diode with the shunt regulator stage from earlier lab [3]. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as the zero gain amplifier from the earlier lab [5]. Resistor R\ :sub:`3` and transistor Q\ :sub:`2` are added as in the stabilized current source lab [6]. If the SSM2212 matched NPN pair is used it is best that it be used for devices Q\ :sub:`1` and Q\ :sub:`2`. Q\ :sub:`3`\ is added as common emitter stage, its base connected to the collector of Q\ :sub:`2` and collector connected to the combined node of R\ :sub:`1`, R\ :sub:`3` R\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -99,7 +96,7 @@ Hardware setup:
 The setup is the same as step 1.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -123,9 +120,8 @@ Directions Step 3:
 
 Modify your breadboard setup from step 1 as shown in figure 4. Be sure to turn off the power supplies before making any modifications to your breadboard. Change the two terminal, shunt, regulator used in step 2 to the three terminal reference [2] by adding emitter follower stage Q\ :sub:`4`, and compensation capacitor C\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f4.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -138,7 +134,7 @@ Hardware setup:
 The setup is the same as step 1.
 
 
-|image4|
+|image8|
 
 .. container:: centeralign
 
@@ -173,8 +169,16 @@ Return to Lab Activity :doc:`Table of Contents </wiki-migration/university/cours
 Appendix:
 ~~~~~~~~~
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f2bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f2ss.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f1.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f6.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f8.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f2bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f2ss.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f3.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f6.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f4.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/anr_f8.png

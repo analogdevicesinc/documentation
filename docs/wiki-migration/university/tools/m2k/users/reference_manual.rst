@@ -476,8 +476,9 @@ A Microchip USB3320 Hi-Speed USB 2.0 transceiver provides a USB PHY and ULPI con
 
 -  Mass Storage Device : this will appear to the host as a disk, where you can find links for software uploads, and the serial number of the device.
 
-
-|image30|
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/users/usb_phy.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -490,7 +491,7 @@ Memory
 System memory is a Micron `MT41K256M16TW-107 <https://www.micron.com/parts/dram/ddr3-sdram/mt41k256m16tw-107>`_ 4Gbit (512 MByte), 1066 Mbps, DDR3L low voltage SDRAM. This memory is used for temporary storage of streaming data as well as the operating system.
 
 
-|image31|
+|image30|
 
 .. container:: centeralign
 
@@ -501,7 +502,7 @@ Firmware is stored in a Micron `MT25QU256ABA8E12-1SIT <https://www.micron.com/pr
 
 
 
-|image32|
+|image31|
 
 .. container:: centeralign
 
@@ -511,7 +512,7 @@ Firmware is stored in a Micron `MT25QU256ABA8E12-1SIT <https://www.micron.com/pr
 SoC
 ---
 
-A `Xilinx Zynq <https://www.xilinx.com//products/silicon-devices/soc.html>`_ XC7Z010-1CLG225C System on Chip provides processing and programmable logic functionality with the following specifications:
+A `Xilinx Zynq <https://www.xilinx.com/products/silicon-devices/soc.html>`_ XC7Z010-1CLG225C System on Chip provides processing and programmable logic functionality with the following specifications:
 
 -  FPGA
 
@@ -528,7 +529,7 @@ A `Xilinx Zynq <https://www.xilinx.com//products/silicon-devices/soc.html>`_ XC7
 
    -  streams up to 4MSPS with no dropped samples
 
-Additional information may be found at `Zynq-7000 All Programmable SoC Overview <https://www.xilinx.com//support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`_ and `Datasheet <https://www.xilinx.com//support/documentation/data_sheets/ds187-XC7Z010-XC7Z020-Data-Sheet.pdf>`_
+Additional information may be found at `Zynq-7000 All Programmable SoC Overview <https://www.xilinx.com/support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`_ and `Datasheet <https://www.xilinx.com/support/documentation/data_sheets/ds187-XC7Z010-XC7Z020-Data-Sheet.pdf>`_
 
 Power
 -----
@@ -536,7 +537,7 @@ Power
 The board is completely self powered from USB and has two USB connectors: One for power and data and one for optional power.
 
 
-|image33|
+|image32|
 
 .. container:: centeralign
 
@@ -547,7 +548,7 @@ Bus power from both USB connectors are pass through an LTC4415 dual monolithic i
 
 
 
-|image34|
+|image33|
 
 .. container:: centeralign
 
@@ -731,13 +732,11 @@ Other Features
    :width: 700px
 .. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/users/digital_3v3.png
    :width: 700px
-.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/users/usb_phy.png
-   :width: 500px
-.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/users/ddr3.png
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/users/ddr3.png
    :width: 700px
-.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/users/flash.png
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/m2k/users/flash.png
    :width: 800px
-.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/users/usb_conn.png
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/m2k/users/usb_conn.png
    :width: 600px
-.. |image34| image:: https://wiki.analog.com/_media/university/tools/m2k/users/power_selector.png
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/m2k/users/power_selector.png
    :width: 800px

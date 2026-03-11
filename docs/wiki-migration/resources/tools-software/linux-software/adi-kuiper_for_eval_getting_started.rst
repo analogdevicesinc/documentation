@@ -94,7 +94,7 @@ Beyond Evaluation…
 -  :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` supports development of software that interfaces with the Linux Industrial I/O (IIO) system using :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>`.
 -  Python can also be used to interact with ADI Kuiper Linux and IIO devices. The ADI :doc:`pyadi-iio </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` package makes using IIO devices from python much easier.
 -  MATLAB support for IIO devices is provided by :doc:`ADI Toolboxes for MATLAB and Simulink </wiki-migration/resources/tools-software/matlab>`
--  Source code for the :git-linux>`__, `HDL <https::`Linux drivers and kernel </github.com/analogdevicesinc/hdl>` and related software is available from analogdevicesinc on GitHub
+-  Source code for the :git-linux:`Linux drivers and kernel <linux>`, :git-hdl:`HDL <hdl>` and related software is available from analogdevicesinc on GitHub
 
 Getting Support
 ---------------

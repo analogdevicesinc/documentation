@@ -153,12 +153,12 @@ Videos & Articles
 
 |youtube>776jK4yPvjI| |youtube>uOehjnhe7Zc| |youtube>9-KRkB00VMQ|
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/:adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform`.jpg
-   :alt: :adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform`.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/:adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform.jpg`
+   :alt: :adi:`-/media/images/analog-dialogue/en/volume-54/number-1/articles/open-source-lidar-prototyping-platform/open-source-lidar-prototyping-platform.jpg`
    :align: left
    :width: 200px
 
-`Open-Source LIDAR Prototyping Platform </adi>analog-dialogue/articles/open-source-lidar-prototyping-platform>`__
+:adi:`Open-Source LIDAR Prototyping Platform <analog-dialogue/articles/open-source-lidar-prototyping-platform>`
 
 --------------
 
@@ -172,6 +172,6 @@ For questions and more information please contact us on the Analog Devices Engin
    :ez:`EngineerZone Support Community <depth-perception-ranging-technologies/lidar-solutions>`
 
 
-.. |youtube>776jK4yPvjI| image:: https://wiki.analog.com/_media/youtube>776jK4yPvjI
-.. |youtube>uOehjnhe7Zc| image:: https://wiki.analog.com/_media/youtube>uOehjnhe7Zc
-.. |youtube>9-KRkB00VMQ| image:: https://wiki.analog.com/_media/youtube>9-KRkB00VMQ
+.. |youtube>776jK4yPvjI| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>776jK4yPvjI
+.. |youtube>uOehjnhe7Zc| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>uOehjnhe7Zc
+.. |youtube>9-KRkB00VMQ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>9-KRkB00VMQ

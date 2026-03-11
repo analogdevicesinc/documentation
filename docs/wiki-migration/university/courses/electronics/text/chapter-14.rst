@@ -21,9 +21,8 @@ In terms of the functionality of their circuit connection, standard reference IC
 
 Some simple diode-based references are shown in Figure 14.1. In the first of these, a current driven forward biased diode (or diode-connected transistor) produces a voltage, V\ :sub:`f`\ = V\ :sub:`REF`. While the junction drop is somewhat decoupled from the raw supply, it has numerous deficiencies as a reference. Among them are a strong temperature coefficient (TC) of about -0.3%/°C, some sensitivity to loading, and a rather inflexible output voltage, it is generally only available in increments of 0.65V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,13 +56,12 @@ If we use this equation for I\ :sub:`S` and insert it in the V\ :sub:`BE` equati
 
 Note:
 
-|image1| and |image2|
+|image2| and |image3|
 
 We can see this in the temperature simulation plot shown in figure 14.2 where the current through a diode connected NPN transistor is set to 1mA, 2mA, 5mA and 10mA.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f2.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -74,9 +72,8 @@ The slope of the 10 mA line is slightly less negative than the 1 mA line. In fac
 
 The V\ :sub:`BE` voltage of the simple diode connected transistor of figure 14.1(a) can be used to generate a regulated current reference as well, as shown in figure 14.3. In this circuit the simple diode connection around Q\ :sub:`1`\ is replaced by emitter follower Q\ :sub:`2`. The V\ :sub:`BE` of Q\ :sub:`1` is impressed across R\ :sub:`2` and the resulting current flows through Q\ :sub:`2` to become I\ :sub:`REF`, neglecting the base currents of Q\ :sub:`1` and Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -85,9 +82,9 @@ The V\ :sub:`BE` voltage of the simple diode connected transistor of figure 14.1
 
 The resulting reference current, I\ :sub:`REF`, will be equal to V\ :sub:`BE` divided by R\ :sub:`2` and have the strong negative temperature coefficient as we saw in figure 14.2. This negative temperature coefficient of the current is often referred to as CTAT or Complementary To Absolute Temperature. We can compensate for this negative temperature drift by summing this current with another current with an equally strong positive temperature coefficient. Remembering back to Chapter 11 Section 10 where we discussed the Peaking Current source, we have a circuit block that has such a positive temperature drift. We referred to this as a PTAT or Proportional To Absolute Temperature current. In figure 14.4 we combine the circuit from figure 14.3 (Q\ :sub:`1`, Q\ :sub:`2`, R\ :sub:`1`\ and R\ :sub:`2`) on the right with the peaking current source from figure 11.18 in Chapter 11 (Q\ :sub:`3`, Q\ :sub:`4`, R\ :sub:`3`\ and R\ :sub:`4`).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f4.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -96,9 +93,9 @@ The resulting reference current, I\ :sub:`REF`, will be equal to V\ :sub:`BE` di
 
 If we set the PTAT and CTAT currents to be roughly equal (70uA) at some nominal temperature then the sum of the two currents (140uA) will be approximately flat vs. temperature as we see in the simulation plot in figure 14.5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f5.png
-   :align: center
-   :width: 650px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -123,9 +120,8 @@ The development of voltage references with low output voltages (<5 V) based on t
 
 To understand the underlying concept of the Bandgap reference we first need to explore an important relationship involving bipolar transistors. Imagine that we have two identical transistors as shown in figure 14.6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f6.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -154,9 +150,8 @@ From these equations we can see that the I\ :sub:`S` terms are gone so the stron
 
 We can now proceed to the next step in developing a voltage reference. We now extend this concept for transistors with equal base voltages but different emitter areas as shown in figure 14.7. The V\ :sub:`BE` of Q\ :sub:`1`\ equals the V\ :sub:`BE` of Q\ :sub:`2`, which results in a controlled current ratio between I\ :sub:`C1` and I\ :sub:`C2` of 1:8 based on their relative emitter areas.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f7.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -165,9 +160,9 @@ We can now proceed to the next step in developing a voltage reference. We now ex
 
 We can now reduce the current in Q\ :sub:`2`\ back to be equal to that of Q\ :sub:`1` by inserting a resistor between the emitter of Q\ :sub:`2` and ground as in figure 14.8. I\ :sub:`C2` x R\ :sub:`1` reduces the V\ :sub:`BE` of Q\ :sub:`2` changing the I\ :sub:`C1` / I\ :sub:`C2` ratio. The voltage drop across the resistor, R\ :sub:`1` represents the ΔV\ :sub:`BE` at that particular current level. For a given value for R\ :sub:`1`, there will be one and only one value of V\ :sub:`BE`\ where the two collector currents are equal (other than I\ :sub:`C1`\ =I\ :sub:`C2`\ =0). This is shown in the simulation plot in figure 14.9 where for an emitter area ratio of 8 and a resistor value of 200 ohms.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f8.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -176,9 +171,9 @@ We can now reduce the current in Q\ :sub:`2`\ back to be equal to that of Q\ :su
 
 At low currents where the voltage drop across R\ :sub:`1` is relatively small, I\ :sub:`C2` increases more or less exponentially at 8 times I\ :sub:`C1`. As the voltage drop across R\ :sub:`1` increases, the current I\ :sub:`C2` becomes less and less exponential and eventually the still exponential I\ :sub:`C1` catches up and passes I\ :sub:`C2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f9.png
-   :align: center
-   :width: 650px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -195,9 +190,8 @@ The problem is that in order to compensate the large negative TC of V\ :sub:`BE`
 
 The first of these reference circuits was the LM109, and a basic bandgap cell is shown in Figure 14.10.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f10.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -210,9 +204,8 @@ However, the basic designs of figure 14.10 suffer from load and current drive se
 
 An improved three-terminal bandgap reference, (the AD580 introduced in 1974) is shown in figure 14.11. Popularly called the "Brokaw Cell", this circuit provides on-chip output buffering, which allows good drive capability and standard output voltage scaling.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f11.png
-   :align: center
-   :width: 600px
+
+|image13|
 
 .. container:: centeralign
 
@@ -223,7 +216,7 @@ The Brokaw Cell based AD580 was the first precision bandgap based IC reference, 
 
 The popular design choice is two 8:1 emitter-scaled transistors Q\ :sub:`1`-Q\ :sub:`2` operating at identical collector currents (and thus 1/8 current densities), by virtue of matched load resistors R\ :sub:`3`,R\ :sub:`4` and a closed loop feedback around the buffer op amp. Due to the resultant smaller V\ :sub:`BE` of the 8× area Q\ :sub:`1`, R\ :sub:`2` in series with Q\ :sub:`1` drops the ΔV\ :sub:`BE` voltage, while R\ :sub:`1` (due to the current relationships) has a multiplied PTAT voltage V\ :sub:`R1`:
 
-|image3| |image4|
+|image14| |image15|
 
 The bandgap cell reference voltage V\ :sub:`BG` appears at the combined base of Q\ :sub:`1` and Q\ :sub:`2`, and is the sum of V\ :sub:`BE` (Q\ :sub:`2`) and V\ :sub:`R1`, or 1.205 V, the bandgap voltage:
 
@@ -242,18 +235,15 @@ In an IC chip, surface operated diode junction breakdown is prone to crystal imp
 
 Buried zener references offer very low temperature drift, down to the 1-2 ppm/°C (AD588 and AD586), and the lowest noise as a percent of full-scale, i.e., 100 nV/√Hz or less. On the downside, the operating current of zener type references is usually relatively high, typically on the order of several mA. The zener voltage is also relatively high, typically on the order of 5V. This limit it's application in low voltage circuits. A block diagram of the AD586 is shown in Figure 15.8.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f12.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
    Figure 14.17: Simple Surface Zener vs. a Buried Zener
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f13.png
-   :align: center
-   :width: 500px
+   |image17|
 
 .. container:: centeralign
 
@@ -268,11 +258,37 @@ An important general point arises when comparing noise performance of different 
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e4.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e4.png
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e5.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e5.png
    :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e9.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f2.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f3.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f4.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f5.png
+   :width: 650px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f6.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f7.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f8.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f9.png
+   :width: 650px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f10.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f11.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e9.png
    :width: 150px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e10.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_e10.png
    :width: 150px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f12.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr14_f13.png
+   :width: 500px

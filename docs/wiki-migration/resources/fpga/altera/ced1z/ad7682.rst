@@ -29,7 +29,7 @@ More information
 ----------------
 
 -  :adi:`AD7682 Product Info <AD7682>` - pricing, samples, datasheet
--  :adi:`EVAL-AD76MUXEDZ evaluation board user guide </static/imported-files/eval_boards/EVAL-AD76MUXEDZ.pdf>`
+-  :adi:`EVAL-AD76MUXEDZ evaluation board user guide <static/imported-files/eval_boards/EVAL-AD76MUXEDZ.pdf>`
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 
 Getting Started
@@ -44,7 +44,7 @@ Below is presented the list of required hardware items:
 
 -  Analog Devices :adi:`EVAL-CED Converter Evaluation and Development (CED) Board <EVAL-CED>`
 -  `Terasic USB Blaster <http://www.terasic.com.tw/>`_
--  :adi:`EVAL-AD7682EDZ </static/imported-files/eval_boards/EVAL-AD76MUXEDZ.pdf>` evaluation board
+-  :adi:`EVAL-AD7682EDZ <static/imported-files/eval_boards/EVAL-AD76MUXEDZ.pdf>` evaluation board
 -  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
 
 Software Tools
@@ -107,7 +107,7 @@ Since Windows cannot locate the driver for the device the automatic installation
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
 
-|image011.png|\ |image013.png|
+|image011.png| |image013.png|
 
 
 .. tip::
@@ -613,6 +613,5 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
-
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom

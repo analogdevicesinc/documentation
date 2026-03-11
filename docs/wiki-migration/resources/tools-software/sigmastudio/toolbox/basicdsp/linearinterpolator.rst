@@ -111,4 +111,4 @@ Parameter RAM              5\*
 
 \*Based on an index table with two points. As points are added, Parameter RAM usage will increase by 1 per index.
 
-.. |linearinterpolatorpic1.png| image:: https://wiki.analog.com/_media/linearinterpolatorpic1.png
+.. |linearinterpolatorpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/linearinterpolatorpic1.png

@@ -29,10 +29,7 @@ All OS:
 
 alice-1.0.py(w) `ALICE zip file <https://wiki.analog.com/_media/university/tools/alice-1.0.zip>`_
 
-The zip file also contains the :doc:`spectrum analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` version and the :doc:`analog input multiplexer </wiki-migration/university/tools/m1k/analog-mux>` version of the program, alice-mux-1.0.py(w), which is used in conjunction with the circuit outlined in this Blog:
-
-
-|Two Input Channels Not Enough for Ya|
+The zip file also contains the :doc:`spectrum analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` version and the :doc:`analog input multiplexer </wiki-migration/university/tools/m1k/analog-mux>` version of the program, alice-mux-1.0.py(w), which is used in conjunction with the circuit outlined in this Blog: :ez:`Two Input Channels Not Enough for Ya <community/university-program/blog/2015/07/07/two-input-channels-not-enough-for-ya>`
 
 Windows:
 ~~~~~~~~
@@ -44,7 +41,7 @@ Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/i
 Linux:
 ~~~~~~
 
-`libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+:git-libsmu:`libpysmu.so <libsmu>`
 
 Directions:
 -----------
@@ -62,9 +59,8 @@ Screen Setup:
 
 Once the program is running the main screen, as shown in figure 1, should appear. It is sub divided into 4 sections. Be sure that the ALM1000 is plugged into the USB port before starting the program. If there is no ALM1000 present the green Conn button will be red and say Recon. Click this button after plugging in your ALM1000 to connect to the board.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f1.png
-   :align: center
-   :width: 700px
+
+|image1|
 
 .. container:: centeralign
 
@@ -73,9 +69,9 @@ Once the program is running the main screen, as shown in figure 1, should appear
 
 The menu section along the top, shown in figure 2, contains various buttons and drop-down menus that control Triggering, Horizontal time base, Horizontal position, how and what signals are displayed, and run acquisition / stop acquisition / exit program.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f2.png
-   :align: center
-   :width: 800px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -152,9 +148,8 @@ The first three calculations result in voltages and share the corresponding left
 
 If Math is selected then the formula entered with the Formula button, will be plotted vs time. This allows greater flexibility in waveform plotting at the expense of the typing in the function to be plotted. See Appendix A on how to enter formulas. Any one of the four vertical axis controls can be chosen for the Math axis using the Math X Axis button. Generally when plotting using Math one or the other of the four channels are not being displayed and its axis controls will be available to be used.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f3.png
-   :align: center
-   :width: 120px
+
+|image3|
 
 .. container:: centeralign
 
@@ -186,9 +181,8 @@ The Bottom Menu Section
 
 The menu section along the bottom, shown in figure 4, contains the range and position controls for the Channel A and B voltage and current waveform displays. The entry labels are color coded to match the waveform trace colors.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f4.png
-   :align: center
-   :width: 700px
+
+|image4|
 
 .. container:: centeralign
 
@@ -208,9 +202,8 @@ Above the main grid area is a line of text showing the device ID and Sample rate
 
 The second and third lines of text are for displaying vertical information related to Channel A and Channel B respectively. The selected V/Div is displayed along with any of the vertical measurements selected for that voltage channel. If a current waveform is being displayed the selected mA/Div is displayed along with any of the vertical measurements selected for that current channel.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f5.png
-   :align: center
-   :width: 700px
+
+|image5|
 
 .. container:: centeralign
 
@@ -261,9 +254,8 @@ A more advanced example calculates the time derivative of the channel B voltage 
 
 Again as the program iterates over the time index t, the channel B voltage value at t-1 is subtracted from the channel B voltage value at t and then multiplied by 100. The 100 scales the time from the 10 uSec per time sample to 1 mSec. The screen shot in figure A1, shows the result for a 4 V p-p triangle wave at 1 KHz. Since we are not displaying the channel B current we can use its settings as the vertical axis for the math trace by setting the Math Axis to I-B. The triangle wave changes 4 V in 500 uS for a slew rate of + and – 8 V/mSec.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_a1.png
-   :align: center
-   :width: 700px
+
+|image6|
 
 .. container:: centeralign
 
@@ -277,9 +269,8 @@ Examples:
 
 To demonstrate some of the features of ALICE the following example circuit is offered. In figure E1 we see a simple NPN transistor ( 2N3904 ) in the common emitter configuration with a 100 KΩ resistor used to bias the base and a 1 KΩ resistor as the collector load. The collector load is supplied from the fixed +5 V power supply. We will use the ALICE software to plot I\ :sub:`B` vs V\ :sub:`BE`. We will also determine the value of CA-V corresponding to I\ :sub:`C` = 2 mA and then measure the input to output voltage gain around that operating point.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -294,9 +285,8 @@ The time base should be set to 0.5 mSec/Div so that the rising half cycle from 0
 
 Press the green Run button. You should see something like figure E2.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e2.png
-   :align: center
-   :width: 700px
+
+|image8|
 
 .. container:: centeralign
 
@@ -311,9 +301,8 @@ To make an XY plot of I\ :sub:`B` vs V\ :sub:`BE`, under the Curves menu press n
 
 Press the green Run button. You should see something like figure E3.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e3.png
-   :align: center
-   :width: 700px
+
+|image9|
 
 .. container:: centeralign
 
@@ -328,9 +317,8 @@ Now we need to go back to the time display mode so under the Display menu press 
 
 Press the green Run button. You should see something like figure E4.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e4.png
-   :align: center
-   :width: 700px
+
+|image10|
 
 .. container:: centeralign
 
@@ -345,9 +333,8 @@ Where: V\ :sub:`dis` is the calibrated value to be displayed V\ :sub:`raw` is th
 
 If we set the Offset equal to the actual value of the +5 V supply divided by the Gain calibration factor and change the sign of the Gain factor ( i.e. make it negative ) we have the formula for I\ :sub:`C` from figure E1. After changing the channel B offset and gain factors press the green Run button and you should see something like figure E5.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e5.png
-   :align: center
-   :width: 700px
+
+|image11|
 
 .. container:: centeralign
 
@@ -362,9 +349,8 @@ Now move the channel B input back to the base of the transistor. Under the Math 
 
 Press the green Run button. You should see something like figure E6.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e6.png
-   :align: center
-   :width: 700px
+
+|image12|
 
 .. container:: centeralign
 
@@ -375,9 +361,8 @@ Now we have plots of I\ :sub:`C` ( dark orange ), I\ :sub:`B` ( magenta ) and V\
 
 With the program paused click the left mouse button while hovering over the I\ :sub:`C` trace ( dark orange ) where it crosses 2 V ( 2 mA ). A marker should appear on the screen. Click again at the exact same horizontal time point on the CA-V trace (green). A second marker should appear. In the upper left of the grid the time and voltage values for the two marker points should be displayed as we see in figure E7.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e7.png
-   :align: center
-   :width: 700px
+
+|image13|
 
 .. container:: centeralign
 
@@ -394,9 +379,8 @@ Calculate new Min and Max values for Channel A by adding and subtracting 0.25 V 
 
 Press the green Run button. You should see something like figure E8.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e8.png
-   :align: center
-   :width: 700px
+
+|image14|
 
 .. container:: centeralign
 
@@ -409,4 +393,31 @@ For Further Reading:
 
 Return to :doc:`Table of Contents </wiki-migration/university/tools/m1k>`.
 
-.. |Two Input Channels Not Enough for Ya| image:: https://wiki.analog.com/_media/:ez:`community/university-program/blog/2015/07/07/two-input-channels-not-enough-for-ya`
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f1.png
+   :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f2.png
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f3.png
+   :width: 120px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f4.png
+   :width: 700px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_f5.png
+   :width: 700px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_a1.png
+   :width: 700px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e2.png
+   :width: 700px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e3.png
+   :width: 700px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e4.png
+   :width: 700px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e5.png
+   :width: 700px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e6.png
+   :width: 700px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e7.png
+   :width: 700px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e8.png
+   :width: 700px

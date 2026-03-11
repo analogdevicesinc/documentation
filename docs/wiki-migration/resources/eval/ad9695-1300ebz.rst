@@ -23,14 +23,16 @@ This user guide describes the :adi:`AD9695-1300EBZ <AD9695>` evaluation board wh
 Typical Setup
 =============
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/ad9695-ads7-v2.jpg
+   :align: center
+   :width: 620px
 
 .. container:: centeralign
 
    *Figure 1.* :adi:`AD9695-1300EBZ <AD9695>` *(Left) and* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` *(Right)*\
 
 
-|image2|\
+   |image1|
 
 .. container:: centeralign
 
@@ -91,14 +93,16 @@ This section provides quick start procedures for using the AD9695 evaluation boa
 Connector Layout
 ----------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/fpgapinlabeling.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    \ *Figure 3.* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` *Connector Layout*\
 
 
-   |image4|
+   |image2|
 
 .. container:: centeralign
 
@@ -118,7 +122,9 @@ Connector Layout
 Configuring the Board
 ---------------------
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/9695_pins.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -130,7 +136,7 @@ Before using the software for testing, configure the evaluation boards as follow
 -  Before connecting the AD9695 to the ADS7-V2, jump the following pins: **P307**, **P308**, **P309**, **P311**, **P304**, **P305**, **P312**, and **P602** (SPI Enable). Do not jump **P100** (Power Down/Standby) and **P1**. Supply the Reference Clock through the ADS7-V2. Jump **P401** towards the inside of the board, to power the board via FMC. See Figure 5 for all jumper connections.
 -  Ensure that the data capture board is switched to “OFF.” (**S1** on the data capture board) Connect the evaluation board to the data capture board via the FMC connector found on the underside of the board, as shown in Figure 1. Connect the power supply and USB cable to the data capture board.
 -  Turn on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
--  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ should appear in the Device Manager as shown in Figure 6.\ |image6|\ 
+-  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ should appear in the Device Manager as shown in Figure 6.\ |image3|\ 
 
 .. container:: centeralign
 
@@ -188,7 +194,7 @@ ACE Setup
 
 .. container:: centeralign
 
-   \ |image7|\ *Figure 7. ACE's AD9695 Plug-in*\
+   \ |image4|\ *Figure 7. ACE's AD9695 Plug-in*\
 
 
 
@@ -200,21 +206,25 @@ ACE Setup
 
 
 
--  Click on the plug-in to open it. \ |image8|\ 
+-  Click on the plug-in to open it. \ |image5|\ 
 
 .. container:: centeralign
 
    \ *Figure 8. AD9695 Chip View*\
 
 
--  Click on the navigation tab labeled "AD9695-1300EBZ" to open the AD9695 board view. |image9|\
+-  Click on the navigation tab labeled "AD9695-1300EBZ" to open the AD9695 board view.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/9695navtab.jpg
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    \ *Figure 9. AD9695-1300EBZ Navigator Tab*\
 
 
-\ |image10|\
+   |image6|
 
 .. container:: centeralign
 
@@ -233,77 +243,81 @@ ACE Setup
 Obtaining a Full Bandwidth Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Under Initial Configuration, set the Clock Input to 1300 MHz. Set the Number of Lane to 4. Change the number of Virtual Converter to 1. Change the number of Octets per Frame to 1. Click Apply to apply the chip settings. Set the reference clock to 325 MHz to match these settings.\ |image11|\
+-  Under Initial Configuration, set the Clock Input to 1300 MHz. Set the Number of Lane to 4. Change the number of Virtual Converter to 1. Change the number of Octets per Frame to 1. Click Apply to apply the chip settings. Set the reference clock to 325 MHz to match these settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/9695chipsetting.jpg
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    \ *Figure 11. Chip Settings*\
 
 
-\ |image12|\ 
+ |image7|\ 
 
 .. container:: centeralign
 
    \ *Figure 12. Apply Settings*\
 
 
--  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.\ |image13|\ 
+-  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.\ |image8|\ 
 
 .. container:: centeralign
 
    \ *Figure 13. Read All*\
 
 
--  Issue a data path reset to the AD9695 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.\ |image14|\ 
+-  Issue a data path reset to the AD9695 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.\ |image9|\ 
 
 .. container:: centeralign
 
    \ *Figure 14. Data path reset*\
 
 
-\ |image15|\ 
+ |image10|\ 
 
 .. container:: centeralign
 
    \ *Figure 15. Apply Changes*\
 
 
--   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.\ |image16|\ 
+-   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.\ |image11|\ 
 
 .. container:: centeralign
 
    \ *Figure 16. PLL Lock Lost*\
 
 
-\ |image17|\ 
+ |image12|\ 
 
 .. container:: centeralign
 
    \ *Figure 17. Link Power Down*\
 
 
--  Enable the link again and Apply Changes.\ |image18|\ 
+-  Enable the link again and Apply Changes.\ |image13|\ 
 
 .. container:: centeralign
 
    \ *Figure 18. Link Enable*\
 
 
--  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on DDCFFT and run one capture.\ |image19|\ 
+-  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on DDCFFT and run one capture.\ |image14|\ 
 
 .. container:: centeralign
 
    \ *Figure 19. Analysis Tool*\
 
 
-\ |image20|\ 
+ |image15|\ 
 
 .. container:: centeralign
 
    \ *Figure 20. Display FFTs*\
 
 
-\ |image21|\ 
+ |image16|\ 
 
 .. container:: centeralign
 
@@ -319,14 +333,18 @@ Obtaining a Full Bandwidth Capture
 
 
 
--  Channel A and Channel B can be selected individually to display their FFTs.\ |image22|\ 
+-  Channel A and Channel B can be selected individually to display their FFTs.\ |image17|\ 
 
 .. container:: centeralign
 
    \ *Figure 22. Channel Selection*\
 
 
--  A successful capture is shown below, with a filtered 533 MHz signal inputted at on Channel A. |image23|\
+-  A successful capture is shown below, with a filtered 533 MHz signal inputted at on Channel A.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/9695fullbwfft.jpg
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -336,28 +354,28 @@ Obtaining a Full Bandwidth Capture
 Obtaining a DDC Capture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Under Initial Configuration, set the Chip Operating Mode for two DDCs. The DDC settings will become available. For the decimation, select "HB1_HB2 Complex" - two half-band filters, i.e. Decimate-by-4. Set the number of lanes to 1, the number of converters to 4, and the number of Octets per Frame to 8. Apply the settings. \ |image24|\ 
+-  Under Initial Configuration, set the Chip Operating Mode for two DDCs. The DDC settings will become available. For the decimation, select "HB1_HB2 Complex" - two half-band filters, i.e. Decimate-by-4. Set the number of lanes to 1, the number of converters to 4, and the number of Octets per Frame to 8. Apply the settings. \ |image18|\ 
 
 .. container:: centeralign
 
    \ *Figure 24. DDC Chip Settings*\
 
 
--  The chip view will update to reflect the changes. Click on the NCO block to change the Noise Controlled Oscillator's frequency to 500 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.\ |image25|\ 
+-  The chip view will update to reflect the changes. Click on the NCO block to change the Noise Controlled Oscillator's frequency to 500 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.\ |image19|\ 
 
 .. container:: centeralign
 
    \ *Figure 25. NCO Frequency Setting*\
 
 
-\ |image26|\ 
+ |image20|\ 
 
 .. container:: centeralign
 
    \ *Figure 26. DDC Gain*\
 
 
--  Navigate to the second DDC (DDC1) and make the same changes.\ |image27|\ 
+-  Navigate to the second DDC (DDC1) and make the same changes.\ |image21|\ 
 
 .. container:: centeralign
 
@@ -365,7 +383,7 @@ Obtaining a DDC Capture
 
 
 -  In Analysis, run a capture. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B.
--  A successful capture is shown below, with a filtered 495 MHz signal inputted on Channel A / DDC0.\ |image28|\ 
+-  A successful capture is shown below, with a filtered 495 MHz signal inputted on Channel A / DDC0.\ |image22|\ 
 
 .. container:: centeralign
 
@@ -416,59 +434,47 @@ EVALUATION BOARD FAILS TO CAPTURE DATA
    -  Check the reference clock and make sure it matches your JESD settings.
    -  Make sure P100 (Power Down / Standby Jumper, see Figure 5) is not jumped.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/ad9695-ads7-v2.jpg
-   :width: 620px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/ad9695-2.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/ad9695-2.jpg
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/fpgapinlabeling.png
-   :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/9695_connections.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/9695_connections.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/9695_pins.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/0.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/0.png
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/9695attachedhardware.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/9695attachedhardware.jpg
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/2p0.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/2p0.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/9695navtab.jpg
-   :width: 300px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/9695programfpga.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/9695programfpga.jpg
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/9695chipsetting.jpg
-   :width: 300px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/6.png
    :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/7.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/7.png
    :width: 100px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/6p0.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/6p0.png
    :width: 250px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/7p0.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/7p0.png
    :width: 100px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/8.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/8.png
    :width: 100px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/9.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/9.png
    :width: 500px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/11.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/11.png
    :width: 500px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/12.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/12.png
    :width: 500px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/13.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/13.png
    :width: 100px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/14.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/14.png
    :width: 150px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/15.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/15.png
    :width: 200px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/9695fullbwfft.jpg
-   :width: 800px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/17.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/17.png
    :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/18p0.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/18p0.png
    :width: 200px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/19.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/19.png
    :width: 200px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/20.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/20.png
    :width: 200px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/21.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9695/step-by-step/21.png
    :width: 600px

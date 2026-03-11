@@ -84,8 +84,7 @@ People who follow the flow that is outlined, have a much better experience with 
 Software Defined Radio using the Linux IIO Framework
 ----------------------------------------------------
 
-.. image:: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
-   :alt: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
+`iiosdr.mp4 <http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 
 `Software Defined Radio using the Linux IIO Framework <http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 

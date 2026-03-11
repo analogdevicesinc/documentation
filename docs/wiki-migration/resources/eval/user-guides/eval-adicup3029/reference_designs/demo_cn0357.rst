@@ -53,13 +53,17 @@ Setting up the hardware
 
 -  Make sure that Carbon Monoxide sensor **CO-AX** is properly placed on the **EVAL-CN0357-ARDZ** sensor shield ()
 -  Ensure the jumper **AD5720_CS** has a shunt across Pin 3 and Pin 4 of the **EVAL-CN0357-ARDZ**
--  Ensure the jumper **AD7790_CS** has a shunt across Pin 1 and Pin 2 of the **EVAL-CN0357-ARDZ**\
+-  Ensure the jumper **AD7790_CS** has a shunt across Pin 1 and Pin 2 of the **EVAL-CN0357-ARDZ**
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_cn0357.png
+   :align: center
+   :width: 500px
 
--  Place the **(S5)** switch position to read "Wall/USB", and the **(S2)** switch position to read "USB" on the **EVAL-ADICUP3029**.\
+-  Place the **(S5)** switch position to read "Wall/USB", and the **(S2)** switch position to read "USB" on the **EVAL-ADICUP3029**.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_ble.png
+   :align: center
+   :width: 500px
 
 -  Mount **EVAL-CN0357-ARDZ** on the **EVAL-ADICUP3029** base board such that **DIGI1** and **DIGI0** of the EVAL-CN0357-ARDZ are connected to the **P6** and **P7** on the EVAL-ADICUP3029 board respectively.
 -  Plug in the micro USB cable into the **(P10)** USB port on the **EVAL-ADICUP3029**, and the other end into the PC or laptop.
@@ -113,7 +117,7 @@ The software for the **ADuCM3029_demo_cn0357** can be found here:
    Pre-built CN0357 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0357.Hex <releases/download/Latest/ADuCM3029_demo_cn0357.hex>`
+   -  `AduCM3029_demo_cn0357.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0357.hex>`_
    
    Complete CN0357 Source Files
    
@@ -135,7 +139,7 @@ There are **three** different ways to visualize the data:
 Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
 
 
-|image3|
+|image1|
 
 +---------------------------+-----------------------+---------------------------+
 | Data Output Destination   | Connected to Debugger | Configuration File        |
@@ -160,7 +164,7 @@ Debug Launch Mode
 Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the smart app and printed onto the console.
 
 
-|image4|
+|image2|
 
 If you have the app installed on your phone, these figure shows the output on android device.
 
@@ -178,9 +182,9 @@ If you have the app installed on your phone, these figure shows the output on an
 -  **Android App display**
 -  **iOS App display**
 
-|image5| |image6|
+|image3| |image4|
 
-|image7| |image8|
+|image5| |image6|
 
 Release Launch Mode
 ~~~~~~~~~~~~~~~~~~~
@@ -217,9 +221,9 @@ Figure shows the UART terminal when ADI_APP_USE_BLUETOOTH is set to 1
 -  **Android App display**
 -  **iOS App display**
 
-|image9| |image10|
+|image7| |image8|
 
-|image11| |image12|
+|image9| |image10|
 
 How to use the Tools
 --------------------
@@ -236,7 +240,7 @@ Debugging
 
 A debug configuration must be set up for this project in order to have the possibility to program and to debug the **ADICUP3029_CN0357** project. To do this, follow the instructions from :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
--  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image13| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
+-  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image11| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
 
 ::
 
@@ -265,29 +269,25 @@ The **RTE** folder contains ADuCM3029 Device Family Pack,Board Support Package f
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_cn0357.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/jumper_ble.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/console_image.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/console_image.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
    :width: 390px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/appbef.png
    :width: 390px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0357/app.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ipad_connect.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/co_val.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
    :width: 30px

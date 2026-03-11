@@ -36,7 +36,9 @@ If this happens, follow these steps to verify the ACEZIP has not been blocked an
 -  Select properties in the context menu.
 -  Under the General tab, if a file has been blocked a new Security tag and Unblock button will have appeared.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/acezipfileaccessissue.png
+   :align: center
+   :width: 400px
 
 -  Click Unblock.
 -  Retry the plug-in installation by double clicking the ACEZIP.
@@ -59,7 +61,7 @@ The High-Speed DAC boards have a second on-board USB controller, make sure this 
 As of version 1.15, ACE includes an option to use ADI SDP driver for the on-board USB controller to avoid any of the conflicts with VISA drivers listed below and another option to install the DPG Lite application to replace the High-Speed DAC Software Suite. Both options can be activated by selecting the "High Speed DAC Components" option upon installation:
 
 
-|image2|
+|image1|
 
 However, at this time, the High-Speed DAC Eval Boards listed below are not yet supported through ACE but through a dedicated SPI application that requires the NI VISA driver. The recommended action if you are actively using these High-Speed DAC Eval Boards with dedicated SPI applications is to not select the options discussed above.
 
@@ -150,15 +152,20 @@ Warnings may be safely ignored and dismissed, but they do highlight likely issue
 
    -  Make sure the setting below is either Not Configured or Disabled
 
-
-   |UpdateRoot.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/updateroot.png
+   :alt: UpdateRoot.png
+   :align: center
+   :width: 1000px
 
 -  Check for and install all the latest Windows updates
 -  Check your group policy settings, these may be controlled by IT or a System Administrator
 -  Ideally select Warn as the safer option in case you later encounter malicious software
 -  Run gpedit.msc and navigate to the setting below
 
-|CodeSigning.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/codesigning.png
+   :alt: CodeSigning.png
+   :align: center
+   :width: 1000px
 
 ACE Plug-ins Fail to Load When a Different User Logs in
 -------------------------------------------------------
@@ -174,17 +181,22 @@ When a machine is shared between users, the file access permissions may not be s
 -  Right Click on the "Plugins" folder and select "Properties"
 -  Select the "Security" tab and click "Advanced"
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.folderproperties.png
+   :align: center
+   :width: 400px
 
 -  Choose "Change Permissions"
 -  If you see "Everyone" or "Users" click "Edit" otherwise click "Add"
 -  Grant "Full Control" or at minimum read/write/execute, click OK to dismiss the dialog
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.fullcontrol.png
+   :align: center
+   :width: 400px
 
 -  Check the box "Replace all child object..."
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.advancedfilepermissions.png
+   :align: center
 
 -  Click Apply
 
@@ -321,16 +333,5 @@ Contact ACE Support
    
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/acezipfileaccessissue.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ace/hsdac_install.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ace/hsdac_install.png
-   :width: 400px
-.. |UpdateRoot.png| image:: https://wiki.analog.com/_media/resources/tools-software/updateroot.png
-   :width: 1000px
-.. |CodeSigning.png| image:: https://wiki.analog.com/_media/resources/tools-software/codesigning.png
-   :width: 1000px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.folderproperties.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.fullcontrol.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/knownissues.advancedfilepermissions.png

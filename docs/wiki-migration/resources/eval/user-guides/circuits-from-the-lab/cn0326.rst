@@ -47,19 +47,16 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    \ **NOTE:** It is recommended that you install the `CN0326 Evaluation Software <https://swdownloads.analog.com/cse/cftl/CN0326/2.0.0/CN0326_Evaluation_Software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0326\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig1.jpg
 
+-  Click **Next** to view the installation review page
 
 
 |image1|
 
--  Click **Next** to view the installation review page
-
-|image2|
-
    \* Click **Next** to start the installation
 
-   |image3|
+   |image2|
 
    \* Upon completion of the installation of the **CN0326 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -68,7 +65,7 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-   |image4|
+   |image3|
 
    \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
@@ -79,11 +76,11 @@ HOW TO INSTALL THE EVALUATION SOFTWARE
    **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
 
 
-   |image5|
+   |image4|
 
 -  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
-|image6|
+|image5|
 
 --------------
 
@@ -94,10 +91,11 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 
 -  Plug the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z` and connect the other end of the USB cable into the Laptop or PC.
 
-   -  Make sure that the computer installs the device drivers, and that you can see the *ADI Development Tools* in your computer's device manager.\
+   -  Make sure that the computer installs the device drivers, and that you can see the *ADI Development Tools* in your computer's device manager.
 
-
-   |image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
+   :align: center
+   :width: 500px
 
 -  Remove the jumper across JP1 found on the :adi:`SDP-PMD-IB1Z`.
 -  Connect the 120-pin connector of the :adi:`SDP-PMD-IB1Z` circuit board to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
@@ -106,9 +104,11 @@ STEP BY STEP INSTRUCTION FOR CONNECTING THE HARDWARE
 -  Connect the pH probe in J1 of :adi:`EVAL-CN0326-PMDZ`.
 -  Connect the RTD sensor in P1 of :adi:`EVAL-CN0326-PMDZ`.
 -  Place the jumper across JP1 on the :adi:`SDP-PMD-IB1Z` and make sure it's positioned to +3.3V.
--  Check again in the device manager to make sure the *ADI Development Tools* are still displaying. If yes, then you'll be able to proceed onto the evaluation software section. If you don't see ADI Development Tools, than you will have to start the hardware evaluation procedure over at step 1.\
+-  Check again in the device manager to make sure the *ADI Development Tools* are still displaying. If yes, then you'll be able to proceed onto the evaluation software section. If you don't see ADI Development Tools, than you will have to start the hardware evaluation procedure over at step 1.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
+   :align: center
+   :width: 500px
 
 --------------
 
@@ -214,13 +214,8 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0326-PMDZ?&v=RevB>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig1.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig2.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig3.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig4.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig5.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig7.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
-   :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
-   :width: 500px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig2.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig3.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig4.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig5.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig7.jpg

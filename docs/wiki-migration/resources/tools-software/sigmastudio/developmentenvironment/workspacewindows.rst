@@ -30,9 +30,8 @@ Output:
 
 The Output window is a quick way to view the files generated upon linking, compiling, and other actions in the Schematic workspace. By default this window is docked on the right side of the program window. Note, you can also find this information by locating the project's output folder and reading the compiler output files. For more information about those files, see Compile/Downloading Your Project.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/workspacewinpic2.png
-   :alt: workspacewinpic2.png
-   :align: center
+
+|workspacewinpic2.png|
 
 .. tip::
 
@@ -48,9 +47,8 @@ The capture window lets you see, in real time, the exact data that SigmaStudio i
 
 The window is empty when it opens initially, but after you press Link-Compile-Download you will see the data that is downloaded to the board: coefficients, parameter addresses, and parameter data. Whenever you make adjustments to sliders or control in a compiled and downloaded schematic, you can see the data that is sent.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/workspacewinpic3.png
-   :alt: workspacewinpic3.png
-   :align: center
+
+|workspacewinpic3.png|
 
 .. tip::
 
@@ -108,6 +106,8 @@ Click the download Mode to Hardware button to execute sequence commands.
 
 |image3|
 
+.. |workspacewinpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/workspacewinpic2.png
+.. |workspacewinpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/workspacewinpic3.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/sequencedd.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/sequencemenu.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/sequencedownload.png

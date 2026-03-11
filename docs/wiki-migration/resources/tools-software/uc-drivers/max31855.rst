@@ -36,15 +36,10 @@ The source code for the MAX31855 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX31855 Driver <drivers/temperature/max31855/max31855.h>`
+   -   :git-no-OS:`Implementation of MAX31855 Driver <drivers/temperature/max31855/max31855.c>`
    
-   |Header file of MAX31855 Driver|
 
-   -
-
-   |Implementation of MAX31855 Driver|
 
 The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
 
@@ -52,15 +47,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the MAX31855 driver and have to be implemented:
 
@@ -79,11 +69,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
-   |Generic header file for SPI Communication APIs|
+
 
 MAX31855 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,15 +143,10 @@ The source code for MAX31855 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX31855 IIO Driver <drivers/temperature/max31855/iio_max31855.h>`
+   -   :git-no-OS:`Implementation of MAX31855 IIO Driver <drivers/temperature/max31855/iio_max31855.c>`
    
-   |Header file of MAX31855 IIO Driver|
 
-   -
-
-   |Implementation of MAX31855 IIO Driver|
 
 MAX31855 IIO Device Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,11 +219,3 @@ MAX31855 IIO Driver Initialization Example
    return iio_app_run(iio_devices, NO_OS_ARRAY_SIZE(iio_devices));
 
 For now there is no MAX31855 no-OS demo project.
-
-.. |Header file of MAX31855 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/max31855`.h
-.. |Implementation of MAX31855 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/max31855`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Header file of MAX31855 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/iio_max31855`.h
-.. |Implementation of MAX31855 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/iio_max31855`.c

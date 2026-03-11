@@ -230,7 +230,7 @@ dev 'ad9361-phy', channel 'voltage0' (input), attr 'quadrature_tracking_en', val
 UHD
 ---
 
-For those using a National Instruments USRP Radio, this can be controlled via ``set_rx_iq_balance()`` method.
+For those using a National Instruments USRP Radio, this can be controlled via `set_rx_iq_balance() <https://files.ettus.com/manual/classuhd_1_1usrp_1_1multi__usrp.html#a586c52db545664cb2caf830ac90c051e>`_ method.
 
 SDRangel
 --------

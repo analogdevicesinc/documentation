@@ -71,4 +71,4 @@ In the **Import Projects** window, click **Browse…** next to the **Select root
 
 --------------
 
-`CCES Getting Started#.|CCES Getting Started#config|System & Project Configuration <https://wiki.analog.com/_media/navigation CCES Getting Started#.>`_
+`CCES Getting Started#.|CCES Getting Started#config|System & Project Configuration <https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/navigation CCES Getting Started#.>`_

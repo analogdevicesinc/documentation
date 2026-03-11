@@ -82,10 +82,10 @@ Windows 7
 
 .. container:: indent
 
-   \
 
+   ..
 
-   |image7|
+|image7|
 
 -  Respond **Continue Anyway** or **Install** to the warning.
 

@@ -22,5 +22,5 @@ Sections
 -  :doc:`Board View </wiki-migration/resources/tools/software/ace/understandingtheui/boardview>`
 -  :doc:`Chip View </wiki-migration/resources/tools/software/ace/understandingtheui/chipview>`
 -  :doc:`Memory Map View </wiki-migration/resources/tools/software/ace/understandingtheui/memorymapview.txt>`
--  `Capture View <https://wiki.analog.com/resources/tools/software/ace/understandingtheui/captureview.txt>`_
+-  `Capture View <https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/captureview.txt>`_
 -  :doc:`Tool Views </wiki-migration/resources/tools/software/ace/understandingtheui/toolviews>`

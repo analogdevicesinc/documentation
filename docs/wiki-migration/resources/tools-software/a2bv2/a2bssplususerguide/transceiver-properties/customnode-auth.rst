@@ -41,8 +41,8 @@ Use the ‘I2C Device’ option as shown in the below Figure when the Custom ID 
 
 Specify the Custom ID (either as an ASCII string or as a Hexadecimal number) – Max 50 characters, device address, address width and the memory location in the device where the ID is stored.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_i2c.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
@@ -58,8 +58,8 @@ Use ‘GPIO Pins’ option as shown in Figure when A2B Transceiver GPIO pins are
 
 As most GPIO pins are multiplexed with other functionality, user shall select pin(s) that are free for Node ID. Note that a GPIO pin will assume a multiplexed functionality only after the A2B Transceiver is discovered and configured. So, with additional on-board circuitry (pull-up/pull-downs) one should be able to use A2B GPIO pins (including multiplexed GPIO) for Custom Node ID. If multiple nodes in a network use GPIO pins for Identification, then each node shall have unique GPIO pin/level settings.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/gpio_pins.png
-   :align: center
+
+|image3|
 
 .. container:: centeralign
 
@@ -71,8 +71,8 @@ Mailbox
 
 Use ‘Mailbox’ option as shown in the below Figure when Custom Node Identifier for the sub-node is to be requested from a connected processor.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_mailbox.png
-   :align: center
+
+|image4|
 
 .. container:: centeralign
 
@@ -89,3 +89,6 @@ During A2B discovery process, the Software stack will read the Custom Identifier
 Note that a node may not have a Custom ID set, in which case the stack discovery and initialization process will not perform any Custom ID authentication and hence simply applies the configuration available for that node position
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customid.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_i2c.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/gpio_pins.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_mailbox.png

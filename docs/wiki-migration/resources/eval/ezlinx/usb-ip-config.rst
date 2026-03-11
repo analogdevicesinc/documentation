@@ -17,7 +17,8 @@ A driver must be installed in order to connect to the *ez*\ LINX Development Pla
 .. admonition:: Download
    :class: download
 
-   |Download USB Gadget Driver|
+   `Download USB Gadget Driver <http://www.analog.com/static/imported-files/eval_boards/ezLINXGadgetEthernetUSBDriver.zip>`_
+
 
 .. important::
 
@@ -85,7 +86,6 @@ Select Ok to confirm. Now the host and the device are on the same network.
 
 **Isolated USB Network Adapter 2:** **IP Address:** 192.168.2.100 **Subnet Mask:** 255.255.255.0 **Default Gateway:** 192.168.2.1
 
-.. |Download USB Gadget Driver| image:: http://www.analog.com/static/imported-files/eval_boards/ezLINXGadgetEthernetUSBDriver.zip
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/accessingsystemsweb.png
    :width: 500px
    :height: 400px

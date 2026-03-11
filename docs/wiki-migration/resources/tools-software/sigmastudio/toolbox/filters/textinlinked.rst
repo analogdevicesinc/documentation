@@ -41,4 +41,4 @@ As with other blocks, there's the option to either Grow or Add to this algorithm
 
 Since this is a linked block, changing the values in one parameter box after you add an algorithm automatically updates the other filter in parallel. Better yet, after adding an algorithm, if you grow it the series filter automatically adds parallel filters to match the previous case. The same is true when you add onto a grown algorithm: the parallel filter will automatically add series filters to match.
 
-.. |textinlinkedpic1.png| image:: https://wiki.analog.com/_media/textinlinkedpic1.png
+.. |textinlinkedpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/textinlinkedpic1.png

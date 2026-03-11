@@ -2,7 +2,7 @@ ARM mbed is a solution to quickly prototype and build embedded applications usin
 
 These examples can be run using the online compiler at https://developer.mbed.org or by setting up your computer using the following guide: :doc:`/wiki-migration/resources/tools-software/mbed-user-guide`
 
-The latest drivers and shield libraries can be found at: https://github.com/analogdevicesinc/mbed-adi A mirror of the git repository can be found on the mbed website at: https://developer.mbed.org/teams/AnalogDevices/code/mbed-drivers/
+The latest drivers and shield libraries can be found at: :git-mbed-adi:`mbed-adi` A mirror of the git repository can be found on the mbed website at: https://developer.mbed.org/teams/AnalogDevices/code/mbed-drivers/
 
 mbed DRIVERS
 ============

@@ -179,15 +179,7 @@ Source Code
    :class: download
 
    
-   -
-
-
-   
-   |Implementation of AXI DMAC IP Core Driver.|
-
-   -  |\|Header of the AXI DMAC IP Core Driver.|
+   -  :git-no-OS:`Implementation of AXI DMAC IP Core Driver. <drivers/axi_core/axi_dmac/axi_dmac.c>`
+   -  :git-no-OS:`\|Header of the AXI DMAC IP Core Driver. <drivers/axi_core/axi_dmac/axi_dmac.h>`
    
 
-
-.. |Implementation of AXI DMAC IP Core Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/axi_dmac/axi_dmac`.c
-.. |\|Header of the AXI DMAC IP Core Driver.| image:: :git-no-OS:`drivers/axi_core/axi_dmac/axi_dmac`.h

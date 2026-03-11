@@ -74,8 +74,8 @@ At the time of this writing, we are using the 'dev' branch for both. The :doc:`H
 
 Once the bit file is ready, follow these instructions to build the elf file. This assumes you are following our directory structures. If you are not, just get the idea from here and port it to your environment. However you have to figure out things on your own.
 
--  Clone :git-no-OS>`__ repository
--  Checkout the latest release branch (git checkout branch)\ `hdl release notes <https::`No-OS </github.com/analogdevicesinc/hdl/releases>`
+-  Clone :git-no-OS:`No-OS <no-OS>` repository
+-  Checkout the latest release branch (git checkout branch)\ `hdl release notes <https://github.com/analogdevicesinc/hdl/releases>`_
 -  Change the directory to \`fmcadc4/zc706\`.
 -  Make the elf file by running \`make\` or \`make HDF-FILE=<HDL-REPO>/projects/fmcadc4/zc706/fmcadc4_zc706.sdk/system_top.hdf\`
 -  \`make run\` to download trough JTAG the hdl bitstream and software elf, this will also start the processor

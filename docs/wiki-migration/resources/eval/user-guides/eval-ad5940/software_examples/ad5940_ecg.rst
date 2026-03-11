@@ -32,9 +32,11 @@ Setting up the Hardware
 -----------------------
 
 -  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
--  Set S5 to Wall/USB to power the board from the USB cable\
+-  Set S5 to Wall/USB to power the board from the USB cable
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
+   :align: center
+   :width: 800px
 
 -  Place the **EVAL-AD5940BIOZ** on top of the **EVAL-ADICUP3029**.
 
@@ -90,7 +92,7 @@ The source code and include files for the project can be found on Git
    :class: download
 
    
-   `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
+   :git-ad5940-examples:`AD5940 Source Code <ad5940-examples>`
    
 
 
@@ -100,9 +102,7 @@ Configuring the Software
 The SDK provides firmware to measure the ECG signal. However the firmware is configured to send the raw ADC results to a terminal program. For an ECG measurement SensorPal will configure the ECG measurement and graph the results. The following image shows the ECG results in SensoPal
 
 
-|image2|
+|image1|
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/sensorpal_ecg.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/sensorpal_ecg.png
    :width: 600px

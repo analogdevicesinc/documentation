@@ -51,10 +51,10 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--   To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-   To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :width: 500px
 
 -  Plug the EVAL-ADXL355-PMDZ board in the EVAL-ADICUP360 base board, via the **PMOD_SPI** port (P4).
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the **User USB**.(P13)
@@ -79,7 +79,7 @@ The software for the **ADuCM360_demo_adxl355** demo can be found here:
    Prebuilt ADXL355 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`AduCM3029_demo_adxl355_pmdz.Bin <releases/download/Release-1.0/ADuCM360_demo_adxl355_pmdz.bin>`
+   -  `AduCM3029_demo_adxl355_pmdz.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adxl355_pmdz.bin>`_
    
    Complete ADXL355 Source Files
    
@@ -179,6 +179,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px

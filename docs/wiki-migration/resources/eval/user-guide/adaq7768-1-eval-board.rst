@@ -546,12 +546,8 @@ A Sinc3 filter with ODR=50SPS is a sweet spot for the measurement of a pure DC s
 
 .. container:: centeralign
 
-
-   ..
-
-|image28|
-
-   *Figure 20. FFT plot for a typical DC measurement, with Gain6 mode, input shorted, ODR=50sps, 1024 samples.*
+   
+   |image28| *Figure 20. FFT plot for a typical DC measurement, with Gain6 mode, input shorted, ODR=50sps, 1024 samples.*
 
 
 -  The same condition (Sinc3 50SPS) is used to measure Low Frequency Noise, as specified in the datasheet. In the **Histogram** tab, noise is displayed as Transition noise in LSB. To compare with datasheet’s referred to input (RTI) Low Frequency Noise in μVrms, apply the formula:

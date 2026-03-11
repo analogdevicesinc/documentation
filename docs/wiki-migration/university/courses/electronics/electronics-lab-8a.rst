@@ -23,9 +23,8 @@ Directions:
 
 Build the circuit shown in figure 1 on your solder-less breadboard. The green boxes indicate where to connect the ADALM2000. PNP transistors Q\ :sub:`1`, Q\ :sub:`2` and Q\ :sub:`3` form a current mirror with a gain of two, the output current is twice the input current. NPN transistors Q\ :sub:`4`, Q\ :sub:`5` and Q\ :sub:`6` along with variable resistor R\ :sub:`1` form the ΔV\ :sub:`BE` part of the circuit. Resistor R\ :sub:`2` is used to measure the current flowing in the circuit ( scope channel 2 ) as the voltage across the circuit changes ( scope channel 1 ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18a_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,7 +56,7 @@ Procedure:
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -79,9 +78,8 @@ Prove the floating nature of circuit:
 
 In figure 1 we referenced the negative end of the circuit to a negative power supply. To prove that this circuit is truly a floating current source, rearrange your breadboard to look like figure 5 and repeat your measurements.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18a_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -103,7 +101,7 @@ Procedure:
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image4|\
 
 
 .. container:: centeralign
@@ -129,7 +127,11 @@ Is there any measurable difference in the current vs. voltage characteristics fo
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/float_curr_src_vn-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a18a_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/float_curr_src_vn-wav.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/float_curr_src_vp-wav.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a18a_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/float_curr_src_vp-wav.png
    :width: 500px

@@ -97,4 +97,4 @@ Algorithm Details
 | Parameter RAM              | 1                                                                    |
 +----------------------------+----------------------------------------------------------------------+
 
-.. |envelopepeakextpic1.png| image:: https://wiki.analog.com/_media/envelopepeakextpic1.png
+.. |envelopepeakextpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakextpic1.png

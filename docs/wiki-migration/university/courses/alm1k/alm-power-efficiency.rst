@@ -23,9 +23,8 @@ All electrical devices require power. A smart phone is an obvious example; it is
 
 When thinking about power supplies, the term "efficiency" is often one of the first parameter that comes to mind. This is one way of comparing different power supplies, and is certainly important. But the idea of power loss is often a more practical metric to keep in the forefront of your mind. Why? Consider two laptop chargers, one is 85% efficient and the other is 90% efficient, which are typical numbers. While paying a little more for the extra bit of energy required for the 5% less efficient unit might be annoying, it's insignificant compared to what it costs to run an air conditioner (or electric oven, etc.) The real annoyance is how hot the charger gets; the 85% efficient supply dissipates 50% more power, and the temperature rise will be 1.5X as much above ambient. Have you ever left a laptop charger on your couch, and somehow a pillow found its way on top of it? That extra power makes a BIG difference!
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/cozy_laptop_charger.jpg
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -48,9 +47,8 @@ Thermal Resistance Primer:
 
 Why don't Linear Regulators have an efficiency number proudly displayed on the front page of the datasheet, like switching regulators? It could be because the relevant laws of physics are intuitively understood by most engineers using these parts - Current through any "black box", multiplied by the voltage drop, equals power that will leave the box somehow. In the case of an LDO regulator, that power leaves as heat. (If the "black box" were an LED, some of that power would leave as light, if it were a motor, the power might leave as mechanical power through the rotating shaft.) And if the input supply to an LDO regulator varies widely, the efficiency will also vary widely - it could be near 100% when the input supply is just a little bit higher than the output voltage, or 10% or less, if the input is 12V and the output is 1.2V. But there are definitely situations where linear regulators are the right tool for the job. (We'll save that discussion for later.) Before even starting to build any circuitry, we know that we're going to have to get rid of some heat. The LT3080 regulator from the parts kit is in the very common T0-220 package, with a tab for mounting to a heat sink.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_lt3080_pinout.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -96,9 +94,8 @@ One very useful mental model is to think of thermal resistances as electrical re
 
 Doing a quick calculation on the LT3080 in the TO-20 package, if the input voltage is 10V, output voltage is 5V, and the load current is 200mA, the power dissipated in the part is (10V - 5V) \* 0.2A = 1W. This will cause a temperature rise of 40°C, so if the air in the room is 25C, the junction will heat up to approximately 65°C - well under the 125°C maximum (but hot enough to burn skin!) The electrical analogy is shown below, running a DC operating point simulation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_1w_temp_rise_sch.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -107,9 +104,9 @@ Doing a quick calculation on the LT3080 in the TO-20 package, if the input volta
 
 Notice that Tjunction is 65 "volts", which is 65°C in the analogy. But what happens if the load current increases to 500mA? Now you have to get rid of 2.5W, which will cause a temperature rise of 100°C, pushing you right up to the maximum junction of 125°C, with no safety margin.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_2w5_temp_rise_sch.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -118,9 +115,9 @@ Notice that Tjunction is 65 "volts", which is 65°C in the analogy. But what hap
 
 That doesn't sound like a very high performance part, and the datasheet clearly says the part is capable of delivering 1.1A of current. So what is going on, given the Θ\ :sub:`JA` of 40°C/W? Here is the key point about datasheet Θ\ :sub:`JA` numbers: Θ\ :sub:`JA` is designed to be PESSIMISTIC. That is, it is purposely measured on a circuit board, with no extra copper to spread the heat, with no extra airflow. Almost ANYTHING that you do to spread heat will effectively lower Θ\ :sub:`JA`. Table 5 illustrates this for the DD-Pak package:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_TO-220_thermals.png
-   :align: center
-   :width: 400px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -134,7 +131,7 @@ The LT3080 in the parts kit is the TO-220 package version, and we're not solderi
 \*(This is not really luck, it's an essential piece of data.)
 
 
-|image1|
+|image6|
 
 .. container:: centeralign
 
@@ -149,9 +146,8 @@ This shows the following:
 
 This is reconcilable with table 5 above - the heat sink is a folded up piece of aluminum, with a total area of about 3060mm\ :sup:`2`, and a 2500mm\ :sup:`2` PC board has a thermal resistance of about 25°C/W. But the heat sink is all aluminum, and the PC board is copper foil, but it's glued to fiberglass (a poor conductor of heat.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_aavid_7021_drawing.png
-   :align: center
-   :width: 300px
+
+|image7|
 
 .. container:: centeralign
 
@@ -160,9 +156,9 @@ This is reconcilable with table 5 above - the heat sink is a folded up piece of 
 
 Let's re-run the LTspice simulation one more time, with the Aavid 7021 heat sink's thermal resistance:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_lt3080_2w5_temp_rise_w_sink_sch.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -176,9 +172,8 @@ Procedure: LT3080 Linear Regulator
 
 Refer to the circuit shown below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -187,9 +182,9 @@ Refer to the circuit shown below.
 
 The LTspice file should be set up to sweep the input voltage from 6V to 11V and plot input power, output power, and efficiency. Results are shown in Figure 10 below, with the red trace representing efficiency.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_efficiency.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -198,9 +193,9 @@ The LTspice file should be set up to sweep the input voltage from 6V to 11V and 
 
 As expected, efficiency is relatively high (about 66%) when the input voltage (shown in green) is low. As the input voltage increases, the power dissipation in the LT3080 (blue) increases, and efficiency decreases (to about 28% when the input voltage is 11V). Results of this simulation should reflect reality very accurately. The reason is that the loss mechanisms are straightforward - power dissipations are simply DC currents multiplied by DC voltages.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -219,9 +214,8 @@ Also, there are options for measuring voltages and currents. Input voltage and c
 
 Things are about to get a bit warm - too warm to touch. So we need a way of at least getting some idea of HOW warm without getting burned. The AD592 temperature sensor provides an easy way to do this:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_12.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -230,7 +224,7 @@ Things are about to get a bit warm - too warm to touch. So we need a way of at l
 
 The AD592 leads need to be extended. Longer wires can be soldered to the device pins (figure 13) and the middle lead is not connected so it can be used to provide extra support. Or the three wire female to female extension lead supplied with the ADALM1000 can be used. The TO-92 package leads are a little small for the 0.1" square pin header connector so a small bit of masking tape placed across the leads and the connector can help stabilize the connections.
 
-|image2| |image3|
+|image13| |image14|
 
 .. container:: centeralign
 
@@ -239,9 +233,9 @@ The AD592 leads need to be extended. Longer wires can be soldered to the device 
 
 A small rubber band can then be used to hold the sensor against the top surface of the LT3080 as shown in Figure 14. Use a tiny drop of thermal grease between the sensor and top of the LT3080 package.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_mounting.jpg
-   :align: center
-   :width: 400px
+
+
+|image15|
 
 .. container:: centeralign
 
@@ -268,7 +262,7 @@ Procedure: LTM8067 Isolated Flyback DC/DC Converter
 Next, we'll explore the efficiency and thermal performance of the LTM8067 Isolated flyback module. We're not interested in the fact that it's isolated (meaning, output and input ground terminals are independent) or that it is a module (all components encased in a single package). We are interested in the fact that it is a switching converter, which is more efficient (and loses less power to the environment) than a linear regulator, at least under most circumstances. The LTM8067 in the parts kit comes mounted to a breakout board, with a potentiometer that allows the output voltage to be adjusted from 3V to 15V .
 
 
-|image4|
+|image16|
 
 .. container:: centeralign
 
@@ -277,9 +271,9 @@ Next, we'll explore the efficiency and thermal performance of the LTM8067 Isolat
 
 The block diagram from the datasheet shows a basic isolated flyback circuit. Without going into details, one key point is worth worth noting: unlike the pass transistor in the LT3080, The MOSFET in the LTM8067 is either off completely, or on completely, operating as a switch. This means that very little power is dissipated in the transistor. Furthermore, the resistance of the transformer windings is designed to be as small as possible, also resulting in minimal power dissipation. The Schottky diode will necessarily have some forward drop, usually about 0.4V, so that is one loss mechanism that we can predict with some accuracy. For example, if the load current is 250mA, the diode will dissipate 0.1W as heat. But that's still relatively small, compared to the dissipation in an LT3080 under some circumstances.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_block_diagram.png
-   :align: center
-   :width: 400px
+
+
+|image17|
 
 .. container:: centeralign
 
@@ -292,9 +286,8 @@ Setup for this experiment is straightforward; the LTM8067 BOB has four pairs of 
 
 Also note that the output current capability of the LTM8067 varies with input voltage as shown below:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_iout_vs_vin.png
-   :align: center
-   :width: 400px
+
+|image18|
 
 .. container:: centeralign
 
@@ -305,9 +298,8 @@ Even with the BOB set to an output of 3.3V, the 6.2 Ω power resistor will draw 
 
 You could always use a second 6.2 Ω resistor in series for a total of 12.4 Ω. With a 12.4 Ω load and 3.3 V output the load current would be 3.3/12.4 or 267 mA which is still greater than the 200 mA limit but now the minimum voltage that CHB can be safely set to is 0.85 volts.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_19.png
-   :align: center
-   :width: 800px
+
+|image19|
 
 .. container:: centeralign
 
@@ -316,9 +308,9 @@ You could always use a second 6.2 Ω resistor in series for a total of 12.4 Ω. 
 
 Simulations of switching regulators are not as straightforward. Some aspects of the circuit's operation are modeled well - such as the control loop dynamics, and instantaneous voltages and currents. However, power loss mechanisms are not well modeled, so it is better to refer to the part's datasheet for measured results. The LTM8067 LTspice simulation is set up to show the turn-on transient waveforms by default. The green trace is the output voltage, and the red trace is input current - notice that current is drawn in "chunks" from the source, due to switching nature of the module.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_waveform.png
-   :align: center
-   :width: 600px
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -327,9 +319,9 @@ Simulations of switching regulators are not as straightforward. Some aspects of 
 
 However, we can still try extracting efficiency from the LTspice simulation. Disable the startup transient SPICE directives (right-click, set to "Comment") and enable the efficiency SPICE directives (right-click, set to "SPICE directive"). Re-run the simulation, then view the SPICE error log. Results are shown in the figure below
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_efficiency.png
-   :align: center
-   :width: 600px
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -338,9 +330,9 @@ However, we can still try extracting efficiency from the LTspice simulation. Dis
 
 (Comparing with datasheet figure "Efficiency vs Load Current, VOUT = 3.3V" reveals that LTspice is optimistically high.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_22.png
-   :align: center
-   :width: 600px
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -380,9 +372,8 @@ Appendix
 
 Shown in the figure below is a switch selectable variable supply, sometimes called a "battery eliminator", because the voltage steps are 1.5V. The slide switch selects between six common (battery) voltages 3V, 4.5V, 6V, 7.5V, 9V, and 12V. The cost is $13.95 which is not out of the range for a student to purchase one.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/battery-eliminator.png
-   :align: center
-   :width: 250px
+
+|image23|
 
 .. container:: centeralign
 
@@ -398,11 +389,49 @@ Using .meas and .step commands to calculate efficiency in LTspice:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_aavid_7021_thermals.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/cozy_laptop_charger.jpg
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_temperature_sensor.jpg
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_lt3080_pinout.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/ad592-to-connector.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_1w_temp_rise_sch.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_2w5_temp_rise_sch.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_TO-220_thermals.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_bob.PNG
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_aavid_7021_thermals.png
    :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_aavid_7021_drawing.png
+   :width: 300px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/wiki_lt3080_2w5_temp_rise_w_sink_sch.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/lt3080_efficiency.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_temperature_sensor.jpg
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/ad592-to-connector.png
+   :width: 400px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/AD592_mounting.jpg
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_bob.PNG
+   :width: 400px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_block_diagram.png
+   :width: 400px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/LTM8067_iout_vs_vin.png
+   :width: 400px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_19.png
+   :width: 800px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_waveform.png
+   :width: 600px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/efficiency/ltm8067_efficiency.png
+   :width: 600px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-power-efficiency-fig_22.png
+   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/alm1k/battery-eliminator.png
+   :width: 250px

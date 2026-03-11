@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5790 Product Info <AD5790>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5790SDZ evaluation board user guide </static/imported-files/user_guides/UG-342.pdf>`
+-  :adi:`EVAL-AD5790SDZ evaluation board user guide <static/imported-files/user_guides/UG-342.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started
@@ -96,7 +96,7 @@ Hardware setup
 .. important::
 
    
-   To power on the EVAL-AD5790 evaluation board, you need to provide external differential supply voltage to J2 connector(for more information see: :adi:`EVAL-AD5790SDZ evaluation board user guide </static/imported-files/user_guides/UG-342.pdf>`) and a 5V reference voltage to VREF connector on the evaluation board. VREFN will be connected to AGND (LK8 option=B, LK2 option=B, LK3 option=B, LK4 inserted).
+   To power on the EVAL-AD5790 evaluation board, you need to provide external differential supply voltage to J2 connector(for more information see: :adi:`EVAL-AD5790SDZ evaluation board user guide <static/imported-files/user_guides/UG-342.pdf>`) and a 5V reference voltage to VREF connector on the evaluation board. VREFN will be connected to AGND (LK8 option=B, LK2 option=B, LK3 option=B, LK4 inserted).
 
 
 Reference Project Overview

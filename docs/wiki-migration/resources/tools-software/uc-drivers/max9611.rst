@@ -57,15 +57,10 @@ The source code for MAX9611 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX9611 Driver <drivers/adc/max9611pmb/max9611.h>`
+   -  :git-no-OS:`Implementation of MAX9611 Driver <drivers/adc/max9611pmb/max9611.c>`
    
-   |Header file of MAX9611 Driver|
 
-   -
-
-   |Implementation of MAX9611 Driver|
 
 This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the utility library can be found here:
 
@@ -73,15 +68,10 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 To use the MAX9611 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
 
@@ -118,11 +108,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for I2C Communication APIs|
+
 
 Code Documentation
 ------------------
@@ -405,9 +393,3 @@ Example Initialization Using Maxim SDK as Platform
            if (ret)
                return ret;
        }
-
-.. |Header file of MAX9611 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max9611pmb/max9611`.h
-.. |Implementation of MAX9611 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max9611pmb/max9611`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

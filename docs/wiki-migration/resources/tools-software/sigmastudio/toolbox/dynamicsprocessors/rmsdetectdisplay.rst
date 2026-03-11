@@ -28,10 +28,10 @@ Controls
 | Show Graph    | |rmsdisplaypic7.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +---------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |rmsdisplaypic1.png| image:: https://wiki.analog.com/_media/rmsdisplaypic1.png
-.. |rmsdisplaypic2.png| image:: https://wiki.analog.com/_media/rmsdisplaypic2.png
-.. |rmsdisplaypic3.png| image:: https://wiki.analog.com/_media/rmsdisplaypic3.png
-.. |rmsdisplaypic4.png| image:: https://wiki.analog.com/_media/rmsdisplaypic4.png
-.. |rmsdisplaypic5.png| image:: https://wiki.analog.com/_media/rmsdisplaypic5.png
-.. |rmsdisplaypic6.png| image:: https://wiki.analog.com/_media/rmsdisplaypic6.png
-.. |rmsdisplaypic7.png| image:: https://wiki.analog.com/_media/rmsdisplaypic7.png
+.. |rmsdisplaypic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic1.png
+.. |rmsdisplaypic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic2.png
+.. |rmsdisplaypic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic3.png
+.. |rmsdisplaypic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic4.png
+.. |rmsdisplaypic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic5.png
+.. |rmsdisplaypic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic6.png
+.. |rmsdisplaypic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsdisplaypic7.png

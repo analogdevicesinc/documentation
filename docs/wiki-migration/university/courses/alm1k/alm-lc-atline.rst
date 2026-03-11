@@ -23,9 +23,8 @@ The LC Lumped-Element Model
 
 The idea of using a lumped-element circuit that experimentally behaves like a transmission line is based on the classical approach to analyzing the wave propagation on transmission lines. In this approach, the line is considered to be composed of an infinite number of sections, each made of discrete lumped elements R, L, C, G as depicted in LTspice schematic figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -64,9 +63,8 @@ A transmission line is defined as a system of conductors (wires, waveguides, coa
 
 To send an electrical signal to a distant load, two wires are required. Since two metal conductors are, by definition, a capacitor, this implies that each section of a transmission line has some capacitance. On the other hand, as an inductor is defined essentially as a loop of wire, each section of the line also has an inductance. In reality, each "section" of the line is infinitesimally short, however, a "lumped" model of a transmission line can be constructed with discrete inductors and capacitors as shown in Figure 1. Suppose a constant DC voltage is applied to one end of the transmission line. The capacitance and inductance are what prevent the signal from traveling instantaneously. These capacitors and inductors are not components that we deliberately add to the circuit but are an inherent part of all wires that carry electrical signals.
 
-.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
-   :align: center
-   :width: 1000px
+
+|image2|
 
 .. container:: centeralign
 
@@ -85,18 +83,15 @@ where v is the instantaneous voltage across the inductor; L is the inductance in
 
 The physical construction of a transmission line varies widely depending on the application. There are several different types of electrical transmission lines such as coaxial line (figure 4), two-wire line (figure5), parallel-plate line, strip line, microstrip line, coplanar waveguide (figure 6).
 
-.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
    **Figure 4.** Coaxial line
 
 
-.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/parallel_tline_figure.png
-   :align: center
-   :width: 400px
+   |image4|
 
 .. container:: centeralign
 
@@ -185,9 +180,8 @@ While it is potentially possible to construct a 20 section LC transmission line 
 
 The experiment PC board shown figure 2 is from the education tools on the `ADI GitHub repository <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_ and has 20 sections. The specific board shown is populated with 100 uH surface mount inductors and 47 nF thru-hole capacitors. The board can be populated with either SMD or thru-hole components. The above L and C values give a characteristic line impedance of close to 50 ohms so 47 ohm source and termination resistors are used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig2.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -196,9 +190,9 @@ The experiment PC board shown figure 2 is from the education tools on the `ADI G
 
 Male pin headers around the board provide connection points at each tap along the line to measure the delayed waveforms. The M1k has only two “Scope” inputs so measuring and displaying the waveforms at all 21 taps can be tedious. The ALICE desktop software has an option to employ an external 4:1 analog CMOS mux (such as a CD4052) to expand the number of signals that can be displayed using the CH B input to 4. This is a simple enough :doc:`circuit to build </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` on a solderless breadboard but an auxiliary PC board that plugs into the 8 pin analog connector of the M1k is also available from the education tools on the `ADI GitHub repository <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/m1k-accessory-boards/m1k_analog_mux-4052>`_. Figure 3 shows the M1k with the mux board connected to one of the LC transmission line boards at 5 different taps more or less evenly spaced along the line.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig3.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -207,9 +201,9 @@ Male pin headers around the board provide connection points at each tap along th
 
 The screen shot in figure 4 shows the results using the Phase Analyzer Tool in the ALICE desktop. The green reference phase (always CH A) is the first tap. The other four are more or less evenly spaced along the line with the last input, the yellow vector, on the final end tap. The line was terminated with a resistor equal to the line impedance (no reflections). The Frequency of the input sinewave is set to about 6 KHz which seems to be about where 1/4 the wavelength is equal to the line length (90 degree phase shift at the final tap).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig4.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -218,9 +212,9 @@ The screen shot in figure 4 shows the results using the Phase Analyzer Tool in t
 
 It is also possible to plot the Channel A current vector at the same time which shows how "resistive" (or not) the input port of the line looks. In figure 5 the transmission line input current phase and amplitude with the end shorted is plotted along with the voltage amplitude and phase for the first 5 taps.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig5.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -235,9 +229,8 @@ One of the features in the Phase Analyzer is the ability to save any or all of t
 
 To gather data for the entire transmission line, the four Mux inputs are moved along the taps in groups of four keeping CH A connected to the first tap as the reference phase. The values for three line conditions, terminated, open and shorted, were saved to files. It is then possible to plot the values from the saved files back onto the grid. Figure 6 plots the amplitude and phase vectors for all 21 taps of the terminated line.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig6.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -246,9 +239,9 @@ To gather data for the entire transmission line, the four Mux inputs are moved a
 
 The csv file was then loaded into Excel and after some minor editing a plot of the amplitude vs tap position is made as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig7.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -257,18 +250,16 @@ The csv file was then loaded into Excel and after some minor editing a plot of t
 
 The same process is repeated for the open line case as shown in figure 8.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig8.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
    Figure 8, Phasor plot for all taps, open line.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig9.png
-   :align: center
-   :width: 600px
+   |image12|
 
 .. container:: centeralign
 
@@ -277,18 +268,16 @@ The same process is repeated for the open line case as shown in figure 8.
 
 For the open line condition in figure 9, we can clearly see the standing wave pattern along the taps of the line with peaks at the beginning middle and end of the line as you would expect. The same process is repeated for the shorted line case, figure 10.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig10.png
-   :align: center
-   :width: 600px
+
+
+|image13|
 
 .. container:: centeralign
 
    Figure 10, Phasor plot for all taps, shorted line.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig11.png
-   :align: center
-   :width: 600px
+   |image14|
 
 .. container:: centeralign
 
@@ -307,9 +296,8 @@ Appendix: Solder-less breadboard build
 
 It is possible to get passable results when constructing an artificial transmission line on a solder-less breadboard. But only if done carefully. Using only components with short leads that fit snugly and tight to the breadboard will give adequate results. The components must be arranged such that very few jumpers are required and they also are fitted tight to the breadboard (from the ADALP2000 parts kit) as shown in figure A1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig-a1.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -320,9 +308,8 @@ It is possible to get passable results when constructing an artificial transmiss
 
 The combination of 560 uH and 47 nF values gives a calculated line impedance of 110 ohms. The DC series resistance of each inductor is 6.5 ohms. The total series resistance is nearly the same as the line impedance and results in significant attenuation along the line. The delay of the line was measured at approximately 100uSec. The standing wave pattern along the line was tested with the same three terminated, open and shorted conditions. The plot of amplitude, at 9765 Hz, vs tap position for the three conditions is shown in figure A2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig-a2.png
-   :align: center
-   :width: 600px
+
+|image16|
 
 .. container:: centeralign
 
@@ -336,18 +323,15 @@ The use of just about any generic analog multiplexer integrated circuit is possi
 
 While the mux can be simply included on your solderless breadboard alongside the rest of the experiment it is often much more convenient to have it on an accessory plug in board as shown. Information and design files for this accessory board can be found in this web page and on GitHub, :doc:`M1k Accessory Board, Dual 4:1 Analog Input Multiplexer </wiki-migration/university/tools/adalm1000/accessory-boards-index>`.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/analog-mux-2.png
-   :align: center
-   :width: 200px
+
+|image17|
 
 .. container:: centeralign
 
    Figure A1, M1k Mux accessory board
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/accesory-mux.png
-   :align: center
-   :width: 500px
+   |image18|
 
 .. container:: centeralign
 
@@ -356,18 +340,16 @@ While the mux can be simply included on your solderless breadboard alongside the
 
 Another analog mux board is this one based on the 16:1 CD74HC4067 from `SparkFun Analog/Digital MUX Breakout <https://www.sparkfun.com/products/9056>`_. It does not come with header connectors so they would need to be added. The pins on the connector do not line up with the M1k connectors so male to male jumpers would be needed as shown in the next figure.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/sparkfun-mux-1.png
-   :align: center
-   :width: 300px
+
+
+|image19|
 
 .. container:: centeralign
 
    Figure A3, SparkFun Analog Mux break-out board
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/sparkfun-mux.png
-   :align: center
-   :width: 500px
+   |image20|
 
 .. container:: centeralign
 
@@ -381,3 +363,44 @@ A similar 8:1 analog multiplexer break-out board using the 74HC4051 circuit is a
 `Artificial transmission line, from Wikipedia, <https://en.wikipedia.org/wiki/Artificial_transmission_line>`_ `Artificial (lumped element) Transmission Line <https://hibp.ecse.rpi.edu/~connor/education/Fields/lumpline.pdf>`_ `Telegrapher's equations <https://en.wikipedia.org/wiki/Telegrapher's_equations#Distributed_components>`_ `Bounce Diagrams <https://cnx.org/contents/IE4zW5wX@4.3:DP9AaBBE@12/Bounce-Diagrams>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
+   :width: 1000px
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/parallel_tline_figure.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig2.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig3.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig4.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig5.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig6.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig7.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig8.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig9.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig10.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig11.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig-a1.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lc-atl-fig-a2.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/adalm1000/analog-mux-2.png
+   :width: 200px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/accesory-mux.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/sparkfun-mux-1.png
+   :width: 300px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/sparkfun-mux.png
+   :width: 500px

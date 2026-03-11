@@ -172,4 +172,4 @@ Supported ICs
 -  ADAU145x
 -  ADAU146x
 
-.. |multitapvoltagepic1.png| image:: https://wiki.analog.com/_media/multitapvoltagepic1.png
+.. |multitapvoltagepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multitapvoltagepic1.png

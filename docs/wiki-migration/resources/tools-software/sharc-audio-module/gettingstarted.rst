@@ -171,7 +171,7 @@ Check out our :doc:`audio elements and effects section </wiki-migration/resource
 
 --------------
 
-`SHARC Audio Module#.|SHARC Audio Module#.baremetal|Bare Metal Framework <https://wiki.analog.com/_media/navigation SHARC Audio Module#.>`_
+`SHARC Audio Module#.|SHARC Audio Module#.baremetal|Bare Metal Framework <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#.>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/crosscore/pdf-icon.png
    :width: 16px

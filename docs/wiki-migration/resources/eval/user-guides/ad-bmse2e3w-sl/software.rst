@@ -56,7 +56,7 @@ Request for Software Access
 Software Download
 =================
 
-1. Click this link: `AD-BMSE2E3W-SL Version 1.0.0 <https://wiki.analog.com/https/download.analog.com/secure/bms-cse-solutions/e2e3w-00/1-0-0/ad-bmse2e3w-sl-rel1.0.0.exe>`_.
+1. Click this link: `AD-BMSE2E3W-SL Version 1.0.0 <https://download.analog.com/secure/bms-cse-solutions/e2e3w-00/1-0-0/ad-bmse2e3w-sl-rel1.0.0.exe>`_.
 
 2. You will be directed to the *Software Package Download* page. Tick the checkbox and click the **I Accept** button to indicate acceptance of the license agreement.
 

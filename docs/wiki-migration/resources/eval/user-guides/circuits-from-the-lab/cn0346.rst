@@ -9,15 +9,15 @@ This circuit provides a contactless, capacitive based, relative humidity (RH) me
 General Setup
 -------------
 
-::
 
-   *One [[:adi:`CN0346|EVAL-CN0346-SDPZ]]` Evaluation Board
-   *One [[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
-   *One [[:adi:`EVAL_SDP-PMOD|EVAL-SDP-PMOD]]` Evaluation board
-   *One [[:adi:`CN0346|CN0346` Evaluation Software]]
-   *One USB Type-A plug to USB Mini-B plug cable.
-   *Boveda Calibration Packs or other Humidity controlled environment.
-   *6V Power Supply.
+
+- One :adi:`EVAL-CN0346-SDPZ <CN0346>` Evaluation Board
+- One :adi:`EVAL-SDP-CB1Z` Evaluation board
+- One :adi:`EVAL-SDP-PMOD <EVAL_SDP-PMOD>` Evaluation board
+- One :adi:`CN0346 Evaluation Software <CN0346>`
+- One USB Type-A plug to USB Mini-B plug cable.
+- Boveda Calibration Packs or other Humidity controlled environment.
+- 6V Power Supply.
 
 Minimum PC/System Requirements
 ------------------------------
@@ -32,25 +32,26 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0341 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0341 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0341\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0341 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0341 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0341\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/destination_directory.png
+   :align: center
 
-|image1|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/begin_install.png
+   :align: center
 
 -  Press **“Next”**.
 -  Upon completion of the installation of the **CN0341 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 -
 
-|image3|
+|image1|
 
 -  Press **“Next”**.
 -
 
-|image4|
+|image2|
 
 -  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
 -  Press **“Install”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0341-SDPZ**
@@ -61,7 +62,7 @@ Opening and Enabling the Evaluation Software
 -  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0346** and press the **“Connect"** button.
 -
 
-|image5|
+|image3|
 
 Step by Step Instruction for Calibrating the System
 ---------------------------------------------------
@@ -76,7 +77,7 @@ Step by Step Instruction for Calibrating the System
    -  Input the calculated CAPDAC value into the box found at the bottom of the Calibration tab.
    -
 
-   |image6|
+   |image4|
 
 Registration
 ------------
@@ -86,11 +87,9 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0346-PMDZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/destination_directory.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/begin_install.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_2.1.1153.6.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_location.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0346/software.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_2.1.1153.6.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_location.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0346/software.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0346/software-calibration_tab.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0346/software-calibration_tab.jpg
    :width: 600px

@@ -8,7 +8,7 @@ HDL Git Repository
 
 All the HDL sources can be found in the following git repository:
 
-https://github.com/analogdevicesinc/hdl
+:git-hdl:`hdl`
 
 We assume that the user is familiar with `git <https://git-scm.com/>`_. Knows how to `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the repository, how to check its `status <https://git-scm.com/docs/git-status>`_ or how to `switch <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`_ between branches.
 
@@ -135,7 +135,7 @@ ADI does two releases each year when all the projects get an update to support t
    You can find the release notes on the Github page of the repository:
 
    
-   -  :git-hdl:`releases`
+   -  https://github.com/analogdevicesinc/hdl/releases
    
 
 

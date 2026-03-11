@@ -149,6 +149,6 @@ It is possible to selectively disable filters which are not going to be used.To 
 
 |filterconfigure.png|\ |filterconfiguretab.png|
 
-.. |general2ndpic1.png| image:: https://wiki.analog.com/_media/general2ndpic1.png
-.. |filterconfigure.png| image:: https://wiki.analog.com/_media/filterconfigure.png
-.. |filterconfiguretab.png| image:: https://wiki.analog.com/_media/filterconfiguretab.png
+.. |general2ndpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndpic1.png
+.. |filterconfigure.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/filterconfigure.png
+.. |filterconfiguretab.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/filterconfiguretab.png

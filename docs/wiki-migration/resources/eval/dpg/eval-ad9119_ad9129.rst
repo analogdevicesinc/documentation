@@ -25,7 +25,7 @@ Helpful Files:
 ==============
 
 -  User Guide (for DPG2/DPG3 users): :doc:`AD9119-EBZ </wiki-migration/resources/eval/dpg/ad9119-ebz>` , :doc:`AD9129-EBZ </wiki-migration/resources/eval/dpg/ad9129-ebz>` , :doc:`AD9119-MIX-EBZ </wiki-migration/resources/eval/dpg/ad9119-mix-ebz>` , :doc:`AD9129-MIX-EBZ </wiki-migration/resources/eval/dpg/ad9129-mix-ebz>`
--  Data Sheet: `AD9119/AD9129 <https://www.analog.com/adi>static/imported-files/data_sheets/AD9119_9129.pdf>`__
+-  Data Sheet: :adi:`AD9119/AD9129 <static/imported-files/data_sheets/AD9119_9129.pdf>`
 -  Schematics: `AD9119/AD9129-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_Schematic_02-049144-02-b.pdf>`_
 -  Bill of Materials: `AD9119/AD9129 RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9129-ebz_bom_05-049144-02-b2.zip>`_
 -  PCB Gerber files: `AD9119/AD9129-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/AD9129-EBZ_Gerber_09-049144-01B.zip>`_
@@ -148,7 +148,7 @@ AD9129-CBLTX-EBZ (Obsolete)                                                     
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | S2P               | `S2P <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9129/dac_output_s2p_3g_r_l_clkon.s2p>`_                                       |                                                                                                                               |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| S2P Readme        | `S2P Readme <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9129/dac_output_s2p_readme.txt>`_                                      |                                                                                                                               |
+| S2P Readme        | `S2P Readme <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9129/dac_output_s2p_readme.txt>`_                               |                                                                                                                               |
 +-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Download the `AD9119 / AD9129 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9129_1.0.5031.26742.exe>`_

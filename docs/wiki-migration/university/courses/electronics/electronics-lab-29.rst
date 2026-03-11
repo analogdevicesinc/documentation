@@ -11,9 +11,8 @@ Background:
 
 To construct the logic functions in this lab activity you will be using the CD4007 CMOS array and discrete NMOS and PMOS transistors (ZVN2110A NMOS and ZVP2110A PMOS) from the ADALP2000 Analog Parts Kit. The CD4007 consists of 3 pairs of complimentary MOSFETs, as shown in figure 1. Each pair shares a common gate (pins 6,3,10). The substrates of all PMOSFETs are common (positive supply pin 14), as well as those of the NMOSFETs (ground pin 7). For the left pair, the NMOS Source terminal is tied to the NMOS substrate (pin 7), and the PMOS Source terminal is tied to PMOS substrate (pin 14). The other two pairs are more general purpose. For the right pair, the Drain terminal of the NMOS is tied to the to the Drain terminal of the PMOS on pin 12.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,9 +36,8 @@ Directions:
 
 We will now combine the double transmission gate built with inverter chain of the previous exercise to build a D-latch as shown in Figure 2. The two transmission gates work in tandem to realize the D-latch. During the transparent phase of the latch, when CLK=0, the first transmission gate (left) is ON while the second (right) is OFF. D is transmitted to the output (Q) through the first transmission gate and the two series connected inverters. During the latched phase of the latch, when CLK=1, the first transmission gate is OFF but the second transmission gate is ON. As a result, any change in the input D is not reflected at the output Q. However, the second transmission gate, which is now turned ON ensures that the previous logic level at Q is retained through the closed positive feedback loop formed around the two inverters in series. Build the D-latch circuit shown in figure 2 on your solder-less breadboard. Use the CD4007 CMOS array for devices M\ :sub:`1-6` and one ZVN2110A NMOS and ZVP2110A PMOS for each the two inverter stages M\ :sub:`7,8` and M\ :sub:`9,10`. Use the fixed +5 V power supply from ADALM2000 to power your circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,7 +50,7 @@ Hardware Setup:
 Configure both AWG outputs as DC sources for the first steps of the lab. The scope channels are to be used to monitor the inputs and outputs of the circuit as needed. The fixed +5 V power supply is to be used to power your circuit. The fixed -5V supply should be disabled during this Lab.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -69,7 +67,7 @@ First apply logic Low to CLK by opening the AWG control screen and setting AWG2 
 Observe the output Q of the latch on scope Channel 2. A steady +5 V should appear on the scope screen. Capture a screen shot.
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -81,7 +79,7 @@ Apply logic Low to the D input by setting AWG1 to 0 V DC. Observe the output on 
 Observe the Q output on the scope screen. A steady low should appear in spite of changing D to logic High since the previous value at D-input was low. Capture a screen shot. This is the latched phase of the circuit.
 
 
-|image3|
+|image5|
 
 .. container:: centeralign
 
@@ -93,7 +91,7 @@ Now configure both AWG channels as square waves with 5 V amplitudes peak-to-peak
 Observe the Q output on the scope screen with respect to the signals seen at the CLK and D inputs. Capture the various waveforms and save a screen shot for inclusion in your lab report.
 
 
-|image4|
+|image6|
 
 .. container:: centeralign
 
@@ -104,7 +102,7 @@ Now set the phase of AWG2 to 90 degrees. Again observe the Q output on the scope
 
 
 
-|image5|
+|image7|
 
 .. container:: centeralign
 
@@ -125,18 +123,15 @@ The D-Type latch shown in figure 2 uses complementary pass gates with both NMOS 
 
 For many design cases in integrated circuits where internal signals just pass between internal circuit blocks, the asymmetric drive of a single NMOS or PMOS transistor pass is not a significant issue. The positive feedback inherent in a latch can help in this case. In those cases a simplified D-Type latch that uses just 6 devices rather than the 10 used in figure 2 is shown in figures 9 ( latches on rising edge ) and 10 ( latches on falling edge ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f3.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 9 6 transistor rising edge D-Type latch
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f4.png
-   :align: center
-   :width: 500px
+   |image9|
 
 .. container:: centeralign
 
@@ -154,8 +149,7 @@ Hardware Setup:
    Figure 11 6 transistor rising edge D-Type latch Breadboard connections
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f10bb.png
-   :align: center
+   |image10|
 
 .. container:: centeralign
 
@@ -191,12 +185,21 @@ Electronic Latches `Flip-flop\_(electronics) <https://en.wikipedia.org/wiki/Flip
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f2bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss1.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f2.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f2bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss1.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss3.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss2.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss4.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss3.png
    :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_ss4.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f3.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f4.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/adff_f10bb.png

@@ -67,7 +67,7 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
    IIO Oscilloscope installer for Windows (Use below link):
 
    
-   -  :git-iio-oscilloscope:`IIO Oscilloscope windows installer (.exe) <releases>`
+   -  `IIO Oscilloscope windows installer (.exe) <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
    
 
 
@@ -137,9 +137,8 @@ Using DMM Tab to Read DC Voltage on Input Channels
 
 DMM tab can be used read the instantaneous voltage applied on analog input channels. Simply select the device and channels to read and press start button.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7768-1_dmm_read_voltage.png
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. note::
 
@@ -233,3 +232,7 @@ The functionality related with no-OS drivers is covered in below 2 files:
    It is hoped that the most common functions of the AD7768-1 are coded, but it's likely that some special functionality is not implemented. Feel free to consult Analog Devices :adi:`Engineer-Zone <engineerzone>` for feature requests, feedback, bug-reports etc.
 
 
+--------------
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7768-1_dmm_read_voltage.png
+   :width: 800px

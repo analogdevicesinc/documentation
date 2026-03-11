@@ -60,7 +60,8 @@ There are three functions which are called by the AD7091R driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -84,5 +85,3 @@ The following functions are implemented in this version of AD7091R driver:
 +-----------------------------------------------------------+-----------------------------------------------------+
 | float AD7091R_ConvertToVolts(short rawSample, float vRef) | Converts a 12-bit raw sample to volts.              |
 +-----------------------------------------------------------+-----------------------------------------------------+
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png

@@ -8,21 +8,15 @@ Software Needed
 -  `MATLAB <https://matlab.mathworks.com/>`_
 -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>` / LibIIO (Optional)]]
 
-   -  :git-iio-oscilloscope:`Latest IIO Oscilloscope release <releases/latest>`
-   -  :git-libiio:`Latest Libiio release - Look for the '...-Windows-setup.exe' <releases>`
+   -  `Latest IIO Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases/latest>`_
+   -  `Latest Libiio release - Look for the '...-Windows-setup.exe' <https://github.com/analogdevicesinc/libiio/releases>`_
 
 PuTTY
 ~~~~~
 
 PuTTY helps to provide a view into the Linux and give additional controls and debug abilities. Putty can be downloaded from here `Putty Download Page <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_. Ensure that the proper version for the computer is downloaded (64 bit for a 64 bit PC). Once downloaded the COM port to the FPGA can be opened. This COM port can be identified through the device manager as the standard COM port:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/comport.png
-   :align: left
-   :width: 400px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/putty.png
-   :align: center
-   :width: 400px
+|image1| |image2|
 
 .. note::
 
@@ -53,7 +47,7 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
    :class: download
 
    
-   -  :git-HighSpeedConverterToolbox>`__
+   -  :git-HighSpeedConverterToolbox:`High Speed Converter Toolbox Download Page <HighSpeedConverterToolbox>`
    
 
 
@@ -63,7 +57,7 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
    :class: download
 
    
-   -  `RF Microwave Toolbox Download Page <https::`High Speed Converter Toolbox Download Page </github.com/analogdevicesinc/RFMicrowaveToolbox>`
+   -  :git-RFMicrowaveToolbox:`RF Microwave Toolbox Download Page <RFMicrowaveToolbox>`
    
 
 
@@ -85,7 +79,7 @@ SD Card Setup
 
    <details><summary>Click to expand
 
--  Follow the instructions on one of the below pages to install the |2021_r2 Linux kernel| on the SD card.
+-  Follow the instructions on one of the below pages to install the `2021_r2 Linux kernel <https://swdownloads.analog.com/cse/kuiper/image_2023-04-02-ADI-Kuiper-full.zip>`_ on the SD card.
 
    -  :doc:`Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
    -  :doc:`Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
@@ -345,28 +339,28 @@ MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki
 MATLAB Control Overview
 -----------------------
 
-The X-Band Platform can be controlled via MATLAB using example scripts which are available as part of the :git-RFMicrowaveToolbox>`__ add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the RF Microwave Toolbox.
+The X-Band Platform can be controlled via MATLAB using example scripts which are available as part of the :git-RFMicrowaveToolbox:`Analog Devices, Inc. RF Microwave Toolbox <RFMicrowaveToolbox>` add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the RF Microwave Toolbox.
 
 .. note::
 
    It's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| MATLAB Toolboxes                                                                                                                                                              |                                  |       |
-+===============================================================================================================================================================================+==================================+=======+
-| Toolbox                                                                                                                                                                       | Purpose                          | Notes |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| `Support Package for ADALM-Pluto <https::`Analog Devices, Inc. RF Microwave Toolbox </www.mathworks.com/hardware-support/adalm-pluto-radio.html?s_tid=AO_HS_info>`            | LibIIO Matlab Bindings           |       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| :git-HighSpeedConverterToolbox>`__                                                                                                                                            | AD9081 Control                   |       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| `RF Microwave <https::`High Speed Converter </github.com/analogdevicesinc/RFMicrowaveToolbox>`                                                                                | ADAR1000EVAL1Z & ADXUD1A Control |       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| :git-genalyzer>`__                                                                                                                                                            | DSP of RF Signals                |       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-| `MinGW-w64 C:`Genalyzer <C++ Compiler <https://www.mathworks.com/matlabcentral/fileexchange/52848-matlab-support-for-mingw-w64-c-c-compiler>`                                 | Genalyzer Compiler               |       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+| MATLAB Toolboxes                                                                                                                    |                                  |       |
++=====================================================================================================================================+==================================+=======+
+| Toolbox                                                                                                                             | Purpose                          | Notes |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+| `Support Package for ADALM-Pluto <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html?s_tid=AO_HS_info>`_             | LibIIO Matlab Bindings           |       |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+| :git-HighSpeedConverterToolbox:`High Speed Converter <HighSpeedConverterToolbox>`                                                   | AD9081 Control                   |       |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+| :git-RFMicrowaveToolbox:`RF Microwave <RFMicrowaveToolbox>`                                                                         | ADAR1000EVAL1Z & ADXUD1A Control |       |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+| :git-genalyzer:`Genalyzer <genalyzer>`                                                                                              | DSP of RF Signals                |       |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+| `MinGW-w64 C/C++ Compiler <https://www.mathworks.com/matlabcentral/fileexchange/52848-matlab-support-for-mingw-w64-c-c-compiler>`_  | Genalyzer Compiler               |       |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 
 Example scripts are located within the add-on install directory, which is usually located in the directory: ``C:\Users\<username>\AppData\Roaming\MathWorks\MATLAB Add-Ons\Toolboxes``
 
@@ -587,10 +581,8 @@ Matlab Channel Mapping
 
 The Matlab attribute mapping is linear indexed and matches that of the hardware channel mapping as shown in the figure below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/channel_mapping.png
-   :alt: ADAR1000EVAL1Z Cell and Channel Mapping
-   :align: center
-   :width: 400px
+
+|ADAR1000EVAL1Z Cell and Channel Mapping|
 
 .. tip::
 
@@ -765,5 +757,10 @@ For additional questions or support, please visit the Engineering Zone forum at 
 
 :doc:`X Band Development Platform Main Page </wiki-migration/resources/eval/user-guides/x-band-platform>`
 
-.. |2021_r2 Linux kernel| image:: https://swdownloads.analog.com/cse/kuiper/image_2023-04-02-ADI-Kuiper-full.zip
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/comport.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/putty.png
+   :width: 400px
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
+.. |ADAR1000EVAL1Z Cell and Channel Mapping| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/channel_mapping.png
+   :width: 400px

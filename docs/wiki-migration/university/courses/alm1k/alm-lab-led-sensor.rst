@@ -32,9 +32,8 @@ Directions:
 
 On your solder-less breadboard construct the LED light sensor circuit as shown in figure 1. Notice that the LED diode, D\ :sub:`1`, is reverse biased i.e. opposite to how it would be connected as a light emitter. The photo generated current will flow into Q\ :sub:`1` as base current and will appear in the collector multiplied by the current gain, ß of the transistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-led-pd_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -61,9 +60,8 @@ Step 2 Procedure:
 
 Repeat the same procedure of inserting the various LEDs into the circuit for D\ :sub:`1` and measuring the response to the various light sources and record them in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-led-pd_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -87,3 +85,8 @@ Questions:
 `LEDs <https://en.wikipedia.org/wiki/LED>`_ `LED circuits <https://en.wikipedia.org/wiki/LED_circuit>`_ `Photo diodes <https://en.wikipedia.org/wiki/Photodiode>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-led-pd_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-led-pd_f2.png
+   :width: 500px

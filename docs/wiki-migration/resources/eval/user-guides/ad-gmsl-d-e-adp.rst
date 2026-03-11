@@ -81,7 +81,9 @@ The installation steps are as follows:
 
 -  With the unconnected EvKit, install standoff screws and nuts.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/installing_standoff_screws.png
+   :align: center
+   :width: 600px
 
 -  Connect the **AD-GMSL-D-E-ADP# GMSL adapter** to the Deserializer (EvKit) through the Samtec board-to-board connector.
 -  Make sure that **AD-GMSL-D-E-ADP# GMSL adapter** is firmly attached and evenly seated in the Samtec port.
@@ -92,33 +94,45 @@ The installation steps are as follows:
    Do not overtighten the screws as this may cause the EvKit PCB to bend.
 
 
-   
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_ev_kit_to_the_adapter.png
+   :align: center
+   :width: 600px
 
 -  Connect the GMSL cable.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_gmsl_cable.png
+   :align: center
+   :width: 550px
 
 -  Connect the micro-USB to USB cable.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_usb_cable.png
+   :align: center
+   :width: 600px
 
 -  Connect one end of the HDMI cable to **AD-GMSL-D-E-ADP# GMSL adapter** and then the other end to the HDMI display monitor.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_hdmi_cable.png
+   :align: center
+   :width: 600px
 
 -  Connect the 12 V power adapter cable.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_the_power_cable.png
+   :align: center
+   :width: 600px
 
 -  Power ON the EvKit by sliding the power switch as shown below.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_switch.png
+   :align: center
+   :width: 600px
 
 -  Confirm if GMSL link has been established. The Lock LEDs on the EvKits light up, indicating that links are set up properly. Also, the Power LED on the **AD-GMSL-D-E-ADP# GMSL adapter** will light up as an indication that boards are properly supplied with required power.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/leds_buttons.png
+   :align: center
+   :width: 600px
 
 -  Proceed to Configuration after the Link Lock is established.
 
@@ -145,7 +159,9 @@ Follow below procedure for audio hardware setup:
 -  Power OFF the board Deserializer (EvKit) and disconnect the 12 V power supply.
 -  Jump the following signals on **J6**: SCK to SCK, SD to SPDIF, and WS to WS.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl-d-e-adp/j6_signals.png
+   :align: center
+   :width: 400px
 
 -  Reinstall the **AD-GMSL-D-E-ADP# GMSL adapter** and apply power to the Deserializer.
 -  Perform normal video setup, as described in the `#deserializer_configuration <https://wiki.analog.com/>`_ section.
@@ -163,7 +179,9 @@ This requires connections from two pins on the adapter to a logic analyzer.
 -  Connect the logic analyzer to **Pin GP4 & GND** of the **AD-GMSL-D-E-ADP# GMSL adapter**.
 -  Below example shows the settings used for the SALEAE Logic Analyzer.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl-d-e-adp/async_serial_protocol_analyzer_settings.png
+   :align: center
+   :width: 500px
 
 -  After configuring the Async Serial protocol analyzer using the above settings, start the data capture.
 -  Open the logic analyzer's terminal to check the stream of text while the device is being set up.
@@ -189,7 +207,7 @@ Software Development
 
 .. note::
 
-   The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl>`__.
+   The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL github repository <gmsl>`.
 
 
 Design and Integration Files
@@ -198,7 +216,7 @@ Design and Integration Files
 .. admonition:: Download
    :class: download
 
-   `AD-GMSL-D-E-ADP# Design Support Files <https::`Analog Devices GMSL github repository </wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_design_support.zip>`
+   `AD-GMSL-D-E-ADP# Design Support Files <https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_design_support.zip>`_
 
    
    -  Schematic
@@ -220,24 +238,3 @@ Support
    -  :ez:`EngineerZone FPGA Reference Designs <community/fpga>`
    
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/installing_standoff_screws.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/attaching_ev_kit_to_the_adapter.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_gmsl_cable.png
-   :width: 550px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_usb_cable.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_hdmi_cable.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_the_power_cable.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_switch.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/leds_buttons.png
-   :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl-d-e-adp/j6_signals.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl-d-e-adp/async_serial_protocol_analyzer_settings.png
-   :width: 500px

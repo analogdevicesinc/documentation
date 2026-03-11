@@ -10,9 +10,9 @@ To quickly explore the reference design, here are some resources:
 
 -  The :doc:`SD Card Image </wiki-migration/resources/tools-software/linux-software/zynq_images>` used to boot the reference design.
 -  The Analog Devices :doc:`ADRV9361-Z7035 SDR Wiki </wiki-migration/resources/eval/user-guides/adrv936x_rfsom>` provides details about reference designs
--  The :git-hdl>`__, `no-OS <https::`HDL </github.com/analogdevicesinc/no-OS>` and `Linux <https://github.com/analogdevicesinc/linux>`_ sources are hosted on GitHub
+-  The :git-hdl:`HDL <hdl>`, :git-no-OS:`no-OS` and :git-linux:`Linux <linux>` sources are hosted on GitHub
 
-   -  For HDL, we highly recommend cloning from the latest official tag (released twice per year), not the development branch. :git-hdl:`releases`
+   -  For HDL, we highly recommend cloning from the latest official tag (released twice per year), not the development branch. https://github.com/analogdevicesinc/hdl/releases
 
       -  For example, choose branch hdl_2015_r2 to get the second release of 2015. Notice the support Xilinx Vivado tool version.
       -

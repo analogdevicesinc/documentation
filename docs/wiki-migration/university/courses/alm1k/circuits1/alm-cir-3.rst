@@ -24,9 +24,8 @@ In this activity proportionality and superposition theorems are examined by appl
 
 The proportionality constant A is sometimes referred to as the gain of a circuit. For the circuit of figure 1, the source voltage is V\ :sub:`in`. The response V\ :sub:`out` is across the 4.7 KΩ. resistor. The most important result of linearity is superposition.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab3-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,18 +36,15 @@ The proportionality constant A is sometimes referred to as the gain of a circuit
 
 For an independent source acting alone, all other independent voltage sources in the circuit are replaced by short circuits and all other independent current sources are replaced by open circuits, as in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab3-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2. Circuit with two voltage sources
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab3-fig3.png
-   :align: center
-   :width: 500px
+   |image3|
 
 .. container:: centeralign
 
@@ -99,3 +95,10 @@ DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools
 :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab3-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab3-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab3-fig3.png
+   :width: 500px

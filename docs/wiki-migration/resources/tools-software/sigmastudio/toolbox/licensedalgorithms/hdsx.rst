@@ -64,7 +64,7 @@ A schematic, with the input block, the easy to use HDSX® plug in and the output
 
 |docking-station.gif| |tv_von_vorn.gif| |car-audio.gif| |headphones.gif|
 
-.. |docking-station.gif| image:: https://wiki.analog.com/_media/docking-station.gif
-.. |tv_von_vorn.gif| image:: https://wiki.analog.com/_media/tv_von_vorn.gif
-.. |car-audio.gif| image:: https://wiki.analog.com/_media/car-audio.gif
-.. |headphones.gif| image:: https://wiki.analog.com/_media/headphones.gif
+.. |docking-station.gif| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/docking-station.gif
+.. |tv_von_vorn.gif| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/tv_von_vorn.gif
+.. |car-audio.gif| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/car-audio.gif
+.. |headphones.gif| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/licensedalgorithms/headphones.gif

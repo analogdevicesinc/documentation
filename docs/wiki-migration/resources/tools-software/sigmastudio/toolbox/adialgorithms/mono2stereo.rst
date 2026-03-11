@@ -63,4 +63,4 @@ Algorithm Details
 | Parameter RAM              | 26                                                 |
 +----------------------------+----------------------------------------------------+
 
-.. |mono2pic1.png| image:: https://wiki.analog.com/_media/mono2pic1.png
+.. |mono2pic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/mono2pic1.png

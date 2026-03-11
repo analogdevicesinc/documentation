@@ -40,8 +40,8 @@ Communication Channel Architecture
 
 The Communication Channel (CommCh) architecture is as shown in :doc:`Figure 1 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_architecture.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -108,7 +108,7 @@ The detailed description of the API functions is provided in the API reference d
 
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -135,8 +135,8 @@ Initialization
 
 The application information structure used in code snippets below is as shown in :doc:`Code Snippet 1 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`. It contains the communication channel related structures to be maintained by the application.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/application_information_structure_for_communication_channel.png
-   :align: center
+
+|image3|
 
 .. container:: centeralign
 
@@ -165,7 +165,7 @@ Handling Events
 The *a2b_app_CommChCallBk* callback registered during initialization should handle the various events as shown in below code snippet 3.
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -184,7 +184,7 @@ The communication channel instance should be periodically ticked by calling the 
 This should be called at a period lesser than or equal to the interrupt polling period **ADI_A2B_COMMCH_INTR_POLLING_PERIOD** which is set to 1ms by default.
 
 
-|image3|
+|image5|
 
 .. container:: centeralign
 
@@ -197,7 +197,7 @@ Transmission of messages
 Application can initiate the transmission over the communication channel using the *adi_a2b_CommChTxMsg* API as shown in :doc:`Code Snippet 5 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`. The result of the transmission is indicated via a communication channel event through a callback to the application which is registered during initialization. An event type of **A2B_COMMCH_EVENT_TX_DONE** indicates confirmation of transmission and an event type of **A2B_COMMCH_EVENT_TX_TIMEOUT** indicates a timeout. The code snippet is shown in :doc:`Handling Events </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` section as part of handling events.
 
 
-|image4|
+|image6|
 
 .. container:: centeralign
 
@@ -215,7 +215,7 @@ Enable/Disable Framing
 Application can enable or disable framing for a communication channel instance using the *adi_a2b_app_CommChSetFraming* API as shown in :doc:`Code Snippet 6 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`.
 
 
-|image5|
+|image7|
 
 .. container:: centeralign
 
@@ -226,7 +226,7 @@ Application can get the current framing information for a communication channel 
 
 
 
-|image6|
+|image8|
 
 .. container:: centeralign
 
@@ -239,7 +239,7 @@ Sequence Diagram
 The communication channel is intended to be run a Sub node however it can be ported to a Main node as well. See :doc:`Porting Instructions </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` section for more details. The :doc:`Figure 3 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` shows the sequence diagram of a communication handshake between Main and Sub nodes using communication channel.
 
 
-|image7|
+|image9|
 
 .. container:: centeralign
 
@@ -283,7 +283,7 @@ The communication channel by default is expected to run on a Sub node controller
 If, however a non-ADI stack is used on the Main node controller for network discovery and configuration then the communication channel should be initialized correctly with eNodeType and nTargetNodeNum. Refer to :doc:`Code Snippet 8 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>` on how to initialize the CommCh if it’s being integrated with non-ADI stack on the Main node.
 
 
-|image8|
+|image10|
 
 .. container:: centeralign
 
@@ -304,7 +304,7 @@ This section describes the procedure to run the sample Communication Channel dem
 The sample demo configuration is as shown in :doc:`Figure 4 </wiki-migration/resources/tools-software/a2bv2/a2bsspluscommchinterationguide>`. The demo uses ADSP-SC594 as host processor and smart Sub, both running an instance of Communication Channel, for exchange of messages over A2B Mailbox.
 
 
-|image9|
+|image11|
 
 .. container:: centeralign
 
@@ -347,7 +347,8 @@ After completing all connections, the A2B system should look as shown in :doc:`F
 -  Mount ADZS-AD2435MINI Board with I2C address 0x6A on Connector J10 of EV-SOMCRR-EZKIT.
 -  Connect a JTAG emulator from PC to EV-SC594-SOM board
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/demo_setup_commch.png
+   :align: center
 
 .. container:: centeralign
 
@@ -412,13 +413,14 @@ Terminology
 | I2C       | Is a multi-Main single-ended serial bus used for attaching low-speed peripherals to a processor. In TWI / I2C protocol the serial data transmission is done in asynchronous mode. This protocol uses only two wires named SDA (serial data) and SCL (serial clock) for communicating between two or more ICs. |
 +-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/api_reference_document.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_event_handling_at_Slave.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/periodic_ticking_at_Slave.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/transmission_over_communication_channel_at_Slave.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_set_framing.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_get_framing.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/Master_Slave_message_handshake_sequence.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_integration_with_a2b_stack_on_Master_node.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/adsp-sc594_as_Master_and_smart_Slave.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/demo_setup_commch.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/api_reference_document.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/application_information_structure_for_communication_channel.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_event_handling_at_Slave.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/periodic_ticking_at_Slave.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/transmission_over_communication_channel_at_Slave.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_set_framing.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_get_framing.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/Master_Slave_message_handshake_sequence.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_integration_with_a2b_stack_on_Master_node.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/adsp-sc594_as_Master_and_smart_Slave.png

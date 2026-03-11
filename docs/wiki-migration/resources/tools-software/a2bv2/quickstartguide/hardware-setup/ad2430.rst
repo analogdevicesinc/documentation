@@ -38,7 +38,9 @@ The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide
 -  AD2430 A2B transceiver
 -  4 PDM Microphones
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2430wc1bz_board.png
+   :align: center
+   :width: 1080px
 
 .. container:: centeralign
 
@@ -130,8 +132,8 @@ Sample Demo Setup
 
 Using SigmaStudio+ the A2B system can be directly controlled from a connected computer without involving a microcontroller or a DSP. This mode is helpful for quick testing of the capabilities of AD24xx without the need for a microcontroller in the system.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -193,5 +195,4 @@ Running target framework on EV-SOMCRR EZ-KIT
    \ **Figure:** Debug Configuration – SC59x
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2430wc1bz_board.png
-   :width: 1080px
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png

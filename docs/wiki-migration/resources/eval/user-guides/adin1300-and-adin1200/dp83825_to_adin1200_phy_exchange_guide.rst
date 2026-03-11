@@ -142,9 +142,10 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
 
          
          The MII interface is the communication path between the PHY and MAC devices. The MII interface has a high pin count, with a total of 15 pins for data transmission, reception and to signal errors or collision. It is sometimes used in 100M applications as it has a lower latency than RGMII and is much lower than RMII. Table 5 shows a pin overview of both devices for the MII MAC interface mode. When using the ADIN1200 in MII mode, the multifunction pin “LED_0/COL/TX_ER” automatically becomes COL. Similarly, the “INT_N/CRS” becomes CRS. The ADIN1200 sub-system registers provide user with ability to reconfigure which pin the COL and CRS functions are provided on (option of redirecting to GP_CLK, LINK_ST or INT_N). This requires a register write over MDIO interface to reconfigure. The DP83825 does not support MII interface.
+
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp38325_table_5_mii_mac_interface_mode_pin_comparison.png
-         
+         |image7|
+
          .. container:: centeralign
 
             \ *Table 5. MII MAC Interface Mode Pin Comparison*\
@@ -156,7 +157,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
          The ADIN1200 supports an RGMII interface mode, while the DP82825 does not. The RGMII interface has a low pin count interface support for 10M, 100M and Gigabit operation with a total of 12 pins for data transmission, reception and to signal errors or collisions. It is the most common interface used for Gigabit applications. The ADIN1200 can support 10/100 M speeds over the RGMII interface. Table 6 shows a pin overview of the ADIN1200 RGMII interface.
 
          
-         |image7|
+         |image8|
 
          .. container:: centeralign
 
@@ -184,7 +185,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
          
          Both devices have a number of strapping options to enable managed or unmanaged configurations of the PHY function such as PHY address, mode of operation, Auto-Negotiation and MAC Interface. After power on, the strapping pin voltages get sensed and latched upon existing from a reset and the sensed voltages are used to set the personality of the PHY. When configuring any strapping configurations, ensure to review the default state of the MAC side, whether the pins are being driven when coming out of reset or if there are internal pulls. Understanding the behavior on the MAC side is key to ensuring there are no conflicts with the hardware strapping implemented, or to adjust the strapping resistor values if required. The DP83825 uses 2-level strapping options throughout, while the ADIN1200 uses a mix of 2-level and 4-level. In general, strapping pins are multi-functional and have different operation after the device is brought out of reset. The ADIN1200 has internal pull downs on many of its strapping pins (not all), therefore it would be possible to minimize external strapping resistors.
          
-         |image8| Figure 3. ADIN1200 Hardware Strapping, 2 and 4 level strapping resistors |image9|
+         |image9| Figure 3. ADIN1200 Hardware Strapping, 2 and 4 level strapping resistors |image10|
          
          .. container:: centeralign
 
@@ -207,14 +208,14 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
    
       ..
 
-   |image10|
+   |image11|
 
          .. container:: centeralign
 
             \ *Table 8. Auto-Negotiated Speeds, ADIN1200*\
 
 
-            |image11|
+            |image12|
 
          .. container:: centeralign
 
@@ -227,7 +228,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
          Selection of Auto-MDIX for the ADIN1200 is done using one pin, (MDIX_MODE) with 4-level strapping. In the DP82833 Auto-MDI/MDI-X is set by the RX_ER strapping pin, with option of enabled or disabled.
 
          
-         |image12|
+         |image13|
 
          .. container:: centeralign
 
@@ -240,7 +241,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
          The ADIN1200 uses two hardware pins, MACIF_SEL0 and MACIF_SEL1 to provide user ability to select different MAC interfaces. These two pins have internal weak pull downs, therefore the default operation would be RGMII with delays as shown in Table 11. To configure any other MAC interface mode, use 10kΩ pull up or pull down resistors to select accordingly. The DP83825 only supports RMII mode, but has strapping to configure the PHY for Master or Slave mode using the RX_D1 pin. The LED2 pin is used to choose between CRS_DV or RX_DV.
 
          
-         |image13|
+         |image14|
 
          .. container:: centeralign
 
@@ -274,7 +275,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
          The ADIN1200 is available in a 32 lead QFN/LFCSP package of 5 mm x 5mm body size, whereas the DP83825 is packaged in a 24 lead QFN with 3mm x 3mm body size. Given the different package, the ADIN1200 is not a drop-in replacement for the TI product. This requires edits to the schematic and board layout to achieve this exchange.
 
          
-         |image14|
+         |image15|
 
          .. container:: centeralign
 
@@ -323,7 +324,7 @@ PHY Exchange Guide, DP83825 to ADIN1200 10/100Mb
 High Level Comparison
 ---------------------
 
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablehighlevelcomp.png
 
 .. container:: centeralign
 
@@ -370,8 +371,7 @@ The following example captures how to configure the ADIN1200 for an unmanaged co
 
      *PHY_CFG1 = MODE_1 = 10 kΩ pull-down resistor
 
-
-     |image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_figrmiiauto.png
 
 .. container:: centeralign
 
@@ -390,22 +390,21 @@ The following example captures how to configure the ADIN1200 for an unmanaged co
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_Table5.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_table6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp38325_table_5_mii_mac_interface_mode_pin_comparison.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_table6.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/strapping.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/strapping.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_table7.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_table7.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tableautonegspeed.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tableautonegspeed.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tableforcedspeed.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tableforcedspeed.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablemdx.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablemdx.png
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablemacsel.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablemacsel.png
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablepackagecomp.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablepackagecomp.png
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_tablehighlevelcomp.png
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_figpinoutcomp.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/phy_exchange_dp83825_to_adin1200_figrmiiauto.png

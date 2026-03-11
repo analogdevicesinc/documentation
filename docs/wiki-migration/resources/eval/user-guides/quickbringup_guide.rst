@@ -52,8 +52,8 @@ Software Needed
 -  :doc:`Supported Use Cases / Bitstreams Available For Download </wiki-migration/resources/eval/user-guides/quadmxfe/quick-start>`
 -  :doc:`IIO Oscilloscope / LibIIO </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 
-   -  :git-iio-oscilloscope:`Latest IIO Oscilloscope release <releases/latest>`
-   -  :git-libiio:`Latest Libiio release - Look for the '...-Windows-setup.exe' <releases>`
+   -  `Latest IIO Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases/latest>`_
+   -  `Latest Libiio release - Look for the '...-Windows-setup.exe' <https://github.com/analogdevicesinc/libiio/releases>`_
 
 -  :doc:`PuTTY </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 -  :doc:`Xilinx Vivado Toolchain </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
@@ -83,9 +83,9 @@ Genalyzer
 
 3. Download latest Genalyzer EXE Installer from Github
 
-::
 
-     [[:git-genalyzer:`actions/runs/5677400027/job/15385644518]]`
+
+`https://github.com/analogdevicesinc/genalyzer/actions/runs/5677400027/job/15385644518 <https://github.com/analogdevicesinc/genalyzer/actions/runs/5677400027/job/15385644518>`_
 
 4. Run fft_analysis.m example
 
@@ -101,11 +101,11 @@ Link: https://www.putty.org/ Version: Any version is fine
 
 IIO Oscilloscope
 
-Link: :git-iio-oscilloscope:`actions/runs/5334364156` Note: Need a Github account with your ADI email to download Version: Above link is the latest version from the software team
+Link: `5334364156 <https://github.com/analogdevicesinc/iio-oscilloscope/actions/runs/5334364156>`_ Note: Need a Github account with your ADI email to download Version: Above link is the latest version from the software team
 
 LibIIO Installer
 
-Install the latest libIIO package from github https://swdownloads.analog.com/cse/azure_builds/libiio-setup.exe `libiio <https://github.com/analogdevicesinc/libiio>`_
+Install the latest libIIO package from github https://swdownloads.analog.com/cse/azure_builds/libiio-setup.exe :git-libiio:`libiio`
 
 --------------
 

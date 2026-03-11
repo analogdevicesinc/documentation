@@ -62,38 +62,29 @@ Navigate to the shape from output window
 
 -  Users can navigate to the shape from the output window if the connector is missing while linking.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/linknavigate.png
+   :width: 600px
 
 Collapse tree view items
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Users can collapse the tree view items in one click.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/collapse.png
+   :width: 600px
 
 Navigating from project window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Users can navigate to the module in the schematic by double clicking on that module from the project window.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/navigateproject.png
+   :width: 700px
 
 Link Compile Download from project window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Users can do link compile download from the project window as well by selecting the platform.
 
-
-|image4|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/linknavigate.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/collapse.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/navigateproject.png
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/linkproject.png
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/linkproject.png
    :width: 400px

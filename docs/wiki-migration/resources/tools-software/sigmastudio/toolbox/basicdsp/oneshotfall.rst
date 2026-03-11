@@ -84,4 +84,4 @@ Data RAM                   4
 Parameter RAM              1
 ========================== =========================================
 
-.. |oneshotfallpic1.png| image:: https://wiki.analog.com/_media/oneshotfallpic1.png
+.. |oneshotfallpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/oneshotfallpic1.png

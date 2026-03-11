@@ -36,15 +36,10 @@ The source code for the MAX31875 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX31875 Driver <drivers/temperature/max31875/max31875.h>`
+   -   :git-no-OS:`Implementation of MAX31875 Driver <drivers/temperature/max31875/max31875.c>`
    
-   |Header file of MAX31875 Driver|
 
-   -
-
-   |Implementation of MAX31875 Driver|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. As the I2C interface is used, there are three functions which are called by the MAX31875 driver and have to be implemented:
 
@@ -64,11 +59,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for I2C Communication APIs|
+
 
 MAX31875 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,7 +121,3 @@ By default, the MAX31875 performs continuous conversions, with a frequency of 4 
    }
 
 For the meaning of the **extended** parameter, please refer to the datasheet (bit 7 of the configuration register).
-
-.. |Header file of MAX31875 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31875/max31875`.h
-.. |Implementation of MAX31875 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31875/max31875`.c
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

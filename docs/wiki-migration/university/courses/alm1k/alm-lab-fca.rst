@@ -28,9 +28,8 @@ Directions:
 
 Build the two transistor folded cascode amplifier circuit shown in figure 1 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-fca_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -63,3 +62,6 @@ What limits the possible maximum and minimum input voltage at the base of Q\ :su
 **For Further Reading:**
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-fca_f1.png
+   :width: 500px

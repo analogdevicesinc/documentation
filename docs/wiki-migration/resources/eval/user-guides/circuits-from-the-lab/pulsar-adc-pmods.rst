@@ -107,38 +107,50 @@ Evaluation
 
 Evaluating the PulSAR ADC PMOD boards is very simple. Using the required equipment, follow these simple steps to get the evaluation working. Please make sure you completely unplug all the boards before beginning.
 
--  Plug in the Mini USB cable from a USB port on your PC, to the **J1** of the EVAL-SDP-CB1Z.\
+-  Plug in the Mini USB cable from a USB port on your PC, to the **J1** of the EVAL-SDP-CB1Z.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb.jpg
+   :align: center
+   :width: 400px
 
-|image1|
+-  Make sure that the computer installs the device drivers, and that you can see the *ADI Development Tools* in your computer's device manager.
 
-   -  Make sure that the computer installs the device drivers, and that you can see the *ADI Development Tools* in your computer's device manager.\
-
-
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
+   :align: center
+   :width: 500px
 
 -  Ensure that you remove the shunt which is located at **JP1** of the SDP-PMD-IB1Z
 -  Next take the EVAL-SDP-CB1Z board and connect **CON A** up to **J4** of the SDP-PMD-IB1Z interposer board.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer.jpg
+   :align: center
+   :width: 500px
 
--  Connect the EVAL-CFTL-6V-PWRZ to **J1** barrel jack of the SDP-PMD-IB1Z, and **WAIT 10 SECONDS** before continuing\
+-  Connect the EVAL-CFTL-6V-PWRZ to **J1** barrel jack of the SDP-PMD-IB1Z, and **WAIT 10 SECONDS** before continuing
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power.jpg
+   :align: center
+   :width: 500px
 
--  Take the PulSAR ADC PMOD board you are using and connect it to **J3** of the SDP-PMD-IB1Z interposer board. This should finish the hardware setup.\
+-  Take the PulSAR ADC PMOD board you are using and connect it to **J3** of the SDP-PMD-IB1Z interposer board. This should finish the hardware setup.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_evaluation_combo.jpg
+   :align: center
+   :width: 700px
 
 -  With the power source turn **OFF**, connect your external power supplies (-2.5V, GND, and 7.5V) to the terminal block of your EVAL-AD7xxx-PMDZ board.
 -  Turn **ON** your external power supplies (-2.5V, GND, and 7.5V) connected in the previous step.
--  Place the shunt across **JP1** of the SDP-PMD-IB1Z, according to the silkscreen so that you will have 3.3V going to the PMOD connector.\
+-  Place the shunt across **JP1** of the SDP-PMD-IB1Z, according to the silkscreen so that you will have 3.3V going to the PMOD connector.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power_jumper.jpg
+   :align: center
+   :width: 500px
 
--  Check again in the device manager to make sure the *ADI Development Tools* are still displaying. If yes, then you'll be able to proceed onto the evaluation software section. If you don't see ADI Development Tools, than you will have to start the hardware evaluation procedure over at step 1.\
+-  Check again in the device manager to make sure the *ADI Development Tools* are still displaying. If yes, then you'll be able to proceed onto the evaluation software section. If you don't see ADI Development Tools, than you will have to start the hardware evaluation procedure over at step 1.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
+   :align: center
+   :width: 500px
 
 -  Connect your SMB cable from your signal source to the Vin+ and Vin- connectors of the EVAL-AD7xxx-PMDZ board.
 
@@ -271,18 +283,3 @@ Registration
 -  `EVAL-AD7984-PMDZ <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD7984-PMDZ?&v=RevA>`_
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb.jpg
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer.jpg
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power.jpg
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_evaluation_combo.jpg
-   :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/sdp_usb_interposer_power_jumper.jpg
-   :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/pulsar_pmod/device_manager.png
-   :width: 500px

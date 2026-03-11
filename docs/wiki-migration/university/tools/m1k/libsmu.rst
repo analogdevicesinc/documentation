@@ -14,7 +14,7 @@ Download
 .. admonition:: Download
    :class: download
 
-   Go to the :git-libsmu:`latest release page <releases/latest>` and download the package that fits your system.
+   Go to the `latest release page <https://github.com/analogdevicesinc/libsmu/releases/latest>`_ and download the package that fits your system.
 
 
 Installation
@@ -28,12 +28,12 @@ Conda and Anaconda are cross-platform package-management tools that generally fo
 Windows
 ~~~~~~~
 
-On Windows, it's easiest to use the provided installers, :git-libsmu:`libsmu-setup-x86.exe <releases/latest>` and :git-libsmu:`libsmu-setup-x64.exe <releases/latest>` that install either 32 or 64 bit support, respectively. During the install process options are provided to install drivers, Python bindings and Visual Studio development support.
+On Windows, it's easiest to use the provided installers, `libsmu-setup-x86.exe <https://github.com/analogdevicesinc/libsmu/releases/latest>`_ and `libsmu-setup-x64.exe <https://github.com/analogdevicesinc/libsmu/releases/latest>`_ that install either 32 or 64 bit support, respectively. During the install process options are provided to install drivers, Python bindings and Visual Studio development support.
 
 Linux
 ~~~~~
 
-Download the specific libsmu .deb package for your Linux distribution from the :git-libm2k:`releases <releases/latest>` section. Currently we are supporting Ubuntu 16, 18 and 20. The package name should start with libsmu and contain the OS version. Go to the folder you downloaded the package in and open a terminal, then run the following command:
+Download the specific libsmu .deb package for your Linux distribution from the `releases <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ section. Currently we are supporting Ubuntu 16, 18 and 20. The package name should start with libsmu and contain the OS version. Go to the folder you downloaded the package in and open a terminal, then run the following command:
 
 ::
 
@@ -51,7 +51,7 @@ If you want to install pysmu (the Python bindings for libsmu), you can download 
 MacOS
 ~~~~~
 
-Download the specific libsmu .pkg package for your MacOS distribution from the :git-libm2k:`releases <releases/latest>` section. Currently we are supporting MacOS 10.13, 10.14 and 10.15. The package name should start with libsmu and contain the MacOS version.
+Download the specific libsmu .pkg package for your MacOS distribution from the `releases <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ section. Currently we are supporting MacOS 10.13, 10.14 and 10.15. The package name should start with libsmu and contain the MacOS version.
 
 Open a terminal and run the following command which will install only the base library in /Library/Frameworks.
 
@@ -59,7 +59,7 @@ Open a terminal and run the following command which will install only the base l
 
    analog@analog:~$ sudo installer -pkg /path/to/<libsmu_package_name>.pkg -target /
 
-A different way to install libsmu on MacOS is by using the .tar.gz located in the :git-libm2k:`releases <releases/latest>` section. This will install the .dylib (libraries) into system paths (usr/local) and it will also install the smu CLI.
+A different way to install libsmu on MacOS is by using the .tar.gz located in the `releases <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ section. This will install the .dylib (libraries) into system paths (usr/local) and it will also install the smu CLI.
 
 ::
 
@@ -136,7 +136,7 @@ Configure, clone and build
 
 ::
 
-   analog@analog:~$ **git clone https://github.com/analogdevicesinc/libsmu.git**
+   analog@analog:~$ **git clone :git-libsmu:`libsmu`.git**
    analog@analog:~$ **cd libsmu**
 
 Options:
@@ -211,7 +211,7 @@ To build them for other versions it's easiest to build them manually via the set
 
 ::
 
-   analog@analog:~$ **git clone https://github.com/analogdevicesinc/libsmu.git**
+   analog@analog:~$ **git clone :git-libsmu:`libsmu`.git**
    analog@analog:~$ **cd libsmu/bindings/python**
    analog@analog:~$ **python3 setup.py build**
    analog@analog:~$ **sudo python3 setup.py install**

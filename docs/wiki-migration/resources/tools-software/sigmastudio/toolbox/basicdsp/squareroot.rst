@@ -88,5 +88,5 @@ Algorithm Addition Information
 | Parameter RAM Repetition | none                                                                                          |                      |
 +--------------------------+-----------------------------------------------------------------------------------------------+----------------------+
 
-.. |squarerootpic1.png| image:: https://wiki.analog.com/_media/squarerootpic1.png
-.. |squarerootpic5.png| image:: https://wiki.analog.com/_media/squarerootpic5.png
+.. |squarerootpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/squarerootpic1.png
+.. |squarerootpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/squarerootpic5.png

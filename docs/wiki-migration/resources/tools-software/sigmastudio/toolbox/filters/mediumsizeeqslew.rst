@@ -90,7 +90,7 @@ As with Peaking, Shelving parameters may be changed handily and the results imme
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew5.png
    :width: 200px
-.. |medpic7.png| image:: https://wiki.analog.com/_media/medpic7.png
+.. |medpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic7.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew7.png
    :width: 200px
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mideqslew11.png

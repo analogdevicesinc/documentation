@@ -56,19 +56,15 @@ Windows users who do not wish to install Python and the other required software 
    First, download Windows USB drivers installer for M2K here:
 
    
-   -  Latest
-
-
+   -  Latest :git-plutosdr-m2k-drivers-win:`plutosdr-m2k-drivers-win`
    
-   |plutosdr-m2k-drivers-win|
-
    You should download and install the Windows USB drivers from GitHub first if not already installed on your system.
 
 
 .. admonition:: Download
    :class: download
 
-   Second. download and install, libiio-setup.exe from the :git-libiio>`__. If you have done any LibIIO development in the past you may have this already installed but the ALICE M2K Windows executable was developed using the 32 bit (x86) library and this version will need to be installed. The libiio library depends on the Visual C++ Redistributable Packages for Visual Studio 2013, generally the installer should include the needed support files but if you should encounter any difficulties when running ALICE for M2K you may need to manually install the 32 (x86) package from the |Microsoft Web Site|.
+   Second. download and install, libiio-setup.exe from the :git-libiio:`libiio page on GitHub <libiio>`. If you have done any LibIIO development in the past you may have this already installed but the ALICE M2K Windows executable was developed using the 32 bit (x86) library and this version will need to be installed. The libiio library depends on the Visual C++ Redistributable Packages for Visual Studio 2013, generally the installer should include the needed support files but if you should encounter any difficulties when running ALICE for M2K you may need to manually install the 32 (x86) package from the `Microsoft Web Site <https://www.microsoft.com/en-us/download/details.aspx>`_.
 
 
 .. admonition:: Download
@@ -77,7 +73,7 @@ Windows users who do not wish to install Python and the other required software 
    Download Windows installer here:
 
    
-   -  Version 2.0 `Windows executable release <https::`libiio page on GitHub </github.com/analogdevicesinc/alice/releases/download/2.0.0/alice-desktop-2.0-setup.exe>`
+   -  Version 2.0 `Windows executable release <https://github.com/analogdevicesinc/alice/releases/download/2.0.0/alice-desktop-2.0-setup.exe>`_
    
    The installer should include all required packages but not the USB device drivers for the ADALM2000. If you encounter any issues, did you remember to first install the USB drivers and the libiio library from the GitHub web pages?
 
@@ -91,7 +87,7 @@ Python 2.7.11 (or higher, 32 bit version recommended) numpy numerical package ex
 Linux and OSX:
 ~~~~~~~~~~~~~~
 
-Most releases of the Linux operating system have Python included and many also include the numpy numerical package as well. Linux ( including Raspberry Pi ) and OSX users must manually compile libiio library. Direction on how to manually install Numpy can be found |here|.
+Most releases of the Linux operating system have Python included and many also include the numpy numerical package as well. Linux ( including Raspberry Pi ) and OSX users must manually compile libiio library. Direction on how to manually install Numpy can be found `here <https://docs.scipy.org/doc/numpy-1.10.1/user/install.html>`_.
 
 Manually installing libiio and ALICE Desktop Python source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,11 +98,11 @@ Manually installing libiio and ALICE Desktop Python source
    The latest release of the ALICE 2.0 desktop tool set Python source files is available for download:
 
    
-   Version 2.0 :git-alice:`Python Source Archive <releases/download/2.0.0/alice-2.0-m2k.zip>`.
+   Version 2.0 `Python Source Archive <https://github.com/analogdevicesinc/alice/releases/download/2.0.0/alice-2.0-m2k.zip>`_.
    
 
 
-To manually install on Windows download, libiio-setup.exe from the :git-libiio>`__. The USB drivers will also need to be installed by downloading the |plutosdr-m2k-drivers-win| from GitHub. For OS X and Linux users there are installer versions of libiio for popular distributions of the OS in `GitHub <https::`libiio page on GitHub </github.com/analogdevicesinc/libiio>`. The command(s) to manually build things are shown on the GitHub page as well. You will also likely need the development version of python installed (``apt-get install python2.7-dev``).
+To manually install on Windows download, libiio-setup.exe from the :git-libiio:`libiio page on GitHub <libiio>`. The USB drivers will also need to be installed by downloading the :git-plutosdr-m2k-drivers-win:`plutosdr-m2k-drivers-win` from GitHub. For OS X and Linux users there are installer versions of libiio for popular distributions of the OS in :git-libiio:`GitHub <libiio>`. The command(s) to manually build things are shown on the GitHub page as well. You will also likely need the development version of python installed (``apt-get install python2.7-dev``).
 
 Raspberry Pi users with Raspbian need to have the Jessie distribution installed which includes the most up to date versions of gcc ( 4.9.2 ) and libusb-1.0-0-dev (``apt-get install libusb-1.0-0-dev libudev-dev``). As with other Linux OS the command(s) to make things are shown in the GitHub Readme. You will also need the development version of python installed (``apt-get install python2.7-dev``). Cmake may also need to be installed if it has not been done already (``apt-get install cmake``).
 
@@ -140,9 +136,8 @@ Main Window:
 
 Be sure that the ALM2000 board is plugged into a USB port before starting the program. The program performs an internal self calibration upon startup. Nothing should be attached to the Scope inputs or AWG outputs for the few seconds while the self calibration is running. Once the program is running the main window, as shown in figure 1, should appear. This is the main desktop window and serves as the Oscilloscope Tool Window as well as controls for opening the other display windows and certain common control functions. It is sub divided into 4 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/main-window-1.png
-   :align: center
-   :width: 800px
+
+|image4|
 
 .. container:: centeralign
 
@@ -166,9 +161,8 @@ It is possible to save the graphics display area to an encapsulated postscript f
 
 The Options drop down menu, figure 2, lists a command for enabling smoothing where spline curves are used to connect the input sample points rather than the default straight lines. A second option for connecting the sample points is to use a zero order hold function where a horizontal line and a vertical line are used. This looks like a stair step waveform much like the output of the Digital-to-Analog converters used to generate the AWG output signals actually produce.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/options-drop-down.png
-   :align: center
-   :width: 550px
+
+|image5|
 
 .. container:: centeralign
 
@@ -183,9 +177,8 @@ The Graphics display area can be drawn with either a Black (default) or White ba
 
 The C1 and C2 measure drop down menus, figure 3, list which vertical measurements for the Channel 1 and 2 voltage signals are to be displayed along the bottom of the graphics display area.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/meas-drop-down.png
-   :align: center
-   :width: 350px
+
+|image6|
 
 .. container:: centeralign
 
@@ -216,9 +209,8 @@ The displayed horizontal measurements for the voltage traces can be the followin
 
 Figure 3g shows examples of many of the possible waveform measurements. Six of the vertical measurements are derived directly from the waveform data array. These are Avg, Min, Max, Top, Base and RMS. The rest are calculated from these six. P-P is obviously Max – Min. Mid is (Max + Min / 2). C1-C2 is C1 Avg – C2 Avg.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/meas-examples.png
-   :align: center
-   :width: 900px
+
+|image7|
 
 .. container:: centeralign
 
@@ -267,9 +259,8 @@ CHAHW is the channel 1 High Pulse Width CHALW is the channel 1 Low Pulse Width C
 
 The Math drop down menu, figure 4, lists which sample point by sample point calculated waveform combining the Channel A and B voltage and current signals is to be displayed vs time.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/math-drop-down.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -346,9 +337,8 @@ Above the main grid area is a line of text showing the device ID, Sample rate an
 
 The second and third lines of text are for displaying information related to Channel 1 and Channel 2 respectively. The selected V/Div is displayed along with any of the vertical measurements selected for that voltage channel.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/graphics-area.png
-   :align: center
-   :width: 700px
+
+|image9|
 
 .. container:: centeralign
 
@@ -389,9 +379,8 @@ Assuming a 100KSPS sample rate.
 
 Again as the program iterates over the time index t, the channel 1 voltage value at t-1 is subtracted from the channel 1 voltage value at t and then multiplied by 100. The 100 scales the time from the 10 uSec per time sample to 1 mSec. The screen shot in figure 6, shows the result for a 4 V p-p triangle wave at 1 KHz. The green triangle wave changes 4 V in 500 uS for a slew rate of + and – 8 V/mSec shown with the magenta Math trace.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/slew-rate-example.png
-   :align: center
-   :width: 700px
+
+|image10|
 
 .. container:: centeralign
 
@@ -405,9 +394,8 @@ AWG Controls Window:
 
 The AWG controls window is shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-controls-window.png
-   :align: center
-   :width: 950px
+
+|image11|
 
 .. container:: centeralign
 
@@ -416,9 +404,9 @@ The AWG controls window is shown in figure 7.
 
 There are two identical sets of controls for configuring the Channel 1 and 2 outputs. First there is a drop down menu for selecting the Mode, figure 8. The Hi-Z option disables the generator output (High Impedance mode). The default at start-up is that both channels are in Hi-Z mode.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-controls-modes.png
-   :align: center
-   :width: 250px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -433,9 +421,8 @@ The Shape drop down menu is used to select the shape of the output waveform. The
 
 The relative timing between the two AWG channels can be set as either a phase angle or delay in time. The Phase and Delay buttons choose between the two methods. The entry window programs either the phase of the output waveform in degrees from 0 to 360 or the time delay in mSec. The % entry window applies to the Square, Trapazoid, SSQ and Up-Down Ramp shapes and programs the duty cycle or symetry in percent from 0% to 100%. For the Stairstep shape it set the number of steps.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-controls-shapes.png
-   :align: center
-   :width: 800px
+
+|image13|
 
 .. container:: centeralign
 
@@ -446,9 +433,8 @@ Wave Shapes in the menu use the AWGAwaveform or AWGBwaveform array buffers to co
 
 The basic shape of the Impulse waveform is shown in figure 10. The Max, Min, Freq, Phase and Duty-Cycle values are used to construct the waveform. The Freq setting determines the Period ( 1/Freq ) or spacing between the pulses. The output starts and ends at a value midway between the Min and Max values. The impulse consists of a positive peak followed by a negative peak. The width of the peaks are equal to (Period \* DutyCycle)/ 2. The center of the pulse is delayed by the Phase setting. For example if the phase is set to 180 then the pulse is delayed by ½ the Period (Phase/360).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impulse-waveform.png
-   :align: center
-   :width: 700px
+
+|image14|
 
 .. container:: centeralign
 
@@ -478,9 +464,8 @@ AWGAwaveform[ start : stop ] where start and stop are integers.
 
 For example to copy the CH 1 captured data from the VBuffA array to the AWGBwaveform array you would simply click on the Math option under the AWG 2 Shape menu and type VBuffA as the formula, as in figure 11.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-math-win-1.png
-   :align: center
-   :width: 300px
+
+|image15|
 
 .. container:: centeralign
 
@@ -499,7 +484,7 @@ AWGAwaveform + AWGBwaveform + 1.0
 
 The resulting output wave shapes are shown in figure 12. The first screen shot is what the waveforms look like before they are summed and offset. The CH 1 trace in the second screen shot shows the shape as read in from the file and the CH 2 trace shows the calculated wave shape with the added noise and offset.
 
-|image4| |image5|
+|image16| |image17|
 
 .. container:: centeralign
 
@@ -511,9 +496,8 @@ DC Example:
 
 To demonstrate how to use the Oscilloscope Tool as a DC voltmeter consider the resistor voltage divider network, shown in figure E1. We wish to measure the voltages at the 4 nodes and the voltages across the 6 resistors. In the figure the nodes are numbered from N0 to N4 with N0 being the ground or common node that all the voltage measurements will be made with respect to. With the Oscilloscope Tool we can measure two node voltages at a time and the voltage difference between those two nodes. Open the Measurements Window and / or from the Meas C1 menu select from the –C1-V- section the Avg and C1-C2 check boxes. Likewise from the Meas C1 menu select from the –C1-V- section the Avg and C2-C1 check boxes.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/volt-meter-fige1.png
-   :align: center
-   :width: 500px
+
+|image18|
 
 .. container:: centeralign
 
@@ -522,9 +506,9 @@ To demonstrate how to use the Oscilloscope Tool as a DC voltmeter consider the r
 
 We start with the network powered from the fixed +5 volt power supply at node N1 and the channel 1 input also connected to N1. The channel 2 input is connected to node N2. Click on the Run button and the N1, N2 node voltages will be displayed along with the difference between them as C1-C2 and C2-C1. We can now proceed around the network measuring pairs of nodes until we can fill out table 1 below. Figure E2 shows the voltmeter inputs connected to nodes N3 and N4. Any combination of two nodes can be measured and the voltage difference between the two nodes will be displayed.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/volt-meter-fige3.png
-   :align: center
-   :width: 500px
+
+
+|image19|
 
 .. container:: centeralign
 
@@ -565,9 +549,8 @@ The X-Y Plotting Tool:
 
 When the X-Y Plot Window button is clicked in the Main Window the X-Y display Window should appear, as shown in figure 13. It is sub divided into 3 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/x-y-plot-window.png
-   :align: center
-   :width: 750px
+
+|image20|
 
 .. container:: centeralign
 
@@ -591,9 +574,8 @@ Oscilloscope and X-Y Plot Examples:
 
 To demonstrate some of the features of the ALICE Oscilloscope and X-Y Plot Tools the following example circuit is offered. In figure E3 we see a simple NPN transistor ( 2N3904 ) in the common emitter configuration with a 100 KΩ resistor used to bias the base and a 1 KΩ resistor as the collector load. The collector load is supplied from the fixed +5 V power supply. We will use the ALICE software to plot I\ :sub:`B` vs V\ :sub:`BE`. Figure E3 also shows how we will connect the scope inputs to measure the V\ :sub:`CE` (voltage at the collector with respect to ground) and I\ :sub:`C` (voltage across the 1 KΩ resistor). We will also determine the value of the base drive signal, C1-V corresponding to I\ :sub:`C` = 2 mA and then measure the input to output voltage gain around that operating point.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice2_userguide_e3.png
-   :align: center
-   :width: 500px
+
+|image21|
 
 .. container:: centeralign
 
@@ -608,9 +590,8 @@ The time base should be set to 1.0 mSec/Div so that one full cycle from 0 to 5.0
 
 Press the green Run button. You should see something like figure E4.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-1.png
-   :align: center
-   :width: 750px
+
+|image22|
 
 .. container:: centeralign
 
@@ -625,9 +606,8 @@ To make an XY plot of I\ :sub:`B` vs V\ :sub:`BE` open the X-Y Plot Window with 
 
 Press the green Run button. You should see something like figure E5.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-2.png
-   :align: center
-   :width: 500px
+
+|image23|
 
 .. container:: centeralign
 
@@ -640,9 +620,8 @@ To plot the collector current I\ :sub:`C` move the Channel 2 + input to the +5V 
 
 Press the green Run button. You should see something like figure E6.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-3.png
-   :align: center
-   :width: 750px
+
+|image24|
 
 .. container:: centeralign
 
@@ -655,9 +634,8 @@ Remember that the vertical voltage scale ( 0.5 V/Div ) is divided by the 1 KΩ 
 
 To plot the V<sub>CE</sub >move the Channel 2 + input to the collector of the transistor and the channel 2 - input to ground. Press the green Run button. You should see something like figure E7.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-4.png
-   :align: center
-   :width: 750px
+
+|image25|
 
 .. container:: centeralign
 
@@ -666,9 +644,9 @@ To plot the V<sub>CE</sub >move the Channel 2 + input to the collector of the tr
 
 Now move the channel 2 + input back to the base of the transistor. Press the green Run button. You should see something like figure E8.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-5.png
-   :align: center
-   :width: 750px
+
+
+|image26|
 
 .. container:: centeralign
 
@@ -679,9 +657,8 @@ Now we have plots of I\ :sub:`C` ( dark orange ), I\ :sub:`B` ( green ) and V\ :
 
 Under the Curves Menu select the V cursor. Right click on the time grid where the dark orange I\ :sub:`C` trace crosses the 2 V grid ( or 2 mA ). The voltage value at that point will appear next to the horizontal cursor line. The Use the mouse wheel it adjust the cursor up or down so it lines up exactly where the I\ :sub:`C` curve cross the time grid line. It should look like figure E9.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-6.png
-   :align: center
-   :width: 750px
+
+|image27|
 
 .. container:: centeralign
 
@@ -698,9 +675,8 @@ Calculate new Min and Max values for AWG 1 by adding and subtracting 0.25 V to t
 
 Press the green Run button. You should see something like figure E10.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-7.png
-   :align: center
-   :width: 750px
+
+|image28|
 
 .. container:: centeralign
 
@@ -717,9 +693,8 @@ Window Setup:
 
 When the Spectrum window button is clicked in the Main Window the Spectrum display Window should appear, as shown in figure 14. It is sub divided into 2 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/spectrum-window.png
-   :align: center
-   :width: 750px
+
+|image29|
 
 .. container:: centeralign
 
@@ -805,8 +780,8 @@ Window Setup:
 
 When the Bode Plot window button is clicked in the Main Window the Bode Plot display Window should appear, as shown in figure 14B. It is sub divided into 2 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/bode-main-window.png
-   :align: center
+
+|image30|
 
 .. container:: centeralign
 
@@ -863,9 +838,8 @@ An FFT windowing function weights the samples from the beginning of the array to
 
 The reason why we need an FFT window can be seen figures 15-22 in the various spectrums using different FFT window functions. No FFT window (also called a Rectangular window), generates many side bands in the spectrum of the FFT calculation. That is very visible in the first spectrum plot of the Rectangular ( dark orange ) and Cosine ( light orange ) window functions. Very low amplitude signals close to the main signal cannot be measured. So the dynamic range around the large main signal is low. By using an FFT window, the side bands are much more attenuated, how much depends on the type of FFT window. The increased side band suppression is at the expense of the selectivity. FFT windows with a very high side band suppression and therefore a very high dynamic range, have much less selectivity.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
-   :align: center
-   :width: 550px
+
+|image31|
 
 .. container:: centeralign
 
@@ -874,36 +848,30 @@ The reason why we need an FFT window can be seen figures 15-22 in the various sp
 
 A Cosine window is a good compromise between a good selectivity and a good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
-   :align: center
-   :width: 550px
+
+
+|image32|
 
 .. container:: centeralign
 
    Figure 16, Rectangular vs Triangle window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
-   :align: center
-   :width: 550px
+   |image33|
 
 .. container:: centeralign
 
    Figure 17, Rectangular vs Hann window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
-   :align: center
-   :width: 550px
+   |image34|
 
 .. container:: centeralign
 
    Figure 18, Rectangular vs Blackman window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
-   :align: center
-   :width: 550px
+   |image35|
 
 .. container:: centeralign
 
@@ -912,9 +880,9 @@ A Cosine window is a good compromise between a good selectivity and a good dynam
 
 At the expense of a little wider bandwidth the Nuttall window function provides the best side band reduction and may be the optimal compromise between good selectivity and good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
-   :align: center
-   :width: 550px
+
+
+|image36|
 
 .. container:: centeralign
 
@@ -932,9 +900,8 @@ Zero Stuffing
 
 With the menu button "Setup" you can set the factor for the Zero stuffing. What problem are trying to solve by Zero stuffing? The bandwidth of the FFT depends on the choice of the FFT window function. For a narrow FFT filter, the bandwidth is slightly larger than the difference between 2 FFT frequency bins. When the signal frequency is exactly between the 2 FFT frequency bins, the signal will be displayed lower than its actual value because half of the signal appears in each of the two bins. Figure 21 shows good example of this. The signal is slightly more than 1 KHz and lies exactly between the two FFT frequency bins. The actual peak value should be equal to 0 dB, but the displayed value of the two adjacent samples is lower. The signal level is not displayed correctly by either of the FFT frequency bins. This is called Scalloping loss.
 
-.. image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
-   :align: center
-   :width: 550px
+
+|image37|
 
 .. container:: centeralign
 
@@ -943,9 +910,9 @@ With the menu button "Setup" you can set the factor for the Zero stuffing. What 
 
 Zero stuffing provides a simple solution to this problem. For 1x Zero Stuffing, we double the size of the time sample array. The original array was say 2048 samples. We add 2048 samples with the value zero and we get a new array with 4096 samples. This may seem counterintuitive, when we add zero’s we do not add extra measurement data. However, something happens in the FFT calculation with twice as many samples. The effect can be seen in figure 22. Extra FFT frequency bins have been added. Coincidentally, here the extra frequency bin coincides with the frequency of the signal and the level of the signal is displayed correctly. Also even if the signal frequency does not coincide with the frequency of the extra FFT bin, the measured error will be smaller. As we add samples with the value zero, the bandwidth of the FFT filter remains the same.
 
-.. image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
-   :align: center
-   :width: 550px
+
+
+|image38|
 
 .. container:: centeralign
 
@@ -959,9 +926,8 @@ Spectrum Examples:
 
 The following example shows a technique where the ALICE spectrum analyzer tool can be used to measure the amplitude vs frequency response of two simple RLC configurations. Shown in figure E11, first on the left is a parallel LC bandpass configuration and second on the right is a series LC bandstop configuration. Indicated by the green boxes are the connections to the ALM1000. AWG Channel 1 is setup to output the driving function of the network. Scope Channel 2 is setup as to measure the response seen across the LC network. For this example R\ :sub:`1` is 1 KΩ, L\ :sub:`1` is 15 mH and C\ :sub:`1` is either 0.22 uF or 0.44 uF.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-sa-fig-e1.png
-   :align: center
-   :width: 600px
+
+|image39|
 
 .. container:: centeralign
 
@@ -984,9 +950,8 @@ Other Settings: FFT Window – Nuttall ( has an FFT bandwidth which is wider tha
 
 Below in figure E12 is a screen shot for the bandpass RLC configuration of figure E1. The green trace for channel 1 is the narrow pulse forcing function response. The light and dark orange traces are the output responses seen by channel 2 for C1 = 0.44 uf and 0.22 uF respectively. The light and dark magenta traces are the subtraction of the Channel 1 trace ( in dBV ) and the Channel 2 trace ( in dBV ). As we know subtraction in dB ( logs ) is the same as division in magnitude. The magenta traces are the actual input to output transfer function of the RLC network. The Yellow trace is the phase response.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/band-pass-response.png
-   :align: center
-   :width: 750px
+
+|image40|
 
 .. container:: centeralign
 
@@ -995,9 +960,9 @@ Below in figure E12 is a screen shot for the bandpass RLC configuration of figur
 
 Similarly in figure E13 is a screen shot for the bandstop RLC configuration of figure E1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/band-stop-response.png
-   :align: center
-   :width: 750px
+
+
+|image41|
 
 .. container:: centeralign
 
@@ -1020,9 +985,8 @@ The resistor, R\ :sub:`EXT`, is a known value. For the frequency range measureme
 
 The unknown impedance to be measured is modeled as a series circuit consisting of an unknown series resistance, R\ :sub:`X`, and an unknown series reactance, jX\ :sub:`X`. The magnitude of the impedance is Z\ :sub:`X`.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig1.png
-   :align: center
-   :width: 400px
+
+|image42|
 
 .. container:: centeralign
 
@@ -1033,9 +997,8 @@ Three voltages are measured: 1. VA is the applied voltage ( from AWG Channel 1 o
 
 These three voltages are actually vectors and indicated in figure 24.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig2.png
-   :align: center
-   :width: 500px
+
+|image43|
 
 .. container:: centeralign
 
@@ -1085,9 +1048,8 @@ Making Measurements:
 
 Connections to the ALM2000 and the network to be measured are shown in figure 25. In this case we show a simple series connected resistor and capacitor. R\ :sub:`EXT` is 1000 Ohms and the series resistor R\ :sub:`S` is 100 Ohms and the capacitor C\ :sub:`S` is 1 uF. The AWG 1 generator output should always be set to Enab and with a sine wave shape. The user can control the output voltage amplitude and offset with the Min and Max entry slots as when using the scope and spectrum analyzer displays. A good place to start is with Min set to -1.4 and Max set to 1.4 which produces about 1 Vrms amplitude centered on 2.5 V DC. The AWG 2 is not use and can be disabled.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-vvm-fig3.png
-   :align: center
-   :width: 400px
+
+|image44|
 
 .. container:: centeralign
 
@@ -1099,9 +1061,8 @@ Window Setup:
 
 The main impedance analyzer window should appear, as in figure 26. It is sub divided into 2 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-window.png
-   :align: center
-   :width: 750px
+
+|image45|
 
 .. container:: centeralign
 
@@ -1157,9 +1118,8 @@ Impedance Analyzer Examples:
 
 As an example to show the frequency dependent impedance of a series LC circuit we will use the ALICE impedance analyzer tool to examine the combination shown in figure E14 with L\ :sub:`1` equal to 60 mH and C\ :sub:`1` equal to 1 uF. We will use a 100 Ω R\ :sub:`EXT` to be in line with the expected impedance level of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-vvm-fige1.png
-   :align: center
-   :width: 375px
+
+|image46|
 
 .. container:: centeralign
 
@@ -1168,9 +1128,9 @@ As an example to show the frequency dependent impedance of a series LC circuit w
 
 The LC circuit is tested at three different frequencies, the first much lower than the resonate frequency where the impedance is dominated by the capacitor shown in figure E15.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-1.png
-   :align: center
-   :width: 650px
+
+
+|image47|
 
 .. container:: centeralign
 
@@ -1179,9 +1139,9 @@ The LC circuit is tested at three different frequencies, the first much lower th
 
 The second much higher than the resonate frequency where the impedance is dominated by the inductor shown in figure E16.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-2.png
-   :align: center
-   :width: 650px
+
+
+|image48|
 
 .. container:: centeralign
 
@@ -1190,9 +1150,9 @@ The second much higher than the resonate frequency where the impedance is domina
 
 The third at the resonate frequency where the negative impedance of the capacitor nearly cancels the positive impedance of the inductor shown in figure E17.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-3.png
-   :align: center
-   :width: 650px
+
+
+|image49|
 
 .. container:: centeralign
 
@@ -1205,9 +1165,8 @@ At these test frequencies the series R measured stays nearly the same at about 1
 
 We can use ALICE Desktop to measure the input capacitance of channel 2. We know that the input capacitance is small so we will need to use a large value for R\ :sub:`EXT` and measure at a high frequency. In figure E18 we show the connections used which is simply to connect CH1 to CH2 with a 47 KΩ resistor.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-vvm-fige2.png
-   :align: center
-   :width: 500px
+
+|image50|
 
 .. container:: centeralign
 
@@ -1216,9 +1175,9 @@ We can use ALICE Desktop to measure the input capacitance of channel 2. We know 
 
 In the ALICE Impedance Analyzer screen shot shown in figure E19 we see that Ext Res is set to 47000 and the test frequency is set to 100000 Hz. The calculated capacitance is 32.1 pF which agrees nicely with the capacitance reported in the document on the ALM2000 analog inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-4.png
-   :align: center
-   :width: 650px
+
+
+|image51|
 
 .. container:: centeralign
 
@@ -1229,9 +1188,8 @@ If we use the formula from Calculating Parallel Impedance to convert the series 
 
 To measure capacitors around the same value as the input capacitance or even smaller it would be useful to null out this stray parasitic capacitance. This can be done using the Gain Cor and Phase Cor Entry widgets to enter correction factors for the gain and offset. If we enter 3.2 (dB) from the measured Gain for the Gain Cor entry and 41.1 (degrees) for the Phase Cor entry we get the result shown in figure E20.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-5.png
-   :align: center
-   :width: 650px
+
+|image52|
 
 .. container:: centeralign
 
@@ -1240,9 +1198,9 @@ To measure capacitors around the same value as the input capacitance or even sma
 
 Now the Measured Gain difference is 0.0 dB and the Measured Phase difference is 0.0 degrees. The calculated capacitance is 0.2pF. If we now add a 39 pF ceramic cap, from the ALP2000 Parts Kit, from the channel 2 input to ground we get the results shown in figure E21.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-6.png
-   :align: center
-   :width: 650px
+
+
+|image53|
 
 .. container:: centeralign
 
@@ -1281,9 +1239,8 @@ The DC output from AWG 1 is used to drive the voltage divider. The test voltage 
 
 The method used to measure unknown resistance is based on the voltage divider configuration shown in the following figure.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
-   :align: center
-   :width: 450px
+
+|image54|
 
 .. container:: centeralign
 
@@ -1307,7 +1264,7 @@ Digital I/O controls Windows:
 
 The ALM2000 hardware provides 16 3.3V CMOS digital input / output pins.
 
-|image6| |image7|
+|image55| |image56|
 
 .. container:: centeralign
 
@@ -1323,9 +1280,9 @@ Part of the ALM2000 rev C schematic is shown in figure 28. As can be seen each o
 
 The state of the first 8 pins can be controlled using the simple digital control interface shown in figure 29. At this time only static hi / low functionality is supported. Eight rows of selectors are provided, one for each pin for the pins (DIO 0 - DIO 7). Each port pin can be set to either a logic low, 0, as a high-impedance input or floating state, Z or a logic high, 1. When in the high-impedance or floating state that pin can be used as a logic input.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/digital-pio-window.png
-   :align: center
-   :width: 200px
+
+
+|image57|
 
 .. container:: centeralign
 
@@ -1337,9 +1294,8 @@ Digital pattern generator controls Windows:
 
 Any or all of the 16 digital pins can output a repeating pattern at a 100 MHz sample rate. The included rudimentary interface allows them to be configured as square waves of varying frequency with variable duty cycle and time delay. The interface screen is shown in figure 29(a).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/dpg-controls-window.png
-   :align: center
-   :width: 300px
+
+|image58|
 
 .. container:: centeralign
 
@@ -1381,7 +1337,7 @@ Multichannel analog interface for the ADALM2000
 
 The two analog input channels of the ADALM2000 provide a high input impedance and wide dynamic range which is very helpful for many of the measurements that a user would be making during laboratory activities. However, there are only the two analog inputs. Often, there are many more than two signals in the circuit under investigation that the user would like to monitor. Or there could be a number of low bandwidth sensors, such as ambient temperature or light levels around a room, that need to be measured or monitored over long durations of time when gathering experimental data. As a solution to this need ALICE desktop provides the necessary software interface to control an external multi-channel analog multiplexer such as these two breakout board from SparkFun based on `the 74HC4067 16:1 MUX <https://www.sparkfun.com/products/9056>`_ and `the 74HC4051 8:1 MUX <https://www.sparkfun.com/products/13906>`_. There are also hook-up guides on their web site
 
-|image8| |image9| |image10|
+|image59| |image60| |image61|
 
 .. container:: centeralign
 
@@ -1390,9 +1346,9 @@ The two analog input channels of the ADALM2000 provide a high input impedance an
 
 The analog Mux control window is shown in figure 31. The C2 voltage controls on the main scope window no longer function when this window is open and are replaced by the four new sets of voltage controls. The check boxes select which of the four Mux input channels will be displayed. The Mux-Enb checkbox sets PIO-2 either low ( when not checked ) or high ( when checked ) for Muxes like the CD4052 with enable low inputs or the ADG609 with enable high inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/analog-mux-controls.png
-   :align: center
-   :width: 320px
+
+
+|image62|
 
 .. container:: centeralign
 
@@ -1401,9 +1357,9 @@ The analog Mux control window is shown in figure 31. The C2 voltage controls on 
 
 The analog Mux interface in ALICE desktop uses a technique common in analog CRT oscilloscopes ( with a single electron beam ) where multiple input channels are switched to the beam deflection circuits on alternating sweeps. This trick requires periodic signals and that each sweep be “triggered” or synced from the same input signal. In this case the triggering signal will be channel 1 which is not multiplexed. As an example note the screen shot in figure 37.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/analog-mux-window.png
-   :align: center
-   :width: 720px
+
+
+|image63|
 
 .. container:: centeralign
 
@@ -1419,9 +1375,8 @@ The ALM1000 has 4 general purpose digital input/output pins which can be used as
 
 In figure 33 we see that it is a relatively simple matter to connect the MiniGen board to the digital connector on the ALM1000. If a 6 pin right angle male header is installed as shown, the FSYNC, SDATA, and SCLK pins connect to PIO 0, PIO 1, and PIO 3 respectively. The other three header pins are open connections on the MiniGen board and the ground and power GND, The VIN pin can be wired to 3.3V and GND to GND with jumper wires. The solder bridge jumper, which shorts out the on board LDO, for powering the board directly from 3.3V will also need to be soldered in as shown. Installing a two pin female right angle connector to the analog output connection points is needed as well.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/mini-gen-connections.png
-   :align: center
-   :width: 300px
+
+|image64|
 
 .. container:: centeralign
 
@@ -1430,9 +1385,9 @@ In figure 33 we see that it is a relatively simple matter to connect the MiniGen
 
 The MiniGen control window, figure 34, allows the four possible waveform shapes to be selected. The master clock frequency can be set, the board comes populated with a 16 MHz crystal oscillator. And of course the output frequency can be set.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/mini-gen-controls.png
-   :align: center
-   :width: 250px
+
+
+|image65|
 
 .. container:: centeralign
 
@@ -1452,9 +1407,8 @@ External serial 8 bit DAC Pmods
 
 The digital input/output pins can interface to the PmodDA1 4 channel DAC module sold through `Digilent <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,501&Prod=PMOD-DA1>`_ and other distributors such as `Mouser <http://www.mouser.com/ProductDetail/Digilent/410-063P/?qs=sGAEpiMZZMtWZAo%2fKf1JUOZxRUX4AaOJSE8oCSC4CQo%3d>`_.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-obl-400.png
-   :align: center
-   :width: 300px
+
+|image66|
 
 .. container:: centeralign
 
@@ -1463,9 +1417,9 @@ The digital input/output pins can interface to the PmodDA1 4 channel DAC module 
 
 The PmodDA1 has two AD7303 8 bit dual voltage output DACs as shown in the block diagram in figure 36.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-block-336.png
-   :align: center
-   :width: 350px
+
+
+|image67|
 
 .. container:: centeralign
 
@@ -1478,9 +1432,8 @@ There is no external access to the reference input voltage on the DACs so they m
 
 The AD7303 DACs are also available in 8 pin PDIP packages and could be used plugged into solder-less breadboards with other components of a circuit project.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod-da1-controls.png
-   :align: center
-   :width: 250px
+
+|image68|
 
 .. container:: centeralign
 
@@ -1494,9 +1447,8 @@ External digital potentiometers
 
 The AD8402 dual 10 KΩ and AD8403 quad 10 KΩ digital potentiometer have 8 bit resolution and are available in PDIP packages that work well in solder-less breadboards. How to connect the AD8402 to the ALM1000 is shown in figure 39. The single 8 bit 10 KΩ digital potentiometer, AD5160, based PmodDPOT, figure 38, is also compatible with the same 6 pin male connector which plugs directly into the digital port on the ADALM1000. Because of the “Top” component side of the ALM1000 actually facing down the PmodDPOT also needs to be plugged in with the “Top” component side facing down. Carefully note the pin labels on both boards before plugging in the Pmod.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod_dpot_top.png
-   :align: center
-   :width: 250px
+
+|image69|
 
 .. container:: centeralign
 
@@ -1505,18 +1457,16 @@ The AD8402 dual 10 KΩ and AD8403 quad 10 KΩ digital potentiometer have 8 bit
 
 Connections for the AD8402 dual pot are shown in figure 39. Connections for the AD8400 single and AD8403 quad are similar.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ad8402-connections.png
-   :align: center
-   :width: 500px
+
+
+|image70|
 
 .. container:: centeralign
 
    Figure 39, AD8402 connections
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dig-pot-controls.png
-   :align: center
-   :width: 290px
+   |image71|
 
 .. container:: centeralign
 
@@ -1536,9 +1486,8 @@ Generic 3 wire SPI output:
 
 The digital input/output pins can output serial data to generic 3 wire SPI serial input devices. The provided interface allows the user to configure any of the 4 PI/O digital pins ( 0 – 3 ) as either the SCLK, SData, or Latch ( sometimes called CS or SYNC ) outputs. The user can set the number of bits to be sent in each digital write. The data word to be sent can be entered in either decimal ( integer ) form or Hex by using the 0x00 format. The “resting” sense, i.e. the level between writes, of the latch output can be set as well ( Latch Phase selector ). Some serial devices operate on the rising edge of the Latch (CS, SYNC) signal or on the falling edge. It is possible to select order in which the serial bits are sent, either LSB first or MSB first. The current data value is sent or written each time the Send button is clicked.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/serial-out-controls.png
-   :align: center
-   :width: 300px
+
+|image72|
 
 .. container:: centeralign
 
@@ -1554,9 +1503,8 @@ Applying Digital Filtering:
 
 With this interface, ALICE Desktop can apply digital filtering to the captured Channel 1 and 2 voltage waveform data before being displayed in the Time and/or Frequency domains. ALICE uses the numpy convolve function to perform the filtering function. The supplied list of coefficients is convolved with the captured data buffer. The list of filer coefficients for either Channel 1 or 2 is first loaded from a single column .csv file by using the “Load CH 1 Filter Coef” and “Load CH 2 Filter Coef” buttons. The length ( number of coefficients ) and file name will then be displayed. The digital filter(s) will be applied to the voltage waveform data buffers if the “Filter CH 1” and/or “Filter CH 2” checkboxes are checked.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/dig-filter-controls.png
-   :align: center
-   :width: 210px
+
+|image73|
 
 .. container:: centeralign
 
@@ -1588,9 +1536,8 @@ global EnableCommandInterface; EnableCommandInterface = 1
 
 The interface is not complex to use if you are relatively familiar with Python syntax and the variable structure of ALICE. When creating ( using ) a variable for the first time it must be declared as global first. As a reminder, the interface starts up with the word global and a ; ( used to separate more than one command on the single line). To execute the command line either hit the <enter> or <return> key or click on the Execute button. The last line successfully executed is displayed just below where it says Last command:.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/alice/command-line-window.png
-   :align: center
-   :width: 370px
+
+|image74|
 
 .. container:: centeralign
 
@@ -1621,24 +1568,148 @@ This section has been moved to the :doc:`ALICE Advanced User’s Guide </wiki-mi
 
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/hookah-smoking_caterpillar.png
    :width: 300px
-.. |plutosdr-m2k-drivers-win| image:: https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win
-.. |Microsoft Web Site| image:: https://www.microsoft.com/en-us/download/details.aspx
-.. |here| image:: https://docs.scipy.org/doc/numpy-1.10.1/user/install.html
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/adalm2000-pinout.png
    :width: 800px
 .. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/m2k-pinout-1.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-math-example-1a.png
-   :width: 750px
-.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-math-example-1.png
-   :width: 750px
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/adalm2000-pinout.png
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/main-window-1.png
    :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/m2k-pinout-1.png
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/options-drop-down.png
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/meas-drop-down.png
+   :width: 350px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/meas-examples.png
+   :width: 900px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/math-drop-down.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-curcuit.png
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/graphics-area.png
+   :width: 700px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/slew-rate-example.png
+   :width: 700px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-controls-window.png
+   :width: 950px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-controls-modes.png
+   :width: 250px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-controls-shapes.png
+   :width: 800px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impulse-waveform.png
+   :width: 700px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-math-win-1.png
+   :width: 300px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-math-example-1a.png
+   :width: 750px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/awg-math-example-1.png
+   :width: 750px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/volt-meter-fige1.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/adg609-analog-mux.png
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/volt-meter-fige3.png
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/cd4052-analog-mux.png
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/x-y-plot-window.png
+   :width: 750px
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice2_userguide_e3.png
    :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-1.png
+   :width: 750px
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-2.png
+   :width: 500px
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-3.png
+   :width: 750px
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-4.png
+   :width: 750px
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-5.png
+   :width: 750px
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-6.png
+   :width: 750px
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/ce-example-7.png
+   :width: 750px
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/spectrum-window.png
+   :width: 750px
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/bode-main-window.png
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
+   :width: 550px
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
+   :width: 550px
+.. |image33| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
+   :width: 550px
+.. |image34| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
+   :width: 550px
+.. |image35| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
+   :width: 550px
+.. |image36| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
+   :width: 550px
+.. |image37| image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
+   :width: 550px
+.. |image38| image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
+   :width: 550px
+.. |image39| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-sa-fig-e1.png
+   :width: 600px
+.. |image40| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/band-pass-response.png
+   :width: 750px
+.. |image41| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/band-stop-response.png
+   :width: 750px
+.. |image42| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig1.png
+   :width: 400px
+.. |image43| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig2.png
+   :width: 500px
+.. |image44| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-vvm-fig3.png
+   :width: 400px
+.. |image45| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-window.png
+   :width: 750px
+.. |image46| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-vvm-fige1.png
+   :width: 375px
+.. |image47| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-1.png
+   :width: 650px
+.. |image48| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-2.png
+   :width: 650px
+.. |image49| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-3.png
+   :width: 650px
+.. |image50| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/alice-vvm-fige2.png
+   :width: 500px
+.. |image51| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-4.png
+   :width: 650px
+.. |image52| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-5.png
+   :width: 650px
+.. |image53| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/impedance-exp-6.png
+   :width: 650px
+.. |image54| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
+   :width: 450px
+.. |image55| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/adalm2000-pinout.png
+   :width: 800px
+.. |image56| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/m2k-pinout-1.png
+   :width: 500px
+.. |image57| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/digital-pio-window.png
+   :width: 200px
+.. |image58| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/dpg-controls-window.png
+   :width: 300px
+.. |image59| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/analog-mux-curcuit.png
+   :width: 500px
+.. |image60| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/adg609-analog-mux.png
+   :width: 500px
+.. |image61| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/cd4052-analog-mux.png
+   :width: 500px
+.. |image62| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/analog-mux-controls.png
+   :width: 320px
+.. |image63| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/analog-mux-window.png
+   :width: 720px
+.. |image64| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/mini-gen-connections.png
+   :width: 300px
+.. |image65| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/mini-gen-controls.png
+   :width: 250px
+.. |image66| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-obl-400.png
+   :width: 300px
+.. |image67| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmodda1-block-336.png
+   :width: 350px
+.. |image68| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod-da1-controls.png
+   :width: 250px
+.. |image69| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/pmod_dpot_top.png
+   :width: 250px
+.. |image70| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ad8402-connections.png
+   :width: 500px
+.. |image71| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dig-pot-controls.png
+   :width: 290px
+.. |image72| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/serial-out-controls.png
+   :width: 300px
+.. |image73| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/dig-filter-controls.png
+   :width: 210px
+.. |image74| image:: https://wiki.analog.com/_media/university/tools/m2k/alice/command-line-window.png
+   :width: 370px

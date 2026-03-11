@@ -100,4 +100,4 @@ Algorithm Details
 | Parameter RAM              | 1                                                            |
 +----------------------------+--------------------------------------------------------------+
 
-.. |toggleonoffpic1.png| image:: https://wiki.analog.com/_media/toggleonoffpic1.png
+.. |toggleonoffpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/toggleonoffpic1.png

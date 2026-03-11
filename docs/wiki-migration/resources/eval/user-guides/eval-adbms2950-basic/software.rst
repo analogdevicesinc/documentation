@@ -120,8 +120,9 @@ Installing the no-OS BMS Embedded Drivers
 
 -  This will display all the available example projects on the code editor.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/examples_folder.png
+   :align: center
+   :width: 800px
 
 10. Configure the Makefile on your desired example project.
 
@@ -150,7 +151,9 @@ Installing the Firmware
 -  Go to the USB_TO_SPI_FIRMWARE directory and find the latest firmware.
 -  Drag and drop the appropriate firmware file (e.g., SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.hex or usb-to-spi-max32690.hex) onto the corresponding MCU's USB drive (e.g., SDP USB drive) to update the firmware.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/usb_spi_firmware_list.png
+   :align: center
+   :width: 700px
 
 .. tip::
 
@@ -166,12 +169,14 @@ Installing the Firmware
 
    <details><summary>**Click here for instructions on how to flash the firmware image using the MAX32625PICO**
 
--  Access the `MAX32625PICO Firmware Repository <https://github.com/analogdevicesinc/max32625pico-firmware-images>`_ and download the image for the specific MCU (e.g., MAX32690).
+-  Access the :git-max32625pico-firmware-images:`MAX32625PICO Firmware Repository <max32625pico-firmware-images>` and download the image for the specific MCU (e.g., MAX32690).
 -  Do not connect the MAX32625PICO from the PC and the MCU board that you are using (e.g., AD-APARDMAX32690-SL, MAX32670 MCU base board).
 -  Plug the micro-USB cable only in the MAX32625PICO.
 -  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. (Do not release the button until the MAINTENANCE drive is mounted).
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
+   :align: center
+   :width: 400px
 
 -  Release the button once the MAINTENANCE drive is mounted.
 -  Drag and drop (to the MAINTENANCE drive) the firmware image.
@@ -208,7 +213,9 @@ Launching the GUI
 -  To launch the GUI, navigate to the BMS_BROWSER_GUI_BroadMarket_V2.3.0 directory.
 -  Double-click BMS_BROWSER_GUI_BroadMarket_V2.3.0.exe.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/gui.png
+   :align: center
+   :width: 800px
 
 .. container:: indent
 
@@ -228,16 +235,18 @@ Launching the GUI
    -  If the GUI is open, the connected COM port appears on the right.
    -  Click **Disconnect** to terminate the connection for a new one.
    -  Use the refresh button to reload the available MCU boards list.
-
-   |image7|
-
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/interface_connection.png
+      :align: center
+      :width: 800px
+   
    **Daisy Chain Connection**
 
    
    The Daisy Chain section facilitates the creation of a daisy chain using compatible ADBMS devices. This process involves selecting a generation of ADBMS devices, adding devices to the daisy chain, and configuring the setup for the evaluation GUI.
 
    
-   |image8|
+   |image3|
 
    -  **Select ADBMS Generation:**
    
@@ -277,7 +286,7 @@ Quick Measure
 The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
 
 
-|image9|
+|image4|
 
 -  **Preloaded Commands:**
 
@@ -312,7 +321,7 @@ Sequences
 The Sequences tab enables the creation and management of custom command sequences. Load and save sequences, divided into Init and Loop lists. The Init list initializes the daisy chain once, while the Loop list runs continuously until stopped. Toggle between lists using the corresponding buttons at the top.
 
 
-|image10|
+|image5|
 
 -  **Load Existing Sequence:**
 
@@ -356,7 +365,7 @@ Scheduler
 The Scheduler tab provides insights into the execution time of sequences from the Sequences tab. It allows combining sequences for a complete execution loop. Key features enable precise timing adjustments and visualization.
 
 
-|image11|
+|image6|
 
 -  **Timing Adjustments:**
 
@@ -395,7 +404,7 @@ Memory Map
 The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
 
 
-|image12|
+|image7|
 
 -  **Organized Data Display:**
 
@@ -426,7 +435,7 @@ Plots
 The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
 
 
-|image13|
+|image8|
 
 -  **Plot Selection:**
 
@@ -462,7 +471,7 @@ Data Recall
 The Data Recall tab allows you to retrieve and plot data from previous freerun sessions stored in a database file. The interface is similar to the Plots tab with added functionality for selecting the database file and test run.
 
 
-|image14|
+|image9|
 
 -  **Access Data Recall Tab:**
 
@@ -492,7 +501,7 @@ Diagnostics
 The Diagnostics tab offers a straightforward way to execute on-device diagnostics following the device's safety manual. It displays available diagnostics, test logs, and results for a single device.
 
 
-|image15|
+|image10|
 
 -  **Access Diagnostics Tab:**
 
@@ -578,29 +587,19 @@ For questions and more information about this product, connect with us through t
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/myanalog_account_entries.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/examples_folder.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/usb_spi_firmware_list.png
-   :width: 700px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/max32625pico_flasher.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/gui.png
-   :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/interface_connection.png
-   :width: 800px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_connection.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_connection.png
    :width: 2000px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/quick_measure.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/quick_measure.png
    :width: 2000px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/sequences.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/sequences.png
    :width: 2000px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/scheduler.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/scheduler.png
    :width: 2000px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/memory_map.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/memory_map.png
    :width: 2000px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plots.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plots.png
    :width: 2000px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/data_recall.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/data_recall.png
    :width: 2000px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/diagnostics.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/diagnostics.png
    :width: 2000px

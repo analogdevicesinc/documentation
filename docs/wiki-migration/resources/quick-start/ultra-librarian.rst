@@ -35,9 +35,9 @@ ULTRA LIBRARIAN CONVERSION TOOL FOR SYMBOLS AND FOOTPRINTS
 
 -  At the top of the page under the search box, click on Design Center. The symbol/footprints page can be found under “package, Symbols & Footprints.
 
-::
 
-    [[:adi:`en/design-center/packaging-quality-symbols-footprints/symbols-and-footprints`.html|symbols-and-footprints.html]]
+
+:adi:`symbols-and-footprints.html <en/design-center/packaging-quality-symbols-footprints/symbols-and-footprints.html>`
 
 **Here is what you will see when you click on the symbol & footprint link**
 

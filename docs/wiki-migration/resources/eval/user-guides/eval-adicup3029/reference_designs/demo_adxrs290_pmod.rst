@@ -70,7 +70,8 @@ Setting up the Hardware
 -  Connect **EVAL-ADXRS290-PMDZ** board to the **EVAL-ADICUP3029** using connector **P8**.
 -  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxrs290_pc.jpg
+   :align: center
 
 Obtaining the Source Code
 -------------------------
@@ -129,8 +130,8 @@ The high level modules are in the **src** folder and are:
 
 The low level modules are the platform drivers and are included in the **platform_source** and **platform_include** folders.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxrs290_pmdz_project_struct.png
-   :align: center
+
+|image1|
 
 .. note::
 
@@ -256,9 +257,9 @@ Additional Information and Useful Links
 Reference Demos & Software
 --------------------------
 
--  :git-no-OS:`ADXRS290 No-OS Build Instruction Guide <wiki>`
+-  `ADXRS290 No-OS Build Instruction Guide <https://github.com/analogdevicesinc/no-OS/wiki>`_
 -  :git-no-OS:`ADXRS290 No-OS Drivers <projects/adxrs290-pmdz>`
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxrs290_pc.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adxrs290_pmdz_project_struct.png

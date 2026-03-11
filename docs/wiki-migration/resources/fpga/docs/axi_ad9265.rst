@@ -8481,18 +8481,18 @@ The example design uses a processor to program all the registers. If no processo
 Software Guidelines
 -------------------
 
-The software for this IP can be found as part of the AD9265 Native FMC Card Reference Design at: :git-no-OS:`No-OS Software <projects/ad9265-fmc-125ebz>` Linux is supported also using :git-linux>`__
+The software for this IP can be found as part of the AD9265 Native FMC Card Reference Design at: :git-no-OS:`No-OS Software <projects/ad9265-fmc-125ebz>` Linux is supported also using :git-linux:`ADI Linux repository <linux>`
 
 References
 ----------
 
--  `AD9265 IP source code <https::`ADI Linux repository </github.com/analogdevicesinc/hdl/tree/master/library/axi_ad9265>`
+-  :git-hdl:`AD9265 IP source code <library/axi_ad9265>`
 -  :adi:`AD9265 chip information <AD9265>`
 -  :doc:`AD9265 Native FMC Card Reference Design </wiki-migration/resources/fpga/xilinx/fmc/ad9265>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  :git-no-OS:`No-Os Software <projects/ad9265-fmc-125ebz>`
--  :git-linux>`__
--  `7 Series IO <https::`ADI Linux repository </www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`
+-  :git-linux:`ADI Linux repository <linux>`
+-  `7 Series IO <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_
 -  `7 Series Clocking <https://www.xilinx.com/support/documentation/user_guides/ug472_7Series_Clocking.pdf>`_
 -  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2015_2/ug953-vivado-7series-libraries.pdf>`_
 

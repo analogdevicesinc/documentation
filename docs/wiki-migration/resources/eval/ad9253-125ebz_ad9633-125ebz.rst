@@ -11,7 +11,9 @@ The :adi:`ad9653` :adi:`ad9253` and :adi:`ad9633` data sheets provide additional
 Typical Measurement Setup
 -------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-002_evalboardconnection.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -124,7 +126,7 @@ Table 1. Jumper Settings
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
-| |image2|
+| |image1|
 
 .. container:: centeralign
 
@@ -211,7 +213,11 @@ Setting up the ADC Data Capture
 
 After configuring the board, set up the ADC data capture using the following steps:
 
--  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 3, where the :adi:`AD9253` is shown as an example).\ |image3|\
+-  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 3, where the :adi:`AD9253` is shown as an example).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-004.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -219,7 +225,10 @@ After configuring the board, set up the ADC data capture using the following ste
 
 
 -  After the template is selected, a message appears asking if the default configuration can be used to program the FPGA (see Figure 4). Click **Yes**, and the window closes.
-   |image4|\
+
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -227,20 +236,18 @@ After configuring the board, set up the ADC data capture using the following ste
 
 
 -  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window (see Figure 5), to see what is shown in Figure 6.
--  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button.\
+-  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-006.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog Window Toolbar, Collapsed Display*
 
 
-\
-
-
-
-|image6|
+   |image3|
 
 .. container:: centeralign
 
@@ -255,29 +262,49 @@ Setting up the SPI Controller Software
 
 After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
 
--  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 7).\ |image7|\
+-  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 7).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-008.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 7. SPI Controller, CHIP ID(1) Box*\
 
 
--  Click the **New DUT** button in the **SPIController** window (see Figure 8)\ |image8|\
+-  Click the **New DUT** button in the **SPIController** window (see Figure 8)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-009.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   \ *Figure 8. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 9). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\ |image9|\
+   \ *Figure 8. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 9). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-010.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   \ *Figure 9. SPI Controller, CLOCK DIVIDE(B) Box*-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 9) and the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs (see Figure 10) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs affect the selected channel only. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image10|\
+   \ *Figure 9. SPI Controller, CLOCK DIVIDE(B) Box*-  Note that other settings can be changed on the **ADCBase 0 tab** (see Figure 9) and the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs (see Figure 10) to set up the part in the desired mode. The **ADCBase 0** tab settings affect the entire part, whereas the settings on the **ADC A**, **ADC B**, **ADC C**, and **ADC D** tabs affect the selected channel only. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-011.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 10. SPI Controller, Example ADC A Page*\
 
 
--  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 11).\ |image11|\
+-  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 11).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-012.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -289,18 +316,28 @@ Adjusting the Amplitude of the Input Signal
 
 The next step is to adjust the amplitude of the input signal for each channel as follows:
 
--  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9253 FFT** window (see Figure 12).\ |image12|\
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9253 FFT** window (see Figure 12).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-013.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   //Figure 12. Graph Window of VisualAnalog *
+   //Figure 12. Graph Window of VisualAnalog //
 
 
-- Repeat this procedure for Channel B, Channel C, and Channel D. \* Click the disk icon within the **VisualAnalog Graph - AD9253 FFT** window to save the performance plot data as a .csv formatted file. See Figure 13 for an example.\
+-  Repeat this procedure for Channel B, Channel C, and Channel D.
+-  Click the disk icon within the **VisualAnalog Graph - AD9253 FFT** window to save the performance plot data as a .csv formatted file. See Figure 13 for an example.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-014.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   *Figure 13. Typical FFT, :adi:`AD9253`*
+   //Figure 13. Typical FFT, :adi:`AD9253` //
+
 
 Troubleshooting Tips
 --------------------
@@ -329,27 +366,9 @@ If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
 -  Make sure that all power and USB connections are secure.
 -  Probe the DCO signal at P1002 (Pin A10 and/or Pin B10) on the evaluation board, and confirm that a clock signal is present at the ADC sampling rate.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/10235-002_evalboardconnection.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/10235-003_labels.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/10235-003_labels.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/10235-004.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/10235-005.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/10235-005.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/10235-006.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/10235-007.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/10235-008.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/10235-009.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/10235-010.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/10235-011.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/10235-012.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/10235-013.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/10235-007.png
    :width: 400px

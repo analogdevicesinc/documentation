@@ -60,10 +60,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Ordered List ItemMake sure that the **S2** switch on the board is in position **1(USB)** as shown below. This will ensure that the UART module is routed to the USB connection.\
+-  Ordered List ItemMake sure that the **S2** switch on the board is in position **1(USB)** as shown below. This will ensure that the UART module is routed to the USB connection.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
+   :align: center
+   :width: 800px
 
 -  Plug in the board.
 
@@ -87,7 +88,7 @@ The software for the **ADuCM3029_demo_cli** can be found here:
    Prebuilt CLI Demo Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_cli.Hex <releases/download/Latest/ADuCM3029_demo_cli.hex>`
+   -  `ADuCM3029_demo_cli.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cli.hex>`_
    
    Complete CLI Demo Source Files
    
@@ -149,5 +150,3 @@ For more detailed instructions on importing this application/demo example into t
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/terminal_cli_26_08_2015.png
    :width: 450px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
-   :width: 800px

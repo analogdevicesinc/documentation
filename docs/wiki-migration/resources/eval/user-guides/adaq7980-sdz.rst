@@ -43,7 +43,7 @@ The reference design uses the standard :doc:`SPI Engine Framework </wiki-migrati
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Set up the required sampling rate (see caption **Design Configuration**)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
@@ -116,11 +116,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`adaq7980-SDZ HDL Project. <projects/adaq7980_sdz>`
    
-   |adaq7980-SDZ HDL Project.|
+
 
 No-OS Downloads
 ---------------
@@ -129,11 +127,6 @@ No-OS Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`adaq7980-SDZ No-OS Project. <projects/adaq7980_sdz>`
    
-   |adaq7980-SDZ No-OS Project.|
 
-.. |adaq7980-SDZ HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/adaq7980_sdz`
-.. |adaq7980-SDZ No-OS Project.| image:: https://wiki.analog.com/_media/:git-no-OS:`projects/adaq7980_sdz`

@@ -22,7 +22,7 @@ If you are running on a 64-bit host, then you also need to install the following
 Installing CrossCore Embedded Studio
 ====================================
 
-Browse to :adi:`en/design-center/evaluation-hardware-and-software/software/linuxaddin`.html#software-overview and download the 2.8.3 release of CrossCore Embedded Studio. Install the .deb package.
+Browse to :adi:`en/design-center/evaluation-hardware-and-software/software/linuxaddin.html#software-overview` and download the 2.8.3 release of CrossCore Embedded Studio. Install the .deb package.
 
 ::
 

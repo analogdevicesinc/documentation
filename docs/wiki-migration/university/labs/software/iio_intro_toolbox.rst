@@ -29,7 +29,9 @@ Analog Devices provides an assortment of evaluation boards and reference designs
 -  You (your finger to warm up the LM75, or shake the ADXL3x5)
 -  The Earth (to provide a precise, low-noise, -9.8m/s\ :sup:`2` acceleration)
 
-|image1|
+.. image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/simple_iio_hardware.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -46,7 +48,7 @@ Representative systems
 We are intentionally starting with an extremely simple example. But once you understand how to communicate with an LM74, ADXL345, or ADXL355, you're well over the intitial learning curve to understanding much more complicated systems. The :doc:`ADALM-Pluto </wiki-migration/university/tools/pluto>` is a great example - it contains an AD9363 RF Agile Transcieiver, Zynq SoC FPGA, Memory, USB interface, and much more. Even the simplified block diagram is pretty daunting:
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -57,7 +59,7 @@ If the Pluto wasn't scary enough, the :adi:`Phased Array (Phaser) Development Pl
 
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -72,7 +74,7 @@ Connecting the Hardware
 Before we dig too deep into software stuff, let's prepare the hardware. There are lots of ways to connect boards together, custom adapters, Raspberry Pi prototyping hats, etc. The :adi:`PMD-RPI-INTZ` is an interposer that simplifies connecting I2C and SPI Pmod boards, QuikEval compatible eval boards, and Power System Managemement (PSM) eval boards to a Raspberry Pi. Figure 4 shows the `ADXL345 Pmod <https://store.digilentinc.com/pmod-acl-3-axis-accelerometer/>`_ (available directly from Digilent and from various distributors) mounted to the PMD-RPI-INTZ board. Note that the Pmod must be installed on P1, which uses SPI CS0 and has the interrupt pin connected to GPIO 19.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -86,7 +88,7 @@ If you are using Jumpers, use Figure 1 as a visual aid and make the connections 
 In theory, any Raspberry Pi should work, although it is probably best to use a modern model with a 40-pin expansion header. (The model shown in Figure 1 is a model 3B, version 1.2.) Note that there are TWO SPI ports - SPI0 and SPI1. We will be using SPI0 (Pins 8, 19, 21, 23)
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -113,7 +115,7 @@ In order to boot the Raspberry Pi, you will need to obtain an SD card "image", a
 There are instructions for Windows, Mac, and Linux. The imager also works on machines that encrypt data being written to external drives since it's writing "raw" data. HOWEVER - beware encryption software when editing configuration files! (More on that later...)
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -124,7 +126,7 @@ A new SD card is usually preformatted as a single EXFAT partition, usable by all
 
 
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -176,7 +178,7 @@ If all goes well, you should see a desktop. From the start menu, click Other -> 
 (Enter the root password, "analog" by default unless you followed the advice above to change it.) You should then see IIO oscilloscope running as shown in Figure 8! Also note that IIO Oscilloscope will run without root privileges, but all devices will be read-only. For example, you won't be able to change the ADXL3x5's sampling frequency, or LM75's over/under temperature thresholds.
 
 
-|image8|
+|image7|
 
 .. container:: centeralign
 
@@ -193,7 +195,7 @@ When we first powered up the Raspberry Pi and ran IIO Oscilloscope it didn't fin
 While you won't have to do anything more than editing a couple of files in this tutorial, it helps to understand a bit about what is going on under the surface. A "Device Tree" contains information about a system's hardware - what peripherals exist (like displays, memory, USB, Ethernet controllers, GPIO pins, etc.) A "Device Tree Overlay" contains information about additional connected hardware, like our ADXL3x5/LM75. Figure 9 shows a screenshot of the ADXL345's overlay source. It shows that the ADXL345 is connected to the SPI port, using the first CS signal (CS0), the maximum SPI clock frequency is 1MHz, and the interrupt signal is connected to Pin 19 (as shown in the connection diagram above.)
 
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -227,7 +229,9 @@ which will bring up the file in the Mousepad editor. Scroll down until you find 
    dtparam=act_led_trigger=heartbeat
    dtoverlay=gpio-shutdown,gpio_pin=21,active_low=1,gpiopull=up
 
-   |image10|
+.. image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/edit_config.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -272,7 +276,7 @@ Hello, ADXL345, ADXL355, or LM75!
 If all went well, Linux should have booted, found the ADXL3x5 or LM75, and loaded its driver. Run IIO Oscilloscope again. locate the DMM screen, check the ADXL345, select all channels, and click the triangular "play" button. You should see acceleration values displayed as shown in Figure 11.
 
 
-|image11|
+|image9|
 
 .. container:: centeralign
 
@@ -298,7 +302,7 @@ Which means "list all processes from all users, but only display ones that inclu
 And the red line relates this process back to the handy little diagram from :doc:`What is Libiio? </wiki-migration/resources/tools-software/linux-software/libiio>` (We will be recycling that diagram - a lot.)
 
 
-|image12|
+|image10|
 
 .. container:: centeralign
 
@@ -307,7 +311,7 @@ And the red line relates this process back to the handy little diagram from :doc
 
 The other piece is libiio on the remote host. LibIIO can be obtained from:
 
-:git-libiio:`LibIIO Github Repo <releases>`
+`LibIIO Github Repo <https://github.com/analogdevicesinc/libiio/releases>`_
 
 Download and install the appropriate latest version for your remote host (For example, libiio-0.24.gc4498c2-Windows-setup.exe for Windows) Once this is done, open a command prompt, and enter:
 
@@ -318,7 +322,7 @@ Download and install the appropriate latest version for your remote host (For ex
 (Where the IP address may be different, depending on how you've connected.) If all goes well, you should see lots of information associated with the ADXL345... that is connected to your Raspberry Pi... but from your Windows / Linux / Mac machine! *(How cool is that?)*
 
 
-|image13|
+|image11|
 
 .. container:: centeralign
 
@@ -359,18 +363,18 @@ There are several choices of Python installations, and which one to use is large
 PyADI-IIO
 ---------
 
-PyADI-IIO (pronounced "Py-odi" [1]_ is like `peyote <https://en.wikipedia.org/wiki/peyote>`_, but with a Py) is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. Pyadi-iio can be installed through pip, and is pre-installed on ADI Kuiper Linux, but if you're reading this you'll probably want to be hacking around a bit so go to :git-pyadi-iio>`__ and follow the "installing from source" instructions. And note that this can be done on your remote Windows :`PyADI-IIO Github Repo <Mac / Linux host AND... on the Raspberry Pi itself! Git is already installed on ADI Kuiper Linux, but may need to be installed on a Windows host. (You can also download the repository as a zip, but cloning will make it easier to update.) Let's install pyadi-iio.
+PyADI-IIO (pronounced "Py-odi" [1]_ is like `peyote <https://en.wikipedia.org/wiki/peyote>`_, but with a Py) is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. Pyadi-iio can be installed through pip, and is pre-installed on ADI Kuiper Linux, but if you're reading this you'll probably want to be hacking around a bit so go to :git-pyadi-iio:`PyADI-IIO Github Repo <pyadi-iio>` and follow the "installing from source" instructions. And note that this can be done on your remote Windows / Mac / Linux host AND... on the Raspberry Pi itself! Git is already installed on ADI Kuiper Linux, but may need to be installed on a Windows host. (You can also download the repository as a zip, but cloning will make it easier to update.) Let's install pyadi-iio.
 
 ::
 
-   analog@analog:~ $ git clone https://github.com/analogdevicesinc/pyadi-iio.git
+   analog@analog:~ $ git clone :git-pyadi-iio:`pyadi-iio`
    analog@analog:~ $ cd pyadi-iio
    analog@analog:~/pyadi-iio $ sudo pip install .
 
 Note: This requires that your Raspberry Pi be able to access the internet. If you've followed the "headless" instructions below, this may not be the case. However - if you have access to a wireless network and your Raspberry Pi has an Ethernet adapter, you can connect in this way. Just click the WiFi icon and log on as you would on any other machine, supplying a password if necessary
 
 
-|image14|
+|image12|
 
 .. container:: centeralign
 
@@ -436,7 +440,7 @@ And this for the LM75:
 Tools for your Toolbox: SSH, SCP, VNC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Putty and TeraTerm are popular (and free) SSH clients that let you log into a console on your Raspberry Pi (or other remote client). They are available at `PuTTY Homepage <https://www.putty.org>` and `TeraTerm Homepage <https://ttssh2.osdn.jp/index.html.en>`_ , respectively. Try both, which one is better is largely a matter of preference.
+Putty and TeraTerm are popular (and free) SSH clients that let you log into a console on your Raspberry Pi (or other remote client). They are available at `PuTTY Homepage <https://www.putty.org/>`_ and `TeraTerm Homepage <https://ttssh2.osdn.jp/index.html.en>`_ , respectively. Try both, which one is better is largely a matter of preference.
 
 On Mac and Linux machines, you can simply log in via ssh from the command line.
 
@@ -447,7 +451,7 @@ As with SSH, Mac and Linux machines include SCP already.
 VNC is a remote desktop application, and Kuiper Linux runs a VNC server by default. There are several clients available; RealVNC works well and is available at `RealVNC Viewer <https://www.realvnc.com/en/connect/download/viewer/>`_ A screenshot of VNC logged into the Raspberry Pi is shown in Figure 15.
 
 
-|image15|
+|image13|
 
 .. container:: centeralign
 
@@ -468,7 +472,7 @@ The Raspberry Pi can also be accessed directly by its IP address. If your networ
 where, the 192.168.1.232 is somewhat arbitrary - just make sure that the first 3 octets (192.168.1) are DIFFERENT from those of any other network adapters on your host machine. The next step is to configure your host's network adapter. Open your computer's "Network Connections" control panel note that your host could have lots of adapters. Sometimes it's obvious - if you're using a cable connection, it's obviously NOT your wifi adapter. If you're using a USB-Ethernet adapter (a super convenient option sometimes), plugging and unplugging the adapter, and seeing which disappears. Open the adapter's configuration (right-click, "Properties") and configure the IPV4 properties as shown in Figure 16 below. Make sure the last octet in the IP address is DIFFERENT from that set on the Raspberry Pi.
 
 
-|image16|
+|image14|
 
 .. container:: centeralign
 
@@ -479,7 +483,7 @@ Finally... open a command prompt, and ping your Raspberry Pi as shown in Figure 
 
 
 
-|image17|
+|image15|
 
 .. container:: centeralign
 
@@ -501,38 +505,34 @@ You're now armed to start building interesting application circuits with the ADX
 .. [1]
    pei·ow·tee : 'p' in pie; 'a' in about; 'y' yes; 'o' in code; 't' in tie; 'y' in happy
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/simple_iio_hardware.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_medium_block_diagram.png
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/users/pluto_medium_block_diagram.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/2-23-2023_4-37-00_pm.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/adxl354_pmd-rpi-intz.jpg
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/adxl354_pmd-rpi-intz.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_adxl345_connections.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_adxl345_connections.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/raspberry_pi_imager.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/raspberry_pi_imager.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/sd_card_partitions.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/sd_card_partitions.png
    :width: 800px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_desktop.png
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_desktop.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/device_tree.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/device_tree.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/edit_config.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iio_scope_adxl345.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iio_scope_adxl345.png
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iiod_process_screenshot.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iiod_process_screenshot.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iio_info_local_remote.png
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/iio_info_local_remote.png
+.. |youtube>rfscVS0vtbw| image:: https://wiki.analog.com/_media/university/labs/software/youtube>rfscVS0vtbw
+.. |image12| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_wifi_login.png
    :width: 400px
-.. |youtube>rfscVS0vtbw| image:: https://wiki.analog.com/_media/youtube>rfscVS0vtbw
-.. |image14| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_wifi_login.png
+.. |image13| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_vnc.png
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/rpi_vnc.png
+.. |image14| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/static_ip_host.png
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/static_ip_host.png
-   :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/ping_rpi.png
+.. |image15| image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/ping_rpi.png
    :width: 400px

@@ -14,7 +14,7 @@ Table of Contents:
 | Electronics I | Chapter:1                | :doc:`Introduction: circuit theory basics </wiki-migration/university/courses/electronics/text/chapter-1>`                                |
 +---------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | Electronics I | Chapter:2                | :doc:`Operational Amplifier basics </wiki-migration/university/courses/electronics/text/chapter-2>`                                       |
-|               | Chapter:2 (*supplement*) | [[:adi:`media/en/technical-documentation/application-notes/AN-581`.pdf%7CBiasing and Decoupling Op Amps                                   |
+|               | Chapter:2 (*supplement*) | [[:adi:`media/en/technical-documentation/application-notes/AN-581.pdf%7CBiasing` and Decoupling Op Amps                                   |
 +---------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 in Single Supply Applications]] \|
@@ -25,7 +25,7 @@ in Single Supply Applications]] \|
 |                | Chapter:3 (*supplement*)  | :adi:`It’s Just a Triangle, or What Does a Symbol Really Mean? <en/analog-dialogue/articles/its-just-a-triangle-or-what-does-a-symbol-really-mean.html>`                                       |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Electronics I  | Chapter:4                 | :doc:`Op Amp applications - Advanced topics </wiki-migration/university/courses/electronics/text/chapter-4>`                                                                                   |
-|                | Chapter:4 (*supplement*)  | :adi:`Using Op Amps as Comparators </static/imported-files/application_notes/AN-849.pdf>`                                                                                                      |
+|                | Chapter:4 (*supplement*)  | :adi:`Using Op Amps as Comparators <static/imported-files/application_notes/AN-849.pdf>`                                                                                                       |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Electronics I  | Chapter:5                 | :doc:`Solid-state diodes and diode circuits </wiki-migration/university/courses/electronics/text/chapter-5>`                                                                                   |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,9 +54,9 @@ in Single Supply Applications]] \|
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Electronics II | Chapter:16                | :doc:`Amplifier advanced topics </wiki-migration/university/courses/electronics/text/chapter-16>`                                                                                              |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Electronics II | Chapter:17                | :adi:`Power Management Circuits </media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter9.pdf>`                                                                               |
+| Electronics II | Chapter:17                | :adi:`Power Management Circuits <media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter9.pdf>`                                                                                |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Electronics II | Chapter:18                | :adi:`Data Converter circuits </media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter6.pdf>`                                                                                 |
+| Electronics II | Chapter:18                | :adi:`Data Converter circuits <media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter6.pdf>`                                                                                  |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Electronics II | Chapter:19                | :doc:`Digital to Analog Converters </wiki-migration/university/courses/tutorials/cmos-dac-chapter>`                                                                                            |
 +----------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

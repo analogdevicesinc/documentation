@@ -25,7 +25,7 @@ Windows Installation
    :class: download
 
    
-   :git-libiio:`LibIIO <releases>`
+   `LibIIO <https://github.com/analogdevicesinc/libiio/releases>`_
 
 
 -  Download and install Python
@@ -97,8 +97,8 @@ Documentation
 Other Useful Links
 ~~~~~~~~~~~~~~~~~~
 
--  :git-pyadi-iio>`__
--  `PyPi <https::`Source </pypi.org/project/pyadi-iio>`
+-  :git-pyadi-iio:`Source <pyadi-iio>`
+-  `PyPi <https://pypi.org/project/pyadi-iio/>`_
 
 Support Questions
 ~~~~~~~~~~~~~~~~~

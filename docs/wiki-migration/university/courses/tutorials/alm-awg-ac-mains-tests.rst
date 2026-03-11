@@ -3,14 +3,14 @@ Making AC Mains Voltage and Current Measurements
 
 In other documents the voltage and current measurement features of the ADALM1000 (SMU) have been discussed. In this document techniques to safely measure AC Mains Line voltage and current using the Active Learning Modules are discussed.
 
-`ADALM1000.html <https://wiki.analog.com/_media/https///www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM1000.html>`_
+:adi:`ADALM1000.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM1000.html>`
 
 Background:
 -----------
 
 The M1k's SMU channels can measure DC currents from -200mA to +200mA. Because of the 100 KSPS sampling rate it can actually measure AC currents as well. But the current to be measured has to be flowing into or out of the SMU channel. This limits the range of voltages that the current must be "referenced" to, 0 to +5V. To measure current over a wider range of voltages a current shunt monitor IC like the AD8210 from the ADALP2000 Analog Parts kit can be used.
 
-`ad8541.html <https://wiki.analog.com/_media/https///www.analog.com/en/products/ad8541.html>`_ `EVAL-ADALP2000.html <https://wiki.analog.com/_media/https///www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADALP2000.html>`_
+:adi:`ad8541.html <en/products/ad8541.html>` :adi:`EVAL-ADALP2000.html <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADALP2000.html>`
 
 The M1k SMU channels use this same chip to measure the current. The operating input common-mode voltage range of the AD8210 is −2 V to +65 V with respect to the ground pin of the IC. A larger voltage range but still not enough to safely measure the current of a household appliance or lighting fixture operating from 120 V AC. So what can we use to do that? Enter the Voltage Step-Down Transformer to measure the line voltage and the Current Sense Transformer to measure the line current.
 
@@ -22,18 +22,15 @@ The Step-Down Voltage Transformer Method
 
 To display the AC line voltage waveform a voltage step-down transformer is used to both galvalically isolate and reduce (step down) the voltage before measuring it with the M1k channel B input. The 120 V RMS line voltage must be scaled down to fit within the 0 to 5 volt range of the M1k. The transformer chosen for this example has a rated secondary voltage of 9 V RMS at 250 mA load. The unloaded p-p secondary voltage is about 35 V (+/- 16.5 V peak). This will need to be further reduced using a resistor voltage divider with a ratio of more than 10 and also offset to be centered around 2.5 V as shown in figure 1. The overall total reduction in the voltage should be at least 100:1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1, Step-Down Transformer and Resistor Divider
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-2.png
-   :align: center
-   :width: 300px
+   |image2|
 
 .. container:: centeralign
 
@@ -45,9 +42,8 @@ Calibration Steps
 
 The step down ratio for the combined transformer and resistor divider is measured by connecting the channel A and B AWG outputs of the M1k to the primary side of the transformer. The two AWG channels are configured as 60 Hz complementary sinewaves from 0 to 5 V to produce a differential 10 V peak to peak voltage at the primary. The secondary of the transformer is connected through the 220K / 22K resistor voltage divider to BIN (Split I/O mode) and the 2.5 V mid rail. The channel B gain and offset scale factors are then adjusted such that the CHB voltage waveform is also 10 V p-p, figure 3. At the same time we can measure the phase difference (shift) from the input to the output of the combined signal path, figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -56,9 +52,9 @@ The step down ratio for the combined transformer and resistor divider is measure
 
 Knowing this measurement phase shift (error) will be important later on when calculating real and imaginary power and power factor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -67,9 +63,9 @@ Knowing this measurement phase shift (error) will be important later on when cal
 
 With the step-down transformer plugged into an AC outlet we can now measure the AC line voltage waveform. The pure 60 Hz sinewave from the AWG goes through the transformer with little distortion as we saw in figure 3, however, the actual 60 Hz AC line waveform shows considerable distortion as shown in figure 5. The waveform peaks are measured at + / - 175 V and the RMS voltage is 124.7 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-5.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -81,18 +77,15 @@ The 1:1 Current Mode Transformer Method
 
 An alternate method to measure the AC line voltage is by first converting the voltage to a small current using a high value resistor load. In this example we are using 5 mA RMS as the nominal target current. Two series connected 12 KΩ resistors are used to spread both the heat (power) and voltage between the two. There is about 1/3 W in each so ½ W or greater resistors should be used. The 5 mA current is then sent through a small 1:1 transformer. A common mode choke, often used in power line filtering for switch mode power supplies, is a good choice. Two typical examples are show below in figure 6. The schematic is shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-6.png
-   :align: center
-   :width: 450px
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6, Example Common Mode Choke 1:1 Transformers
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-7.png
-   :align: center
-   :width: 600px
+   |image7|
 
 .. container:: centeralign
 
@@ -101,9 +94,9 @@ An alternate method to measure the AC line voltage is by first converting the vo
 
 To insulate the high voltage connections and for safety reasons the transformer and resistors are mounted in the plastic case from another (dead / used) plug adapter as in figure 8. The cover can then be glued back on preventing anyone from accidentally touching the Mains AC high voltage. Using an old plug adapter case like this also conveniently provides a way to connect to an AC outlet socket.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-8.png
-   :align: center
-   :width: 300px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -115,18 +108,15 @@ Calibration Steps
 
 The first step is to measure the actual values of the resistors using an accurate DMM. The ratio of the primary to secondary current should be ideally 1:1 but in any real transformer it will be less than 1. The calibration test setup is shown in figure 9. A known 60 Hz sinewave current of about 5 mA RMS is sourced by the channel B SMU in SIMV mode. The secondary current is measured by the channel A SMU in SVMI mode set to the same 2.5 V DC voltage as the fixed 2.5 V supply. The total resistance and the current transformer ratio will be used to convert the measured current waveform data into voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
    Figure 9, Current Input / Output Ratio Test
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-10.png
-   :align: center
-   :width: 600px
+   |image10|
 
 .. container:: centeralign
 
@@ -135,9 +125,9 @@ The first step is to measure the actual values of the resistors using an accurat
 
 Knowing this measurement phase shift (error) will be important later on when calculating real and imaginary power and power factor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -146,9 +136,9 @@ Knowing this measurement phase shift (error) will be important later on when cal
 
 To compare the voltage transformer method and the current transformer method measuring the AC line voltage waveforms the two are shown in figure 12. The RMS current is measured at 4.96 mA which is consistent with the 24 KΩ resistors used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-12.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -157,9 +147,9 @@ To compare the voltage transformer method and the current transformer method mea
 
 Using the Math plotting function we can convert the current transformer waveform back into a voltage by multiplying by the effective (calibrated) voltage to current resistance (~24 KΩ) and plot it on the same vertical scale as the voltage transformer waveform as shown in figure 13.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-13.png
-   :align: center
-   :width: 600px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -171,9 +161,8 @@ Electronic Burden, I to V converter
 
 The M2k does not have the current measurement capability as in the M1k SMU. The solution is to build an op-amp I to V conversion circuit. The single supply rail-rail AD8542 Dual CMOS op-amp is used as an I to V converter as shown in figure 14. The virtual ground at the summing junction, pin 2, presents a very low impedance load on the secondary. The 350 Ω feedback resistor converts the current into a voltage that is measured by the M2k scope channel at pin 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-14.png
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
@@ -190,9 +179,8 @@ The current sense transformer is a transformer that is optimized or designed to 
 
 The principal of operation of a basic current transformer is slightly different from that of an ordinary voltage transformer. Unlike a power transformer used to step up or down voltages, the current transformer often consists of only one or a few turns as the primary winding. This primary winding can be of either a single flat turn, a coil of heavy duty wire wrapped around the core or just a wire inserted through a central hole like that shown in the photo of a clamp-on current probe transformer, (model LCTC-0250) figure 15. With this current "probe" the jaws open so that it can be clamped around the conductor carrying the current to be measured without having to disconnect the conductor. Current probes such as this are designed for use in 50/60 Hz Mains power applications. The LCTC-0250 probe has a current measuring range up to 100 Amps and a built-in current to voltage (burden) resistor so the output voltage is specified as 15mV/A.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-15.png
-   :align: center
-   :width: 300px
+
+|image15|
 
 .. container:: centeralign
 
@@ -203,9 +191,8 @@ Many manufacturers offer a range of current sense inductors that are a toroidal 
 
 The nice thing about using a coil like this as a sense transformer is that you can choose any number of turns you want for the secondary. Up to when the center hole is filled based on the gauge of the wire used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-16.png
-   :align: center
-   :width: 300px
+
+|image16|
 
 .. container:: centeralign
 
@@ -214,9 +201,9 @@ The nice thing about using a coil like this as a sense transformer is that you c
 
 A current transformer with a built-in primary winding from CoilCraft is shown in figure 17. Since it is totally encapsulated, we can't tell how it is constructed. The design frequency range for this 200:1, 80 mH example is from 1 KHz to 1 MHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-17.png
-   :align: center
-   :width: 300px
+
+
+|image17|
 
 .. container:: centeralign
 
@@ -225,9 +212,9 @@ A current transformer with a built-in primary winding from CoilCraft is shown in
 
 In figure 18 we have a surface mount current sense transformer from Würth Elektronik. In this example the primary winding is simply the wide metal strap that goes up and around the central secondary winding. The manufacturer specifies the inductance for this 200:1, 20 mH example at 10 KHz so it probably is also not designed for lower frequency power line applications.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-18.png
-   :align: center
-   :width: 300px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -241,9 +228,8 @@ To test these current transformers an M1k was used and the test circuit shown in
 
 For the clamp-on probe and the PE coil one of the longer wire jumpers from the Analog Parts kit is inserted through the center hole to use as the primary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-19.png
-   :align: center
-   :width: 600px
+
+|image19|
 
 .. container:: centeralign
 
@@ -252,9 +238,9 @@ For the clamp-on probe and the PE coil one of the longer wire jumpers from the A
 
 The input frequency is swept from 20 Hz to 1 KHz in all the following tests. The first bode plot is for the LCTC clamp probe with a single wire through the clamp. Remember that the clamp has a built-in burden so the 100 ohm external resistor was not included for this test case. The magnitude response is very flat, within a dB down to 20 Hz as shown in figure 20.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-20.png
-   :align: center
-   :width: 600px
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -263,9 +249,9 @@ The input frequency is swept from 20 Hz to 1 KHz in all the following tests. The
 
 Next up is the PE-51718. As can be seen in the response shown in figure 21, below 1 KHz it is not at all flat which is to be expected given the 20 KHz minimum frequency specification. The lighter set of curves are for one wire as primary and the darker set is for 4 turns as the primary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-21.png
-   :align: center
-   :width: 600px
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -274,9 +260,9 @@ Next up is the PE-51718. As can be seen in the response shown in figure 21, belo
 
 Next the CoilCraft CS4200V-01 and Würth Elektronik 750316796 examples are tested in figure 22. Both are 200:1 turns ratio. The darker curves are for the 80 mH CoilCraft device and the lighter curves are for the 20 mH Würth device. As expected the higher inductance of the CoilCraft device gives the better low frequency response. The CoilCraft device meets and exceeds its 1 KHz minimum frequency specification and the Würth device is probably only flat above a few KHz using this value of burden resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-22.png
-   :align: center
-   :width: 600px
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -288,9 +274,8 @@ Electronic Burden, I to V converter
 
 One way to improve the frequency response of any current transformer is to replace the resistive burden with an electronic solution, i.e. an op-amp I to V conversion circuit. Again, the single supply rail-rail AD8542 CMOS op-amp can be used as an I to V converter as shown in figure 23. The virtual ground at the summing junction, pin 2, presents a very low impedance load on the secondary. The 1K feedback resistor converts the current into a voltage that is measured by channel B at pin 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-23.png
-   :align: center
-   :width: 600px
+
+|image23|
 
 .. container:: centeralign
 
@@ -299,9 +284,9 @@ One way to improve the frequency response of any current transformer is to repla
 
 To test the frequency response using the op-amp the CoilCraft CS4200V-01 (dark trace) and Würth 750316796 (light trace) are again compared in figure 24. Note the vertical scale is now 3 dB/div. There is a huge improvement in the flatness of the response compared to figure 8 with less than a dB of roll off at 60 Hz. The CoilCraft response is now about as flat as the LCTC current probe in figure 18.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-24.png
-   :align: center
-   :width: 600px
+
+
+|image24|
 
 .. container:: centeralign
 
@@ -317,9 +302,8 @@ As a real world test example the model LCTC-0250 clamp-on current sensor from fi
 
 The probe is connected directly to the input of an M1k without any additional amplification or filtering. As shown in figure 25 the current is simple 1/2 wave rectification and the peak current is between 35 and 45 mA. It is hard to measure exactly with the noise and the signal is too small to trigger on properly and apply trace averaging.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-25.png
-   :align: center
-   :width: 600px
+
+|image25|
 
 .. container:: centeralign
 
@@ -328,7 +312,7 @@ The probe is connected directly to the input of an M1k without any additional am
 
 By applying some mathematical digital filtering we are able to clean up the noise and make the "signal" big enough (by 10X) to trigger on and use trace averaging. A simple 20 tap box car digital filter with an overall gain of 10 is applied to the captured waveform trace and trace averaging is used (set to average 8). The waveform is nice and clean now and the p-p current is 42 mA.
 
-|image1|]
+|image26|]
 
 .. container:: centeralign
 
@@ -344,9 +328,8 @@ As a first experiment an incandescent light bulb was measured. The spec for this
 
 The measured RMS current is 0.33 A. Assuming 120 V RMS Mains voltage results in an RMS power of 39.6 W. The measured power consumption is almost exactly what it should be. As the filament in an incandescent lamp is almost purely resistive the current wave form, shown in figure 27, is a relatively clean sinewave. The vertical voltage scale is 20 mV/div (20/90 or 0.222 A/div).
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-27.png
-   :align: center
-   :width: 600px
+
+|image27|
 
 .. container:: centeralign
 
@@ -355,9 +338,9 @@ The measured RMS current is 0.33 A. Assuming 120 V RMS Mains voltage results in 
 
 A second incandescent bulb is tested next with 770 lumens and 60 W. The measured RMS current is 0.498 A. Again assuming 120 V RMS mains voltage results in an RMS power of 59.7 W. The measured power consumption is almost exactly what it should be. Again, the purely resistive current wave form, as shown in figure 28, is the same clean sinewave.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-28.png
-   :align: center
-   :width: 600px
+
+
+|image28|
 
 .. container:: centeralign
 
@@ -366,9 +349,9 @@ A second incandescent bulb is tested next with 770 lumens and 60 W. The measured
 
 We can now assume that the test setup is probably giving accurate results. Next a compact florescent lamp, CFL, that is marketed as a replacement for a 40 W incandescent lamp is measured. The specs listed are 700 lumens, 11 W and 140 mA. The 11 W and 140 mA seem inconsistent? The measured RMS current is 0.130 A. Assuming 120 V RMS mains voltage results in an RMS power of 15.6 W. The measured power is 4.6 W or 42% higher than the specification. The electronic ballast used in the CLF results in the rather nasty looking current waveform shown in figure 29. It draws current on the positive and negative halves of the AC voltage but has a huge crest factor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-29.png
-   :align: center
-   :width: 600px
+
+
+|image29|
 
 .. container:: centeralign
 
@@ -377,9 +360,9 @@ We can now assume that the test setup is probably giving accurate results. Next 
 
 Next another CFL is measured that is marketed as a replacement for a 60 W incandescent lamp. The specs listed are 15 W and 230 mA. The 15 W and 230 mA also seem inconsistent? The measured RMS current is 0.175 A. Assuming 120 V RMS mains voltage results in an RMS power of 21 W. The measured power is 6 W or 40% higher than the specification. The current waveforms are consistent between the two CLF examples if we compare figures 29 and 30. The higher power lamp having larger peak and RMS currents of course.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-30.png
-   :align: center
-   :width: 600px
+
+
+|image30|
 
 .. container:: centeralign
 
@@ -388,9 +371,9 @@ Next another CFL is measured that is marketed as a replacement for a 60 W incand
 
 Next an LED lamp marketed as a replacement for a 60 W incandescent lamp is measured. The specs listed are 800 lumens, 9 W and 90 mA. The measured RMS current is 0.077 A. Assuming 120 V RMS mains voltage results in an RMS power of 9.24 W. The measured power is much closer to the listed value and only 2.5% higher. As we see in the much smoother current waveform in figure 31, it draws current on the positive and negative halves of the AC voltage with none of the nasty spikes of the CFL. Note that the vertical scale at 10 mV/div is half that in the previous waveform screen shots.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-31.png
-   :align: center
-   :width: 600px
+
+
+|image31|
 
 .. container:: centeralign
 
@@ -399,9 +382,9 @@ Next an LED lamp marketed as a replacement for a 60 W incandescent lamp is measu
 
 As another LED lamp example, a 40 degree LED flood light, is measured. The specs listed are 840 lumens, 12 W and 130 mA. The measured RMS current is 0.108 A. Assuming 120 V RMS mains voltage results in an RMS power of 12.96 W. The measured power is much closer to the listed value and only 8% higher. As we see from the current waveform in figure 32, it draws current on the positive and negative halves of the AC voltage but with very square looking pulses at what might be two distinct levels as compared to the more rounded waveform in figure 29. Also none of the nasty spikes of the electronic ballast in a CFL are present. Note that the vertical scale is 10 mV/div as in the previous waveform screen shot.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-32.png
-   :align: center
-   :width: 600px
+
+
+|image32|
 
 .. container:: centeralign
 
@@ -415,9 +398,8 @@ Measuring the Mains Voltage Waveform
 
 We will now add the display of the AC Mains voltage waveform using the voltage step-down transformer technique. To check out the setup for proper phase between voltage and current the 40 W incandescent bulb is used. Figure 31 shows that the two waveforms are in phase as they should be for a resistive load. Note that the RMS voltage for the AC line measures at 117.75 Volts which seems right on the money.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-33.png
-   :align: center
-   :width: 600px
+
+|image33|
 
 .. container:: centeralign
 
@@ -426,9 +408,9 @@ We will now add the display of the AC Mains voltage waveform using the voltage s
 
 Now, in figure 34 the relative phase between current and voltage for the second CFL bulb is measured.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-34.png
-   :align: center
-   :width: 600px
+
+
+|image34|
 
 .. container:: centeralign
 
@@ -451,9 +433,8 @@ Appendix: Other Off the Shelf Hardware
 
 The Seeed Technology Co., Ltd Clamp on current sensor, Product Number 101990065, can be ordered through `Digikey <https://www.digikey.com/en/products/detail/seeed-technology-co.,-ltd/101990065/5487441?utm_adgroup=Current%20Sense%20Transformers&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Product_Transformers_NEW&utm_term=&utm_content=Current%20Sense%20Transformers&gclid=Cj0KCQjw4eaJBhDMARIsANhrQABKphIVg7nvrS4ynla7G3dFTqRBslLfLdBfj9IYXsSy_-uZlkuHkk8aAmh-EALw_wcB>`_. It has a rated input of 0-60A, rated output of 0-1 V and a turns ratio N=1:1800.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/seeed-current-clamp.png
-   :align: center
-   :width: 300px
+
+|image35|
 
 .. container:: centeralign
 
@@ -462,9 +443,9 @@ The Seeed Technology Co., Ltd Clamp on current sensor, Product Number 101990065,
 
 The `Clamp on current sensor from SparkFun <https://www.sparkfun.com/products/11005>`_ has a turns ratio Np:Ns=1:2000 and input /output Current Ratio 30A/15mA.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/sparkfun-current-clamp.png
-   :align: center
-   :width: 300px
+
+
+|image36|
 
 .. container:: centeralign
 
@@ -473,9 +454,9 @@ The `Clamp on current sensor from SparkFun <https://www.sparkfun.com/products/11
 
 This Line voltage sensor module based on the ZMPT1010B current transformer has a built in electronic (op-amp) burden circuit. It has exposed screw terminals for the AC line input connection so it has potential shock hazard issues unless installed in an insulating enclosure.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/zmpt101b-arduino-sensor.png
-   :align: center
-   :width: 300px
+
+
+|image37|
 
 .. container:: centeralign
 
@@ -507,5 +488,77 @@ Phase shift
 
 Ideally we want the primary and secondary currents of a current transformer to be in phase. In practice, this is not possible, but, at normal power frequencies, phase shifts of a few tenths of a degree are achievable, while simpler CTs may have phase shifts up to six degrees. For average and RMS current measurements the phase shift does not factor into as ammeters only display the magnitude of the current. However, for power, energy, and power factor (real power vs reactive power measurements, phase shift produces errors. For power and energy measurements, the errors can be considered to be negligible at unity power factor but become more significant as the power factor approaches zero. At zero power-factor, any indicated power is entirely due to the current transformer's phase error. The introduction of electronic power and energy meters has allowed current phase error to be calibrated out.
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-26.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-1.png
    :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-2.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-6.png
+   :width: 450px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-8.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-13.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-14.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-15.png
+   :width: 300px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-16.png
+   :width: 300px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-17.png
+   :width: 300px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-18.png
+   :width: 300px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-19.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-20.png
+   :width: 600px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-21.png
+   :width: 600px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-22.png
+   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-23.png
+   :width: 600px
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-24.png
+   :width: 600px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-25.png
+   :width: 600px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-26.png
+   :width: 600px
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-27.png
+   :width: 600px
+.. |image28| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-28.png
+   :width: 600px
+.. |image29| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-29.png
+   :width: 600px
+.. |image30| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-30.png
+   :width: 600px
+.. |image31| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-31.png
+   :width: 600px
+.. |image32| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-32.png
+   :width: 600px
+.. |image33| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-33.png
+   :width: 600px
+.. |image34| image:: https://wiki.analog.com/_media/university/courses/tutorials/ac-mains-tests-fig-34.png
+   :width: 600px
+.. |image35| image:: https://wiki.analog.com/_media/university/courses/tutorials/seeed-current-clamp.png
+   :width: 300px
+.. |image36| image:: https://wiki.analog.com/_media/university/courses/tutorials/sparkfun-current-clamp.png
+   :width: 300px
+.. |image37| image:: https://wiki.analog.com/_media/university/courses/tutorials/zmpt101b-arduino-sensor.png
+   :width: 300px

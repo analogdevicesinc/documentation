@@ -24,13 +24,13 @@ Implementation
 | Two measurement steps are taken to determine the temperature of the measurement point.
 | First, the cold junction temperature is measured to establish a reference point for the thermocouple. Figure 2 shows a snapshot from the AD74413R evaluation board. This circuit shows the implementation required to use the AD74413R to determine T\ :sub:`COLD_JUNC`, the cold junction temperature:
 
-::
 
-   *The reference voltage to the AD74413R is applied to the top of a resistor divider. The resistor divider is made up of a 33kΩ resistor, R64 and a 33kΩ thermistor, RT1.
-   *The resistance of the thermistor is proportional to the ambient temperature. The resultant voltage is measured from the tap-off point in the middle of the divider, which is connected to the LVIN pin. The LVIN pin can be measured by the ADC in a 2.5V range, which is set by the reference provided.
-   *The resistance of the thermistor can be calculated from the measured ADC_CODE, using the following equation:
-     R<sub>RT1</sub> = -(33000* ADC_CODE) / (ADC_CODE – 65535)
-   *Vishay provide a resistance to temperature tool to interpret the thermistor temperature at any given resistance. This can be found at [[https://www.vishay.com/thermistors/ntc-rt-calculator/]].
+
+- The reference voltage to the AD74413R is applied to the top of a resistor divider. The resistor divider is made up of a 33kΩ resistor, R64 and a 33kΩ thermistor, RT1.
+- The resistance of the thermistor is proportional to the ambient temperature. The resultant voltage is measured from the tap-off point in the middle of the divider, which is connected to the LVIN pin. The LVIN pin can be measured by the ADC in a 2.5V range, which is set by the reference provided.
+- The resistance of the thermistor can be calculated from the measured ADC_CODE, using the following equation:
+  R<sub>RT1</sub> = -(33000* ADC_CODE) / (ADC_CODE – 65535)
+- Vishay provide a resistance to temperature tool to interpret the thermistor temperature at any given resistance. This can be found at `https://www.vishay.com/thermistors/ntc-rt-calculator/ <https://www.vishay.com/thermistors/ntc-rt-calculator/>`_.
 
 | |thermocouple sch snapshot.png|
 | Figure 2: LVIN schematic configuration
@@ -85,5 +85,5 @@ To detect an open-wire on a connected thermocouple, the I/OP terminal can be con
 
 :doc:`Back to AD74412R/AD74413R Table of Contents </wiki-migration/resources/eval/user-guides/ad7441x>`
 
-.. |Thermocouple config.png| image:: https://wiki.analog.com/_media/Thermocouple config.png
-.. |thermocouple sch snapshot.png| image:: https://wiki.analog.com/_media/thermocouple sch snapshot.png
+.. |Thermocouple config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/Thermocouple config.png
+.. |thermocouple sch snapshot.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/thermocouple sch snapshot.png

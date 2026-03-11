@@ -22,9 +22,8 @@ A ring oscillator is an odd number (N) of inverting stages connected in series w
 
 :math:`F = 1 / ( tp_LH + tp_HL) \times n`
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-osc-f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ Making inverters with the CD4007 transistor array
 
 Below in figure 2 is the schematic and pinout for the CD4007 CMOS array:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -58,9 +56,9 @@ Below in figure 2 is the schematic and pinout for the CD4007 CMOS array:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown in figure 3 is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcmg_f2.png
-   :align: center
-   :width: 650px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -78,9 +76,8 @@ The supply current flowing into the ring oscillator at V\ :sub:`DD` ( pins 14, 2
 
 Be sure that you power the circuit using the 3.3 V fixed supply from the digital I/O connector. The output frequency of the base ring oscillator is measured by connecting CB-H in Hi-Z mode to the output of the last inverter. The 3X frequency at the collector of Q\ :sub:`2` is measured by connecting CA-H in Hi-Z mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-3x-f4.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -99,9 +96,8 @@ Version 2 Procedure:
 
 The Q\ :sub:`1` / Q\ :sub:`2` current mirror of version one can be replaced with the AD8210 current sense monitor chip as shown in figure 5. The AD8210 senses the current flowing through R\ :sub:`1` into the ring oscillator and amplifies the signal by 20 and it appears on the output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-3x-f5.png
-   :align: center
-   :width: 620px
+
+|image5|
 
 .. container:: centeralign
 
@@ -110,9 +106,9 @@ The Q\ :sub:`1` / Q\ :sub:`2` current mirror of version one can be replaced with
 
 Remove Q\ :sub:`1`, Q\ :sub:`2`, R\ :sub:`1` and R\ :sub:`2` from your bread board and add the AD8210 and a new R1 as shown. The pinout for the AD8210 is included in figure 6. Note the AD8210 is powered from the +5 V supply not the +3.3 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/ad8210-pinout.png
-   :align: center
-   :width: 300px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -123,9 +119,8 @@ Again you should see the output signal of the ring oscillator itself on channel 
 
 Figure 7 is an example of what the waveforms should look like.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-3x-f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -146,3 +141,18 @@ The output of the oscillator is not a very good square wave with sharp rise and 
 `Ring oscillator <https://en.wikipedia.org/wiki/Ring_oscillator>`_ :adi:`AD8210 datasheet <media/en/technical-documentation/data-sheets/AD8210.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-osc-f1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcmg_f2.png
+   :width: 650px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-3x-f4.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-3x-f5.png
+   :width: 620px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/ad8210-pinout.png
+   :width: 300px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-3x-f7.png
+   :width: 600px

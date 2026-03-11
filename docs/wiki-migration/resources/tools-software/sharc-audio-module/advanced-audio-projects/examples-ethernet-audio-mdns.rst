@@ -162,7 +162,7 @@ Audio Connection Setup: CODEC->VBAN
 
 --------------
 
-`Application Examples - Ethernet Audio Static IP#.|Advanced Audio Projects#.examples-a2b-audio|Application Examples - A2B Audio <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.examples-ethernet-audio>`_
+`Application Examples - Ethernet Audio Static IP#.|Advanced Audio Projects#.examples-a2b-audio|Application Examples - A2B Audio <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.examples-ethernet-audio>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld2.png
    :width: 400px

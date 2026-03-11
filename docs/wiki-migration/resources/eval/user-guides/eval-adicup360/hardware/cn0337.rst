@@ -17,14 +17,16 @@ The figure below shows how to properly connect EVAL-CN0337-PMDZ to :adi:`EVAL-AD
 Sensor Interface
 ~~~~~~~~~~~~~~~~
 
-CN0337 processes the output of a Pt100 RTD and includes an innovative circuit for a lead-wire compensation using a standard 3-wire connection. In using other temperature sensors such as Pt200, Pt500, Pt1000, Pt2000, the calculation of gain, output offset, and resistor values is shown in :adi:`CN0337 Circuit Note </media/en/reference-design-documentation/reference-designs/CN0337.pdf>`. The guide on how to use the two-point calibration can be found at the software demo :doc:`page </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0337>`.
+CN0337 processes the output of a Pt100 RTD and includes an innovative circuit for a lead-wire compensation using a standard 3-wire connection. In using other temperature sensors such as Pt200, Pt500, Pt1000, Pt2000, the calculation of gain, output offset, and resistor values is shown in :adi:`CN0337 Circuit Note <media/en/reference-design-documentation/reference-designs/CN0337.pdf>`. The guide on how to use the two-point calibration can be found at the software demo :doc:`page </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0337>`.
 
 .. important::
 
    Pin 1 and Pin 2 of J2 terminal block must be connected to similar RTD terminals. The label on the board can also be used as a guide.
 
 
-   |cn0337-hw-1024_2.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0337/cn0337-hw-1024_2.jpg
+   :alt: cn0337-hw-1024_2.jpg
+   :align: center
 
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,4 +82,3 @@ Schematics, PCB Layout, Bill of Materials
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0337/cn0337_demo_1.png
    :width: 650px
-.. |cn0337-hw-1024_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0337/cn0337-hw-1024_2.jpg

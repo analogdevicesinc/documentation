@@ -79,8 +79,8 @@ The module features two modes
 
 The modes can be selected by selecting the appropriate mode tab in the MFXLMS settings form.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mxlmswindows.jpg
-   :align: center
+
+|image1|
 
 .. important::
 
@@ -206,3 +206,5 @@ Supported ICs
 -------------
 
 -  ADAU145x
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/mxlmswindows.jpg

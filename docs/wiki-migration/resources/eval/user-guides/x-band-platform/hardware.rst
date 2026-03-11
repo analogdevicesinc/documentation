@@ -102,14 +102,15 @@ Other
 Hardware Connections
 ====================
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp-wiki-system-block-diagram.png
+   :align: center
 
 .. container:: centeralign
 
    \ **Figure 1: High Level Block Diagram**\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -152,7 +153,9 @@ Connect the Stingray board to the PMOD connectors on the ZCU102 as described bel
 -  J55 from the ZCU102 should connect to P3 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
    \* J87 from the ZCU102 should connect to P4 on the Stingray board using a ribbon cable and any required adapters. Note that pin 1 should connect to pin 1. This will require two PMOD cables to vertically flip the pinout from the ZCU102 to match that of the Stingray board.
 
-   |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/stingray_zcu102_pmod.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -169,7 +172,7 @@ Connect the XUD1A evaluation board to the ZCU102's HPC1 port. The `FMC extension
    The Interposer board PMOD is pin-compatible with the XUD1A PMOD enabling a direct connect. The `14-Pin PMOD 6 Inch Cable <https://www.digikey.com/H3AKH-1406G>`_ is optional, but recommended as it allows XUD1A to move away from the interposer board for easier RF cabling connections.
 
 
-   |image4|
+   |image2|
 
 .. container:: centeralign
 
@@ -200,10 +203,10 @@ Inter-Board Connections
 
 The platform is divided into four 8:1 subarrays as detailed in the below figure. Two ADAR1000s are connected via RF Splitter/Combiner to a single up/down converter channel on the ADXUD1AEBZ. The IF portion of an individual up/down converter channel is split to a TX IF and RX IF input/out. Each IF output is directly connected to its respective ADC and DAC.
 
-For more details, review the ADAR1000EVAL1Z `Primary Side <https://wiki.analog.com/resources/eval/user-guides/stingray/adar1000eval1z_top-web.gif>`_ and `Secondary Side <https://wiki.analog.com/resources/eval/user-guides/stingray/adar1000eval1z_bottom-web.gif>`_ board images, the `ADXUD1AEBZ Primary Side <https://wiki.analog.com/resources/eval/user-guides/xud1a/eval-adxud1aebz_top-web.gif>`_ board image, and the :adi:`AD9081-EVAL <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9081.html#eb-overview>` images.
+For more details, review the ADAR1000EVAL1Z `Primary Side <https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_top-web.gif>`_ and `Secondary Side <https://wiki.analog.com/_media/resources/eval/user-guides/stingray/adar1000eval1z_bottom-web.gif>`_ board images, the `ADXUD1AEBZ Primary Side <https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/eval-adxud1aebz_top-web.gif>`_ board image, and the :adi:`AD9081-EVAL <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9081.html#eb-overview>` images.
 
 
-|image5|
+|image3|
 
 .. container:: centeralign
 
@@ -240,7 +243,7 @@ Connect the MxFE and XUD1A together using SMA-SMPM cables as indicated below:
    The ADXUD1AEBZ contains IF bandpass filters per channel (FL3, FL6, FL7, FL8). The rejection for these filters is not sufficient for optimized system performance and additional rejection is required to suppress mixing products, LO feedthrough, DAC image, etc.
 
 
-   |image6|
+   |image4|
 
 .. container:: centeralign
 
@@ -281,7 +284,7 @@ Default MxFE Clocking Scheme
 The default clocking scheme used for the :adi:`AD9081-FMCA-EBZ <eval-ad9081>` uses the on-chip PLL. The :adi:`hmc7044` provides the reference into the chip derived from the on-board VCXO crystal oscillator. An external reference signal can be applied to the HMC7044 if the reference signal requires phase lock to other test equipment used in evaluation. The AD9081 firmware contains a HMC7044 reference clock priority table. No firmware changes are required if the reference clock is supplied via EXT_HMCREF SMP-F connection.
 
 
-|image7|
+|image5|
 
 .. container:: centeralign
 
@@ -301,7 +304,7 @@ Direct MxFE Clocking
 The MxFE Evaluation Platform has provisions for directly driving the sampling clock of the MxFE data converter. An SMP-F plug is available for this purpose, which connects to an AC-coupling capacitor that is not populated by default. Reference the schematic for more information. The table below lists the modifications required for direct clocking.
 
 
-|image8|
+|image6|
 
 .. container:: centeralign
 
@@ -323,7 +326,7 @@ Default XUD1A LO Configuration
 The default LO configuration for the XUD1A is for an external LO via SMA-F connector. The LO is common across all 4 up/down converter channels via splitter network. Refer to the :doc:`XUD1A Block Diagram </wiki-migration/resources/eval/user-guides/xud1a/user-guide>` for more details.
 
 
-|image9|
+|image7|
 
 .. container:: centeralign
 
@@ -338,7 +341,7 @@ On-Board XUD1A LO Configuration
 The on-board :adi:`adf4371` PLL can be used in lieu of an external LO signal. The default ADF4371 reference clock is an on-board 100 MHz VCXO crystal oscillator, but provisions are available to provide an external reference via a SMP-F connector.
 
 
-|image10|
+|image8|
 
 .. container:: centeralign
 
@@ -424,7 +427,7 @@ Replicated IO for the TDD controller is created in hardware all tied to a common
 The control logic for the RF switching is common between the ADAR1000EVAL1Z and the ADXUD1AEBZ. The TR_EN probe point on the secondary side of the ADAR1000EVAL1Z is recommended to use for connecting a measurement probe.
 
 
-|image11|
+|image9|
 
 .. container:: centeralign
 
@@ -450,7 +453,7 @@ AD9081 LTM4616 Enable
 The AD9081 :adi:`ltm4616` power module run control pin voltage threshold is 1.7V. Verify the voltage and resistance of the R1M resistor on the AD9081-FMCA-EBZ exceed the voltage threshold of 1.7V. If not, measure the R1M resistor and verify the resistance value is 2.2 kΩ. The resistor can be replaced with a 0402 220 Ω resistor to meet the voltage threshold requirements of the power module.
 
 
-|image12|
+|image10|
 
 .. container:: centeralign
 
@@ -466,25 +469,22 @@ For additional questions or support, please visit the Engineering Zone forum at 
 
 :doc:`X Band Development Platform Main Page </wiki-migration/resources/eval/user-guides/x-band-platform>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp-wiki-system-block-diagram.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/platformblockdiagram.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/platformblockdiagram.jpg
    :width: 1000px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/stingray_zcu102_pmod.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/XUD1A_fmc_v2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/XUD1A_fmc_v2.png
    :width: 600px
 .. |MxFE Connection| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/mxfe_connection.jpg
    :width: 1000px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp_hardwareconnectiondiagram.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081-xud1a-connect.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/xbdp_hardwareconnectiondiagram.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081-xud1a-connect.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_default_clk.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_direct_clk.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_lo_pll.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_rework_onboard_pll.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_default_clk.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_direct_clk.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_lo_pll.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/XUD1A_rework_onboard_pll.png
    :width: 600px
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/adar1000eval1z_tr_probe.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/adar1000eval1z_tr_probe.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_ltm4616_en_resistor_r1m.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/x-band-platform/ad9081_ltm4616_en_resistor_r1m.png
    :width: 600px

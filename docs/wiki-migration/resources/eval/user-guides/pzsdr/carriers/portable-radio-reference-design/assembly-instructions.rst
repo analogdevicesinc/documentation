@@ -44,25 +44,36 @@ OLED Installation
 Nav Switch Installation
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-::
 
-     * Place 4 pcs of M2.5 X 8mm screws through the belly plate.
-       * Apply loctite 242.
-     * Place 4 pcs of [[https://www.digikey.com/908-135-ND|908-135]] onto the screws, to act as spacers.
-     * Place the Nav Switch PCB into the circular opening, with the connector closer to the middle of the belly plate.
-     * Attach 4 pcs of M2.5 nuts and tighten
-       * {{:resources:eval:user-guides:pzsdr:carriers:packrf:nav_close.jpg?400|}}
-       * {{:resources:eval:user-guides:pzsdr:carriers:packrf:nav_switch.jpg?400|}}
-     * Insert the ribbon cable into the connector on the Nav Switch so the ribbon cable extends towards the battery.
-     * Now bend the cable towards the red line and pull it out to the left side.
-     * Apply some hot glue to the connector and a fraction of the cable to secure everything.
-       * There is a clearance constraint between this cable header and a component on the bottom of the PCB.  As a result, any glue applied must be restricted to below the top of the cable header, when it is plugged into the Nav Switch PCB.
-       * {{ :resources:eval:user-guides:pzsdr:carriers:adrv1cc-box:belly_plate_with_battery_on_side.jpg?600 |}}
-   * [[https://www.batteryspace.com/Custom-Polymer-Li-Ion-battery-3.7V-3200mAh-11.8-Wh-with-Thermistor.aspx|Battery CU-J479-V6: Molex 51065-0300]] Installation.
+
+-  Place 4 pcs of M2.5 X 8mm screws through the belly plate.
+  * Apply loctite 242.
+-  Place 4 pcs of `908-135 <https://www.digikey.com/908-135-ND>`_ onto the screws, to act as spacers.
+-  Place the Nav Switch PCB into the circular opening, with the connector closer to the middle of the belly plate.
+-  Attach 4 pcs of M2.5 nuts and tighten
+  *
+
+  |resources-eval-user-guides-pzsdr-carriers-packrf-nav_close.jpg|
+
+  *
+
+  |resources-eval-user-guides-pzsdr-carriers-packrf-nav_switch.jpg|
+
+-  Insert the ribbon cable into the connector on the Nav Switch so the ribbon cable extends towards the battery.
+-  Now bend the cable towards the red line and pull it out to the left side.
+-  Apply some hot glue to the connector and a fraction of the cable to secure everything.
+  * There is a clearance constraint between this cable header and a component on the bottom of the PCB.  As a result, any glue applied must be restricted to below the top of the cable header, when it is plugged into the Nav Switch PCB.
+  *
+
+  |resources-eval-user-guides-pzsdr-carriers-adrv1cc-box-belly_plate_with_battery_on_side.jpg|
+
+   * `Battery CU-J479-V6: Molex 51065-0300 <https://www.batteryspace.com/Custom-Polymer-Li-Ion-battery-3.7V-3200mAh-11.8-Wh-with-Thermistor.aspx>`_ Installation.
      * Clean the area between the two PCB's of dust or debris with a dry cloth.
      * Cut a 1-inch to 1.25-inch piece of double sided tape.  Peel off the cover and place the tape firmly between the PCBs.
      * Place the battery firmly onto the tape, with the yellow and white labels facing away from the belly plate.
-       * {{ :resources:eval:user-guides:pzsdr:carriers:adrv1cc-box:belly_plate_inside.jpg?600 |}}
+
+       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/belly_plate_inside.jpg
+
        * This image doesn't have the ribbon cable oriented properly (pull it out to the right, not the left).
 
 Preparing the ADRV936x PCB
@@ -587,3 +598,7 @@ PackRF - Assembly Instructions
    :width: 600px
 .. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable-radio-reference-design/labels_for_face_plate.jpg
    :width: 400px
+
+.. |resources-eval-user-guides-pzsdr-carriers-adrv1cc-box-belly_plate_with_battery_on_side.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/belly_plate_with_battery_on_side.jpg
+.. |resources-eval-user-guides-pzsdr-carriers-packrf-nav_close.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/nav_close.jpg
+.. |resources-eval-user-guides-pzsdr-carriers-packrf-nav_switch.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/nav_switch.jpg

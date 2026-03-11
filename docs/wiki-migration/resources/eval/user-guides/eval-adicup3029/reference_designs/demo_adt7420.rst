@@ -172,7 +172,7 @@ The software for the **ADuCM3029_demo_adt7420** demo can be found here:
    Prebuilt ADT7420 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_adt7420.Hex <releases/download/Latest/ADuCM3029_demo_adt7420.hex>`
+   -  `AduCM3029_demo_adt7420.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adt7420.hex>`_
    
    Complete ADT7420 Source Files
    

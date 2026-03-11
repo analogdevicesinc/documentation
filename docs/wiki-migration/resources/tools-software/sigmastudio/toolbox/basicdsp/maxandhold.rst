@@ -15,4 +15,4 @@ When the 'Hold' pin is brought high again, the algorithm begins tracking and hol
 | |absmaxh1.png| |
 +----------------+
 
-.. |absmaxh1.png| image:: https://wiki.analog.com/_media/absmaxh1.png
+.. |absmaxh1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/absmaxh1.png

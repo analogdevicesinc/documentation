@@ -23,14 +23,17 @@ When the EV-COG-AD4050LZ emulator is connected to the ADuCM4050 and ready for pr
 
 This mode allows users to drag and drop (or copy and paste) a .BIN or .HEX [Intel formatted] file directly into the DAPLINK drive, and that file will be flashed directly to the ADuCM4050. This means you don't have to use the tools or the debugger to program your board, making this very useful in production releases or updating applications already in the field.
 
--  The PC will start searching for and install the following drivers:(if not already complete)\
+-  The PC will start searching for and install the following drivers:(if not already complete)
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_complete.png
+   :align: center
+   :width: 400px
 
-|image3|
+-  Then go to the **My Computer** view and search for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
--  Then go to the **My Computer** view and search for the DAPLINK drive, if you see this then the drivers are complete and correct.\
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/daplink_windows_explorer.png
+   :align: center
+   :width: 550px
 
 -  After that simply drag and drop (or copy and paste) your .BIN or .HEX [Intel formatted] file to the DAPLINK drive, and your EV-COG-AD4050LZ board will be programmed.
 
@@ -45,14 +48,17 @@ Maintenance Drive
 
 When the EV-COG-AD4050LZ emulator is connected to the MK20DX128VFM5 (by holding down the "RST" button while connecting the USB port (P5) to the PC/laptop) the "Maintenance" drive is displayed on your computer. This mode allows a user to overwrite the ADuCM4050 interface file within the emulator. This allows for patches and updates to the firmware on the emulator.
 
--  The PC will start searching for and install the following drivers:(if not already complete)\
+-  The PC will start searching for and install the following drivers:(if not already complete)
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_maintenance.png
+   :align: center
+   :width: 400px
 
-|image5|
+-  Then go to the **My Computer** view and search for the Maintenance drive, if you see this then the drivers are complete and correct.
 
--  Then go to the **My Computer** view and search for the Maintenance drive, if you see this then the drivers are complete and correct.\
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/maintenance_windows_explorer.png
+   :align: center
+   :width: 550px
 
 -  After that simply drag and drop (or copy and paste) the latest interface file to the Maintenance drive, and your EV-COG-AD4050LZ board will be updated with the latest interface file.
 
@@ -162,7 +168,7 @@ How to create a new project for the ADuCM4050
 A project for ADuCM4050 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
 
 
-|image7|
+|image3|
 
 -  To create a new project, go to the menu bar and find *File -> New -> CrossCore Project*.
 -  Choose Processor family ARM and select Processor type ADuCM4050 .
@@ -242,7 +248,7 @@ How to Import Existing Projects from the GIT Repository
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
 -  Clone the Git repository which contains all the latest code and projects associated with the ADuCM4050. Populate the URI field with the following address.
 
-   -   **URL:** - https://github.com/analogdevicesinc/EV-COG-AD4050LZ.git
+   -   **URL:** - :git-EV-COG-AD4050LZ:`EV-COG-AD4050LZ`
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
 
 -  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*
@@ -389,12 +395,4 @@ How to create an Intel Hex (.hex) file from an ADuCM4050 application
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_complete.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/daplink_windows_explorer.png
-   :width: 550px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/device_drivers_install_maintenance.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/maintenance_windows_explorer.png
-   :width: 550px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/new_project.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/new_project.jpg

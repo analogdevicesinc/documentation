@@ -13,4 +13,4 @@ This module can be used for such applications as applying and holding a value to
 
 For a sample design using this block, see the :doc:`Basic DSP example </wiki-migration/resources/tools-software/sigmastudio/tutorials/basicdspexamples>`.
 
-.. |valueholdpic1.png| image:: https://wiki.analog.com/_media/valueholdpic1.png
+.. |valueholdpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/valueholdpic1.png

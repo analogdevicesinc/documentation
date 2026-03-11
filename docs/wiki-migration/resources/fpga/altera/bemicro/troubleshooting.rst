@@ -24,10 +24,10 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |ucproberemovesymbols.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucproberemovesymbols.png
    :width: 400px
 .. |ucproberemovesymbolsdlg.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucproberemovesymbolsdlg.png
    :width: 400px
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

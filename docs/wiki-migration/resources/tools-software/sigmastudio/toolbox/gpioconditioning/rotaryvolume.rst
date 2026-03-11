@@ -116,5 +116,5 @@ Algorithm Growth Information
 | Parameter RAM Repetition | none                                                                                                                                                                                                                                                                                               |                     |
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 
-.. |rotaryvolpic1.png| image:: https://wiki.analog.com/_media/rotaryvolpic1.png
-.. |rotaryvolpic3.png| image:: https://wiki.analog.com/_media/rotaryvolpic3.png
+.. |rotaryvolpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/rotaryvolpic1.png
+.. |rotaryvolpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/rotaryvolpic3.png

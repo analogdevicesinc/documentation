@@ -32,7 +32,7 @@ Required Software
 -  A Linux OS on a PC
 -  Xilinx Vivado 2019.1 or later
 -  UART terminal (e.g TeraTerm)
--  IIO Scope :git-iio-oscilloscope:`Download <releases/download/v0.13-master/adi-osc-setup.exe>`
+-  IIO Scope `Download <https://github.com/analogdevicesinc/iio-oscilloscope/releases/download/v0.13-master/adi-osc-setup.exe>`_
 
 Board setup
 ~~~~~~~~~~~
@@ -57,7 +57,7 @@ Before building the hdl project setup your computer based on the following guide
 
 ::
 
-   git clone https://github.com/analogdevicesinc/hdl.git
+   git clone :git-hdl:`hdl`
    git checkout hdl_2019_r2;  // or latest release
    cd hdl/projects/ad9208_dual_ebz/vcu118
    make

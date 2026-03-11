@@ -112,7 +112,7 @@ Copy the following files onto the BOOT partition to configure the SD card:
 Get BOOT.BIN from HDL project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To achieve high performance with AD4134 and similar ADCs, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support them, ADI engineers provide :git-hdl>`__ from which one may use `ad4134_fmc <https::`HDL reference projects </github.com/analogdevicesinc/hdl/tree/main/projects/ad4134_fmc>`, :git-hdl:`projects/ad7134_fmc`, or :git-hdl:`projects/cn0561`.
+To achieve high performance with AD4134 and similar ADCs, the hardware platform must have an integrated FPGA. To configure the FPGA to properly support them, ADI engineers provide :git-hdl:`HDL reference projects <hdl>` from which one may use :git-hdl:`projects/ad4134_fmc`, :git-hdl:`projects/ad7134_fmc`, or :git-hdl:`projects/cn0561`.
 
 Follow the build instructions on the :doc:`Building HDL </wiki-migration/resources/fpga/docs/build>` page to build the appropriate HDL project and generate a BOOT.BIN file from that.
 
@@ -246,5 +246,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/youtube>p_VntEwUe24
 

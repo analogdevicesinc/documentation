@@ -53,7 +53,8 @@ There are three functions which are called by the AD7298 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -200,7 +201,7 @@ Commands can be executed using a serial terminal connected to the UART1 peripher
 The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
 
 
-|image2|
+|image1|
 
 Software Project Setup
 ----------------------
@@ -350,5 +351,4 @@ More information
    See `more-information <https://wiki.analog.com/more-information>`_
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

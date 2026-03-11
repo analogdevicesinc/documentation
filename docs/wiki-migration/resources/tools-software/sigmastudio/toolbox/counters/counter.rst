@@ -33,9 +33,9 @@ This schematic shows how the Counter (in conjunction with a `tone <https://wiki.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic7.png
    :alt: counterpic7.png
 
-.. |counterpic1.png| image:: https://wiki.analog.com/_media/counterpic1.png
-.. |counterpic2.png| image:: https://wiki.analog.com/_media/counterpic2.png
-.. |counterpic3.png| image:: https://wiki.analog.com/_media/counterpic3.png
-.. |counterpic4.png| image:: https://wiki.analog.com/_media/counterpic4.png
-.. |counterpic5.png| image:: https://wiki.analog.com/_media/counterpic5.png
-.. |counterpic6.png| image:: https://wiki.analog.com/_media/counterpic6.png
+.. |counterpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic1.png
+.. |counterpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic2.png
+.. |counterpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic3.png
+.. |counterpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic4.png
+.. |counterpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic5.png
+.. |counterpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/counterpic6.png

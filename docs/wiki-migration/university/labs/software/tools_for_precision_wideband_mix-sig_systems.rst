@@ -27,7 +27,7 @@ Materials
 
 -  Raspberry Pi 4; 2G, 4G, or 8G version, OR Raspberry Pi 400 (the keyboard one).
 -  5V USB-C wall adapter for Raspberry Pi
--  Colorimeter Setup. This is not in production (yet), but full gerbers are provided. The pull request is in review, :git-education_tools:`HERE <pull/48>`
+-  Colorimeter Setup. This is not in production (yet), but full gerbers are provided. The pull request is in review, `HERE <https://github.com/analogdevicesinc/education_tools/pull/48>`_
 -  Optical absorbance demonstration material such as:
 
    -  Optical filters such as `Roscolux Selector Pack <https://www.mcmaster.com/7769T9/>`_
@@ -46,7 +46,7 @@ This probably isn't necessary as of Kuiper 2022r2, but just in case you want to 
 
 ::
 
-   git clone https://github.com/analogdevicesinc/pyadi-iio.git
+   git clone :git-pyadi-iio:`pyadi-iio`
    cd pyadi-iio
    sudo pip install .
 
@@ -125,4 +125,4 @@ Wrapup
 Additional References
 ---------------------
 
-.. |youtube>dQw4w9WgXcQ| image:: https://wiki.analog.com/_media/youtube>dQw4w9WgXcQ
+.. |youtube>dQw4w9WgXcQ| image:: https://wiki.analog.com/_media/university/labs/software/youtube>dQw4w9WgXcQ

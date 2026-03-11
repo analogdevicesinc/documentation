@@ -153,7 +153,7 @@ The software for the **ADuCM3029_demo_ad5592r_ad5593r** can be found here:
    Prebuilt AD5592/AD5593 PMOD Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_ad5592r_ad5593r.Hex <releases/download/Latest/ADuCM3029_demo_ad5592r_ad5593r.hex>`
+   -  `AduCM3029_demo_ad5592r_ad5593r.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad5592r_ad5593r.hex>`_
    
    Complete AD5592/AD5593 PMOD Source Files
    

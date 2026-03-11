@@ -10,8 +10,8 @@ Latest Release
    ADI default firmware images:
 
    
-   -  :git-plutosdr-fw:`Latest ADALM-PLUTO (PlutoSDR) Release <releases/latest>`
-   -  :git-m2k-fw:`Latest ADALM2000 (M2k) Release <releases/latest>`
+   -  `Latest ADALM-PLUTO (PlutoSDR) Release <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_
+   -  `Latest ADALM2000 (M2k) Release <https://github.com/analogdevicesinc/m2k-fw/releases/latest>`_
    
    This zip file should include these files:
    
@@ -139,23 +139,27 @@ Windows/OSX
 
    -  Windows
 
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/win10_gui_update.png
+   :align: center
+   :width: 600px
 
-   |image1|
+-  OSX
 
-   -  OSX
-
-   |image2|
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/copyfirmware_osx2.png
+   :width: 800px
 
 -  Eject (don't unplug) the mass storage device
 
    -  Windows (only eject as shown below!)
 
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/eject-right-pluto-win10.png
+   :align: center
+   :width: 600px
 
-   |image3|
+-  OSX
 
-   -  OSX
-
-   |image4|
+.. image:: https://wiki.analog.com/_media/university/tools/pluto/users/eject_osx.png
+   :width: 200px
 
 -  This will cause ``LED1`` to blink rapidly. This means programming is taking place. Do not remove power (or USB) while the device is blinking rapidly. It does take approximately 4 minutes to properly program the device.
 -  Still do not unplug things. Try to be more patient.
@@ -215,8 +219,8 @@ Many people remotely deploy their PlutoSDR, (via a USB <-> Ethernet dongle), and
    latest               100% |* * * * * *|  9728  0:00:00 ETA
    'latest' saved
    # **grep "browser_download_url.*plutosdr-fw-" latest  | cut -d : -f 2,3 | awk '{print $1}' | tr -d \"**
-   %%:git-plutosdr-fw:`releases/download/v0`.34/plutosdr-fw-v0.34.zip%%
-   # **wget %%:git-plutosdr-fw:`releases/download/v0`.34/plutosdr-fw-v0.34.zip%%**
+   %%https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.34/plutosdr-fw-v0.34.zip%%
+   # **wget %%https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.34/plutosdr-fw-v0.34.zip%%**
    Connecting to github.com (140.82.114.3:443)
    wget: note: TLS certificate validation not implemented
    Connecting to objects.githubusercontent.com (185.199.109.133:443)
@@ -308,7 +312,7 @@ On MAC
 Check on
 
 
-|image5|
+|image1|
 
 Update using DFU mode
 ~~~~~~~~~~~~~~~~~~~~~
@@ -323,8 +327,8 @@ The PlutoSDR/M2K driver package bundles also a dfu utility. There is a windows c
 -  Download and save `UPDATE.BAT <https://raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/UPDATE.BAT>`_
 -  Download and unzip the latest PlutoSDR respectively M2k release
 
-   -  :git-plutosdr-fw:`PlutoSDR Release <releases>`
-   -  :git-m2k-fw:`M2k Release <releases>`
+   -  `PlutoSDR Release <https://github.com/analogdevicesinc/plutosdr-fw/releases>`_
+   -  `M2k Release <https://github.com/analogdevicesinc/m2k-fw/releases>`_
 
 -  Open a windows command prompt
 -  Execute UPDATE.BAT with the path to the pluto.dfu or m2k.dfu file. (In case you need to rewrite the default uboot environment the use the uboot-env.dfu file)
@@ -598,23 +602,15 @@ And corruption of those sections can cause problems in the booting process. In o
 Release Notification
 --------------------
 
-When a new release is made, you can be automatically notified if you are watching the release section on github. To do this, you need to be logged into github with a valid account (and have a valid email where you want notifications to show up). Then just go to the :git-scopy>`__; `GitHub M2k Firmware site <https::`GitHub Scopy site </github.com/analogdevicesinc/m2k-fw>` or `GitHub PlutoSDR Firmware site <https://github.com/analogdevicesinc/plutosdr-fw>`_. Scopy has built in notification (it will tell you on startup if a new feature is available, but if you are a lab manager, and still want to be notified - the default github notifications are the best solution).
+When a new release is made, you can be automatically notified if you are watching the release section on github. To do this, you need to be logged into github with a valid account (and have a valid email where you want notifications to show up). Then just go to the :git-scopy:`GitHub Scopy site <scopy>`; :git-m2k-fw:`GitHub M2k Firmware site <m2k-fw>` or :git-plutosdr-fw:`GitHub PlutoSDR Firmware site <plutosdr-fw>`. Scopy has built in notification (it will tell you on startup if a new feature is available, but if you are a lab manager, and still want to be notified - the default github notifications are the best solution).
 
 Click on the "Watch" button in the right hand side, then decide if you want to watch everything, or just releases (under Custom). (Click on the picture if you need it bigger).
 
-|watch.png| |image6|
+|watch.png| |image2|
 
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/users/win10_gui_update.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/users/copyfirmware_osx2.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/pluto/users/eject-right-pluto-win10.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/pluto/users/eject_osx.png
-   :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/university/tools/pluto/users/dfumode_osx.png
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/users/dfumode_osx.png
    :width: 300px
 .. |watch.png| image:: https://wiki.analog.com/_media/university/tools/pluto/users/watch.png
    :width: 440px
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/pluto/users/watch2.png
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/users/watch2.png
    :width: 440px

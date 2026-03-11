@@ -22,7 +22,7 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |eval-ad9102_setup1.jpg|\ *Figure 1b. AD9102-ARDZ-EBZ Typical Evaluation Setup*\
+   |eval-ad9102_setup1.jpg|\ *Figure 1b. AD9102-ARDZ-EBZ Typical Evaluation Setup*\
 
 
 .. tip::
@@ -81,7 +81,10 @@ On-board jumpers and other hardware provisions are listed, and their functions d
 -  The on-board clocking configuration is implemented by default. DAC CLKP and CLKN are connected to the differential outputs of the on-board crystal oscillator as shown in Figure 2a. The onboard oscillator has a frequency of 156.25 MHz. If a different clock frequency is desired, Use external clocking configuration.
 -  For external clocking configuration, change JP1 and JP2 connections first as shown in Figure 2b. Connect a High-frequency Continuous Wave Generator set to the desired frequency with 0dBm level to J10. The user will be prompted to enter the DAC Clock Input frequency in the ACE Board configuration wizard.
 
-|ad910x_jumpers_set1.png|\
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set1.png
+   :alt: ad910x_jumpers_set1.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -101,7 +104,10 @@ The evaluation board has a provision to connect the DAC Outputs to the RF Balun 
 -  The DAC outputs are connected to the RF Balun Transformer by default as shown in figure 3.
 -  To use On-board ADA4817-2 Amplifiers, change JP1 and JP2 connections as shown in Figure 4. Ensure that a 7V to 12V 30W Wall Wart is connected to P15. The user should also select the **On-Board amplifier** DAC Output setting in the ACE Board Configuration wizard.
 
-|ad910x_jumpers_set3_default.png|\
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set3_default.png
+   :alt: ad910x_jumpers_set3_default.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -115,7 +121,7 @@ The evaluation board has a provision to connect the DAC Outputs to the RF Balun 
    \ *Figure 3b. SMA output connectors are connected to ADA4817-2 amplifier outputs*\
 
 
-|ad910x_jumpers_set2.png|\
+   |ad910x_jumpers_set2.png|
 
 .. container:: centeralign
 
@@ -199,10 +205,6 @@ AD910x-EBZ (Obsolete) Documentation
    :width: 400px
    :height: 400px
 .. |ad910x_table1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_table1.png
-   :width: 600px
-.. |ad910x_jumpers_set1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set1.png
-   :width: 300px
-.. |ad910x_jumpers_set3_default.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set3_default.png
    :width: 600px
 .. |ad910x_jumpers_set3_2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_jumpers_set3_2.png
    :width: 600px

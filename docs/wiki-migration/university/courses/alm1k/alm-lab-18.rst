@@ -23,9 +23,8 @@ Materials:
 
 ADALM1000 hardware module Solder-less breadboard and Jumper wire kit 1 - CD4007 CMOS transistor array 2 - NPN transistors (2N3904 or equivalent) 1 – 4.7 KΩ resistor
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -39,9 +38,8 @@ Construct the test circuit shown in figure 1. The green boxes indicate connectio
 
 In this first test only NMOS device M\ :sub:`1` is turned on and PMOS device M\ :sub:`2` is turned off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab18_f1.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -75,9 +73,8 @@ PMOS Directions:
 
 Now modify your circuit to look like figure 2 by connecting the gates of both M\ :sub:`1` and M\ :sub:`2` to ground (most negative voltage). In this second test only PMOS device M\ :sub:`2` is turned on and NMOS device M\ :sub:`1` is turned off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab18_f2.png
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
@@ -103,9 +100,8 @@ CMOS Directions:
 
 Now modify your circuit to look like figure 3 by connecting the gate of M\ :sub:`1` to the positive power supply +5V and the gate of M\ :sub:`2` to ground. In this last test both the NMOS device M\ :sub:`1` and the PMOS device M\ :sub:`2` are turned on.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab18_f3.png
-   :align: center
-   :width: 550px
+
+|image4|
 
 .. container:: centeralign
 
@@ -140,3 +136,12 @@ Try measuring the Ron vs input voltage for other CMOS analog switches such as th
 :adi:`Switches and Multiplexers <library/analogdialogue/archives/45-05/switch_mux.html>` :adi:`On Building Physically Accurate Analog Switch Macromodels <media/en/analog-dialogue/raqs/raq-issue-173.pdf>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab18_f1.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab18_f2.png
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab18_f3.png
+   :width: 550px

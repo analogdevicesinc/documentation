@@ -15,7 +15,7 @@ Required hardware
 Power on sequence
 ~~~~~~~~~~~~~~~~~
 
--  Plug the SD card that came in the AD-96TOF1-EBZ box into the DragonBoard410c SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the `latest SD card image <https://github.com/analogdevicesinc/aditof_sdk#supported-embedded-platforms>`_
+-  Plug the SD card that came in the AD-96TOF1-EBZ box into the DragonBoard410c SD card slot. To benefit from the most recent software updates it is highly recommended to update the SD card with the :git-aditof_sdk:`latest SD card image <aditof_sdk>`
 -  Make sure that switch S6 on the DragonBoard410C is set to SD BOOT (position 2 ON, all others OFF)
 -  connect the HDMI cable from the monitor to the DragonBoard410c HDMI connector
 -  connect a USB mouse and keyboard to the DragonBoard410c. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard

@@ -26,7 +26,7 @@ Helpful Files:
 
 -  `Quick Start Guide <https://wiki.analog.com/_media/resources/eval/dpg/ad9707-dpg2_evaluation_board_quick_start_guide.pdf>`_ for DPG2/DPG3 users
 -  :adi:`AD970x Data Sheet <static/imported-files/data_sheets/AD9704_9705_9706_9707.pdf>`
--  IBIS Models: :adi:`AD9707 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9707.ibs>`,\ :adi:`AD9706 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9706.ibs>`,\ :adi:`AD9705 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9705.ibs>`,\ :adi:`AD9704 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9704.ibs>`
+-  IBIS Models: :adi:`AD9707 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9707.ibs>`,\ :adi:`AD9706 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9706.ibs>`,\ :adi:`AD9705 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9705.ibs>`,\ :adi:`AD9704 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9704.ibs>`
 -  `Schematic <https://wiki.analog.com/_media/resources/eval/dpg/ad9707-dpg2-ebz_revb_schematic.pdf>`_
 -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/dpg/ad9707-dpg2-ebz_revb_bom.xls>`_
 -  `PCB Gerber files <https://wiki.analog.com/_media/resources/eval/dpg/ad9707-dpg2-ebz_revb_gerber_files.zip>`_
@@ -65,37 +65,40 @@ Quick Start Guide
 -  Set clock input to 175MHz and 3dBm.
 -  Press SW1 Button to reset the AD9704/AD9705/AD9706/AD9707.
 -  Open ACE. The board will be automatically recognized by the software. Otherwise, install the plugin for AD9704/05/06/07 evaluation board.
--  In ACE, apply the default values in the Initial Configuration wizard as shown in Figure 2.\ |image2|\
+-  In ACE, apply the default values in the Initial Configuration wizard as shown in Figure 2.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/board.ad9707.acesession.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 2. ACE Initial Configuration Wizard for EVAL-AD9707*\
 
 
 -  Start DPG Lite or DPG Downloader. At the SDP-H1 part of the software, the device part number and data clock frequency of 175MHz should be displayed.
--  In DPG Lite or DPG Downloader, from the "Add Generator Waveforms" pulldown menu select "Single Tone" and apply the settings as shown in Figure 3. Set data rate to 175MHz and desired frequency to 20MHz. Set DAC resolution to the DAC’s number of bits (14 for AD9707, 12 for AD9706, and so on). Check off the "Unsigned Data" box.\ |image3|\
+-  In DPG Lite or DPG Downloader, from the "Add Generator Waveforms" pulldown menu select "Single Tone" and apply the settings as shown in Figure 3. Set data rate to 175MHz and desired frequency to 20MHz. Set DAC resolution to the DAC’s number of bits (14 for AD9707, 12 for AD9706, and so on). Check off the "Unsigned Data" box.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/board.ad9707.dpglite.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 3. DPG Lite session for EVAL-AD9707*\
 
 
 -  Select the tone from the "Data Vector" pulldown menu.
--  Press the download arrow and then the play button. The FFT similar to Figure 4 should appear in the signal/spectrum analyzer.\ |image4|\
+-  Press the download arrow and then the play button. The FFT similar to Figure 4 should appear in the signal/spectrum analyzer.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9707_sdph1_output_2.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 4. EVAL-AD9707 FFT for Fdac=175MHz, Fout=20MHz*\
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad970x-sdp-h1-set-up_edited.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/board.ad9707.acesession.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/board.ad9707.dpglite.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9707_sdph1_output_2.png
    :width: 600px

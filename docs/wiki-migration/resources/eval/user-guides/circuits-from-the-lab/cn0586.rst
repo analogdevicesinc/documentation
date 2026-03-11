@@ -262,7 +262,7 @@ Additionally, running with ACE includes loading the latest firmware version onto
 Python using PYADI-IIO
 ~~~~~~~~~~~~~~~~~~~~~~
 
-`PyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_ is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+:git-pyadi-iio:`PyADI-IIO <pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
 
 Python Drivers and libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -336,8 +336,8 @@ Additional Information and Useful Links
 Reference Demos & Software
 --------------------------
 
--  :git-pyadi-iio>`__
--  `CN0586 IIO <https::`pyADI-IIO </github.com/analogdevicesinc/CN0586-iio>`???
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  :git-CN0586-iio:`CN0586 IIO <CN0586-iio>`???
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 
 Hardware Registration (TBD)

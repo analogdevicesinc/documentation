@@ -70,42 +70,44 @@ When operating in a TIA configuration, a bias voltage can be applied to VPDA or 
 EVALUATION BOARD SCHEMATICS AND ARTWORK
 ---------------------------------------
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/figure_3._channel_a_circuit_connections.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 3. Channel A Circuit Connections*\
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
    \ *Figure 4. Channel B Circuit Connections*\
 
 
-   |image4|
+   |image3|
 
 .. container:: centeralign
 
    \ *Figure 5. Power and Ground Connections*\
 
 
-   |image5|
+   |image4|
 
 .. container:: centeralign
 
    \ *Figure 6. Assembly Drawing, Primary Side*\
 
 
-   |image6|
+   |image5|
 
 .. container:: centeralign
 
    \ *Figure 7. Layout Pattern, Primary Side*\
 
 
-   |image7|
+   |image6|
 
 .. container:: centeralign
 
@@ -150,15 +152,13 @@ BILL OF MATERIALS
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/figure_2._default_connection.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure_3._channel_a_circuit_connections.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure_4._channel_b_circuit_connections.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_4._channel_b_circuit_connections.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_5._power_and_ground_connections.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_5._power_and_ground_connections.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_6._assembly_drawing_primary_side.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_6._assembly_drawing_primary_side.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_7._layout_pattern_primary_side.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_7._layout_pattern_primary_side.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure_8._layout_pattern_secondary_side.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_8._layout_pattern_secondary_side.png
    :width: 400px

@@ -68,7 +68,7 @@ The reference design uses the standard :doc:`SPI Engine Framework </wiki-migrati
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
@@ -211,11 +211,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`ad77681evb HDL Project. <projects/ad77681evb>`
    
-   |ad77681evb HDL Project.|
+
 
 No-OS Downloads
 ---------------
@@ -224,11 +222,6 @@ No-OS Downloads
    :class: download
 
    
-   -
-
-
+   -  `ad7768-1fmcz <https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz>`_
    
-   |https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz|
 
-.. |ad77681evb HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad77681evb`
-.. |https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz| image:: https://github.com/analogdevicesinc/no-OS/tree/ad7768_1/ad7768-1fmcz

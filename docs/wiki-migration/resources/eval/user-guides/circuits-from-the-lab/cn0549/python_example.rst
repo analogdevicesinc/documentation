@@ -23,7 +23,7 @@ Hardware:
 Software:
 
 -  `Download Python 3.6 or higher <https://www.python.org/downloads/>`_
--  `Download libiio <https://github.com/analogdevicesinc/libiio>`_
+-  :git-libiio:`Download libiio <libiio>`
 -  pyADI-iio
 
 Preparing your PC/Laptop
@@ -74,9 +74,11 @@ Finding your DE10-Nano
 Before you can start gathering data, you first must locate the CN0549 system setup on your network.
 
 -  Setup a UART serial communication between your PC and the DE10-Nano board using the micro USB cable to USB type A
--  Using your device manager, locate the COM port assigned to the DE10-Nano board\
+-  Using your device manager, locate the COM port assigned to the DE10-Nano board
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/com_port.png
+   :align: center
+   :width: 600px
 
 -  Open Putty, Tera Term, or other serial terminal program and open a terminal between the COM port the DE10-Nano board by setting the Baud rate to 115200, and connect.
 -  You'll now be prompted to provide a user name and password.
@@ -90,9 +92,11 @@ Before you can start gathering data, you first must locate the CN0549 system set
 
 
 -  Type **ifconfig** into the terminal, hit "Enter"
--  That should echo back some information where you can pull out the inet address of eth0.\
+-  That should echo back some information where you can pull out the inet address of eth0.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
+   :align: center
+   :width: 600px
 
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
@@ -143,8 +147,3 @@ A key purpose of the CN0540 platform is to help aid in condition-based monitorin
 -  :git-pyadi-iio:`Tensorflow Classification Example using an Oscillating Fan [Data collection script] <examples/cn0549/collect_data.py>`
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/com_port.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
-   :width: 600px

@@ -34,9 +34,8 @@ The current flowing through any "black box", multiplied by the voltage drop acro
 
 Before even starting to build any active load circuitry, we know that we're going to have to get rid of potentially a lot of heat. The power transistors and LT3080 regulator from the ALP2000 parts kit are in the very common T0-220 package, with a tab for mounting to a heat sink such as the ones shown below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig0.png
-   :align: center
-   :width: 350px
+
+|image1|
 
 .. container:: centeralign
 
@@ -84,9 +83,8 @@ Use Examples for M1k as an active load
 
 In the following example scenarios, a solar panel is shown as the power source under test. Other power sources such as switch mode DC-DC converters or even chemical batteries can be tested.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig1.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -101,9 +99,8 @@ Taking a few specifications from the TIP31 datasheet we know that the maximum co
 
 In figure 2 we have substituted a power NMOS device, M\ :sub:`1`, for the power NPN device. In an NMOS transistor there is no loss of current to the gate terminal so the actual current supplied by the power source under test, the drain current, will be the same as the measured source current. As in figure 1 the second channel can be connected in parallel using a second R\ :sub:`S` to double the maximum current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig2.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -112,9 +109,9 @@ In figure 2 we have substituted a power NMOS device, M\ :sub:`1`, for the power 
 
 When characterizing power sources such as solar panels, one of the characteristic specifications is short circuit current. While the test configurations of figures 1 and 2 allow for voltages greater than 5 volts they do not allow loading the panel at 0 volts (i.e. short circuit). In figure 3 the negative terminal of the panel is moved to the fixed +5 V output pf the M1k. Just as the adjustable AWG channels of the M1k the fixed 5 V output can both source and sink up to 200 mA. In this configuration the current in Channel A can be increased to the point where voltage measured at the positive terminal of the panel is also +5 V, the same as the negative terminal. Now there will be 0 V across the panel and this will be the short circuit current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig3.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -126,9 +123,8 @@ Use Examples for M2k as an active load
 
 As a comparison, the M2k module can be used in a similar way as an active electronic load. The M2k cannot directly measure current so the differential inputs of channel 1 are used to measure the voltage across the emitter load resistor and thus calculate the current based on the known value of R\ :sub:`E`. Also, the AWG channels of the M2k include an internal 50 Ω resistor and can only supply up to 50 mA of current. This forces us to drive the base of power NPN device Q\ :sub:`1` with AWG source W1 rather than the emitter (as a common emitter amplifier). As shown in figure 4. The M2k provides a selectable 10X internal resistor divider so the external voltage divider R\ :sub:`1`/R\ :sub:`2` will not be needed here for voltages less than +25 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig4.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -137,9 +133,9 @@ As a comparison, the M2k module can be used in a similar way as an active electr
 
 In figure 5, as in figure2, we have substituted a power NMOS device, M\ :sub:`1`, for the power NPN device. In an NMOS transistor there is no loss of current to the gate terminal so the actual current supplied by the power source under test, the drain current, will be the same as the measured source current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig5.png
-   :align: center
-   :width: 500px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -151,18 +147,15 @@ Closed Loop Current Sink.
 
 The examples shown so far are open loop in that a voltage is set (across a resistor) and the resulting current measured. In a closed loop current sink the set voltage is actively forced across a known resistor R\ :sub:`E`, such as 1 Ω, to result in a controlled current. An op-amp can be added to the previous examples to produce a controlled sink current as shown in figures 6 and 7. The output sink current will be equal to Vset / R\ :sub:`E`. The Rail-Rail input/output CMOS AD8542 is a good choice in this example. These examples show the use of an NPN power transistor but a power NMOS can be used just as well.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig6.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
    Figure 6, M1k closed loop active current sink.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig7.png
-   :align: center
-   :width: 600px
+   |image8|
 
 .. container:: centeralign
 
@@ -174,9 +167,8 @@ Current Source for Negative Supplies.
 
 To test negative power sources that are referenced to ground a current source active load is needed. To make any of these positive (voltage) current sink examples into a negative (voltage) current source simply swap out the NPN / NMOS transistor for a PNP / PMOS device. Figure 8 shows how figure 2 might be flipped around to test a negative power supply. Any of the previous N type examples can be converted in a similar way.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig8.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -188,3 +180,22 @@ To test negative power sources that are referenced to ground a current source ac
 `Active Load <https://en.wikipedia.org/wiki/Active_load>`_ :adi:`A Closed-Loop, Wideband, 100A Active Load <media/en/technical-documentation/application-notes/an133f.pdf>`
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig0.png
+   :width: 350px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig1.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig3.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig4.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig5.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig6.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig7.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/tutorials/actice-loads-fig8.png
+   :width: 600px

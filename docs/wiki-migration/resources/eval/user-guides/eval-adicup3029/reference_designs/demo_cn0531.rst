@@ -37,12 +37,14 @@ Setting up the Hardware
 
 -  Connect **EVAL-CN0414-ARDZ** board to the **EVAL-ADICUP3029**.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_adicup_conn.jpg
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|FIXME - PICTURE|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_system_host.jpg
+   :alt: FIXME - PICTURE
+   :align: center
 
 Configuring the Software
 ------------------------
@@ -108,7 +110,7 @@ The software for the **ADuCM3029_demo_cn0531** can be found here:
    Prebuilt CN0531 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0531.Hex <releases/download/Latest/ADuCM3029_demo_cn0531.hex>`
+   -  `AduCM3029_demo_cn0531.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0531.hex>`_
    
    Complete CN0531 Source Files
    
@@ -146,6 +148,3 @@ The program is composed of two main parts:
 Board setup initializes UART and SPI communications and sets the DAC value register to 0. The DAC RBUF bit is also set to 0 to provide the widest voltage range for the application. The DAC output will be between -5V and 5V and coded in two's complement. The coding can be changed to offset binary and the 'do' CLI command will take that into consideration, as it will also take into consideration the RBUF bit. If the RBUF is changed to narrow the output field to 0V - 5V the coding will not change. As such the 0x00000 value of the DAC register will correspond to the middle range value of 2.5V. If not using the 'do' command to change the output, this will have to be taken into consideration.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_adicup_conn.jpg
-.. |FIXME - PICTURE| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0531_system_host.jpg

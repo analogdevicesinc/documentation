@@ -44,7 +44,7 @@ In order to better use this data, Analog Devices has written a small utility whi
 Installing the FRUDump utility
 ------------------------------
 
-The source code for the FRUDump utility is found at `Github <https://github.com/analogdevicesinc/fru_tools>`_.
+The source code for the FRUDump utility is found at :git-fru_tools:`Github <fru_tools>`.
 
 Finding the eeprom
 ------------------

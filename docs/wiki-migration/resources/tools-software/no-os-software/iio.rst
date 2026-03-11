@@ -18,7 +18,7 @@ Depending on the project and hardware used, the platform might have to be specif
 
 ``make PLATFORM=desired_platform IIOD=y``
 
-For more information about building projects, go to: :doc:`:git-no-OS:`wiki/Building-no-OS-on-Linux` </wiki-migration/resources/no-os/build>`. After build, execute command:
+For more information about building projects, go to: :doc:`https://github.com/analogdevicesinc/no-OS/wiki/Building-no-OS-on-Linux </wiki-migration/resources/no-os/build>`. After build, execute command:
 
 
 

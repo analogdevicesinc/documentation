@@ -36,8 +36,8 @@ The FX3 Evaluation GUI provides several ways to read and write the IMU’s onboa
 
 Individual registers can be read by clicking on the corresponding register’s cell in the table. The entire page may also be read by clicking the “Read Page” button in the screen's upper-right corner.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/read_registers.png
-   :alt: read_registers.png
+
+|read_registers.png|
 
 .. important::
 
@@ -121,3 +121,5 @@ Example use cases:
 
    Be cautious to avoid driving an IMU output pin with the FX3, as this can cause permanent damage!
 
+
+.. |read_registers.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/evaluation-systems/read_registers.png

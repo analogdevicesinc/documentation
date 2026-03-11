@@ -26,7 +26,9 @@ Product Highlights
 Typical Data Capture Setup
 --------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656-125EBZ_top_level.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -133,6 +135,3 @@ HSC-ADC-EVALEZ Supported ADC Evaluation Boards
 ----------------------------------------------
 
 Refer to the Analog Devices High Speed ADC capture board product page at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for a table of HSC-ADC-EVALEZ compatible ADC evaluation boards.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD9656-125EBZ_top_level.png
-   :width: 600px

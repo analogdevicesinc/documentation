@@ -98,5 +98,5 @@ This can be used to add two signals FFT's result as shown below.
 
 |image1|
 
-.. |signaladdpic1.png| image:: https://wiki.analog.com/_media/signaladdpic1.png
+.. |signaladdpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/signaladdpic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/complexadd2.jpg

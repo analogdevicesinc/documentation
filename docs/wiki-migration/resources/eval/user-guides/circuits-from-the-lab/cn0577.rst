@@ -231,7 +231,7 @@ To be able to connect your device, the software must be able to create a context
 .. admonition:: Download
    :class: download
 
-   Install the :git-libiio:`Libiio package <releases>` on your machine.
+   Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
@@ -293,7 +293,7 @@ IIO Oscilloscope
    Make sure to download/update to the latest version of IIO-Oscilloscope.
 
    
-   :git-iio-oscilloscope:`releases`
+   https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -373,7 +373,7 @@ Schematic, PCB Layout, Bill of Materials
 Reference Demos & Software
 ==========================
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`

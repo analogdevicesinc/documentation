@@ -16,9 +16,8 @@ Directions:
 
 Construct the circuit of figure 1 using two 1N914 diodes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a25_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -30,8 +29,8 @@ Hardware Setup:
 
 Connect scope input 1+ to the positive terminal of V\ :sub:`Temp` and connect scope input 1- to the negative terminal of V\ :sub:`Temp`. Use the Scopy Voltmeter or Oscilloscope instruments to monitor the value of V\ :sub:`Temp` using the True RMS measurement display. Use auto-range for the Voltmeter or set the "Volts/Div" scale for the Oscilloscope to its most sensitive value (10 mV) and ensure that Channel 1 is enabled. Connect Vp to the 5V Power Supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/difftemp-bb.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
@@ -44,7 +43,7 @@ Procedure:
 1. Allow both diodes to reach the same temperature, i.e., T\ :sub:`sense` = T\ :sub:`ref` . Measure and record the voltage offset as V\ :sub:`Temp` set; subtract this offset voltage from your later measurements.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -55,7 +54,7 @@ Procedure:
 
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -89,5 +88,8 @@ Try substituting a pair of diode connected (base and collector shorted together)
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/difftemp-wav1.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/difftemp-wav2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a25_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/difftemp-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/difftemp-wav1.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/difftemp-wav2.png

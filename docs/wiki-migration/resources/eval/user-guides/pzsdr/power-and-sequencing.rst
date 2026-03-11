@@ -48,14 +48,16 @@ Required items
 Setting up the Hardware
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-::
 
-   *Plug the PicoZed SDR into the PicoZed SDR Carrier.
-   *Plug the power supply into connector P20.
-   *Plug the micro USB cable into connector P10.
-   *Plug the ethernet cable into your network and the PicoZed SDR Carrier.
-   *Insert the micro SD card into the PicoZed SDR.
-   *{{:resources:eval:user-guides:pzsdr:pzsdr_rfsom_sequencer_setup_serial_command2.jpg?500|}}
+
+- Plug the PicoZed SDR into the PicoZed SDR Carrier.
+- Plug the power supply into connector P20.
+- Plug the micro USB cable into connector P10.
+- Plug the ethernet cable into your network and the PicoZed SDR Carrier.
+- Insert the micro SD card into the PicoZed SDR.
+-
+
+|resources-eval-user-guides-pzsdr-pzsdr_rfsom_sequencer_setup_serial_command2.jpg|
 
 Command Line
 ^^^^^^^^^^^^
@@ -146,13 +148,14 @@ Required items
 -  1 microSD card (with appropriate image).
 -  1 :adi:`USB-SDP-CABLEZ Serial I/O Interface <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval_usb-sdp-cablez.html#eb-overview>` cable
 
-::
+|resources-eval-user-guides-pzsdr-usb-sdp-cablez.png|
 
-   {{ :resources:eval:user-guides:pzsdr:usb-sdp-cablez.png?600 }}
-   * 1 Custom Adapter for the USB-SDP-CABLEZ.
-   {{ :resources:eval:user-guides:pzsdr:adapter_board_t_b.jpg?200 }}
-   * [[:adi:`en/products/power-management/sequencing/digital-sequencers/adm1166`.html#product-requirement|ADMxxxx Run Time Installer]].
-   * [[:adi:`en/products/power-management/sequencing/digital-sequencers/adm1166`.html#product-requirement|Super Sequencer Configuration Tool]].
+-  1 Custom Adapter for the USB-SDP-CABLEZ.
+
+|resources-eval-user-guides-pzsdr-adapter_board_t_b.jpg|
+
+-  :adi:`ADMxxxx Run Time Installer <en/products/power-management/sequencing/digital-sequencers/adm1166.html#product-requirement>`.
+-  :adi:`Super Sequencer Configuration Tool <en/products/power-management/sequencing/digital-sequencers/adm1166.html#product-requirement>`.
 
 Software Setup
 ^^^^^^^^^^^^^^
@@ -169,26 +172,37 @@ Hardware Setup
 -  Insert the micro SD card into the PZSDR board.
 -  Firmly plug the PZSDR board into the Breakout board.
 
-|setup_2.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/setup_2.jpg
+   :alt: setup_2.jpg
+   :align: center
+   :width: 600px
 
 -  Using a USB mini cable, plug the USB-SDP-CABLEZ into the PC.
 -  Connect the custom adapter to the USB-SDP-CABLEZ.
 
    -  If using the carrier board, place a piece of non conductive tape on the bottom of the adapter board. It helps to avoid unintentional short circuits.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_board_b_tape.jpg
+   :alt: adapter_board_b_tape.jpg
+   :align: center
+   :width: 200px
 
-   |adapter_board_b_tape.jpg|
+::
 
-   -  If using the breakout board, or the PZSDR card by itself, no tape is required on the bottom of the adapter board.
+     * If using the breakout board, or the PZSDR card by itself, no tape is required on the bottom of the adapter board.
+   * Plug the adapter into connector P1 on the PZSDR board, found on the underside of the PCB.  Line up the 5 pins with the 5 holes of the connector.
 
--  Plug the adapter into connector P1 on the PZSDR board, found on the underside of the PCB. Line up the 5 pins with the 5 holes of the connector.
-
-
-|adapter_board_alignment.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_board_alignment.jpg
+   :alt: adapter_board_alignment.jpg
+   :align: center
+   :width: 600px
 
 -  Check that the green LED seen in the image below is on meaning the boards are correctly mated.
 
-|adapter_plugged_in_and_led_on_2.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_plugged_in_and_led_on_2.jpg
+   :alt: adapter_plugged_in_and_led_on_2.jpg
+   :align: center
+   :width: 600px
 
 -  It is important to note, if the PZSDR board is not plugged into the break out board, the sequencer tool can not monitor the voltage rails. However, it can still be properly programmed. To monitor the voltage rails using the super sequencer tool, plug the PZSDR board into the break out board and toggle S5 so the switch is towards the outside edge of the board.
 
@@ -200,17 +214,25 @@ How to Program the Sequencer
 
    -  If the ADM1166 is not listed, check the connection between connector P1 of the PZSDR board and the custom adapater. A solid connection is required for configuration.
 
-
-   |software_1.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_1.png
+   :alt: software_1.png
+   :align: center
+   :width: 600px
 
 -  Click 'Continue'.
 -  If prompted to load settings from last saved session, click 'No'
 
-|software_2.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_2.png
+   :alt: software_2.png
+   :align: center
+   :width: 600px
 
 -  Click 'File'.
 
-|software_4.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_4.png
+   :alt: software_4.png
+   :align: center
+   :width: 600px
 
 -  Click 'Recall Settings from File'.
 -  Click 'Recall'.
@@ -220,7 +242,10 @@ How to Program the Sequencer
 -  Now wait a few seconds as the software works to import your configuration ADM1166.
 -  A prompt should appear detailing the checksum results.
 
-|software_3.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_3.png
+   :alt: software_3.png
+   :align: center
+   :width: 600px
 
 -  Click 'Ok'.
 -  Click 'EEPROM OPTIONS'.
@@ -456,7 +481,7 @@ Did you adjust a setting incorrectly? Now the sequencer won’t allow the system
 Is there a default file I can load?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default file that comes pre-loaded when you order hardware can be found on `Github <https://github.com/analogdevicesinc/PicoZed-SDR>`_.
+The default file that comes pre-loaded when you order hardware can be found on :git-PicoZed-SDR:`Github <PicoZed-SDR>`.
 
 This file is also updated on occasion to include new features, tweaks or other items which pop up as systems are developed.
 
@@ -465,19 +490,7 @@ This file is also updated on occasion to include new features, tweaks or other i
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/ad9361_timing_diagram.jpg
    :width: 800px
-.. |setup_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/setup_2.jpg
-   :width: 600px
-.. |adapter_board_b_tape.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_board_b_tape.jpg
-   :width: 200px
-.. |adapter_board_alignment.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_board_alignment.jpg
-   :width: 600px
-.. |adapter_plugged_in_and_led_on_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_plugged_in_and_led_on_2.jpg
-   :width: 600px
-.. |software_1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_1.png
-   :width: 600px
-.. |software_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_2.png
-   :width: 600px
-.. |software_4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_4.png
-   :width: 600px
-.. |software_3.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/software_3.png
-   :width: 600px
+
+.. |resources-eval-user-guides-pzsdr-adapter_board_t_b.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adapter_board_t_b.jpg
+.. |resources-eval-user-guides-pzsdr-pzsdr_rfsom_sequencer_setup_serial_command2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr_rfsom_sequencer_setup_serial_command2.jpg
+.. |resources-eval-user-guides-pzsdr-usb-sdp-cablez.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/usb-sdp-cablez.png

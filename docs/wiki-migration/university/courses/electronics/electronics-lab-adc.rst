@@ -11,8 +11,8 @@ Background
 
 Analog-to-Digital converters (ADC) translate analog signals, real world signals like temperature, pressure, voltage, current, distance, or light intensity, into a digital representation of that signal. This digital representation can then be processed, manipulated, computed, transmitted or stored.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f1.gif
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -21,8 +21,9 @@ Analog-to-Digital converters (ADC) translate analog signals, real world signals 
 
 An ADC samples an analog waveform at uniform time intervals and assigns a digital value to each sample. The digital value appears on the converter’s output in a binary coded format. The value is obtained by dividing the sampled analog input voltage by the reference voltage and them multiplying by the number of digital codes. The resolution of converter is set by the number of binary bits in the output code.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f3.gif
-   :align: center
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -31,8 +32,9 @@ An ADC samples an analog waveform at uniform time intervals and assigns a digita
 
 An ADC carries out two processes, sampling and quantization. The ADC represents an analog signal, which has infinite resolution, as a digital code that has finite resolution. The ADC produces 2N digital values where N represents the number of binary output bits. The analog input signal will fall between the quantization levels because the converter has finite resolution resulting in an inherent uncertainty or quantization error. That error determines the maximum dynamic range of the converter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f4.gif
-   :align: center
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -41,8 +43,9 @@ An ADC carries out two processes, sampling and quantization. The ADC represents 
 
 The sampling process represents a continuous time domain signal with values measured at discrete and uniform time intervals. This process determines the maximum bandwidth of the sampled signal in accordance with the Nyquist Theory. This theory states that the signal frequency must be less than or equal to one half the sampling frequency to prevent aliasing. Aliasing is a condition in which frequency signals outside the desired signal band will, through the sampling process, appear within the bandwidth of interest. However, this aliasing process can be exploited in communications systems design to down-convert a high frequency signal to a lower frequency. This technique is known as under-sampling. A criterion for under-sampling is that the ADC has sufficient input bandwidth and dynamic range to acquire the highest frequency signal of interest.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f5.gif
-   :align: center
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -51,8 +54,9 @@ The sampling process represents a continuous time domain signal with values meas
 
 Sampling and quantization are important concepts because they establish the performance limits of an ideal ADC. In an ideal ADC, the code transitions are exactly 1 least significant bit (LSB) apart. So, for an N-bit ADC, there are 2N codes and 1 LSB = FS/2N, where FS is the full-scale analog input voltage. However, ADC operation in the real world is also affected by non-ideal effects, which produce errors beyond those dictated by converter resolution and sample rate. These errors are reflected in a number of AC and DC performance specifications associated with ADCs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f6.gif
-   :align: center
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -83,7 +87,7 @@ Consider the circuit presented in Figure 6.
 
    ..
 
-|image1|
+|image6|
 
 .. container:: centeralign
 
@@ -97,7 +101,7 @@ The circuit represents the analog side of a 2-bit Flash ADC with the architectur
 
    ..
 
-|image2|
+|image7|
 
 .. container:: centeralign
 
@@ -116,7 +120,7 @@ Build the circuit presented in figure 7 on your solderless breadboard. This is a
 
    ..
 
-|image3|
+|image8|
 
 .. container:: centeralign
 
@@ -137,7 +141,7 @@ A plot with the output signals are presented in Figure 9.
 
    ..
 
-|image4|
+|image9|
 
 .. container:: centeralign
 
@@ -159,7 +163,7 @@ For this particular application AD654 Voltage-to-Frequency converter is used as 
 
    ..
 
-|image5|
+|image10|
 
 .. container:: centeralign
 
@@ -180,7 +184,7 @@ Build the following breadboard circuit for Voltage-to-Frequency Converter as ADC
 
    ..
 
-|image6|
+|image11|
 
 .. container:: centeralign
 
@@ -201,7 +205,7 @@ A plot with the output signal is presented in Figure 12.
 
    ..
 
-|image7|
+|image12|
 
 .. container:: centeralign
 
@@ -217,7 +221,7 @@ Now set the input voltage at 0.5V. A plot with the output signal is presented in
 
    ..
 
-|image8|
+|image13|
 
 .. container:: centeralign
 
@@ -246,7 +250,7 @@ Usually, the SAR ADC circuit consists of four subcircuits:
 
    ..
 
-|image9|
+|image14|
 
 .. container:: centeralign
 
@@ -260,7 +264,7 @@ The SAR is initialized so that the most significant bit (MSB) is equal to a digi
 
    ..
 
-|image10|
+|image15|
 
 .. container:: centeralign
 
@@ -279,7 +283,7 @@ In order to emphasize the operation principle of the SAR ADC with ADALM2000, we 
 
    ..
 
-|image11|
+|image16|
 
 .. container:: centeralign
 
@@ -293,7 +297,7 @@ Build the following breadboard circuit for SAR ADC.
 
    ..
 
-|image12|
+|image17|
 
 .. container:: centeralign
 
@@ -320,7 +324,7 @@ Visualize the digital output behavior on the Logic Analyzer. An animated plot ex
 
    ..
 
-|image13|
+|image18|
 
 .. container:: centeralign
 
@@ -336,7 +340,7 @@ Visualize the apporximation behavior of the DAC output in time domain using the 
 
    ..
 
-|image14|
+|image19|
 
 .. container:: centeralign
 
@@ -358,7 +362,7 @@ The :adi:`AD7920 <media/en/technical-documentation/data-sheets/AD7910_7920.pdf>`
    \
 
 
-   |image15|
+   |image20|
 
 .. container:: centeralign
 
@@ -374,7 +378,7 @@ Figure 21 shows a typical connection setup for the AD7920. VREF is taken interna
 
 .. container:: centeralign
 
-   |image16|\
+   |image21|\
 
 
 .. container:: centeralign
@@ -384,7 +388,7 @@ Figure 21 shows a typical connection setup for the AD7920. VREF is taken interna
 
 .. container:: centeralign
 
-   |image17|\
+   |image22|\
 
 
 .. container:: centeralign
@@ -399,7 +403,7 @@ Open Scopy and enable the positive power supply to 3V. Configure the channel 1 o
 
 .. container:: centeralign
 
-   \ |image18|\
+   \ |image23|\
 
 
 .. container:: centeralign
@@ -413,7 +417,7 @@ In Patern Generator you should configure the clock signal. Enable DIO1 channel, 
 
 .. container:: centeralign
 
-   \ |image19|\
+   \ |image24|\
 
 
 .. container:: centeralign
@@ -448,7 +452,7 @@ The Dual-Slope ADC (or a variant) is at the heart of many of the most accurate d
 
    ..
 
-|image20|
+|image25|
 
 .. container:: centeralign
 
@@ -464,7 +468,7 @@ The converter operates by applying the unknown input voltage to an integrator fo
 
    ..
 
-|image21|
+|image26|
 
 .. container:: centeralign
 
@@ -483,7 +487,7 @@ The reference voltage does need to be accurate, as it directly affects the measu
 
    ..
 
-|image22|
+|image27|
 
 .. container:: centeralign
 
@@ -502,7 +506,7 @@ Open the LTspice file DualSlope.asc
 
    ..
 
-|image23|
+|image28|
 
 .. container:: centeralign
 
@@ -516,7 +520,7 @@ Run the simulation, probing the Vintegrate node:
 
    ..
 
-|image24|
+|image29|
 
 .. container:: centeralign
 
@@ -530,7 +534,7 @@ The simulation adds 60Hz line noise to a DC input voltage. Several cases are run
 
    ..
 
-|image25|
+|image30|
 
 .. container:: centeralign
 
@@ -547,7 +551,7 @@ Build the following breadboard circuit for the dual-slope ADC, and make the indi
 
    ..
 
-|image26|
+|image31|
 
 .. container:: centeralign
 
@@ -574,7 +578,7 @@ Oscilloscope: 200ms timebase, Ch1 set to 400mV/division. Falling-edge trigger, 2
 
    ..
 
-|image27|
+|image32|
 
 .. container:: centeralign
 
@@ -592,7 +596,7 @@ By varying the input voltage we can notice a change in the runup time. An animat
 
    ..
 
-|image28|
+|image33|
 
 .. container:: centeralign
 
@@ -627,45 +631,50 @@ Some additional resources:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f1.gif
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f3.gif
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f4.gif
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f5.gif
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f6.gif
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc.png
    :width: 350px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc-decoded_output.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc-decoded_output.png
    :width: 750px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc-bb.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc-bb.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc_logic_gates_out.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/flash_adc_logic_gates_out.png
    :width: 900px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/voltagetofrequencyconverteradc.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/voltagetofrequencyconverteradc.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/vf_adc-bb.png
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/vf_adc-wav1.png
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/vf_adc-wav2.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc_architecture.png
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc_example.png
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/vf_adc-bb.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/vf_adc-wav1.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/vf_adc-wav2.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc_architecture.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc_example.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc.png
    :width: 700px
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc-bb.png
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc-digital.gif
-.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc-wav.png
-.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/acquisition_conversion_ad792.png
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc-bb.png
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc-digital.gif
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/sar_adc-wav.png
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/acquisition_conversion_ad792.png
    :width: 800px
-.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/ad7920_connections.png
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/ad7920_connections.png
    :width: 500px
-.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/ad7920_connections_bb.png
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/ad7920_connections_bb.png
    :width: 900px
-.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/vref_vin.png
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/vref_vin.png
    :width: 900px
-.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/adc_out_1_5v.png
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/adc_out_1_5v.png
    :width: 900px
-.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-struct.png
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-struct.png
    :width: 500px
-.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-integr_wav.png
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-integr_wav.png
    :width: 500px
-.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-freq_resp.png
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-freq_resp.png
    :width: 500px
-.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-sch.png
-.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-sim1.png
-.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-sim2.png
-.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-bb.png
-.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-wav.png
-.. |image28| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-wav.gif
+.. |image28| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-sch.png
+.. |image29| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-sim1.png
+.. |image30| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-sim2.png
+.. |image31| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-bb.png
+.. |image32| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-wav.png
+.. |image33| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_slope-wav.gif

@@ -25,9 +25,8 @@ It is not surprising that simplified models are not exact. On the other hand, th
 
 One of the most distinguishing features of op amps is their staggering magnitude of DC voltage gain. Even the least expensive devices have typical voltage gains of 100,000 (100dB), while the highest performance precision bipolar and chopper stabilized amplifiers can have gains as high 10,000,000 (140dB), or more. Negative feedback applied around this much voltage gain readily accomplishes the virtues of closed-loop performance, making the circuit dependent only on the feedback components.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,19 +42,19 @@ But in reality, op amps do have finite gain, and errors exist in practical circu
 
 The first aid to analyzing op amps circuits is to differentiate between noise gain and signal gain. We have already discussed the differences between non-inverting and inverting stages as to their signal gains, which are summarized in equations 3.1 and 3.2, respectively. But, as can be noticed from figure 3.1, the difference between an inverting and non-inverting stage can be as simple as just where the reference ground is placed. For a ground at point G1, the stage is an inverter; conversely, if the ground is placed at point G2 (with no G1) the stage is non-inverting.
 
-| |image1|
-| 3.1 |image2|
+| |image2|
+| 3.1 |image3|
 | 3.2
 
 Note however that in terms of the feedback path, there are no real differences. To make things more general, the resistive feedback components previously shown are replaced here with the more general symbols Z\ :sub:`F` and Z\ :sub:`G`, otherwise they function as before. The feedback attenuation, β, is the same for both the inverting and non-inverting stages:
 
-|image3| 3.3
+|image4| 3.3
 
 Noise gain can now be simply defined as: The inverse of the net feedback attenuation from the amplifier output to the feedback input. In other words, the inverse of the β network transfer function. This can ultimately be extended to include frequency dependence (covered later in this chapter). Noise gain can be abbreviated as NG.
 
 As noted, the inverse of ß is the ideal non-inverting op amp stage gain. Including the β effects of finite op amp gain, a modified gain expression for the non-inverting stage is:
 
-|image4| 3.4
+|image5| 3.4
 
 Where G\ :sub:`CL` is the finite-gain stage's closed-loop gain and A\ :sub:`VOL` is the op amp open-loop voltage gain for loaded conditions.
 
@@ -65,11 +64,11 @@ It may seem logical here to develop another finite gain error expression for an 
 
 It is useful to note some assumptions associated with the rightmost error multiplier term of equation 3.4. For A\ :sub:`VOL`\ β >> 1, one assumption is:
 
-|image5| 3.5
+|image6| 3.5
 
 This in turn leads to an estimation of the percentage error, β, due to finite gain A\ :sub:`VOL`:
 
-|image6| 3.6
+|image7| 3.6
 
 Again this error goes to zero as A\ :sub:`VOL` goes to infinity.
 
@@ -78,7 +77,7 @@ Again this error goes to zero as A\ :sub:`VOL` goes to infinity.
 
 The closed-loop gain error predicted by these equations is not in itself tremendously important, since the ratio Z\ :sub:`F`/Z\ :sub:`G` could always be adjusted to compensate for this error. But note however that closed-loop gain stability is a very important consideration in most applications. Closed-loop gain instability is produced primarily by variations in open-loop gain due to changes in supply voltage, temperature, loading, etc.
 
-|image7| 3.7
+|image8| 3.7
 
 From equation 3.7, any variation in open-loop gain (βA\ :sub:`VOL`) is reduced by the factor A\ :sub:`VOL` β, insofar as the effect on closed-loop gain. This improvement in closed-loop gain stability is one of the important benefits of negative feedback.
 
@@ -91,11 +90,11 @@ The term "loop gain" comes from the method of measurement. This is done by break
 
 Another useful approximation is developed as follows. A rearrangement of equation 3-4 is:
 
-|image8| 3.8
+|image9| 3.8
 
 So, for high values of A\ :sub:`VOL`\ β,
 
-|image9| 3.9
+|image10| 3.9
 
 Consequently, in a given feedback circuit the loop gain, A\ :sub:`VOL`\ β, is approximately the numeric ratio (or difference, in dB) of the amplifier open-loop gain to the circuit closed-loop gain.
 
@@ -112,9 +111,8 @@ Thus far, it has been assumed that amplifier open-loop gain is independent of fr
 
 The open-loop frequency response for a typical operational amplifier with superimposed closed-loop amplifier response for a gain of 100 (40dB), illustrates graphically these results, in figure 3.2. In these Bode plots, subtraction on a logarithmic scale is equivalent to normal division of numeric data. Today, op amp open-loop gain and loop gain parameters are typically given in dB terms, thus this display method is convenient.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f2.png
-   :align: center
-   :width: 570px
+
+|image11|
 
 .. container:: centeralign
 
@@ -154,9 +152,8 @@ If you plot the open-loop gain and then the noise gain on a Bode plot as shown i
 
 The Bode plot is also useful in determining stability. As stated above, if the closed-loop gain (noise gain) intersects the open-loop gain at a slope of greater than 6 dB/octave (20 dB/decade) the amplifier may be unstable (depending on the phase margin).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f3.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -168,9 +165,8 @@ The Bode plot is also useful in determining stability. As stated above, if the c
 
 The open-loop gain falls at 6 dB/octave for a single-pole response. This means that if we double the frequency, the gain drops by a factor of two. Conversely, if the frequency is halved, the open-loop gain will double, as shown in figure 3.4. This gives rise to what is known as the Gain-Bandwidth Product. If we multiply the open-loop gain by the frequency, the product is always a constant. The caveat for this is that we have to be in the part of the curve that is falling at 6 dB/octave. This gives us a convenient figure of merit with which to determine if a particular op amp is useable in a particular application. Note that the gain-bandwidth product is meaningful only for voltage feedback (VFB) op amps.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f4.png
-   :align: center
-   :width: 600px
+
+|image13|
 
 .. container:: centeralign
 
@@ -190,9 +186,8 @@ The question could be asked - why would you want an amplifier that is not unity 
 
 As an example, compare the open-loop gain graphs in figure 3.5. The three commercial op-amps shown, (AD847, AD848 and AD849) are basically the same design with different internal compensation. The AD847 is unity gain stable and has a specified gain-bandwidth of 50 MHz. The AD848 is stable for gains of 5 or more and has a gain-bandwidth of 175 MHz. The AD849 is stable for a gain of 25 or more and has a gain-bandwidth of 725 MHz. This illustrates how op amp internal compensation can be adjusted in the design to yield various gain-bandwidth products as a function of minimum stable gain for the same basic design topology.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f5.png
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
@@ -206,9 +201,8 @@ One measure of stability is phase margin. Just as the amplitude response doesn't
 
 The result of low phase margin is an increase in gain peaking just before the frequency at which the closed-loop gain intersects the open-loop gain. Figure 3.6 shows the gain and phase response for a typical (the AD8051) op amp. In this case the phase margin is 45° at the frequency of unity gain.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f6.png
-   :align: center
-   :width: 500px
+
+|image15|
 
 .. container:: centeralign
 
@@ -223,9 +217,8 @@ The result of low phase margin is an increase in gain peaking just before the fr
 
 Ideally, if both inputs of an op amp are at exactly the same voltage, then the output should be at zero volts. In practice, a small differential voltage will need to be applied to the inputs to force the output to zero. This is known as the input offset voltage, V\ :sub:`OS`. Input offset voltage is modeled as a voltage source, V\ :sub:`OS`, in series with the inverting input terminal of the op amp as shown in figure 3.7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f7.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
@@ -263,9 +256,8 @@ Long-term stability of chopper-stabilized op amps is not specified because the a
 
 Measuring input offset voltages of a few microvolts requires that the test circuit does not introduce more error than the offset voltage itself. Figure 3.8 shows a standard circuit for measuring offset voltage. The circuit amplifies the input offset voltage by the noise gain of 1001. The measurement is made at the amplifier output using an accurate digital voltmeter. The offset referred to the input (RTI) is calculated by dividing the output voltage by the noise gain. The small source resistance seen by the inputs results in negligible bias current contribution to the measured offset voltage. For example, 2 nA bias current flowing through the 10O resistor produces a 0.02 µV error referred to the input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f8.png
-   :align: center
-   :width: 500px
+
+|image17|
 
 .. container:: centeralign
 
@@ -282,9 +274,8 @@ Measuring the offset voltage shift over temperature is an even more demanding ch
 
 An alternate V\ :sub:`OS` measurement method is shown in figure 3.9, and is suitable for cases of high and/or unequal bias currents (as in the case of current feedback op amps). In this measurement method, an instrumentation amplifier is connected to the op amp input terminals through isolation resistors, and provides the gain for the measurement. The offset voltage of the in-amp (measured with S closed) must then be subtracted from the final V\ :sub:`OS` measurement.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f9.png
-   :align: center
-   :width: 500px
+
+|image18|
 
 .. container:: centeralign
 
@@ -296,9 +287,8 @@ An alternate V\ :sub:`OS` measurement method is shown in figure 3.9, and is suit
 
 Many single op amps have pins available for optional offset null. To make use of this feature, two pins are joined by a potentiometer, and the wiper goes to one of the supplies through a resistor, as shown generally in figure 3.10. Note that if the wiper is accidentally connected to the wrong supply, the op amp will probably be damaged - this is a common problem, when one op amp type is replaced by another. The range of offset adjustment in a well-designed op amp is no more than two or three times the maximum V\ :sub:`OS` of the lowest grade device, in order to minimize sensitivity. Nevertheless, the voltage gain of an op amp at its offset adjustment pins may actually be greater than the gain at its signal inputs! It is therefore very important to keep these pins noise-free. Note that it is never advisable to use long leads from an op amp to a remote nulling potentiometer.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f10.png
-   :align: center
-   :width: 600px
+
+|image19|
 
 .. container:: centeralign
 
@@ -322,9 +312,8 @@ With an inverting op amp configuration, injecting current into the inverting inp
 
 Figure 3.11B shows how to implement offset trim by injecting a small offset voltage into the non-inverting input. This circuit is preferred over figure 3.11A, as it results in no noise gain increase (but it requires adding R\ :sub:`P`). If the op amp has matched input bias currents, then RP should equal R\ :sub:`1`\ II R\ :sub:`2` (to minimize the added offset voltage). Otherwise, R\ :sub:`P` should be less than 50Ω. For higher values, it may be advisable to bypass R\ :sub:`P` at high frequencies.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f11.png
-   :align: center
-   :width: 500px
+
+|image20|
 
 .. container:: centeralign
 
@@ -333,9 +322,9 @@ Figure 3.11B shows how to implement offset trim by injecting a small offset volt
 
 The circuit shown in figure 3.12 can be used to inject a small offset voltage when using an op amp in the non-inverting mode. This circuit works well for small offsets, where R\ :sub:`3`\ can be made much greater than R\ :sub:`1`. Note that otherwise, the signal gain might be affected as the offset potentiometer is adjusted. The gain may be stabilized, however, if R\ :sub:`3` is connected to a fixed low impedance reference voltage sources, ±V\ :sub:`R`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f12.png
-   :align: center
-   :width: 500px
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -347,9 +336,8 @@ The circuit shown in figure 3.12 can be used to inject a small offset voltage wh
 
 The DigiTrim(tm) CMOS op amp family exploits the advantages of digital technology, so as to minimize the offset voltage normally associated with CMOS amplifiers. Offset voltage trimming is done after the devices are packaged. A digital code is entered into the device to adjust the offset voltage to less than 1 mV, depending upon the grade. Wafer testing is not required, and the patented Analog Devices' technique called DigiTrim(tm) requires no extra pins to accomplish the function. These devices have rail-to-rail inputs and outputs, and the NMOS and PMOS parallel input stages are trimmed separately using DigiTrim to minimize the offset voltage in both pairs. A functional diagram of a typical DigiTrim CMOS op amp is shown in figure 3.13.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f13.png
-   :align: center
-   :width: 500px
+
+|image22|
 
 .. container:: centeralign
 
@@ -410,9 +398,8 @@ Table 3.1: Summary of Typical Offset Trim Processes
 
 Ideally, no current flows into the input terminals of an op amp. In practice, there are always two input bias currents, I\ :sub:`B+` and I\ :sub:`B-` (see figure 3.14).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f14.png
-   :align: center
-   :width: 500px
+
+|image23|
 
 .. container:: centeralign
 
@@ -443,9 +430,8 @@ It should be noted that rail-to-rail input stages comprised of two complementary
 
 By providing this necessary bias currents via an internal current source, as in figure 3.15 below, the only external current then flowing in the input terminals is the difference current between the base current and the current source, which can be quite small.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f15.png
-   :align: center
-   :width: 500px
+
+|image24|
 
 .. container:: centeralign
 
@@ -484,9 +470,8 @@ As previously mentioned, rail-to-rail input stages have bias currents that chang
 
 When the bias currents of an op amp are well matched (the case with simple bipolar input stage op amps, but not internally bias compensated ones, as noted previously), a bias compensation resistor, R\ :sub:`3`, (R\ :sub:`3`\ =R\ :sub:`1` \|\| R\ :sub:`2`) introduces a voltage drop in the non-inverting input to match and thus compensate the drop in the parallel combination of R\ :sub:`1` and R\ :sub:`2` in the inverting input. This minimizes additional offset voltage error, as in figure 3.16. Note that if R\ :sub:`3` is more than 1kΩ or so, it should be bypassed with a capacitor to prevent noise pickup. Also note that this form of bias cancellation is useless where bias currents are not well-matched, and will, in fact, make matters worse.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f16.png
-   :align: center
-   :width: 500px
+
+|image25|
 
 .. container:: centeralign
 
@@ -500,9 +485,8 @@ Input bias current (or input offset voltage) may be measured using the test circ
 
 Typical useful R\ :sub:`S` values vary from 100kΩ for bipolar op amps to 1000MΩ for some FET input devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f17.png
-   :align: center
-   :width: 550px
+
+|image26|
 
 .. container:: centeralign
 
@@ -511,9 +495,9 @@ Typical useful R\ :sub:`S` values vary from 100kΩ for bipolar op amps to 1000M�
 
 Extremely low input bias currents must be measured by integration techniques. The bias current in question is used to charge a capacitor, and the rate of voltage change is measured. If the capacitor and general circuit leakage is negligible (this is very difficult for currents under 10 fA), the current may be calculated directly from the rate of change of the output of the test circuit. Figure 3.18 below illustrates the general concept. With one switch open and the opposite closed, either I\ :sub:`B+` or I\ :sub:`B-` is measured.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f18.png
-   :align: center
-   :width: 600px
+
+
+|image27|
 
 .. container:: centeralign
 
@@ -530,9 +514,8 @@ It should be noted that only a premium low leakage capacitor dielectric can be u
 
 The equations shown in figure 3.19 below are useful in referring all the offset voltage and induced offset voltage from bias current errors to the either the input (RTI) or the output (RTO) of the op amp. The choice of RTI or RTO is a matter of preference.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f19.png
-   :align: center
-   :width: 550px
+
+|image28|
 
 .. container:: centeralign
 
@@ -588,21 +571,59 @@ Before departing the topic of offset errors, some simple rules towards minimizat
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e1.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e1.png
    :width: 150px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e2.png
    :width: 80px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e3.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e3.png
    :width: 150px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e4.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e4.png
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e5.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e5.png
    :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e6.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e6.png
    :width: 150px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e7.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e7.png
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e8.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e8.png
    :width: 170px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e9.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-e9.png
    :width: 170px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f2.png
+   :width: 570px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f3.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f4.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f5.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f6.png
+   :width: 500px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f7.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f8.png
+   :width: 500px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f9.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f10.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f11.png
+   :width: 500px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f12.png
+   :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f13.png
+   :width: 500px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f14.png
+   :width: 500px
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f15.png
+   :width: 500px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f16.png
+   :width: 500px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f17.png
+   :width: 550px
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f18.png
+   :width: 600px
+.. |image28| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr3-f19.png
+   :width: 550px

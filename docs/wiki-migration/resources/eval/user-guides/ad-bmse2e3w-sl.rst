@@ -284,15 +284,15 @@ The board utilizes the DC2472A battery emulator as input for cell voltage measur
 
 4. Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the 10-pin ribbon SWD cable. Power the MAX32625PICO using a micro-USB to USB cable connected to the Host PC.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/max32625_power_usb_pc.png
-   :align: center
+
+|image2|
 
 .. container:: center round box
 
    **By default (upon purchase), the AD-BMSE2E3W-SL board comes with a MAX32625PICO programmer adapter that is loaded with firmware image.
 
    
-   Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the :git-max32625pico-firmware-images:`correct firmware image <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>` before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:\*\*
+   Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the `correct firmware image <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_ before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:\*\*
    
    
 
@@ -300,13 +300,15 @@ The board utilizes the DC2472A battery emulator as input for cell voltage measur
 
    <details><summary>**Click here to learn how to flash the firmware image in the MAX32625PICO**
 
--   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`
+-   Download the firmware image: `MAX32625PICO Firmware Image for MAX32690 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_
    -   Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
    -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
-   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
-
-   |image2|
-
+   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+      :align: center
+      :width: 400px
+   
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
    -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.
@@ -416,9 +418,9 @@ Below diagram depicts the essential components needed when using this BMS refere
 
 4. **Load** - This block is where you can place your external load. The voltage output at this level can vary from 72V to 96V with 50A to 100A range current capacity. The system implements a low side current sensing using Rshunt (sense resistor) where the VBAT- of the battery is connected to the upper end of the Rshunt bar and Shunt- is connected to the lower end of the Rshunt. The Shunt- will then be connected to the end of the load or the negative supply of the load.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/load_diagram.png
-   :align: center
-   :width: 500px
+
+
+|image14|
 
 .. tip::
 
@@ -476,8 +478,7 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_emulator_pins.png
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/max32625_power_usb_pc.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/connector_supply_vbattp.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/gnd_vbat-_to_gnd_sense.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/quick_test_points.png
@@ -496,4 +497,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/uart_comm.png
    :width: 500px
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/basic_can_comm.png
+   :width: 500px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/load_diagram.png
    :width: 500px

@@ -60,7 +60,7 @@ Now we have to build a different bitstream used for various test features:
 ::
 
    cd ~/zynq-picozed-sdr2
-   git clone https://github.com/analogdevicesinc/hdl.git
+   git clone :git-hdl:`hdl`
    cd hdl/projects/pzsdr/ccbrk
    git checkout dev
    make pzsdr.ccbrk
@@ -80,7 +80,7 @@ The main U-Boot test ELF should be created using a process similar to the follow
 ::
 
    cd ~/zynq-picozed-sdr2
-   git clone https://github.com/analogdevicesinc/u-boot-xlnx.git
+   git clone :git-u-boot-xlnx:`u-boot-xlnx`
    cd u-boot-xlnx
    git checkout pzsdr-test
    export CROSS_COMPILE=arm-xilinx-eabi-
@@ -166,7 +166,7 @@ Creating the no-OS test ELFs
 ::
 
    cd ~/zynq-picozed-sdr2
-   git clone https://github.com/analogdevicesinc/no-OS.git
+   git clone :git-no-OS:`no-OS`
    cd no-OS/pzsdr/ccbrk/loopback
    ln -s ~/zynq-picozed-sdr2/hdl/projects/pzsdr/ccbrk/ccbrk_pzsdr.sdk/system_top.hdf
    make
@@ -231,7 +231,7 @@ The code for all the various pieces required to create testing SD cards can be f
    
    **Test script:**
    
-   -  Bash script to automate the various interface tests: :git-board-tests:`picozed-sdr2-fmc/runtests`.sh
+   -  Bash script to automate the various interface tests: :git-board-tests:`picozed-sdr2-fmc/runtests.sh`
    
    The remaining files used by the tests can be found in the parent directory: :git-board-tests:`picozed-sdr2-fmc`
 
@@ -257,7 +257,7 @@ Build a loopback-enabled bitstream:
 
    mkdir -p ~/zynq-picozed-sdr2
    cd ~/zynq-picozed-sdr2
-   git clone https://github.com/analogdevicesinc/hdl.git
+   git clone :git-hdl:`hdl`
    cd hdl/projects/pzsdr/ccfmc
    git checkout dev
    make pzsdr.ccfmc
@@ -277,7 +277,7 @@ The main U-Boot test ELF should be created using a process similar to the follow
 ::
 
    cd ~/zynq-picozed-sdr2
-   git clone https://github.com/analogdevicesinc/u-boot-xlnx.git
+   git clone :git-u-boot-xlnx:`u-boot-xlnx`
    cd u-boot-xlnx
    git checkout pzsdr-ccfmc-test
    export CROSS_COMPILE=arm-xilinx-eabi-
@@ -319,7 +319,7 @@ Next, create the no-OS loopback test ELF:
 ::
 
    cd ~/zynq-picozed-sdr2
-   git clone https://github.com/analogdevicesinc/no-OS.git
+   git clone :git-no-OS:`no-OS`
    cd no-OS/pzsdr/ccfmc/loopback
    ln -s ~/zynq-picozed-sdr2/hdl/projects/pzsdr/ccbrk/ccbrk_pzsdr.sdk/system_top.hdf
    make
@@ -336,7 +336,7 @@ First, clone the board testing git repo analog user's home directory:
 
 ::
 
-   git clone https://github.com/analogdevicesinc/board-tests.git
+   git clone :git-board-tests:`board-tests`
 
 Then remove all applications that are currently set to run at boot:
 

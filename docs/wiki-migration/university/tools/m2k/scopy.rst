@@ -20,24 +20,24 @@ Download
    
    **Scopy for Windows**
    
-   -  Download: :git-scopy:`Installer for latest release (Windows 64/32-bit) <releases/tag/v1.5.0-rc1>`
+   -  Download: `Installer for latest release (Windows 64/32-bit) <https://github.com/analogdevicesinc/scopy/releases/tag/v1.5.0-rc1>`_
    
    **Scopy for Linux**
    
-   -  Download: :git-scopy:`Scopy Flatpak installer <releases/tag/v1.5.0-rc1>`
+   -  Download: `Scopy Flatpak installer <https://github.com/analogdevicesinc/scopy/releases/tag/v1.5.0-rc1>`_
    
    **Scopy for OSX**
    
-   -  Download: :git-scopy:`OSX installer <releases/tag/v1.5.0-rc1>`
+   -  Download: `OSX installer <https://github.com/analogdevicesinc/scopy/releases/tag/v1.5.0-rc1>`_
    
    **Scopy for Android**
    
-   -  Download: :git-scopy:`Android installer <releases/tag/v1.5.0-rc1>`
+   -  Download: `Android installer <https://github.com/analogdevicesinc/scopy/releases/tag/v1.5.0-rc1>`_
    -  Google Play store link: `Scopy <https://play.google.com/store/apps/details?id=org.adi.scopy>`_
    
    **Scopy all platforms latest(nightly) builds**
    
-   -  Download: :git-scopy:`Installer for latest (nightly) build <releases/tag/continous>`
+   -  Download: `Installer for latest (nightly) build <https://github.com/analogdevicesinc/scopy/releases/tag/continous>`_
    
 
 
@@ -172,10 +172,10 @@ To connect to a remote device click on the **Plus** icon. Enter the IP of the re
 
 .. container:: centeralign
 
-   \
 
+   ..
 
-   |image3|
+|image3|
 
 Clicking the **Forget Device** button will remove the device from the list. Clicking the **Identify** button will make the device blink.
 
@@ -289,7 +289,7 @@ Complete Scopy build guides on:
 Source code
 ===========
 
-The source code for the entire application can be found on `github <https://github.com/analogdevicesinc/scopy>`_.
+The source code for the entire application can be found on :git-scopy:`github <scopy>`.
 
 .. |Scopy Android setup| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy-android-setup-example.png
 .. |Scopy Home View| image:: https://wiki.analog.com/_media/university/tools/m2k/scopy_home_view.png

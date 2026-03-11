@@ -83,13 +83,10 @@ Revision B
 
    
    -  `Rev B Schematics <https://wiki.analog.com/_media/university/tools/m2k/devs/adalm2000_revb_schematic.pdf>`_
-   
-   ::
-   
-      *[[https://wiki.analog.com/_media/university/tools/m2k/devs/09-042233-01b.zip|Rev B Gerbers]] (This file is [[http://www.7-zip.org/7z.html|compressed]])
-      *[[https://wiki.analog.com/_media/university/tools/m2k/devs/05-042233-01-b_adalm2000_b_bom.xlsx|Rev B Bill of materials]]
-      *[[https://wiki.analog.com/_media/university/tools/m2k/devs/08_042233brevb_brd.7z|Rev B Allegro Board File]] (This file is [[http://www.7-zip.org/7z.html|compressed]]). Get the [[https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html|Allegro FREE Physical Viewer]] to view.
-      *[[https://wiki.analog.com/_media/university/tools/m2k/devs/20-042233-01b.zip|Rev B Cadence Project]]
+   -  `Rev B Gerbers <https://wiki.analog.com/_media/university/tools/m2k/devs/09-042233-01b.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
+   -  `Rev B Bill of materials <https://wiki.analog.com/_media/university/tools/m2k/devs/05-042233-01-b_adalm2000_b_bom.xlsx>`_
+   -  `Rev B Allegro Board File <https://wiki.analog.com/_media/university/tools/m2k/devs/08_042233brevb_brd.7z>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
+   -  `Rev B Cadence Project <https://wiki.analog.com/_media/university/tools/m2k/devs/20-042233-01b.zip>`_
    
 
 

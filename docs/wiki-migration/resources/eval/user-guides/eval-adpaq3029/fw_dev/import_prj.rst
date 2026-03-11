@@ -23,7 +23,10 @@ Setup path variables
 
 -  Open CCES, right click on the desired project and select ``Properties``.
 -  In the properties tab, go to ``C/C++ Build`` -> ``Settings`` -> ``Cross Core GCC ARM Embedded C Linker``-> ``Libraries``.
--  Click on ``add`` (at the top right section inside settings tab) and then ``File system``. Then search for the required files from the workspace and add them. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw12.png>`_
+-  Click on ``add`` (at the top right section inside settings tab) and then ``File system``. Then search for the required files from the workspace and add them.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw12.png>`_
+
 -  Below image shows the paths to be added. Make sure that you add the path from the workspace. In the figure shown below,\ ``C:\Users\psirivan\Desktop`` is the path to the workspace, ``6Feb6`` is the name of the workspace.
 -  Semihosting support should be ``nosys.specs``, as shown in the figure below.
 

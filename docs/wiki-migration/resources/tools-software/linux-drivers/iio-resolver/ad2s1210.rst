@@ -37,18 +37,18 @@ Status
 | `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/resolver/ad2s1210.c>`_  | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/resolver/ad2s1210.c?id=HEAD>`_  |
 +-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
-Support for the AD2S1210 is in mainline for kernel v6.7 and is backported to v6.1 of the :git-linux>`__. Some additional features are slated for v6.8. The device was previously supported by a staging driver with a different ABI.
+Support for the AD2S1210 is in mainline for kernel v6.7 and is backported to v6.1 of the :git-linux:`ADI tree <linux>`. Some additional features are slated for v6.8. The device was previously supported by a staging driver with a different ABI.
 
 Files
 -----
 
-+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Function   | File                                                                                                                                                                                                                     |
-+============+==========================================================================================================================================================================================================================+
-| driver     | `drivers:`ADI tree <iio/resolver/ad2s1210.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/resolver/ad2s1210.c>`                                                                   |
-+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| devicetree | `Documentation/devicetree/bindings/iio/resolver/adi,ad2s1210.yaml <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/resolver/adi,ad2s1210.yaml>`_           |
-+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function   | File                                                                                                                                                                                                            |
++============+=================================================================================================================================================================================================================+
+| driver     | `drivers/iio/resolver/ad2s1210.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/resolver/ad2s1210.c>`_                                                                    |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree | `Documentation/devicetree/bindings/iio/resolver/adi,ad2s1210.yaml <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/resolver/adi,ad2s1210.yaml>`_  |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Adding Linux driver support
 ===========================
@@ -563,5 +563,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-resolver/youtube>p_VntEwUe24
 

@@ -127,7 +127,7 @@ The latest firmware version for the **ADALM-PLUTO** can be found here:
    ADALM-PLUTO Firmware
 
    
-   -  :git-plutosdr-fw:`Pluto version latest release <releases/latest>`
+   -  `Pluto version latest release <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_
    
 
 
@@ -161,7 +161,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download or update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download or update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope. The instructions can be seen in the previous section.

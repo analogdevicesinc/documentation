@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5270 Product Info <AD5270>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5270SDZ evaluation board user guide </static/imported-files/user_guides/UG-094.pdf>`
+-  :adi:`EVAL-AD5270SDZ evaluation board user guide <static/imported-files/user_guides/UG-094.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

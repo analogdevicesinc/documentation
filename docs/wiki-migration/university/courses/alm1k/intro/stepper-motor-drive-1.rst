@@ -34,9 +34,8 @@ The Python software development layer (libsmu and pysmu) for the ADALM1000 provi
 
 This activity will cover one example using Python to control a Mitsumi M35SP-7T stepper motor salvaged from a flatbed scanner. Other similar stepper motors can be substituted. The example driver circuit, shown in figure 1, is somewhat incidental to this programing discussion and the code examples can in general be used to control any similar driver circuit / motor combination. This particular stepper motor is of the bipolar drive (4 wire differential) variety and it thus needs to be driven by an H-Bridge configuration.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -63,9 +62,8 @@ Procedure:
 
 The pulse waveform sequence for “forward” rotation is shown in figure 2. A pulse on PIO 0 will energize coil A with a positive polarity and a pulse on PIO 2 will energize coil A with an opposite negative polarity. Similarly, a pulse on PIO 1 will energize coil B with a positive polarity and a pulse on PIO 3 will energize coil B with an opposite negative polarity.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -76,9 +74,8 @@ As we can see from the timing diagram the coils are energized in a +A, +B, -A, -
 
 For “reverse” rotation we need to swap the pulse sequence as shown in figure 3. As we can see this is essentially the sequence in reverse order.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -145,9 +142,8 @@ Program files ( `alm1000_stepper.zip <https://wiki.analog.com/_media/university/
 
 Stepper_test_1.py produces full step pulses. Stepper_test_2.py produces half step pulses. Run the program. You should see something like figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f4.png
-   :align: center
-   :width: 200px
+
+|image4|
 
 .. container:: centeralign
 
@@ -165,3 +161,12 @@ Challenges:
 `Stepper motor <https://en.wikipedia.org/wiki/Stepper_motor>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro_stepper_motor_f4.png
+   :width: 200px

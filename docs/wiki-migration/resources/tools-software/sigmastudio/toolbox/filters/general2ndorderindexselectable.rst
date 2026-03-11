@@ -140,4 +140,4 @@ In this example, ISF1 and ISF2 are the names of the two consecutive blocks on Fi
 
 Using cascaded Index Selectable Filters (ISF) as in the above example, it is possible to simulate complex responses like the Fletcher & Manson psychoacoustic contours of loudness.
 
-.. |general2ndindexpic4.png| image:: https://wiki.analog.com/_media/general2ndindexpic4.png
+.. |general2ndindexpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndindexpic4.png

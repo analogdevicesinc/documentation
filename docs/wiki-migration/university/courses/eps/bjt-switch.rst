@@ -23,9 +23,8 @@ V\ :sub:`CE` ˜ 0V and I\ :sub:`Csat` = V\ :sub:`CC`/R\ :sub:`C`
 
 This state is similar to a closed switch connecting the bottom of R\ :sub:`C` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-swt-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -60,9 +59,8 @@ One common application for a BJT (or any other) switch is to drive an LED. An LE
 
 Build the LED switch circuit shown in figure 2 on your solder-less breadboard. R\ :sub:`C` serves to limit the current that flows in the LED from the +5 V power supply (Vp). The switch is controlled by digital output DO from the Discovery connector. Scope channel 1 will display the voltage across the switch transistor Q\ :sub:`1` (V\ :sub:`CE`) and scope channel 2 will display the voltage across the LED.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-swt-f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -89,3 +87,8 @@ How much current is flowing in resistors R\ :sub:`C` and R\ :sub:`B` when the LE
 http://en.wikipedia.org/wiki/Transistor https://en.wikipedia.org/wiki/Light-emitting_diode https://en.wikipedia.org/wiki/LED_circuit
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-swt-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_bjt-swt-f2.png
+   :width: 600px

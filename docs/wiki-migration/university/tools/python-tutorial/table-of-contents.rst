@@ -14,7 +14,7 @@ These tutorial example programs are written in Python and requires that version 
 All OS:
 ~~~~~~~
 
-:git-libsmu:`Libsmu with Python bindings. <releases/latest>`
+`Libsmu with Python bindings. <https://github.com/analogdevicesinc/libsmu/releases/latest>`_
 
 Common Notes:
 -------------
@@ -85,9 +85,8 @@ CHA.stairstep(value1, value2, periodvalue, delayvalue)
 
 To better visualize how to specify a waveform look at figure 1 where: value1 is the first peak value of the waveform, could be the minimum or the maximum peak. value2 is the second peak value of the waveform, could be the minimum or the maximum peak. If for example value1 is less than value 2 the apparent phase of the wave is 180 degrees from a wave where value1 is greater than value2. dutycyclevalue is a fractional number from 0 to 1. dutycyclevalue only applies to the square waveform.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial0_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -169,3 +168,6 @@ devx = Smu() DevID = devx.serials[0] # device ID for 1\ :sup:`st` M1000 in list
 :doc:`Active Learning Interface (for) Circuits (and) Electronics </wiki-migration/university/tools/m1k/alice/users-guide>` (Python program) :doc:`ALICE-SA Spectrum Analyzer </wiki-migration/university/tools/m1k/alice/sa-users-guide>` (Python program) :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>` :doc:`ADALM1000 Digital Outputs </wiki-migration/university/tools/m1k/digital-outputs>`
 
 **Return to ALM** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial0_f1.png
+   :width: 500px

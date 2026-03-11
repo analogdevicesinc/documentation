@@ -245,4 +245,4 @@ Support
 
 For support on this reference design, please contact us through our technical support portal at the follow link: :adi:`technical-support.html <en/support/technical-support.html>`. Alternatively, you can log on to the RF & Microwave Community on Engineerzone (` <https://ez.analog.com/rf/>`__) and post a question that contains the Keywords "PulserPlus" or "Pulser Plus" and we will get back to you.
 
-.. |image1| image:: https://wiki.analog.com/_media/drain_pulsed_mode_block_diagam.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/drain_pulsed_mode_block_diagam.jpg

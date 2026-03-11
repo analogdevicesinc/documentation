@@ -22,7 +22,9 @@ Features
 Functional Block Diagram
 ------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_block_diagram.png
+   :align: center
+   :width: 500px
 
 .. container:: CENTERALIGN
 
@@ -35,7 +37,7 @@ Pin Configuration
 
 .. container:: CENTERALIGN
 
-   \ |image2|\
+   \ |image1|\
 
 
 .. container:: CENTERALIGN
@@ -128,7 +130,9 @@ Hardware Control Pins Truth Table
 Input Shift Register Contents
 -----------------------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_shift_register_contents.png
+   :align: center
+   :width: 700px
 
 .. container:: CENTERALIGN
 
@@ -164,7 +168,9 @@ Input Shift Register Contents
 Control Register
 ~~~~~~~~~~~~~~~~
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_control_register.png
+   :align: center
+   :width: 700px
 
 .. container:: CENTERALIGN
 
@@ -226,9 +232,7 @@ Control Register
 +----------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
-| ====Software Control Register====
-
-|image5|
+| ====Software Control Register==== |image2|
 
 .. container:: CENTERALIGN
 
@@ -309,7 +313,7 @@ Initializing the DAC
 
 
          
-      |image6|
+      |image3|
 
 .. container:: CENTERALIGN
 
@@ -350,7 +354,7 @@ Writing to the DAC Register
    | [22:20] | C2, C1, C0           | 001     | Write to the DAC register                                                                                                                                        |
    +---------+----------------------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   |image7|
+   |image4|
 
 .. container:: CENTERALIGN
 
@@ -381,7 +385,7 @@ Writing to the Clearcode Register
    See Figure 8.
 
    
-   |image8|
+   |image5|
 
 .. container:: CENTERALIGN
 
@@ -403,7 +407,7 @@ Writing to the Software Control Register
    See Figure 9.
 
    
-   |image9|
+   |image6|
 
 .. container:: CENTERALIGN
 
@@ -435,30 +439,24 @@ Reading from the Clearcode Register
 
 
          
-      |image10|
+      |image7|
 
 .. container:: CENTERALIGN
 
    \ *Figure 10. Reading from the Clearcode Register*\
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_block_diagram.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_pin_configuration.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_pin_configuration.png
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_shift_register_contents.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/software_control_register_bueno.png
    :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/ad5760_80_90_control_register.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step1_ad5760_80_90.png
    :width: 700px
-.. |image5| image:: https://wiki.analog.com/_media/resources/quick-start/software_control_register_bueno.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step2_ad5760_80_90.png
    :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step1_ad5760_80_90.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step1.png
    :width: 700px
-.. |image7| image:: https://wiki.analog.com/_media/resources/quick-start/example1_step2_ad5760_80_90.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step2.png
    :width: 700px
-.. |image8| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step1.png
-   :width: 700px
-.. |image9| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step2.png
-   :width: 700px
-.. |image10| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step3.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/quick-start/example2_step3.png
    :width: 700px

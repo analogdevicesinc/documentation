@@ -16,7 +16,7 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |image2|\ *Figure 1b. AD9142A-M5372-EBZ with ADVS7-V2EBZ Setup*\
+   |image2|\ *Figure 1b. AD9142A-M5372-EBZ with ADVS7-V2EBZ Setup*\
 
 
 .. tip::

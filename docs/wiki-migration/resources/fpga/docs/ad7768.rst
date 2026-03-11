@@ -8465,16 +8465,16 @@ The example design uses a processor to program all the registers. If no processo
 Software Guidelines
 -------------------
 
-Linux is supported also using :git-linux>`__
+Linux is supported also using :git-linux:`ADI Linux repository <linux>`
 
 References
 ----------
 
--  `AD7768 IP source code <https::`ADI Linux repository </github.com/analogdevicesinc/hdl/tree/master/library/axi_ad7768>`
+-  :git-hdl:`AD7768 IP source code <library/axi_ad7768>`
 -  :adi:`AD7768 chip information <ad7768>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
--  :git-linux>`__
--  `Zynq-7000 SoC Overview <https::`ADI Linux repository </www.xilinx.com/support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`
+-  :git-linux:`ADI Linux repository <linux>`
+-  `Zynq-7000 SoC Overview <https://www.xilinx.com/support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`_
 -  `Zynq-7000 SoC Packaging and Pinout <https://www.xilinx.com/support/documentation/user_guides/ug865-Zynq-7000-Pkg-Pinout.pdf>`_
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#resources/fpga/docs/ip_cores

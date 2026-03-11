@@ -20,18 +20,15 @@ Thévenin's Theorem is a process by which a complex circuit is reduced to an equ
 
 One of the principal uses of Thévenin's theorem is to replace a large portion of a circuit, often a more complicated and uninteresting part, by a simple equivalent. The new simpler circuit enables rapid calculations of the voltage, current, and power which the more complicated original circuit is able to deliver to a load. It also helps to choose the optimal value of the load (resistance) for maximum power transfer.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig1.png
-   :align: center
-   :width: 500px
+   |image2|
 
 .. container:: centeralign
 
@@ -42,9 +39,8 @@ One of the principal uses of Thévenin's theorem is to replace a large portion o
 
 In terms of a Thévenin Equivalent Circuit, maximum power is delivered to the load resistance R\ :sub:`L` when R\ :sub:`L` is equal to the Thévenin equivalent resistance R\ :sub:`TH` of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fi31.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -67,9 +63,8 @@ b) Accurately measure the voltage V\ :sub:`L` across the load resistance using A
 
 c) Find V\ :sub:`TH`: Remove the load resistance R\ :sub:`L` and measure the open circuit voltage V\ :sub:`OC` across the terminals. Use the Volt Meter Tool by connecting channel CA to the + node of V\ :sub:`OC` and connect channel CB to the - node. V\ :sub:`OC` will be the difference between CA volts and CB volts. This is equal to V\ :sub:`TH`. See figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -78,9 +73,9 @@ c) Find V\ :sub:`TH`: Remove the load resistance R\ :sub:`L` and measure the ope
 
 d) Find R\ :sub:`TH`: Remove the source voltage V\ :sub:`S` and construct the circuit as shown in figure 5. Use the ALM1000 Ohmmeter Tool to measure the resistance looking into the opening where R\ :sub:`L` was. This gives R\ :sub:`TH`. Make sure there is no power applied to the circuit before measuring with the Ohmmeter and the ground connection has been moved as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig5.png
-   :align: center
-   :width: 500px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -89,9 +84,9 @@ d) Find R\ :sub:`TH`: Remove the source voltage V\ :sub:`S` and construct the ci
 
 e) Obtaining V\ :sub:`TH` and R\ :sub:`TH`, construct the circuit of figure 2. Create the value of R\ :sub:`TH` using a series and or parallel combination of resistors from your parts kit. Using the Meter - Source Tool connect channel CA for the V\ :sub:`TH` source and set the value to what you measured for VTH in step c).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig6.png
-   :align: center
-   :width: 400px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -108,9 +103,8 @@ a) Construct the circuit as in figure 7 using the following values:
 
 V\ :sub:`S` = +5 V R\ :sub:`1` = R\ :sub:`2` = 470 Ω R\ :sub:`3` = 1 KΩ R\ :sub:`L` = combinations of 1 KΩ and 100 Ω resistors ( figure 8 )
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig8.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -121,9 +115,8 @@ b) Use the Volt Meter Tool by connecting channel CA to the + node of V\ :sub:`L`
 
 c) To find the value of R\ :sub:`L` for which maximum power is transferred, vary the load resistances by constructing series / parallel combinations of 1 KΩ and 100 Ω for R\ :sub:`L` between 500 Ω to 1400 Ω in 100 Ω steps as shown in figure 8. For each value of R\ :sub:`L` write down V\ :sub:`L`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig7.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -148,3 +141,20 @@ DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools
 :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 
 **\*Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig1.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fi31.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig6.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig8.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab4-fig7.png
+   :width: 500px

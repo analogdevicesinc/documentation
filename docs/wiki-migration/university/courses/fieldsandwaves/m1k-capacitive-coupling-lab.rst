@@ -38,9 +38,8 @@ Set the AWG A generator Max value to 4.5V and the Min value to 0.5V. Set the wav
 
 In this part of the experiment the varying electric field is applied on the center Red wire of the cable. The induced (coupled) voltage is measured on one of the other wires, White wire, in the cable. At first the third Black wire is left floating (not connected to anything).
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -51,9 +50,8 @@ In this part of the experiment the varying electric field is applied on the cent
 
 If you do not have the 3 wire header cables you can build a similar test structure on the solder-less breadboard as shown in figure 2. Insert four red solid jumper wires in same column of holes (number 48 in picture) in the breadboard so the four red wires are all shorted together. Insert four green solid jumper wires in a column of holes adjacent to the column you just used (number 47 in picture) in the breadboard so the four green wires are all shorted together. The red and green wires should not be shorted together. Arrange all 8 wires so they lie flat against the breadboard but are interleaved with each other red/green as shown. Adding a short jumper about half way down the long jumpers across the 8 wires can help keep the wires neatly arranged together and flat.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -64,18 +62,15 @@ You do not need to use different color wires but it will help to keep them separ
 
 We use a sine wave signal to drive one of the parallel wires and generate the time varying electric field. The AWG settings are shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3, AWG settings.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig4.png
-   :align: center
-   :width: 650px
+   |image4|
 
 .. container:: centeralign
 
@@ -100,9 +95,8 @@ Crosstalk due to capacitive coupling
 
 Crosstalk is the coupling of signals and noise between 2 or more wires or lines. Crosstalk is also often called interference. The term "crosstalk" hearkens back to the age of analog telephony where multiple phone lines or circuits were combined or bundled in single larger cables. One phone conversation could often be heard on adjacent phone lines in the same bundle thus the term "talking across lines". Ideally, if two wires are separate (including wiring on a printed circuit board), then electrical signals and noise should not propagate or couple between them. However, if two lines are close and parallel to each other, the stray (parasitic) capacitance that exists between the two lines results in signal and/or noise transmission between the wires. The best method to reduce this capacitance is to increase the separation between the wires. This is often not practical. A common way to reduce the amount of coupling is to introduce grounded conductors between the wires.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig5.png
-   :align: center
-   :width: 550px
+
+|image5|
 
 .. container:: centeralign
 
@@ -111,9 +105,9 @@ Crosstalk is the coupling of signals and noise between 2 or more wires or lines.
 
 Test this by changing the way the signal source is connected to the 3 wire cable as we see in figure 6. Here the channel A AWG generator signal is connected to one of the outside wires, White. The BIN pin, which is used to measure the amount of coupling, is connected to the opposite outside wire, Black. The middle wire, Red, is alternately left floating and connected to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig6.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -127,18 +121,15 @@ Quantifying the amount of Capacitance:
 
 We can use the Impedance Analyzer Tool in ALICE to measure the capacitance between various combinations of the wires in the cable. Figure 7 shows the connections to measure the cable capacitance.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
    Figure 7, Testing cable capacitance.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig8.png
-   :align: center
-   :width: 600px
+   |image8|
 
 .. container:: centeralign
 
@@ -159,3 +150,20 @@ Find some other cables to measure. The ADALP2000 kit contains a micro USB breako
 `Capacitive coupling <https://en.wikipedia.org/wiki/Capacitive_coupling>`_ `Crosstalk <https://en.wikipedia.org/wiki/Crosstalk>`_ `From learn EMC <https://learnemc.com/electric-field-coupling>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig4.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig5.png
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-cap-fig8.png
+   :width: 600px

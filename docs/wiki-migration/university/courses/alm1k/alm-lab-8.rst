@@ -23,9 +23,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1. The voltage output of channel A, CA-V, drives one end of resistor R\ :sub:`1`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as in previous zero gain amplifier activity. Since the V\ :sub:`BE` of Q\ :sub:`2` is always smaller than the V\ :sub:`BE` of Q\ :sub:`1`, you should, if possible, select Q\ :sub:`1` and Q\ :sub:`2` from your inventory of devices such that (at the same collector current) Q\ :sub:`2`'s V\ :sub:`BE` is less than Q\ :sub:`1`'s V\ :sub:`BE`. The base of transistor Q\ :sub:`2` is connected to the zero gain output at the collector of Q\ :sub:`1`. R\ :sub:`3`, connected between the +5 V supply and the collector of Q\ :sub:`2`, is used along with the channel B scope input, CB-H, to measure the collector current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab8_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -60,3 +59,6 @@ The output current has a narrow peak. How could multiple copies of the peaking c
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab8_f1.png
+   :width: 600px

@@ -16,7 +16,7 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |image2|\ *Figure 1b. AD9139-EBZ with SDP-H1 Setup*\
+   |image2|\ *Figure 1b. AD9139-EBZ with SDP-H1 Setup*\
 
 
 .. tip::
@@ -116,7 +116,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image5|\ *Figure 3b. DPGDownloaderLite Waveform Configuration for AD9139-EBZ with SDP-H1*\
+   |image5|\ *Figure 3b. DPGDownloaderLite Waveform Configuration for AD9139-EBZ with SDP-H1*\
 
 
 -  Press the download arrow and then the play button. The spectrum similar to Figure 4 should appear in the signal/spectrum analyzer.

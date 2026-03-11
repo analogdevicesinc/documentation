@@ -131,9 +131,8 @@ To update the board's firmware, a new bootloader has to be flashed on the MAX326
    -  Plug the micro USB cable into the PC.
    -  Once you see the MAINTENANCE drive being mounted, you may release the button.
 
-::
+   |resources-eval-user-guides-ad-swiot1l-sl-picture2.jpg|
 
-       {{ :resources:eval:user-guides:ad-swiot1l-sl:picture2.jpg?400 |}}
    * Drag and drop (to the MAINTENANCE drive) the firmware image you previously downloaded.
    * After a few seconds, the MAINTENANCE drive will disappear and will be replaced by a drive named DAPLINK. Once this is done, the process is complete, and the MAX32625PICO may be used to flash the firmware of the AD-SWIOT1L-SL board.
 
@@ -158,3 +157,5 @@ The :git-no-OS:`AD-APARD32690-SL firmware <projects/apard32690>` is based on Ana
 
 .. image:: https://wiki.analog.com/_media/navigation AD-APARD32690-SL#none#./
    :alt: Overview#none#
+
+.. |resources-eval-user-guides-ad-swiot1l-sl-picture2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-swiot1l-sl/picture2.jpg

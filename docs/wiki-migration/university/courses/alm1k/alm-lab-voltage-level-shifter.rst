@@ -24,9 +24,8 @@ Similarly for a high voltage to low voltage level shifter if the input and outpu
 
 As we can see the same circuit can be used bidirectionally to translate signals in either direction between V\ :sub:`LV` and V\ :sub:`HV`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_logic-lvsh_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ Build the circuit shown in figure 2 on your solder-less breadboard. Start by usi
 
 There are two configurations of the level shifter circuit. The upper configuration in figure 2 shifts a low voltage logic signal to a high voltage logic level. The lower configuration in figure 2 shifts a high voltage logic signal to a low voltage logic level.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_logic-lvsh_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -76,9 +74,8 @@ Using BJTs
 
 Two NPN transistors can be substituted for the single NMOS transistor connected as shown in figure 3. When the Enable input is high, a low-going input signal drives the emitter of one of the transistors as a common-base amplifier. The 10-kΩ resistor in the base circuit provides enough current to saturate the transistor and drop the V\ :sub:`CE` voltage to approximately 0.1 V, thereby pulling the output side low.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_logic-lvsh_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -97,3 +94,10 @@ For extra credit try substituting the fixed 2.5 V supply for V\ :sub:`LV`\ and u
 `Logic Levels <http://en.wikipedia.org/wiki/Logic_level>`_ `Low Voltage Logic Interfacing <http://www.analog.com/static/imported-files/tutorials/MT-098.pdf>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_logic-lvsh_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_logic-lvsh_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_logic-lvsh_f3.png
+   :width: 500px

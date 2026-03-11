@@ -14,22 +14,22 @@ The textbooks and teaching materials provided on this wiki are considered open s
 Table of Contents:
 ------------------
 
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Course            | Session                  | Title                                                                                                                                                              |
-+===================+==========================+====================================================================================================================================================================+
-| Power Electronics | Chapter:1                | :doc:`Diode rectifiers and voltage regulators </wiki-migration/university/courses/electronics/text/chapter-6>`                                                     |
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Power Electronics | Chapter:2                | :doc:`Diode application Topics </wiki-migration/university/courses/electronics/text/chapter-7>`                                                                    |
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Power Electronics | Chapter:3                | :doc:`Transistor basic concepts </wiki-migration/university/courses/electronics/text/chapter-8>`                                                                   |
-|                   | Chapter:3 (*supplement*) | :doc:`Choosing Discrete Transistors </wiki-migration/university/courses/electronics/text/choosing-transistors>`                                                    |
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Power Electronics | Chapter:4                | :doc:`Voltage References </wiki-migration/university/courses/electronics/text/chapter-14>`                                                                         |
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Power Electronics | Chapter:5                | :doc:`MOSFET Applications </wiki-migration/university/courses/electronics/text/chapter-15>`                                                                        |
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Power Electronics | Supplemental             | :adi:`Basic Linear Design: Power Management </media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter9.pdf>`                                       |
-+-------------------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Course            | Session                  | Title                                                                                                                                                             |
++===================+==========================+===================================================================================================================================================================+
+| Power Electronics | Chapter:1                | :doc:`Diode rectifiers and voltage regulators </wiki-migration/university/courses/electronics/text/chapter-6>`                                                    |
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Power Electronics | Chapter:2                | :doc:`Diode application Topics </wiki-migration/university/courses/electronics/text/chapter-7>`                                                                   |
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Power Electronics | Chapter:3                | :doc:`Transistor basic concepts </wiki-migration/university/courses/electronics/text/chapter-8>`                                                                  |
+|                   | Chapter:3 (*supplement*) | :doc:`Choosing Discrete Transistors </wiki-migration/university/courses/electronics/text/choosing-transistors>`                                                   |
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Power Electronics | Chapter:4                | :doc:`Voltage References </wiki-migration/university/courses/electronics/text/chapter-14>`                                                                        |
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Power Electronics | Chapter:5                | :doc:`MOSFET Applications </wiki-migration/university/courses/electronics/text/chapter-15>`                                                                       |
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Power Electronics | Supplemental             | :adi:`Basic Linear Design: Power Management <media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter9.pdf>`                                       |
++-------------------+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
 | Online Texts: :adi:`Practical Design Techniques for Power and Thermal Management, 1998 <en/education/education-library/practical-design-techniques-power-thermal-management.html>` :adi:`Practical Power Solutions, 2009. <en/education/education-library/practical-power-solutions.html>`

@@ -35,22 +35,29 @@ For more details refer below links.
 
 -  :doc:`Hardware Details </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/hardware_details>`
 
-::
+   -  :doc:`EV-COG-AD3029LZ MCU COG </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/cog_hw_userguide>`
 
-        -[[/resources/eval/user-guides/ev-cog-ad3029lz/cog_hw_userguide|EV-COG-AD3029LZ MCU COG]]
-             *[[/resources/eval/user-guides/ev-cog-ad3029lz/_powermeasurement|Power Measurement on EV-COG-AD3029LZ MCU COG]]
-        -[[/resources/eval/user-guides/ev-cog-bleintp1z|EV-COG-BLEINTP1Z Connectivity COG]]
-        -[[/resources/eval/user-guides/ev-gear-expander1z|EV-GEAR-EXPANDER1Z Expander Gear]]
-        -[[/resources/eval/user-guides/ev-cog-smartmesh1z|EV-COG-SMARTMESH1Z Connectivity COG]]
-   * [[/resources/eval/user-guides/ev-cog-ad3029lz/tools_&_driver|Development Tools & Driver]]
-     * [[/resources/eval/user-guides/ev-cog-ad3029lz/tools/cces_download|CCES - CrossCore Embedded Studio Download & Install]]
-       * [[/resources/eval/user-guides/ev-cog-ad3029lz/tools/cces_guide|CrossCore Embedded Studio Quickstart Userguide for EV-COG-AD3029LZ]]
-       * [[/resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb|CMSIS-DAP - Driver installation for on-board debugger]]
-   * [[/resources/eval/user-guides/ev-cog-ad3029lz/example_project|Example Project]]
-     * [[/resources/eval/user-guides/ev-cog-ad3029lz/example_project/_wifi_example|Wifi Example]]
-       * [[/resources/eval/user-guides/ev-cog-ad3029lz/example_project/_sd_card_example|SD Card Example]]
-         * [[/resources/eval/user-guides/ev-cog-ad3029lz/example_project/_temp_sensor_smartmesh|SmartMesh Slave Mode Temperature Sensor Example]]
-   * [[/resources/eval/user-guides/ev-cog-ad3029lz/help_&_support|Help & Support]]
+      -  `Power Measurement on EV-COG-AD3029LZ MCU COG <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/_powermeasurement>`_
+      -  :doc:`EV-COG-BLEINTP1Z Connectivity COG </wiki-migration/resources/eval/user-guides/ev-cog-bleintp1z>`
+      -  :doc:`EV-GEAR-EXPANDER1Z Expander Gear </wiki-migration/resources/eval/user-guides/ev-gear-expander1z>`
+      -  :doc:`EV-COG-SMARTMESH1Z Connectivity COG </wiki-migration/resources/eval/user-guides/ev-cog-smartmesh1z>`
+
+-  `Development Tools & Driver <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/tools_&_driver>`_
+
+   -  :doc:`CCES - CrossCore Embedded Studio Download & Install </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/cces_download>`
+
+      -  :doc:`CrossCore Embedded Studio Quickstart Userguide for EV-COG-AD3029LZ </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/cces_guide>`
+      -  :doc:`CMSIS-DAP - Driver installation for on-board debugger </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/tools/hardware_usb>`
+
+-  :doc:`Example Project </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/example_project>`
+
+   -  `Wifi Example <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/example_project/_wifi_example>`_
+
+      -  `SD Card Example <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/example_project/_sd_card_example>`_
+
+         -  `SmartMesh Slave Mode Temperature Sensor Example <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/example_project/_temp_sensor_smartmesh>`_
+
+-  `Help & Support <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/help_&_support>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/wiki-cog-3029.png
    :width: 450px

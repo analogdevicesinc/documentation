@@ -47,14 +47,15 @@ Follow below instructions to install packs using the CMSIS Pack Manager.
 -  Go to Windows -> Perspective -> Open Perspective -> Other...
 -  Select CMSIS Pack Manager and click OK.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/ev/user-guides/ev-cog-ad4050lz/tools/download_packs_online_new.png
+   :align: center
 
 -  On the left hand side of the window, under devices tab, expand **Analog Devices**.
 -  Expand **ADuCM4x50 Series**
 -  Select **ADuCM4050**
 -  On right hand side, under packs tab, click **Install** on respective packs to be installed.
 
-|image2| This will install the packs in CCES toolchain.
+|image1| This will install the packs in CCES toolchain.
 
 Download to Local Directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +89,7 @@ How to create a new project for the ADuCM4050
 A project for ADuCM4050 can be created using the New CrossCore Project Wizard. This wizard will guide you through the steps to create a new project.
 
 
-|image3|
+|image2|
 
 -  To create a new project, go to the menu bar and find *File -> New -> CrossCore Project*.
 -  Choose Processor family ARM and select Processor type ADuCM4050 .
@@ -168,7 +169,7 @@ How to Import Existing Projects from the GIT Repository
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
 -  Clone the Git repository which contains all the latest code and projects associated with the ADuCM4050. Populate the URI field with the following address.
 
-   -   **URL:** - https://github.com/analogdevicesinc/EV-COG-AD4050LZ.git
+   -   **URL:** - :git-EV-COG-AD4050LZ:`EV-COG-AD4050LZ`
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
 
 -  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*
@@ -311,6 +312,5 @@ How to create an Intel Hex (.hex) file from an ADuCM4050 application
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/ev/user-guides/ev-cog-ad4050lz/tools/download_packs_online_new.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/ev/user-guides/ev-cog-ad4050lz/tools/install_packs_online.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/new_project.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/ev/user-guides/ev-cog-ad4050lz/tools/install_packs_online.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/tools/new_project.jpg

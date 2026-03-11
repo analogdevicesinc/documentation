@@ -26,9 +26,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1. The output of the channel A voltage generator, CA-V, drives the emitters of both PNP transistors Q\ :sub:`3` and Q\ :sub:`4`. Q\ :sub:`3` and Q\ :sub:`4` are wired as a current mirror with their bases connected together with the collector of Q\ :sub:`3`. The collector of Q\ :sub:`4` connects to resistor R\ :sub:`1`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as in the previous zero gain amplifier section. Since the V\ :sub:`BE` of Q\ :sub:`2` is always smaller than the V\ :sub:`BE` of Q\ :sub:`1`, You should select Q\ :sub:`1` and Q\ :sub:`2` from your inventory of devices such that (at the same collector current) Q\ :sub:`2`'s V\ :sub:`BE` is less than Q\ :sub:`1`'s V\ :sub:`BE`. The base of transistor Q\ :sub:`2` is connected to the zero gain output at the collector of Q\ :sub:`1`. The collector of Q\ :sub:`2` connects to the input side of the PNP current mirror at the base - collector of Q\ :sub:`3`. The CB-H scope input is used to measure the output voltage at the collector of Q\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -63,9 +62,8 @@ Directions:
 
 The breadboard connections are as shown in figure 2. As before transistor Q\ :sub:`1` and resistors R\ :sub:`1` and R\ :sub:`2` are configured as a zero gain amplifier. Transistor Q\ :sub:`2` and variable resistor R\ :sub:`3`\ form a stabilized current source. If the SSM2212 matched NPN pair is used it is best that it be used for devices Q\ :sub:`1` and Q\ :sub:`2`. Common emitter stage Q\ :sub:`3` along with its collector load R\ :sub:`4` provide gain. Emitter follower Q\ :sub:`4` drives the output node and closes the negative feedback loop.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -96,3 +94,8 @@ All the emitters can be tired to ground ( pins 3,7,10,13 ). Devices Q\ :sub:`1`,
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab9_f2.png
+   :width: 600px

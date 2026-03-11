@@ -33,9 +33,8 @@ Loudspeaker Impedance Model
 
 To help understand the measurements you are about to make, a simplified electrical model of a loudspeaker is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab11-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,9 +56,8 @@ Materials:
 
 ADALM1000 hardware module Solder-less Breadboard 2 – 100 Ω Resistors (or any similar value) 1 – Loudspeaker from ADALP2000 Kit (it is even better if the speaker is one with a cone diameter larger than 4 inches such that is has a relatively low resonant frequency)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig2.png
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -71,9 +69,8 @@ Directions:
 
 First build the circuit shown in the figure 3, preferably using your solder-less breadboard. The loudspeaker can be in an enclosure or not. This configuration allows us to measure the voltage across the speaker V\ :sub:`L` using channel B voltage trace and the load current I\ :sub:`L` as the channel A current trace.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -88,9 +85,8 @@ We can calculate the speaker impedance Z at a single frequency by dividing the R
 
 Try setting channel A to a few different frequencies and see how the voltage across the speaker and the calculated Z changes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/loudspeaker_imp_bb.png
-   :align: center
-   :width: 300px
+
+|image4|
 
 .. container:: centeralign
 
@@ -112,9 +108,8 @@ Now Export the data, as magnitude not in dB to make the math easier, to a comma 
 
 Note the frequency points where the phase is at its positive maximum, zero and negative minimum. The data on the screen is plotted in dB so the vertical scale is not in volts. Your speaker will probably look different than this example.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen1.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -133,9 +128,8 @@ Subtracting the channel B voltage magnitude values from the channel A voltage ma
 
 You can now plot the calculated impedance Z vs Frequency. An example plot is shown in figure 6. Your speaker will probably look different than this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig5.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -154,9 +148,8 @@ Procedure to use the ALICE Impedance Analyzer to measure speaker impedance:
 
 As shown in figure 7, Channel B again measures V\ :sub:`L` the voltage across the speaker. The impedance analyzer software uses the difference between the channel A voltage and channel B voltage as well as the relative phase between the channels to calculate the impedance based the value of the combined R\ :sub:`1`, R\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig6.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -167,9 +160,8 @@ Open the ALICE Impedance Analyzer software tool.
 
 Set Ext Res = 50, set the channel A Freq to a value well below the resonate frequency of your speaker. In this first example measurement 100 Hz was used. Set the Ohms/div to 10. As can be seen from the data, the phase angle should be positive. The series resistance of the speaker is around 7 Ω and the reactance is inductive.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen2.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -178,9 +170,9 @@ Set Ext Res = 50, set the channel A Freq to a value well below the resonate freq
 
 Now set the frequency to the resonate value you obtained from the frequency sweep. You may want to fine adjust the value to find the exact point where the reactance is zero as shown in figure 9.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen3.png
-   :align: center
-   :width: 600px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -191,9 +183,8 @@ This result should agree with the results from the frequency sweeps. The phase a
 
 Now set the frequency to a point above the resonate frequency where the phase is near its negative peak as shown in figure 10, 500 Hz was used here.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen4.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -214,3 +205,24 @@ Explain your results based on the parallel LC loudspeaker impedance model in fig
 :adi:`Measuring a Loudspeaker Impedance Profile Using the AD5933 <static/imported-files/application_notes/236037846AN_843.pdf>` `Electrical characteristics of dynamic loudspeakers <https://en.wikipedia.org/wiki/Electrical_characteristics_of_dynamic_loudspeakers>`_ :doc:`ALICE 1.3 DeskTop Software </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab11-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig2.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/loudspeaker_imp_bb.png
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen1.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig5.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-fig6.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen2.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen3.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-laba11-screen4.png
+   :width: 600px

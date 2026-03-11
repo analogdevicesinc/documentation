@@ -4,7 +4,8 @@
 TYPICAL SETUP
 -------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213_dualbrd_plus_stratix10_diagram_two_power_adapters.png
+   :align: center
 
 .. container:: centeralign
 
@@ -19,51 +20,54 @@ This QuickStart Guide provides the information to bring up the AD9213-DUAL-EVB i
 EQUIPMENT AND HARDWARE NEEDED
 -----------------------------
 
-::
 
-   *Signal Generators
-     *Analog signal source: The frequency and power requirements depend on the tests to be performed. A bandpass filter is often used for single tone tests.
-     *500MHz Reference Clock source: The clock signal generator should have very low phase noise and be capable of supplying a 5dBm 500MHz clock signal.
-   *PC running Windows with at least 2 USB ports and an Ethernet port
-     *Cables to connect to PC
-     *One mini-USB
-     *One micro-USB
-     *One Ethernet
-   *AD9213-DUAL-EBZ Evaluation Board
-     *[[/resources/eval/user-guides/ad9213_dual_ebz/hardware|AD9213-DUAL-EBZ Evaluation Board Hardware]]
-   *RF Power Splitter for splitting test tone to apply two equal signals to each of the two ADCs
-   *Phase matched coaxial cables to connect power splitter to the ADC input board connectors
-   *RF Balun for single-ended-to-differential conversion of 500MHz reference clock
-   *Coax cables for 500MHz reference clock connections
-   *Intel Stratix 10 SX SoC Development Kit (1SX280HU2F50E1VGAS)
+
+- Signal Generators
+  *Analog signal source: The frequency and power requirements depend on the tests to be performed. A bandpass filter is often used for single tone tests.
+  *500MHz Reference Clock source: The clock signal generator should have very low phase noise and be capable of supplying a 5dBm 500MHz clock signal.
+- PC running Windows with at least 2 USB ports and an Ethernet port
+  *Cables to connect to PC
+  *One mini-USB
+  *One micro-USB
+  *One Ethernet
+- AD9213-DUAL-EBZ Evaluation Board
+-  :doc:`AD9213-DUAL-EBZ Evaluation Board Hardware </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/hardware>`
+- RF Power Splitter for splitting test tone to apply two equal signals to each of the two ADCs
+- Phase matched coaxial cables to connect power splitter to the ADC input board connectors
+- RF Balun for single-ended-to-differential conversion of 500MHz reference clock
+- Coax cables for 500MHz reference clock connections
+- Intel Stratix 10 SX SoC Development Kit (1SX280HU2F50E1VGAS)
 
 HELPFUL DOCUMENTS
 -----------------
 
+-  :adi:`AD9213 Datasheet <en/products/ad9213.html>`
+
 ::
 
-   *[[:adi:`en/products/ad9213`.html|AD9213 Datasheet]]
    *Intel Stratix 10 SX SoC Development Kit User Guide (from Intel website)
 
 SOFTWARE NEEDED
 ---------------
 
-::
+-  `Intel Quartus Prime Programmer 19.3 <https://www.intel.com/content/www/us/en/software-kit/661657/intel-quartus-prime-pro-edition-design-software-version-19-3-for-windows.html>`_
+-  `PuTTY SSH and telnet client <https://www.putty.org>`_
+-  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  `VisualAnalog <http://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html>`_
 
-   *[[https://www.intel.com/content/www/us/en/software-kit/661657/intel-quartus-prime-pro-edition-design-software-version-19-3-for-windows.html|Intel Quartus Prime Programmer 19.3]]
-   *[[https://www.putty.org|PuTTY SSH and telnet client]]
-   *[[/resources/tools-software/linux-software/iio_oscilloscope|IIO Oscilloscope]]
-   *[[http://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html|VisualAnalog]]
-   *VisualAnalog Canvas for AD9213-DUAL-EBZ (supplied by ADI)
-   *[[:git-libiio:`releases|libiio` (required for using iio Client block in provided VisualAnalog Canvas)]]
-   *[[https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip|IIO Plugin for Visual Analog]]
+
+
+- VisualAnalog Canvas for AD9213-DUAL-EBZ (supplied by ADI)
+-  `libiio (required for using iio Client block in provided VisualAnalog Canvas) <https://github.com/analogdevicesinc/libiio/releases>`_
+-  `IIO Plugin for Visual Analog <https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
 
 ADI SOFTWARE DELIVERABLES
 -------------------------
 
+-  `Dual-AD9213-EBZ <https://wiki.analog.com/_media/resources:eval:dual_ad9213_ebz.zip>`_
+
 ::
 
-   *[[https://wiki.analog.com/_media/resources:eval:dual_ad9213_ebz.zip|Dual-AD9213-EBZ]]
    *The link above contains the following:
    * FPGA binary for the Stratix 10 SX SoC
    * SD Card images containing IIO libraries and a system initialization sequence
@@ -119,9 +123,9 @@ ON           OFF               OFF              ON
 
 | \*Download the ADI Linux Image (image_2021-07-28-ADI-Kuiper-full.zip) available under Old Releases Section from :doc:`ADI SD Card Images </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
 
-::
 
-   *Program a blank SD card (at least 16 GB) with the downloaded image using the instructions in [[/resources/tools-software/linux-software/zynq_images/windows_hosts|Formatting and Flashing SD Cards using Windows]]
+
+- Program a blank SD card (at least 16 GB) with the downloaded image using the instructions in :doc:`Formatting and Flashing SD Cards using Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
 
 **NOTE:** Once the image is programmed eject the SD Card and re-insert it. The SD card will already include a few folders in its BOOT partition. Those can be ignored for this setup.*
 
@@ -355,11 +359,11 @@ ON           OFF               OFF              ON
 
    \ *Figure 14. Using the IIO Scope Plotting View to plot separate time domain outputs from each AD9213 (Ain = 136 MHz @5dBm)**NOTE:**\ Frequency domain plotting with more detailed analysis can be performed using a Visual Analog Canvas, the following are the steps to use VA*
 
-::
 
-   *One-Time IIO Installations Before Running VisualAnalog (only needed if VisualAnalog Canvas provided by ADI will be used)
-     *a. Install [[/github.com/analogdevicesinc/libiio/releases|libiio]] (required for using iio Client block in VisualAnalog)
-     *b. Install [[/wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip|IIO Plugin for VisualAnalog]]
+
+- One-Time IIO Installations Before Running VisualAnalog (only needed if VisualAnalog Canvas provided by ADI will be used)
+  *a. Install `libiio <https://wiki.analog.com/github.com/analogdevicesinc/libiio/releases>`_ (required for using iio Client block in VisualAnalog)
+  *b. Install `IIO Plugin for VisualAnalog <https://wiki.analog.com/_media/wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
 
 Run Visual Analog For Synchronized 10G Mode
 
@@ -423,7 +427,6 @@ For Interleaved 20G Mode
     *e.  The canvas is now ready to capture an FFT, hit play to capture
     *f.  In addition to the FFT plot and its analysis the canvas also displays sample data
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213_dualbrd_plus_stratix10_diagram_two_power_adapters.png
 .. |ad9213dual_quickstart_fig2_COM_port_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig2_COM_port_setup.png
    :width: 600px
 .. |ad9213dual_quickstart_fig3_config_COM_port_settings.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig3_config_COM_port_settings.png

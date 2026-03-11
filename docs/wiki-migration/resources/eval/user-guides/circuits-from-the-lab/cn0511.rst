@@ -257,8 +257,9 @@ This demo uses a PyADI-IIO example script. This script will show the single-tone
 
    .../pyadi-iio/examples $ python3 cn0511_example.py
 
-
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/cn0511_example_output.jpg
+   :align: center
+   :width: 600px
 
 .. admonition:: Download
    :class: download
@@ -285,8 +286,8 @@ Schematic, PCB Layout, Bill of Materials
 Reference Demos & Software
 --------------------------
 
--  :git-pyadi-iio>`__
--  `AD9166 IIO <https::`pyADI-IIO </github.com/analogdevicesinc/libad9166-iio>`
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
+-  :git-libad9166-iio:`AD9166 IIO <libad9166-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -325,6 +326,4 @@ Registration
 .. |Figure 8. Hardware Connection of EVAL-CN0511-RPIZ and Raspberry Pi 3 Model B+| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/cn0511_rpi_v1.jpg
    :width: 600px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/iio_scope_v1.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/cn0511_example_output.jpg
    :width: 600px

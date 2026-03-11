@@ -51,7 +51,7 @@ Xilinx VCU118 programming files (admx6001_v1_boot.zip)
 GENERAL DESCRIPTION
 -------------------
 
-The ADMX6001-EBZ is a reference design of a DC-coupled single channel 10GSPS digitizer featuring the AD9213, a low noise, 12-bit high-speed analog-to-digital converter (ADC) :adi:`AD9213` and the AD4080, a 20-bit precision ADC :adi:`AD4080`. The dual-path design achieves true low noise digitization in the broad band from DC to 5GHz. By biasing the ADC driver ADL5580 :adi:`en/products/adl5580`.html with the precision digital-to-analog converter (DAC) LTC2664 :adi:`en/products/ltc2664`.html, it is capable of handling unipolar and bipolar signals at various DC levels, maximizing utility of the input dynamic range of AD9213. This design is ideal for high performance time-domain instruments such as time-of-flight mass spectrometry (TOF MS), distributed fiber optic sensing (DFOS), and digital oscilloscope.
+The ADMX6001-EBZ is a reference design of a DC-coupled single channel 10GSPS digitizer featuring the AD9213, a low noise, 12-bit high-speed analog-to-digital converter (ADC) :adi:`AD9213` and the AD4080, a 20-bit precision ADC :adi:`AD4080`. The dual-path design achieves true low noise digitization in the broad band from DC to 5GHz. By biasing the ADC driver ADL5580 :adi:`en/products/adl5580.html` with the precision digital-to-analog converter (DAC) LTC2664 :adi:`en/products/ltc2664.html`, it is capable of handling unipolar and bipolar signals at various DC levels, maximizing utility of the input dynamic range of AD9213. This design is ideal for high performance time-domain instruments such as time-of-flight mass spectrometry (TOF MS), distributed fiber optic sensing (DFOS), and digital oscilloscope.
 
 This document guides the setup and evaluation of the ADMX6001-EBZ board in conjunction with the Xilinx VCU118 field programmable gate array (FPGA) board.
 
@@ -103,15 +103,14 @@ Download and install the following software to configure and evaluate the ADMX60
 
 -  Xilinx Vivado or Vivado Lab Edition, https://www.xilinx.com/support/download.html
 -  UART Terminal Tera Term, https://github.com/TeraTermProject/teraterm/releases
--  IIO Oscilloscope Download (see Note), :git-iio-oscilloscope:`releases`
+-  IIO Oscilloscope Download (see Note), https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 Unless Xilinx Vivado has already been installed on your computer, it is recommended that you install the Vivado Lab Edition. Click Downloads and scroll down to the Vivado Lab Edition as highlighted in Figure 4 to download and install the Vivado Lab Edition. The default installation path for the Vivado Lab Edition is \*\* C:\\Xilinx\\Vivado_Lab\\2024.2\\bin \*\* where \*\* 2024.2 \*\* indicates the version. The path name needs to be revised accordingly if a different version of the Vivado Lab Edition is installed. The UART Terminal Tera Term is for monitoring the booting process and then logging in to the Xilinx VCU118 system.
 
 Note: IIO Oscilloscope is optional for configuring the ADMX6001-EBZ board and visualizing/saving the captured data. Alternately, you can use Python scripts to configure the ADMX6001-EBZ board and plot/save the captured data.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure4_downloadvivado.jpg
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -137,7 +136,9 @@ Follow these steps to configure the Ethernet IP address:
 -  Click Properties to open the Internet Protocol Version 4 (TCP/IPv4) Properties window, as shown in Figure 7.
 -  Review/change IP address, as shown in Figure 8.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure5_ip_network.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -191,18 +192,15 @@ Program the board using Vivado Lab tool with xsdb, as shown in Figure 10, by com
 
 **xsdb% source run.tcl**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure10.jpg
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
    *Figure 10. Xilinx VCU118 Programming with Vivado Lab*
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure11.jpg
-   :align: center
-   :width: 600px
+   |image10|
 
 .. container:: centeralign
 
@@ -221,27 +219,22 @@ Login: **root**
 
 Password: **analog**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure12.jpg
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
    *Figure 12. Serial Terminal Tera Term Session for Monitoring Xilinx VCU118 Booting and Login—Tera Term: New Connection*
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure13.jpg
-   :align: center
-   :width: 600px
+   |image12|
 
 .. container:: centeralign
 
    *Figure 13. Serial Terminal Tera Term Session for Monitoring Xilinx VCU118 Booting and Login—Tera Term: Change Speed*
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure14.jpg
-   :align: center
-   :width: 600px
+   |image13|
 
 .. container:: centeralign
 
@@ -269,27 +262,22 @@ The Xilinx VCU118 board uses a static IP address, **192.168.2.1**. Launch the II
 
 Once the IIO device is connected, the user can read/write registers and view the plot of captured data, as shown in Figure 16 and Figure 17.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure15.jpg
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
    *Figure 15. Launch IIO Oscilloscope and Connect to Xilinx VCU118*
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure16.jpg
-   :align: center
-   :width: 600px
+   |image15|
 
 .. container:: centeralign
 
    *Figure 16. IIO Oscilloscope Window for Register Write/Read*
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure17.jpg
-   :align: center
-   :width: 600px
+   |image16|
 
 .. container:: centeralign
 
@@ -308,32 +296,29 @@ Set the following registers for the AD9213 high-speed path, as shown in Figure 1
 
 The AD9213 high-speed path is ready for capturing data.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure18.jpg
-   :align: center
-   :width: 600px
+
+|image17|
 
 .. container:: centeralign
 
    *Figure 18. Register Settings for the AD9213 High-Speed Path Register 0x1617*
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure19.jpg
-   :align: center
-   :width: 600px
+   |image18|
 
 .. container:: centeralign
 
    *Figure 19. Register Settings for the AD9213 High-Speed Path Register 0x1601*
 
 
-   |image9|
+   |image19|
 
 .. container:: centeralign
 
    *Figure 20. Register Settings for the AD9213 High-Speed Path ltc2664_clr*
 
 
-   |image10|
+   |image20|
 
 .. container:: centeralign
 
@@ -351,28 +336,30 @@ Before capturing the AD4080 precision path data with the IIO Oscilloscope, a few
 -  ada4945_disable (one-bit-adc-dac -> output_voltage3) set to 1
 -  adg5419_ctrl (one-bit-adc-dac -> output_voltage4) set to 1
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure21.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    *FFigure 22. Register Settings for the AD4080 Precision Path: ltc2664_output_voltage1*
 
 
-   |image12|
+   |image21|
 
 .. container:: centeralign
 
    *Figure 23. Register Settings for the AD4080 Precision Path: ltc2664_output_voltage2*
 
 
-   |image13|
+   |image22|
 
 .. container:: centeralign
 
    *Figure 24. Register Settings for the AD4080 Precision Path: ada4945_disable*
 
 
-   |image14|
+   |image23|
 
 .. container:: centeralign
 
@@ -394,14 +381,14 @@ Complete the following steps for setting the AD4080 data interface configuration
 The AD4080 data interface configuration registers are set and the AD4080 is ready for data acquisition.
 
 
-|image15|
+|image24|
 
 .. container:: centeralign
 
    *Figure 26. AD4080 Register 0x15 Setting—Value 0x50 for Fixed Test Pattern and 0x40 for Normal Data Acquisition Mode*
 
 
-   |image16|
+   |image25|
 
 .. container:: centeralign
 
@@ -413,16 +400,15 @@ IIO-OSCILLOSCOPE PLOT WINDOW
 
 Data captured by the the AD9213 high-speed path and the AD4080 precision path can be visualized and saved to a .csv file in the IIO Oscilloscope plot window, as shown in Figure 28 and Figure 29.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure27.jpg
-   :align: center
-   :width: 600px
+
+|image26|
 
 .. container:: centeralign
 
    *Figure 28. IIO Oscilloscope Plot Window—Time Domain: axi-adrv9213-rx-hpc*
 
 
-   |image17|
+   |image27|
 
 .. container:: centeralign
 
@@ -434,7 +420,7 @@ The two data paths are listed in the top-left corner. Check one or both and then
 The IIO Oscilloscope plot window can also view the captured data in the frequency domain. An example of a 2MHz sinewave captured by AD4080 is shown in Figure 30.
 
 
-|image18|
+|image28|
 
 .. container:: centeralign
 
@@ -445,7 +431,7 @@ The data can be saved in a .csv file for post processing and analysis, as shown 
 
 
 
-|image19|
+|image29|
 
 .. container:: centeralign
 
@@ -468,28 +454,28 @@ Round the DAC value to the nearest integer as the DAC LTC2664 input. The DAC out
 To change the LTC2664 DAC value for ADL5580 biasing, write the DAC value as raw data to output_voltage0, as shown in Figure 32. To illustrate the effect of offset shift, clear the Auto scale checkbox, set the Y max to 2048, and set the Y min to −2048. Figure 33 through Figure 35 show the AD9213 high-speed path data with the same sinewave input but different DAC settings for offset shift.
 
 
-|image20|
+|image30|
 
 .. container:: centeralign
 
    *Figure 32. Write DAC Value of Targeted Voltage to LTC2664*
 
 
-   |image21|
+   |image31|
 
 .. container:: centeralign
 
    *Figure 33. AD9213 Data with DC Offset at 0mV (32768 LSBs)*
 
 
-   |image22|
+   |image32|
 
 .. container:: centeralign
 
    *Figure 34. AD9213 Data with DC Offset at +100mV (33423 LSBs)*
 
 
-   |image23|
+   |image33|
 
 .. container:: centeralign
 
@@ -511,21 +497,21 @@ Install Python 3.11.5. It is recommended to install Python 3.11.5 as an administ
 ► Download the 64-bit Git for Windows Setup as shown in Figure 38 and install Git.
 
 
-|image24|
+|image34|
 
 .. container:: centeralign
 
    *Figure 36. Download Python Windows Installer*
 
 
-   |image25|
+   |image35|
 
 .. container:: centeralign
 
    *Figure 37. Install Python 3.11.5 as an Administrator*
 
 
-   |image26|
+   |image36|
 
 .. container:: centeralign
 
@@ -546,7 +532,7 @@ Start a Command Prompt window and clone the PyADI-IIO library for ADMX6001-EBZ, 
 **git clone** :git-pyadi-iio:`tree/admx6001_v1`
 
 
-|image27|
+|image37|
 
 .. container:: centeralign
 
@@ -573,7 +559,7 @@ Complete the following steps to create and activate the venv for ADMX6001-EBZ an
 The venv is now created and activated, and the PyADI-IIO library is installed, as shown in Figure 40.
 
 
-|image28|
+|image38|
 
 .. container:: centeralign
 
@@ -587,49 +573,51 @@ The user can also setup the venv for ADMX6001-EBZ with an integrated development
 -  The user can add additional Python libraries in a Command Prompt window (see the Install Additional Python Libraries section) or in PyCharm, as shown in Figure 45 and Figure 46.
 -  Launch a Command Prompt window to activate venv and install the PyADI-IIO, as shown in Figure 47.
 
-|image29|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure40.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    *Figure 41. Launch PyCharm and Open the Python Scripts Project*
 
 
-   |image30|
+   |image39|
 
 .. container:: centeralign
 
    *Figure 42. Open File or Project*
 
 
-   |image31|
+   |image40|
 
 .. container:: centeralign
 
    *Figure 43. ADMX6001-EBZ Python Scripts*
 
 
-   |image32|
+   |image41|
 
 .. container:: centeralign
 
    *Figure 44. Create Venv by Adding a Local Interpreter*
 
 
-   |image33|
+   |image42|
 
 .. container:: centeralign
 
    *Figure 45. Install Additional Python Libraries in PyCharm*
 
 
-   |image34|
+   |image43|
 
 .. container:: centeralign
 
    *Figure 46. Python Interpreter Settings*
 
 
-   |image35|
+   |image44|
 
 .. container:: centeralign
 
@@ -644,7 +632,7 @@ INSTALL ADDITIONAL PYTHON LIBRARIES
 The Python scripts for the ADMX6001-EBZ board utilize modules from various libraries. Install these libraries, such as scipy and matplotlib, using pip install <library name> within venv before running the Python scripts, as shown in Figure 48.
 
 
-|image36|
+|image45|
 
 .. container:: centeralign
 
@@ -672,8 +660,9 @@ The example script **ADMX6001_MultiClass_pCal.py** defines the classes to setup,
 
 -  plot_data_ad4080(self, data): plot data captured by by AD4080.
 
-
-|image37|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure48.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -684,21 +673,21 @@ The example script **ADMX6001_acquisitionl.py** creates instance of classes defi
 
 
 
-|image38|
+|image46|
 
 .. container:: centeralign
 
    *Figure 50. Plots Generated by Python Script ADMX6001_acquisition.py*
 
 
-   |image39|
+   |image47|
 
 .. container:: centeralign
 
    *Figure 51. AD9213 Data with Different DC Offsets*
 
 
-   |image40|
+   |image48|
 
 .. container:: centeralign
 
@@ -711,7 +700,7 @@ The example script **ADMX6001_acquisitionl.py** creates instance of classes defi
    :width: 600px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure3_completesetup.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure5_ip_network.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure4_downloadvivado.jpg
    :width: 600px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure6_ip_properties.png
    :width: 600px
@@ -721,67 +710,83 @@ The example script **ADMX6001_acquisitionl.py** creates instance of classes defi
    :width: 600px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure9_uart.jpg
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure20.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure10.jpg
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/figure21_added.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure11.jpg
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure21.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure12.jpg
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure22.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure13.jpg
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure23.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure14.jpg
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure24.jpg
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure15.jpg
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure25.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure16.jpg
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure26.jpg
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure17.jpg
    :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure28.jpg
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure18.jpg
    :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure29.jpg
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure19.jpg
    :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure30.jpg
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure20.jpg
    :width: 600px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure31.jpg
+.. |image20| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/figure21_added.jpg
    :width: 600px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure32.jpg
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure22.jpg
    :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure33.jpg
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure23.jpg
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure34.jpg
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure24.jpg
    :width: 600px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure35.jpg
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure25.jpg
    :width: 600px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure36.jpg
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure26.jpg
    :width: 600px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure37.jpg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure27.jpg
    :width: 600px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure38.jpg
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure28.jpg
    :width: 600px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure39.jpg
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure29.jpg
    :width: 600px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure40.jpg
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure30.jpg
    :width: 600px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure41.jpg
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure31.jpg
    :width: 600px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure42.jpg
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure32.jpg
    :width: 600px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure43.jpg
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure33.jpg
    :width: 600px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure44.jpg
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure34.jpg
    :width: 600px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure45.jpg
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure35.jpg
    :width: 600px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure46.jpg
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure36.jpg
    :width: 600px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure47.jpg
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure37.jpg
    :width: 600px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure48.jpg
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure38.jpg
    :width: 600px
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure49.jpg
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure39.jpg
    :width: 600px
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure50.jpg
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure41.jpg
    :width: 600px
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure51.jpg
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure42.jpg
+   :width: 600px
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure43.jpg
+   :width: 600px
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure44.jpg
+   :width: 600px
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure45.jpg
+   :width: 600px
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure46.jpg
+   :width: 600px
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure47.jpg
+   :width: 600px
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure49.jpg
+   :width: 600px
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure50.jpg
+   :width: 600px
+.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure51.jpg
    :width: 600px

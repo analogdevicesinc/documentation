@@ -18,10 +18,8 @@ Amplifier Design
 
 The electret microphone includes an open-drain FET preamplifier, and requires a drain resistor, R\ :sub:`D`, with value between 680 Ω and 2.2 KΩ, connected between its output and the +5V supply as shown in Figure 1. The drain resistor is set at 2.2 KΩ in this design which places the drain voltage at approximately +4.5 V with a +5.0 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_1.png
-   :alt: audio_amplifier_theory_1.png
-   :align: center
-   :width: 250px
+
+|audio_amplifier_theory_1.png|
 
 .. container:: centeralign
 
@@ -34,10 +32,8 @@ A detailed description of the design and analysis of the audio amplifier is prov
 
 :doc:`Audio Amplifier with Electret Microphone - Theory </wiki-migration/university/courses/engineering_discovery/lab_4/theory>`
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_2.png
-   :alt: audio_amplifier_theory_2.png
-   :align: center
-   :width: 800px
+
+|audio_amplifier_theory_2.png|
 
 .. container:: centeralign
 
@@ -113,6 +109,10 @@ Questions
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
+.. |audio_amplifier_theory_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_1.png
+   :width: 250px
+.. |audio_amplifier_theory_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_2.png
+   :width: 800px
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/audio_amplifier_circuit.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/electret_audio_amplifier_bb.png

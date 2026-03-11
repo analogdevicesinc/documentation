@@ -30,9 +30,8 @@ Build the current sense amplifier shown in figure 1. R\ :sub:`6` is added to sta
 
 The load will consist of different impedances such as a resistor, capacitor or inductor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -48,9 +47,8 @@ For the first step in the procedure a load will not be connected. With no load I
 
 For step two you will connect a 1 KΩ resistor, R\ :sub:`L`, as the load as shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -67,9 +65,8 @@ Note the phase difference, if any, between the current and the voltage CA-V. You
 
 In step three connect two 0.1 uF capacitors in parallel, C\ :sub:`L`, for a total load of 0.2 uF as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -82,9 +79,8 @@ As step four connect a 4.7 mH inductor, L\ :sub:`L` as the load as shown in figu
 
 Now compare the output (CB-V) trace for this step with your saved output traces from steps 1, 2 and 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -108,3 +104,12 @@ As an extra check on your results you can turn on the CA-I curve which measures 
 :adi:`Difference and Current Sense Amplifiers <media/en/training-seminars/tutorials/MT-068.pdf>` :adi:`A Deeper Look into Difference Amplifiers <library/analogDialogue/archives/48-02/diff_amp.html>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-current-sense-f4.png
+   :width: 600px

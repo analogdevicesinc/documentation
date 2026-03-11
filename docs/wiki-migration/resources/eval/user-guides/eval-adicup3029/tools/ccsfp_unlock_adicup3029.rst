@@ -27,13 +27,12 @@ How to Recover the ADICUP3029
 -  On the EVAL-ADICUP3029 board, hold down the "**3029_BOOT**" button
 -  On the EVAL-ADICUP3029 board press and release the "**3029_RESET**" button, but continue holding the "**3029_BOOT**" button
 -  Go back to the CrossCore Serial Programmer application and hit the "**Start**" button
--  Allow the program to finish erasing the memory, and once its complete your EVAL-ADICUP3029 will be ready for use once again.\
+-  Allow the program to finish erasing the memory, and once its complete your EVAL-ADICUP3029 will be ready for use once again.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/ccsfp_erase.png
+   :width: 400px
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/ccsfp_setup.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/ccsfp_erase.png
    :width: 400px

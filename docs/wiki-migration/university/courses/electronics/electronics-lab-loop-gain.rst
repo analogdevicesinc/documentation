@@ -11,9 +11,8 @@ Background:
 
 Negative feedback is commonly used in control systems. Figure 1 shows a simple system with negative feedback.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ Using a suitable injection transformer ( the ADALP2000 Analog Parts kit contains
 
 Figure 2 shows a setup using the voltage injection method to measure the loop gain of a feedback system. A low value resistor is inserted in the feedback loop at the injection-point. The injection transformer secondary winding is connected across the injection resistor to apply the test voltage. This allows the injection of a test voltage without changing the DC-bias operating point of the system.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -93,9 +91,8 @@ Directions:
 
 Build the measurement setup as shown in figure 3 below. Remember to supply power to the op amp, +5 V to pin 7 and -5V to pin 4 with 0.1uF capacitors used to de-couple the Vp and Vn power supplies ( not shown in schematic diagram for simplicity ). If you are using the HPH1-1400L transformer for T\ :sub:`1` you should connect three of the 6 windings in series for the primary and the remaining three windings in series for the secondary ( see this :doc:`activity on transformers </wiki-migration/university/labs/comms_lab_transformers_adalm2000>` for more details ). Resistor R\ :sub:`1` is set to 1 KΩ and R\ :sub:`2` is either 1 KΩ or 10 KΩ to test different loop gains with the three different op-amps. Voltage divider R\ :sub:`4` and R\ :sub:`5` serves two purposes. First the 10 Ω R\ :sub:`4` matches the impedance of the resistor inserted in the feedback loop, R\ :sub:`3`. The AWG in the ADALM2000 cannot directly drive the 10 Ω resistor so the 100 Ω R\ :sub:`5` increases the load resistance to a value high enough for the AWG to safely drive. The attenuation of the divider also allows us to set the amplitude of the AWG high enough to provide a low noise signal while still injecting a small signal into the loop.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -111,7 +108,7 @@ Open the voltage supply control window to turn on and off the fixed +5 and -5 vo
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image4|\
 
 
 .. container:: centeralign
@@ -128,7 +125,7 @@ A plot example is presented in Figure 5.
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image5|\
 
 
 .. container:: centeralign
@@ -166,5 +163,11 @@ Measurement of loop gain in feedback systems. Middlebrook, R.D. s.l. : Internati
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/loop_gain-bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/loop_gain-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/loop_gain-bb.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/loop_gain-wav.png

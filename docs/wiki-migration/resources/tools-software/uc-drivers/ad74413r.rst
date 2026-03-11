@@ -40,15 +40,10 @@ The source code for the AD74413R can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of the AD74413R driver <drivers/adc-dac/ad74413r/ad74413r.h>`
+   -   :git-no-OS:`Implementation of AD74413R driver <drivers/adc-dac/ad74413r/ad74413r.c>`
    
-   |Header file of the AD74413R driver|
 
-   -
-
-   |Implementation of AD74413R driver|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. You may either use one of the platforms already supported by No-OS, or you can implement the following functions for your custom platform.
 
@@ -67,15 +62,10 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for SPI Communication APIs|
 
-   -
-
-   |Generic header file for I2C Communication APIs|
 
 AD74413R Driver Code Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -297,15 +287,10 @@ The source and header files for the AD74413R IIO driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`AD74413R IIO driver source file <drivers/adc-dac/ad74413r/iio_ad74413r.c>`
+   -  :git-no-OS:`AD74413R IIO driver header file <drivers/adc-dac/ad74413r/iio_ad74413r.h>`
    
-   |AD74413R IIO driver source file|
 
-   -
-
-   |AD74413R IIO driver header file|
 
 AD74413R IIO driver code documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,10 +414,3 @@ AD74413R IIO driver initialization example
    };
 
    return iio_app_run(iio_devices, NO_OS_ARRAY_SIZE(iio_devices));
-
-.. |Header file of the AD74413R driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/ad74413r`.h
-.. |Implementation of AD74413R driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/ad74413r`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
-.. |AD74413R IIO driver source file| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/iio_ad74413r`.c
-.. |AD74413R IIO driver header file| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc-dac/ad74413r/iio_ad74413r`.h

@@ -16,17 +16,15 @@ Directions:
 
 The good way to measure the characteristics of the current mirror is to reuse the same basic configuration that was used in the common emitter BJT curve tracer experiments. The input and output resistors R\ :sub:`1` and R\ :sub:`2` are now both 1KΩ. Be sure to accurately measure (with the most significant figures possible) the actual values of R\ :sub:`1` and R\ :sub:`2`. This is to insure accurate measurement of the input and output current of the mirror. I\ :sub:`in` will be equal to the AWG2 output voltage at W1 divided by the value of R\ :sub:`1`. Iout will be the voltage measured by scope channel 2 divided by the value of R\ :sub:`2`. Diode connected Q\ :sub:`1` is connected across the base and emitter terminals of Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1 Current mirror test circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f2.png
-   :align: center
+   |image2|
 
 .. container:: centeralign
 
@@ -38,17 +36,15 @@ Hardware Setup:
 
 In the current mirror configuration, the op amp serves as a virtual ground at the mirror input (base) node to convert the voltage steps from AWG 2 ( W2 output ) into current steps through the 1KΩ resistor. The collector voltage is swept using a ramp from AWG 1(output W1). Load the stairstep.csv file, set amplitude to 3V peak-to-peak with the offset to 1.5V. V\ :sub:`CE` of output device Q\ :sub:`2` is measured differentially by scope inputs 1+, 1-. The mirror output current is measured by scope inputs 2+. 2- across 1KΩ resistor, R\ :sub:`2`. If you don't want to use the op-amp configuration the following simplified configuration can be used as well.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f2.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3 Alt, Simple current mirror test circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f4.png
-   :align: center
+   |image4|
 
 .. container:: centeralign
 
@@ -71,7 +67,7 @@ Identical transistors by definition have the same I\ :sub:`S`. In the simple cur
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
 
-|image1|
+|image5|
 
 .. container:: centeralign
 
@@ -89,7 +85,7 @@ Current Mirror with Base Current Compensation
 Modify the simple mirror circuit by adding the base current compensation transistor Q\ :sub:`3` as shown below in figure 6.
 
 
-|image2|
+|image6|
 
 .. container:: centeralign
 
@@ -113,7 +109,7 @@ Procedure
 Repeat the same procedure you followed for the simple mirror circuit.
 
 
-|image3|
+|image7|
 
 .. container:: centeralign
 
@@ -137,9 +133,8 @@ Wilson Current Mirror
 
 Modify the simple mirror into a Wilson Mirror as shown below in figure 9. Repeat the same procedure you followed for the simple mirror circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f4.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -163,7 +158,7 @@ Procedure
 Repeat the same procedure you followed for the simple mirror circuit.
 
 
-|image4|
+|image9|
 
 .. container:: centeralign
 
@@ -187,9 +182,8 @@ Widlar current mirror
 
 Modify the simple mirror into a Widlar Mirror as shown below in figure 12. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f5.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -213,7 +207,7 @@ Procedure
 Repeat the same procedure you followed for the simple mirror circuit.
 
 
-|image5|
+|image11|
 
 .. container:: centeralign
 
@@ -255,9 +249,8 @@ Directions:
 
 The diode configuration with nearly zero turn on voltage from activity 2 is used here, in figure 15, to make a current mirror. The current input node at the collector of Q\ :sub:`1` (base of PNP Q\ :sub:`3`) is now much closer to ground compared to the conventional current mirror. What advantages would this have over the conventional mirror?
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f6.png
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -281,7 +274,7 @@ Procedure
 Repeat the same procedure you followed for the simple mirror circuit.
 
 
-|image6|
+|image13|
 
 .. container:: centeralign
 
@@ -303,15 +296,27 @@ Ideally the collector of PNP Q\ :sub:`3` would be connected to some negative vol
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f5.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f1.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f3.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f2.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f8.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f4.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f5.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f11.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f3.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f14.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f8.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f17.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f4.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f11.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f5.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f14.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a6_f6.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a6n_f17.png
    :width: 500px

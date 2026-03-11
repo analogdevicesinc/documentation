@@ -86,7 +86,7 @@ Your system requirements may call for alternate timing, sequencing, and/or monit
 
 An in depth analysis for :doc:`calculating ADM1166 thresholds </wiki-migration/resources/eval/user-guides/pzsdr/power-and-sequencing>` is found here.
 
-Designers are strongly encouraged to start with the latest ADM166.txt file (on :git-PicoZed-SDR>`__) and make changes using the Analog Devices Super `Sequencer Configuration Tool <https::`Github </github.com/analogdevicesinc/PicoZed-SDR>`. Consult the `Xilinx Zynq datasheet <https://www.xilinx.com/support/documentation/data_sheets/ds191-XC7Z030-XC7Z045-data-sheet.pdf>`_ before making any changes.
+Designers are strongly encouraged to start with the latest ADM166.txt file (on :git-PicoZed-SDR:`Github <PicoZed-SDR>`) and make changes using the Analog Devices Super :git-PicoZed-SDR:`Sequencer Configuration Tool <PicoZed-SDR>`. Consult the `Xilinx Zynq datasheet <https://www.xilinx.com/support/documentation/data_sheets/ds191-XC7Z030-XC7Z045-data-sheet.pdf>`_ before making any changes.
 
 Important! Consult the Zynq AP SoC and AD9361 datasheets before updating threshold windows for SOM voltage rails. Sequencing changes are strongly discouraged.
 
@@ -94,7 +94,7 @@ Download the latest ADM1166 firmware repository from the GitHub link below. It�
 
 ::
 
-   https://github.com/analogdevicesinc/PicoZed-SDR.
+   :git-PicoZed-SDR:`PicoZed-SDR`.
 
 Once you have made updates to the ADM1166 firmware file using the configuration tool, there are two methods for programming the device.
 
@@ -108,7 +108,7 @@ A simple Linux script executed on Zynq will download the latest ADM1166 firmware
 
 You will need a networked router with DHCP capability. Follow the instructions at :doc:`power-and-sequencing </wiki-migration/resources/eval/user-guides/pzsdr/power-and-sequencing>`. Look for the section “Programming the ADM1166 Power Sequencer – Using Linux or HyperTerminal Program”.
 
-This method clones the Analog Devices GIT repository to obtain the latest version of the HEX file for the ADM1166. Note that you need to login as root or use the ‘sudo’ command to execute the update. The GitHub repository for these files is at the following `github <https://github.com/analogdevicesinc/PicoZed-SDR>`_.
+This method clones the Analog Devices GIT repository to obtain the latest version of the HEX file for the ADM1166. Note that you need to login as root or use the ‘sudo’ command to execute the update. The GitHub repository for these files is at the following :git-PicoZed-SDR:`github <PicoZed-SDR>`.
 
 Alternatively, you may use the Manual Update Procedure.
 

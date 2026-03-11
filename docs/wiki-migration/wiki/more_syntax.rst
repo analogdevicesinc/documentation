@@ -1032,11 +1032,9 @@ Language and Text Direction
 
 You can change the language and the reading direction of a wrap container by simply adding a colon followed by the language code, like this:
 
-
-
 .. container:: :he
 
-      זוהי עברית. ((This means "This is Hebrew.", at least according to [[http://translate.google.com/|Google Translate]].))
+   זוהי עברית. ((This means "This is Hebrew.", at least according to `Google Translate <http://translate.google.com/>`_.))
 
 
 .. container:: :he
@@ -1075,7 +1073,7 @@ find the video you want to watch, and then use it's "tag" in the url to encode i
 .. [1]
    This means "This is Hebrew.", at least according to `Google Translate <http://translate.google.com/>`_.
 
-.. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0
-.. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt
-.. |analogTV>983688886001| image:: https://wiki.analog.com/_media/analogTV>983688886001
-.. |youtube>LCf-\_iREESQ| image:: https://wiki.analog.com/_media/youtube>LCf-_iREESQ
+.. |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0| image:: https://wiki.analog.com/_media/wiki/3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0
+.. |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt| image:: https://wiki.analog.com/_media/wiki/1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt
+.. |analogTV>983688886001| image:: https://wiki.analog.com/_media/wiki/analogTV>983688886001
+.. |youtube>LCf-\_iREESQ| image:: https://wiki.analog.com/_media/wiki/youtube>LCf-_iREESQ

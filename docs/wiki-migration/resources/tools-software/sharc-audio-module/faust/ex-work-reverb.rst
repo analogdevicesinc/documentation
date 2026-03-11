@@ -45,8 +45,8 @@ Creating Files for use with the Baremetal Framework
 
 -  Click the ``Export/compile to a specific platform`` button
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
+   :width: 50px
 
 -  In the first dropdown box, choose ``sam``
 -  In the second dropdown box, choose ``sam-source-midi`` and then ``Export``:
@@ -79,6 +79,4 @@ When you run the project through the debugger, you will be able to control the *
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
    :width: 50px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
-   :width: 50px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
    :width: 50px

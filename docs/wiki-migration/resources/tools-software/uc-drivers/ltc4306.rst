@@ -47,15 +47,10 @@ The source code for :adi:`LTC4306` driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of LTC4306 Driver <drivers/io-expander/ltc4306/ltc4306.h>`
+   -  :git-no-OS:`Implementation of LTC4306 Driver <drivers/io-expander/ltc4306/ltc4306.c>`
    
-   |Header file of LTC4306 Driver|
 
-   -
-
-   |Implementation of LTC4306 Driver|
 
 This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the utility library can be found here:
 
@@ -63,15 +58,10 @@ This driver also uses the ADI utility library, so make sure you also add the nec
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 To use the LTC4306 No-OS driver, you need to provide the specific implementation for the communication APIs and the specific types they use.
 
@@ -108,11 +98,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for I2C Communication APIs|
+
 
 Code Documentation
 ------------------
@@ -304,9 +292,3 @@ Example Initialization Using ADUCM3029 as Platform
        ret = ltc4306_init(&ltc4306_device, ltc4306_ip);
        if (ret)
            return ret;
-
-.. |Header file of LTC4306 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/io-expander/ltc4306/ltc4306`.h
-.. |Implementation of LTC4306 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/io-expander/ltc4306/ltc4306`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

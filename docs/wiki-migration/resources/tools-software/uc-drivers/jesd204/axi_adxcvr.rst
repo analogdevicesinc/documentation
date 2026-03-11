@@ -55,15 +55,7 @@ Source Code
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AXI_ADXCVR Highspeed Transceivers Driver. <drivers/axi_core/jesd204/axi_adxcvr.c>`
+   -  :git-no-OS:`Header of AXI_ADXCVR Highspeed Transceivers Driver. <drivers/axi_core/jesd204/axi_adxcvr.h>`
    
-   |Implementation of AXI_ADXCVR Highspeed Transceivers Driver.|
 
-   -
-
-   |Header of AXI_ADXCVR Highspeed Transceivers Driver.|
-
-.. |Implementation of AXI_ADXCVR Highspeed Transceivers Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/jesd204/axi_adxcvr`.c
-.. |Header of AXI_ADXCVR Highspeed Transceivers Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/jesd204/axi_adxcvr`.h

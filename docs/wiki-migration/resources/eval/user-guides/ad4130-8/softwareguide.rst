@@ -28,31 +28,45 @@ Installing ACE
 -  A dialog box opens asking for permission to allow the program to make changes to the PC. Click Yes to begin the installation process.
 -  In the ACE Setup window, click Next > to continue the installation.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_1.png
+   :align: center
+   :width: 400px
 
 -  Read the software license agreement and click I Agree
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_2.png
+   :align: center
+   :width: 400px
 
 -  Click Browse … to choose the installation location and then click Next >
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_3.png
+   :align: center
+   :width: 400px
 
--  The ACE software components to install are preselected. Click Install.\
+-  The ACE software components to install are preselected. Click Install.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_4.png
+   :align: center
+   :width: 400px
 
 -  The Windows Security window opens . Click Install
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_5.png
+   :align: center
+   :width: 400px
 
 -  The installation in progress in the window below. No action is required.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_6.png
+   :align: center
+   :width: 400px
 
 -   When the installation is complete, click Next >, and then click Finish to complete the installation process
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_7.png
+   :align: center
+   :width: 400px
 
 AD4130-8 Plugin Install
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,11 +77,15 @@ After the AD4130-8 Plugin is downloaded follow the steps to install the file: - 
 -  Click on the Plug-in Manager Tab in the top left panel in Ace.
 -  Click on the Settings… button.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_install_page_1.png
+   :align: center
+   :width: 400px
 
 -  Hit the + button next to the Zipped Plug-in Sources.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/4170_ace_plugin_install_page_2.png
+   :align: center
+   :width: 400px
 
 -  Under the Name write “AD4130-8”
 -  Under Source hit the … button and set the path to where you have stored the AD4130-8 Plugin.
@@ -85,16 +103,20 @@ After the EVAL-AD4130-8WARDZ and controller board are properly connected to the 
 -  From the Start menu of the PC, select All Programs > Analog Devices > ACE> ACE.exe to open the ACE software main window shown below
 -  If the EVAL-AD4130-8WARDZ is not connected to the USB port via the controller board when the software launches, the AD4130-8 Eval Board icon does not appear in the Attached Hardware section in ACE (see Figure below).To make the AD4130-8 Eval Board icon appear, connect the EVAL-AD4130-8WARDZ and the controller board to the USB port of the PC, wait a few seconds, and then follow the instructions in the dialog box that opens.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ace_home.png
+   :align: center
+   :width: 400px
 
 -  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board view window shown below:
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_board_view.png
+   :align: center
+   :width: 400px
 
 -  Double click the AD4130-8 chip icon in the AD4130-8 Eval Board view window to open the AD4130-8 chip view window shown below:
 -  Click Software Defaults and then click Apply Changes to apply the default settings to the AD4130-8 (see figure below)\
 
-|image12|
+|image1|
 
 Chip view window
 ~~~~~~~~~~~~~~~~
@@ -121,7 +143,7 @@ The data waveform graph shows each successive sample of the ADC output. Zoom in 
 The Result section shows the analysis of the channel selected
 
 
-|image13|
+|image2|
 
 3) Samples
 ~~~~~~~~~~
@@ -169,7 +191,7 @@ The Bitfields section shows the individual bitfield of the selected register. Th
 For more information of the register and the bitfields in the register, double click on the register shown by label 2. This will show up the register description shown by label 6. For information on what the bitfield does click on the i button in label 7.
 
 
-|image14|
+|image3|
 
 AD4130-8 Demo Modes
 -------------------
@@ -209,31 +231,9 @@ Firmware Install Guide
 
 :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad4130-8>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_chip_view.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_analysis_view.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_3.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_4.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_5.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_6.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_7.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_install_page_1.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/4170_ace_plugin_install_page_2.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ace_home.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_board_view.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_chip_view.png
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_analysis_view.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_memmap_view.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/ad4130_8_ace_memmap_view.png
    :width: 600px

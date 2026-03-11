@@ -74,5 +74,5 @@ Supported IC's
 
 +----------+
 
-.. |max1.png| image:: https://wiki.analog.com/_media/max1.png
+.. |max1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/max1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/maxandhold.png

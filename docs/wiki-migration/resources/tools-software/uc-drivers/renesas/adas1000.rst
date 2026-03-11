@@ -41,7 +41,8 @@ There are three functions which are called by the ADAS1000 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -125,8 +126,8 @@ The following examples are implemented in the reference project:
 
 The reference project also configures the 150Hz test tone Sinewave on each ECG channel, stores 1000 frames and sends data through the SCI port. The frames do not contain the Pace, Respiration Magnitude, Respiration Phase, Leads Off Status, GPIO and CRC words.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adas1000_data_format.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -151,4 +152,4 @@ More information
    See `more-information <https://wiki.analog.com/more-information>`_
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adas1000_data_format.png

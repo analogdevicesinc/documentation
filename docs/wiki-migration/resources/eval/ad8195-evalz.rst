@@ -18,7 +18,7 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |image2| *Figure 2. AD8195 Evaluation Setup*\
+   |image2| *Figure 2. AD8195 Evaluation Setup*\
 
 
 .. tip::

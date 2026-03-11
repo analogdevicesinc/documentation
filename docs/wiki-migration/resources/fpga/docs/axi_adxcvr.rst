@@ -3057,7 +3057,7 @@ More Information
 Reference
 ---------
 
--  `Intel® Arria® 10 Transceiver PHY User Guide <https://wiki.analog.com/https/www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/arria-10/ug_arria10_xcvr_phy.pdf>`_
+-  `Intel® Arria® 10 Transceiver PHY User Guide <https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/arria-10/ug_arria10_xcvr_phy.pdf>`_
 -  `7 Series FPGAs GTX/GTH Transceivers User Guide - Xilinx <https://www.xilinx.com/support/documentation/user_guides/ug476_7Series_Transceivers.pdf>`_
 -  `Ultrascale Architecture GTH Transceivers User Guide - Xilinx <https://www.xilinx.com/support/documentation/user_guides/ug576-ultrascale-gth-transceivers.pdf>`_
 

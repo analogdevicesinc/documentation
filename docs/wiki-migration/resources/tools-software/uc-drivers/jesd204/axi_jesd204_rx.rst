@@ -57,15 +57,7 @@ Source Code
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of JESD204B/C Receive Peripheral Driver. <drivers/axi_core/jesd204/axi_jesd204_rx.c>`
+   -  :git-no-OS:`Header of JESD204B/C Receive Peripheral Driver. <drivers/axi_core/jesd204/axi_jesd204_rx.h>`
    
-   |Implementation of JESD204B/C Receive Peripheral Driver.|
 
-   -
-
-   |Header of JESD204B/C Receive Peripheral Driver.|
-
-.. |Implementation of JESD204B/C Receive Peripheral Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/jesd204/axi_jesd204_rx`.c
-.. |Header of JESD204B/C Receive Peripheral Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/jesd204/axi_jesd204_rx`.h

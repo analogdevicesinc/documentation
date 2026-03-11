@@ -21,9 +21,8 @@ Background:
 
 An optocoupler, or optical isolator, is an electronic device designed to transfer electrical signals by light across an electrical isolation barrier between its input and output. The main purpose of an optocoupler is to prevent high voltages or voltage spikes on one side of the barrier from damaging components or interfering with the transmission of signals to the other side. Commercially available optocouplers can withstand input-to-output voltages from 3kV to 10 kV and voltage transients with speeds up to 10 kV/μs. The device consists generally of an infrared LED on one side as the input and a photo-detector such as a photo diode or photo transistor on the other with an electrical isolation barrier in between as shown in figure 1. When the LED is off, that is producing no light, there is no photo current into the base of the transistor and it is off. When the LED has current flowing through it producing light and there is sufficient photo current into the base of the transistor it will turn on. For more in-depth reading on optocouplers see: http://en.wikipedia.org/wiki/Opto-isolator
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,18 +36,15 @@ Directions:
 
 The first step in this activity is to construct your own optocoupler using the infra-red LED and NPN photo transistor supplied with the ADALP2000 Analog Parts Kit. There are two black plastic devices in the kit that look almost exactly the same. One is the photo transistor and the other is a photo diode. The one with the slightly shorter leads should be the photo transistor. If you have a DMM with a diode test function handy you can verify which is the photo diode and which is the photo transistor ( the photo diode will conduct in one direction and the photo transistor will not conduct in either direction ). If you are not using the Parts Kit for these lab activities similar devices may be substituted but your results may vary depending on the components used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_p1.png
-   :align: center
-   :width: 250px
+
+|image2|
 
 .. container:: centeralign
 
    QED-123 Infrared LED
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_p2.png
-   :align: center
-   :width: 250px
+   |image3|
 
 .. container:: centeralign
 
@@ -71,9 +67,8 @@ Directions:
 
 On your solder-less breadboard construct the circuit shown in figure 2. Notice that the NPN photo transistor is configured as a current sink with its emitter connected to ground. Note that the longer of the two leads on the photo transistor is the collector. Note that the shorter of the two LED leads is connected to ground. Double check the component datasheets to make sure you have made the correct connections. As a way to check if you have the LED polarity correct you can use channel B (in Hi-Z mode) to observe the voltage across the LED. It should only swing to less than 1 V and not follow channel A exactly.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_f2.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -117,9 +112,8 @@ Directions:
 
 On your solder-less breadboard modify your circuit to look like the one shown in figure 3. Notice that the NPN photo transistor is now configured as a current source with its collector connected to the fixed positive 5V power supply. This was done to show that it indeed does not matter how the voltages on the transistor terminals are configured.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -157,3 +151,14 @@ Integrated optocouplers.
 Some models are in 6 pin packages and include a connection to the base terminal of the photo transistor. Others are in 4 pin packages and do not have base connections. FOD817 Series 4 pin photo transistor optocoupler from Fairchild Semi.
 
 Lite-On, Optocoupler DC-IN 1-CH Transistor DC-OUT 4-Pin PDIP (Avnet Part #:LTV-817) 4N25, 6 pin DIP package with Base terminal (Jameco Part no. 40985) 4N26, 6 pin DIP package with Base terminal (Jameco Part no. 41005) 4N28, 6 pin DIP package with Base terminal (Jameco Part no. 41013) 4N35, 6 pin DIP package with Base terminal (Jameco Part no. 41056) MCT6, MCT61,MCT62 dual photo transistor optocoupler from Fairchild Semi.
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_p1.png
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_p2.png
+   :width: 250px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_f2.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab22_f3.png
+   :width: 600px

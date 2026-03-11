@@ -37,7 +37,7 @@ More information
 ----------------
 
 -  :adi:`ADF4156 Product Info <ADF4156>` - pricing, samples, datasheet
--  :adi:`EVAL-ADF4156SD1Z evaluation board user guide </static/imported-files/user_guides/UG-171.pdf>`
+-  :adi:`EVAL-ADF4156SD1Z evaluation board user guide <static/imported-files/user_guides/UG-171.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

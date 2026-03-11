@@ -71,7 +71,7 @@ Test setup
 
        *//If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply//
    * Connect the USB cable supplied with the SDP board to the USB port on the PC
-   * Apply power to the +6 V supply (or “wall wart”) connected to [[:adi:`EVAL-CN0188-SDPZ|EVAL-CN0188-SDPZ` Evaluation Board]]
+   * Apply power to the +6 V supply (or “wall wart”) connected to :adi:`EVAL-CN0188-SDPZ Evaluation Board <EVAL-CN0188-SDPZ>`
    * Launch the evaluation software
    * Connect the USB cable from the PC to the USB mini connector on the SDP board
 
@@ -92,15 +92,17 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you install the `CN0188 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0188>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0188\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/1.png
+   :width: 500px
 
 -  Click **Next** to view the installation review page
 
-|image3|
+
+|image2|
 
    \* Click **Next** to start the installation
 
-   |image4|
+   |image3|
 
    \* Upon completion of the installation of the **CN-0188 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -109,7 +111,7 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-   |image5|
+   |image4|
 
    \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
@@ -120,11 +122,11 @@ Installing the Evaluation Software
    **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
 
 
-   |image6|
+   |image5|
 
    \* Press **“Install”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
-   |image7|
+   |image6|
 
 --------------
 
@@ -148,7 +150,7 @@ Main Window
 -  **Temperature** - Temperature level test conditions of input signal
 -  **Data Acquisition** Controls
 
-|image8|
+|image7|
 
    -  **Sample Data** - Start acquisition of measurement data
 
@@ -159,7 +161,7 @@ Main Window
 -  **Sample Data Graph** Tab - Shows the XY plot of ADC code and output error (%) with respect to the shunt voltage
 
 
-|image9|
+|image8|
 
    -  **ADC Code Plot** Enable - Show or hide the ADC Code plot
 
@@ -171,7 +173,7 @@ Main Window
 -  **Administration** Tab
 
 
-|image10|
+|image9|
 
    -  **Flash LED** - Flashes the LED on the SDP controller board
 
@@ -234,21 +236,19 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/cn0188-hw-1024.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/2.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/3.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/4.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/5.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/6.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/6.png
-   :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/11.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/11.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/12.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/12.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/10.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0188/10.png
    :width: 600px

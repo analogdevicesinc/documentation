@@ -21,9 +21,8 @@ Directions:
 
 Before starting make sure the power supplies on the ADALM2000 are turned off. The circuit and the connections to the Lab hardware are as indicated in figure 1. Scope input 1+ should to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`2` bases. Scope input 2+ should to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`2` emitters.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,7 +35,7 @@ Hardware Setup:
 Channel one of the scope should be connected to display the output of the first generator and both scope channels 1 and 2 should be set to display 1V per division. The breadboard connections are shown in figure 2.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -49,7 +48,7 @@ Procedure:
 The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 volt amplitude peak-to-peak and 0 offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`.
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -58,9 +57,9 @@ The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 
 
 Next, apply power and adjust the waveform generator so that W1 is a 100 Hz triangle wave with 0V offset and 3.0 V amplitude peak-to-peak. Use the oscilloscope in the x-y mode to observe the voltage-transfer curve of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f4_tc.png
-   :align: center
-   :width: 400px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -92,9 +91,8 @@ Directions:
 
 With the power turned off, assemble the circuit of figure 5, keeping leads as short and neat as possible. NPN transistors Q\ :sub:`1` and Q\ :sub:`2`, PNP transistor Q\ :sub:`3`\ and Q\ :sub:`4` should be selected from the available devices with the best matching of V\ :sub:`BE`. Transistors fabricated in the same package such as the SSM2212 or the CA3046 tend to match much better than individual devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f2.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -109,7 +107,7 @@ Hardware Setup:
 Channel one of the scope should be connected to display the output of the first generator and both scope channels 1 and 2 should be set to display 1V per division. The breadboard connections are shown in figure 6.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -122,7 +120,7 @@ Procedure:
 The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 volt amplitude peak-to-peak and 0 offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`.
 
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
@@ -147,9 +145,8 @@ Another Configuration:
 
 Remembering the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub:`2`, Q\ :sub:`3` and Q\ :sub:`4` we also know that the order of the voltage drops around the loop can be interchanged. So if we interchange the V\ :sub:`BE`'s of NPN Q\ :sub:`1` and PNP Q\ :sub:`3` we get the configuration shown in figure 3. Some of you may recognize the combination of Q\ :sub:`3` and Q\ :sub:`2` as the low offset follower we discussed earlier in the lab section on emitter followers. The circuit uses the V\ :sub:`BE` shift up of a PNP emitter follower to partially cancel the V\ :sub:`BE` shift down of an NPN emitter follower. Transistors Q\ :sub:`1` and Q\ :sub:`4`\ are simply the complement of Q\ :sub:`3` and Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f3.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -162,7 +159,7 @@ Hardware Setup:
 Channel one of the scope should be connected to display the output of the first generator and both scope channels 1 and 2 should be set to display 1V per division. The breadboard connections are shown in figure 9.
 
 
-|image5|
+|image9|
 
 .. container:: centeralign
 
@@ -175,7 +172,7 @@ Procedure:
 The waveform generator, W1, should be configured for a 1 KHz sine wave with 6.0 volt amplitude peak-to-peak and 0 offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`.
 
 
-|image6|
+|image10|
 
 .. container:: centeralign
 
@@ -217,9 +214,17 @@ Output Stages :adi:`(MT-207) <static/imported-files/tutorials/MT-207.pdf>` `Push
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f2a.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f3_wf.png
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f6.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f7_wf.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f9.png
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f10_wf.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f2a.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f3_wf.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f4_tc.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f2.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f6.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f7_wf.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f3.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f9.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a13a_f10_wf.png

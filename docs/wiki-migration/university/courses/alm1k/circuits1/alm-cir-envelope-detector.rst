@@ -38,9 +38,8 @@ Envelope Detector
 
 Consider the circuit presented in Figure 1. Two 0.1 uF capacitors are used in parallel to form a 0.2 uF total capacitance which along with the 10 KΩ resistor for a simple low pass filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -71,9 +70,8 @@ We will use the channel B waveform generator as source to provide the carrier si
 
 With both CH A and CH B set to SVMI mode and Shape Sine you should see waveforms something like those shown in figure 2. Set the Horizontal time scale to 2.0 mSec/Div to display 2 cycles of the 100 Hz waveform.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig2.png
-   :align: center
-   :width: 650px
+
+|image2|
 
 .. container:: centeralign
 
@@ -86,9 +84,8 @@ To generate the modulated signal we will use the Math function from the ALICE si
 
 The generated waveform is presented in Figure 3 as the green trace from CH A. Disconnect the capacitors from the circuit and observe the output signal. With CH B in the Hi Z mode connect it both CH-A and CH-B to your circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig3.png
-   :align: center
-   :width: 650px
+
+|image3|
 
 .. container:: centeralign
 
@@ -99,9 +96,8 @@ Use the vertical range and position controls to shift the traces so that they do
 
 Now connect the capacitors back to the circuit. A plot example is presented in Figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig4.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -117,9 +113,8 @@ We can also view these signals in the frequency domain using the Spectrum Analyz
 
 Open the Spectrum analyzer tool. Set the Cut-DC option to on. Select the CA-dBV and CB-dbV curves for display. Set the Start frequency 100 and the Stop frequency to 50000 with the log frequency scale. Set the number of samples to 16384. With the analyzer running you should see something like the spectrum shown in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig5.png
-   :align: center
-   :width: 650px
+
+|image5|
 
 .. container:: centeralign
 
@@ -130,9 +125,8 @@ As we can see we have the single peak at 100 Hz of the modulating signal on CH-A
 
 Now regenerate the Math modulated waveform in Channel A. You can reconnect CH-A and CH-B to your circuit and put CH-B back in Hi-Z mode. Now if we zoom into the channel A spectrum by setting the start frequency to 8000 and the stop frequency to 12000 we can see, in figure 6, the main peak is at the 10 KHz carrier frequency and there are the modulation side-bands +/- 100 Hz on either side of the carrier. (i.e. 9900 Hz and 10100 Hz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig6.png
-   :align: center
-   :width: 650px
+
+|image6|
 
 .. container:: centeralign
 
@@ -141,9 +135,9 @@ Now regenerate the Math modulated waveform in Channel A. You can reconnect CH-A 
 
 With the filter capacitor, if we look at the spectrum of the demodulated signal after the envelop detector we see the large peak at 100 Hz and a greatly attenuated peak at the 10 KHz carrier frequency as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig7.png
-   :align: center
-   :width: 650px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -162,9 +156,8 @@ ADALM1000 Active Learning Module Solder-less breadboard, and jumper wire kit 1 -
 
 On your solder-less breadboard construct the biased envelope detector circuit as shown in Figure 8. The amplitude modulated signal is AC coupled into the Base of NPN transistor Q\ :sub:`1` which is configured as an emitter follower. Voltage divider R\ :sub:`1` and R\ :sub:`2` along with diode D\ :sub:`1` act to set the DC bias point of the AC coupled input (:doc:`DC restoration </wiki-migration/university/courses/electronics/text/chapter-7>`). Absent any modulated input the DC quiescent operating point seen at the emitter of Q\ :sub:`1` will be the voltage at the junction of R\ :sub:`1` and R\ :sub:`2` minus the diode drop of D\ :sub:`1` and the V\ :sub:`BE` of Q\ :sub:`1`. The base current of Q\ :sub:`1` flows in diode D\ :sub:`1` forward biasing it. During the positive half cycles of the modulated input D\ :sub:`1` turns off and the input signal peaks charge filter capacitor C\ :sub:`2`. During the negative half cycles of the input signal transistor Q\ :sub:`1` turns off and D\ :sub:`1` turns on harder supplying the input current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig8.png
-   :align: center
-   :width: 550px
+
+|image8|
 
 .. container:: centeralign
 
@@ -181,3 +174,20 @@ To test this circuit first use the same modulated signal you used in the simple 
 -  :adi:`Envelope and TruPwr RMS Detector <media/en/technical-documentation/data-sheets/ADL5511.pdf>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig2.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig3.png
+   :width: 650px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig4.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig5.png
+   :width: 650px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig6.png
+   :width: 650px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig7.png
+   :width: 650px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-envel-det-fig8.png
+   :width: 550px

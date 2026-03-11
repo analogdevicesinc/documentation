@@ -111,7 +111,7 @@ At system startup, besides the IIO Oscilloscope, the :doc:`JESD 204B Eye Scan </
 Make some actual distance measurements
 ======================================
 
-:git-pyadi-iio:`examples/lidar.py` is a standalone GUI application developed on top of Analog Devices' `pyadi-iio library <https://github.com/analogdevicesinc/pyadi-iio>`_.
+:git-pyadi-iio:`examples/lidar.py` is a standalone GUI application developed on top of Analog Devices' :git-pyadi-iio:`pyadi-iio library <pyadi-iio>`.
 
 Besides displaying the received signals, lidar.py can be used configure all the relevant board parameters, including the Pulse Width, APD Bias, Tilt Voltage, Sequencer Settings and the parameters used to generate the reference signal. This reference signal is then used to approximate and display the distance to the first object the LIDAR laser is pointed at. All these parameters, signals and measurements are displayed and can be configured in real time.
 

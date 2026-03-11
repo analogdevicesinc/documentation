@@ -41,15 +41,16 @@ Importing the EVAL-CN0540-ARDZ MBED Example program
 
 -  If the user doesn’t have an mbed online id account, the user must create one at https://ide.mbed.com/.
 -  After having a account, open the Example program for EVAL-CN0540-ARDZ https://os.mbed.com/teams/AnalogDevices/code/EVAL-CN0540-ARDZ
--  After that, click the import button to import example program to your online compiler.\ |image2|\
+-  After that, click the import button to import example program to your online compiler.\
 
-|image3|
+|image2|
 
--  Then compile the code and the extracted binary can be loaded to SDP-k1 by dragging and dropping it to the SDP-k1 directory.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_mbed_link_2.png
+   :align: center
 
-|image4|
+-  Then compile the code and the extracted binary can be loaded to SDP-k1 by dragging and dropping it to the SDP-k1 directory.
 
-Note: you can refer to this video on how to import an mbed example program: https://youtu.be/3xbzuPLcmCk?t=189
+|image3| Note: you can refer to this video on how to import an mbed example program: https://youtu.be/3xbzuPLcmCk?t=189
 
 Connecting to a serial terminal application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,17 +59,22 @@ In order to communicate with the board using the SDP-K1 the user needs to instal
 
 -  Open Device Manager through the Windows control panel and plug the micro-controller board into the PC, when the board is detected it will appear in device manager, displaying as USB Serial Device. This also displays which port the board is connected to. (COM5 in this case)
 
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540devicemanager.png
+   :align: center
 
 -  Right-clicking on the COM port in device manager will allow the user to view and change the properties of the port, such as the transfer speed.
--  Open the serial terminal application and enter the correct values to configure it to connect to the board. The serial line should be the COM port noted earlier and the speed should be set to 115200 to ensure data transfer works correctly. Also note the changes in the Terminal tab, this is required for the menu to display properly.\ |image6|\
+-  Open the serial terminal application and enter the correct values to configure it to connect to the board. The serial line should be the COM port noted earlier and the speed should be set to 115200 to ensure data transfer works correctly. Also note the changes in the Terminal tab, this is required for the menu to display properly.\
 
-|image7|
+|image4|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540putty2.png
+   :align: center
+   :width: 600px
 
 -  Upon connection, the interface menu should appear. If not, press the reset button on the micro-controller board, this will call up the command menu for the user to interact with. **(Note: This does not work with the current version of the SDP-K1)**
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_putty.png
+   :align: center
 
 -  From here, the user should type the number corresponding to their desired choice and press 'Enter'. Note that many choices will create sub-menus, prompting the user to make another choice.
 
@@ -135,11 +141,6 @@ The following table shows every command along with a brief description. Some com
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_sdp-k1.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_mbed.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_mbed_link_2.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_mbed_link_3.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540devicemanager.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540putty.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_mbed_link_3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540putty.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540putty2.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_putty.png

@@ -38,9 +38,8 @@ Directions:
 
 On your solder-less breadboard connect the photo cell ( photo resistor ) and fixed resistor to the ALM1000 analog input connector as shown in figure 1. The resistance of the photo resistor changes with light level. This change in resistance along with the fixed resistor changes the voltage divider ratio.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial4_f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -74,3 +73,6 @@ Modify the program to graph the voltage measured, which represents the ambient l
 `Photoresistor <https://en.wikipedia.org/wiki/Photoresistor>`_ `Lux <https://en.wikipedia.org/wiki/Lux>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial4_f1.png
+   :width: 550px

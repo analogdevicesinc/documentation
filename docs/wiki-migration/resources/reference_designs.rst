@@ -123,7 +123,10 @@ The following equipment is required to complete the test procedure:
 Recommended Test Setup
 ~~~~~~~~~~~~~~~~~~~~~~
 
-|Figure 4.\||
+.. image:: https://wiki.analog.com/_media/resources/a4_ug656_brickmodulesetup.png
+   :alt: Figure 4.\|
+   :align: center
+   :width: 850px
 
 .. container:: centeralign
 
@@ -167,7 +170,9 @@ Use the following steps to conduct the test procedure:
 Schematic, Bill of Materials, and PCB Layout
 --------------------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/a7_ug656_adp1051_eighthbrick_reva_sch.png
+   :align: right
+   :width: 950px
 
 .. container:: centeralign
 
@@ -346,114 +351,112 @@ Bill of Materials
 +----------+------------------------------+---------------------+------------------+-------------------------------------------------------+-----------------------------+--------------------------+
 
 | 
-| ====Printed Circuit Board (PCB) Layout====
-
-|image2|
+| ====Printed Circuit Board (PCB) Layout==== |image1|
 
 .. container:: centeralign
 
    \ *Figure 8. Top Layer*\
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
    \ *Figure 9. Layer 2*\
 
 
-   |image4|
+   |image3|
 
 .. container:: centeralign
 
    \ *Figure 10. Layer 3*\
 
 
-   |image5|
+   |image4|
 
 .. container:: centeralign
 
    \ *Figure 11. Layer 4*\
 
 
-   |image6|
+   |image5|
 
 .. container:: centeralign
 
    \ *Figure 12. Layer 5*\
 
 
-   |image7|
+   |image6|
 
 .. container:: centeralign
 
    \ *Figure 13. Layer 6*\
 
 
-   |image8|
+   |image7|
 
 .. container:: centeralign
 
    \ *Figure 14. Layer 7*\
 
 
-   |image9|
+   |image8|
 
 .. container:: centeralign
 
    \ *Figure 15. Layer 8*\
 
 
-   |image10|
+   |image9|
 
 .. container:: centeralign
 
    \ *Figure 16. Layer 9*\
 
 
-   |image11|
+   |image10|
 
 .. container:: centeralign
 
    \ *Figure 17. Layer 10*\
 
 
-   |image12|
+   |image11|
 
 .. container:: centeralign
 
    \ *Figure 18. Layer 11*\
 
 
-   |image13|
+   |image12|
 
 .. container:: centeralign
 
    \ *Figure 19. Layer 12*\
 
 
-   |image14|
+   |image13|
 
 .. container:: centeralign
 
    \ *Figure 20. Layer 13*\
 
 
-   |image15|
+   |image14|
 
 .. container:: centeralign
 
    \ *Figure 21. Layer 14*\
 
 
-   |image16|
+   |image15|
 
 .. container:: centeralign
 
    \ *Figure 22. Layer 15*\
 
 
-   |image17|
+   |image16|
 
 .. container:: centeralign
 
@@ -606,7 +609,9 @@ Test result: Pass
 | Efficiency | 48               | 20       | >94                                        |       |       |                                           | 94.468 |       |
 +------------+------------------+----------+--------------------------------------------+-------+-------+-------------------------------------------+--------+-------+
 
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/a10_-ug656_brick_efficiency.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -935,7 +940,9 @@ Test result: Pass
 | V\ :sub:`O` | 75               | 20       | 11.64 to 12.36                             |       |       |                                           | 11.981 |       |
 +-------------+------------------+----------+--------------------------------------------+-------+-------+-------------------------------------------+--------+-------+
 
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/af9_linereg.png
+   :align: center
+   :width: 450px
 
 .. container:: centeralign
 
@@ -1067,7 +1074,9 @@ Test result: Pass
 | V\ :sub:`O` | 75               | 20       | 11.64 to 12.36                             |       |       |                                           | 11.981 |       |
 +-------------+------------------+----------+--------------------------------------------+-------+-------+-------------------------------------------+--------+-------+
 
-|image20|
+.. image:: https://wiki.analog.com/_media/resources/af10_loadreg.png
+   :align: center
+   :width: 450px
 
 .. container:: centeralign
 
@@ -1088,7 +1097,7 @@ Pass/Fail Criteria
 Load current should limit under the IOUT_OC_LIMIT.
 
 
-|image21|
+|image17|
 
 .. container:: centeralign
 
@@ -1104,7 +1113,7 @@ Test Condition
 Ripple voltage and noise were measured at the pins of the mating connector of which each output was decoupled by a ceramic (X7R) capacitor and an aluminum capacitor, as shown in following figure.
 
 
-|image22|
+|image18|
 
 .. container:: centeralign
 
@@ -1306,7 +1315,7 @@ Test result: Pass
 | 
 | **Channel 1 (Blue): V\ O (AC-Coupled); Channel 4 (Green): I\ O Load Step = 10 A, 15 A, 10 A with a slew rate of 0.1 A/µs**
 
-|image23| **Load Step: 10 A, 15 A, 10 A with a Slew Rate of 1 A/µs**
+|image19| **Load Step: 10 A, 15 A, 10 A with a Slew Rate of 1 A/µs**
 
 .. image:: https://wiki.analog.com/_media/resources/af47toaf54_tdstart.png
    :align: center
@@ -1418,7 +1427,7 @@ Test result: Pass
 +-----------------+------------------+----------+---------------------------------------------+-------+-------+--------------------------------------------+-------+-------+
 
 | 
-| **T\ START Channel 1 (Blue): V\ O, Channel 2 (Cyan): V\ IN, Channel 4 (Green): I\ O** |image24|
+| **T\ START Channel 1 (Blue): V\ O, Channel 2 (Cyan): V\ IN, Channel 4 (Green): I\ O** |image20|
 
 Prebias Start
 ~~~~~~~~~~~~~
@@ -1608,7 +1617,7 @@ EV\ :sub:`IN` (error of V\ :sub:`IN`) < ±2 V when V\ :sub:`IN` = 36 V to 75 V a
 Test result: Pass
 
 
-|image25|
+|image21|
 
 .. container:: centeralign
 
@@ -1631,7 +1640,7 @@ EI\ :sub:`IN` (error of I\ :sub:`IN`) < ±0.5 A when V\ :sub:`IN` = 36 V to 75 V
 Test result: Pass
 
 
-|image26|
+|image22|
 
 .. container:: centeralign
 
@@ -1654,7 +1663,7 @@ EP\ :sub:`IN` (error of P\ :sub:`IN`) < ±12 W when V\ :sub:`IN` = 36 V to 75 V 
 Test result:
 
 
-|image27|
+|image23|
 
 .. container:: centeralign
 
@@ -1677,7 +1686,7 @@ EV\ :sub:`O` (error of V\ :sub:`O`) < ±0.2 V when V\ :sub:`IN` = 36 V to 75 V a
 Test result: Pass
 
 
-|image28|
+|image24|
 
 .. container:: centeralign
 
@@ -1700,7 +1709,7 @@ EI\ :sub:`O` (error of I\ :sub:`O`) < ±1 A when V\ :sub:`IN` = 36 V to 75 V and
 Test result: Pass
 
 
-|image29|
+|image25|
 
 .. container:: centeralign
 
@@ -1723,7 +1732,7 @@ EP\ :sub:`O` (error of P\ :sub:`O`) < ±6 W when V\ :sub:`IN` = 36 V to 75 V and
 Test result: Pass
 
 
-|image30|
+|image26|
 
 .. container:: centeralign
 
@@ -1733,7 +1742,9 @@ Test result: Pass
 Board Thermal
 ~~~~~~~~~~~~~
 
-|image31|
+.. image:: https://wiki.analog.com/_media/resources/f91thermal.jpg
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -1742,71 +1753,59 @@ Board Thermal
 
 .. |Figure 1.| image:: https://wiki.analog.com/_media/resources/a1_ug656.png
    :width: 500px
-.. |Figure 4.\|| image:: /resources/a4_ug656_brickmodulesetup.png
-   :width: 850px
 .. |Figure 5. \|| image:: /resources/a5_ug656_top.jpg
    :width: 500px
 .. |Figure 6. \|| image:: /resources/a6_ug656_bottom.jpg
    :width: 500px
-.. |image1| image:: https://wiki.analog.com/_media/resources/a7_ug656_adp1051_eighthbrick_reva_sch.png
-   :width: 950px
-.. |image2| image:: https://wiki.analog.com/_media/resources/af91toplayer.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/af91toplayer.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/af92layer11.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/af92layer11.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/af93layer3.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/af93layer3.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/af94layer4.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/af94layer4.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/af95layer5.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/af95layer5.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/af96layer6.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/af96layer6.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/af97layer7.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/af97layer7.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/af98layer8.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/af98layer8.png
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/resources/af99layer9.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/af99layer9.png
    :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/af100layer10.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/af100layer10.png
    :width: 500px
-.. |image12| image:: https://wiki.analog.com/_media/resources/af101layer11.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/af101layer11.png
    :width: 500px
-.. |image13| image:: https://wiki.analog.com/_media/resources/af102layer12.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/af102layer12.png
    :width: 500px
-.. |image14| image:: https://wiki.analog.com/_media/resources/af103layer13.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/af103layer13.png
    :width: 500px
-.. |image15| image:: https://wiki.analog.com/_media/resources/af104layer14.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/af104layer14.png
    :width: 500px
-.. |image16| image:: https://wiki.analog.com/_media/resources/af105layer15.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/af105layer15.png
    :width: 500px
-.. |image17| image:: https://wiki.analog.com/_media/resources/af106bottomlayer.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/af106bottomlayer.png
    :width: 500px
-.. |image18| image:: https://wiki.analog.com/_media/resources/a10_-ug656_brick_efficiency.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/af11_constcurr.png
    :width: 500px
-.. |image19| image:: https://wiki.analog.com/_media/resources/af9_linereg.png
-   :width: 450px
-.. |image20| image:: https://wiki.analog.com/_media/resources/af10_loadreg.png
-   :width: 450px
-.. |image21| image:: https://wiki.analog.com/_media/resources/af11_constcurr.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/af12_rip_noise.png
    :width: 500px
-.. |image22| image:: https://wiki.analog.com/_media/resources/af12_rip_noise.png
-   :width: 500px
-.. |image23| image:: https://wiki.analog.com/_media/resources/af39toaf46new.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/af39toaf46new.png
    :width: 600px
-.. |image24| image:: https://wiki.analog.com/_media/resources/af71tof78_tstartnew2.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/af71tof78_tstartnew2.png
    :width: 600px
-.. |image25| image:: https://wiki.analog.com/_media/resources/f85_evin.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/f85_evin.png
    :width: 500px
-.. |image26| image:: https://wiki.analog.com/_media/resources/f86eiin.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/f86eiin.png
    :width: 500px
-.. |image27| image:: https://wiki.analog.com/_media/resources/af87epin.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/af87epin.png
    :width: 500px
-.. |image28| image:: https://wiki.analog.com/_media/resources/af88evo.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/af88evo.png
    :width: 500px
-.. |image29| image:: https://wiki.analog.com/_media/resources/af89eio.png
+.. |image25| image:: https://wiki.analog.com/_media/resources/af89eio.png
    :width: 500px
-.. |image30| image:: https://wiki.analog.com/_media/resources/af90epo.png
+.. |image26| image:: https://wiki.analog.com/_media/resources/af90epo.png
    :width: 500px
-.. |image31| image:: https://wiki.analog.com/_media/resources/f91thermal.jpg
-   :width: 200px

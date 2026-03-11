@@ -134,7 +134,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -842,7 +842,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
 
 ::
@@ -1006,7 +1006,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -1714,7 +1714,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -1878,7 +1878,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -2586,7 +2586,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -3935,7 +3935,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -4643,7 +4643,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
 
 ::
@@ -4807,7 +4807,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -5515,7 +5515,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -5679,7 +5679,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -6387,7 +6387,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::

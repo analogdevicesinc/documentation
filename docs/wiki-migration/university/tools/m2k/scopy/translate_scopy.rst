@@ -8,7 +8,7 @@ To try to make scopy (and electronics in general) accessible to students, we att
 
 Before making a new translation for Scopy, check to ensure there isn't an existing `translation file <https://github.com/scopy?master/resources/translations>`_ for the language or plugin you are thinking about. We try to maintain Arabic, Simplified Chinese, Traditional Chinese, English, French, German, Italian, Japanese, Korean, Romanian, Spanish and Thai.
 
-If you find a mistake in any of the translations, please :git-scopy:`let us know <issues>` (or better, send us a pull request).
+If you find a mistake in any of the translations, please `let us know <https://github.com/analogdevicesinc/scopy/issues>`_ (or better, send us a pull request).
 
 Installing Qt Linguist
 ~~~~~~~~~~~~~~~~~~~~~~

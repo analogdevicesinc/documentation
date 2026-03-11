@@ -12,10 +12,11 @@ The **EVAL-CN0409-ARDZ** shield is a low to high level water turbidity measureme
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/switch_cn0397.jpg
+   :align: center
+   :width: 600px
 
 -  Connect the **EVAL-CN0409-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
@@ -25,7 +26,7 @@ Calibration procedure
 
 When the project is being run for the first time a calibration procedure is required in order to achieve high accuracy results. The user must follow the steps described in the UART terminal when the application is started.
 
-The user has the option to modify the solutions that are used for calibrating the device. |image3| Any values can be used for the points that are used for calibration, but a proper distribution along the 0 - 1000 NTU range must be taken into account.
+The user has the option to modify the solutions that are used for calibrating the device. |image2| Any values can be used for the points that are used for calibration, but a proper distribution along the 0 - 1000 NTU range must be taken into account.
 
 .. note::
 
@@ -95,25 +96,29 @@ Measurement Procedure
 -  Wipe the test vial with a lint free cloth before inserting into the on board test vial holder to make sure it is free from fingerprints.
 -  Open putty software and hit reset button on EVAL-ADICUP360. Follow on screen prompt for the calibration as shown below.
 
-|image4|
-
-
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/putty1.png
 
 .. note::
 
    For first time use, it is required to perform calibration by typing y key. For the succeeding measurements, just hit n key to skip calibration
 
 
-* 3-point calibration will perform using 0.02FTU,100 FTU and 800 FTU. Wait for the onscreen prompt before placing each solution. {{:resources:eval:user-guides:circuits-from-the-lab:putty2.png|}}
-   * After calibration, place the solution required to measure turbidity as prompted on the screen.{{:resources:eval:user-guides:circuits-from-the-lab:putty3.png|}}
-   * For more details on the software, visit CN0409 Software User Guide.
+-  3-point calibration will perform using 0.02FTU,100 FTU and 800 FTU. Wait for the onscreen prompt before placing each solution.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/putty2.png
+
+-  After calibration, place the solution required to measure turbidity as prompted on the screen.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/putty3.png
+
+-  For more details on the software, visit CN0409 Software User Guide.
 
 .. note::
 
    Make sure you are holding on the test vial cap when placing on the holder
 
 
-   |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/setup.jpg
 
 Obtaining the Source Code
 -------------------------
@@ -135,7 +140,7 @@ The software for the **ADuCM360_demo_cn0409** demo can be found here:
    Prebuilt CN0409 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0409.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0409.bin>`
+   -  `ADuCM360_demo_cn0409.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0409.bin>`_
    
    Complete CN0409 Source Files
    
@@ -188,7 +193,7 @@ For more detailed instructions on importing this application/demo example into t
 Project structure
 -----------------
 
-|image6|\ The **ADuCM360_demo_cn0409** is a C++ project that uses ADuCM36x C/C++ Project structure.
+|image3|\ The **ADuCM360_demo_cn0409** is a C++ project that uses ADuCM36x C/C++ Project structure.
 
 This project contains: system initialization part, setting system clock, enabling clock for peripherals; i2c interface, UART via P0.6/P0.7; UART read/write functions; Memory read/write functions; turbidity calculations;
 
@@ -198,10 +203,6 @@ In the **src** and **include** folders you will find the source and header files
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0409.jpg
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0397/switch_cn0397.jpg
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0409_default_calibration_values.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/putty1.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/setup.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/project.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0409_default_calibration_values.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/project.png
    :width: 300px

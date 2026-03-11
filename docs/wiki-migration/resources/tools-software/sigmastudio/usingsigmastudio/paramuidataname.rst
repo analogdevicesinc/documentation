@@ -15,23 +15,23 @@ To view/hide control parameter names for any schematic, the "View Control Parame
 
 When "View Control Parameters Names" option is selected Parameters names for SigmaStudio modules can be viewed in one of the three ways mentioned below
 
--   As a Cell tooltip on hovering the mouse over the corners of the cell as shown below\
+-   As a Cell tooltip on hovering the mouse over the corners of the cell as shown below
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vol_tootip.png
+   :align: center
+   :width: 800px
+
+-  As Control tooltip on hovering the mouse over the respective control as shown below.
 
 
 |image2|
 
--  As Control tooltip on hovering the mouse over the respective control as shown below.
+-  As combination of Cell and Control tooltips mentioned above in 1 and 2.
 
 |image3|
 
--  As combination of Cell and Control tooltips mentioned above in 1 and 2.
-
-|image4|
-
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/viewhide.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/vol_tootip.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/control_tooltip2.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/control_tooltip2.jpg
    :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/combined_tootip.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/combined_tootip.png
    :width: 500px

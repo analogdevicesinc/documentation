@@ -83,10 +83,24 @@ With the Voyager4 (EV-CBM-VOYAGER4-1Z) fully assembled in hand:
 |Remove the Body|
 
 -  Connect the battery to the power board.
-   |Unconnected Battery| |Connected Battery|
+
+
+|Unconnected Battery|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_6_connected_battery.svg
+   :alt: Connected Battery
+   :width: 200px
+   :height: 200px
 
 -  Connect Voyager4 to the PC using the USB Cable
-   |Unconnected Voyager| |Connected Voyager|
+
+
+|Unconnected Voyager|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_8_voyager_connected_to_pc.svg
+   :alt: Connected Voyager
+   :width: 200px
+   :height: 200px
 
 -  The leftmost LED should perform one long blink and 3 short blinks upon successful startup. The LED will then remain OFF when the Voyager is running.
 
@@ -166,7 +180,8 @@ For details on the software download of the project, please reach out to contact
 -  Type in ``pip install -r requirements.txt``. This will install all necessary packages.
 -  Type in ``python main.py``. This should run the main.py script, prompting the GUI
 
-|Default GUI, Unconnected|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_16_default_gui_unconnected.svg
+   :alt: Default GUI, Unconnected
 
 .. note::
 
@@ -204,9 +219,10 @@ For details on the software download of the project, please reach out to contact
 
    |Issue Setphy 2 Command|
 
-   -  Device Status displays “Return Value: OK”.
+-  Device Status displays “Return Value: OK”.
 
-   |GUI Device Status OK|
+
+|GUI Device Status OK|
 
 -  Under BLE Operations, click **"Start"**
 
@@ -297,13 +313,7 @@ Voyager4 comes packaged with a second microcontroller, the MAX78000, which can m
 .. |Unconnected Battery| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_5_unconnected_battery.svg
    :width: 200px
    :height: 200px
-.. |Connected Battery| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_6_connected_battery.svg
-   :width: 200px
-   :height: 200px
 .. |Unconnected Voyager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_7_voyager_not_connected_to_pc.svg
-   :width: 200px
-   :height: 200px
-.. |Connected Voyager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_8_voyager_connected_to_pc.svg
    :width: 200px
    :height: 200px
 .. |Powered on Voyager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_9_powered_on_voyager.svg
@@ -317,7 +327,6 @@ Voyager4 comes packaged with a second microcontroller, the MAX78000, which can m
 .. |Disable Intel Wireless Bluetooth| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_13_disable_intel_wireless_bluetooth.svg
 .. |Launch Anaconda Environment| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_14_launch_anaconda_prompt.svg
 .. |Create and Start Anaconda Environment| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_15_create_and_start_anaconda_environment.svg
-.. |Default GUI, Unconnected| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_16_default_gui_unconnected.svg
 .. |GUI Scan to Connect| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_17_gui_scan_to_connect.svg
 .. |GUI Available Devices| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_18_gui_available_devices.svg
 .. |GUI Selected Device Entry| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig_19_gui_selected_device_entry.svg

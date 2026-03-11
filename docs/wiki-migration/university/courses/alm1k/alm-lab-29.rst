@@ -20,9 +20,8 @@ Background:
 
 To construct the logic functions in this lab activity you will be using the CD4007 CMOS array and discrete NMOS and PMOS transistors (ZVN2110A NMOS and ZVP2110A PMOS) from the Analog Parts Kit. The CD4007 consists of 3 pairs of complimentary MOSFETs, as shown in figure 1. Each pair shares a common gate (pins 6,3,10). The substrates of all PMOSFETs are common (positive supply pin 14), as well as those of the NMOSFETs (ground pin 7). For the left pair, the NMOS Source terminal is tied to the NMOS substrate (pin 7), and the PMOS Source terminal is tied to PMOS substrate (pin 14). The other two pairs are more general purpose. For the right pair, the Drain terminal of the NMOS is tied to the Drain terminal of the PMOS on pin 12.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -48,9 +47,8 @@ We will now combine the double transmission gate built with inverter chain of th
 
 Build the D-latch circuit shown in figure 2 on your solder-less breadboard. Use the CD4007 CMOS array for devices M\ :sub:`1-6` and one ZVN2110A NMOS and ZVP2110A PMOS for each the two inverter stages M\ :sub:`7,8` and M\ :sub:`9,10`. Use the fixed +5 V power supply from the ALM1000 to power your circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-d-type-ff_f2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -93,18 +91,15 @@ The D-Type latch shown in figure 2 uses complementary pass gates with both NMOS 
 
 For many design cases in integrated circuits where internal signals just pass between internal circuit blocks, the asymmetric drive of a single NMOS or PMOS transistor pass is not a significant issue. The positive feedback inherent in a latch can help in this case. In those cases a simplified D-Type latch that uses just 6 devices rather than the 10 used in figure 2 is shown in figures 3 ( latches on rising edge ) and 4 ( latches on falling edge ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-d-type-ff_f3.png
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3 6 transistor rising edge D-Type latch
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-d-type-ff_f4.png
-   :align: center
-   :width: 550px
+   |image4|
 
 .. container:: centeralign
 
@@ -128,3 +123,12 @@ The pair of inverters made using the four individual NMOS and PMOS transistors (
 `Electronic Latches <https://en.wikipedia.org/wiki/Flip-flop_(electronics)>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-d-type-ff_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-d-type-ff_f3.png
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-d-type-ff_f4.png
+   :width: 550px

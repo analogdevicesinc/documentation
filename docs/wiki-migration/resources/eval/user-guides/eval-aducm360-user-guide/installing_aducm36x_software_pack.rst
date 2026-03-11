@@ -16,7 +16,9 @@ Manual Installation
 -  Download Analog Devices ADuCM36x Device Support and Examples from `Keil MDK5 Software Packs website <https://www.keil.com/dd2/pack/>`_
 -  Install the ADuCM36x Pack in the default directory
 
-|Manual installation of ADuCM36x Software Pack|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/install_pack.png
+   :alt: Manual installation of ADuCM36x Software Pack
+   :align: center
 
 .. container:: centeralign
 
@@ -34,14 +36,16 @@ Installation Through Keil μVision5
 -  Click **Install** in **AnalogDevices::ADuCM36x_DFP**
 -  Accept the License Agreement
 
-|Opening Pack Installer|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/open_packinstaller.png
+   :alt: Opening Pack Installer
+   :align: center
 
 .. container:: centeralign
 
    Figure 2. Opening Pack Installer
 
 
-|Installing the ADuCM36x Software Pack Trough the Pack Installer|\
+   |Installing the ADuCM36x Software Pack Trough the Pack Installer|
 
 .. container:: centeralign
 
@@ -56,22 +60,20 @@ Installation for IAR Embedded Workbench
 -  With the device selected, go to **Packs** -> Device Specific*\* and install the pack **AnalogDevices.ADuCM36x_DFP** (Figure 5).
 -  Accept the license agreement.
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_cmsis.png
+   :align: center
 
 .. container:: centeralign
 
    Figure 4. IAR CMSIS Manager. Selecting the ADuCM36x Series Device
 
 
-|image2|\
+   |image1|
 
 .. container:: centeralign
 
    Figure 3. Installing the ADuCM36x Software Pack
 
 
-.. |Manual installation of ADuCM36x Software Pack| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/install_pack.png
-.. |Opening Pack Installer| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/open_packinstaller.png
 .. |Installing the ADuCM36x Software Pack Trough the Pack Installer| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/packinstaller.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_cmsis.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/install_iar_cmsis.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/install_iar_cmsis.png

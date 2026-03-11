@@ -134,14 +134,14 @@ Software Control and Indicator Descriptions
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software.png
 
-::
 
-   -**SDP Connector Dropdown Menu**
-   * This control will select which connector (on the SDP-B Board) the CN0272 Board is currently connected to.  The options are "connectorA" or "connectorB".  The connector to be used must be selected before clicking the **Connect to SDP-B Board Button**
-   -**Connect to SDP-B Board Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN0272 Board.  A connection to the SDP-B Board must be made to use the software. This button is also used in conjunction with the **SDP Connector Dropdown Menu**.
-   -**Take Snapshot(s) Button**
-   * When this button is pressed, the SDP-B Board will collect a single Snapshot or a collection of Snapshots depending on the **Acquisition Mode** setting.\\ \\
+
+-**SDP Connector Dropdown Menu**
+-  This control will select which connector (on the SDP-B Board) the CN0272 Board is currently connected to.  The options are "connectorA" or "connectorB".  The connector to be used must be selected before clicking the **Connect to SDP-B Board Button**
+-**Connect to SDP-B Board Button**
+-  When this button is pressed, the SDP-B Board makes a USB connection to the CN0272 Board.  A connection to the SDP-B Board must be made to use the software. This button is also used in conjunction with the **SDP Connector Dropdown Menu**.
+-**Take Snapshot(s) Button**
+-  When this button is pressed, the SDP-B Board will collect a single Snapshot or a collection of Snapshots depending on the **Acquisition Mode** setting.\\ \\
 
 .. note::
 
@@ -149,38 +149,38 @@ Software Control and Indicator Descriptions
 
 
 \\ \\ \\ \\ \\
-   -**Save Snapshot(s) Button**
-   * When this button is pressed, the software will save a single Snapshot or a collection of Snapshots to a tab delimited ASCII spreadsheet file.
-   -**Acquisition Mode Radio Buttons**
-   * __Single Snapshot__ - When the software is in this mode, the SDP-B Board will collect a single Snapshot of data.
-   * __Multiple Snapshots__ - When the software is in this mode, the SDP-B Board will collect multiple Snapshots of data.
-   -**Conversions in Snapshot Numerical Control**
-   * This control determines the number of conversions in a single Snapshot of data.
-   * The minimum value is 1 and the maximum value is 65,536.
-   -**Snapshots to Take Numerical Control**
-   * This control determines the number of Snapshots of data the SDP-B Board collects.
-   * The minimum value is 1 and the maximum is 65,536
-   * This control is only enabled in __Multiple Snapshots Acquisition Mode__.
-   -**Snapshot Delay (ms) Numerical Control**
-   * This control determines the delay (in milliseconds) between Snapshots.
-   * The minimum value is 1 and the maximum value is 65,536
-   * This control is only enabled in __Multiple Snapshots Acquisition Mode__.
-   -**Control Tabs**
-   * __Photocurrent Results__ - Clicking this tab brings the Photocurrent Results graph to the front
-   * __Histogram Results__ - Clicking this tab brings the Histogram Results graph to the front
-   * __Configure__ - Clicking this tab brings the System Settings to the front
-   -**Graph Controls**
-   * These controls allow the user to zoom-in, zoom-out, and pan through the Snapshot displayed.
-   -**Graph Units Radio Buttons**
-   * This control determines the Y-Axis units of the "Snapshot" displayed in the graph.
-   -**Snapshot Displayed Numerical Control/Indicator**
-   * This control determines the current Snapshot to display in the graph.  When the value is changed, the graph is updated with the Snapshot specified.
-   * This control also acts as an indicator of the current Snapshot displayed in the graph.  For example, when the software is in the process of collecting multiple Snapshots, the indicator is incremented as the Snapshots are collected.
-   * This control/indicator is only enabled in __Multiple Snapshots Acquisition Mode__.
-   -**System Status String Indicator**
-   * This indicator displays a message to the user detailing the current state of the software.
-   -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-powerdown.png?nolink&|}}ADC in Power-Down\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-error.png?nolink&|}}Error
+-**Save Snapshot(s) Button**
+-  When this button is pressed, the software will save a single Snapshot or a collection of Snapshots to a tab delimited ASCII spreadsheet file.
+-**Acquisition Mode Radio Buttons**
+-  __Single Snapshot__ - When the software is in this mode, the SDP-B Board will collect a single Snapshot of data.
+-  __Multiple Snapshots__ - When the software is in this mode, the SDP-B Board will collect multiple Snapshots of data.
+-**Conversions in Snapshot Numerical Control**
+-  This control determines the number of conversions in a single Snapshot of data.
+-  The minimum value is 1 and the maximum value is 65,536.
+-**Snapshots to Take Numerical Control**
+-  This control determines the number of Snapshots of data the SDP-B Board collects.
+-  The minimum value is 1 and the maximum is 65,536
+-  This control is only enabled in __Multiple Snapshots Acquisition Mode__.
+-**Snapshot Delay (ms) Numerical Control**
+-  This control determines the delay (in milliseconds) between Snapshots.
+-  The minimum value is 1 and the maximum value is 65,536
+-  This control is only enabled in __Multiple Snapshots Acquisition Mode__.
+-**Control Tabs**
+-  __Photocurrent Results__ - Clicking this tab brings the Photocurrent Results graph to the front
+-  __Histogram Results__ - Clicking this tab brings the Histogram Results graph to the front
+-  __Configure__ - Clicking this tab brings the System Settings to the front
+-**Graph Controls**
+-  These controls allow the user to zoom-in, zoom-out, and pan through the Snapshot displayed.
+-**Graph Units Radio Buttons**
+-  This control determines the Y-Axis units of the "Snapshot" displayed in the graph.
+-**Snapshot Displayed Numerical Control/Indicator**
+-  This control determines the current Snapshot to display in the graph.  When the value is changed, the graph is updated with the Snapshot specified.
+-  This control also acts as an indicator of the current Snapshot displayed in the graph.  For example, when the software is in the process of collecting multiple Snapshots, the indicator is incremented as the Snapshots are collected.
+-  This control/indicator is only enabled in __Multiple Snapshots Acquisition Mode__.
+-**System Status String Indicator**
+-  This indicator displays a message to the user detailing the current state of the software.
+-**System Status LED Indicator**
+-  This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-powerdown.png|ADC in Power-Down\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png|Error
 
 --------------
 
@@ -308,3 +308,8 @@ Registration
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-wait.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-save_units.png
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-save_full.png
+
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-busy.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-error.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-inactive.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-powerdown.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0272/cn0272-software-powerdown.png

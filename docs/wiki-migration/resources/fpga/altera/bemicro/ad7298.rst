@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD7298 Product Info <AD7298>` - pricing, samples, datasheet
--  :adi:`EVAL-AD7298SDZ evaluation board user guide </static/imported-files/user_guides/UG_254.pdf>`
+-  :adi:`EVAL-AD7298SDZ evaluation board user guide <static/imported-files/user_guides/UG_254.pdf>`
 -  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 -  `Micrium uC-Probe <https://www.micrium.com/ucprobe/about/>`_

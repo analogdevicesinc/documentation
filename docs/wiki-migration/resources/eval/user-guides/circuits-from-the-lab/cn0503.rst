@@ -151,6 +151,8 @@ Mounting the Base
 | A `Mounted Base <https://wiki.analog.com/>`_ fits on top of the `Main Board <https://wiki.analog.com/>`_ by following the outlined position in the silkscreen. At its bottom, attach 4 `M1 magnets <https://wiki.analog.com/>`_ to the provisions as shown below.
 | |image55|
 
+
+
 .. important::
 
    Watch out for these magnets as they may fall off when placing the `Mounted Base <https://wiki.analog.com/>`_ on top of the `Main Board <https://wiki.analog.com/>`_\
@@ -164,14 +166,21 @@ Mounting the Base
 Connecting the LED and Photodiode (PD) Boards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| The `LED Boards <https://wiki.analog.com/>`_ are drawn with a huge 'X' on the silkscreen which marks the center of the area of interest or the active area of the LED. To mount the `LED Boards <https://wiki.analog.com/>`_, face the top of the board with the LED facing towards the small window of the `Mounted Base <https://wiki.analog.com/>`_ and attach the 4-pin female connectors to the jumper headers marked LED as shown below. |image58|
+The `LED Boards <https://wiki.analog.com/>`_ are drawn with a huge 'X' on the silkscreen which marks the center of the area of interest or the active area of the LED. To mount the `LED Boards <https://wiki.analog.com/>`_, face the top of the board with the LED facing towards the small window of the `Mounted Base <https://wiki.analog.com/>`_ and attach the 4-pin female connectors to the jumper headers marked LED as shown below.
+
+
+|image58|
+
+
 
 .. important::
 
    Be sure to check if the 'X' mark is centered at the middle of the small window of the base
 
 
-| To mount the photodiode (PD) boards, face the top of the board with the photodiode facing towards the small window of the base and attach the 4-pin female connectors to the jumper headers marked PD as shown below. |image59|\ |image60|
+| To mount the photodiode (PD) boards, face the top of the board with the photodiode facing towards the small window of the base and attach the 4-pin female connectors to the jumper headers marked PD as shown below. |image59| |image60|
+
+
 
 .. important::
 
@@ -819,9 +828,9 @@ Registration
    :width: 400px
 .. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190755.jpg
    :width: 400px
-.. |youtube>FaHWg4H_XkU| image:: https://wiki.analog.com/_media/youtube>FaHWg4H_XkU
-.. |youtube>bH7nCD6H8c0| image:: https://wiki.analog.com/_media/youtube>bH7nCD6H8c0
-.. |youtube>97YHC4MVhbU| image:: https://wiki.analog.com/_media/youtube>97YHC4MVhbU
+.. |youtube>FaHWg4H_XkU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>FaHWg4H_XkU
+.. |youtube>bH7nCD6H8c0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>bH7nCD6H8c0
+.. |youtube>97YHC4MVhbU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>97YHC4MVhbU
 .. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190852.jpg
    :width: 400px
 .. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/jumperlocations.jpg

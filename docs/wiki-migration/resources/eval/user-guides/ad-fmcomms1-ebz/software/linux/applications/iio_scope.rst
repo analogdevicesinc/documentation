@@ -25,7 +25,7 @@ Installation
    Latest releases (goto this page to download the file):
 
    
-   -  :git-iio-oscilloscope:`releases`
+   -  https://github.com/analogdevicesinc/iio-oscilloscope/releases
    
 
 
@@ -40,9 +40,9 @@ To build on a host, do not use the script, you **must**:
 -  make sure the following libraries are installed. This list is maintained in the ``adi_update_tools.sh`` shell script, and can be copied/pasted to most Debian based distributions. For others - make sure they are installed, or the below steps will not work. If you are not sure how to do this - consult your distribution documentation. file: :git-linux_image_ADI-scripts:`adi_update_tools.sh` ``> **apt-get -y install libglib2.0-dev libgtk2.0-dev libgtkdatabox-dev libmatio-dev libfftw3-dev libxml2 libxml2-dev bison flex libavahi-common-dev libavahi-client-dev libcurl4-openssl-dev libjansson-dev cmake libaio-dev libserialport-dev**``
 -  build **and install** the libiio library, by following these :doc:`instructions </wiki-migration/resources/tools-software/linux-software/libiio>`. Make sure you do the final ``make install``.
 -  build **and install** the libad9166-iio and libad9361-iio library, by following these :doc:`instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
--  download the source ``> **git clone https://github.com/analogdevicesinc/iio-oscilloscope.git**
+-  download the source ``> **git clone :git-iio-oscilloscope:`iio-oscilloscope`.git**
    > **cd iio-oscilloscope**
-   > **git checkout origin/master**``\ Or, :git-iio-oscilloscope:`download a zip <archive/master.zip>`, and uncompress it:``rgetz@pinky:~$ **wget :git-iio-oscilloscope:`archive/master`.zip**
+   > **git checkout origin/master**``\ Or, `download a zip <https://github.com/analogdevicesinc/iio-oscilloscope/archive/master.zip>`_, and uncompress it:``rgetz@pinky:~$ **wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/master.zip**
    rgetz@pinky:~$ **unzip master.zip**
    rgetz@pinky:~/iio-oscilloscope$ **cd iio-oscilloscope**``
 -  and run \`make\` and \`make install\`. If you did not do a ``make install`` of the libiio, the libiio install location needs to be set in your path ie: (PATH=/usr/lib::math:`PATH") or else an error "Package libiio not found.." will occur.<code> rgetz@pinky:~/iio-oscilloscope` **mkdir build && cd build**
@@ -106,10 +106,9 @@ The application can be used to connect to another platform that has a connected 
 
 -  Settings -> Connect and enter the IP address in the popup window, and click "OK" or "Refresh".
 
-   
-
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/connect.png
+   :align: center
+   :width: 300px
 
 -  Settings -> Connect and click "Refresh" with a blank IP number. If your network supports `zeroconf <http://avahi.org/>`_\  [1]_, you will be connected to the device on the network.
 
@@ -309,7 +308,7 @@ Source code
 Files
 -----
 
-The source code for the entire application is at `github <https://github.com/analogdevicesinc/iio-oscilloscope>`_. You can ask questions about it on the :ez:`EngineerZone <community/linux-device-drivers>`.
+The source code for the entire application is at :git-iio-oscilloscope:`github <iio-oscilloscope>`. You can ask questions about it on the :ez:`EngineerZone <community/linux-device-drivers>`.
 
 Internals
 ~~~~~~~~~
@@ -334,8 +333,6 @@ More information
 .. [1]
    also referred to as multicast DNS/DNS-SD service discovery
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/connect.png
-   :width: 300px
 .. |IIO Oscilloscope disconnect plugins| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/plugin_disconnect_button.png
    :width: 400px
 .. |IIO Oscilloscope plot window| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/osc_plot_window.png

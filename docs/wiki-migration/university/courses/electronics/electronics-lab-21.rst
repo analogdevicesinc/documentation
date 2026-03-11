@@ -19,9 +19,8 @@ Background:
 
 A CMOS inverter can also be viewed as a high gain amplifier. It consists of one PMOS device, M\ :sub:`1` and one NMOS device M\ :sub:`2`. Generally the CMOS fabrication process is designed such that the threshold voltage, V\ :sub:`TH`, of the NMOS and PMOS devices are roughly equal i.e. complementary. The designer of the inverter then adjusts the width to length ratio, W/L, of the NMOS and PMOS devices such that their respective transconductance is also equal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a20_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -33,22 +32,15 @@ Directions:
 
 First build the simple example shown figure 2 to test the input to output transfer function of the simple CMOS amplifier. The green boxes indicate connections to the connector on The ADALM2000. Connect Vp (+5V) power to V\ :sub:`CC` (pin 14) and ground to GND (pin 7). Connect the output of the waveform generator to one of the inverter inputs (pin 1) along with scope input 1+ and connect the inverter output (pin 2) to scope input 2+.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a20_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2 amplifier transfer function
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/74hc04.png
-   :align: center
-   :width: 150px
-
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/cd4069a.png
-   :align: center
-   :width: 250px
+|image3| |image4|
 
 .. container:: centeralign
 
@@ -70,9 +62,8 @@ Adding LC resonator
 
 On your solder-less breadboard construct the filter network shown in figure 4 below. Using the Network (Bode) analyzer tool measure the gain and phase response of the LC network.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a21_f4.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,9 +116,8 @@ Appendix:
 
 Making an inverter with the CD4007 transistor array. Below is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image6|
 
 .. container:: centeralign
 
@@ -147,3 +137,16 @@ The third inverter is made by connecting pin 11 to V\ :sub:`DD`, pin 9 to V\ :su
 Two of these inverters can be used to construct the LC oscillator in figure 5 for example.
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a20_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a20_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/74hc04.png
+   :width: 150px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/cd4069a.png
+   :width: 250px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a21_f4.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px

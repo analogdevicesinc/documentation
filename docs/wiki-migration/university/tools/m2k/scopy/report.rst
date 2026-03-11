@@ -4,7 +4,7 @@ Reporting a Bug
 Bug
 ---
 
-A `Software_bug <https://en.wikipedia.org/wiki/Software_bug>`_ is a flaw, error in a software application that causes it to **behave unexpected**, **hang** or even **crash**. No matter how sharp our skills are, or rigorous our testing, a few bugs are bound to slip through the cracks every now and then. As much as you don't want them; we don't want/like them either. However, some bugs can be difficult to replicate, track down and eventually fix without a well written bug report. If you encounter one of the what you believe is a software bug, this guide is here to provide a step by step approach into reporting the bug on our :git-scopy:`issue tracker <issues>`.
+A `Software_bug <https://en.wikipedia.org/wiki/Software_bug>`_ is a flaw, error in a software application that causes it to **behave unexpected**, **hang** or even **crash**. No matter how sharp our skills are, or rigorous our testing, a few bugs are bound to slip through the cracks every now and then. As much as you don't want them; we don't want/like them either. However, some bugs can be difficult to replicate, track down and eventually fix without a well written bug report. If you encounter one of the what you believe is a software bug, this guide is here to provide a step by step approach into reporting the bug on our `issue tracker <https://github.com/analogdevicesinc/scopy/issues>`_.
 
 What we need is:
 
@@ -16,13 +16,13 @@ What we need is:
 Before reporting a bug
 ----------------------
 
-Is it a bug? or is it a feature request? Something not working properly (a bug) is different than something working differently than you want. :git-scopy:`Feature requests <issues>` are tracked in the same place as bugs, but will not have a ``bug`` label.
+Is it a bug? or is it a feature request? Something not working properly (a bug) is different than something working differently than you want. `Feature requests <https://github.com/analogdevicesinc/scopy/issues>`_ are tracked in the same place as bugs, but will not have a ``bug`` label.
 
 Some :doc:`troubleshooting steps </wiki-migration/university/tools/m2k/scopy-troubleshooting>` that might be worth looking at to understand if you have a potential common hardware problem.
 
 Scopy is continuously being improved from one version to another, (with bug fixes) and with new features.
 
--  ensure you are using the :git-scopy:`latest release version <releases/latest>` of scopy. If you can replicate the bug on that, try
+-  ensure you are using the `latest release version <https://github.com/analogdevicesinc/scopy/releases/latest>`_ of scopy. If you can replicate the bug on that, try
 -  the most recent `nightly Winbdows builds <https://ci.appveyor.com/project/analogdevicesinc/scopy/build/artifacts>`_. It's possible that someone else already reported the bug, and it has been solved.
 
 If the bug exists in the nightly - You will need to report a bug (sorry). First check to see if someone else has reported the same :git-scopy:`bug <issues?q=is%3Aissue+is%3Aopen+label%3Abug>`.

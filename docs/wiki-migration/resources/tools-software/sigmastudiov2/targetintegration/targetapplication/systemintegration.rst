@@ -301,9 +301,7 @@ ADI_SS_FW_PROCESS_MODE is an enumeration defined in *adi_ss_smap.h* file. Follow
 +--------------------------------+
 
 | 
-| The SMAP buffer information for the target framework can be found in SigmaStudioPlus schematic **compiler output** window.
-
-|image4|
+| The SMAP buffer information for the target framework can be found in SigmaStudioPlus schematic **compiler output** window. |image4|
 
 .. container:: centeralign
 

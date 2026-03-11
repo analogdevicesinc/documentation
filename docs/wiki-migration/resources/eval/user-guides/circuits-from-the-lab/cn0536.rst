@@ -64,7 +64,7 @@ The following equipment is needed:
 -  A microUSB cable
 -  A host computer with a serial terminal program, such as Tera Term or PuTTY
 -  A safe radiation source, for example, the Flinn Scientific AP8795 1μCi Cobalt-60 gamma source or similar.
--  The :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex` software file
+-  The `ADuCM3029_demo_cn0536_uart.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0536_uart.hex>`_ software file
 
 Getting Started
 ---------------
@@ -115,7 +115,9 @@ This outlines how to configure the EVAL-CN0536-ARDZ to accommodate different typ
 Setup and Test
 --------------
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/eval-cn0536-ardz_with_gm_tube_combined_with_the_eval-adicup3029.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -127,7 +129,7 @@ Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) an
 1. Connect the EVAL-CN0536-ARDZ on top of the EVAL-ADICUP3029 platform board.
 
 
-|image9|
+|image8|
 
 .. container:: center
 
@@ -143,7 +145,7 @@ Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) an
 5. Connect the EVAL-ADICUP3029 by using the COM port it was assigned to set the baud rate to 115200.
 
 
-|image10|
+|image9|
 
 .. container:: center
 
@@ -154,7 +156,7 @@ Follow these steps to evaluate the EVAL-CN0536-ARDZ (with installed GM tubes) an
 
 
 
-|image11|
+|image10|
 
 .. container:: center
 
@@ -168,7 +170,7 @@ Radiation Detection Using Different GM Tubes
 
 The CN0536 was tested with four different GM tubes. Below table presents the sensors’ sensitivity levels and materials used, and operating range.
 
-|image12| |image13|
+|image11| |image12|
 
 .. container:: center
 
@@ -179,28 +181,28 @@ Adjusting the **R\ pot** configurations ensures that each GM tube operate correc
 
 
 
-|image14|
+|image13|
 
 .. container:: center
 
    **GM Tube 713: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
 
 
-   |image15|
+   |image14|
 
 .. container:: center
 
    **GM Tube 7121: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
 
 
-   |image16|
+   |image15|
 
 .. container:: center
 
    **GM Tube 7124: (a) Serial Display (b) CN0536 with GM Tube and EVAL-ADICUP3029**
 
 
-   |image17|
+   |image16|
 
 .. container:: center
 
@@ -257,23 +259,21 @@ Registration
    :width: 600px
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_with_gm_tube.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/eval-cn0536-ardz_with_gm_tube_combined_with_the_eval-adicup3029.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_with_gm_tube_and_eval-adicup3029_connection.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/cn0536_with_gm_tube_and_eval-adicup3029_connection.png
-   :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/using_tera_term_as_serial_monitor_with_baud_rate_set_to_115200.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/using_tera_term_as_serial_monitor_with_baud_rate_set_to_115200.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/thumbnail_1_.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/thumbnail_1_.jpg
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_sensor_tubes.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_sensor_tubes.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/geiger_muller_tubes_specifications.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/geiger_muller_tubes_specifications.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7129_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7129_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
    :width: 800px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7121_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7121_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
    :width: 800px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7124_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7124_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
    :width: 800px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7129_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0536/gm_tube_7129_a_serial_display_b_cn0536_with_gm_tube_and_eval-adicup3029.png
    :width: 800px

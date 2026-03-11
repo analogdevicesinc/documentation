@@ -162,10 +162,10 @@ Reference
 
 “Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio.”
 
--  Di Pu, Andrei Cozma, and Tom Hill. "Part 1 - the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools". :adi:`Analog Dialogue, Volume 49, Number 3 </library/analogDialogue/archives/49-09/four-step-sdr-01.html>`.
+-  Di Pu, Andrei Cozma, and Tom Hill. "Part 1 - the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools". :adi:`Analog Dialogue, Volume 49, Number 3 <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`.
 -  Mike Donovan, Andrei Cozma, and Di Pu. "Part 2 - Mode-S Detection and Decoding Using MATLAB and Simulink". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`.
--  Di Pu, and Andrei Cozma. "Part 3 - Mode-S Signals Decoding Algorithm Validation using Hardware in the Loop". :adi:`Analog Dialogue, Volume 49, Number 4 </library/analogDialogue/archives/49-11/four-step-sdr-03.html>`.
--  Mike Donovan, Andrei Cozma, and Di Pu. "Part 4 - Rapid Prototyping using the Zynq SDR Kit and Simulink Code Generation Workflow". :adi:`Analog Dialogue, Volume 49, Number 4 </library/analogDialogue/archives/49-12/four-step-sdr-04.html>`.
+-  Di Pu, and Andrei Cozma. "Part 3 - Mode-S Signals Decoding Algorithm Validation using Hardware in the Loop". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`.
+-  Mike Donovan, Andrei Cozma, and Di Pu. "Part 4 - Rapid Prototyping using the Zynq SDR Kit and Simulink Code Generation Workflow". :adi:`Analog Dialogue, Volume 49, Number 4 <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`.
 
 Support
 -------
@@ -174,6 +174,6 @@ If you have any questions about FMCOMMS3 / AD9361 or libiio system object, pleas
 
 If you have any questions about ADS-B receiver algorithm, please contact MathWorks. `MathWorks Support <https://www.mathworks.com/support/>`_
 
-.. |Block diagram| image:: https://wiki.analog.com/_media/result.png
-.. |image1| image:: https://wiki.analog.com/_media/result_real.png
-.. |image2| image:: https://wiki.analog.com/_media/fig13.png
+.. |Block diagram| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/result.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/result_real.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/fig13.png

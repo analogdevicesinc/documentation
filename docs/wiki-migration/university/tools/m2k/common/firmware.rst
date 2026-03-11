@@ -14,7 +14,7 @@ The easiest way to update the firmware is to use the mass storage device include
    ADI default firmware images:
 
    
-   -  :git-m2k-fw:`Latest ADALM2000 (M2k) Release <releases/latest>`
+   -  `Latest ADALM2000 (M2k) Release <https://github.com/analogdevicesinc/m2k-fw/releases/latest>`_
    
    This zip file should include these files:
    
@@ -54,8 +54,9 @@ Windows/OSX
 
    -  Windows (only eject as shown below!)
 
-
-   |image1|
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/common/windows-eject.png
+   :align: center
+   :width: 600px
 
 -  This will cause ``LED1`` to blink rapidly. This means programming is taking place. Do not remove power (or USB) while the device is blinking rapidly. It does take approximately 4 minutes to properly program the device.
 -  Still do not unplug things. Try to be more patient.
@@ -128,7 +129,7 @@ Windows
 The M2K driver package bundles also a dfu utility. There is a windows command console batch script called `UPDATE.BAT <https://raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/UPDATE.BAT>`_ which eases the update procedure.
 
 -  Download and save `UPDATE.BAT <https://raw.githubusercontent.com/analogdevicesinc/plutosdr_scripts/master/UPDATE.BAT>`_
--  Download and unzip the latest M2k release :git-m2k-fw:`M2k Release <releases>`
+-  Download and unzip the latest M2k release `M2k Release <https://github.com/analogdevicesinc/m2k-fw/releases>`_
 -  Open a windows command prompt
 -  Execute UPDATE.BAT with the path to the m2k.dfu file. (In case you need to rewrite the default uboot environment the use the uboot-env.dfu file)
 -  Wait for the script to complete
@@ -189,6 +190,3 @@ Updating the firmware is the same as Linux:
    dfu-util -a firmware.dfu -D m2k.dfu
 
 ``m2k.dfu`` is your firmware file in the dfu format.
-
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/common/windows-eject.png
-   :width: 600px

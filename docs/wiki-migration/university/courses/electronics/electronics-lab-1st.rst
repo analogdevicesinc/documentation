@@ -6,9 +6,8 @@ Settling Time Background:
 
 The settling time of an amplifier or any signal chain for that matter is defined as the time it takes the output to respond to a step change in the input and come into, and remain within a defined error band around the final value, as measured relative to the 50% point of the input pulse, as shown in figure 1 below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1st_f1.png
-   :align: center
-   :width: 450px
+
+|image1|
 
 .. container:: centeralign
 
@@ -38,9 +37,8 @@ Directions:
 
 Build the test setup as shown in figure 2 below. Remember to supply power to the op amp, +5 V to pin 7 and -5V to pin 4 with 0.1uF capacitors used to de-couple the Vp and Vn power supplies. This arrangement is useful in making settling time measurements on op amps such as this operating in the inverting mode. The signal at the "false summing node" ( the wiper of the potentiometer ) represents the difference between the output and the input signal, multiplied by the constant k., i.e. the Error signal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1st_f2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -64,7 +62,7 @@ Waveform generator 1 should be configured for a 60 KHz square wave 1V amplitude 
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image3|\
 
 
 .. container:: centeralign
@@ -81,8 +79,8 @@ Next replace the OP27 amplifier with a OP37 amplifier from the Parts Kit. Again 
 
 Finally replace the OP37 with the much slower settling OP97 amplifier. Again export the Error waveform showing the settling to both rising and falling input steps for inclusion in your Lab report. Overlay the OP97 settling waveform with the saved reference waveforms of the OP27 and OP37. Compare the settling time and general characteristics of each.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/opamp_settling_time-wav.png
-   :align: center
+
+|image4|
 
 .. container:: centeralign
 
@@ -105,9 +103,8 @@ In making settling time measurements of this type, it is also imperative to use 
 
 This type of source can be expensive, but a simple circuit as shown in Figure 5 can be used with a reasonably flat generator to ensure a flat pulse output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1st_f4.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -134,4 +131,11 @@ For further reading:
 
 Return to Lab Activities :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/opamp_settling_time-bb.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a1st_f1.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a1st_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/opamp_settling_time-bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/opamp_settling_time-wav.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a1st_f4.png
+   :width: 500px

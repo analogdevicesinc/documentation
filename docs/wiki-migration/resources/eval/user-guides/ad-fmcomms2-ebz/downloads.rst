@@ -2415,7 +2415,7 @@ In order to get the wizard, please go to Analog Devices GitHub. Different releas
    :class: download
 
    
-   -  :git-ad936x-filter-wizard:`releases`
+   -  https://github.com/analogdevicesinc/ad936x-filter-wizard/releases
    -  For each release, the wizard is available as a MATLAB App installer (mlappinstall) or in archive form (zip or tarball).
    
 
@@ -2455,7 +2455,7 @@ Download IIO-Oscilloscope
    Latest releases (goto this page to download the file):
 
    
-   -  :git-iio-oscilloscope:`releases`
+   -  https://github.com/analogdevicesinc/iio-oscilloscope/releases
    
 
 
@@ -2471,7 +2471,7 @@ Libiio installer for Windows
    :class: download
 
    
-   -  :git-libiio:`Installer for latest stable build (Windows 32-bit / 64-bit) <releases>`
+   -  `Installer for latest stable build (Windows 32-bit / 64-bit) <https://github.com/analogdevicesinc/libiio/releases>`_
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 

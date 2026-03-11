@@ -32,8 +32,9 @@ Most electrical engineers and students are familiar with linear voltage regulato
 
 -  Small load current drawn from the regulated output (where the input voltage might be much higher than the output voltage)
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_hi_v_lo_i.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -42,9 +43,9 @@ Most electrical engineers and students are familiar with linear voltage regulato
 
 -  Large load current drawn from the regulated output (where there is a small difference between the unregulated input voltage and the regulated output voltage)
 
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_lo_v_hi_i.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -55,7 +56,7 @@ The reason for the conditions on current and input-output voltage difference is 
 
 
 
-|image3|
+|image1|
 
 .. container:: centeralign
 
@@ -83,7 +84,7 @@ Simulation using ideal components
 Open the Buck_Concept.asc LTspice file. The figure below shows one of the two states of the circuit's operation, where S1 is closed and S2 is open.
 
 
-|image4|
+|image2|
 
 .. container:: centeralign
 
@@ -101,7 +102,7 @@ The next figure shows the other state, with S1 open and S2 closed.
 
 
 
-|image5|
+|image3|
 
 .. container:: centeralign
 
@@ -119,7 +120,7 @@ The "freq" and "duty" parameters set the frequency of the switching to 25kHz and
 
 
 
-|image6|
+|image4|
 
 .. container:: centeralign
 
@@ -144,7 +145,7 @@ The output voltage **looks** close to 2.5V, but is it **exactly** 2.5V? One of t
 
 
 
-|image7|
+|image5|
 
 .. container:: centeralign
 
@@ -155,7 +156,7 @@ and run it, probing the inductor current:
 
 
 
-|image8|
+|image6|
 
 .. container:: centeralign
 
@@ -197,7 +198,7 @@ While normally intended as a switched-capacitor converter, the LT1054 can be con
 Open LT1054_2to1_buck.asc in LTspice, and run the simulation.
 
 
-|image9|
+|image7|
 
 .. container:: centeralign
 
@@ -211,7 +212,7 @@ Note that the circuit elements in dashed boxes apply stimulus for the simulation
 The figure below shows the turn-on transient of the circuit, with ringing due to resonance between the inductor and output capacitance, which is damped out by the load resistance. At 4 milliseconds, a 50-ohm load is connected to the output, causing a drop in the output voltage. This drop is due to finite impedances in the LT1054's switches, as well as the inductor's DC resistance.
 
 
-|image10|
+|image8|
 
 .. container:: centeralign
 
@@ -232,14 +233,14 @@ So a higher inductance would seem to be better, as the ripple current is proport
 Why does ripple current matter? Ideally, any DC-DC converter (LDO, Buck, Boost, etc.) produces a stable, low-noise output voltage from an imperfect (noisy, variable) input voltage. Ripple current induces a corresponding ripple in the regulated output voltage, as the ripple current charges and discharges the output capacitance by a small amount. Ripple voltage can be calculated as:
 
 
-|image11|
+|image9|
 
 So a higher output capacitance will result in a lower ripple voltage. But as with the inductor, there are often limitations on how physically large a capacitor can be. Also note the "ESR" term, which is the equivalent series resistance of the capacitor. This resistance will be listed in a capacitor's datasheet.
 
 The LT1054_2to1_buck.asc simulation allows you to easily experiment with different inductances and capacitances. Try connecting the input side of R1 (the current-sense reistor) to the various "taps" in the series-connected inductors. For each run, probe the current in R1 and the voltage at Vout. The figure below shows a stepped simulation, for between 1 and 6 of the HPH1-1400L's inductors connected in series:
 
 
-|image12|
+|image10|
 
 .. container:: centeralign
 
@@ -258,7 +259,7 @@ Build the following breadboard circuit for the buck converter, following the sch
    The circuits in this lab are compatible with solderless breadboard construction. However they are relatively complicated and take time to construct and debug. The :doc:`ADALM-BUCK-ARDZ Module </wiki-migration/university/tools/lab_hw/adalm_buck>` is available as an alternative.
 
 
-   |image13|
+   |image11|
 
 .. container:: centeralign
 
@@ -269,7 +270,7 @@ The circuit can also be soldered on a “Perma Proto” solderable breadboard fr
 
 
 
-|image14|
+|image12|
 
 .. container:: centeralign
 
@@ -280,7 +281,7 @@ Measure the ripple current for different numbers of series-connected inductors. 
 
 
 
-|image15|
+|image13|
 
 .. container:: centeralign
 
@@ -294,7 +295,7 @@ Measure the ripple voltage at the output of the converter, with a 22uF output ca
 The animated figure below shows the ripple voltage for output capacitances of 22uF and 22uF+47uF.
 
 
-|image16|
+|image14|
 
 .. container:: centeralign
 
@@ -312,7 +313,7 @@ The LT1054's internal oscillator can be overridden with a simple external circui
 This circuit is also included in the LT1054_buck_complete.asc LTspice simulation. (Ignore the text in the dashed box, we'll get to that in the next experiment!)
 
 
-|image17|
+|image15|
 
 .. container:: centeralign
 
@@ -344,7 +345,7 @@ Circuit Construction and Testing
 Connect the buck output to the A0 analog pin on the Arduino and the Arduino's D3 digital signal to the buck converter's control input. Figure 17 shows connections to an Arduino Uno clone. The yellow wire connects the buck output to the Arduino's A0 input, and the blue wire connects the Arduino's PWM output on Digital Pin 3 to the oscillator override input. (Using two ground wires ensures a lower inductance connection between circuit grounds.)
 
 
-|image18|
+|image16|
 
 .. container:: centeralign
 
@@ -366,7 +367,7 @@ The following figure shows the operation of the closed-loop circuit. The setpoin
    
 
 
-|image19|
+|image17|
 
 .. container:: centeralign
 
@@ -399,39 +400,35 @@ Questions:
 
 Return to :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` Return to :doc:`Engineering University Program Home </wiki-migration/university>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_hi_v_lo_i.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_hi_v_hi_i.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_lo_v_hi_i.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ldo_hi_v_hi_i.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_charge2.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_charge2.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_discharge2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_discharge2.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_waveforms.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_waveforms.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/runaway_ind_sch.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/runaway_ind_sch.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/runaway_ind_waveforms.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/runaway_ind_waveforms.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_open_loop_buck.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_open_loop_buck.png
    :width: 800px
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_2_to_1_transient.png
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/eq_ripple_voltage.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_2_to_1_transient.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/eq_ripple_voltage.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_ripple.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_ripple.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_2_to_1_bb.png
-.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_perma_proto_sm.jpg
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_2_to_1_bb.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_perma_proto_sm.jpg
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_multi_inductors.gif
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_multi_inductors.gif
    :width: 800px
-.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_ripple_voltage.gif
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_ripple_voltage.gif
    :width: 800px
-.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_closed_loop_buck.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_closed_loop_buck.png
    :width: 800px
-.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_arduino_in_loop.jpg
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_arduino_in_loop.jpg
    :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/lt1054_buck_arduino_load_transient.png
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/lt1054_buck_arduino_load_transient.png
    :width: 800px

@@ -40,10 +40,10 @@ Pin Configurations
 
 .. container:: column
 
-   \
 
+   ..
 
-   |16tssoppinout.png|
+|16tssoppinout.png|
 
 .. container:: column
 
@@ -103,7 +103,10 @@ Pin Configurations
 Shift Register Contents
 -----------------------
 
-|shift_register_contents_16-bit.png|
+.. image:: https://wiki.analog.com/_media/resources/quick-start/shift_register_contents_16-bit.png
+   :alt: shift_register_contents_16-bit.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -189,8 +192,6 @@ I\ :sup:`2`\ C refers to a communications protocol originally developed by Phili
 .. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/ad5696r_block_diagram.png
 .. |16lfcsppinout.png| image:: https://wiki.analog.com/_media/resources/quick-start/16lfcsppinout.png
 .. |16tssoppinout.png| image:: https://wiki.analog.com/_media/resources/quick-start/16tssoppinout.png
-.. |shift_register_contents_16-bit.png| image:: https://wiki.analog.com/_media/resources/quick-start/shift_register_contents_16-bit.png
-   :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/example_write_1.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/example_write_2.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/example_write_3.png

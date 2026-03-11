@@ -47,7 +47,8 @@ You can install the LTC6953 plug-in from the ACE start-up page. You can install 
 -  Select Available Packages from the panel second sidebar
 -  Search for Board.LTC6952 and install plug-in
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace-plugin-search-screen.png
+   :align: center
 
 .. note::
 
@@ -61,7 +62,8 @@ Evalutaion Board Setup
 -  Connect the DC2026 to the DC2610A with the provided ribbon cable
 -  Run the ACE application. Double click the LTC6953 icon that appears on the Attached Hardware tab when the DC2026 board is connected and attached to the board. If the icon does not appear, consider re-installing the LTC6953 plug-in or try refreshing the Attached hardware icon.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/board.ltc6953-plugin-attached-hardware-screen.png
+   :align: center
 
 .. note::
 
@@ -72,7 +74,8 @@ Evalutaion Board Setup
 -  Double Click the LTC6953 Board Icon and the tab shown in Figure 5 appears.
 -  Double click the LTC6953 icon that appears on the LTC6953 Board tab to open main control window shown in Figure 6.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/ltc6953-boardview-on-ace.png
+   :align: center
 
 .. note::
 
@@ -90,7 +93,7 @@ In chip view, one can find various control features of LTC6953. One can read and
 By clicking Proceed to Memory Map button or Memory Map Side-By-Side button, register values can be seen.
 
 
-|image6|
+|image3|
 
 .. note::
 
@@ -162,7 +165,7 @@ Troubleshooting
 **Verify DC2610A and LTC6953 Plugin Communication:** To verify communication with the DC2610A, Go to the start page or system view page and click the button shown below.
 
 
-|image7|
+|image4|
 
 .. note::
 
@@ -184,8 +187,5 @@ If QuickEval does not find a DC590B, reload the DC590 Linduino sketch To use the
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dc2610a-board-view.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc2026-connector-location.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace-plugin-search-screen.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/board.ltc6953-plugin-attached-hardware-screen.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ltc6953-boardview-on-ace.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ltc6953-chipview-on-ace.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ltc6953-verify-comm.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ltc6953-chipview-on-ace.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ltc6953-verify-comm.png

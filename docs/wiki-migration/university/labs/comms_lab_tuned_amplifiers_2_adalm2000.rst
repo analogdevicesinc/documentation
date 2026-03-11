@@ -11,9 +11,8 @@ Background:
 
 As we learned in the previous set of activities, second order LC tank circuits are commonly used as the tuned element in amplifier stages. The simple parallel LC tank, as shown in figure 1, can produce voltage gain at the expense of current to drive a resistive load. A buffer amplifier such as an emitter follower can supply the required current ( or power ) gain to drive a load.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata2_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ Directions:
 
 Build the circuit shown in figure 2 on your solder-less breadboard. Use a 100 uH inductor for L\ :sub:`1` and 1.0 nF capacitors for C\ :sub:`1` and C\ :sub:`2`. The peak gain of this tuned amplifier can be very high at the resonate frequency. We will need to slightly attenuate the output signal of AWG1 using resistor divider R\ :sub:`S` and R\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata2_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -57,7 +55,7 @@ Hardware Setup:
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image3|\
 
 
 .. container:: centeralign
@@ -74,7 +72,7 @@ Turn on the power supplies and run a single frequency sweep. You should see ampl
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image4|\
 
 
 .. container:: centeralign
@@ -104,9 +102,8 @@ Modify the circuit on your solder-less breadboard to add the second emitter foll
 
 The exact value for R\ :sub:`1`, such that the gain is reduced to unity, may vary from the 470 Ω suggested in the figure. You can experiment with different values to obtain the proper amount of gain to match the amplitude seen at the emitter of Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata2_f3.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,7 +122,7 @@ Build the breadboard circuit presented in Figure 6.
 
    ..
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -142,7 +139,7 @@ Set the AWG amplitude in the Network Analyzer to 2.0 V, because we have reduced 
 
    ..
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
@@ -169,7 +166,13 @@ Questions:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/ef_tuned_amplifier-bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/ef_tuned_amplifier-wav.png
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/quad_amplifier-bb.png
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/quad_amplifier-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/ata2_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/ata2_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/ef_tuned_amplifier-bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/ef_tuned_amplifier-wav.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/ata2_f3.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/quad_amplifier-bb.png
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/quad_amplifier-wav.png

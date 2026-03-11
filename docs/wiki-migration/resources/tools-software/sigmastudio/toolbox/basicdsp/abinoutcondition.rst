@@ -25,4 +25,4 @@ When the condition is met, your output sample is A; otherwise it's B.
 
 For a sample design using this block, see the :doc:`Basic DSP </wiki-migration/resources/tools-software/sigmastudio/tutorials/basicdspexamples>` example.
 
-.. |abinoutpic1.png| image:: https://wiki.analog.com/_media/abinoutpic1.png
+.. |abinoutpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/abinoutpic1.png

@@ -35,7 +35,7 @@ The reference design uses the standard :doc:`SPI Engine Framework </wiki-migrati
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
@@ -236,11 +236,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`AD469X HDL Project. <projects/ad469x_fmc>`
    
-   |AD469X HDL Project.|
+
 
 Software sources
 ----------------
@@ -249,16 +247,7 @@ Software sources
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`No-OS Driver. <drivers/adc/ad469x>`
+   -  :git-no-OS:`No-OS Project. <projects/ad469x_fmcz>`
    
-   |No-OS Driver.|
 
-   -
-
-   |No-OS Project.|
-
-.. |AD469X HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad469x_fmc`
-.. |No-OS Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad469x`
-.. |No-OS Project.| image:: https://wiki.analog.com/_media/:git-no-OS:`projects/ad469x_fmcz`

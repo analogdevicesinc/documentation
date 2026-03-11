@@ -206,7 +206,7 @@ where :math:`M` is the order of the modulation scheme and :math:`overlineE_s` is
 
 SNR is commonly expressed in SNR in decibels (dB) and the equation above can be rewritten as:
 
-:math:`\displaystyle SNR_{dB} = 10log_{10}(overline{E}_b/N_0) + 10log_{10}\frac{R_s}{{B}}`
+:math:`\displaystyle SNR_{dB} = 10log_{10}(overline{E}_b/N_0) + 10log_{10}\frac{R_s}|B|`
 
 When determining SNR of a signal it is important to understand that signals are band limited unlike noise. Therefore, as the observation bandwidth of the signal is increased the SNR becomes worse.
 
@@ -286,3 +286,5 @@ The yellow line is an antenna, the red line is with the same antenna and the amp
 
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_ant_amp.png
    :width: 600px
+
+.. |B| image:: https://wiki.analog.com/_media/B

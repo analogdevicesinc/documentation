@@ -64,7 +64,8 @@ The best way of building Target software for a custom platform is to port a matc
 A2B Target Software Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2btargetsoftwareexamplesa2bplus.jpg
+   :align: center
 
 .. container:: centeralign
 
@@ -359,7 +360,7 @@ Discovery completion Callback function
 The discovery completion callback function is invoked by the stack upon completing the discovery and configuration of the whole A2B network. :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of a discovery completion callback function with the stack. The status of the discovery is notified by this function allowing the application to perform any additional tasks based on the notified status.
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -428,7 +429,7 @@ Power/Line Fault Callback function
 The power fault callback function is invoked by the stack upon detecting a power-related fault in any node of the network. An application callback function can be registered with the Stack for power fault notifications as shown in the below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>`.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -530,7 +531,7 @@ Interrupt Callback function
 The Interrupt callback function is invoked by the Stack upon seeing any interrupts at the master node. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of an interrupt callback function with the Stack.
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -581,7 +582,7 @@ Node Discovery Callback function
 The node discovery callback function is an optional callback, which is invoked by the stack upon each node discovery or when node authentication fails. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication>` shows the application registration of this callback function with the Stack.
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -657,7 +658,7 @@ I2C Error Callback Function
 The I2C error callback function is invoked by the Stack upon seeing any I2C errors at the master node or at sub-node peripherals.
 
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -694,13 +695,12 @@ Summary of Building A2B Application on Custom Platform
 Figure: Building A2B Application on a Custom Platform
 
 
-|image8|
+|image7|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/macros_stack.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2btargetsoftwareexamplesa2bplus.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bapp_ondiscoverycomplete_callback_function.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bapp_onpowerfault_callback_registration.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/interrupt_callback_function.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/node_discovery_callback_function.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/i2c_error_callback_function.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/buildinga2bapplicationsoncustomplatform.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bapp_ondiscoverycomplete_callback_function.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bapp_onpowerfault_callback_registration.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/interrupt_callback_function.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/node_discovery_callback_function.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/i2c_error_callback_function.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/buildinga2bapplicationsoncustomplatform.jpg

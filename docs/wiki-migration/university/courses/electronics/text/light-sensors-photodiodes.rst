@@ -23,9 +23,9 @@ Vacuum Photocells
 
 The first such sensor was the "phototube" or "photo-electric cell" (Fig 1A) which consists of a photo-sensitive cathode in a vacuum (or, sometimes, very low-pressure gas) tube which when illuminated emits electrons which move to a positively biased anode, allowing a current to flow which is proportional to the light intensity. Simple vacuum photocells are rarely used today, but photomulipliers, which use secondary emission from multiple electrodes (dynodes) at stepped potentials (Fig 1B) to multiply each electron from a photocathode by up to 160 dB, are essential photosensors in nuclear and particle physics, astronomy, medical imaging, motion picture film scanning, radar countermeasures, and the high-end image scanners known as drum scanners. Their combination of high gain, low noise, very fast response, and large light collection area cannot presently be matched by any solid-state circuitry and photomultipliers are an application of vacuum-tube technology which is still at the forefront of valuable electronic techniques. The technology is also used in night vision devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f2.jpg
-   :align: center
-   :width: 500px
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,9 +37,8 @@ Photoresistors
 
 Another type of light sensor uses the variation of electrical resistance with illumination exhibited by some materials (the most usual are Cadmium Sulphide [CdS]and Cadmium Selenide/Sulphide [Cd\ :sub:`2`\ SeS]) to make "photoresistors\ :sup:`[2]`". Until recently such photoresistors were the commonest form of photosensor despite their slow response to changing light input, but the combined effects of lower photodiode prices and legal limitations on the use of cadmium because of its toxicity\ :sup:`[3]` have reduced their use in recent years.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f3.jpg
-   :align: center
-   :width: 250px
+
+|image2|
 
 .. container:: centeralign
 
@@ -48,9 +47,9 @@ Another type of light sensor uses the variation of electrical resistance with il
 
 Photoresistors are still commonly used in combination with a variable light source (originally an incandescent bulb - now almost invariably an LED) as isolated variable resistors\ :sup:`[4]` - since they are resistors they are not polarized (they may be connected either way round) and will work with alternating current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f4.jpg
-   :align: center
-   :width: 500px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -70,9 +69,8 @@ The majority of this article concerns photodiodes. A semiconductor diode is a cr
 
 For the purposes of simplified analysis we can model a photodiode as an ideal (non-photosensitive) diode in parallel with a light-dependent current source. This current source is quite linear - the current is more or less proportional to the incident light over a range of 1000:1 or better - but the range of wavelengths to which it is sensitive depends on the material of which the diode is made.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f5.jpg
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -88,9 +86,8 @@ An ideal diode with reverse bias (i.e. its anode is negative with respect to its
 
 With forward bias (anode positive) the diode current increases exponentially with voltage (see Appendix A for the equations), but from a practical point of view the current is too small to matter until a "threshold" or "knee" voltage is reached. This voltage depends on the diode material and can vary from 200 mV for silicon Schottky diodes to some 4 V for blue LEDs using gallium nitride - normal silicon diodes have a threshold around 700 mV. The threshold voltage decreases with increasing device temperature, and the parallel capacitance of a forward biased diode increases with the bias voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f6.jpg
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -101,9 +98,8 @@ An illuminated photodiode contains an ideal diode and a light dependent current 
 
 There are two practical modes of photodiode operation - photoconductive mode and photovoltaic mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f7.jpg
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -114,9 +110,8 @@ If the photodiode is reverse biased its current will be the sum of its leakage a
 
 Not only are diodes light sensitive - most transistors, which, after all, also contain P-N junctions, are photosensitive as well. Half a century ago it was well-known to amateur electronic experimenters that if the black paint was removed from the glass package of the Mullard\ :sup:`[8]` OC71 germanium transistor it became light sensitive - in fact it had almost exactly the same characteristics as the OCP71 phototransistor which cost five times as much! Few people bought the more expensive part until eventually Mullard redesigned the package of the OC71 so that removing the paint still did not allow light to reach the transistor structure.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f8.jpg
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -125,9 +120,9 @@ Not only are diodes light sensitive - most transistors, which, after all, also c
 
 A phototransistor is a transistor with its base-collector junction deliberately made more strongly light sensitive. Often it has no external base connection. The photocurrent of the diode flows in the base-emitter circuit and is amplified by the transistor current gain, ß. The sensitivity of a phototransistor is therefore ß (~30-200) times greater than that of a similar diode. However the switching times of phototransistors with an unconnected base are slow (typical phototransistors have rise and fall times of the order of 10-20 µs, and the fastest only 500-1000 ns). They are always used in the photoconductive mode described above, and may be convenient when a single photosensing device is required to operate a relay. If the base connection is available, connecting a resistor from base to emitter reduces photosensitivity and increases the turn-on threshold, but does improve desaturation time and therefore speeds up the transistor turn-off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f9.jpg
-   :align: center
-   :width: 500px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -165,9 +160,8 @@ The threshold voltage, V\ :sub:`th`, of a transistor is the input voltage (gate-
 
 A BJT turns on when its base-emitter voltage is about 700 mV, a bipolar Darlington transistor at around 1300 mV, and a small-signal MOSFET will usually have V\ :sub:`th` in the range 900-2400 mV (RTFDS\ :sup:`6)` High voltage MOSFETs may have higher values but are not often used in photocell circuitry.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f10.jpg
-   :align: center
-   :width: 500px
+
+|image9|
 
 .. container:: centeralign
 
@@ -194,9 +188,8 @@ or
 
 :math:`R_s = V_th / G_t ( V_s - V_th )` [5]
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f11.jpg
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -229,9 +222,8 @@ A photodiode working in photovoltaic mode will also act as a photodetector. Its 
 
 Obviously the photodiode material selected for this application must have a conduction threshold voltage which is larger then V\ :sub:`th`. This usually means that a photodiode used in this way will not be a silicon device\ :sup:`[16]`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f12.jpg
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -248,9 +240,8 @@ The problem with all these circuits is that if the light value is close to the t
 
 The simplest circuit uses a Schmitt trigger input logic gate. These are logic circuits with analog positive feedback on their input stages such that as the input voltage on a logic input increases from zero there is no change of logic output until the input is (very roughly) around 50-60% of the supply voltage when the output changes its logic state. Many logic gates have a linear region where they act as (poor quality) amplifiers but these devices switch very quickly from one state to the other when the input reaches a threshold value. If the input is now reduced the output does not change back until the input has reduced by approximately 30% of the supply voltage. (Note that these values vary quite widely with device types, the supply voltage used, and even from device to device - these devices have excellent hysteresis but are not precision level sensors.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f13.jpg
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -267,9 +258,8 @@ Where we need greater accuracy a comparator (or an ADC - see below) is necessary
 
 Comparators sometimes have built-in hysteresis and can almost always have hysteresis added by simple additional circuitry. Fig 13 shows this done with two resistors (which may be omitted if hysteresis is not needed). The articles referred to in the footnote\ :sup:`[17]` discuss the correct resistor values and other issues concerning comparators in more detail.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f14.jpg
-   :align: center
-   :width: 500px
+
+|image13|
 
 .. container:: centeralign
 
@@ -280,9 +270,8 @@ The equations relating the photocell characteristics, V\ :sub:`ref`, and R\ :sub
 
 The best way to measure a range of photocell outputs accurately is with an analog interface circuit, either using an operational amplifier, or driving a suitable analog-digital converter (ADC) directly from a photocell.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f15.jpg
-   :align: center
-   :width: 500px
+
+|image14|
 
 .. container:: centeralign
 
@@ -291,9 +280,9 @@ The best way to measure a range of photocell outputs accurately is with an analo
 
 The outputs of the photodiode circuits in Fig 14 are voltages, proportional to incident light, which may be amplified by an operational amplifier or sent directly to the input of an ADC with a large enough Z\ :sub:`in` that it does not load the circuit driving it.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f16.jpg
-   :align: center
-   :width: 400px
+
+
+|image15|
 
 .. container:: centeralign
 
@@ -302,9 +291,9 @@ The outputs of the photodiode circuits in Fig 14 are voltages, proportional to i
 
 The voltage outputs of the photoresistor circuits in Fig 15, while quite predictable, are not simply proportional to incident light and require linearization - which is one reason why it is better to use photodiodes than photoresistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f17.jpg
-   :align: center
-   :width: 500px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -313,9 +302,9 @@ The voltage outputs of the photoresistor circuits in Fig 15, while quite predict
 
 The input of many, if not most, ADCs contains switched capacitors which draw high frequency (HF) currents. The input should therefore have a small capacitor to ground very close to the ADC to ensure that these HF currents flow to local ground and not to the photocell, buffer amplifier or elsewhere in the system\ :sup:`[18]`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f18.jpg
-   :align: center
-   :width: 500px
+
+
+|image17|
 
 .. container:: centeralign
 
@@ -326,9 +315,8 @@ Read the ADC data sheet and any application notes for discussion of suitable val
 
 The best interface between a photodiode and an op-amp is a current to voltage converter, which works with a photoresistor as well, provided the photoresistor bias voltage is maintained constant. This is shown in Fig 18.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f19.jpg
-   :align: center
-   :width: 500px
+
+|image18|
 
 .. container:: centeralign
 
@@ -341,9 +329,8 @@ If we wish to measure AC photocurrent but are not interested in the DC or random
 
 Or we can connect the photocell in series with a suitable inductor which will ground the DC component of its signal. We then connect the AC signal to an amplifier. If the signal bandwidth is narrow the inductor can be shunted with a capacitor to make a parallel-tuned LC circuit of suitable Q to give narrow bandwidth and high in-band gain. If a tuned circuit is used it should drive a voltage amplifier with high input impedance so as not to degrade the Q. This amplifier should not drive an inductive load or the interaction of the load and the feedback ("Miller") capacitance may cause instability.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f20.jpg
-   :align: center
-   :width: 400px
+
+|image19|
 
 .. container:: centeralign
 
@@ -352,9 +339,9 @@ Or we can connect the photocell in series with a suitable inductor which will gr
 
 If an untuned inductor is used as a simple high AC/low DC impedance the variation of impedance with frequency can be avoided by using an AC current-voltage converter (transimpedance amplifier) rather than a voltage amplifier. This effectively short-circuits the inductor at AC (which is why it does not work with a tuned circuit) as the AC current from the photocell flows to the virtual ground of the amplifier inverting input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f21.jpg
-   :align: center
-   :width: 400px
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -365,9 +352,8 @@ Inductors for the applications in Figs 19 & 20 must be chosen so that they can c
 
 Photodetectors using a modulated signal source, which I mentioned earlier in this article, can detect the modulation using one of the above amplifier schemes and some sort of frequency detector. There is plenty of tone detection software available if the signal is digitized, but the simple NE567 PLL IC, first manufactured nearly forty years ago by Signetics and still available from a number of manufacturers, (prefixes vary, but the 567 is constant) is all that is needed for this application.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f022.jpg
-   :align: center
-   :width: 400px
+
+|image21|
 
 .. container:: centeralign
 
@@ -422,9 +408,8 @@ But some photocells are quite well characterized and it is possible to compare t
 
 If the calibration and tested photocells are both in 5mm packages too this is easily done: drill a 5mm hole in a small piece of ebony, black ABS, carbon fibre block or other dark material. Insert the LEDs in turn at one end and the photocells at the other and make your comparisons. If your photodiode under test is some other diameter try and find a calibration photodiode of the same diameter and drill an appropriate diameter hole 10 mm deep into a co-axial 10 mm deep 5mm LED hole.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f28.jpg
-   :align: center
-   :width: 400px
+
+|image22|
 
 .. container:: centeralign
 
@@ -475,3 +460,48 @@ I intend to make more measurements and will modify this footnote when I have don
 [18]Read RAQ 22 on ADC inputs. http://www.analog.com/static/imported-files/rarely_asked_questions/RAQ_highfrequency.pdf
 
 [19]This equation is often written with respect to the bias being on the N region, in which case the polarity of V is reversed and the equation becomes :math:`\displaystyle I = I_s e^{v/\frac{kT}{q}}-1`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f2.jpg
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f3.jpg
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f4.jpg
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f5.jpg
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f6.jpg
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f7.jpg
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f8.jpg
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f9.jpg
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f10.jpg
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f11.jpg
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f12.jpg
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f13.jpg
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f14.jpg
+   :width: 500px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f15.jpg
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f16.jpg
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f17.jpg
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f18.jpg
+   :width: 500px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f19.jpg
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f20.jpg
+   :width: 400px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f21.jpg
+   :width: 400px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f022.jpg
+   :width: 400px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f28.jpg
+   :width: 400px

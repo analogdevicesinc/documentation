@@ -6,7 +6,7 @@ PlutoSDR includes a single-core ARM® Cortex™-A9 MPCore™ running at 666.66 M
 Prerequisites:
 
 -  A host machine to run a compiler on. This can be either Windows (x86) or Linux (x86 or ARM) (yes, you can build PlutoSDR Applications on Raspberry Pi). (it's possible on macOS, but just more difficult, since you will need to build a toolchain from scratch, beyond the scope of what I'm willing to write - check google, you are on your own).
--  A compiler with the same version used to compile the PlutoSDR firmware. See the Pluto SDR mass storage device file "index.html", or check :git-plutosdr-fw:`PlutoSDR firmware releases page <releases>` for the relevant information.
+-  A compiler with the same version used to compile the PlutoSDR firmware. See the Pluto SDR mass storage device file "index.html", or check `PlutoSDR firmware releases page <https://github.com/analogdevicesinc/plutosdr-fw/releases>`_ for the relevant information.
 
    -  `Xilinx SDK <https://www.xilinx.com/products/design-tools/embedded-software/sdk.html>`_
 
@@ -33,7 +33,7 @@ Set up your Linux Host
    Copyright (C) 2017 Free Software Foundation, Inc.
    This is free software; see the source for copying conditions.  There is NO
    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.``
--  download the sysroot for your release of firmware, unpack it, and place it somewhere you will find it. ``tcollins@winston: **wget :git-plutosdr-fw:`releases/download/v0`.30/sysroot-v0.30.tar.gz**
+-  download the sysroot for your release of firmware, unpack it, and place it somewhere you will find it. ``tcollins@winston: **wget https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.30/sysroot-v0.30.tar.gz**
    tcollins@winston: **tar zxvf sysroot-v0.30.tar.gz**
    tcollins@winston: **mv staging $HOME/pluto-0.30.sysroot**``
 -  First create a new directory for this project and move to it.\ ``tcollins@winston: **mkdir /tmp/plutoapp**

@@ -62,15 +62,7 @@ Source Code
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AXI DAC Core Driver. <drivers/axi_core/axi_dac_core/axi_dac_core.c>`
+   -  :git-no-OS:`Header of AXI DAC Core Driver. <drivers/axi_core/axi_dac_core/axi_dac_core.h>`
    
-   |Implementation of AXI DAC Core Driver.|
 
-   -
-
-   |Header of AXI DAC Core Driver.|
-
-.. |Implementation of AXI DAC Core Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/axi_dac_core/axi_dac_core`.c
-.. |Header of AXI DAC Core Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/axi_dac_core/axi_dac_core`.h

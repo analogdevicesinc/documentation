@@ -72,18 +72,19 @@ You will need to:
 -  Plug the Power Supply into the 12V Power input connector (J20) (DO NOT turn the device on).
 -  Set the jumpers as seen in the below picture:
 
-|jumpers_boot_sd_zedboard.jpg|
-
-
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/jumpers_boot_sd_zedboard.jpg
+   :alt: jumpers_boot_sd_zedboard.jpg
+   :align: center
+   :width: 400px
 
 .. tip::
 
    Before executing the below steps, make sure that VADJ jumper is set to 3.3V.
 
 
-* Connect the oscilloscope probes to the SMB connectors.
-   * Turn it on.
-   * Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
+-  Connect the oscilloscope probes to the SMB connectors.
+-  Turn it on.
+-  Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
 
 .. note::
@@ -151,17 +152,16 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
 -  Press refresh to display available IIO Devices and press connect.
 
-|iio_connect.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/iio_connect.png
+   :alt: iio_connect.png
+   :align: center
+   :width: 700px
 
 .. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
    :width: 600px
-.. |jumpers_boot_sd_zedboard.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/jumpers_boot_sd_zedboard.jpg
-   :width: 400px
-.. |iio_connect.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/iio_connect.png
-   :width: 700px

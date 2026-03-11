@@ -21,7 +21,10 @@ Digital
 -  4x PMOD ribbon cables, length depends on desired setup, but the total length of each combined PMOD cable will need to be at least 20" (50cm). You need 2x cables for *each* Stingray PMOD connection as the ZCU102's PMOD pinout orientation doesn't directly match that of the Stingray board. You can use any 12-pin cable compatible with PMOD headers.
    Note that the Stingray board includes 2x cables already (`IDSD-06-D-08.00-T <https://www.mouser.com/IDSD-06-D-08.00-T>`_). One example part number for the second set of cables: `IDSD-06-D-1200 <https://www.mouser.com/IDSD-06-D-1200>`_. (12" long, using these 2 cables together creates a 20" cable).
 
-   |Combined PMOD Cables|
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/combined_pmod_cables.jpg
+   :alt: Combined PMOD Cables
+   :align: center
+   :width: 500px
 
 -  12-pin male-male adapters to connect PMOD cables to each other and to the ZCU102/Stingray. Quantity depends on the gender of the cables used. Both Stingray connectors are female, while on the ZCU102, one PMOD connector is male and the other female. Note that the Stingray board includes 4x of these.
    One example part number: `TSW-106-08-G-D <https://www.mouser.com/TSW-106-08-G-D>`_.
@@ -72,7 +75,10 @@ Connect the MxFE evaluation board to the ZCU102's HPC0 port as shown below.
    Don't forget to use the use the `FMC riser <https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-ext-g-3074457345635221630/>`_ to raise the AD9081 up!
 
 
-   |MxFE Connection|
+.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/mxfe_connection.jpg
+   :alt: MxFE Connection
+   :align: center
+   :width: 1000px
 
 --------------
 
@@ -124,8 +130,3 @@ Support
 For additional questions or support, please visit the Engineering Zone forum at :ez:`ADEF`.
 
 :doc:`X Band Development Platform </wiki-migration/resources/eval/developer-kits/x-band-dev-kit>`
-
-.. |Combined PMOD Cables| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/combined_pmod_cables.jpg
-   :width: 500px
-.. |MxFE Connection| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/mxfe_connection.jpg
-   :width: 1000px

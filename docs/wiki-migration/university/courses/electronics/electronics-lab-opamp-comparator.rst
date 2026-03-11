@@ -14,9 +14,8 @@ The op-amp as a "comparator":
 
 Consider an op-amp used to amplify a signal without feedback as shown in figure 1a. Because no feedback is used, the input signal is amplified by the full open-loop gain of the op-amp. Even a very small input voltage (less than a millivolt either side of Vth) will be enough to drive the output to either the minimum or maximum output voltage, as shown in the plots of Vin and Vout. Thus, in this case because the op-amp -Input is connected to Vth, the output represents the sign of Vin ( "0" if Vin < Vth, "1" if Vin > Vth ) 1, and the circuit is like a one-bit analog to digital converter (ADC), and functions like a voltage comparator.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f7.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -61,7 +60,7 @@ The high intrinsic gain of the op-amp and the output saturation effects can be e
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -82,9 +81,8 @@ Now slowly increase Vref and observe what happens. Record the output waveform fo
 
 Repeat the above for a triangular input waveform and record your observations for your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/simple_comp-bb.png
-   :align: center
-   :width: 900px
+
+|image3|
 
 .. container:: centeralign
 
@@ -98,7 +96,8 @@ Use the first waveform generator as source Vin to provide a 2V amplitude peak-to
 
 A plot example is presented in Figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/comp_amp-waveform.png
+
+|image4|
 
 .. container:: centeralign
 
@@ -126,7 +125,7 @@ Consider the circuit presented in Figure 4.
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image5|\
 
 
 .. container:: centeralign
@@ -164,7 +163,7 @@ Build the following breadboard circuit for the non-inverting hysteresis comparat
 
 .. container:: centeralign
 
-   \ |image3|\
+   \ |image6|\
 
 
 .. container:: centeralign
@@ -181,7 +180,7 @@ A plot example is presented in Figure 6.
 
 .. container:: centeralign
 
-   \ |image4|\
+   \ |image7|\
 
 
 .. container:: centeralign
@@ -191,7 +190,7 @@ A plot example is presented in Figure 6.
 
 .. container:: centeralign
 
-   \ |image5|\
+   |image8|\
 
 
 .. container:: centeralign
@@ -211,7 +210,7 @@ Consider the circuit presented in Figure 8.
 
 .. container:: centeralign
 
-   \ |image6|\
+   \ |image9|\
 
 
 .. container:: centeralign
@@ -249,7 +248,7 @@ Build the following breadboard circuit for the inverting hysteresis comparator.
 
 .. container:: centeralign
 
-   \ |image7|\
+   \ |image10|\
 
 
 .. container:: centeralign
@@ -266,7 +265,7 @@ A plot example is presented in Figure 10.
 
 .. container:: centeralign
 
-   \ |image8|\
+   \ |image11|\
 
 
 .. container:: centeralign
@@ -276,7 +275,7 @@ A plot example is presented in Figure 10.
 
 .. container:: centeralign
 
-   \ |image9|\
+   |image12|\
 
 
 .. container:: centeralign
@@ -296,7 +295,7 @@ Consider the circuit presented in Figure 12.
 
 .. container:: centeralign
 
-   \ |image10|\
+   \ |image13|\
 
 
 .. container:: centeralign
@@ -332,7 +331,7 @@ Build the following breadboard circuit for the inverting hysteresis comparator.
 
 .. container:: centeralign
 
-   \ |image11|\
+   \ |image14|\
 
 
 .. container:: centeralign
@@ -349,7 +348,7 @@ A plot example is presented in Figure 14.
 
 .. container:: centeralign
 
-   \ |image12|\
+   \ |image15|\
 
 
 .. container:: centeralign
@@ -359,7 +358,7 @@ A plot example is presented in Figure 14.
 
 .. container:: centeralign
 
-   \ |image13|\
+   |image16|\
 
 
 .. container:: centeralign
@@ -383,7 +382,7 @@ You can also extend the above example to a circuit with multiple voltage levels 
 
 .. container:: centeralign
 
-   \ |image14|\
+   \ |image17|\
 
 
 .. container:: centeralign
@@ -406,7 +405,7 @@ Exercises:
 
 .. container:: centeralign
 
-   \ |image15|\
+   \ |image18|\
 
 
 .. container:: centeralign
@@ -441,30 +440,35 @@ Some additional resources on Op Amps as Comparators:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/simple_comp.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/noninv_hys_comp.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/non_inv_hys_com-bb.png
-   :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/non_inv_hys_comp-wav.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/non_inv_hys_comp-xy.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f7.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/simple_comp.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_com-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/simple_comp-bb.png
    :width: 900px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp-wav.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp-xy.png
-   :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp_asy_th.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/comp_amp-waveform.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/noninv_hys_comp.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_com_asyth-bb.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/non_inv_hys_com-bb.png
    :width: 900px
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp_asyth-wav.png
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp_asyth-xy.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/non_inv_hys_comp-wav.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/non_inv_hys_comp-xy.png
    :width: 500px
-.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/voltagelevelindicatorusingled.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp.png
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_com-bb.png
+   :width: 900px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp-wav.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp-xy.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp_asy_th.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_com_asyth-bb.png
+   :width: 900px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp_asyth-wav.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_hys_comp_asyth-xy.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/voltagelevelindicatorusingled.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/optic_indicator_vlevel-bb.png
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/optic_indicator_vlevel-bb.png
    :width: 900px

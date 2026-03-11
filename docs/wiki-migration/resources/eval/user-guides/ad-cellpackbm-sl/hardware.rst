@@ -105,7 +105,9 @@ The MCU should be programmed using the following steps:
 -  Plug the micro-USB cable to the MAX32625PICO.
 -  Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. A red LED should blink, then hold steady, and a MAINTENANCE drive should appear on your PC.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/max32625pico_maxdap.png
+   :align: center
+   :width: 200px
 
 -  Drag and drop the **SDP_K1_PyBMS_USB_TO_SPI_Bytes_Debug_USB_Port.bin** file onto the MAINTENANCE drive. The file transfer should be complete in about 30 seconds.
 -  Unplug and replug the device.
@@ -122,11 +124,18 @@ BMS Browser GUI Installation
 -  Download the :adi:`BMS Browser GUI <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>` in your Host PC.
 -  Double click on **bms_browser_gui_broadmarket-relX.Y.Z.exe** to install the GUI.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_install.png
+   :align: center
+   :width: 500px
 
--  Accept the license terms and click **Next** to proceed with the installation. Default installation directory will be in **C:\\Analog Devices\\** |image3|
+-  Accept the license terms and click **Next** to proceed with the installation. Default installation directory will be in **C:\\Analog Devices\\**
 
-|image4|
+
+|image1|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_destination.png
+   :align: center
+   :width: 500px
 
 Launching the BMS Browser GUI
 -----------------------------
@@ -137,7 +146,9 @@ Launching the BMS Browser GUI
 -  Two new tabs will open in the default browser on the PC, with the User Guide tab as the default.
 -  Switch to the alternative tab to access the BMS Browser configuration page, which should be displayed.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_main_page.png
+   :align: center
+   :width: 2000px
 
 -  Ensure that the SDP-K1 is connected to the PC via the USB-C cable on P10. The Blue LED, D31 will illuminate when powered.
 -  In the **Serial Port** dropdown box, select the COM port associated with SDP-K1.
@@ -179,11 +190,15 @@ Test
 -  From the **Products** list, select the **ADBMS6830**, then click on the right arrow to add it to the Daisy Chain. **Settings** can remain as default.
 -  Click **Launch**.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
+   :align: center
+   :width: 2000px
 
 -  Upon launching, the **Quick Measure** tab will open. **Note:** this utility only supports a single BMS product in a Daisy Chain. Click **Start Quick Measure** to begin measurements.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_start_measure.png
+   :align: center
+   :width: 2000px
 
 -  Check the Total PEC Status on the 3rd row under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW.
 
@@ -193,8 +208,9 @@ Test
 
 -  Check the voltage readings by adjusting the potentiometer (POT1) on the DC2472A to modify the emulated cell voltages. Monitor the voltage channels on the Quick Measure Utility graph. Select which signals to display on the graph under the **Plot All Devices** column.
 
-
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_plot_all_devices.png
+   :align: center
+   :width: 2000px
 
 Battery Pack Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -206,19 +222,23 @@ Setup
 -  Set the P14 jumper of the SDP-K1 to the *3.3 V* position.
 -  Connect the EVAL-ADBMS6822 (J1) to the EVAL-ADBMS2950-BASIC (isoA) using the provided isoSPI cable.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/pack_monitoring.png
+   :align: center
+   :width: 800px
 
 -  Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
    -   Supply 5 V to J1 and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode. The image below depicts the current measurement in idle mode.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
+   :align: center
+   :width: 400px
 
-   |image10|
+::
 
-      -  Alternatively, power it using a micro-USB cable connected to J10.
-
--  Attach the MAX32625PICO programmer to the SDP-K1 using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
--  Connect one end of the USB cable to SDP-K1 (P2) and the other end to the host PC.
+     * Alternatively, power it using a micro-USB cable connected to J10.
+   * Attach the MAX32625PICO programmer to the SDP-K1 using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
+   * Connect one end of the USB cable to SDP-K1 (P2) and the other end to the host PC.
 
 Test
 ----
@@ -229,7 +249,9 @@ Test
 -  From the **Products** list, select the ADBMS2950, then click on the right arrow to add it to the Daisy Chain. Settings can remain as default.
 -  Click **Launch**.
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/2950_launch.png
+   :align: center
+   :width: 2000px
 
 -  Upon launching, the **Quick Measure** tab will open. **Note:** it can only handle one BMS product in a Daisy Chain. Click **Start Quick Measure** to begin measurements.
 -  Check the Total PEC Status on the Memory Map. It should reflect **true**, indicating a successful isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS2950-BASIC. If false, there is an error in the signal chain.
@@ -244,8 +266,9 @@ Once familiar with the setup for each of the individual boards the entire signal
 
 -  Connect the hardware using the DuraClik isoSPI cables, as shown in the diagram below.
 
-
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/complete_daisy_chain.png
+   :align: center
+   :width: 800px
 
 -  Power each DC2472A cell emulator board using a 5 V external source connected to J1 through the USB cable.
 -  Power the EVAL-ADBMS2950-BASIC either through J1 or J10, as explained earlier.
@@ -260,11 +283,15 @@ Test
 -  Launch the BMS Browser following the previous instructions and choose the appropriate COM port.
 -  Set up the **Daisy Chain** according to the diagram provided. The EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial device on the chain, connected to the EVAL-ADBMS6822. The first EVAL-ADBMS6830BMSW connects to the EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the first one via the isoSPI cable.
 
-|image13|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
+   :align: center
+   :width: 2000px
 
 -  Click on **Launch** to initiate the GUI. After the GUI launches in the Browser, go to the **Sequences** tab located in the top toolbar, which will open the *Sequence Configuration* page.
 
-|image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
+   :align: center
+   :width: 2000px
 
 -  In the Files column, select the **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
@@ -276,16 +303,18 @@ Test
 -  During free run mode, the Initialization Sequence is performed once initially. Subsequently, the loop sequence continues to run continuously until the **Stop Freerun** button is clicked.
 -  After activating freerun mode, navigate to the **Memory Map** tab. This section displays a numerical representation of the ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates this output.
 
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
+   :align: center
+   :width: 2000px
 
 -  The **Plots** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
    In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
    Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
-   |image16|
+   |image2|
 
-   |image17|
-   |image18|
+   |image3|
+   |image4|
 -  Plot settings can be saved to the PC to be reloaded for future session to save time.
 
 --------------
@@ -327,39 +356,11 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 .. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/ad-cellpackbm-sl
    :alt: Overview #:resources:eval:user-guides:ad-cellpackbm-sl:software|AD-CELLPACKBM-SL Software User Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/max32625pico_maxdap.png
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_install.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_license.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_license.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ess1-sys/gui_destination.png
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_main_page.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
    :width: 2000px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
    :width: 2000px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_start_measure.png
-   :width: 2000px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_plot_all_devices.png
-   :width: 2000px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/pack_monitoring.png
-   :width: 800px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/2950_launch.png
-   :width: 2000px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/complete_daisy_chain.png
-   :width: 800px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
-   :width: 2000px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
-   :width: 2000px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
-   :width: 2000px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
-   :width: 2000px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
-   :width: 2000px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
    :width: 2000px

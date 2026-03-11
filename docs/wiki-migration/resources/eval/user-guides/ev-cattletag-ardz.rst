@@ -70,7 +70,9 @@ When using the board, the power supply may come from different sources, and thes
    When using an external power source, it is required to disconnect the on-board solar panel by removing the resistor **R30**\
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_solar_panel_option.png
+   :align: center
+   :width: 550px
 
 -  P8 Terminal block - external power supply, between 3 V to 4.2 V allowable input
 -  Battery holder - 2xAAA battery is required
@@ -81,7 +83,9 @@ When using the board, the power supply may come from different sources, and thes
    When power supply directly from the host board is used, it is required to remove the **R84** resistor and placed a 0 Ω resistor at **R86**\
 
 
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_power_source_option.png
+   :align: center
+   :width: 550px
 
 Digital Interface (Arduino)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,7 +129,7 @@ Equipment Needed
 -  One (1) :adi:`EV-CATTLETAG-ARDZ` Sensor Node
 -  One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
 
-   -  with firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+   -  with firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
 
 -  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to +4.7 V)
 
@@ -147,8 +151,9 @@ Equipment Needed
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
 
-   
-   |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-lr-ardz_with_battery.png
+   :align: center
+   :width: 600px
 
 -  Connect the :adi:`EV-CATTLETAG-ARDZ` Sensor Node to the :adi:`MAX32670-LR-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-LR-ARDZ` Base Board through the 10-pin ribbon cable.
@@ -162,13 +167,15 @@ Equipment Needed
 
    <details><summary>**How to flash the firmware image in the MAX32625PICO**
 
--   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+-   Download the firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
    -   Do not connect the MAX32625PICO to the :adi:`MAX32670-LR-ARDZ` Base Board yet.
    -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
-   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
-
-   |image4|
-
+   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+      :align: center
+      :width: 400px
+   
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
    -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-LR-ARDZ` Base Board.
@@ -182,11 +189,9 @@ Equipment Needed
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
-
-   
-
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-LR-ardz_to_maxpico.png
+   :align: center
+   :width: 1500px
 
 .. note::
 
@@ -231,14 +236,3 @@ For questions and more information about this product, connect with us through t
 
    :ez:`EngineerZone Support Community <reference-designs>`
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_solar_panel_option.png
-   :width: 550px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz_power_source_option.png
-   :width: 550px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-lr-ardz_with_battery.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-LR-ardz_to_maxpico.png
-   :width: 1500px

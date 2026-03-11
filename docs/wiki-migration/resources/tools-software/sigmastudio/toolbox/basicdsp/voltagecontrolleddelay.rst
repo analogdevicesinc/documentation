@@ -23,4 +23,4 @@ The second output pin of the VCD is connected to channel 1 - Output2. Output2 is
 
 The maximum delay available for a particular delay block depends on the total available system data RAM, which is specified in the DSP processor data sheet. Setting the **Max** control's value, allocates memory on the DSP, reserving that memory for use by this particular block only, and reducing the available memory for all other delay blocks in the design. This is a compiler directive and modifies the assembly code, so any time you change the Max setting you must recompile and download the program. The maximum delay value range is limited to the remaining unallocated memory of the RAM.
 
-.. |voltagecontrolledpic1.png| image:: https://wiki.analog.com/_media/voltagecontrolledpic1.png
+.. |voltagecontrolledpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/voltagecontrolledpic1.png

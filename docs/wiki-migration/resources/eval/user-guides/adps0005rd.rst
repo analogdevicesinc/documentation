@@ -1,7 +1,10 @@
 AD-PS0005-RD User Guide
 =======================
 
-|AD-PS0005-RD Board|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad-ps0005-rd_top-angle-evaluation-board.png
+   :alt: AD-PS0005-RD Board
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -36,7 +39,9 @@ Applications
 Block Diagram
 -------------
 
-|Simplified System Block Diagram|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_block_diagram.png
+   :alt: Simplified System Block Diagram
+   :align: center
 
 .. container:: center
 
@@ -74,7 +79,10 @@ Specifications
 Components and Connections
 --------------------------
 
-|AD-PS0005-RD Inputs and Outputs|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_in_out.png
+   :alt: AD-PS0005-RD Inputs and Outputs
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -100,7 +108,10 @@ Power Supply Connection
 LED Indicators
 ~~~~~~~~~~~~~~
 
-|AD-PS0005-RD LED Location|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_led.png
+   :alt: AD-PS0005-RD LED Location
+   :align: center
+   :width: 400px
 
 .. container:: center
 
@@ -138,7 +149,10 @@ LED Indicators
 Switches
 ~~~~~~~~
 
-|AD-PS0005-RD Switch Location|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_switches.png
+   :alt: AD-PS0005-RD Switch Location
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -152,7 +166,10 @@ Hardware switches used to set Device Address:
 Turrets
 ~~~~~~~
 
-|AD-PS0005-RD Turrets Location|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_turrets.png
+   :alt: AD-PS0005-RD Turrets Location
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -191,7 +208,10 @@ Turrets
 Jumpers
 ~~~~~~~
 
-|AD-PS0005-RD Jumpers Locations|
+.. image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_jumper.png
+   :alt: AD-PS0005-RD Jumpers Locations
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -245,7 +265,10 @@ Hardware Setup
 -  Turn on the DC Power supply. You will notice DS4 (Green LED) will light up.
 -  Output measurements can be done using the Pin Turrets as reference.
 
-|Sample Setup for Voltage Measurement|
+.. image:: https://wiki.analog.com/_media/onunloaddisablefetch/ad_ps0005_rd_setup_voltage.png
+   :alt: Sample Setup for Voltage Measurement
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -302,7 +325,9 @@ Test Measurement
 Efficiency
 ~~~~~~~~~~
 
-|Efficiency vs. Load Current|
+.. image:: https://wiki.analog.com/_media/maxbatchsizeinbytes/ad_ps0005_rd_efficiency.png
+   :alt: Efficiency vs. Load Current
+   :align: center
 
 .. container:: center
 
@@ -317,7 +342,9 @@ Efficiency
 Output Regulation
 ~~~~~~~~~~~~~~~~~
 
-|Output Regulation vs Load Current|
+.. image:: https://wiki.analog.com/_media/maxbatchsizeinbytes/ad_ps0005_rd_output_regulation.png
+   :alt: Output Regulation vs Load Current
+   :align: center
 
 .. container:: center
 
@@ -421,25 +448,8 @@ Help and Support
    Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone Support Community <reference-designs>` forum.
 
 
-.. |AD-PS0005-RD Board| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad-ps0005-rd_top-angle-evaluation-board.png
-   :width: 600px
-.. |Simplified System Block Diagram| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_block_diagram.png
-.. |AD-PS0005-RD Inputs and Outputs| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_in_out.png
-   :width: 600px
-.. |AD-PS0005-RD LED Location| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_led.png
-   :width: 400px
-.. |AD-PS0005-RD Switch Location| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_switches.png
-   :width: 600px
-.. |AD-PS0005-RD Turrets Location| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_turrets.png
-   :width: 600px
-.. |AD-PS0005-RD Jumpers Locations| image:: https://wiki.analog.com/_media/function_ns_e_t_n_qo_e_t/var_r_i/t_wv_si_sr_r.basetypesource_t_wv_t_wv_si_sr_r_t_qe_t_i_t_qe_wo/t_qe_xi_t_qe_r_i_xi_t_en_r_i_z_n_xo_r_n/var_o_t_qe_rr_a_new_si_e_o_r_i_s_new_zo_si_sr_a/return_jo_e_si_zo_t_s/ad_ps0005_rd_jumper.png
-   :width: 600px
-.. |Sample Setup for Voltage Measurement| image:: https://wiki.analog.com/_media/onunloaddisablefetch/ad_ps0005_rd_setup_voltage.png
-   :width: 600px
 .. |Sample Setup for Efficiency Test| image:: https://wiki.analog.com/_media/onunloaddisablefetch/ad_ps0005_rd_setup.png
    :width: 600px
-.. |Efficiency vs. Load Current| image:: https://wiki.analog.com/_media/maxbatchsizeinbytes/ad_ps0005_rd_efficiency.png
-.. |Output Regulation vs Load Current| image:: https://wiki.analog.com/_media/maxbatchsizeinbytes/ad_ps0005_rd_output_regulation.png
 .. |DC1613A Connection| image:: https://wiki.analog.com/_media/onunloaddisablefetch/dc1613a_connection.png
    :width: 600px
 .. |LTpowerPlay Startup Screen| image:: https://wiki.analog.com/_media/onunloaddisablefetch/ltpowerpay_startup.png

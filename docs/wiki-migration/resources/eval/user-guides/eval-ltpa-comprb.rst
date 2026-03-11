@@ -64,10 +64,8 @@ Step-by-Step-Procedure
 
 1. The EVAL-LTPA-COMPRB can function as either a programmable resistor (R and COM terminals), capacitor (C and COM terminals), or series resistor-capacitor network (R and C terminals), depending on how it is connected to your DUT. Consider whether you need to tune both the compensation resistance and capacitance, or only one of them, then solder wires to the appropriate terminals.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-equivalent-circuit.png
-   :alt: Equivalent Circuit
-   :align: center
-   :width: 200px
+
+|Equivalent Circuit|
 
 .. note::
 
@@ -76,10 +74,9 @@ Step-by-Step-Procedure
 
 2. Identify where the compensation resistor and/or capacitor (whichever is being tuned using the probe) are on your DUT, and verify that the component(s) are not populated. Solder the wires from the probe terminals across this location. For most DUTs, such as the LT8642S demo board, these components can be found connected to a designated loop compensation pin (i.e., VC, COMP/ITH, etc.).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-location-example.png
-   :alt: Example Connection
-   :align: center
-   :width: 1200px
+
+
+|Example Connection|
 
 .. tip::
 
@@ -116,15 +113,7 @@ A hardware setup of the compensation probe is shown below for reference. This ex
    :align: center
    :width: 600px
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-example-iso.png
-   :alt: COMPRB Example Application 2
-   :align: center
-   :width: 400px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-example-top.png
-   :alt: COMPRB Example Application 3
-   :align: center
-   :width: 300px
+|COMPRB Example Application 2| |COMPRB Example Application 3|
 
 .. note::
 
@@ -181,3 +170,12 @@ Support
 -------
 
 For questions and more information, please visit the Analog Devices :ez:`EngineerZone <reference-designs/ltpoweranalyzer>`.
+
+.. |Equivalent Circuit| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-equivalent-circuit.png
+   :width: 200px
+.. |Example Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-location-example.png
+   :width: 1200px
+.. |COMPRB Example Application 2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-example-iso.png
+   :width: 400px
+.. |COMPRB Example Application 3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-comprb/eval-ltpa-comprb-example-top.png
+   :width: 300px

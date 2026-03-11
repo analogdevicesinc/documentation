@@ -62,8 +62,8 @@ By the end of this lab, you will learn:
 Pre-requisites
 --------------
 
--  ADALM2000 drivers installation: :git-plutosdr-m2k-drivers-win:`releases`
--  Install Scopy software from :git-scopy:`releases/tag/v1`.4.1
+-  ADALM2000 drivers installation: https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases
+-  Install Scopy software from https://github.com/analogdevicesinc/scopy/releases/tag/v1.4.1
 
 Demo 1 - Scope and Signal generator channels – Cascaded LP filters
 ------------------------------------------------------------------

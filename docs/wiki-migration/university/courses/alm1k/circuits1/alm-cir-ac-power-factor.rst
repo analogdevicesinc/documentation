@@ -40,9 +40,8 @@ If the load has both resistive and reactive parts, apparent power represents nei
 
 A power triangle (vector diagram) can be drawn using the real, reactive and apparent power. The real power is along the horizontal axis, the reactive power is along the vertical axis and the apparent power forms the hypotenuse of the triangle as shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -118,18 +117,15 @@ Directions for RC circuit:
 
 Construct the RC circuit shown in figure 2 on your solderless breadboard with the component values R\ :sub:`1` = 100 Ω and C\ :sub:`1` = 10 µF. Three connections to the ALM1000 are required as shown by the green boxes. Open the ALICE Oscilloscope software.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2. RC AC load circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rc_load_bb.png
-   :align: center
-   :width: 400px
+   |image3|
 
 .. container:: centeralign
 
@@ -172,18 +168,15 @@ First measure the DC resistance of the 47 mH inductor using the DC Ohmmeter tool
 
 Construct the RL circuit shown in figure 4 on your solderless breadboard with the component values R\ :sub:`1` = 47 Ω and L\ :sub:`1` = 47 mH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f3.png
-   :align: center
-   :width: 400px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4. RL AC load circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rl_load_bb.png
-   :align: center
-   :width: 400px
+   |image5|
 
 .. container:: centeralign
 
@@ -210,18 +203,15 @@ Directions for RLC circuit:
 
 Construct the RLC circuit shown in figure 6 on your solderless breadboard with the component values R\ :sub:`1` = 47 Ω, C1 = 10 uF, and L\ :sub:`1` = 47 mH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f41.png
-   :align: center
-   :width: 400px
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6. RLC AC load circuit measuring the capacitor
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rlc_load_bb.png
-   :align: center
-   :width: 400px
+   |image7|
 
 .. container:: centeralign
 
@@ -235,9 +225,8 @@ For the RLC circuit you will need measurements for the AC RMS voltage across eac
 
 We still need the RMS voltage across the inductor L\ :sub:`1`. By swapping the order of the components in this series connected circuit, as shown in figure 8, we do not change the total overall impedance of the load circuit. However, we can now obtain the RMS voltage across L\ :sub:`1` from the difference between the CA and CB waveforms as we did with the capacitor in figure 6. Record the RMS value for the voltage across the total RLC circuit (CHA V RMS), the RMS value for the current through R\ :sub:`1`, which is also the current in channel A in this series circuit (CHA I RMS), the RMS value for the voltage across the resistor (CHB V RMS) and the RMS value for the voltage across the inductor (A-B RMS). Check that the value across the total circuit as well as the current through the load and the value across R\ :sub:`1` is the same as what was measure for figure 6. Why is this true?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f42.png
-   :align: center
-   :width: 400px
+
+|image8|
 
 .. container:: centeralign
 
@@ -255,18 +244,15 @@ Directions for Power Factor correction:
 
 The circuit shown in figure 9 for power factor correction is the same as figure 4 with the addition of capacitor C\ :sub:`1` in parallel with L\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f5.png
-   :align: center
-   :width: 400px
+
+|image9|
 
 .. container:: centeralign
 
    Figure 9. Power Factor correction for RL AC load
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/power_factor_rl_bb.png
-   :align: center
-   :width: 400px
+   |image10|
 
 .. container:: centeralign
 
@@ -311,3 +297,24 @@ ALICE desktop includes an :doc:`Impedance Analyzer </wiki-migration/university/t
 `Power Factor <https://en.wikipedia.org/wiki/Power_factor>`_ `Power in Resistive and Reactive AC circuits <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/power-resistive-reactive-ac-circuits/>`_ `Practical Power Factor Correction <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/practical-power-factor-correction/>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rc_load_bb.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f3.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rl_load_bb.png
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f41.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rlc_load_bb.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f42.png
+   :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-pf-f5.png
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/power_factor_rl_bb.png
+   :width: 400px

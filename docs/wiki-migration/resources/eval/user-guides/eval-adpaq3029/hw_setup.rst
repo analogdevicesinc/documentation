@@ -50,11 +50,15 @@ Setup
 -  Once the hardware setup is complete, setting up software toolchain is explained :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/sw_tools_setup>`.
 -  In addition to above setup, in order to debug/flash the firmware, debugger (EVAL-ADPAQ3029EBZ-DBG) must be connected between PC and ADPAQ Dev module.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb1.png
+   :align: center
+   :width: 400px
 
 -  The ADPAQ module is connected to the debugger via a 10 pin arm debugger cable and the debugger is then powered on through the Power USB port as shown in the figure below.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb2.png
+   :align: center
+   :width: 400px
 
 -  Once the hardware is set up as described above, the device appears as ``DAPLINK``.
 
@@ -67,7 +71,3 @@ Setup
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/hw3.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb1.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb2.png
-   :width: 400px

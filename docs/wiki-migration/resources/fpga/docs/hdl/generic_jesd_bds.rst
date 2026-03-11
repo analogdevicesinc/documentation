@@ -184,7 +184,7 @@ In this mode the Transport Layer will accept two frames in every clock cycle. 32
 
 .. note::
 
-   Such a parametrizable block design was built for the :doc:`ADRV9009 Prototyping Platform </wiki-migration/resources/eval/user-guides/adrv9009>` and can be found `here <https://wiki.analog.com/https/github.com/analogdevicesinc/hdl/blob/master/projects/adrv9009/common/adrv9009_bd.tcl>`_.
+   Such a parametrizable block design was built for the :doc:`ADRV9009 Prototyping Platform </wiki-migration/resources/eval/user-guides/adrv9009>` and can be found :git-hdl:`here <projects/adrv9009/common/adrv9009_bd.tcl>`.
 
 
 JESD modes with F=8
@@ -212,13 +212,12 @@ Rx path for F=8
 
 The Rx path is similar to the Tx. In order the transport layer to produce a sample per converter in every clock cycle the Data clock must be ran at half of the link clock speed.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/f8_rx_jesd_path.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. note::
 
-   Such a parametrizable block design that supports also F=8 was built for the :doc:`ADRV9009 Prototyping Platform </wiki-migration/resources/eval/user-guides/adrv9009>` and can be found `here <https://wiki.analog.com/https/github.com/ronagyl/hdl/blob/dev_adrv9009_less_lanes/projects/adrv9009/common/adrv9009_bd.tcl>`_.
+   Such a parametrizable block design that supports also F=8 was built for the :doc:`ADRV9009 Prototyping Platform </wiki-migration/resources/eval/user-guides/adrv9009>` and can be found `here <https://github.com/ronagyl/hdl/blob/dev_adrv9009_less_lanes/projects/adrv9009/common/adrv9009_bd.tcl>`_.
 
 
 Useful links
@@ -239,4 +238,6 @@ Analog Devices will provide limited online support for anyone using the core wit
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/sample_tx_jesd_path.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/sample_rx_jesd_path.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/f8_rx_jesd_path.png
    :width: 600px

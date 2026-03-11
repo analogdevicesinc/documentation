@@ -45,36 +45,20 @@ How to Install the Evaluation Software
    \ **NOTE:** It is recommended that you install the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0355\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-\
+| |image1|
+| \* Click **"Next"** to view the installation review page
+| |image2|
+| \* Click **"Next"** to start the installation
+| |image3|
+| \* Upon completion of the installation of the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_, the installer for the **ADI SDP Drivers** will execute.\ |image4|
+| \* Click **"Next"** to finish the installation.
+| |image5|
+| \* Click **“Next”** to set the installation location for the SDP Drivers.
 
-
-
-|image1|
-
-   \* Click **"Next"** to view the installation review page
-
-   |image2|
-
-   \* Click **"Next"** to start the installation
-
-   |image3|
-
-   \* Upon completion of the installation of the `CN0355 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0355>`_, the installer for the **ADI SDP Drivers** will execute.\
-
-   |image4|
-
-   \* Click **"Next"** to finish the installation.
-
-   |image5|
-
-   \* Click **“Next”** to set the installation location for the SDP Drivers.
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the drivers to the default directory path
-
-   
-   | **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
+   \ **NOTE:** It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers**
 
 
 | |image6|

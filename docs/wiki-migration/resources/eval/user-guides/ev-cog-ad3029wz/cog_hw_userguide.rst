@@ -55,7 +55,8 @@ Power Muxing Options
 
 For details of the power muxing scheme, refer to the figure below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/23062017-tile-revb-power-mux-scheme.png
+
+|image1|
 
 .. danger::
 
@@ -114,12 +115,12 @@ One of the USP of the MCU Cog is access to ALL GPIO via Expansion Connectors ("C
 Expansion connector "C1"
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image1| |image2|
+|image2| |image3|
 
 Expansion connector "C2"
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image3| |image4|
+|image4| |image5|
 
 Jumper Settings
 ---------------
@@ -127,7 +128,7 @@ Jumper Settings
 The MCU Cog offers flexibility in terms of power muxing options and the facility to route any GPIO externally via the expansion connectors "C1" and "C2". This is achieved with the use of jumpers. The MCU Cog has two types of jumpers - those labelled "JHx" and which are 2x2 1.27mm pitch headers and those labelled "JPx" and which are solder jumpers. The "JHx" jumpers are expected to be used more frequently than the "JPx" jumpers. The figures below capture the jumper settings.
 
 
-|image5|
+|image6|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/jumper_settings_2.png
 
@@ -204,9 +205,10 @@ For developers designing a Cog add-on board, the template schematic/board files 
 
 .. |25072017-tile-revb-front.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/25072017-tile-revb-front.png
 .. |25072017-tile-revb-back.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/25072017-tile-revb-back.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/23062017-tile-revb-power-mux-scheme.png
 .. |direct| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-adp5300-gpio.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c1-1.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c1-2.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c2-1.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c2-2.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/jumper_settings_1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c1-1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c1-2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c2-1.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/c2-2.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029wz/jumper_settings_1.png

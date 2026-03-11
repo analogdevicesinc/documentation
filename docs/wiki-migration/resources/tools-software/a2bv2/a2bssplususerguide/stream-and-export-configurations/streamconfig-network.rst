@@ -34,12 +34,12 @@ This window allows the user to define streams along with properties like samplin
 
 .. container:: centeralign
 
-   \ |image1|\
+   |image1|\
 
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image2|\
 
 
 .. container:: centeralign
@@ -89,7 +89,7 @@ Like audio, Data tunnels can be defined with the properties like name, tunnel do
 
 .. container:: centeralign
 
-   \ |image4|\
+   |image4|\
 
 
 .. container:: centeralign
@@ -109,7 +109,7 @@ The *‘Stream View’* tab of *‘Device Properties’* window as shown in the 
 
 .. container:: centeralign
 
-   \ |image5|\
+   |image5|\
 
 
 .. container:: centeralign

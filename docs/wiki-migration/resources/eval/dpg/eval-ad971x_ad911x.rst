@@ -66,28 +66,37 @@ Quick Start Guide
 -  Press SW1 Button to reset the AD9114/AD9115/AD9116/AD9117/AD9714/AD9715/AD9716/AD9717.
 -  Open ACE. The board will be automatically recognized by the software. Otherwise, install the plugin for Board.AD911x or Board.AD971x in ACE Plugin Manager Available packages.
 -  Start DPG Lite or DPG Downloader. At the SDP-H1 part of the software, the device part number and clock frequency should be displayed.
--  In ACE, apply the values in the Initial Configuration wizard as shown in Figure 2.\ |image2|\
+-  In ACE, apply the values in the Initial Configuration wizard as shown in Figure 2.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9717.sdph1.ace_2.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 2. ACE Initial Configuration Wizard for EVAL-AD9717*\
 
 
--  In DPG Lite or DPG Downloader, from the Add Generator Waveforms pulldown menu select Single Tone and apply the settings as shown in Figure 3. Set the desired frequency to 15 MHz. Set DAC resolution to the DAC’s number of bits (14 for AD9717/9117, 12 for AD9716/9116, and so on). Check the Unsigned Data box.\ |image3|\
+-  In DPG Lite or DPG Downloader, from the Add Generator Waveforms pulldown menu select Single Tone and apply the settings as shown in Figure 3. Set the desired frequency to 15 MHz. Set DAC resolution to the DAC’s number of bits (14 for AD9717/9117, 12 for AD9716/9116, and so on). Check the Unsigned Data box.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9717.sdph1.dpg-lite.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 3. DPG Lite session for EVAL-AD9717*\
 
 
 -  Select the tone from the Data Vector pulldown menu.
--  Press the download arrow and then the play button. The spectrum similar to Figure 4 should appear in the signal/spectrum analyzer.\ |image4|\
+-  Press the download arrow and then the play button. The spectrum similar to Figure 4 should appear in the signal/spectrum analyzer.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad717_sdph1_output_1.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 4. EVAL-AD9717 FFT for Fdac=125MHz, Fout=15MHz*\
 
 
@@ -106,10 +115,4 @@ This section lists items to check and practices to use when debugging any unexpe
 If the common-mode voltage is not as expected, unplug the board and check the resistances at R13, R14, R52, and R53 for the correct values of the particular board. If a proper reading is not present, unsolder J13, J14, J19, and J23, which removes the resistors from the parallel connection with 1 kΩ/100 Ω at the input of the modulator to measure the individual resistances of those components. Check if the resistance values are still incorrect and if so, change out for the appropriate values listed above. If not, try resoldering the jumpers and test again to make sure there was not a problem with the previous connection.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/sdp-h1-set-up_withlabels.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9717.sdph1.ace_2.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9717.sdph1.dpg-lite.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad717_sdph1_output_1.png
    :width: 600px

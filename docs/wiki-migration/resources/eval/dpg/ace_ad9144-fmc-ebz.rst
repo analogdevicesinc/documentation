@@ -100,7 +100,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image5|\ *Figure 5. ACE AD9144 Chipview Tab*\
+   |image5|\ *Figure 5. ACE AD9144 Chipview Tab*\
 
 
 -  In ACE, apply the configuration wizard settings enumerated below and shown in Figure 4. JESD204B PLL should lock and the indicator should turn green.

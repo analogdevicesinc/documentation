@@ -30,9 +30,8 @@ When the input equals +V\ :sub:`in`, the transistor is driven into saturation// 
 
 This state is similar to a closed switch connecting the bottom of R\ :sub:`C` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -65,9 +64,8 @@ One common application for a BJT (or any other) switch is to drive an LED. An LE
 
 Build the LED switch circuit shown in figure 2 on your solder-less breadboard. R\ :sub:`C` serves to limit the current that flows in the LED from the +5 V power supply. The switch is controlled by the channel A voltage output from the I/O connector. Scope channel B will display the voltage across the switch transistor Q\ :sub:`1` (V\ :sub:`CE`) or the voltage at the LED as indicated by the green arrows.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -96,9 +94,8 @@ Switches in Parallel:
 
 Two NPN transistors can be connected with their collectors and emitters in parallel, figure3, which provides a way to switch on the load from two different signals. Either input can turn on the load but both need to be off for the load to be off. This is referred to as an “OR” logic function.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -112,9 +109,8 @@ Switches in Series:
 
 Two NPN transistors can be connected in series with the collector of the lower transistor connected to the emitter of the upper transistor, figure 4, which provides a way to switch off the load from two different signals. Either input can turn off the load but both need to be on for the load to be on. This is referred to as an “AND” logic function.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -130,9 +126,8 @@ The single transistor inverter stage along with multiple input resistors can be 
 
 The resistors used as inputs at the bases of the 5 NPN transistors are not all the same value and they in theory should all be the same value. But a range of values will still work given the relatively high beta of the 2N3904 transistors and the values shown were chosen so as to not need more than the 5 of any one value supplied in the Analog Parts Kit. You can experiment with other resistor values to find what the range of minimum and maximum values is.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -151,3 +146,14 @@ Again, set PIO 0 and PIO 1 to all four combinations of logic 0 and 1. Note which
 `Transistor <https://en.wikipedia.org/wiki/Transistor>`_ `Light- emitting diode <https://en.wikipedia.org/wiki/Light-emitting_diode>`_ `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents** **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4s_f5.png
+   :width: 600px

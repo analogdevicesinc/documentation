@@ -49,14 +49,20 @@ Quick Start Guide
 Board Hardware
 --------------
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/eval-adaq8092-fmcz_top-web.png
+   :align: center
+   :width: 400px
+
+
 
 .. container:: centeralign
 
    \ **Figure 1. EVAL-ADAQ8092-FMCZ Board Photo**
 
 
-| |image2|
+| |image1|
+
+
 
 .. container:: centeralign
 
@@ -71,14 +77,18 @@ Board Description
 Analog Inputs
 ~~~~~~~~~~~~~
 
-| |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/analog_input_circuitry.png
+   :align: center
+   :width: 600px
+
+
 
 .. container:: centeralign
 
    \ **Figure 3. Analog Input Circuitry of EVAL-ADAQ8092-FMCZ**
 
 
-| The EVAL-ADAQ8092-FMCZ provides the user to either use a single-ended or differential source. For the single-ended source, user can either use the balun so that the part will still be driven differentially or bypass it to drive the part single-endedly. Installation of 0Ω resistor is used to configure the input of the analog input circuitry.
+   | The EVAL-ADAQ8092-FMCZ provides the user to either use a single-ended or differential source. For the single-ended source, user can either use the balun so that the part will still be driven differentially or bypass it to drive the part single-endedly. Installation of 0Ω resistor is used to configure the input of the analog input circuitry.
 
 **Table 1. Factory Default Settings (Single-ended input driven)**
 
@@ -116,7 +126,11 @@ Channel Link Location
 Encode Circuitry
 ~~~~~~~~~~~~~~~~
 
-| |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/encode_circuitry.png
+   :align: center
+   :width: 600px
+
+
 
 .. container:: centeralign
 
@@ -129,7 +143,11 @@ Encode Circuitry
 Power Circuitry
 ~~~~~~~~~~~~~~~
 
-| |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/power_circuitry.png
+   :align: center
+   :width: 600px
+
+
 
 .. container:: centeralign
 
@@ -142,21 +160,29 @@ Power Circuitry
 Schematic
 ~~~~~~~~~
 
-| |image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/schematic_1.png
+   :align: center
+   :width: 800px
+
+
 
 .. container:: centeralign
 
    \ **Figure 6. Schematic of EVAL-ADAQ8092-FMCZ (page 1)**
 
 
-| |image7|
+| |image2|
+
+
 
 .. container:: centeralign
 
    \ **Figure 7. Schematic of EVAL-ADAQ8092-FMCZ (page 2)**
 
 
-| ===== Evaluating Board Hardware ===== |image8|
+| ===== Evaluating Board Hardware ===== |image3|
+
+
 
 .. container:: centeralign
 
@@ -205,7 +231,8 @@ To start the ACE evaluation software, here are the following steps:
 -  1. Open the ACE software.
 -  2. In the **Start** window, wait until the software recognizes the **"ADAQ8092 Board"** as an attached hardware, and then double-click on it to go to the "ADAQ8092 Board" window (refer to **Figure 9**).
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/start_window_final.png
+   :width: 800px
 
 .. container:: centeralign
 
@@ -214,9 +241,9 @@ To start the ACE evaluation software, here are the following steps:
 
 -  3. In the **ADAQ8092 Board** window, here you will see the simple block diagram of the evaluation board of the ADAQ8092, double-click the "ADAQ8092" icon from the block diagram to go to the "ADAQ8092" chip window (refer to **Figure 10**).
 
-
-
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/board_image_final.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -225,9 +252,8 @@ To start the ACE evaluation software, here are the following steps:
 
 -  4. In the **ADAQ8092** chip window, click "Proceed to Analysis", to start the evaluation. *Note: Here you change the device attributes before starting the evaluation such as: alt_bit_pol_en , data_rand_en, dout_en, pd_gpio, pd_mode, sampling_frequency, test_mode, and twos_complement.*
 
-
-
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/chip_image_final2.png
+   :width: 800px
 
 .. container:: centeralign
 
@@ -243,35 +269,37 @@ Here in the **ANALYSIS** window, there are three (3) panes, the **CAPTURE** pane
 -  In the ANALYSIS pane, the user can change the "windowing" type of the FFT, and also the "average iterations" when capturing the INL and DNL performance. When measuring the INL and DNL, the user should use the "Run Continuously" function and wait until it reaches the number of "average iterations" placed.
 -  In the RESULTS pane, this is where the parametric values will be displayed. At the bottom of it, the user can import or export the data.
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/waveform.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    \ **Figure 12. Waveform view**
 
 
-   |image13|
+   |image4|
 
 .. container:: centeralign
 
    \ **Figure 13. FFT view**\
 
 
-   |image14|
+   |image5|
 
 .. container:: centeralign
 
    \ **Figure 14. Average FFT view**\
 
 
-   |image15|
+   |image6|
 
 .. container:: centeralign
 
    \ **Figure 15. INL view**\
 
 
-   |image16|
+   |image7|
 
 .. container:: centeralign
 
@@ -285,35 +313,17 @@ Technical support for the evaluation board hardware and software can be obtained
 
 The evaluation board schematic and other board files can be found on the `EVAL-ADAQ8092-FMCZ <https://wcm.cldnet.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADAQ8092.html>`_ web page.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/eval-adaq8092-fmcz_top-web.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/eval-board-block.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/eval-board-block.png
    :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/analog_input_circuitry.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/encode_circuitry.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/power_circuitry.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/schematic_1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/schematic_2.png
    :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/schematic_2.png
-   :width: 800px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/complete_setup_final.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/complete_setup_final.png
    :width: 900px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/start_window_final.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/fft.png
    :width: 800px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/board_image_final.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/average_fft_result.png
    :width: 800px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/chip_image_final2.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/inl.png
    :width: 800px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/waveform.png
-   :width: 800px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/fft.png
-   :width: 800px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/average_fft_result.png
-   :width: 800px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/inl.png
-   :width: 800px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/dnl.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq8092/dnl.png
    :width: 800px

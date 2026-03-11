@@ -37,7 +37,7 @@ More information
 ----------------
 
 -  :adi:`ADF4157 Product Info <ADF4157>` - pricing, samples, datasheet
--  `EVAL-ADF4157SD1Z evaluation board user guide <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/adf4156_7_cd/ug-ev-adf4157sd1z.pdf>`_
+-  `EVAL-ADF4157SD1Z evaluation board user guide <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/evalcd/adf4156_7_cd/ug-ev-adf4157sd1z.pdf>`_
 -  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 -  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`_

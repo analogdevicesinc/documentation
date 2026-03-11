@@ -42,4 +42,4 @@ Algorithm Details
 | "Add Algorithm" Supported  | no                                                 |
 +----------------------------+----------------------------------------------------+
 
-.. |int_mono.png| image:: https://wiki.analog.com/_media/int_mono.png
+.. |int_mono.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/int_mono.png

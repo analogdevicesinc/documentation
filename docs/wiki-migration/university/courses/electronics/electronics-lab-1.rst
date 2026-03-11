@@ -19,9 +19,8 @@ First Step: Connecting DC Power:
 
 Op amps must always be supplied with DC power and therefore it is best to configure these connections first before adding any other circuit components. Figure 1.1 shows one possible power arrangement on your solder-less breadboard. We use two of the long rails for the positive and negative supply voltages, and two others for any ground connections that may be required. Included are the so-called “supply de-coupling” capacitors connected between the power-supply and ground rails. It is too early to discuss in great detail the purpose of these capacitors, but they are used to reduce noise on the supply lines and avoid parasitic oscillations. It is considered good practice in analog circuit design to always include small bypass capacitors close to the supply pins of each op amp in your circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f1-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ Background:
 
 Our first op-amp circuit is a simple one, shown in figure 1.2. This is called a unity-gain buffer, or sometimes just a voltage follower, defined by the transfer function Vout = Vin. At first glance it may seem like a useless device, but as we will show later it finds use because of its high input resistance and low output resistance.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -54,7 +52,8 @@ Hardware Setup:
 
 Using your breadboard and the ADALM2000 power supplies, construct the circuit shown in figure 1.3. Note that the power connections have not been explicitly shown here; it is assumed that those connections must be made in any real circuit (as you did in the previous step), so it is unnecessary to show them in the schematic from this point on. Use jumper wires to connect input and output to the waveform generator and oscilloscope leads. Don’t forget to ground the scope negative input leads C1- and C2- (ground connections are not shown in the schematic).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/v_follower-bb.png
+
+|image3|
 
 .. container:: centeralign
 
@@ -68,7 +67,8 @@ Use the first waveform generator as source Vin to provide a 2V amplitude peak-to
 
 A plot example is presented in Figure 1.4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/v_follower-waveform.png
+
+|image4|
 
 .. container:: centeralign
 
@@ -80,9 +80,8 @@ Slew Rate Limitations:
 
 For an ideal op-amp the output will follow the input signal precisely for any input signals, but in a real amplifier the output signal can never respond instantaneously to the input signal. This non-ideality can be observed when the input signal is a rapidly changing function of time. For large-amplitude signals this limitation is quantified by the slew rate, which is the maximum rate-of-change (slope) of the output voltage that the op-amp is capable of delivering. The units of slew-rate are usually expressed as V/μs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f1-3.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -93,8 +92,8 @@ Set the waveform generator to a square wave signal with a 2V amplitude peak-to-p
 
 A waveform that exemplifies the slew rate is presented in figure 1.6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/v_follower-slewr_waveform.png
-   :align: right
+
+|image6|
 
 .. container:: centeralign
 
@@ -106,9 +105,8 @@ Buffering Example:
 
 The high input resistance of the op amp (zero input current) means there is very little loading on the generator; i.e., no current is drawn from the source circuit and therefore no voltage drops on any internal (Thevenin) resistance. Thus in this configuration the op amp acts like a “buffer” to shield the source from the loading effects from other parts of the system. From the perspective of the load circuit the buffer transforms a non-ideal voltage source into a nearly ideal source. figure 1.7 describes a simple circuit that we can use to demonstrate this feature of a unity-gain buffer. Here the buffer is inserted between a voltage-divider circuit and some “load” resistance:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f4.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -134,9 +132,8 @@ Background:
 
 Figure 1.8 shows the conventional inverting amplifier configuration with a 10 kΩ “load” resistor at the output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f5.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -150,7 +147,8 @@ Now assemble the inverting amplifier circuit shown in figure 1.9 using R\ :sub:`
 
 Turn on the power supplies and observe the current draw to be sure there are no accidental shorts. Now adjust the waveform generator to produce a 2 volt amplitude peak-to-peak, 1 kHz sine wave at the input (Vin), and again display both the input and output on the oscilloscope. Measure and record the voltage gain of this circuit, and compare to the theory that was discussed in class. Export a plot of the input/output waveforms to be included your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/inverting_amp-bb.png
+
+|image9|
 
 .. container:: centeralign
 
@@ -166,7 +164,8 @@ Use the first waveform generator as source Vin to provide a 2V amplitude peak-to
 
 A plot example is presented in Figure 1.10.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/inverting_amp-waveform.png
+
+|image10|
 
 .. container:: centeralign
 
@@ -186,9 +185,8 @@ Background:
 
 The circuit of figure 1.11 is a basic inverting amplifier with an additional input, called a “summing” amplifier. Using superposition we can show that Vout is a linear sum of Vin1 and Vin2, each with their own unique gain or scale factor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f6.png
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -208,7 +206,8 @@ Reset the offset of waveform generator W1 to zero. With channel 2 of the scope (
 
 Return the offset voltage of waveform generator W2 to approximately +1V. Set the scope to 1V/div, and adjust the scope offset so you can see the complete Vout waveform. Turn Vin2 back up to the value you increased it to in the previous step. What does the oscilloscope trace for Vout look like? Does the amplifier appear to be amplifying?
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/summing_amp-bb.png
+
+|image12|
 
 .. container:: centeralign
 
@@ -222,7 +221,8 @@ Use the first waveform generator as source Vin to provide a 2V amplitude peak-to
 
 A plot example is presented in Figure 1.13.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/summing_amp-waveform.png
+
+|image13|
 
 .. container:: centeralign
 
@@ -237,9 +237,8 @@ Background:
 
 The non-inverting amplifier configuration is shown in figure 1.14. Like the unity-gain buffer, this circuit has the (usually) desirable property of high input resistance, so it is useful for buffering non-ideal sources:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f7.png
-   :align: center
-   :width: 500px
+
+|image14|
 
 .. container:: centeralign
 
@@ -259,7 +258,8 @@ Increase the feedback resistance further until the onset of clipping, that is, u
 
 The last step underscores an important consideration for high-gain amplifiers. High-gain necessarily implies a large output for a small input level. Sometimes this can lead to inadvertent saturation due to the amplification of some low-level noise or interference, for example the amplification of stray 60Hz signals from power-lines that can sometimes be picked up. Amplifiers will amplify any signals at the input terminals…whether you want it or not!
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/noninverting_amp-bb.png
+
+|image15|
 
 .. container:: centeralign
 
@@ -273,7 +273,8 @@ Use the first waveform generator as source Vin to provide a 2V amplitude peak-to
 
 A plot example is presented in Figure 1.16.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/noninverting_amp-waveform.png
+
+|image16|
 
 .. container:: centeralign
 
@@ -316,3 +317,27 @@ Some specific ideas for the report might be as follows:
 **More on Op Amps in amplifier configuration:** :doc:`Variable Gain Amplifiers </wiki-migration/university/courses/electronics/electronics-lab-variable-gain-amplifier>`
 
 **Return to Lab Activity:** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f1-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/v_follower-bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/v_follower-waveform.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f1-3.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/v_follower-slewr_waveform.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f4.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f5.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/inverting_amp-bb.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/inverting_amp-waveform.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f6.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/summing_amp-bb.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/summing_amp-waveform.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a1_f7.png
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/noninverting_amp-bb.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/noninverting_amp-waveform.png

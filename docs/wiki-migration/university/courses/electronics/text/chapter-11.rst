@@ -14,9 +14,8 @@ A current mirror is a circuit block which functions to produce a copy of the cur
 
 The ideal block level concept of the current mirror is shown in figure 11.1. Given a current source as the input, the input section of the current mirror looks like a virtual short circuit and reflects (swaps the direction of flow) this current to produce a current sink (the current exiting the mirror); as a result, we obtain a current sink (figure 11.1a). Conversely, given a current sink as the input, the current mirror reflects this current to control current source (figure 11.1b); as a result, now we obtain a current source. We can generalize this basic current mirror structure with this first observation: A current mirror consists of a low impedance input stage connected to a high impedance output current stage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -27,9 +26,8 @@ Conceptually, an ideal current mirror is simply an ideal current amplifier with 
 
 It should be noted that these two stages of the current mirror may have a linear relationship (for example where V\ :sub:`OUT` = I\ :sub:`IN`\ R and I\ :sub:`OUT` = V\ :sub:`IN`/R) like a resistor. In figure 11.1.1 we see the classic operational amplifier implementation of the current to voltage converter explored back in Chapter 4 section 2. The virtual ground at the negative input of the op-amp provides a very low input resistance. These circuits use the linear relationship between the current in resistor R1 and the voltage across the resistor. However, this linear relationship is not necessarily required. Any element or combination of elements could be used such as the V\ :sub:`BE` or V\ :sub:`GS` of a transistor as in (b) if the output voltage was taken at the gate of M1 (output of the op-amp).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -38,9 +36,9 @@ It should be noted that these two stages of the current mirror may have a linear
 
 Similarly, as an output stage we have the operational amplifier implementation of the voltage to current converter from section 1 of Chapter 4 in figure 1.1.2. Here the input voltage is forced across resistor R1 such that the resulting current in R1 flows through transistor M1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -58,9 +56,8 @@ The converter circuits in figures 11.1.1 and 11.1.2 are rather complicated and r
 
 We would like a simple configuration where the active element, a single transistor, serves as the desired current-to-voltage converter. However, the transistor is a unidirectional device, where for the BJT the base emitter voltage controls the collector current or for the FET the gate source voltage controls the drain current. Producing the opposite where the collector current controls the V\ :sub:`BE` is not possible in the conventional use of the device as a common emitter amplifier. Referring back to Figure 11.1.1, the solution is to incorporate negative feedback. In this case that means making the transistor adjust its base emitter or gate source voltage, V\ :sub:`BE` or V\ :sub:`GS`, so that the collector or drain current is I\ :sub:`IN` = (V\ :sub:`1`-V\ :sub:`BE`)/R. For this purpose, we simply connect the collector to the base or gate to drain or "diode connect" the transistor. This classic "diode" connection results in 100% parallel negative feedback (figure 11.2). As a result, with this diode connected transistor, the collector current serves as the input quantity while the base-emitter voltage V\ :sub:`BE` serves as the output quantity with the logarithmic transfer function of the base emitter junction. Similarly, a diode connected enhancement mode MOS FET (gate tied to drain) will serve as a similar current to voltage converter with V\ :sub:`GS` as the output quantity rather than V\ :sub:`BE`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f2.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -74,9 +71,8 @@ We would like a simple configuration where the active element, a single transist
 
 A bipolar transistor can be driven by a voltage or by a current. If we consider the base emitter voltage, V\ :sub:`BE`, as the input and the collector current, I\ :sub:`C`, as the output (figure 11.3), we can think of a transistor as a non-linear voltage-to-current converter having an exponential characteristic. The base can be directly driven by the voltage output of the I-to-V converter we just discussed. The collector provides the output terminal of our simple current mirror: The output V to I converter stage of the simple current mirror is just a transistor acting as a non-linear (exponential for BJT) voltage-to-current converter. Again if a MOS transistor were used for the input stage the output stage would be a MOS transistor with the gate serving as the voltage input and the drain as the current output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f3.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -88,9 +84,8 @@ A bipolar transistor can be driven by a voltage or by a current. If we consider 
 
 The final step is to connect the output of the input stage (the base emitter junction of Q\ :sub:`1`) to the input of the output stage (the base emitter junction of Q\ :sub:`2`) to build the basic BJT current mirror circuit (figure 11.4). At this point we will concentrate on the issues involved with the BJT current mirror and pick back up with the MOS current mirror in section 11.6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -102,9 +97,8 @@ The final step is to connect the output of the input stage (the base emitter jun
 
 If transistors Q\ :sub:`1` and Q\ :sub:`2` in figure 11.4 are identical (that is have the same size emitter and thus equal I\ :sub:`S`) the input current to output current ratio or gain is ideally 1. There are often occasions when a gain other than one is required. When building circuits from discrete devices only simple integer ratios are possible while in microelectronic integrated circuits it is possible to make transistors with arbitrary emitter areas, A. However, even in integrated circuits the best design practice is to use identical unit size transistors when making current mirrors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f5.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -155,9 +149,8 @@ As we learned in an earlier chapter, the inclusion of emitter degeneration resis
 
 While resistors could also be added to the sources in an MOS based mirror, it is often more effective to simple increase the channel length, L, of the transistors. The longer the channel the less it is affected by the channel length modulation due to the increasing drain voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f6.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -166,9 +159,9 @@ While resistors could also be added to the sources in an MOS based mirror, it is
 
 It is important to note that the inclusion of emitter resistors does not reduce the reduction in the output current I\ :sub:`OUT` caused by the finite beta of Q\ :sub:`1` and Q\ :sub:`2`. A compensating voltage can be inserted by including resistor R\ :sub:`B`, of the correct value, as shown in figure 11.6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f7.png
-   :align: center
-   :width: 600px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -188,9 +181,8 @@ For example, using A = 2 ( a mirror gain of 2 ), I\ :sub:`IN` = 1mA, so r\ :sub:
 
 The simple current mirror can, obviously, also be implemented using MOSFET transistors, as shown in figure 11.7. We know that transistor M\ :sub:`1` is operating in the saturation region because V\ :sub:`DS` is greater than or equal to V\ :sub:`GS`. Transistor M\ :sub:`2`\ will also be in saturation so long as the output voltage is larger than its saturation voltage. In this simple configuration, the output current I\ :sub:`OUT` is directly related to I\ :sub:`IN`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f8.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -237,9 +229,8 @@ For the Shichman-Hodges model, f\ :sup:`-1` is approximately a square-root funct
 
 Figure 11.8 shows a mirror where the simple wire connecting the collector of Q\ :sub:`1` to its base is replaced by an emitter follower buffer. This improvement to the simple current mirror is referred to as an emitter follower augmented mirror. The current gain (ß\ :sub:`Q3`) of the emitter follower buffer stage (Q\ :sub:`3`) greatly reduces the gain error caused by the finite base currents of Q\ :sub:`1` and Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f9.png
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -255,9 +246,8 @@ Another consequence of adding the emitter follower buffer is, in general, a loss
 
 A Wilson current mirror or Wilson current source, named after George Wilson, is an improved mirror circuit configuration designed to provide a more constant current source or sink. It provides a much more accurate input to output current gain. The structure is shown in figure 11.9.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f10.png
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -302,7 +292,7 @@ The current through R\ :sub:`1` is given by, I\ :sub:`R1` = I\ :sub:`C1` + I\ :s
 
 But, I\ :sub:`C1` = I\ :sub:`C2` = I\ :sub:`C`
 
-Substituting for I\ :sub:`C` and since |image1| we get,
+Substituting for I\ :sub:`C` and since |image13| we get,
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e12.png
    :align: center
@@ -345,9 +335,8 @@ This circuit has the advantage of virtually eliminating the base current mismatc
 
 Adding a fourth transistor to the simple Wilson current mirror in figure 11.10, we have the modified or improved Wilson mirror. The improved input to output current accuracy is accomplished by equalizing the collector voltages of Q\ :sub:`1` and Q\ :sub:`2` at 1 V\ :sub:`BE`. This leaves the finite ß and voltage differences of each of Q\ :sub:`1` and Q\ :sub:`2` as the remaining unbalancing influences in the mirror.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f11.png
-   :align: center
-   :width: 500px
+
+|image14|
 
 .. container:: centeralign
 
@@ -375,9 +364,9 @@ The Widlar circuit may be used with bipolar transistors or MOS transistors. An e
 
 Figure 11.11 is an example Widlar current source using bipolar transistors, where the emitter resistor R\ :sub:`2` is connected in series with the emitter of output transistor Q\ :sub:`2`, and has the effect of reducing the current in Q\ :sub:`2` relative to Q\ :sub:`1`. The key to this circuit is that the voltage drop across the resistor R\ :sub:`2` subtracts from the base-emitter voltage of transistor Q\ :sub:`2`, thereby reducing the collector current compared to transistor Q\ :sub:`1`. A simulation plot showing this reduction in I\ :sub:`C2` is presented in figure 11.12.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f13.png
-   :align: center
-   :width: 550px
+
+
+|image15|
 
 .. container:: centeralign
 
@@ -440,7 +429,7 @@ or, substituting for I\ :sub:`b`:
 
 Eq. 4
 
-|image2|\ |image3|
+|image16|\ |image17|
 
 According to Eq. 4, the output resistance of the Widlar current source is increased over that of the output transistor itself (which is r\ :sub:`O`) so long as R\ :sub:`2` is large enough compared to the r\ :sub:`p` of the output transistor. (Large resistances R\ :sub:`2` make the factor multiplying r\ :sub:`O` approach the value (ß +1).) The output transistor carries a low current, making r\ :sub:`p` large, and increase in R\ :sub:`2` tends to reduce this current further, causing a correlated increase in r\ :sub:`p`. Therefore, a goal of R\ :sub:`2` >> r\ :sub:`p` can be unrealistic, and further discussion is provided below. The resistance R\ :sub:`1` / r\ :sub:`E` usually is small because the emitter resistance r\ :sub:`E` usually is only a few ohms.
 
@@ -453,9 +442,8 @@ When designing a circuit it is important to take into account the wide variation
 
 This is to introduce another kind of current mirror, actually a stabilized current source, which has an output which had been desensitized to variation in input current. To understand this configuration, it is helpful to examine the behavior of a zero gain amplifier. A NMOS version is shown in figure 11.14 but PMOS, NPN or PNP transistors will just as well function in this configuration
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f15.png
-   :align: center
-   :width: 550px
+
+|image18|
 
 .. container:: centeralign
 
@@ -468,18 +456,15 @@ Alternatively. if the gate is held fixed at the same DC bias level which produce
 
 In figure 11.15 we have an NPN transistor biased into conduction with a collector voltage V\ :sub:`C` which is less than the base voltage V\ :sub:`BE` by the thermal voltage V\ :sub:`T`\ = kT/q, (equal to Ic times R\ :sub:`L`) and is essentially constant with input voltage changes applied from V\ :sub:`IN`. The voltages seen at V\ :sub:`BE` and V\ :sub:`C` are plotted vs. the applied voltage at V\ :sub:`IN` in figure 11.14. As we can see while V\ :sub:`BE` continues to rise, V\ :sub:`C` remains much more constant and actually decreases above a certain level of V\ :sub:`IN`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f16.png
-   :align: center
-   :width: 500px
+
+|image19|
 
 .. container:: centeralign
 
    Figure 11.15 NPN Zero Gain Amplifier
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f17.png
-   :align: center
-   :width: 500px
+   |image20|
 
 .. container:: centeralign
 
@@ -488,9 +473,9 @@ In figure 11.15 we have an NPN transistor biased into conduction with a collecto
 
 A zero gain amplifier made using an enhancement mode NMOS 2N7000 transistor was simulated where the small signal AC gain and phase was calculated as the drain current was swept. As can be seen in figure 11.17 there is a sharp null or dip in the gain curve at around 345uA. This also occurs at the point where the phase makes a sharp transition from 0 degrees to 180 degrees.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f18.png
-   :align: center
-   :width: 500px
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -504,54 +489,43 @@ A zero gain amplifier made using an enhancement mode NMOS 2N7000 transistor was 
 
 Now that we understand the concept of the zero gain amplifier, the objective is to investigate its use to produce an output current which is stabilized (less sensitive) to variations of the input current level. This current source configuration, figure 11.17, is also sometimes called a Peaking Current Source or g\ :sub:`m`-compensated mirror. Because the collector voltage V\ :sub:`C` of transistor Q\ :sub:`1` is now more constant with changes in the input supply voltage as represented by V\ :sub:`IN`, it can be used as the base voltage of Q\ :sub:`2` to produce a much more constant collector current in transistor Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f19.png
-   :align: center
-   :width: 600px
+
+|image22|
 
 .. container:: centeralign
 
    Figure 11.18 Stabilized (Peaking) current source (g\ :sub:`m`-compensated mirror)
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f20.png
-   :align: center
-   :width: 500px
+   |image23|
 
 .. container:: centeralign
 
    Figure 11.19 Plot of the collector current of Q\ :sub:`1` and Q\ :sub:`2` R\ :sub:`1` = R\ :sub:`2` = 10KΩ, R\ :sub:`L` = 75Ω
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f21.png
-   :align: center
-   :width: 500px
+   |image24|
 
 .. container:: centeralign
 
    Figure 11.20 PTAT current plot of Peaking Current Source
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f22.png
-   :align: center
-   :width: 600px
+   |image25|
 
 .. container:: centeralign
 
    Figure 11.21 A combination of the Widlar mirror and peaking current source provides further improvement in the regulation of a variable input current.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f23.png
-   :align: center
-   :width: 500px
+   |image26|
 
 .. container:: centeralign
 
    Figure 11.22 Simulation of circuit in figures 11.18 and 11.21 with R\ :sub:`1` = 20KΩ, R\ :sub:`L`\ = 250Ω and R\ :sub:`2`\ = 1.2KΩ
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f24.png
-   :align: center
-   :width: 500px
+   |image27|
 
 .. container:: centeralign
 
@@ -572,9 +546,57 @@ More background on current mirrors can be found in this `Wikipedia page <https:/
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f2.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f3.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f5.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f6.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f7.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f8.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f9.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f10.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e22.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f11.png
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f13.png
+   :width: 550px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e22.png
    :width: 340px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e23.png
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e23.png
    :width: 260px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f15.png
+   :width: 550px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f16.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f17.png
+   :width: 500px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f18.png
+   :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f19.png
+   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f20.png
+   :width: 500px
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f21.png
+   :width: 500px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f22.png
+   :width: 600px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f23.png
+   :width: 500px
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f24.png
+   :width: 500px

@@ -6,7 +6,7 @@ Use ADI IPs into your own project
    We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest guide at https://analogdevicesinc.github.io/hdl/user_guide/ip_cores/use_adi_ips.html\
 
 
-Clone the github repository: <code> git clone https://github.com/analogdevicesinc/hdl.git </code>
+Clone the github repository: <code> git clone :git-hdl:`hdl` </code>
 
 Vivado
 ------
@@ -125,4 +125,4 @@ All of the modules are instantiated inside the spi_engine_create function. This 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/navigation HDL user guide #resources/fpga/docs/hdl/creating_new_ip_guide
    :alt: Create a new IP#resources/fpga/docs/tips|Main page#resources/fpga/docs/hdl/xcomm2ip|A simple BBP for RF Transceivers
 
-.. |name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0| image:: https://wiki.analog.com/_media/name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0
+.. |name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0| image:: https://wiki.analog.com/_media/resources/fpga/docs/hdl/name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0

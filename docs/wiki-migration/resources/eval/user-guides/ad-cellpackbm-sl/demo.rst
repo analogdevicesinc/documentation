@@ -178,26 +178,30 @@ Battery Pack Assembly
    
          -  In this example, 13 cells are required to build a 48V battery pack. Each cell consists of 3 batteries connected in parallel, resulting in a total of 39 batteries for the entire pack.
          -  Arrange the batteries according to the picture below.
-
-         |image1|
-
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_arrangement.png
+      :align: center
+      :width: 2000px
+   
    -  **Connecting the Batteries**
-
-   |image2|
-
-      -  Make a **Parallel Connection**. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Use a spot welder, ensuring a strong and reliable connection. Repeat this process to form 13 cells.
    
-         -  After completing the 13 cells, make a **Series Connection** by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/series-parallel_connection.png
+      :align: center
+      :width: 2000px
    
-   -  **Adding Cell Terminal Strips**
+   ::
    
-      -  Cut and prepare the appropriate lengths of nickel strips to be used as terminal connections.
+        * Make a **Parallel Connection**. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Use a spot welder, ensuring a strong and reliable connection. Repeat this process to form 13 cells.
+          * After completing the 13 cells, make a **Series Connection** by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
+      **Adding Cell Terminal Strips**
+        * Cut and prepare the appropriate lengths of nickel strips to be used as terminal connections.
+          * Attach a nickel strip based on the picture below. Use a spot welder or suitable method to securely weld the strip to the terminal.
+          * Solder a single wire cable on each nickel strip terminal except for **Vbat**+ and **Vbat-**.
    
-         -  Attach a nickel strip based on the picture below. Use a spot welder or suitable method to securely weld the strip to the terminal.
-         -  Solder a single wire cable on each nickel strip terminal except for **Vbat**\ + and **Vbat-**.
-
-         |image3|
-
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_terminal_strips.png
+      :align: center
+      :width: 2000px
+   
    -  **Insulation and Final Assembly**
    
       -  Ensure all connections are secure and properly insulated to prevent short circuits.
@@ -237,13 +241,17 @@ Connection Setup
 -  Connect the EVAL-ADBMS2950-BASIC (isoB) to the EVAL-ADBMS6830BMSW (J3) using the 2-wire twisted-pair patch cable from the main DuraClik connector to isoSPI A DuraClik connector.
 -  Using the single wire cables attached to each cell terminals, connect each battery cell to the cell connector block. Refer to the diagram to short any unused ports in the block.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_to_j1.png
+   :align: center
+   :width: 2000px
 
 -  Using the test leads alligator double-ended crocodile clips, connect the **Shunt-** of the EVAL-ADBMS2950-BASIC to one end of the resistor load.
 -  Using another crocodile clip, connect the **Bat-** of EVAL-ADBMS2950-BASIC by clipping the other end of the crocodile clip to **Vbat-** of the battery pack.
 -  Then attach the cell connector block to the EVAL-ADBMS6830BMSW through J1 port. Once attached, connect the **Vbat+** of the battery pack to the other end of the resistor load. Refer to the diagram below.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/hardware-setup.png
+   :align: center
+   :width: 2000px
 
 .. warning::
 
@@ -253,7 +261,9 @@ Connection Setup
 Software Setup
 ~~~~~~~~~~~~~~
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/broadmarket_gui_home_page.png
+   :align: center
+   :width: 2000px
 
 .. note::
 
@@ -290,23 +300,28 @@ Running the Setup
    -  Under the **Daisy Chain** section, ensure the *Generation* drop-down box is set to **ADBMSGEN6**.
    -  From the **Products** list, select the **ADBMS2950**, then click on the right arrow to add it to the Daisy Chain. Then select the **ADBMS6830** and add it as well in the daisy chain. **Settings** can remain as default.
    -  Click Launch.
-
-   |image7|
-
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
+      :align: center
+      :width: 2000px
+   
    -  Upon launching, the Quick Measure tab will open. Note: this utility only supports a single BMS product in a Daisy Chain. Click Start Quick Measure to begin measurements.
-
-   |image8|
-
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/start-quick-measure.png
+      :align: center
+      :width: 2000px
+   
    -  Check the Total PEC Status under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC.
    
       -  Verify the connection of the twisted cable between the EVAL-ADBMS6822 and the EVAL-ADBMS6830BMSW.
       -  Ensure that the EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC are powered up properly.
    
    -  Check the cell voltage readings. Monitor the voltage channels on the Quick Measure Utility graph. Select which signals to display on the graph under the **Plot All Devices** column.
-
    
-   |image9|
-
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plot-all-devices.png
+      :align: center
+      :width: 2000px
+   
    .. note::
 
       **For Step 9:** If cell voltage measurement is the focus of the demo, place ADBMS6830 as the second device in the daisy chain—both in hardware wiring and software configuration. If battery pack current and voltage monitoring is the priority, place ADBMS2950 as the second device in the daisy chain. This is important because the BMS Browser GUI primarily recognizes and interacts with the second device in the daisy chain during operation
@@ -325,14 +340,14 @@ Quick Measure Tab
    The Quick Measure tab simplifies metric measurement with a preloaded command sequence. Note that it supports a single device in the daisy chain, and key features enhance configuration and visualization.
 
 
-   |image10|
+   |image1|
 
    .. container:: centeralign
 
       **Battery Cell Voltage Monitoring**
 
 
-      |image11|
+      |image2|
 
    .. container:: centeralign
 
@@ -359,7 +374,7 @@ Quick Measure Tab
    This calculation provides the actual current flowing through the battery pack based on the measured voltage across the shunt resistor.
 
    
-   |image12|
+   |image3|
 
    .. container:: centeralign
 
@@ -394,7 +409,7 @@ Memory Map Tab
    The Memory Map tab provides a numerical output for the active command loop, organized into tables for user convenience. It offers customization and error highlighting for effective data analysis.
 
 
-   |image13|
+   |image4|
 
 Plots Tab
 ^^^^^^^^^
@@ -404,7 +419,7 @@ Plots Tab
    The Plots tab provides a graphical representation of data collected through the running command loop. It offers customization options for focused analysis and allows for the export of captured data for further analysis.
 
 
-   |image14|
+   |image5|
 
 .. note::
 
@@ -455,31 +470,13 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 .. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/ad-cellpackbm-sl
    :alt: Overview #:resources:eval:user-guides:ad-cellpackbm-sl:software|AD-CELLPACKBM-SL Software User Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_arrangement.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/quick-meausre-tab.png
    :width: 2000px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/series-parallel_connection.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_current.png
    :width: 2000px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_terminal_strips.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_voltage.png
    :width: 2000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_to_j1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/memory-map-tab.png
    :width: 2000px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/hardware-setup.png
-   :width: 2000px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/broadmarket_gui_home_page.png
-   :width: 2000px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
-   :width: 2000px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/start-quick-measure.png
-   :width: 2000px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plot-all-devices.png
-   :width: 2000px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/quick-meausre-tab.png
-   :width: 2000px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_current.png
-   :width: 2000px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/battery_pack_voltage.png
-   :width: 2000px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/memory-map-tab.png
-   :width: 2000px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plots-tab.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/plots-tab.png
    :width: 2000px

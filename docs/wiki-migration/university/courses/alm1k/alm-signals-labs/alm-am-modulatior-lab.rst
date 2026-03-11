@@ -16,9 +16,8 @@ Background:
 
 An AM modulator can be constructed by varying the tail current of an NPN differential amplifier as a variable transconductance amplifier. The transconductance of Q1 and Q2 in figure 1 varies directly and linearly versus the emitter current as set by Q3. The higher the current from Q3, the higher the transconductances of Q1 and Q2 and the higher the signal gain that Q1 and Q2 provide.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig1.png
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. container:: centeralign
 
@@ -29,9 +28,8 @@ In simulation Q1 and Q2 will be parametrically identical and track each other ov
 
 In an improved discrete implementation, shown in figure 2, Q1 and Q2 operate as a differential pair. However, unlike the conventional differential pair of figure 1, where the emitters of the pair are directly connected together, the emitters are capacitively coupled to each other. Additionally, different than the standard differential pair, Q1 and Q2 each have their own current sources, Q3 and Q4, rather than sharing a single current source. The two tail current sources are generally considered to be thermally at the same temperature. If Q1, Q2 and Q3, Q4 are parametrically slightly mismatched versus temperature, it will not cause significant errors in the single-ended AM output below 100% modulation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig2.png
-   :align: center
-   :width: 800px
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,9 +40,8 @@ From the above circuit, we see the following SPICE results. The op-amp, U1, conv
 
 In Figure 3, the carrier signal from source VC appears differentially at the collectors of Q1 (V(n001)) and Q2 (V(n003)) with no modulation signal applied from source VM. Note that the collector signals are 180° out of phase with respect to each other.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig3.png
-   :align: center
-   :width: 700px
+
+|image3|
 
 .. container:: centeralign
 
@@ -53,9 +50,9 @@ In Figure 3, the carrier signal from source VC appears differentially at the col
 
 In figure 4, with no carrier signal applied from source VC, the modulating signal from source VM shows up as common mode (zero differential signal) at the collectors of Q1 and Q2. The collector signals are at zero degrees phase angle with respect to each other.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig4.png
-   :align: center
-   :width: 700px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -64,9 +61,9 @@ In figure 4, with no carrier signal applied from source VC, the modulating signa
 
 If we turn on both the carrier and modulation signals, in figure 5, the result is the amplitude modulated carrier with the modulating signal itself getting cancelled out in that subtraction.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig5.png
-   :align: center
-   :width: 700px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -83,9 +80,8 @@ Directions:
 
 On your solder-less breadboard construct the AM modulator circuit as shown in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig6.png
-   :align: center
-   :width: 700px
+
+|image6|
 
 .. container:: centeralign
 
@@ -108,9 +104,8 @@ Modifications for operation at high frequency
 
 Using an active operational amplifier to convert the differential signal to a single ended signal at radio frequencies is impractical and a transformer is more often used as we see in figure 7. Here two of the six windings in a HPH1-1400L are used as the collector loads. The remaining 4 windings are connected in series to form the secondary winding.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig7.png
-   :align: center
-   :width: 700px
+
+|image7|
 
 .. container:: centeralign
 
@@ -122,3 +117,18 @@ By using the inductance of the coil with capacitor C5, a parallel resonate or tu
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig1.png
+   :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig2.png
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig3.png
+   :width: 700px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig4.png
+   :width: 700px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig5.png
+   :width: 700px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig6.png
+   :width: 700px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-am-mod-fig7.png
+   :width: 700px

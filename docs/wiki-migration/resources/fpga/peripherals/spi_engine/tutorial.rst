@@ -52,13 +52,13 @@ The device with the most demanding timing specifications is the AD7984. It requi
 SPI Engine hierarchy instantiation
 ----------------------------------
 
-The SPI Engine can be implemented in two ways, either by placing and connecting each IP individually or by using the function provided by the spi_engine.tcl script :git-hdl:`library/spi_engine/scripts/spi_engine`.tcl
+The SPI Engine can be implemented in two ways, either by placing and connecting each IP individually or by using the function provided by the spi_engine.tcl script :git-hdl:`library/spi_engine/scripts/spi_engine.tcl`
 
 Using the script ensures that the correct connections are being made and that the IP cores will receive the correct parameter configuration since certain parameters need to be set to the same value. The function takes the following argumets
 
-::
 
-   proc spi_engine_create {{name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0}}
+
+proc spi_engine_create {{name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0}}
 
 **data_width** will set the width of the data bus / data line used by the SPI engine to connect to the DMA and which serves the purpose of sending ADC sample data to the DDR memory. The data_width value will also set the maximum word length for the SPI transfer. Valid values are are 8/16/24/32. The DMA valid values are 16/32/64/128[…]. Since the Pulsar_ADC devices are all single SDI/SDO and some of them require 18bit transfers, this value will be rounded to 32bit.
 
@@ -207,11 +207,11 @@ create_generated_clock -name spi_clk -source [get_pins -filter name=~*CLKIN1 -of
 Testbench
 ~~~~~~~~~
 
-To check the overall performance of the design and also to expose any major bugs, the system can be tested using a testbench. https://github.com/analogdevicesinc/testbenches
+To check the overall performance of the design and also to expose any major bugs, the system can be tested using a testbench. :git-testbenches:`testbenches`
 
 The testbench framework is designed to use the same bd.tcl as the actual project
 
-:git-testbenches:`pulsar_adc_pmdz/system_bd`.tcl#L50
+:git-testbenches:`pulsar_adc_pmdz/system_bd.tcl#L50`
 
 The setup assumes the testbenches repo is cloned inside the hdl repo. To build the testbench project simply run <code> make cfg1 </code> from the **hdl/testbenches/pulsar_adc_pmdz/** folder. Besides exposing possible bugs, using the testbench will provide the user with an early way of evaluating the timing of the design. The testbench can also be a very useful tool for IP development.
 

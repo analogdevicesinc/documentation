@@ -44,11 +44,13 @@ Setting up the Hardware
 -  Set up the the **EVAL-CN0503-ARDZ** as shown in the :doc:`Hardware User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503>`.
 -  Connect the board to the **EVAL-ADICUP3029** via the Arduino headers.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0503_arduino.jpg
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0503_system_pc.jpg
+   :align: center
 
 Configuring the Software
 ------------------------
@@ -207,7 +209,7 @@ The software for the **ADuCM3029_demo_cn0503** can be found here:
    Prebuilt CN0503 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503.Hex <releases/download/Latest/ADuCM3029_demo_cn0503.hex>`
+   -  `AduCM3029_demo_cn0503.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0503.hex>`_
    
    Complete CN0503 Source Files
    
@@ -267,6 +269,3 @@ Hardware User Guide and Demo Guides
 -  :doc:`Optical Platform: Nitrate Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ) </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/nitrate-measurement>`
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0503_arduino.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0503_system_pc.jpg

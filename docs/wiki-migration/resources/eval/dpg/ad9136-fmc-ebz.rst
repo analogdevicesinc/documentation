@@ -18,17 +18,17 @@ Typical Setup
 
 .. container:: centeralign
 
-   \ |image2|\ *Figure 1b. AD9135-FMC-EBZ Setup with ADS8-V1EBZ*\
+   |image2|\ *Figure 1b. AD9135-FMC-EBZ Setup with ADS8-V1EBZ*\
 
 
 .. container:: centeralign
 
-   \ |image3|\ *Figure 2a. AD9136-FMC-EBZ Setup with ADS7-V2EBZ*\
+   |image3|\ *Figure 2a. AD9136-FMC-EBZ Setup with ADS7-V2EBZ*\
 
 
 .. container:: centeralign
 
-   \ |image4|\ *Figure 2b. AD9136-FMC-EBZ Setup with ADS8-V1EBZ*\
+   |image4|\ *Figure 2b. AD9136-FMC-EBZ Setup with ADS8-V1EBZ*\
 
 
 .. tip::
@@ -111,7 +111,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image8|\ *Figure 6. ACE AD9136 Chipview Tab*\
+   |image8|\ *Figure 6. ACE AD9136 Chipview Tab*\
 
 
 -  In ACE, apply the configuration wizard settings enumerated below and shown in Figure 5. JESD204B PLL should lock and the indicator should turn green.

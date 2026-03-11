@@ -36,7 +36,9 @@ Full details on the devices are provided in the :adi:`ADP5050`/:adi:`ADP5052` da
 ADP5050/ADP5052 EVALUATION BOARD
 --------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/11718-001.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -61,7 +63,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 1. Launch the **Setup.exe file**. When the dialog box shown in Figure 2 appears, click **Next** to continue.
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -72,7 +74,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -83,7 +85,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -94,7 +96,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -111,7 +113,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 2. Click **Next** to install the drivers (see Figure 6).
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -122,7 +124,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
 
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -133,7 +135,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
 
 
-|image8|
+|image7|
 
 .. container:: centeralign
 
@@ -144,7 +146,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
 
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -253,7 +255,7 @@ Ensure that the software and USB driver are installed as described in the Instal
 Figure 10 shows the :adi:`ADP5050` board connection diagram. The :adi:`ADP5052` works in a similar manner, but does not have a USB dongle connection.
 
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
@@ -282,7 +284,8 @@ To run the :adi:`ADP5050` GUI, click **Start** > **All Programs** > **Analog Dev
    *All registers are initialized to default values
    *Check the I<sup>2</sup>C status
 
-   |image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/11718-011.png
+   :align: center
 
 .. container:: centeralign
 
@@ -298,7 +301,7 @@ Measuring Output Voltage Ripple of the Buck Regulator
 To observe the output voltage ripple of Buck 1, place an oscilloscope probe across the output capacitor (COUT_1) with the probe ground lead at the negative (−) capacitor terminal and the probe tip at the positive (+) capacitor terminal. Figure 12 shows the typical output ripple waveform.
 
 
-|image12|
+|image10|
 
 .. container:: centeralign
 
@@ -310,7 +313,7 @@ Set the oscilloscope to ac, 10 mV/division, and 2 µs/division time base, with t
 To effectively measure the output voltage ripple, solder a wire to the negative (−) capacitor terminal and wrap it around the barrel of the probe and connect the tip directly to the positive (+) capacitor terminal, as shown in Figure 13.
 
 
-|image13|
+|image11|
 
 .. container:: centeralign
 
@@ -327,14 +330,14 @@ When the SYNC/MODE pin is set to high, the buck regulators operate in forced PWM
 When the MODE pin is set to low, the buck regulators operate in power save mode (PSM), improving the light load efficiency.
 
 
-|image14|
+|image12|
 
 .. container:: centeralign
 
    \ *Figure 14. Typical PSM Mode Waveform, V\ IN = 12 V, V\ OUT = 3.3 V, I\ OUT = 3 A, f\ SW = 600 kHz, L = 4.7 μH, C\ OUT = 47 µF × 2, FPWM Mode*\
 
 
-   |image15|
+   |image13|
 
 .. container:: centeralign
 
@@ -354,7 +357,7 @@ Measuring Load Regulation of the Buck
 Test the load regulation by increasing the load at the output and looking at the change in output voltage. The input voltage must be held constant during this measurement. To minimize voltage drop, use short low resistance wires, especially for loads approaching maximum current. Typical buck load regulation is shown in Figure 16.
 
 
-|image16|
+|image14|
 
 .. container:: centeralign
 
@@ -367,7 +370,7 @@ Measuring Line Regulation
 To measure line regulation, vary the input voltage and examine the change in the output voltage. Typical buck line regulation is shown in Figure 17.
 
 
-|image17|
+|image15|
 
 .. container:: centeralign
 
@@ -380,7 +383,7 @@ Measuring Efficiency of the Buck
 Measure the efficiency, η, by comparing the input power with the output power. Measure the input and output voltages as near to the input and output capacitors as possible to reduce the effect of IR drops.
 
 
-|image18|
+|image16|
 
 .. container:: centeralign
 
@@ -398,7 +401,7 @@ Measuring Line Regulation of the LDO
 For line regulation measurements, the output of the regulator is monitored while varying its input. For good line regulation, the output must change as little as possible with varying input levels. To ensure that the device is not in dropout mode during this measurement, V\ :sub:`IN` must be varied between V\ :sub:`OUT` nominal + 0.5 V (or 2.3 V, whichever is greater) and V\ :sub:`IN` maximum. For example, a fixed 3.3 V output requires V\ :sub:`IN` varied between 3.8 V and 5.5 V. This measurement can be repeated under different load conditions. Figure 19 shows the typical line regulation performance of the LDO with 1.6 V output at 200 mA load.
 
 
-|image19|
+|image17|
 
 .. container:: centeralign
 
@@ -411,7 +414,7 @@ Measuring Load Regulation of the LDO
 For load regulation measurements, the regulator output is monitored while varying the load. For optimal load regulation, the output must change as little as possible with varying loads. The input voltage must be held constant during this measurement. The load current can be varied from 0 mA to 200 mA. Figure 20 shows the typical load regulation performance of the LDO with a 2.5 V output for different input voltages.
 
 
-|image20|
+|image18|
 
 .. container:: centeralign
 
@@ -430,9 +433,8 @@ The buck output voltage is set through external resistor dividers, shown in Figu
 
 The V\ :sub:`REF` voltage (FB1, FB2, FB3, FB4) for the buck regulators is 0.800 V in the adjustable version.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/11718-021.png
-   :align: center
-   :width: 500px
+
+|image19|
 
 .. container:: centeralign
 
@@ -448,9 +450,8 @@ LDO output voltage is set through external resistor dividers, as shown in Figure
 
 The V\ :sub:`REF` voltage (FB5) for LDO is 0.500 V.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/11718-022.png
-   :align: center
-   :width: 500px
+
+|image20|
 
 .. container:: centeralign
 
@@ -472,9 +473,7 @@ R\ :sub:`BOT`    R28    R29    R31    R30    R13
 ================ ====== ====== ====== ====== ===
 
 
-| === Changing the Switching Frequency === The switching frequency of the :adi:`ADP5050`/:adi:`ADP5052` evaluation board is programmed to be 650 kHz. To change the switching frequency, replace the R3 resistor at the RT pin with a different value, as shown in Figure 23.
-
-|image21|
+| === Changing the Switching Frequency === The switching frequency of the :adi:`ADP5050`/:adi:`ADP5052` evaluation board is programmed to be 650 kHz. To change the switching frequency, replace the R3 resistor at the RT pin with a different value, as shown in Figure 23. |image21|
 
 .. container:: centeralign
 
@@ -602,12 +601,12 @@ Enabling the Dynamic Voltage Scaling (DVS)
 
 The :adi:`ADP5050` provides a dynamic voltage scaling function for Channel 1 and Channel 4, and those outputs can be real-time settings via I\ :sup:`2`\ C interface. To change the settings, complete the following steps:
 
-::
 
-   -Connect FB1 and FB4 to the output by placing a 0 Ω resistor on RTOP. Replace R2 to 0 Ω. Remove R28 for CH1, and/or replace R5 to 0 Ω and remove R30 for CH4.
-   -Power up the demo board, connect the USB dongle, and turn on the GUI software.
-   -Use the [[:adi:`ADP5050|ADP5050]]` GUI software to set DVSx-INTVAL and enable DVSx-ON in Register 0x05.
-   -Use the [[:adi:`ADP5050|ADP5050]]` GUI software to change different VID options in the CHx VOUTx register to obtain a real-time output voltage step up or step down.
+
+-Connect FB1 and FB4 to the output by placing a 0 Ω resistor on RTOP. Replace R2 to 0 Ω. Remove R28 for CH1, and/or replace R5 to 0 Ω and remove R30 for CH4.
+-Power up the demo board, connect the USB dongle, and turn on the GUI software.
+-Use the :adi:`ADP5050` GUI software to set DVSx-INTVAL and enable DVSx-ON in Register 0x05.
+-Use the :adi:`ADP5050` GUI software to change different VID options in the CHx VOUTx register to obtain a real-time output voltage step up or step down.
 
 .. tip::
 
@@ -617,30 +616,30 @@ The :adi:`ADP5050` provides a dynamic voltage scaling function for Channel 1 and
 EVALUATION BOARD SCHEMATICS AND ARTWORK
 ---------------------------------------
 
-|image22|
+.. image:: https://wiki.analog.com/_media/resources/eval/figure_16._evaluation_board_schematic_of_the_adp5050_52.png
+   :align: right
+   :width: 900px
 
 .. container:: centeralign
 
    \ *Figure 24. Evaluation Board Schematic of the ADP5050/ADP5052 Evaluation Board*\
 
 
-   |image23|
+   |image22|
 
 .. container:: centeralign
 
    \ *Figure 25. Top Layer, Recommended Layout for the ADP5050/ADP5052 Evaluation Board*\
 
 
-   |image24|
+   |image23|
 
 .. container:: centeralign
 
    \ *Figure 26. 2nd Layer, Recommended Layout for the ADP5050/ADP5052 Evaluation Board*\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/figure_19._3rd_layer_recommended_layout.png
-   :align: center
-   :width: 600px
+   |image24|
 
 .. container:: centeralign
 
@@ -737,38 +736,39 @@ RELATED LINKS
 | :adi:`ADP5052`                               | 5-channel integrated power solution with quad buck regulators plus 200 mA LDO regulator |
 +----------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/11718-001.png
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/11718-002.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure2_found_new_hardware_wiz.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_4_software_select_folder.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_5_software_install_complete.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_6_software_sdp_driver_setup.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure_7_software_check_folder.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/figure_8_software_driver_installation_complete.jpg
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/figure_9_check_driver_insatllation.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/figure_adp5050_board_conection_diagram.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/11718-011.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/figure_7_output_ripple.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/figure_measuring_output_voltage_ripple.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/figure_14_psm_mode85.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/figure_10_fpwm_mode.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/figure_16_buck_load_regualtion.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/11718-002.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure2_found_new_hardware_wiz.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_4_software_select_folder.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_5_software_install_complete.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_6_software_sdp_driver_setup.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_7_software_check_folder.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure_8_software_driver_installation_complete.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/figure_9_check_driver_insatllation.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/figure_adp5050_board_conection_diagram.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/figure_7_output_ripple.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/figure_measuring_output_voltage_ripple.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/figure_14_psm_mode85.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/figure_10_fpwm_mode.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/figure_16_buck_load_regualtion.png
    :width: 500px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/figure_17_buck_line_regulation.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/figure_17_buck_line_regulation.png
    :width: 500px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/figure_18_buck1_2_efficiency.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/figure_19_ldo_line_regulation.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/figure_18_buck1_2_efficiency.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/figure_19_ldo_line_regulation.png
    :width: 500px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/figure_12_ldo_load_regulation.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/figure_12_ldo_load_regulation.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/11718-021.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/11718-022.png
    :width: 500px
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/11718-023.png
    :width: 500px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/figure_16._evaluation_board_schematic_of_the_adp5050_52.png
-   :width: 900px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/figure_17._top_layer_recommended_layout.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/figure_17._top_layer_recommended_layout.png
    :width: 600px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/figure_18._2nd_layer_layer_recommended_layout.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/figure_18._2nd_layer_layer_recommended_layout.png
+   :width: 600px
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/figure_19._3rd_layer_recommended_layout.png
    :width: 600px
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/figure_28._bottom_layer_recommended_layout.png
    :width: 600px

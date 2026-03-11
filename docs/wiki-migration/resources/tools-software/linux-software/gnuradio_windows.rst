@@ -21,8 +21,8 @@ The `scripts <https://github.com/tfcollins/GNURadio_Windows_Build_Scripts/>`_ us
 
 Please see `here <http://www.gcndevelopment.com/gnuradio/downloads.htm>`_ for links to original source and binaries of gnuradio and it's required dependencies. The dependencies specific to gr-iio blocks are:
 
--  :git-libiio>`__
--  `libad9361 <https::`libiio </github.com/analogdevicesinc/libad9361-iio>`
+-  :git-libiio:`libiio`
+-  :git-libad9361-iio:`libad9361 <libad9361-iio>`
 
 Installer Build Process
 -----------------------

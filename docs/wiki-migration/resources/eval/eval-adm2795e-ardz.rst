@@ -95,11 +95,9 @@ Schematic, Bill of Materials, Gerber Files and Layout Files
    :class: download
 
    
-   ::
-   
-      *[[https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_b_sch.pdf|Schematic]]
-      *[[https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_b.pdf|PCB Layout and Mounting Diagram]]
-      *[[https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_b.xls|Bill of Materials]]
+   -  `Schematic <https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_b_sch.pdf>`_
+   -  `PCB Layout and Mounting Diagram <https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_b.pdf>`_
+   -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_b.xls>`_
    
 
 
@@ -132,7 +130,7 @@ Software
 ::
 
          *Arduino Uno Example Code
-           *[[https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_arduino_code_rev.b.zip|Reciever and Transmitter sample code]]
+   * `Reciever and Transmitter sample code <https://wiki.analog.com/_media/resources/eval/eval-adm2795e-ardz_arduino_code_rev.b.zip>`_
 
 --------------
 

@@ -15,11 +15,14 @@ EVAL-ADPAQ3029 - Servo motor demo
 -  Follow the same steps as given `here <https://wiki.analog.com/../first_app>`_
 -  In this project, a Servo motor is used.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app9.png
+   :align: center
+   :width: 200px
 
 -  The connections between the Servo Motor and the ADPAQ module are made as shown below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app10.png
+   :width: 300px
 
 .. container:: round box
 
@@ -35,13 +38,12 @@ EVAL-ADPAQ3029 - Servo motor demo
 
 
 -  Build and run the project
--  The tile has a “Freq” button and an input value option. We can set the frequency of the servo any value between 0-100 and the servo motor rotates accordingly.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile13.png>`_
+-  The tile has a “Freq” button and an input value option. We can set the frequency of the servo any value between 0-100 and the servo motor rotates accordingly.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile14.png
-   :align: center
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile13.png>`_
+
+
+|image1|
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile14.png
    :width: 400px
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app9.png
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app10.png
-   :width: 300px

@@ -15,9 +15,8 @@ As a pre-lab exercise enter the schematic shown in figure 1 into the :adi:`LTSpi
 
 Run the simulation sweeping the input frequency from 100 Hz to 20 KHz. You should get a frequency response plot the looks something like figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sch.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -26,9 +25,9 @@ Run the simulation sweeping the input frequency from 100 Hz to 20 KHz. You shoul
 
 A simulation was run sweeping the frequency from 100 Hz to 20 KHz. As we can see in figure 2 the completely unloaded 1st order filter (dB-0 green line) and the lightly loaded 1st order point (dB-3 slightly darker green line) are nearly on top of each other. The loaded 1st order point (dB-1 blue line) is significantly lower than the other two lines at the frequency of the RC time constant. However, all three converge to the same point at high frequencies, 20 KHz. The two 2nd order output points at dB-2 (red line, loaded) and dB-4 (pink line, lightly loaded) also show significant differences at the RC time constant frequency but also converge to the same point at 20 KHz. At 20 KHz the response of the 2nd order filters is 20 dB lower than the 1st order filters as one would expect.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sim.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -49,14 +48,14 @@ Hardware setup
 Build the circuit presented in figure 3 on the solderless breadboard.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
    Figure 3: First order RC filter
 
 
-   |image2|
+   |image4|
 
 .. container:: centeralign
 
@@ -69,7 +68,7 @@ Procedure
 In network analyzer you will do a logarithmic sweep. Set the start frequency to 100 Hz and the stop frequency to 20 KHz. The magnitude axis can be set to -50 dB minimum and 10 dB maximum. The phase axis goes from -180 to 90 degrees. Run the network analyzer to obtain the frequency response plot of the RC filter.
 
 
-|image3|
+|image5|
 
 .. container:: centeralign
 
@@ -85,14 +84,14 @@ Hardware setup
 Add a second RC low pass section to the prevoius filter as shown in Figure 6.
 
 
-|image4|
+|image6|
 
 .. container:: centeralign
 
    Figure 6: Second order RC filter
 
 
-   |image5|
+   |image7|
 
 .. container:: centeralign
 
@@ -105,7 +104,7 @@ Procedure
 Keep the same parameters set in the network analizer. Put the oscilloscope channel 2 after the first RC stage and do a single sweep. This will be the reference sweep an can be kept on the plot by pressing the Snapshot button in the Reference section of the Network analizer General Settings. Move the oscilloscope channel 2 after the second RC stage and do another sweep. You should see on the plot the frequency response after both RC stages as in Figure 8.
 
 
-|image6|
+|image8|
 
 .. container:: centeralign
 
@@ -121,14 +120,14 @@ Hardware setup
 As a further extension of this cascade of RC low pass filter sections add a third RC section to make a 3rd order filter by connecting another R and C to your circuit as shown in figure 9.
 
 
-|image7|
+|image9|
 
 .. container:: centeralign
 
    Figure 9: Third order RC filter
 
 
-   |image8|
+   |image10|
 
 .. container:: centeralign
 
@@ -141,7 +140,7 @@ Procedure
 Keep the same parameters set in the network analizer. Put the oscilloscope channel 2 after the first RC stage ( point A shown in figure 10) and do a single sweep. This will be the reference sweep an can be kept on the plot by pressing the Snapshot button in the Reference section of the Network analizer General Settings. Move the oscilloscope channel 2 after the second RC stage (point B) and do another sweep and press the Snapshot button. You should see on the plot the frequency response after both RC stages. To obtain the frequency response of the third stage put the oscilloscope channel 2 in point C and do another sweep. You should see all three responses as in figure 11.
 
 
-|image9|
+|image11|
 
 .. container:: centeralign
 
@@ -172,21 +171,25 @@ Questions
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/1st_rc.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sch.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sim.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/1st_rc.png
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/first_order_cascaded_rc_bb_bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/first_order_cascaded_rc_bb_bb.png
    :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/first_order.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/first_order.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/2nd_rc_ab.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/2nd_rc_ab.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/second_order_cascaded_rc_bb_bb.png
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/second_order_cascaded_rc_bb_bb.png
    :width: 900px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/second_order_rc.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/second_order_rc.png
    :width: 900px
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/3rd_rc_abc.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/3rd_rc_abc.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/cascaded_rc_bb_scope_ch2.png
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/cascaded_rc_bb_scope_ch2.png
    :width: 900px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/third_order.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/third_order.png
    :width: 900px

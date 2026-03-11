@@ -35,9 +35,8 @@ Directions:
 
 Build the amplifier as shown in figure 2 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-mstage-f2.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -85,9 +84,8 @@ Additional Materials:
 
 2 – 4.7 KΩ resistors 1 – small signal NPN transistor (2N3904 Q\ :sub:`6`) 1 – small signal PNP transistor (2N3906 Q\ :sub:`5`)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-mstage-f3.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -95,3 +93,8 @@ Additional Materials:
 
 
 **For Further Reading:** **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-mstage-f2.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-mstage-f3.png
+   :width: 500px

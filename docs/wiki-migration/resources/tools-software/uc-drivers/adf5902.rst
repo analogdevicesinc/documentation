@@ -69,15 +69,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADF5902 Driver. <drivers/frequency/adf5902/adf5902.c>`
+   -  :git-no-OS:`Header file of ADF5902 Driver. <drivers/frequency/adf5902/adf5902.h>`
    
-   |Implementation of ADF5902 Driver.|
 
-   -
-
-   |Header file of ADF5902 Driver.|
-
-.. |Implementation of ADF5902 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5902/adf5902`.c
-.. |Header file of ADF5902 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5902/adf5902`.h

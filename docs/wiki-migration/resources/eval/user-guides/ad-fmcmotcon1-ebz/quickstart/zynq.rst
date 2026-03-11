@@ -40,11 +40,12 @@ Booting the SD Card
 
    |image1|
 
-   -  IIO Scope tool:
+-  IIO Scope tool:
 
-   |image2|
 
-      -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
+|image2|
+
+   -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
 -  You are now done with booting from the SD card. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
 

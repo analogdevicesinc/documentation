@@ -42,9 +42,7 @@ D14         I2C_SDA   SDO/SDA
    If using the Arduino header pins, compile the software only after adding the #define ARDUINO to app_config.h (set by default) - see below
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad5933_k1.jpg
-   :align: center
-   :width: 400px
+   |image1|
 
 .. note::
 
@@ -62,7 +60,7 @@ For developing firmware code for controller boards on the Mbed platform visit th
    Source code is hosted here:
 
    
-   -  `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
+   -  :git-precision-converters-firmware:`precision-converters-firmware`
    
    Build Guide for Precision Converters MBED firmware (Use below link):
    
@@ -174,4 +172,7 @@ Any impedance can now be placed between the SMB connectors on the PMOD IA board 
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/result.png
    :align: center
+   :width: 400px
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad5933_k1.jpg
    :width: 400px

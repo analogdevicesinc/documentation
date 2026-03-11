@@ -26,9 +26,8 @@ The principal of operation of a basic current transformer is slightly different 
 
 This primary winding can be of either a single flat turn, a coil of heavy duty wire wrapped around the core or just a wire inserted through a central hole like that shown in the photo of a clamp-on current probe transformer, (model LCTC-0250) figure 1. With this current "probe" the jaws open so that it can be clamped around the conductor carrying the current to be measured without having to disconnect the conductor. Current probes such as this are designed for use in 50/60 Hz AC power applications. The LCTC-0250 probe has a current measuring range up to 100 Amps and a built-in current to voltage (burden) resistor so the output voltage is specified as 15mV/A.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -55,9 +54,8 @@ Directions:
 
 Wire the HPH1-1400L 6 winding coil as a 1:5 transformer as shown in figure 2 taking careful note of the winding polarity indicated by the dots. The single winding primary winding is driven by AWG channel A through the 6.2 Ω power resistor, RL. SMU channel B is used as a ground referenced ammeter to load the five winding secondary while measuring the current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -74,9 +72,8 @@ Procedure:
 
 Figure 3 is a screen capture of the current and voltage waveforms. We can see that the primary current, CHA-I, is 301 mA p-p, 106 mA RMS and the secondary current, CHB-I, is 60 mA p-p, 21 mA RMS. The ratio of the primary current to the secondary current is 5:1 as we would expect.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -85,18 +82,16 @@ Figure 3 is a screen capture of the current and voltage waveforms. We can see th
 
 Now replace the HPH1-1400L 202 uH six winding coil with the HPH1-0190L 27 uH six winding coil. How has the secondary current ratio changed? Increase the Channel A frequency to 10000 Hz. Does the higher frequency affect the secondary current?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4, HPH1-0190L current transformer waveforms at 1KHz
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig5.png
-   :align: center
-   :width: 600px
+   |image5|
 
 .. container:: centeralign
 
@@ -110,9 +105,8 @@ Testing a higher turns ratio:
 
 We can potentially make a higher turns ratio CT by wrapping a single turn of wire around one of the inductors from the Parts Kit. In figure 6 we show the LTspice simulation schematic of this using a 10 mH coil as the secondary winding. In the simulation we can adjust the primary inductance and the mutual inductance coupling factor to model the real circuit from figure 7
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -124,9 +118,8 @@ Materials:
 
 2.5 inches of solid core jumper wire 1 – 10 mH inductor 1 – 10 uH inductor 1 – 1 uH inductor 1 – AC coupling capacitor, any combination greater than 2200 uF 1 – 1 KΩ resistor 1 – AD8542 dual R-R op-amp (or AD8541 single op-amp)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -145,9 +138,8 @@ Many manufacturers make a range of current sense inductors that are a toroidal c
 
 The nice thing about using coil like this as a sense transformer is that you can choose any number of turns you want for the primary. Up to when the center hole is filled based on the gauge of the wire used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa1.png
-   :align: center
-   :width: 300px
+
+|image8|
 
 .. container:: centeralign
 
@@ -156,9 +148,9 @@ The nice thing about using coil like this as a sense transformer is that you can
 
 A current transformer with a built-in primary winding from CoilCraft is shown in figure A2. Since it is totally encapsulated, we can't tell how it is constructed. The design frequency range for this 200:1, 80 mH example is from 1 KHz to 1 MHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa2.png
-   :align: center
-   :width: 300px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -167,9 +159,9 @@ A current transformer with a built-in primary winding from CoilCraft is shown in
 
 In figure A3 we have a surface mount current sense transformer from Würth Elektronik. In this example the primary winding is simply the wide metal strap that goes up and around the central secondary winding. The manufacturer specifies the inductance for this 200:1, 20 mH example at 10 KHz so it probably is also not designed for lower frequency power line applications.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa3.png
-   :align: center
-   :width: 300px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -180,9 +172,8 @@ To test these current transformers the ALM1000 and the test circuit shown in fig
 
 For the clamp-on probe and the PE coil one of the longer wire jumpers from the Analog Parts kit is inserted through the center hole to use as the primary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa4.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -191,9 +182,9 @@ For the clamp-on probe and the PE coil one of the longer wire jumpers from the A
 
 The input frequency is swept from 20 Hz to 1 KHz in all the following tests. The first bode plot is for the LCTC clamp probe with a single wire through the clamp. Remember that the clamp has a built-in burden so the 100 ohm external resistor was not included for this test case. The magnitude response is very flat, within a dB down to 20 Hz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa5.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -202,9 +193,9 @@ The input frequency is swept from 20 Hz to 1 KHz in all the following tests. The
 
 Next up is the PE-51718. As we see the response below 1 KHz is not at all flat which is to be expected given the 20 KHz minimum frequency specification. The lighter set of curves are for one wire as primary and the darker set is for 4 turns as the primary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa6.png
-   :align: center
-   :width: 600px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -213,9 +204,9 @@ Next up is the PE-51718. As we see the response below 1 KHz is not at all flat w
 
 Next we have the CoilCraft CS4200V-01 and Würth Elektronik 750316796 examples. Both are 200:1 turns ratio. The darker curves are for the 80 mH CoilCraft device and the lighter curves are for the 20 mH Würth device. As expected the higher inductance of the CoilCraft device gives the better low frequency response. The CoilCraft device meets and exceeds its 1 KHz minimum frequency specification and the Würth device is probably only flat above a few KHz using this value of burden resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa7.png
-   :align: center
-   :width: 600px
+
+
+|image14|
 
 .. container:: centeralign
 
@@ -227,9 +218,8 @@ Electronic Burden, I to V converter
 
 One way to improve the frequency response of any current transformer is to replace the resistive burden with an electronic solution, i.e. an op-amp I to V conversion circuit. The single supply rail-rail AD8541 CMOS op-amp is used as an I to V converter as shown in figure A8. The virtual ground at the summing junction, pin 2, presents a very low impedance load on the secondary. The 1K feedback resistor converts the current into a voltage that is measured by channel B at pin 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa8.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -238,9 +228,9 @@ One way to improve the frequency response of any current transformer is to repla
 
 To test the frequency response using the op-amp the CoilCraft CS4200V-01 (dark trace) and Würth 750316796 (light trace) are again compared in figure A9. Note the vertical scale is now 3 dB/div. There is a huge improvement in the flatness of the response compared to figure A7 with less than a dB of roll off at 60 Hz. The CoilCraft response is now about as flat as the LCTC current probe in figure A5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa9.png
-   :align: center
-   :width: 600px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -258,9 +248,8 @@ As a real world example let's use the model LCTC-0250 clamp-on current sensor we
 
 The probe is connected directly to the input of an M1k without any additional amplification or filtering. As you can see in figure A10 the current is simple 1/2 wave rectification and the peak current is between 35 and 45 mA. Hard to see exactly with the noise and the signal is too small to trigger on properly and apply trace averaging.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa10.png
-   :align: center
-   :width: 600px
+
+|image17|
 
 .. container:: centeralign
 
@@ -269,9 +258,9 @@ The probe is connected directly to the input of an M1k without any additional am
 
 By applying some mathematical wizardry we are able to clean up the noise and make the "signal" big enough (by 10X) to trigger on and use trace averaging. A simple 20 tap box car digital filter with an overall gain of 10 is applied to the captured waveform trace and trace averaging is used (set to average 8). The waveform is nice and clean now and the p-p current is 42 mA.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa11.png
-   :align: center
-   :width: 600px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -283,3 +272,40 @@ By applying some mathematical wizardry we are able to clean up the noise and mak
 `Simulating Non-linear Transformers in LTspice <https://www.allaboutcircuits.com/technical-articles/simulating-non-linear-transformers-in-ltspice/>`_
 
 **Return to Power Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/power>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-fig7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa1.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa2.png
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa3.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa4.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa5.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa6.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa7.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa8.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa9.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa10.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-current-transformer-figa11.png
+   :width: 600px

@@ -44,7 +44,7 @@ More information
 ----------------
 
 -  :adi:`AD5449 Product Info <AD5449>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5449SDZ evaluation board user guide </static/imported-files/user_guides/UG-297.pdf>`
+-  :adi:`EVAL-AD5449SDZ evaluation board user guide <static/imported-files/user_guides/UG-297.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started
@@ -95,7 +95,7 @@ Hardware setup
 .. important::
 
    
-   To power on the EVAL-AD5449 evaluation board, you need to provide external +12V VDD and -12V VSS supply voltage used to power the output amplifier (for more information see: :adi:`EVAL-AD5449SDZ evaluation board user guide </static/imported-files/user_guides/UG-297.pdf>`) and a +5V supply used to power the DAC and transceivers.
+   To power on the EVAL-AD5449 evaluation board, you need to provide external +12V VDD and -12V VSS supply voltage used to power the output amplifier (for more information see: :adi:`EVAL-AD5449SDZ evaluation board user guide <static/imported-files/user_guides/UG-297.pdf>`) and a +5V supply used to power the DAC and transceivers.
 
 
 Reference Project Overview

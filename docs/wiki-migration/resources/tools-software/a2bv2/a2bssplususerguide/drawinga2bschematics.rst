@@ -10,7 +10,8 @@ The following steps describe the procedure to draw an A2B schematic in SigmaStud
 -  Drag and drop “AD24xx EVAL” standard platform or Custom Platform from Tree ToolBox, under “A2B” to “System” canvas.
 -  Drag an A2B-USBi or A2B-Aardvark Communication Adaptors, depending on the Host I2C adapter used to connect to the transceiver, and wire it to AD24xx block.
 -  Double click to the platform to get the list of components available for A2B platform. This will list “Generic Devices”, “Transceiver”, “Memory” and “Processor” for custom platform whereas standard platform it is read-only. USBi to main and peripheral interfaces can be changed by clicking in on the interface type shown below.
-   |image1|\
+
+|image1|
 
 .. container:: centeralign
 
@@ -19,14 +20,15 @@ The following steps describe the procedure to draw an A2B schematic in SigmaStud
 
 -  Drag icons from Tree Toolbox into canvas and connect the blocks to make an A2B schematic as shown in the below Figure.
    Select the variant by clicking on the drop-down present within custom platform.
-   |image2|\
+
+   |image2|
 
 .. container:: centeralign
 
    \ **Figure:** Selection of variant
 
 
-|image3|\
+   |image3|
 
 .. container:: centeralign
 
@@ -34,16 +36,24 @@ The following steps describe the procedure to draw an A2B schematic in SigmaStud
 
 
 -  Define and configure streams by right clicking the node and select the settings. User can also access the stream configuration from the Project window. For configuration details, refer :doc:`slot configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/stream-and-export-configurations>`.
-   |image4|\
+
+
+
+|image4|
+
+
 
 .. container:: centeralign
 
    \ **Figure :** A2B Stream configuration
 
 
-**Note:** Before Adding/updating the stream configuration, project has to be Link-Compiled.
+| **Note:** Before Adding/updating the stream configuration, project has to be Link-Compiled.
+
 -  Enter the properties for each A2B node by right clicking and selecting the “Open AD24xx-node Settings”. This will open a window as shown in the below Figure.
-   |image5|\
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -52,7 +62,8 @@ The following steps describe the procedure to draw an A2B schematic in SigmaStud
 
 -  Transceiver properties are grouped under different Tabs. Switch to the required Tab and configure as necessary. Configuration of Upstream and Downstream slots may vary depending on the Transceiver type selected. Refer :doc:`slot configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/stream-and-export-configurations>` for more details.
 -  Provide the silicon revision of the A2B Transceiver in the ‘ID’ tab of General View as shown in the below Figure. Optionally, a custom node identifier can be assigned to a Node by selecting the “Custom Node Identifier” checkbox. Refer :doc:`Custom Node ID based Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/transceiversetting>` for more details.
-   |image6|\
+
+|image6|
 
 .. container:: centeralign
 

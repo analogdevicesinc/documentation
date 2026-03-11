@@ -16,14 +16,16 @@ The AD8417RM-EVALZ accommodates the :adi:`AD8417` in the MSOP package, while the
 AD8417 Evaluation Board
 -----------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side of evaluation board.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 1. Component Side*\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -70,7 +72,9 @@ By default, the output of the evaluation board is biased at midsupply.
 Evaluation Board Schematic
 --------------------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ evaluation board schematic.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -80,14 +84,16 @@ Evaluation Board Schematic
 Evaluation Board Layout
 -----------------------
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side layout.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 4. Component Side Layout*\
 
 
-   |image5|
+   |image2|
 
 .. container:: centeralign
 
@@ -114,13 +120,7 @@ Bill of Materials
 | 1        | U1                   | 8-lead MSOP or 8-lead SOIC | AD8417WBRMZ or AD8417WBRZ |
 +----------+----------------------+----------------------------+---------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side of evaluation board.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ circuit side of evaluation board.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ circuit side of evaluation board.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ evaluation board schematic.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ component side layout.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ circuit side layout.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/AD8417RM-EVALZ circuit side layout.png
    :width: 400px

@@ -8,9 +8,8 @@ In this chapter we explore a number of example op amp configuration that are pre
 
 The very high forward gain (A\ :sub:`VOL`) and differential input nature of the operational amplifier can be used to create a nearly ideal voltage controlled current source or V-to-I converter. Note in figure 4.1, the input voltage to be converted is applied to the non-inverting input terminal of the op amp. The inverting input terminal is connected in feedback to one end of the resistor R\ :sub:`1` and the source of transistor M\ :sub:`1`. The output of the op-amp drives the Gate of the transistor. The high open loop gain of the amplifier will force the Gate of M\ :sub:`1` to the required voltage such that V\ :sub:`IN` appears across R\ :sub:`1`. The current in R\ :sub:`1` will thus be V\ :sub:`IN`/R\ :sub:`1` and will flow only in the Source of M\ :sub:`1` and also thus appear in the Drain of M\ :sub:`1`\ as I\ :sub:`OUT`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -28,9 +27,8 @@ Figure 4.1.1 shows a classic voltage to current (V-to-I) converter. The resistor
 
 The circuit has its limitations due in part to the requirement that the resistor ratios must be quite accurate to obtain a near ideal current source. Published literature describing the circuit provides design methods that are for special cases or are for approximate designs. In this chapter we explore simple design formulas that can be used to determine the component values that produce a near ideal current source. These formulas also provide a general method for calculating the output current, I\ :sub:`LOAD`, for any selection of resistor values, not just the constant-current selection. Usually in order to improve stability, the circuit is made symmetrical. Therefore R\ :sub:`1` = R\ :sub:`3`, R\ :sub:`2` = R\ :sub:`4`, and R\ :sub:`S` = R\ :sub:`S'`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -45,11 +43,11 @@ For a true current output, I\ :sub:`LOAD`, as a function of the input voltage, V
 
 The load current is:
 
-|image1|\ (1)
+|image3|\ (1)
 
 The Output impedance is:
 
-|image2|\ (2)
+|image4|\ (2)
 
 In equation 1, any four of the terms can be arbitrarily selected and then the fifth term is determined by solving the resulting equation. With R\ :sub:`1` = 150 kΩ, R\ :sub:`2` = 15 kΩ, R\ :sub:`S` = 50 Ω, and V\ :sub:`IN` can vary from 0 to 5 V, I\ :sub:`LOAD` will vary from 0 mA to 10 mA, and the circuit has a very high output impedance.
 
@@ -64,9 +62,8 @@ More details on the Howland current source can be found in :adi:`A large current
 
 A simple single resistor can be used to convert a current into a voltage but the voltage cannot be used directly to drive other parts of a system without potentially disturbing or altering the voltage. Often a buffer amplifier is required or the voltage may need to be shifter or "referred" to a different node (supply voltage or ground) in the circuit. Op amp circuits like those in figure 4.2 can perform this function.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -80,9 +77,8 @@ Two configurations are shown in figure 4.2. Version (a) produces an output volta
 
 The simple transistor based current mirror is covered in detail in Chapter 11. Here we introduce the op amp in the feedback loop of the diode connected transistor. The very large gain of the amplifier greatly reduced many of the sources of error found in the simple two transistor current mirror.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f4.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -98,9 +94,8 @@ Before the introduction of the transistor and the integrated circuit, coils of w
 
 The circuit in Figure 4.4 reverses the operation of a capacitor, thus making a simulated inductor. An inductor resists any change in its current, so when a dc voltage is applied to an inductance, the current rises slowly, and the voltage falls as the external resistance becomes more significant.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f5.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -124,18 +119,15 @@ There are some limitations of a simulated inductor like this:
 
 The all-pass filter passes all frequencies at the same gain. It is used to change the phase of the signal, and it can also be used as a phase-correction circuit. The circuit shown in figure 4.5 has a 90° phase shift at F(90°). At DC, the phase shift is 180°, and at high frequencies it is 0°. R\ :sub:`1` = R\ :sub:`2` = R\ :sub:`3` = R F(90°) = 1/(2?R\ :sub:`1`\ \*C\ :sub:`1`)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f6.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 4.5. All-Pass Filter Circuit
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f7.png
-   :align: center
-   :width: 600px
+   |image9|
 
 .. container:: centeralign
 
@@ -147,9 +139,8 @@ The all-pass filter passes all frequencies at the same gain. It is used to chang
 
 The negative impedance converter (NIC) is an op-amp circuit which acts as a negative load. This is achieved by introducing a phase shift of 180° (inversion) between the voltage and the current for a signal source. There are two versions of this circuit - with voltage inversion (VNIC) and with current inversion (INIC). The basic circuit of an INIC and its analysis is shown figure 4.7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f8.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -181,9 +172,8 @@ In general, elements R\ :sub:`1`, R\ :sub:`2`, and R\ :sub:`3` need not be pure 
 
 The circuit in figure 4.8(a) uses an op-amp and a small capacitor, C\ :sub:`1`, to simulate a much larger capacitor. It simulates the simple RC circuit of figure 4.8(b); the resistor R\ :sub:`2`\ is the same size as the resistor in the circuit being simulated (R\ :sub:`3`), but the capacitor C\ :sub:`1` is N times smaller than C\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f9.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -214,9 +204,8 @@ The time to come out of saturation of an overdriven op amp is likely to be consi
 
 The results of such experimental measurements should be regarded with suspicion and the values of propagation delay through the op amp comparator which is chosen for worst-case design calculations should be at least twice the worst value seen in any experiment.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f10.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -234,9 +223,8 @@ ECL is a very fast current steering logic family. It is unlikely that an op amp 
 
 R\ :sub:`1`, R\ :sub:`2` and R\ :sub:`3` are chosen so that when the op amp output is positive the level at the gate is -0.8 V, and when it is low it is -1.6 V. ECL is occasionally used with positive, rather than negative, supplies (often called PECL where the -5.2V rail is connected to ground and the ground is connected to a positive supply voltage), the same basic interface circuit may be used but the values must be recalculated. Using low resistance values for R\ :sub:`1`, R\ :sub:`2` and R\ :sub:`3` will minimize the effects of stray capacitance but at the same time will increase power consumption.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f11.png
-   :align: center
-   :width: 600px
+
+|image13|
 
 .. container:: centeralign
 
@@ -245,9 +233,9 @@ R\ :sub:`1`, R\ :sub:`2` and R\ :sub:`3` are chosen so that when the op amp outp
 
 Although CMOS and TTL input structures, logic levels, and current flows are quite different (although some versions of CMOS is specified to work with TTL input levels) the same interface circuitry will work perfectly well with both types of logic, since they both work for logic 0 near to 0V and logic 1 near to +5V or whatever the positive supply rail is for that logic family.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f12.png
-   :align: center
-   :width: 600px
+
+
+|image14|
 
 .. container:: centeralign
 
@@ -258,9 +246,8 @@ The simplest interface uses a single N-channel MOS transistor, M\ :sub:`1` and a
 
 By using two MOS devices, one P-channel and one N-channel, it is possible to make a CMOS/TTL interface using only two components which has no quiescent power consumption in either state (figure 4.16). Furthermore, it may be made inverting or non-inverting by simple positioning of components. It does, however, have a large current surge during switching, when both devices are on at once, and unless MOS devices with high channel resistance are used a current limiting resistor may be necessary to reduce this effect. It is also important, in this application and the one in figure 4.11, to use MOS devices with gate-source breakdown voltages, V\ :sub:`BGS`, greater than the output voltages of the comparator in either direction. A value of V\ :sub:`BGS` > ±25 V is common in MOS devices and is usually adequate, but many MOS devices contain gate protection diodes which reduce the value-these should not be used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f13.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -278,9 +265,8 @@ Other op amp designs contain more complex input circuitry, which only has high i
 
 Of course some comparator applications never involve large differential voltages-or if they do the comparator input impedance when large differential voltages are present is comparatively unimportant. In such cases it may be appropriate to use as a comparator an op amp whose input circuitry behaves non-linearly-but the issues involved must be considered, not just ignored.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f14.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
@@ -305,9 +291,8 @@ Although the simple voltage comparator circuit using either an ordinary operatio
 
 The problem can be solved very easily by adding some positive feedback to the operational amplifier or comparator circuit. This is provided by the addition of R\ :sub:`3` in the circuit in figure 4.14. The circuit is known as a Schmitt trigger. Resistor divider R\ :sub:`1` and R\ :sub:`2` set the comparison voltage at the non-inverting input of the op amp.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f15.png
-   :align: center
-   :width: 500px
+
+|image17|
 
 .. container:: centeralign
 
@@ -326,7 +311,37 @@ The fact that the positive feedback applied within the circuit ensures that ther
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e2.png
    :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e3.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e3.png
    :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f4.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f5.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f6.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f7.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f8.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f9.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f10.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f11.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f12.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f13.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f14.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f15.png
+   :width: 500px

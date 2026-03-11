@@ -36,7 +36,9 @@ The A2B Plugin for SigmaStudio+ gives the following default platforms for the us
    -  **AD242x:** This can be used for Main/Sub Node Emulation or Bus Monitoring of 242x transceiver variants on the A2B Bus Analyzer Hardware
    -  **AD243x:** This can be used for Main/Sub Node Emulation or Bus Monitoring of 243x transceiver variants on the A2B Bus Analyzer Hardware
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tree_toolbox_.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -77,16 +79,16 @@ The transceivers and peripheral settings window can be opened by double clicking
 
 .. container:: centeralign
 
-   |image2| **Figure:** A2B transceivers and generic devices
+   |image1| **Figure:** A2B transceivers and generic devices
 
    
-   |image3| **Figure:** General View
+   |image2| **Figure:** General View
    
-   |image4| **Figure:** Register View
+   |image3| **Figure:** Register View
    
-   |image5| **Figure:** Node Level Stream View
+   |image4| **Figure:** Node Level Stream View
    
-   |image6| **Figure:** Crossbar View Tab
+   |image5| **Figure:** Crossbar View Tab
 
 
 Network Properties
@@ -94,9 +96,8 @@ Network Properties
 
 The Network Properties tab, as shown in :doc:`Figure 61 </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-a>`, offers configurable options for the target processor software. With these settings one can select the node discovery and initialization method to be used and the clock source for the A2B network.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/network_settings_tab.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -138,17 +139,17 @@ The Refresh |image7| button checks and updates the discovery status of connected
    The Network Properties can also be updated using Thrift. For more information you can refer to :doc:`Thrift Document </wiki-migration/resources/tools-software/a2bv2/quickstartguide/thriftuserguide/networkproperties>`.
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tree_toolbox_.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/a2b_transceivers_and_generic_devices.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/general_view.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/register_view.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/node_level_stream_view.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crosbar_view.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/network_settings_tab.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/a2b_transceivers_and_generic_devices.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/general_view.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/register_view.png
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/node_level_stream_view.png
-   :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crosbar_view.png
-   :width: 500px
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/refresh.png
    :width: 20px

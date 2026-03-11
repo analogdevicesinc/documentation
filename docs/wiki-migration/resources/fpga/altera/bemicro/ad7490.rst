@@ -304,10 +304,10 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |Read operations time diagram| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/read_timing_ad7490.png
    :width: 500px
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/write_timing_ad7490.png
    :width: 500px
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

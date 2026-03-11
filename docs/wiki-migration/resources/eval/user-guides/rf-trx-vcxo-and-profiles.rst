@@ -267,7 +267,7 @@ ADRV9009 Transceiver Evaluation Software
 
 After figuring out the HDL, download the transceiver evaluation software from this page, form the **ADRV9008/ADRV9009 Evaluation Software with GUI for Evaluation Board** section:
 
-:adi:`en/design-center/landing-pages/001/transceiver-evaluation-software`.html
+:adi:`en/design-center/landing-pages/001/transceiver-evaluation-software.html`
 
 The image below contains the first page of the configuration panel. Here you will have to set the device to adrv9009, the desired device clock frequency, the channels that you want to enable and the profile for each of these channels.
 

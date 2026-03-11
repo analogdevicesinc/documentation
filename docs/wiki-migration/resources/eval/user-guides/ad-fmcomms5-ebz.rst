@@ -23,7 +23,7 @@ Note that the AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base boa
 Table of Contents
 =================
 
-`ad-fmcomms5-ebz.ashx <https://wiki.analog.com/_media/http///www.analog.com/-/media/analog/en/evaluation-board-images/images/ad-fmcomms5-ebz.ashx>`_
+`ad-fmcomms5-ebz.ashx <http://www.analog.com/-/media/analog/en/evaluation-board-images/images/ad-fmcomms5-ebz.ashx>`_
 
 -  :doc:`Introduction </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
 -  :doc:`FMCOMMS5 Hardware </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/hardware>`: This provides a brief description of the AD-FMCOMMS5-EBZ board by itself, and is a good reference for those who want to understand a little more about the board. If you just want to use the board, you can skip this section, and come back to it when you want to incorporate the AD9361 into your product.

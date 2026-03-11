@@ -10,18 +10,18 @@ The LabVIEW VI documentation is available on `GitHub <https://analogdevicesinc.g
 Releases
 ========
 
-Always use the latest release VI Package from the :git-libm2k-labview:`releases page <releases/latest>`.
+Always use the latest release VI Package from the `releases page <https://github.com/analogdevicesinc/libm2k-labview/releases/latest>`_.
 
 Installing
 ==========
 
--  The first step is to install libm2k using the Windows system installer. Go to :git-libm2k:`libm2k release page <releases/latest>` or use the `nightly builds <https://ci.appveyor.com/project/analogdevicesinc/libm2k>`_.
+-  The first step is to install libm2k using the Windows system installer. Go to `libm2k release page <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ or use the `nightly builds <https://ci.appveyor.com/project/analogdevicesinc/libm2k>`_.
 
 The LabVIEW wrapper is available only starting from official version v0.4.0.
 
 In the libm2k system installer, check the "Install wrapper for LabVIEW bindings" box. The base library and the wrapper will be installed in your system.
 
--  Download the latest ADALM2000 VI Package from the Release section on the following page: `ADALM2000 LabVIEW repository <https://github.com/analogdevicesinc/libm2k-labview>`_.
+-  Download the latest ADALM2000 VI Package from the Release section on the following page: :git-libm2k-labview:`ADALM2000 LabVIEW repository <libm2k-labview>`.
 
 Load the VIP package in the VI Package Manager, install the package. After that, there will be a new palette, named Analog Devices -> ADALM2000, in LabVIEW.
 
@@ -56,7 +56,7 @@ Support
 
 For support questions please post them on EngineerZone under the :ez:`Virtual Classroom Forum <adieducation/university-program>`.
 
-If you find any bugs please report them on the :git-libm2k:`libm2k issues tracker on GitHub <issues>`.
+If you find any bugs please report them on the `libm2k issues tracker on GitHub <https://github.com/analogdevicesinc/libm2k/issues>`_.
 
 Examples and LabVIEW palette
 ============================

@@ -107,7 +107,7 @@ Test Procedure
 -  On test station display the following image should be visible:
 -
 
-|guides:pzsdr:carriers:packrf:start_screen.jpg|
+|guides-pzsdr-carriers-packrf-start_screen.jpg|
 
 -  Select option 1 to begin "Pre Assembly Test"
 -  Communication with device under test is established and test should start.
@@ -165,7 +165,7 @@ Test Procedure
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/packrf_test_jig.jpg
    :width: 600px
-.. |guides:pzsdr:carriers:packrf:start_screen.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/start_screen.png
+.. |guides-pzsdr-carriers-packrf-start_screen.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/start_screen.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/pre_assemb_fail.jpg
    :width: 600px
@@ -175,3 +175,5 @@ Test Procedure
    :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/rf_test.png
    :width: 600px
+
+.. |guides-pzsdr-carriers-packrf-start_screen.jpg| image:: https://wiki.analog.com/_media/guides/pzsdr/carriers/packrf/start_screen.jpg

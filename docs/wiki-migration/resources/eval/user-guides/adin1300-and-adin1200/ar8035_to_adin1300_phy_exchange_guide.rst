@@ -110,8 +110,12 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/7_ar8035_mii_mac_interface_mode_pin_comparison_table5.png
-         
+
+   
+      ..
+
+   |image1|
+
          **RMII Interface**
 
          
@@ -142,7 +146,7 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          
          Both devices have a number of strapping options to enable managed or unmanaged configurations of the PHY function such as PHY address, mode of operation, Auto-Negotiation and MAC Interface. After power on, the strapping pin voltages get sensed and latched upon existing from a reset and the sensed voltages are used to set the personality of the PHY. When configuring any strapping configurations, ensure to review the default state of the MAC side, whether the pins are being driven when coming out of reset or if there are internal pulls. Understanding the behavior on the MAC side is key to ensuring there are no conflicts with the hardware strapping implemented, or to adjust the strapping resistor values if required. The ADIN1300 uses a mix of 2-level and 4-level strapping options. The AR8035 just uses 2-level strapping. In general, strapping pins are multi-functional and have different operation after the device is brought out of reset. The ADIN1300 has internal pull downs on many of its strapping pins (not all), therefore it would be possible to minimize external strapping resistors.
          
-         |image1| |image2|
+         |image2| |image3|
          
          Strapping configurations are very specific to the device, consult the respective datasheets to determine the exact configuration for required use case.
          
@@ -158,8 +162,12 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/12_forced_speeds_table9.png
-         
+
+   
+      ..
+
+   |image4|
+
          **Hardware Configuration of Auto-MDIX**
 
          
@@ -297,5 +305,7 @@ The following list summarizes an RGMII auto negotiate, 10 Mbps, 100 Mbps, or 100
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/18_rgmii_auto_neg_10_100_and_1000_mbps_with_full_and_half_duplex_figure5.png
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/9_adin1300_hw_strapping_2_and_4_level_figure3.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/10_4level_strapping_resistor_ratios_table7.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/7_ar8035_mii_mac_interface_mode_pin_comparison_table5.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/9_adin1300_hw_strapping_2_and_4_level_figure3.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/10_4level_strapping_resistor_ratios_table7.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/12_forced_speeds_table9.png

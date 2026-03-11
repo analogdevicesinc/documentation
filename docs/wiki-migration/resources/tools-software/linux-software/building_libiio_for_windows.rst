@@ -3,7 +3,7 @@ Building libiio in Visual Studio
 
 .. note::
 
-   Unless you really, really want to - don't do this. There are pre-compiled :git-libiio:`binaries <releases/latest>` available for end users to use in their projects. If you are struggling with the binaries - :ez:`ask/complain <linux-software-drivers>`. It's the only way we understand what users are looking for.
+   Unless you really, really want to - don't do this. There are pre-compiled `binaries <https://github.com/analogdevicesinc/libiio/releases/latest>`_ available for end users to use in their projects. If you are struggling with the binaries - :ez:`ask/complain <linux-software-drivers>`. It's the only way we understand what users are looking for.
 
    
    You shouldn't really need to follow any of these instructions - the instructions are mainly there for libiio developers wanting to keeps some notes, so they remember how to do things.

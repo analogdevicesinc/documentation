@@ -96,9 +96,8 @@ A small script on the Pluto SDR (or host) will demonstrate:
 
 by placing a scope on the GPO0 and GPO1 pins, you can see the levels switch, as the Pluto transitions between Receive and Transmit.
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/gpo_rx_tx.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. hint::
 
@@ -180,3 +179,6 @@ The :doc:`Advanced Tab </wiki-migration/resources/tools-software/linux-software/
 
 .. [1]
    If you want to delay the assertion of these pins by ``n`` μs, that can be done with the ``gpo0-rx-delay-us`` or ``gpo0-tx-delay-us`` attributes (which we don't cover here
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/gpo_rx_tx.png
+   :width: 600px

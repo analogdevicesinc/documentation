@@ -332,7 +332,7 @@ UART
 Libm2k and no-OS drivers
 ========================
 
-Analog Devices offers a variety of `No-OS drivers <https://github.com/analogdevicesinc/no-os>`_ for a variety peripherals in a hardware agnostic format. These drivers can be interfaced with the libm2k in order to use the M2K as a master to configure/use the peripheral. Documentation for the drivers available :doc:`here </wiki-migration/resources/no-os/drivers>`.
+Analog Devices offers a variety of :git-no-os:`No-OS drivers <no-os>` for a variety peripherals in a hardware agnostic format. These drivers can be interfaced with the libm2k in order to use the M2K as a master to configure/use the peripheral. Documentation for the drivers available :doc:`here </wiki-migration/resources/no-os/drivers>`.
 
 In order to integrate libm2k with no-OS drivers some standard steps must be followed:
 

@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5686 Product Info <AD5686R>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5686RSDZ evaluation board user guide </static//imported-files/user_guides/UG-459.pdf>`
+-  :adi:`EVAL-AD5686RSDZ evaluation board user guide <static//imported-files/user_guides/UG-459.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

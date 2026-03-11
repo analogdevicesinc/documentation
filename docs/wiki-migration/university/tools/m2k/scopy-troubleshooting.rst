@@ -48,7 +48,7 @@ If you are having trouble connecting through USB, you can always connect to the 
 Make sure you have the latest firmware
 --------------------------------------
 
-Visit the ADALM2000 firmware page :git-m2k-fw:`releases`.
+Visit the ADALM2000 firmware page https://github.com/analogdevicesinc/m2k-fw/releases.
 
 Compare the latest firmware version on this page with the one you have installed. Follow :doc:`these steps </wiki-migration/university/tools/m2k/common/firmware>` to update the firmware.
 
@@ -74,7 +74,7 @@ Some laptops limit the amount of current that can be delivered via an USB port (
 Run iio_info -a for board diagnostics
 -------------------------------------
 
-Download latest version of :git-libiio:`releases` .
+Download latest version of https://github.com/analogdevicesinc/libiio/releases .
 
 Open a command prompt and run
 

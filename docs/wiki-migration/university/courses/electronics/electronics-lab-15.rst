@@ -26,9 +26,8 @@ Simple inductor and switch DC/DC Converter:
 
 Build the circuit in figure 1 on your solder-less breadboard. Note that in this inductor based DC to DC converter the spikes of current needed may exceed the limits of the on-board +5V supply of ADALM2000 and cause it to shut down. You should use a standalone wall powered bench supply or batteries. You can use a 1N4001 or a 1N3064 for the rectifier diode. Start with a load resistance of 100kΩ and a switching frequency of 10 kHz which can be supplied by AWG1. What is the DC voltage of the "boosted" output? Record the value for your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -49,9 +48,8 @@ Directions:
 
 The breadboard connections for the regulated version are as shown in figure 2. The DMM should be connected to measure the voltage at V\ :sub:`OUT`. The +5V bench power supply should be connected to the V\ :sub:`IN` node. The output of the arbitrary waveform generator, serving as a DC reference voltage, drives the positive input of the comparator at pin 3. The digital clock output drives the second input of the first NAND gate at pin 2. Scope input 2+ (single ended) is connected to the output of the comparator at pin 6. Diode D\ :sub:`2` is not required if a power FET, such as the IRF510, is used because devices such as that have the diode built in.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f2a.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -96,9 +94,8 @@ Directions:
 
 The breadboard connections are as shown in the diagram below. The DMM should be connected to measure the voltage at V\ :sub:`OUT` . The +5V bench power supply should be connected to the V\ :sub:`IN` node. The output of the waveform generator drives the negative input of the comparator at pin 2. The digital clock output drives the second input of the NAND gate at pin 5. Scope input 2+ (single ended) is connected to the output of the comparator at pin 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f3a.png
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
@@ -125,9 +122,8 @@ Circuit Additions:
 
 What sort of circuit could you make to generate the 100 KHz square wave other than using the digital clock output on the ADALM2000 board? There are two additional gates in the 74HC00 package. The other two NAND gates along with RC delay network, R\ :sub:`4` C\ :sub:`4` can be configured into a ring oscillator as shown below. The values for R\ :sub:`4` and C\ :sub:`4` are approximate for 100 KHz and can be adjusted as needed.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f4.png
-   :align: center
-   :width: 450px
+
+|image4|
 
 .. container:: centeralign
 
@@ -139,9 +135,8 @@ Questions:
 
 What other types of oscillator circuits might be used to generate the 100 KHz square wave? The DC reference voltage from the waveform generator output of the ADALM2000 board could be replaced by the band-gap reference circuit from Activity 8 in this series. The +5V supply can be connected where reference input is shown in the diagram and R\ :sub:`1` and R\ :sub:`2` adjusted to produce the desires reference voltage ( where 2+ is shown ) to be used at the plus input of the LM2901 comparator.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -158,9 +153,8 @@ Appendix: Making an NAND / AND gate with the CD4007 transistor array
 
 Below is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 420px
+
+|image6|
 
 .. container:: centeralign
 
@@ -169,9 +163,9 @@ Below is the schematic and pinout for the CD4007:
 
 As shown in figure 7, one 2 input NAND gate and one inverter can be built from one CD4007 package. Configure the NAND gate as shown below by connecting pins 12 and 13 together as the NAND output. Pin 14 and pin 11 is connected to V\ :sub:`DD` for power and pin 7 V\ :sub:`SS` to ground. Pin 9 should be tied to pin 8 to complete N side of the NAND gate. Pin 6 will be the A input and pin 10 will be the B input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f7.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -183,3 +177,18 @@ The Inverter is made by connecting pin 2 to V\ :sub:`DD`, pin 4 to V\ :sub:`SS`,
 An AND gate is made by connecting the output of the NAND at pins 12 and 13 to the inverter input at pin 3.
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f2a.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f3a.png
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f4.png
+   :width: 450px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 420px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a15_f7.png
+   :width: 600px

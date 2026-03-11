@@ -10,4 +10,4 @@ When the De-Emphasis block is used on audio recorded with pre-emphasis, its sign
 
 This block is ready to use, with no need (or ability) to add or grow algorithms.
 
-.. |deemphasispic1.png| image:: https://wiki.analog.com/_media/deemphasispic1.png
+.. |deemphasispic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/deemphasispic1.png

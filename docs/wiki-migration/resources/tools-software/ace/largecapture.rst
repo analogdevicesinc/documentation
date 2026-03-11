@@ -9,23 +9,33 @@ Preparing your Laptop or PC for Large Captures
 -  Ensure you have at least 100GB of free disk space and at least 16GB of RAM.
 -  Navigate to "System" in Control Panel (Windows 10)
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_152927.png
+   :align: center
+   :width: 400px
 
 -  Go to "Advanced System Settings"
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_153421.png
+   :align: center
+   :width: 400px
 
 -  Go to Performance and Settings
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_153421.png
+   :align: center
+   :width: 400px
 
 -  Go to Advanced and Select "Change"
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_154148.png
+   :align: center
+   :width: 400px
 
 -  Choose the option to "Automatically manage paging file..."
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_154333.png
+   :align: center
+   :width: 400px
 
 .. important::
 
@@ -55,14 +65,3 @@ ACE Plug-ins that Support Large Captures
 We will add to this list as we are informed of plug-in updates, this is not authoritative, always check for plug-in and ACE updates.
 
 -  AD9208
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_152927.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_153421.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_153421.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_154148.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/screenshot_2021-07-01_154333.png
-   :width: 400px

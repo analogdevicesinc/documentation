@@ -9,9 +9,8 @@ The :adi:`AD9082` or :adi:`AD9081` (“MxFE”) are ideal digitizers for this wi
 
 The ADI Frequency Planning Utility tool was used to determine the optimal :adi:`AD9082` ADC sample rate, IF sampling frequency, and IF bandwidth. A 6GSPS ADC rate allows for maximum instantaneous bandwidth (IBW) and complete avoidance of HD2 aliasing in-band for a 1GHz signal bandwidth centered at 4.5GHz (2nd Nyquist). The figure below illustrates this.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. important::
 
@@ -19,3 +18,6 @@ The ADI Frequency Planning Utility tool was used to determine the optimal :adi:`
 
 
 The :adi:`ADF4377` integrated PLL/VCO is an ideal choice for generating the MxFE sample clock. The [adi>ADF4377]] can generate a clean, low-jitter clock from 800MHz up to 12.8GHz, and it's differential outputs are capable of directly driving the MxFE clock pins.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png
+   :width: 600px

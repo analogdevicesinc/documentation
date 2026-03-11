@@ -8,14 +8,14 @@ Files included in the AD9789 Update:
 
 -  SPI Application
 -  DPGDownloader Panel
--  `Quick Start Guide <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789_evaluation_board_quick_start_guide.pdf>`_
+-  `Quick Start Guide <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789_evaluation_board_quick_start_guide.pdf>`_
 -  :adi:`AD9789 Data Sheet <static/imported-files/data_sheets/AD9789.pdf>`
--  :adi:`AD9789 IBIS Model </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9789.ibs>`
--  `Schematic <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_schematic.pdf>`_
--  `Bill of Materials <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_bom_customer.xls>`_
--  `PCB Gerber files <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_gerber_files.zip>`_
+-  :adi:`AD9789 IBIS Model <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9789.ibs>`
+-  `Schematic <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_schematic.pdf>`_
+-  `Bill of Materials <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_bom_customer.xls>`_
+-  `PCB Gerber files <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_gerber_files.zip>`_
 -  `PCB BRD file <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva.brd>`_
--  `PCB Layout PDF <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_layout.pdf>`_
+-  `PCB Layout PDF <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9789/ad9789-ebz_reva_layout.pdf>`_
 
 Download the `AD9789 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9789_1.0.4686.26799.exe>`_
 

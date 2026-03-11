@@ -34,9 +34,8 @@ ADALM1000 hardware module Jumper Wires 1 - 470Ω resistor 1 - LED, any color is 
 
 Connect the 470Ω and the LED to the channel A waveform generator (AWG1) and ground. Measure the input voltage waveform with the CA-V scope trace. It is not necessary to measure the voltage across the LED in this experiment. CH A is connected to the left end of the resistor and GND is connected to the bottom (-) end of the LED. The circuit is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -45,9 +44,9 @@ Connect the 470Ω and the LED to the channel A waveform generator (AWG1) and gro
 
 Set up the CH A waveform generator in SVMI mode and so that it produces a square shape waveform at a frequency of 2 Hz, with Max voltage = 5V and Min voltage = 0V. That is, the pulses go from 0 to 5 V. Be sure that the Sync AWG box is not checked. The waveform generator window should look like the one in figure 2. The AWG CH B settings do not matter except that it should be in Hi-Z mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-2.png
-   :align: center
-   :width: 400px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -69,9 +68,8 @@ Low Pass Filtering to Average PWM Output
 
 In this part of the activity you will use a simple RC low pass filter to measure the apparent "DC" average of a PWM signal. Configure the circuit on your solderless as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -92,9 +90,8 @@ Pulse Width Modulated Sine wave
 
 One of the built-in arbitrary waveforms in ALICE is a pulse width modulated sine wave. From the AWG CH A Shapes drop down, select the PWM Sine shape (figure 4). The Min and Max entries set the low and high voltages as with the simple square wave. The Freq entry sets the frequency of the sine wave. What was the duty cycle entry now sets the width of the PWM signal (should now be labeled PWidth). The number entered sets the number of master clock (100KSPS) samples per pulse, X 100. This effectively sets the PWM carrier frequency. 50 is a good place to start.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-4.png
-   :align: center
-   :width: 200px
+
+|image4|
 
 .. container:: centeralign
 
@@ -103,9 +100,9 @@ One of the built-in arbitrary waveforms in ALICE is a pulse width modulated sine
 
 Click on the green Run button to start the AWG generator and describe what you see as you observe the PWM signal in the channel A trace and the filtered output in the channel B trace. You may need to adjust the Horizontal time/Div settings to display a couple of cycles of the sine wave. You should see something like figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-5.png
-   :align: center
-   :width: 700px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,9 +122,8 @@ Going further with PWM - flickering LEDs.
 
 Most of flameless LED candles are quite simple circuits. They consist of nothing more than an on/off switch, a 3V coin cell battery and the special flickering LED. The flickering effect is produced by an integrated pulse width modulation (PWM) circuit, inside the special LED as shown in figure 6. These flickering LEDs are a perfect way to demonstrate PWM in action both visually and with the ADALM1000 scope.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -136,9 +132,9 @@ Most of flameless LED candles are quite simple circuits. They consist of nothing
 
 After extracting the LED from the plastic candle housing insert the LED in your solder-less breadboard along with a 220 Ω current limiting resistor as shown in figure 7. Each time that the LED circuit turns on, current is drawn from the power supply, channel A set to DC 5 V, and through the 220 Ω resistor R\ :sub:`1` to ground. To observe the voltage across R\ :sub:`1` we can connect scope channel B, in Hi-Z mode to the resistor as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-7.png
-   :align: center
-   :width: 450px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -147,9 +143,9 @@ After extracting the LED from the plastic candle housing insert the LED in your 
 
 The LED is on most of the time and is switched off in a pulse width modulated fashion in bursts that make it appear dimmer or to flicker. When the LED is on the current through the LED causes a voltage drop across R\ :sub:`1` raising the voltage to about 2.5 V in the case of the LED that was used in this example and the 220 Ω resistor. Your particular LED may work slightly different. The current through the LED is much smaller when it is off thus the voltage across R\ :sub:`1` goes down to nearly 0 V. So the PWM current through the LED will appear as a PWM voltage that swings from 0 to 2.5V as we see for the channel B voltage trace in figure 8. In the figure we also displayed the Channel A current trace which as expected looks much like the voltage across the resistor. From this we measure the current to be a little over 10 mA when the LED is on and zero as we would expect when off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-8.png
-   :align: center
-   :width: 700px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -160,9 +156,8 @@ From this screen shot we can see one of the PWM bursts. It is 32 pulses long for
 
 The next two screen shots, figures 9 and 10, are close-ups of the beginning and end of a burst. From figure 9 we can measure the pulse width and period. For this burst the pulses are low (LED off) for 0.944 mS and high (LED on) for 2.278 mS for a total period of 3.222 mS or 310 Hz. The duty cycle comes out to be about a 70%.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-9.png
-   :align: center
-   :width: 700px
+
+|image9|
 
 .. container:: centeralign
 
@@ -171,9 +166,9 @@ The next two screen shots, figures 9 and 10, are close-ups of the beginning and 
 
 The end of a different burst shown in figure 10 has a lower duty cycle but the same 310 Hz frequency.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-10.png
-   :align: center
-   :width: 700px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -182,9 +177,9 @@ The end of a different burst shown in figure 10 has a lower duty cycle but the s
 
 Figure 11 is another close up screen shot showing the chip transitioning from one pulse width to another. We can also see that the frequency (310 Hz) does not change as the pulse width changes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-11.png
-   :align: center
-   :width: 700px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -203,9 +198,8 @@ Extra related links:
 
 Another thing you can do is make another normal LED flicker in sync with the special LED. Connect a regular Red LED from the kit in series with the flicker LED as shown in figure 12. Be sure to note the proper polarity for the second LED. A lower value resistor will be needed because of the larger total voltage drop of the series combination of the two LEDs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-12.png
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -215,3 +209,28 @@ Another thing you can do is make another normal LED flicker in sync with the spe
 Why does the second LED flicker as well? Does it matter what order the LEDs and resistor are connected?
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-4.png
+   :width: 200px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-5.png
+   :width: 700px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-7.png
+   :width: 450px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-8.png
+   :width: 700px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-9.png
+   :width: 700px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-10.png
+   :width: 700px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-11.png
+   :width: 700px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-pwm-fig-12.png
+   :width: 500px

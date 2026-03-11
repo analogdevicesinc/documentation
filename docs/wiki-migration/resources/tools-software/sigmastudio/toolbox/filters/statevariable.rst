@@ -28,4 +28,4 @@ The following describes how the DSP uses input parameters to calculate the filte
 
 :math:`H_{BPF}(z) = f - f z^{-1} / D(z)` :math:`H_{HPF}(z) = 1 - 2z^{-1} + z^{-2} / D(z)` :math:`H_{LPF}(z) = f^2 z^{-1} / D(z)`
 
-.. |statepic1.png| image:: https://wiki.analog.com/_media/statepic1.png
+.. |statepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/statepic1.png

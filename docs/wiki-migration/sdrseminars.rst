@@ -3,30 +3,30 @@ Software-Defined Radio Workshops
 
 For those attending the PlutoSDR workshop, hosted by ADI, MathWorks and RichardsonRFPD. In order to make your experience better (less installing software while others are using the hardware) please have the following software installed on your machine:
 
-All attendees should have received instructions to install `MATLAB <https://www.mathworks.com//campaigns/products/trials.html?prodcode=CM>`_. If not, please use this `this link <https://www.mathworks.com//campaigns/products/trials.html?prodcode=CM>`_ and then install the `support package <https://www.mathworks.com//hardware-support/adalm-pluto-radio.html>`_. You will also need some additional software from ADI. Please install libIIO, libad9361, and IIO-Scope based on your operating system:
+All attendees should have received instructions to install `MATLAB <https://www.mathworks.com/campaigns/products/trials.html?prodcode=CM>`_. If not, please use this `this link <https://www.mathworks.com/campaigns/products/trials.html?prodcode=CM>`_ and then install the `support package <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html>`_. You will also need some additional software from ADI. Please install libIIO, libad9361, and IIO-Scope based on your operating system:
 
 -  **Windows**
 
-   -  **The** :git-plutosdr-m2k-drivers-win:`PlutoSDR driver <releases>`. Download the latest PlutoSDR-M2k-USB-Drivers.exe file.
-   -  **The** :git-libiio:`libiio <releases/latest>` **Library**. Download the latest libiio-xxxxx-windows-setup.exe file.
-   -  :git-iio-oscilloscope:`IIO-Scope <releases>`. Download the latest adi-osc-setup.exe file.
+   -  **The** `PlutoSDR driver <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`_. Download the latest PlutoSDR-M2k-USB-Drivers.exe file.
+   -  **The** `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`_ **Library**. Download the latest libiio-xxxxx-windows-setup.exe file.
+   -  `IIO-Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_. Download the latest adi-osc-setup.exe file.
 
 -  **Linux**
 
-   -  **The** :git-libiio:`libiio <releases/latest>` **Library** : Pick your Linux distribution from the list :git-libiio:`here <releases/latest>`.
+   -  **The** `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`_ **Library** : Pick your Linux distribution from the list `here <https://github.com/analogdevicesinc/libiio/releases/latest>`_.
 
-      -  Source available here: https://github.com/analogdevicesinc/libiio. If you want to build from source, feel free; master works fine.
+      -  Source available here: :git-libiio:`libiio`. If you want to build from source, feel free; master works fine.
 
-   -  **libad9361-iio library** : You will need the https://github.com/analogdevicesinc/libad9361-iio library.
+   -  **libad9361-iio library** : You will need the :git-libad9361-iio:`libad9361-iio` library.
 
       -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
-   -  **IIO-Scope:** Linux users will need to build from `source <https://github.com/analogdevicesinc/iio-oscilloscope>`_. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+   -  **IIO-Scope:** Linux users will need to build from :git-iio-oscilloscope:`source <iio-oscilloscope>`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
 
 -  **MAC**
 
-   -  **The** :git-libiio:`libiio <releases/latest>` **Library** : Select the PKG closest to your version of macOS for **libiio v0.17**. :git-libiio:`High Sierra 10.13.6 <releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.13.6.pkg>` or :git-libiio:`Sierra 10.12.6 <releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.12.6.pkg>`. Mojave will work fine with the High Sierra release.
-   -  **The** :git-libad9361-iio:`libad9361 <releases/latest>` **Library** : :git-libad9361-iio:`macOS Version <releases/download/v0.2/libad9361-0.2.pkg>`
+   -  **The** `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`_ **Library** : Select the PKG closest to your version of macOS for **libiio v0.17**. `High Sierra 10.13.6 <https://github.com/analogdevicesinc/libiio/releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.13.6.pkg>`_ or `Sierra 10.12.6 <https://github.com/analogdevicesinc/libiio/releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.12.6.pkg>`_. Mojave will work fine with the High Sierra release.
+   -  **The** `libad9361 <https://github.com/analogdevicesinc/libad9361-iio/releases/latest>`_ **Library** : `macOS Version <https://github.com/analogdevicesinc/libad9361-iio/releases/download/v0.2/libad9361-0.2.pkg>`_
    -  **IIO-Scope:** use brew. ``brew install tfcollins/homebrew-formulae/i-i-o-oscilloscope``
 
       -  To launch IIO-Scope run this from a terminal: ``osc``

@@ -139,12 +139,8 @@ No-OS Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`adgs1408 source and header files <drivers/mux/adgs1408>`
    
-   |adgs1408 source and header files|
 
-.. |adgs1408 source and header files| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/mux/adgs1408`
 
 

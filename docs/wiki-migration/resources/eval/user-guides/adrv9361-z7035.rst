@@ -113,7 +113,7 @@ Table of Contents
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`
 -  Videos and Webinars
 
-   -  `Radio Deployment on SoC Platforms <https://www.mathworks.com//videos/radio-deployment-on-soc-platforms-1513346830203.html>`_
+   -  `Radio Deployment on SoC Platforms <https://www.mathworks.com/videos/radio-deployment-on-soc-platforms-1513346830203.html>`_
 
 Warning
 -------

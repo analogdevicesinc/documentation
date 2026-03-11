@@ -8,9 +8,8 @@ The term amplifier as used in this chapter means a circuit (or stage) using a si
 
 The basic amplifier, figure 9.1, has two ports and is characterized by its gain, input impedance and output impedance. An ideal amplifier has infinite input impedance (R\ :sub:`in` = ∞), zero output impedance (R\ :sub:`out` = 0) and infinite gain (A\ :sub:`vo` = ∞) and infinite bandwidth if desired.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -32,9 +31,8 @@ Building-block amplifier stages:
 
 The common emitter/source amplifier is one of three basic single-stage amplifier topologies. The BJT and MOS versions function as an inverting voltage amplifier and are shown in figure 9.2. The base or gate terminal of the transistor serves as the input, the collector or drain is the output, and the emitter or source is common to both input and output (it may be tied to the ground reference or the power supply rail), which gives rise to its common name.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,18 +48,15 @@ In comparison to the BJT common emitter amplifier, the FET common source amplifi
 
 In order for the common emitter or source amplifier to provide the largest output voltage swing, the voltage at the Base or Gate terminal of the transistor is offset in such a way that the transistor is nominally operating halfway between its cut-off and saturation points. Note the NMOS (a) and NPN (b) characteristic curves in figure 9.2.1. This allows the amplifier stage to more accurately reproduce the positive and negative halves of the input signal superimposed upon the DC Bias voltage. Without this offsetting Bias Voltage only the positive half of the input waveform would be amplified.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
    (a) NMOS
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f4.png
-   :align: center
-   :width: 500px
+   |image4|
 
 .. container:: centeralign
 
@@ -83,9 +78,8 @@ The first bias technique we will explore is called voltage divider bias and is s
 
 The actual values of R\ :sub:`1` and R\ :sub:`2` are not so important just their ratio. However, the divider ratio we choose will be correct for only one set of conditions of power supply voltage, transistor threshold voltage and transconductance, and temperature. Actual designs often use more involved bias schemes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -100,9 +94,8 @@ There is another minor inconvenient problem with this bias scheme when it is con
 
 One way to make this scheme work, although it may not be obvious why it will work, is to place a coupling capacitor between the input voltage source and the voltage divider as in figure 9.2.3 below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -118,9 +111,8 @@ With only the AC signal source in effect, and a capacitor with an arbitrarily lo
 
 To calculate the small signal voltage gain of the common emitter or source amplifier we need to insert a small signal model of the transistor into the circuit. The small signal models of the BJT and MOS FET are actually very similar so the gain calculation for either version is much the same. The small signal hybrid-π models for the BJT and MOS amplifiers are shown in figure 9.2.4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f7.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -129,12 +121,12 @@ To calculate the small signal voltage gain of the common emitter or source ampli
 
 The following are some of the key model equations we will need to calculate the amplifier stage voltage gain. These equations are used for the other amplifier configurations that we will discuss in following sections as well.
 
-(BJT)\ |image1| (MOS)\
+(BJT)\ |image8| (MOS)\
 
 
-|image2|
+|image9|
 
-|image3| |image4|
+|image10| |image11|
 
 The small signal voltage gain A\ :sub:`v` is the ratio of the input voltage to the output voltage:
 
@@ -156,10 +148,10 @@ Rearranging for the gain we get:
 
 Substituting the BJT and MOS g\ :sub:`m` equations we get:
 
-(BJT)\ |image5| (MOS)\
+(BJT)\ |image12| (MOS)\
 
 
-|image6|
+|image13|
 
 Comparing these two gain equations we see that they both depend on the DC collector or drain currents. The BJT gain is inversely proportional to V\ :sub:`T` (the Thermal Voltage) which is approximately 26mV at room temperature. The Thermal Voltage, V\ :sub:`T` increases with increasing temperature so from the equation we see that the gain will actually decrease with increasing temperature. The MOS gain is inversely proportional to the over drive voltage, V\ :sub:`ov` (V\ :sub:`GS` – V\ :sub:`th`) which is often much larger than V\ :sub:`T` at similar drain currents leading to the lower gain for the MOS stage vs. the BJT stage for approximately equal bias currents.
 
@@ -175,10 +167,10 @@ Again looking at the small signal models in figure 9.2.4 we see that for the BJT
 
 Again looking at the small signal models in figure 9.2.4 we see that for both the BJT case and the MOS case the output impedance is the parallel combination of R\ :sub:`L` and r\ :sub:`o`. For most practical applications we can ignore r\ :sub:`o` because it is very often much larger than R\ :sub:`L`. Below are the BJT and MOS r\ :sub:`o` equations.
 
-(BJT)\ |image7| (MOS)\
+(BJT)\ |image14| (MOS)\
 
 
-|image8|
+|image15|
 
 9.2.5 common emitter and source Lab Activities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,9 +184,8 @@ Again looking at the small signal models in figure 9.2.4 we see that for both th
 
 The Current Follower or Common base/gate amplifier has a high voltage gain, relatively low input impedance and high output impedance compared to the voltage follower or common collector/drain amplifier. The BJT and MOS versions are shown in figure 9.3
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f8.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
@@ -213,9 +204,8 @@ The common gate or base stage is most often used in combination with the common 
 
 To calculate the small signal voltage gain of the common base or gate amplifier we insert the small signal model of the transistor into the circuit. The small signal models for the BJT and MOS amplifiers are shown in figure 9.3.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f9.png
-   :align: center
-   :width: 500px
+
+|image17|
 
 .. container:: centeralign
 
@@ -231,7 +221,7 @@ It is perhaps more useful to consider the current gain of the current follower s
 
 Again looking at the small signal models in figure 9.3.1 we see that for the BJT case the input V\ :sub:`in` will see r\ :sub:`π`\ in parallel with the series combination of g\ :sub:`m` and R\ :sub:`L` as a load. For the MOS case V\ :sub:`in` will see basically just the series combination of g\ :sub:`m` and R\ :sub:`L`. The equation below (from the BJT small signal T model) relates g\ :sub:`m` and the resistance seen at the emitter r\ :sub:`E`. We can also use this relationship to give us the resistance seen at the source r\ :sub:`S`.
 
-|image9| (also r\ :sub:`S` for MOS)
+|image18| (also r\ :sub:`S` for MOS)
 
 It is also important to note here that 100% (neglecting I\ :sub:`B` in the BJT case) of the current from the input source flows through the transistor and becomes the output current. Thus the name current follower.
 
@@ -247,9 +237,8 @@ Again looking at the small signal models in figure 9.3.1 we see that for both th
 
 The Emitter or Source follower is often called a common Collector or Drain amplifier because the collector or drain is common to both the input and the output. This amplifier configuration, figure 9.4, has its output taken from the emitter/source resistor and is useful as an impedance matching device since its input impedance is much higher than its output impedance. The voltage follower is also termed a "buffer" for this reason.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f10.png
-   :align: center
-   :width: 500px
+
+|image19|
 
 .. container:: centeralign
 
@@ -268,9 +257,8 @@ The collector/source current is basically determined by the emitter/source resis
 
 To calculate the small signal voltage gain of the voltage follower configuration we insert the small signal model of the transistor into the circuit. The small signal models for the BJT and MOS amplifiers are shown in figure 9.4.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f11.png
-   :align: center
-   :width: 500px
+
+|image20|
 
 .. container:: centeralign
 
@@ -286,9 +274,8 @@ Example 9.4.2 Calculating the Voltage Gain
 
 For the circuit in figure 9.4.2 calculate the voltage gain A\ :sub:`V` = V\ :sub:`out`/V\ :sub:`in`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f12.png
-   :align: center
-   :width: 500px
+
+|image21|
 
 .. container:: centeralign
 
@@ -313,7 +300,7 @@ To use this formula we need to know I\ :sub:`E`. We know that the voltage across
 (BJT)\
 
 
-|image10|
+|image22|
 
 9.4.4 Output impedance, Voltage Follower (common collector or drain)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -340,9 +327,8 @@ Referring back to our gain example in figure 9.4.2, we can also calculate the ou
 
 Common emitter/source amplifiers give the amplifier an inverted output and can have a very high gain and can vary widely from one transistor to the next. The gain is a strong function of both temperature and bias current, and so the actual gain is somewhat unpredictable. Stability is another problem associated with such high gain circuits due to any unintentional positive feedback that may be present. Other problems associated with the circuit are the low input dynamic range imposed by the small-signal limit; there is high distortion if this limit is exceeded and the transistor ceases to behave like its small-signal model. When negative feedback is introduced, many of these problems are reduced, resulting in improved performance. There are several ways to introduce feedback in this simple amplifier stage, the easiest and most reliable of which is accomplished by introducing a small value resistor in the emitter circuit (R\ :sub:`E`). This is also referred to as series feedback. The amount of feedback is dependent on the relative signal level dropped across this resistor. The signal seen across R\ :sub:`E` is out of phase with the signal seen at V\ :sub:`out` and thus subtracts from V\ :sub:`out` reducing its amplitude. When the emitter resistor value approaches that of the collector load resistor (R\ :sub:`L`), the gain will approach unity (A\ :sub:`v` ~ 1).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f16.png
-   :align: center
-   :width: 500px
+
+|image23|
 
 .. container:: centeralign
 
@@ -359,9 +345,8 @@ There are some BJT biasing rules of thumb:
 
 We are given the following for circuit in figure 9.5.1, V\ :sub:`CC` = 20V ; I\ :sub:`E` = 2mA ; β = 100. From our rules of thumb we set V\ :sub:`B` = 1/3\*V\ :sub:`CC` = 6.7 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f17.png
-   :align: center
-   :width: 500px
+
+|image24|
 
 .. container:: centeralign
 
@@ -393,9 +378,8 @@ So to find R\ :sub:`L` we have: R\ :sub:`L` = (V\ :sub:`CC` – V\ :sub:`C`)/I\ 
 
 To calculate the small signal voltage gain of the common emitter/source amplifier with the addition of emitter/source degeneration we again insert the small signal model of the transistor into the circuit. The small signal models for the BJT and MOS amplifiers are shown in figure 9.5.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f18.png
-   :align: center
-   :width: 500px
+
+|image25|
 
 .. container:: centeralign
 
@@ -404,7 +388,7 @@ To calculate the small signal voltage gain of the common emitter/source amplifie
 
 The impedance R\ :sub:`E` reduces the overall transconductance g\ :sub:`m` of the circuit by a factor of g\ :sub:`m`\ R\ :sub:`E` + 1, which makes the voltage gain:
 
-|image11| (when g\ :sub:`m`\ R\ :sub:`E` >> 1)
+|image26| (when g\ :sub:`m`\ R\ :sub:`E` >> 1)
 
 So the voltage gain depends almost exclusively on the ratio of the resistors R\ :sub:`L` / R\ :sub:`E` rather than the transistor’s intrinsic and unpredictable characteristics. The distortion and stability characteristics of the circuit are thus improved at the expense of a reduction in gain.
 
@@ -435,9 +419,8 @@ Basically the same techniques used in the simple common emitter/source amplifier
 
 The small signal voltage gain of the common emitter amplifier with the emitter resistance is approximately R\ :sub:`L` / R\ :sub:`E`. For cases when a gain larger than 5-10 is needed, R\ :sub:`E` may be become so small that the necessary good biasing condition, V\ :sub:`E` = R\ :sub:`E`\ \*I\ :sub:`E` > 10\* V\ :sub:`T` cannot be achieved. A way to restore the small signal voltage gain while maintaining the desired DC operating bias is to use a by-pass capacitor as is figure 9.5.4. The small AC signal sees an emitter resistance of just R\ :sub:`E1` while for DC bias the emitter resistance is the series combination of R\ :sub:`E` = R\ :sub:`E1`\ +R\ :sub:`E2`. Calculations for the common emitter amplifier with emitter degeneration can be applied here by replacing R\ :sub:`E` with R\ :sub:`E1` when deriving the amplifier gain, and input and output impedances, because a sufficiently large bypass capacitor in effects shorts R\ :sub:`E2`\ and is effectively removed from the circuit for sufficiently high frequency inputs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f19.png
-   :align: center
-   :width: 500px
+
+|image27|
 
 .. container:: centeralign
 
@@ -460,9 +443,8 @@ where R’\ :sub:`E`\ = R\ :sub:`E2` \|\| (R\ :sub:`E1` + r\ :sub:`e`)
 
 For our example problem with R\ :sub:`E1` = 1K , R\ :sub:`E2` = 2K and C\ :sub:`1` = 1uF we get the frequency for the zero equal to 80 Hz and the frequency for the pole equal to 237 Hz. The simulated frequency response from 1 Hz to 100 KHz for the example circuit is shown in figure 9.5.5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f20.png
-   :align: center
-   :width: 500px
+
+|image28|
 
 .. container:: centeralign
 
@@ -479,7 +461,7 @@ For our example problem with R\ :sub:`E1` = 1K , R\ :sub:`E2` = 2K and C\ :sub:`
 
 At this point we are going to take a diversion to discuss Miller’s Theorem. While the methods we have been using up to this point are completely general, there are certain configurations that lend themselves to be analyzed more simply by Miller’s Theorem. Miller’s theorem states that in a linear circuit, if there is a branch where an impedance Z, connects two nodes with node voltages V\ :sub:`1`\ and V\ :sub:`2`, this branch can be replaced by two other branches connecting the corresponding nodes to ground by impedances respectively Z / (1-K) and KZ / (K-1), where the gain from node 1 to node 2 is K = V\ :sub:`2` / V\ :sub:`1`.
 
-|image12| |image13|
+|image29| |image30|
 
 .. container:: centeralign
 
@@ -488,9 +470,9 @@ At this point we are going to take a diversion to discuss Miller’s Theorem. Wh
 
 At this point we will go through the steps that show how the Miller impedances are arrived at. We can use the equivalent two-port network technique to replace the two-port represented in figure 9.6.1(a) to its equivalent in figure 9.6.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f23.png
-   :align: center
-   :width: 350px
+
+
+|image31|
 
 .. container:: centeralign
 
@@ -499,9 +481,9 @@ At this point we will go through the steps that show how the Miller impedances a
 
 Replacing the voltage sources in figure 9.6.2 with their Norton equivalent current sources we get figure 9.6.3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f24.png
-   :align: center
-   :width: 500px
+
+
+|image32|
 
 .. container:: centeralign
 
@@ -510,9 +492,9 @@ Replacing the voltage sources in figure 9.6.2 with their Norton equivalent curre
 
 Using the source absorption theorem (see the Appendix at the end of this chapter), we get figure 9.6.4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f25.png
-   :align: center
-   :width: 500px
+
+
+|image33|
 
 .. container:: centeralign
 
@@ -521,9 +503,9 @@ Using the source absorption theorem (see the Appendix at the end of this chapter
 
 Which gives us figure 9.6.5 (which is figure 9.6.1(b) ) when we parallel combine the two impedances.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f26.png
-   :align: center
-   :width: 500px
+
+
+|image34|
 
 .. container:: centeralign
 
@@ -535,9 +517,8 @@ Which gives us figure 9.6.5 (which is figure 9.6.1(b) ) when we parallel combine
 
 Another biasing technique for the common emitter or source amplifier, called shunt feedback, is accomplished by the introduction of some fraction of the collector or drain signal back to the input at the base or gate. This is done via the biasing resistor (R\ :sub:`F`), as shown in figure 9.7.1. Resistor R\ :sub:`F` connects between two nodes that have gain, A\ :sub:`V` (K), between them and thus the application of Miller’s theorem is the best way analyze the small signal characteristics of this circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f27.png
-   :align: center
-   :width: 500px
+
+|image35|
 
 .. container:: centeralign
 
@@ -602,9 +583,8 @@ For the amplifier shown in figure 9.7.2(a) with a DC coupled input source V\ :su
 
 If we use Miller’s theorem to replace the feedback resistor R\ :sub:`F` with its two equivalent impedances we get figure 9.7.2(b). Assuming that the voltage gain from base to collector A\ :sub:`V` is significantly greater than 1 we can make the simplification that A\ :sub:`V`/(A\ :sub:`V`-1) is close to 1. The effective load resistance, R\ :sub:`Leq` we will use to calculate the gain will be 10KΩ||62.7KΩ or 8.62KΩ. Now we can use the same common emitter or source small signal gain equations we used in section 9.2.2. The 430uA collector currents gives us a g\ :sub:`m` of 430uA/25mV or 0.0172. We know that A\ :sub:`V` = -g\ :sub:`m`\ R\ :sub:`Leq` or A\ :sub:`V` = -0.0172\*8.62K = -148 which is >> 1. The input resistance seen at the base of Q\ :sub:`1` will be the r\ :sub:`π`\ of Q\ :sub:`1`, which is equal to β/g\ :sub:`m` or 100/0.0172 = 5.814KΩ, in parallel with the Miller resistance 62.7KΩ/149 = 421Ω thus the effective input resistance, R\ :sub:`base` will be about 392.5Ω.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f28.png
-   :align: center
-   :width: 500px
+
+|image36|
 
 .. container:: centeralign
 
@@ -628,9 +608,8 @@ Part 1 DC operating point:
 
 For the circuit in figure 9.7.3 calculate the required R\ :sub:`F` to bias the DC operating point such that V\ :sub:`out` is equal to ½ the supply voltage or +5V when Vin = 0. Assume V\ :sub:`BE` = 0.65V and β = 200.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f29.png
-   :align: center
-   :width: 350px
+
+|image37|
 
 .. container:: centeralign
 
@@ -646,9 +625,8 @@ Given the value for R\ :sub:`F` calculated in part 1 calculate the voltage gain 
 
 The Miller effect is key to predicting the frequency response of an inverting amplifier stage where capacitive feedback is included. Typically there’s a low-pass pole in the voltage gain stage created by R\ :sub:`S` of the signal source and a feedback capacitor C\ :sub:`C`. But, the low pass cutoff is not simply determined by R\ :sub:`S` and C\ :sub:`C`. The Miller effect creates an effective capacitance at the base/gate of the transistor that appears as C\ :sub:`C` scaled by the amplifier’s voltage gain.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f30.png
-   :align: center
-   :width: 500px
+
+|image38|
 
 .. container:: centeralign
 
@@ -661,9 +639,8 @@ Equivalent Circuit
 
 Here’s a simplified version of the circuit above.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f31.png
-   :align: center
-   :width: 500px
+
+|image39|
 
 .. container:: centeralign
 
@@ -685,9 +662,8 @@ We can now calculate the -3 dB frequency and unity gain (0dB) frequency for a fe
 
 The unity gain frequency is approximately equal to :
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f32.png
-   :align: center
-   :width: 500px
+
+|image40|
 
 .. container:: centeralign
 
@@ -696,9 +672,9 @@ The unity gain frequency is approximately equal to :
 
 The circuit in figure 9.7.5 was simulated and the AC frequency response from 1 Hz to 1 MHz is plotted in figure 9.7.6. The gain from V\ :sub:`in` to V\ :sub:`out` in dB is 20Log(A\ :sub:`V`) or about 38 dB. The -3 dB frequency in this case would be where the gain curve crosses 35 dB (~263 Hz) and the unit gain frequency would be where the gain curve crosses the 0 dB line (~21.7 KHz ). The simulation results are in reasonably close agreement with our approximate hand calculations. For our hand calculations we assumed that R\ :sub:`1` was sufficiently larger than R\ :sub:`S` so it could be ignored and likewise the r\ :sub:`π` of Q\ :sub:`1` was large enough to not materially affect R\ :sub:`S`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f33.png
-   :align: center
-   :width: 500px
+
+
+|image41|
 
 .. container:: centeralign
 
@@ -720,9 +696,8 @@ The source absorption theorem has two dual forms: the voltage source absorption 
 
 The voltage source absorption theorem states that if, in one branch of the circuit with current I, there is a voltage source controlled by I, the source can be replaced by a simple impedance with value equal to the source controlling factor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f34.png
-   :align: center
-   :width: 500px
+
+|image42|
 
 .. container:: centeralign
 
@@ -733,9 +708,8 @@ The proof is trivial. An impedance Z where a current I flows has the same voltag
 
 The current source absorption theorem states that if, in one branch of the circuit there is a current source controlled by a voltage V, the source can be replaced by a simple admittance with value equal to the source controlling factor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f35.png
-   :align: center
-   :width: 500px
+
+|image43|
 
 .. container:: centeralign
 
@@ -749,9 +723,8 @@ Example A1: Finding the Emitter Resistance using Source absorption theorem
 
 Figure A9.3 shows the small signal equivalent circuit model of a transistor. Find the resistance Rin looking into the emitter (with base and collector at small signal AC grounds).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f36.png
-   :align: center
-   :width: 500px
+
+|image44|
 
 .. container:: centeralign
 
@@ -775,9 +748,7 @@ AT1 Diode bias generation
    Figure AT1.1 Inserting a Diode connected device in the bias divider
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f38.png
-   :align: center
-   :width: 500px
+   |image45|
 
 .. container:: centeralign
 
@@ -790,29 +761,93 @@ AT1 Diode bias generation
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e2.png
    :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e3.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e3.png
    :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e4.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e4.png
    :width: 100px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e5.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e5.png
    :width: 150px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e9.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e9.png
    :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e10.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e10.png
    :width: 200px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e11.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e11.png
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e12.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e12.png
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f8.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f9.png
+   :width: 500px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png
    :width: 200px
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e16.png
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f10.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f11.png
+   :width: 500px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f12.png
+   :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e16.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e17.png
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f16.png
+   :width: 500px
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f17.png
+   :width: 500px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f18.png
+   :width: 500px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e17.png
    :width: 290px
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f21.png
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f19.png
+   :width: 500px
+.. |image28| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f20.png
+   :width: 500px
+.. |image29| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f21.png
    :width: 350px
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f22.png
+.. |image30| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f22.png
    :width: 350px
+.. |image31| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f23.png
+   :width: 350px
+.. |image32| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f24.png
+   :width: 500px
+.. |image33| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f25.png
+   :width: 500px
+.. |image34| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f26.png
+   :width: 500px
+.. |image35| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f27.png
+   :width: 500px
+.. |image36| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f28.png
+   :width: 500px
+.. |image37| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f29.png
+   :width: 350px
+.. |image38| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f30.png
+   :width: 500px
+.. |image39| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f31.png
+   :width: 500px
+.. |image40| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f32.png
+   :width: 500px
+.. |image41| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f33.png
+   :width: 500px
+.. |image42| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f34.png
+   :width: 500px
+.. |image43| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f35.png
+   :width: 500px
+.. |image44| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f36.png
+   :width: 500px
+.. |image45| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f38.png
+   :width: 500px

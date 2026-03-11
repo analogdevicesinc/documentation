@@ -27,7 +27,7 @@ Test Setup Functional Block Diagram
 Power Rails Efficiency Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block.png
 
 .. note::
 
@@ -37,12 +37,14 @@ Power Rails Efficiency Measurements
 Ripple and Transient Response Measurements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block2.png
+
+
+
 
 .. note::
 
    - Channel A of the oscilloscope monitors the output voltage of the module - Channel B monitors the voltage across the 0.1 Ω current sense resistor, which is proportional to the load current - Electronic load should be set to "switch" mode with preset amplitude and frequency
-
 
 
 
@@ -133,7 +135,7 @@ Driver Installation
 -  Install the USB-SDP-CABLEZ driver
 -  Open the file setup.exe located at the path \\ADMxxxx Run-Time Installer\\Installer\\Volume\\setup.exe
 
-|image3|
+|image1|
 
 .. tip::
 
@@ -141,16 +143,15 @@ Driver Installation
    It is recommended that you install the software to the default directory.
 
 
--  Follow the on-screen prompts to install the software\
+-  Follow the on-screen prompts to install the software
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb2.png
 
 -  Plug in the USB-SDP-CABLEZ into your PC or labtop using the USB cable.
--  Windows will automatically find the new hardware(USB-SDP-CABLEZ) plugged the into the PC.\
+-  Windows will automatically find the new hardware(USB-SDP-CABLEZ) plugged the into the PC.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/newdevice.png
+   :align: center
 
 Sequencer Software Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,7 +166,7 @@ Sequencer Software Installation
 
 
 
-|image6|
+|image2|
 
 .. tip::
 
@@ -173,13 +174,20 @@ Sequencer Software Installation
 
 
 -  Follow the on-screen prompts to install the software.
-   |image7|\ |image8|\ |image9|\ |image10|
+   |image3|\ |image4|\ |image5|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft5.png
+   :align: center
+
 -  Install Graphviz.
 
-|image11|
+
+|image6|
 
 -  Upon completion, follow the on-screen promps to install the prog106x Setup Application Software
-   |image12|\ |image13|\ |image14|\ |image15|
+   |image7|\ |image8|
+
+|image9| |image10|
 
 .. note::
 
@@ -195,16 +203,17 @@ Generating new hex file using Super Sequencer Software
 
 -  Open SuperSequencerSoftwareEval.exe installed in PC
 
-
-|image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sequencer_icon.png
+   :width: 300px
 
 -  Assuming all the new configurations and controls were already done on the software, on the main window go to File and click Save Settings to File
 
-|image17|
+
+|image11|
 
 -  Select Create Intel Hex File and click Save
 
-|image18|
+|image12|
 
 -  Once completed saving, you now have a new hex file to download to ADM1066
 
@@ -212,9 +221,10 @@ Downloading Firmware for ADM1066
 --------------------------------
 
 -  Copy the eeprom file i.e. ADM1066_SuperSequencing_REVB.hex in the root directory on Disk C: (i.e. C:\\ADM1066_SuperSequencing_REVB.hex)
--  Plug USB to I2C converter dongle into the USB port on your PC. Plug the other side of the cable into the JP1 on the right side of the EVAL-CN0190-EB1Z.\
+-  Plug USB to I2C converter dongle into the USB port on your PC. Plug the other side of the cable into the JP1 on the right side of the EVAL-CN0190-EB1Z.
 
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usbtosdp.png
+   :align: center
 
 
 
@@ -229,9 +239,10 @@ Downloading Firmware for ADM1066
 
 
 -  Turn on the power to the supply of EVAL-CN0190-EB1Z
--  Open the Command Prompt (C:\\Windows\\System32\\cmd.exe)\
+-  Open the Command Prompt (C:\\Windows\\System32\\cmd.exe)
 
-|image20|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cmd.png
+   :align: center
 
 -  In the cmd.exe, key the command ``prog106x download 6A c:\ADM1066_SuperSequencing_REVB.hex`` and Press Enter
 
@@ -240,11 +251,11 @@ Downloading Firmware for ADM1066
    ADM1066_SuperSequencing_REVB.hex file name might be different, depends on the user
 
 
--  The on-chip EEPROM of ADM1066 is successfully programmed if the picture below is shown on the screen after several seconds.\
+-  The on-chip EEPROM of ADM1066 is successfully programmed if the picture below is shown on the screen after several seconds.
 
-
-
-|program.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/program.png
+   :alt: program.png
+   :align: center
 
 -  Remove power or turn off the power supply on (), then re-apply the power supply in order to make ADM1066 update the program from embedded EEPROM.
 
@@ -274,25 +285,15 @@ Registration
 
 // End of document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/block2.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb1.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb2.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/newdevice.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft1.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft2.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft3.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft4.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft5.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft6.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft7.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft8.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft9.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft10.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sequencer_icon.png
-   :width: 300px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/savesettings.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hexfile.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usbtosdp.png
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cmd.png
-.. |program.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/program.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/usb1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft4.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft7.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft8.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft9.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/soft10.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/savesettings.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/hexfile.png

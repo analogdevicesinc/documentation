@@ -37,14 +37,15 @@ Connection Diagram
 Board Interface
 ~~~~~~~~~~~~~~~
 
--  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.\
+-  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
+   :width: 600px
 
-|image1|
+-  Connect the ADF7030-1 Daughter card to the AD-GEAR-DISPLAY1Z via the expansion's radio connectors.
 
--  Connect the ADF7030-1 Daughter card to the AD-GEAR-DISPLAY1Z via the expansion's radio connectors.\
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/gear_radio_connection.png
+   :width: 600px
 
 Pin Connection
 ~~~~~~~~~~~~~~
@@ -92,7 +93,7 @@ Software Architecture
 The software architecture for the ADF7030-1 applications is depicted below
 
 
-|image3|
+|image1|
 
 - The system specific APIs like SPI, UART, GPIO etc and present in the ADuCM302x-Rel2.0.0 BSP .
 
@@ -125,9 +126,5 @@ References and Links
 -  :adi:`ADF7030-1 Software Reference Manual <media/en/technical-documentation/user-guides/ADF7030-1-UG-1002.pdf>`
 -  :adi:`ADF7030-1 Hardware Reference Manual <media/en/technical-documentation/user-guides/ADF7030-1-UG-957.pdf>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/gear_radio_connection.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/adf7030_flow.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/adf7030_flow.png
    :width: 800px

@@ -157,7 +157,9 @@ The latest version of ACE is available from www.analog.com/ace. Simply download 
    Final installer step, click Finish to complete the installation.
 
 
-   |image7|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/userguide/page_7.png
+   :align: center
+   :width: 600px
 
 .. raw:: html
 
@@ -207,6 +209,4 @@ Use the Quickstart Guides below to understand how to launch the ACE application 
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/userguide/page_5.png
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ace/userguide/page_6.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/ace/userguide/page_7.png
    :width: 600px

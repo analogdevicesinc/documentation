@@ -38,13 +38,18 @@ EVAL-ADPAQ3029 - First application [RGB LED]
 -  Build and flash the firmware binary (\*.bin) as explained :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/fw_dev>`
 -  Deploy the tile application as explained\ :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/tile_dev>`
 -  Launch the ``Moduware`` app and pair to the gateway (Mini Dev board)
--  Now you should be able to see tile with ``DevMod``.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile5.png>`_
--  Long Press on the ``DevMod`` Tile. Select the ``RGB LED`` tile. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/app1.png>`_
--  The tile of the RGBLED app which was uploaded earlier will appear as shown in the image.\
+-  Now you should be able to see tile with ``DevMod``.
 
-|image1|
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile5.png>`_
+
+-  Long Press on the ``DevMod`` Tile. Select the ``RGB LED`` tile.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app1.png>`_
+
+-  The tile of the RGBLED app which was uploaded earlier will appear as shown in the image.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app2.png
+   :align: center
+   :width: 400px
 
 -  Test the application using GUI, by pressing R, G and B color buttons to observe change in the LED color in ADPAQ Dev module.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app2.png
-   :width: 400px

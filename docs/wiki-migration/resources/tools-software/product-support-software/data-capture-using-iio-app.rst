@@ -121,8 +121,8 @@ Saving Captured Data
 
 The data on IIO oscilloscope can be saved for further processing and analysis. The data is saved using a .csv format. The data can be captured for each selected channel during save option and only requested number of samples can be saved. So if 400 samples are requested, the data for only 400 samples would get saved into .csv file. The data is raw adc data and no extra processing is performed it while saving or capturing.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg
-   :align: center
+
+|image1|
 
 .. note::
 
@@ -140,11 +140,11 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
    IIO Oscilloscope installer for Windows (Use below link):
 
    
-   -  :git-iio-oscilloscope:`IIO Oscilloscope windows installer (.exe) <releases>`
+   -  `IIO Oscilloscope windows installer (.exe) <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
    
    Libiio installer for Windows (Use below link):
    
-   -  :git-libiio:`libiio windows installer (.exe) <releases>`
+   -  `libiio windows installer (.exe) <https://github.com/analogdevicesinc/libiio/releases>`_
    
 
 
@@ -266,10 +266,13 @@ Saving Captured Data
 
 The data on IIO oscilloscope can be saved for further processing and analysis. The data is saved using a .csv format. The data can be captured for each selected channel during save option and only requested number of samples can be saved. So if 400 samples are requested, the data for only 400 samples would get saved into .csv file. The data is raw adc data and no extra processing is performed it while saving or capturing.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg
-   :align: center
+
+|image2|
 
 .. note::
 
    For detailed guide on using IIO based firmware applications, refer :doc:`AD7606 IIO Application code </wiki-migration/resources/tools-software/product-support-software/ad7606_mbed_iio_application>`. Feel free to consult Analog Devices Engineer-Zone for feature requests, feedback, bug-reports etc.
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg

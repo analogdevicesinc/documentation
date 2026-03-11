@@ -43,7 +43,7 @@ On the development host
 
 ::
 
-   git clone https://github.com/analogdevicesinc/linux.git
+   git clone :git-linux:`linux`
 
 or do a git pull in the existing repository.
 

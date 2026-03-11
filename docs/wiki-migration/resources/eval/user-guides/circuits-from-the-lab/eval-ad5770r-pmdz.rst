@@ -43,13 +43,7 @@ The pins of connector P5 are mapped to the supply pins of the AD5770R. By defaul
 
 An external power supply can be used for AVDD/DVDD instead of the system power if jumper P2 is open.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p2.png
-   :align: center
-   :width: 200px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p2_table.png
-   :align: center
-   :width: 600px
+|image1| |image2|
 
 .. important::
 
@@ -103,13 +97,7 @@ Pins 5 to 6 of connector P6 are mapped to the current output pins of the AD5770R
 
 If IDAC0 is configured to sink current, jumpers P3 and P4 should be open and external voltage supplies must be applied to the AVEE and PVEE pins on P6.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p3_p4.png
-   :align: center
-   :width: 200px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p3-p4_table.png
-   :align: center
-   :width: 600px
+|image3| |image4|
 
 .. important::
 
@@ -168,3 +156,12 @@ Registration
 
 
 // End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p2.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p2_table.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p3_p4.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-ad5770r-pmod/eval_ad5770r_pmdz_p3-p4_table.png
+   :width: 600px

@@ -38,9 +38,8 @@ The Band Width of frequencies rejected is given by:
 
 All the frequencies below f\ :sub:`L`\ and above f\ :sub:`H` are allowed to pass and the frequencies between are attenuated by the filter. The series combination of an L and C as shown in figure 1 is such a filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -59,9 +58,8 @@ OR
 
 To show how a circuit responds to a range of frequencies a plot of the magnitude ( amplitude ) of the output voltage of the filter as a function of the frequency can be drawn. It is generally used to characterize the range of frequencies in which the filter is designed to operate within. Figure 2 shows a typical frequency response of a Band Pass filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -78,9 +76,8 @@ Procedure:
 
 1. Set up the filter circuit as shown in figure 1 on your solderless breadboard, with the component values R\ :sub:`1` = 1 KΩ, C\ :sub:`1` = 0.1 µF, L\ :sub:`1` =20 mH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bsf_bb.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -116,9 +113,8 @@ You should now be able to press the green Run button and run the frequency sweep
 
 Record the results and save the Bode Plot using your favorite screen shot capture tool.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-screen1.png
-   :align: center
-   :width: 700px
+
+|image4|
 
 .. container:: centeralign
 
@@ -142,3 +138,12 @@ Questions:
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` `RLC Band-stop Filter Design Tool <http://sim.okawa-denshi.jp/en/RLCtool.php>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bsf_bb.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-screen1.png
+   :width: 700px

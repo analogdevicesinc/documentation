@@ -6,13 +6,13 @@ ADI maintains a set of tools to interface with ADI RF and microwave devices with
 Quick Start with Toolbox
 ------------------------
 
-The current stable Toolbox can be downloaded from the :git-RFMicrowaveToolbox:`RF Microwave Toolbox GitHub Release Page <releases>`. Download the latest mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. RF Microwave Toolbox" will appear in your `Add-Ons Explore <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
+The current stable Toolbox can be downloaded from the `RF Microwave Toolbox GitHub Release Page <https://github.com/analogdevicesinc/RFMicrowaveToolbox/releases>`_. Download the latest mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. RF Microwave Toolbox" will appear in your `Add-Ons Explore <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
 
 .. admonition:: Download
    :class: download
 
    
-   -  :git-RFMicrowaveToolbox:`Analog Devices Inc, RF Microwave Toolbox Release Page <releases>`
+   -  `Analog Devices Inc, RF Microwave Toolbox Release Page <https://github.com/analogdevicesinc/RFMicrowaveToolbox/releases>`_
    
 
 
@@ -25,7 +25,7 @@ Libiio Installers
    :class: download
 
    
-   -  :git-libiio:`Installers and source for latest stable build <releases>`
+   -  `Installers and source for latest stable build <https://github.com/analogdevicesinc/libiio/releases>`_
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
@@ -66,7 +66,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone https://github.com/analogdevicesinc/RFMicrowaveToolbox.git
+   git clone :git-RFMicrowaveToolbox:`RFMicrowaveToolbox`
    cd RFMicrowaveToolbox
 
 To build the toolbox run the following:

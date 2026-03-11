@@ -3,8 +3,8 @@ ADALM2000 Cable Assembly
 
 The AD-M2KCLB-EBZ is a cable assembly, compatible with the :adi:`ADALM2000` and is the replacement of the multi-colored cable/wires (2x10, 2x5) of the ADALM2000.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/cable_assembly.png
-   :width: 700px
+
+|image1|
 
 .. container:: centeralign
 
@@ -28,7 +28,7 @@ The keyed connectors match the ADALM2000 case and can be easily matched with it.
 
    ..
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -39,7 +39,7 @@ Each wire is colored differently for easier identification of the corresponding 
 
 .. container:: centeralign
 
-   |image2|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -55,7 +55,9 @@ The kit has two subcomponents:
 -  flywires connected to a 2\*5P keyed female pin connector
 -  flywires connected to a 2\*10P keyed female pin connector
 
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/cable_closeup.png
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/cable_assembly.png
+   :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/cable_closeup.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000-pin-wires.png
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m2k/users/adalm2000-pin-wires.png
    :width: 400px

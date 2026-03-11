@@ -21,7 +21,7 @@ More information
 ----------------
 
 -  :adi:`AD7938 Product Info <AD7938>` - pricing, samples, datasheet
--  :adi:`EVAL-AD7938CBZ evaluation board user guide </static/imported-files/eval_boards/17099365EVAL_AD7938CB_AD7939CB_AD7938_6CB.pdf>`
+-  :adi:`EVAL-AD7938CBZ evaluation board user guide <static/imported-files/eval_boards/17099365EVAL_AD7938CB_AD7939CB_AD7938_6CB.pdf>`
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 -  `Micrium uC-Probe v2.5 <https://www.micrium.com/ucprobe/about/>`_
 
@@ -101,7 +101,7 @@ Since Windows cannot locate the driver for the device the automatic installation
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
 
-|image011.png|\ |image013.png|
+|image011.png| |image013.png|
 
 
 .. tip::
@@ -648,13 +648,13 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |ucproberemovesymbols.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucproberemovesymbols.png
    :width: 400px
 .. |ucproberemovesymbolsdlg.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucproberemovesymbolsdlg.png
    :width: 400px
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
 

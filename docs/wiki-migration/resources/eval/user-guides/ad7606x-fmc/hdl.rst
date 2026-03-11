@@ -48,7 +48,7 @@ Block diagram
 Required software
 ~~~~~~~~~~~~~~~~~
 
--  We're upgrading the Xilinx tools on every release. The supported version number can be found in our :git-hdl:`git repository <releases>`.
+-  We're upgrading the Xilinx tools on every release. The supported version number can be found in our `git repository <https://github.com/analogdevicesinc/hdl/releases>`_.
 -  An UART terminal (Tera Term/Hyperterminal), baud rate set to 115200.
 
 Parameters
@@ -80,7 +80,7 @@ The data path of the HDL design is simple as follows:
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Choose the required interface (see caption **Switching between interface types**)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
@@ -8503,11 +8503,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`AD7606X-FMC HDL Project. <projects/ad7606x_fmc>`
    
-   |AD7606X-FMC HDL Project.|
+
 
 Support
 -------
@@ -8521,5 +8519,3 @@ Support
    -  :ez:`Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`.
    
 
-
-.. |AD7606X-FMC HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad7606x_fmc`

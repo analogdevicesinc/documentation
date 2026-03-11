@@ -34,17 +34,15 @@ Hardware
    The Hardware of the *ez*LINX*i*Coupler isolated interface development environment contains the ADSP-BF548 blackfin processor with 64MB of RAM and 32MB of Flash memory. The Isolated Physical layer communication standards are implemented using ADI's isolated transceivers with integrated*i*Coupler and*iso*\ Power technology. Routing between the various communication standards is implemented at the hardware level. Included are the following:
 
    
-   ::
-   
-      *[[/resources/eval/ezlinx/isolated-usb|Isolated USB]] using the [[:adi:`en/interface/digital-isolators/adum3160/products/product`.html|ADuM3160]]
-      *[[/resources/eval/ezlinx/isolated-can|Isolated CAN]] using the [[:adi:`en/interface/can/adm3053/products/product`.html|ADM3053]] Signal and Power Isolated CAN transceiver
-      *[[/resources/eval/ezlinx/isolated-rs485-rs422|Isolated RS-485/RS-422]] using the [[:adi:`en/interface/digital-isolators/adm2587e/products/product`.html|ADM2587E]] Signal and Power Isolated RS-485/RS-422 transceiver
-      *[[/resources/eval/ezlinx/isolated-rs232|Isolated RS-232]] using the [[:adi:`en/interface/digital-isolators/adm3252e/products/product`.html|ADM3252E]] Signal and Power Isolated RS-232 transceiver
-      *[[/resources/eval/ezlinx/isolated-i2c|Isolated I2C]] using the [[:adi:`en/interface/digital-isolators/adum1250/products/product`.html|ADuM1250]] and [[:adi:`en/interface/digital-isolators/ADuM5000/products/product`.html|ADuM5000]]
-      *[[/resources/eval/ezlinx/isolated-spi|Isolated SPI]] using the [[:adi:`en/interface/digital-isolators/ADuM3401/products/product`.html|ADuM3401]], [[:adi:`en/interface/digital-isolators/ADuM3402/products/product`.html|ADuM3402]] and [[:adi:`en/interface/digital-isolators/ADuM5000/products/product`.html|ADuM5000]]
-      *[[/resources/eval/ezlinx/isolated-lvds|Isolated LVDS]] using the [[:adi:`en/interface/digital-isolators/ADuM3442/products/product`.html|ADuM3442]], [[:adi:`en/interface/digital-isolators/ADuM5000/products/product`.html|ADuM5000]], [[:adi:`en/interface/lvds/adn4663/products/product`.html|ADN4663]] and [[:adi:`en/interface/lvds/adn4664/products/product`.html|ADN4664]]
+   -  :doc:`Isolated USB </wiki-migration/resources/eval/ezlinx/isolated-usb>` using the :adi:`ADuM3160 <en/interface/digital-isolators/adum3160/products/product.html>`
+   -  :doc:`Isolated CAN </wiki-migration/resources/eval/ezlinx/isolated-can>` using the :adi:`ADM3053 <en/interface/can/adm3053/products/product.html>` Signal and Power Isolated CAN transceiver
+   -  :doc:`Isolated RS-485/RS-422 </wiki-migration/resources/eval/ezlinx/isolated-rs485-rs422>` using the :adi:`ADM2587E <en/interface/digital-isolators/adm2587e/products/product.html>` Signal and Power Isolated RS-485/RS-422 transceiver
+   -  :doc:`Isolated RS-232 </wiki-migration/resources/eval/ezlinx/isolated-rs232>` using the :adi:`ADM3252E <en/interface/digital-isolators/adm3252e/products/product.html>` Signal and Power Isolated RS-232 transceiver
+   -  :doc:`Isolated I2C </wiki-migration/resources/eval/ezlinx/isolated-i2c>` using the :adi:`ADuM1250 <en/interface/digital-isolators/adum1250/products/product.html>` and :adi:`ADuM5000 <en/interface/digital-isolators/ADuM5000/products/product.html>`
+   -  :doc:`Isolated SPI </wiki-migration/resources/eval/ezlinx/isolated-spi>` using the :adi:`ADuM3401 <en/interface/digital-isolators/ADuM3401/products/product.html>`, :adi:`ADuM3402 <en/interface/digital-isolators/ADuM3402/products/product.html>` and :adi:`ADuM5000 <en/interface/digital-isolators/ADuM5000/products/product.html>`
+   -  :doc:`Isolated LVDS </wiki-migration/resources/eval/ezlinx/isolated-lvds>` using the :adi:`ADuM3442 <en/interface/digital-isolators/ADuM3442/products/product.html>`, :adi:`ADuM5000 <en/interface/digital-isolators/ADuM5000/products/product.html>`, :adi:`ADN4663 <en/interface/lvds/adn4663/products/product.html>` and :adi:`ADN4664 <en/interface/lvds/adn4664/products/product.html>`
 
-      |image1|
+   |image1|
 
 .. container:: col2 right 300px
 

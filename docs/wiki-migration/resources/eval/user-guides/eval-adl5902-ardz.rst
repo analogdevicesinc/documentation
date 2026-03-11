@@ -138,7 +138,10 @@ Connection Window
 
 -  Mount EVAL-ADL5902-ARDZ to the EVAL-ADICUP3029 and connect EVAL-ADICUP3029 to computer as in `Typical Hardware Setup for Measurement <https://wiki.analog.com/>`_
 -  Click the **refresh button** on Port Name to Identify the **port** where an EVAL-ADICUP3029 is installed
-   |APP_window| 
+
+|APP_window|
+
+
 
 .. note::
 
@@ -254,10 +257,8 @@ Calibration can be implemented using 2, 3 or 4-point calibration techniques whic
 
 The typical Vout vs. Pin characteristic of ADL5902 at 2.14GHz input is shown below (Figure 50 from the ADL5902 datasheet).
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-adl5902-datasheet-fig50.png
-   :alt: fig50
-   :align: center
-   :width: 600px
+
+|fig50|
 
 .. container:: centeralign
 
@@ -392,7 +393,7 @@ Installations
 
 Assumes a fresh installation of all required software
 
--  Download `python 3.7.0 <https://wiki.analog.com/http/www.python.org/downloads/release/python-370>`_ version. Choose the right version depending on operating system. For windows, choose `Windows x86-64 executable installer <http://www.python.org/downloads/release/python-370/>`_. (Do not run installer yet)
+-  Download `python 3.7.0 <http://www.python.org/downloads/release/python-370/>`_ version. Choose the right version depending on operating system. For windows, choose `Windows x86-64 executable installer <http://www.python.org/downloads/release/python-370/>`_. (Do not run installer yet)
 -  Run installer as Administrator. During installation, **check "Add Python 3.7 to PATH" before clicking "Install Now"**
 
 |rfdet-py-path|
@@ -449,6 +450,8 @@ For any queries regarding the hardware and evaluation software, contact us at :e
 .. |\|DAPLINK_screencap| image:: /resources/eval/user-guides/rfdet-daplink.png
 .. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-measurement.png
+.. |fig50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5902-ardz-adl5902-datasheet-fig50.png
+   :width: 600px
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png
 .. |rfdet-c-folder-adl5902| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-folder-adl5902.png

@@ -55,7 +55,7 @@ PC side:
 User Guide
 ==========
 
--  Run :adi:`Visual Analog </en/design-center/interactive-design-tools/visualanalog.html>`.
+-  Run :adi:`Visual Analog <en/design-center/interactive-design-tools/visualanalog.html>`.
 -  Choose **Blank Canvas** as a template.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_new_canvas.png

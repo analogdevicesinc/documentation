@@ -45,4 +45,4 @@ Algorithm Details
 | "Add Algorithm" Supported  | no                                                 |
 +----------------------------+----------------------------------------------------+
 
-.. |mot_int.png| image:: https://wiki.analog.com/_media/mot_int.png
+.. |mot_int.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/mot_int.png

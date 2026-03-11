@@ -3,9 +3,8 @@ Chapter 10: Multi stage amplifier configurations
 
 For most systems a single transistor amplifier does not provide sufficient gain or bandwidth or will not have the correct input or output impedance matching. The solution is to combine multiple stages of amplification. We have the three basic one transistor amplifier configurations to use as building blocks to create more complex amplifier systems which can provide better optimized specifications and performance. The sections in this chapter tend to use BJT devices to illustrate the circuit concepts but these multi-stage amplifiers can be constructed from MOS FET devices, or a combination, just as easily and the methods used to analyze them are much the same as well.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -55,9 +54,8 @@ The impact of input and output loading can be minimized by cascading two amplifi
 
 The cascade of a Common Emitter amplifier stage followed by a Common Collector (emitter-follower) amplifier stage can provide a good overall voltage amplifier, figure 10.1.1. The Common Emitter input resistance is relatively high and Common Collector output resistance is relatively low. The voltage follower second stage, Q\ :sub:`2`, contributes no increase in voltage gain but provides a near voltage-source (low resistance) output so that the gain is nearly independent of load resistance. The high input resistance of the Common Emitter stage, Q\ :sub:`1`, makes the input voltage nearly independent of input-source resistance. Multiple Common Emitter stages can be cascaded with emitter follower stages inserted between them to reduce the attenuation due to inter-stage loading.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -71,9 +69,8 @@ Calculating the DC biasing conditions and the required resistance values for eac
 
 Another multi-stage amplifier to explore is to simply cascade two common emitter stages. Figure 10.1.2 shows two n-type common emitter stages in cascade.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -93,9 +90,8 @@ In DC coupled multistage cascaded common emitter amplifiers the output bias leve
 
 It is possible to create a multistage cascade where each stage is separately biased and coupled to adjacent stages via DC blocking capacitors. Inserting coupling capacitors between stages blocks the DC operating bias level of one stage from affecting the DC operating point of the next. This solves many of the limitations we saw in section 10.1.2. However, the resulting overall amplifier can no longer respond to DC, or very low frequency, inputs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -113,9 +109,8 @@ For example, a complementary cascade amplifier is shown in figure 10.1.4. The se
 
 By using complementary devices, active level shifting can be combined with amplification.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -135,9 +130,8 @@ The approximation we are recommending here makes the bias calculations for each 
 
 Design a Complementary Pair amplifier stage using 2N3904 and 2N3906 transistor's (β ˜ 120, V\ :sub:`BE` ˜ 0.7v). Use a supply voltage of 10 volts, and a source resistance of 15 KΩ. Estimate the DC bias voltages and currents, and compare these with the results of a computer simulation. Determine the small signal gain for a nominal 1 KHz signal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -164,9 +158,8 @@ The cascode is a two-stage amplifier composed of a single transconductance ampli
 
 Figure 10.3.1 shows the basic form of the cascode amplifier with a common emitter/source amplifier as input stage, Q\ :sub:`1` or M\ :sub:`1`, driven by signal source V\ :sub:`in`. This input stage then drives a common base/gate amplifier, Q\ :sub:`2` or M\ :sub:`2`, as the output stage, with an output signal at V\ :sub:`out`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f9.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -206,9 +199,8 @@ Note that, for a large output voltage swing, their base voltages should not be b
 
 Rather than stacking the transistors one on top of the other, which can reduce or limit the available signal swing, it is often advantageous to "fold" the cascode device as shown in figure 10.3.5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f11.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -232,9 +224,8 @@ Rather than stacking the transistors one on top of the other, which can reduce o
 
 Additionally, a variation on the cascode amplifier combines it with the shunt-feedback. The basic shunt feedback circuit is shown in figure 10.3.7 (a), and with BJT T model (b).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f13.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -247,9 +238,8 @@ It is a transresistance (current in, voltage out) amplifier, with a transresista
 
 if R\ :sub:`L` approaches being a current source (is large relative to R\ :sub:`F` ). For R\ :sub:`F` >> r\ :sub:`e` and α ≈ 1, the transresistance is approximately R\ :sub:`F`. The shunt feedback amplifier can be used for high-speed applications. When combined with the cascode, the resulting amplifier - the shunt feedback cascode - is shown in figure 10.3.8 (a) with the small-signal model in (b).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f14.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -284,3 +274,24 @@ In multi-stage amplifiers on integrated circuits, coupling capacitors between st
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-11>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f9.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f11.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f13.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr10_f14.png
+   :width: 500px

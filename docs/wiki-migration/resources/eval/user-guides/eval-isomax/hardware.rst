@@ -80,11 +80,13 @@ Programming the MCU using the MAX32625PICO Adapter
    **Follow these steps if the EVAL-ISOMAX is used as a standalone MCU:**
 
 
--   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 MCU <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+-   Download the firmware image: `MAX32625PICO Firmware Image for MAX32670 MCU <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
 -   Connect the MAX32625PICO to the Host PC using the microUSB to USB cable.
--   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
+-   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+   :align: center
+   :width: 200px
 
 -   Release the button once the ``MAINTENANCE`` drive is mounted.
 -   Drag and drop the firmware image into the ``MAINTENANCE`` drive.
@@ -100,11 +102,15 @@ Uploading the EVAL-ISOMAX Firmware into the Broadmarket BMS Browser GUI Installe
 -  Copy and paste the entire **EVAL-ISOMAX folder** into the ``USB_TO_SPI directory`` inside the Broadmarket BMS GUI installation folder.
    **Location: C:\\Analog Devices\\BMS_Browser_GUI_Broadmarket-Rel2.0.0\\USB_TO_SPI_Firmware**
 
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/copying_the_eval-isomax_folder.png
+   :align: center
+   :width: 2000px
 
 -  Make sure that the copied folder contains the **isomax32670-usb-to-spi.hex** file.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_folder_contents.png
+   :align: center
+   :width: 2000px
 
 -  The EVAL-ISOMAX board is now ready to be used with the Broadmarket BMS Browser GUI. Refer to the next sections for procedure on how to set up the hardware for evaluation.
 
@@ -144,12 +150,16 @@ Testing the Setup
 -  From the **``Products``** list, select the **ADBMS6830**, then click on the right arrow to add it to the Daisy Chain. **Other Settings** can remain as default.
 -  Click **``Launch``**.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
+   :align: center
+   :width: 2000px
 
 -  Upon launching, the **``Quick Measure``** tab will open. **Note:** this utility only supports a single BMS product in a daisy chain.
    Click **``Start Quick Measure``** to begin measurements.
 
-   |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_start_measure.png
+   :align: center
+   :width: 2000px
 
 -  Check the Total PEC Status on the 3rd row under the Memory Map. This indicates the status of the isoSPI link between the EVAL-ISOMAX and the EVAL-ADBMS6830BMSW.
 
@@ -177,20 +187,23 @@ Hardware Connection
 
 -  Connect the EVAL-ISOMAX (P6) to the EVAL-ADBMS2950-BASIC (isoA) using the provided twisted-pair DuraClik cable
 
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/isomax_2950.png
+   :align: center
+   :width: 800px
 
 -  Choose between two options for powering the EVAL-ADBMS2950-BASIC:
 
    -   Using an external power source, supply 5 V (via J1) and set the current limit to 200 mA. The EVAL-ADBMS2950-BASIC consumes <50 mA in idle mode and ~100 mA in active mode. The image below depicts the current measurement in idle mode.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
+   :align: center
+   :width: 300px
 
-   |image7|
+::
 
-      -  Alternatively, power the board using a micro-USB cable connected to J10.
-
--  Attach the MAX32625PICO programmer to the EVAL-ISOMAX using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
--  Connect one end of the USB cable to EVAL-ISOMAX (P15) and the other end to the host PC.
+     * Alternatively, power the board using a micro-USB cable connected to J10.
+   * Attach the MAX32625PICO programmer to the EVAL-ISOMAX using the 10-pin ribbon SWD cable. Observe correct polarity when connecting the SWD cable.
+   * Connect one end of the USB cable to EVAL-ISOMAX (P15) and the other end to the host PC.
 
 Testing the Setup
 ~~~~~~~~~~~~~~~~~
@@ -201,7 +214,9 @@ Testing the Setup
 -  From the **``Products``** list, select the **ADBMS2950**, then click on the right arrow to add it to the Daisy Chain. Settings can remain as default.
 -  Click **``Launch``**.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/2950_launch.png
+   :align: center
+   :width: 2000px
 
 -  Upon launching, the **``Quick Measure``** tab will open. **Note:** it can only handle one BMS product in a Daisy Chain.
    Click **``Start Quick Measure``** to begin measurements.
@@ -217,8 +232,9 @@ Hardware Connection
 
 -  Connect the hardware using the DuraClik isoSPI cables, as shown in the diagram below.
 
-
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/isomax_daisy_chain.png
+   :align: center
+   :width: 600px
 
 -  Power each DC2472A using a 5 V external source connected to J1 through the USB cable.
 -  Power the EVAL-ADBMS2950-BASIC either through J1 or J10, as explained earlier.
@@ -233,11 +249,15 @@ Testing the Setup
 -  Launch the BMS Browser GUI following the previous instructions and choose the appropriate **COM port** associated to the EVAL-ISOMAX.
 -  Set up the **``Daisy Chain``** according to the diagram provided. The EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial device on the chain. The first EVAL-ADBMS6830BMSW connects to the EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the first one via the isoSPI cable.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
+   :align: center
+   :width: 2000px
 
 -  Click on the **``Launch``** button to initiate the GUI. After the GUI launches in the browser, go to the **``Sequences``** tab located in the top toolbar, this will open the **Sequence Configuration** page.
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
+   :align: center
+   :width: 2000px
 
 -  In the **``Files``**, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
@@ -249,16 +269,18 @@ Testing the Setup
 -  During free run mode, the **``Initialization Sequence``** is performed once initially. Subsequently, the loop sequence continues to run continuously until the **``Stop Freerun``** button is clicked.
 -  After activating freerun mode, navigate to the **``Memory Map``** tab. This section displays a numerical representation of the ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates this output.
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
+   :align: center
+   :width: 2000px
 
 -  The **``Plots``** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
    In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830MSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
    Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
-   |image13|
+   |image1|
 
-   |image14|
-   |image15|
+   |image2|
+   |image3|
 -  Plot settings can be saved to the PC to be reloaded for future session to save time.
 
 .. tip::
@@ -337,7 +359,7 @@ MCU Configuration
    **Follow these instructions if the** :adi:`AD-APARD32690-SL` **is used as the main controller board:**
 
 
--   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 MCU <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`
+-   Download the firmware image: `MAX32625PICO Firmware Image for MAX32690 MCU <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_
 -   Connect the MAX32625PICO to the Host PC using the microUSB to USB cable.
 -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**
 -   Release the button once the MAINTENANCE drive is mounted.
@@ -535,12 +557,15 @@ Testing the Setup
 
 -  Set up the **``Daisy Chain``** according to the diagram provided. The EVAL-ADBMS2950-BASIC is positioned at the top, indicating it is the initial device on the chain. The first EVAL-ADBMS6830BMSW connects to the EVAL-ADBMS2950-BASIC, while the second EVAL-ADBMS6830BMSW is linked to the first one via the isoSPI cable.
 
-
-|image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
+   :align: center
+   :width: 2000px
 
 -  Click on **``Launch``** to initiate the GUI. After the GUI launches in the Browser, go to the **``Sequences``** tab located in the top toolbar, which will open the *Sequence Configuration* page.
 
-|image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
+   :align: center
+   :width: 2000px
 
 -  In the **``Files``** column, select **ADBMS6830-ADBMS2950.json**. This action will load a preconfigured sequence into the tool.
 
@@ -552,16 +577,18 @@ Testing the Setup
 -  During free run mode, the Initialization Sequence is performed once initially. Subsequently, the loop sequence continues to run continuously until the **``Stop Freerun``** button is clicked.
 -  After activating freerun mode, navigate to the **``Memory Map``** tab. This section displays a numerical representation of the ongoing command loop. Additional details can be accessed in the GUI's help section. The accompanying screenshot illustrates this output.
 
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
+   :align: center
+   :width: 2000px
 
 -  The **``Plots``** tab allows for the visualization of parameters recorded during the command loop. It supports the creation of up to four plots simultaneously.
    In the configured Daisy Chain, the EVAL-ADBMS2950-BASIC is designated as Device 1, the first EVAL-ADBMS6830BMSW as Device 2, and the third EVAL-ADBMS6830BMSW as Device 3. An example illustrates how to plot each parameter separately: I1ACC and I2ACC on Plot 1, the average cell voltages for the first EVAL-ADBMS6830BMSW on Plot 2, and the averaged cell voltages for the third EVAL-ADBMS6830BMSW on Plot 3.
    Simply choose the desired Plot number from the dropdown menu under each device to display the relevant data.
 
-   |image19|
+   |image4|
 
-   |image20|
-   |image21|
+   |image5|
+   |image6|
 -  Plot settings can be saved to the PC to be reloaded for future session to save time.
 
 .. tip::
@@ -611,45 +638,15 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 .. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-isomax
    :alt: Overview #:resources:eval:user-guides:eval-isomax:software|EVAL-ISOMAX Software User Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/copying_the_eval-isomax_folder.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
    :width: 2000px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_folder_contents.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
    :width: 2000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_launch.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
    :width: 2000px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/browser_start_measure.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
    :width: 2000px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/isomax_2950.png
-   :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/idle_current.png
-   :width: 300px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/2950_launch.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
    :width: 2000px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/isomax_daisy_chain.png
-   :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
-   :width: 2000px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
-   :width: 2000px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
-   :width: 2000px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
-   :width: 2000px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
-   :width: 2000px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
-   :width: 2000px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_launch.png
-   :width: 2000px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_sequences.png
-   :width: 2000px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_memory_map.png
-   :width: 2000px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot1.png
-   :width: 2000px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot2.png
-   :width: 2000px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-cellpackbm-sl/daisy_chain_plot3.png
    :width: 2000px

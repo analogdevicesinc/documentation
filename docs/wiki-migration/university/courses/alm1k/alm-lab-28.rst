@@ -18,9 +18,8 @@ Making inverters with the CD4007 transistor array
 
 Below in figure 1 is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -29,9 +28,9 @@ Below in figure 1 is the schematic and pinout for the CD4007:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown below is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -55,9 +54,8 @@ Directions:
 
 On your solder-less breadboard build the first inverter shown in figure 2 to test the input to output switching characteristics of the CMOS inverter. The green boxes in figure 3 indicate the required connections to the connector on the ALM1000. Connect +5V power to V\ :sub:`DD` (pin 14) and ground to V\ :sub:`SS` (pin 7). Connect the output of the channel A voltage generator, CA-V to the inverter input (pin 6) and connect the inverter output (pins 8,13) to channel B scope CB-H.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -76,9 +74,8 @@ First using scope channel B to measure the inverter output voltage vs. the input
 
 Next remove the +5 V from pin 14 and replace it with channel B set to SVMI with a DC shape and a Max of 5 V. You may need to adjust the vertical scale of trace CB-I for an optimal view of the current waveform. Now obtain an XY plot of I\ :sub:`D` vs. the input as the input is swept from 0 to 5V. This should give you a plot much like the bottom curve in figure 4. Export the data to a .csv file and extract the peak current and the input and output voltages where the peak occurred.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -94,9 +91,8 @@ Making a CMOS Schmitt Trigger with the CD4007 transistor array
 
 The input of the Schmitt trigger, as shown in figure 5, is tied to the gates of four stacked devices. The upper two are PMOS and the lower two are NMOS. Transistors M\ :sub:`5` and M\ :sub:`6` operate as source followers and introduce hysteresis by feeding back the output voltage, V\ :sub:`OUT`, to the two points in the stack midway between the two NMOS and two PMOS devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,9 +121,8 @@ Making a NAND / AND gate with the CD4007 transistor array
 
 As shown in figure 6, one 2 input NAND gate and one inverter can be built from one CD4007 package. Configure the NAND gate as shown below by connecting pins 12 and 13 together as the NAND output. Pin 14 and pin 11 is connected to V\ :sub:`DD` for power and pin 7 V\ :sub:`SS` to ground. Pin 9 should be tied to pin 8 to complete N side of the NAND gate. Pin 6 will be the A input and pin 10 will be the B input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -143,9 +138,8 @@ Directions:
 
 Build both the 2 input and 3 input NAND gates and confirm their logic function by filling out a truth table for each. You can also measure the input threshold voltage for each input as you did for the simple inverter by connecting the unused input(s) to V\ :sub:`DD`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -157,9 +151,8 @@ Making a NOR / OR gate with the CD4007 transistor array
 
 As shown in figure 8, one 2 input NOR gate and one inverter can be built from one CD4007 package. Configure the NAND gate as shown below by connecting pins
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -173,9 +166,8 @@ Directions:
 
 Build both the 2 input and 3 input NOR gates and confirm their logic function by filling out a truth table for each. You can also measure the input threshold voltage for each input as you did for the simple inverter by connecting the unused input(s) to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -184,9 +176,9 @@ Build both the 2 input and 3 input NOR gates and confirm their logic function by
 
 By combining the two input NOR gate and the inverter along with an RC delay element a monostable multivibrator or one-shot can be constructed as shown in figure 10.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f10.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -209,9 +201,8 @@ Making a SPDT Analog Switch with the CD4007 transistor array
 
 In addition to an analog SPDT switch this configuration is often called a pass or transmission gate or 2 into 1 MUX (multiplexer). The configuration is shown in figure 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f11a.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -225,3 +216,26 @@ The on resistance, R\ :sub:`ON` of a pass gate or switch is an important specifi
 `4000 Series Logic and Analog Circuitry <https://wiki.analog.com/_media/university/courses/4000_series_article.pdf>`_ `CMOS Logic <https://en.wikipedia.org/wiki/CMOS>`_ `Noise Margin <https://en.wikipedia.org/wiki/Noise_margin>`_ `Propagation Delay <https://en.wikipedia.org/wiki/Propagation_delay>`_ `Rise <https://en.wikipedia.org/wiki/Rise_time>`_ / `Fall time <https://en.wikipedia.org/wiki/Fall_time>`_ `Schmitt Trigger <https://en.wikipedia.org/wiki/Schmitt_trigger>`_ `Transmission gate <https://en.wikipedia.org/wiki/Transmission_gate>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1ks/alm_labcmg_f11a.png
+   :width: 600px

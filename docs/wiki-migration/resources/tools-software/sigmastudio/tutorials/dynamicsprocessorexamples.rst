@@ -16,8 +16,8 @@ The display bars indicate the levels of the input and the compression respective
 
 In this case the compression significantly lowered the output level, so to make it up, it was necessary to turn the output up an added 12 dB (Post Gain).
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/dynamicsprocessorexample1.jpg
-   :alt: dynamicsprocessorexample1.jpg
+
+|dynamicsprocessorexample1.jpg|
 
 .. important::
 
@@ -49,3 +49,5 @@ This schematic uses Tone (lookup/sine), Linear Gain, T Connection, Multiply, Env
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/dynamicsprocessorexample4.jpg
    :alt: dynamicsprocessorexample4.jpg
+
+.. |dynamicsprocessorexample1.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/dynamicsprocessorexample1.jpg

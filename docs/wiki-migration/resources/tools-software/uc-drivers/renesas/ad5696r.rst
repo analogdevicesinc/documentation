@@ -53,7 +53,8 @@ There are three functions which are called by the AD5696R driver:
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -147,5 +148,3 @@ Software Project Tutorial
 
    See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png

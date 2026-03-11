@@ -23,9 +23,8 @@ Directions:
 
 Build the difference amplifier shown in figure 1. R\ :sub:`6` is added to stabilize the output of the OP484 when using large feedback resistances due to the large input capacitance of the CH-B input. One input signal ( V\ :sub:`1` ) is provided directly from the CH-A AWG output to 100 KΩ resistor R\ :sub:`1`. Another input signal ( V\ :sub:`2` ) through 100 KΩ resistor R\ :sub:`2` to the non-inverting input terminal is driven through a phase shifting low-pass RC filter, C\ :sub:`1` and R\ :sub:`5`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ Measure the amplifier output with each input applied individually and the other 
 
 Step one, connect the left end of R\ :sub:`5` to the 2.5 V common rail. With both CA-V and CB-V traces displayed measure the relative phase of the two signals. Because the amplifier inverts signal V\ :sub:`1` it should be 180 degrees. Also measure and record the amplitudes ( p-p ) of both traces. Save a snap shot of the CB-V trace ( or save a copy of the VBuffB array to another array ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,9 +50,9 @@ Step one, connect the left end of R\ :sub:`5` to the 2.5 V common rail. With bot
 
 In step two connect the V\ :sub:`1` end of R\ :sub:`1` to the 2.5 V common rail and connect CH-A to the left end of R\ :sub:`5` as shown in figure 3. Now a delayed ( or phase shifted ) version of CH-A will be applied at V\ :sub:`2`. With both CA-V and CB-V traces displayed measure the relative phase of the two signals. The signal at V\ :sub:`2` is not inverted by the amplifier, however because of the RC delay the relative phase will not be 0 degrees. Also measure and record the amplitudes ( p-p ) of both traces. Save a snap shot of the CB-V trace ( or save a copy of the VBuffB array to another array ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f3.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -74,9 +72,8 @@ By using one of the other amplifiers in the OP484 as an all-pass filter, the wav
 
 The modified version of the difference amplifier test circuit shown in figure 4 outputs the difference of the input sine wave and a time shifted version of the sine wave.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -95,3 +92,12 @@ As an additional note, other wave shapes such as a square wave or triangle wave 
 :adi:`Difference and Current Sense Amplifiers <media/en/training-seminars/tutorials/MT-068.pdf>` :adi:`Difference Amplifier Forms Heart of Precision Current Source <en/analog-dialogue/articles/diff-amp-heart-of-precision-current-source.html>` :adi:`A Deeper Look into Difference Amplifiers <library/analogDialogue/archives/48-02/diff_amp.html>` :adi:`Adjusting the Gain of a Fixed-Gain Difference Amplifier <media/en/analog-dialogue/raqs/raq-issue-171.pdf>` :adi:`Simple Ambient Light Sensor Circuit <en/analog-dialogue/articles/simple-ambient-light-sensor-circuit.html>` :adi:`MT-202 All Pass Filters <media/en/training-seminars/tutorials/MT-202.pdf>` `All Pass Filter <https://en.wikipedia.org/wiki/All-pass_filter>`_
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labdifa_f4.png
+   :width: 600px

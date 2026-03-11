@@ -319,7 +319,7 @@ To stop the continuous update, use command “stop”. (Or reset the board.)
 
 The uC (U401 ADuCM4050) is programmed before shipping the demo board, and therefore there is no need to program it, unless a new version of firmware is available, and you want to update it on your board. The present firmware version can be checked via USB Com Port and terminal software, it is displayed in the welcome message after board reset or in response to “info” command. Firmware update is distributed as a compiled binary (.hex) file. The easiest way to program it to the uC is using the USB Com Port and CrossCore Serial Flash Programmer, available for free download from analog.com, presently:
 
-:adi:`en/design-center/evaluation-hardware-and-software/software/crosscore-serial-flash-programmer`.html#software-relatedsoftware
+:adi:`en/design-center/evaluation-hardware-and-software/software/crosscore-serial-flash-programmer.html#software-relatedsoftware`
 
 
 |image3|

@@ -170,7 +170,7 @@ Firmware
    ADALM-PLUTO Firmware
 
    
-   -  :git-plutosdr-fw:`Pluto version latest release <releases/latest>`
+   -  `Pluto version latest release <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_
    
 
 

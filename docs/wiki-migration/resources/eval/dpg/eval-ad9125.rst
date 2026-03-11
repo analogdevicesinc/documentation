@@ -15,14 +15,14 @@ Files included in the AD9125 Update:
 
 -  SPI application
 -  DPGDownloader
--  `Quick Start Guide <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125_evaluation_board_quick_start_guide.pdf>`_
+-  `Quick Start Guide <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125_evaluation_board_quick_start_guide.pdf>`_
 -  :adi:`AD9125 Data Sheet <static/imported-files/data_sheets/AD9125.pdf>`
 -  :adi:`IBIS Model <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=ad9125.ibs>`
--  Schematics `AD9125-M5372-EBZ RevB <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5372-ebz_revb_schematic.pdf>`_, `AD9125-M5375-EBZ RevC <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_schematic.pdf>`_
--  Bill of Materials `AD9125-M5372-EBZ RevB <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5372-ebz_revb_bom_customer.xls>`_\ `AD9125-M5375-EBZ RevC <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_bom_customer.xls>`_
--  PCB Gerber files `AD9125-M5375-EBZ RevC <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_gerber_files.zip>`_
+-  Schematics `AD9125-M5372-EBZ RevB <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5372-ebz_revb_schematic.pdf>`_, `AD9125-M5375-EBZ RevC <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_schematic.pdf>`_
+-  Bill of Materials `AD9125-M5372-EBZ RevB <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5372-ebz_revb_bom_customer.xls>`_\ `AD9125-M5375-EBZ RevC <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_bom_customer.xls>`_
+-  PCB Gerber files `AD9125-M5375-EBZ RevC <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_gerber_files.zip>`_
 -  PCB BRD file `AD9125-M5372-EBZ RevB <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5372-ebz_revb.brd>`_\ `AD9125-M5375-EBZ RevC <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc.brd>`_
--  PCB Layout PDF `AD9125-M5375-EBZ RevC <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_layout.pdf>`_
+-  PCB Layout PDF `AD9125-M5375-EBZ RevC <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/hssp_sw/hscdac/documents/ad9122/ad9125-m5375-ebz_revc_layout.pdf>`_
 
 Download the `AD9125 Update <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/hscdac/hsdac_update/hsdacupdate_ad9125_1.0.4773.29220.exe>`_
 

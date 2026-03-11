@@ -19,9 +19,8 @@ An ideal filter has an amplitude response that is unity (or gain dependent) for 
 
 Figure 1 shows the idealized responses of the main type of filters:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ideal_filters.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ Consider the circuit presented in Figure 2.
 
 The frequency response of the filter is the same as for the simple passive low pass filter with the addition of the op-amp for gain control and amplification. The basic RC low pass filter provides a low-frequency path by connecting it at the non-inverting input of the operational amplifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/alpf_gain.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -84,7 +82,7 @@ Hardware Setup
 On your solder-less breadboard, construct the active low pass filter shown in Figure 2. Use the positive and negative power supply from the ADALM2000, set +5V for the positive supply and -5V for the negative supply.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -97,7 +95,7 @@ Procedure
 Open Scopy Network Analyzer and set Channel 1 as the reference. Configure the sweep to start at 10 Hz and stop at 1 MHz. Set the Amplitude to 200 mV and the Offset to 0 V. Under the display settings, set the max. magnitude to 30 dB and min. magnitude to -30 dB. Set the phase top to 90º and bottom to -270º. Set the sample count to 100. Turn on the power supplies and run a single frequency sweep. You should see amplitude and phase vs. frequency plots that look very similar to your simulation results.
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -109,9 +107,8 @@ Inverting Amplifier Low Pass Filter Circuit
 
 The circuit present in Figure 5 is an inverting active low pass filter. Unlike the previous filter configuration, the low-frequency input is fed at the inverting input of the operational amplifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -132,8 +129,8 @@ Hardware Setup
 
 Build the breadboard circuit presented in Figure 6. Set +5V for the positive supply and -5V for the negative supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_bb.png
-   :align: center
+
+|image6|
 
 .. container:: centeralign
 
@@ -145,9 +142,8 @@ Procedure
 
 Open the Network Analyzer and set Channel 1 as the reference. Configure the sweep to start at 1 kHz and stop at 500 kHz and set the sample count to 100. Set the amplitude to 200 mV and the offset to zero volts. Under the display settings, set the max. magnitude top to 30 dB and min. magnitude to -30 dB. Set the max. phase to 180º and min. phase to 0º. Turn on the power supplies and run a single frequency sweep. You should see amplitude and phase vs. frequency plots that look very similar to your simulation results.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_result.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -160,7 +156,7 @@ Active High Pass Filter with Gain Control
 Now consider the next circuit in figure 8.
 
 
-|image3|
+|image8|
 
 .. container:: centeralign
 
@@ -188,7 +184,7 @@ Hardware Setup
 Construct the active high pass filter circuit shown in figure 8. Use the positive and negative positive supply from the ADALM2000.
 
 
-|image4|
+|image9|
 
 .. container:: centeralign
 
@@ -203,7 +199,7 @@ On Scopy Network Analyzer, set Channel 1 as the reference. Set the Amplitude to 
 Turn on the power supplies and run a single frequency sweep from 500Hz to 1MHz.
 
 
-|image5|
+|image10|
 
 .. container:: centeralign
 
@@ -217,9 +213,8 @@ Active Bandpass Filter
 
 Unlike the previous filter configurations shown above in which the pass band is determined only by one cut-off frequency, DC up to the cut-off frequency for the low pass filter and cut-off frequency onward for the high pass filter, the active band pass filter has two cut-off frequencies that define the selected frequency range. A simple configuration of the active band pass filter is shown in figure 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abpf_gain.png
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -269,7 +264,7 @@ Hardware Setup
 Build the breadboard circuit presented in figure 12. Use the positive and negative power supply from the ADALM2000.
 
 
-|image6|
+|image12|
 
 .. container:: centeralign
 
@@ -284,7 +279,7 @@ On Scopy Network Analyzer, set Channel 1 as the reference. Set the Amplitude to 
 Turn on the power supplies and run a frequency sweep from 100Hz to 500kHz.
 
 
-|image7|
+|image13|
 
 .. container:: centeralign
 
@@ -296,9 +291,8 @@ Active Band Stop Filter Circuit
 
 Another type of filter can be made from combining a low pass filter and a high pass filter. Such filter configuration is a Band Stop Filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/absf_gain.png
-   :align: center
-   :width: 700px
+
+|image14|
 
 .. container:: centeralign
 
@@ -318,8 +312,8 @@ Hardware Setup
 
 On your breadboard, build the circuit shown in Figure 15. Set +5V for the positive supply and -5V for the negative supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/absf_gain_bb2.png
-   :align: center
+
+|image15|
 
 .. container:: centeralign
 
@@ -331,9 +325,8 @@ Procedure
 
 On the Network Analyzer instrument, set Channel 1 as a reference and set the sweep logarithmic from 10Hz to 500 kHz with a sample count of 250. Under the waveform settings, set the amplitude to 200 mV and 0 V offset. Set the display from -30 dB to 30 dB and -180º to +180º. Turn on the power supplies and observe the waveform.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/absf_gain_res2.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
@@ -396,7 +389,7 @@ Hardware Setup
 Build the breadboard circuit presented in Figure 18. Use the positive and negative power supply from the ADALM2000.
 
 
-|image8|
+|image17|
 
 .. container:: centeralign
 
@@ -409,7 +402,7 @@ Procedure
 Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -20 dB to 15 dB and phase from -270º to 90º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 100Hz to 500kHz.
 
 
-|image9|
+|image18|
 
 .. container:: centeralign
 
@@ -422,7 +415,7 @@ Sallen Key Second Order High Pass Filter
 Now consider the Sallen Key configuration of a high pass filter presented in Figure 20.
 
 
-|image10|
+|image19|
 
 .. container:: centeralign
 
@@ -437,7 +430,7 @@ Hardware Setup
 Build the breadboard circuit presented in Figure 21. Use the positive and negative power supply from the ADALM2000.
 
 
-|image11|
+|image20|
 
 .. container:: centeralign
 
@@ -450,7 +443,7 @@ Procedure
 Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -35 dB to 15 dB and phase from -90º to 180º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 7.5kHz to 1MHz.
 
 
-|image12|
+|image21|
 
 .. container:: centeralign
 
@@ -467,7 +460,7 @@ The band-pass configuration of the Sallen-Key filter has a severe limitation. Th
    :math:`Av = AQ`
 
 
-   |image13|
+   |image22|
 
 .. container:: centeralign
 
@@ -482,7 +475,7 @@ Hardware Setup
 Build the breadboard circuit presented in Figure 24. Use the positive and negative power supply from the ADALM2000.
 
 
-|image14|
+|image23|
 
 .. container:: centeralign
 
@@ -495,7 +488,7 @@ Procedure
 Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -35 dB to 5 dB and phase from -180º to 180º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 7.5kHz to 1MHz.
 
 
-|image15|
+|image24|
 
 .. container:: centeralign
 
@@ -513,7 +506,7 @@ State Variable Filters
 State Variable Filter configuration offers the most precise implementation of the filter function, at the expense of many more circuit elements. All three major parameters (gain, Q, and f\ :sub:`r`) can be adjusted independently, and low-pass, high-pass, and band-pass outputs are available simultaneously. A notch and all pass filter are also possible to configure using the state variable filter. With an added amplifier section summing the low-pass and high-pass sections, the notch function can also be synthesized. An all pass filter may also be built with the four-amplifier configuration by subtracting the band-pass output from the input. Shown in Figure 26 is the state variable filter configuration that output and low-pass, high-pass, and band-pass frequency response.
 
 
-|image16|
+|image25|
 
 .. container:: centeralign
 
@@ -528,7 +521,7 @@ Hardware Setup
 Build the breadboard circuit presented in Figure 27.
 
 
-|image17|
+|image26|
 
 .. container:: centeralign
 
@@ -541,7 +534,7 @@ Procedure
 Connect Channel 2 to the Low Pass filter output. Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -40 dB to 30 dB and phase from -45º to 180º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 100Hz to 250kHz.
 
 
-|image18|
+|image27|
 
 .. container:: centeralign
 
@@ -555,9 +548,8 @@ Tow-Thomas Filter
 
 Another example of a Second Order Active Filter is the Tow-Thomas Filter, sometimes referred to as Biquadratic (Biquad) Filter. Figure 29 shows an example of the Tow-Thomas (Biquad) Filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/tt_biquad.png
-   :align: center
-   :width: 700px
+
+|image28|
 
 .. container:: centeralign
 
@@ -578,8 +570,8 @@ Hardware Setup
 
 Build the breadboard circuit presented in Figure 30 on your breadboard. Set the positive supply to +5 V and the negative supply to -5 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_bb.png
-   :align: center
+
+|image29|
 
 .. container:: centeralign
 
@@ -591,9 +583,8 @@ Procedure
 
 Set sweep as logarithmic with Channel 1 as the reference, the amplitude to 200 mV with 0 V offset, and the samples count to 75. Set the display from -60 dB to 30 dB and from -30º to 210º. Turn on the power supplies and run a single frequency sweep from 100 Hz to 500 kHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_result.png
-   :align: center
-   :width: 500px
+
+|image30|
 
 .. container:: centeralign
 
@@ -605,9 +596,8 @@ Twin-T Notch Filter
 
 The circuit shown in Figure 32 is a Twin-T Notch Filter. It is used as a general-purpose notch (narrow band stop) circuit. Recall that a band stop filter attenuates and blocks frequencies between its lower and higher cut-off frequencies.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch.png
-   :align: center
-   :width: 650px
+
+|image31|
 
 .. container:: centeralign
 
@@ -649,16 +639,15 @@ Hardware Setup
 
 On your breadboard, build the circuit in Figure 33. Use the positive and negative supplies of the ADALM2000. Figure 34 replaces R4 and R5 with a potentiometer allowing more control for the Q of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb.png
-   :align: center
+
+|image32|
 
 .. container:: centeralign
 
    Figure 33. Twin-T Notch Filter Circuit breadboard connection
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb2.png
-   :align: center
+   |image33|
 
 .. container:: centeralign
 
@@ -670,9 +659,8 @@ Procedure
 
 Set sweep as logarithmic with Channel 1 as the reference, the amplitude to 200 mV with 0 V offset, and the samples count to 100. Set the display from -25 dB to 5 dB and -140º to 80º. Turn on the +5 V and -5 V power supplies and sweep from 30 kHz to 300 kHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch_result.png
-   :align: center
-   :width: 500px
+
+|image34|
 
 .. container:: centeralign
 
@@ -707,32 +695,59 @@ Some additional resources:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_result.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/ideal_filters.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/alpf_gain.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_bb.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_result.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_result.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_bb.png
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_result.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_bb.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_result.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_bb.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_result.png
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_hpf.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain.png
    :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_bb.png
-.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_result.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_bb.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_result.png
    :width: 500px
-.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_bpf.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/abpf_gain.png
    :width: 500px
-.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_bb.png
-.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_result.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_bb.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_result.png
    :width: 500px
-.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/svf_khn.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/absf_gain.png
    :width: 700px
-.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/svf_khn_bb.png
-.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/svf_khn_res_lp.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/absf_gain_bb2.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/absf_gain_res2.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_bb.png
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_result.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_hpf.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_bb.png
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_result.png
+   :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_bpf.png
+   :width: 500px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_bb.png
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_result.png
+   :width: 500px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/svf_khn.png
+   :width: 700px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/svf_khn_bb.png
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/svf_khn_res_lp.png
+   :width: 500px
+.. |image28| image:: https://wiki.analog.com/_media/university/courses/electronics/tt_biquad.png
+   :width: 700px
+.. |image29| image:: https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_bb.png
+.. |image30| image:: https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_result.png
+   :width: 500px
+.. |image31| image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch.png
+   :width: 650px
+.. |image32| image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb.png
+.. |image33| image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb2.png
+.. |image34| image:: https://wiki.analog.com/_media/university/courses/electronics/twint_notch_result.png
    :width: 500px

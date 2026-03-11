@@ -30,7 +30,7 @@ Getting the ADI kernel
 
 ::
 
-   git clone https://github.com/analogdevicesinc/linux
+   git clone :git-linux:`linux`
    git checkout rpi-4.14.y
 
 Building the ADI kernel - manual cross-compiling
@@ -66,7 +66,7 @@ For Pi Zero, Pi Zero 2.
 Building the ADI kernel - script method
 ---------------------------------------
 
-Download this script (and make it executable): :git-wiki-scripts:`linux/build_rpi_kernel_image`.sh
+Download this script (and make it executable): :git-wiki-scripts:`linux/build_rpi_kernel_image.sh`
 
 Run it:
 
@@ -109,7 +109,7 @@ Device-tree overlays are covered in these docs:
 -  https://www.raspberrypi.org/documentation/configuration/device-tree.md
 -  https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays
 
-Some examples of DT overlays for drivers written for ADI parts can be found at this link: :git-linux:`commits/rpi-4`.14.y/arch/arm/boot/dts/overlays
+Some examples of DT overlays for drivers written for ADI parts can be found at this link: :git-linux:`commits/rpi-4.14.y/arch/arm/boot/dts/overlays`
 
 Copy built overlays (usually name <def config name>.dtbo) to the overlays folder onto the boot partition and reference the overlay in config.txt. For example:
 

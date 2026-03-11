@@ -44,14 +44,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_12_image_2.png
+   :alt: lab_12_image_2.png
+   :align: center
+   :width: 800px
 
-|lab_12_image_2.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
-
-|lab_12_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_12_assembly_image_1.png
+   :alt: lab_12_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -104,7 +109,3 @@ Observations and Conclusions
 
 .. |lab_12_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_12_image_1.png
    :width: 400px
-.. |lab_12_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_12_image_2.png
-   :width: 800px
-.. |lab_12_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_12_assembly_image_1.png
-   :width: 1000px

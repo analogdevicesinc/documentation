@@ -17,4 +17,4 @@ Input to F pin = $2 sin{\\pi f} / {f_s} $
 
 where the filter cutoff frequency is :math:`f` and the sample rate is :math:`f_s` . The sine argument is unitless (radians).
 
-.. |stateqfpic1.png| image:: https://wiki.analog.com/_media/stateqfpic1.png
+.. |stateqfpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/stateqfpic1.png

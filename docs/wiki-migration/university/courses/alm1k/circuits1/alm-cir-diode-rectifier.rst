@@ -17,9 +17,8 @@ The ALM1000 generates and measures unipolar or single-ended signals in the range
 
 In the ALICE desktop software we can make the following adjustments. As shown in figure 1, on the right hand side of the scope screen, enter 2.5 for the CA-V and CB-V offset adjustment. This is because in this lab we are referencing all the measurements to the +2.5 V common rail. Also enter 0 for the CH-A and CH-B vertical position settings (along bottom of scope screen). The vertical scale should now be centered on 0 and go from -2.5 to +2.5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-d1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,9 +35,8 @@ Directions:
 
 Set up the breadboard with AWG Channel A attached to one end of the diode. The other end of the diode is connected to one end of the 100 Ω load resistor as shown in figure 2. The other end of the resistor is connected to the 2.5 V rail. Single ended input of scope channel B is connected to the end of the resistor not connected to the 2.5 V rail.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -83,9 +81,8 @@ Directions:
 
 Again using 1N914 diodes, set up the breadboard with AWG CH-A attached to one end of the first diode, D\ :sub:`1`, and AWG CH-B to one end of the second diode, D\ :sub:`2`. Both diodes should face in the same direction as shown in figure 3. The other end of each diode is connected to one end of the 100 Ω load resistor R\ :sub:`L`. The other end of the resistor is connected to the 2.5 V rail.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -136,9 +133,8 @@ Directions:
 
 Four diodes (1N914) can be arranged in a bridge configuration to provide a full-wave rectification from an AC source such as a center-taped transformer winding. The center taped winding can be represented by the two AWG outputs centered around a common node if they are 180 degrees out of phase with the center tap being the +2.5 V common rail, shown in figure 4. The load resistors R\ :sub:`L1` and R\ :sub:`L2` (100 Ω each) are connected to the common node +2.5 V rail thus producing both positive and negative rectified outputs measured by inputs AIN and BIN with respect to the common node. However, it can also be noted that only the AC input or the load can be referenced to the common (+2.5 V rail in this case ). Note that if R\ :sub:`L1` and R\ :sub:`L2` are equal to each other then no net current will flow into or out of the +2.5 V common mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -150,9 +146,8 @@ Hardware Setup:
 
 The AWG CH-A waveform generator should be configured for a 100 Hz Sine wave with 0 volt Min value and 5 volt Max value. Check the B= Comp A check box as shown in figure 5 to set channel B to be the complement of channel A i.e. same p-p value but 180 degrees out of phase. Set the mode to be SVMI Split I/O to generate the sine waves on the CH A and CH B pins and measure the voltage waveforms at the bridge output on the AIN and BIN pins.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f5.png
-   :align: center
-   :width: 250px
+
+|image5|
 
 .. container:: centeralign
 
@@ -168,9 +163,8 @@ Under the Curves drop down menu select CA-V, CA-I and CB-V, CB-I to be displayed
 
 On the Math setup screen select CA-CB to display the differential voltage waveform across the load resistors at the output of the bridge. You should see traces like those shown in figure 6. Note that the AIN and BIN voltage traces are symmetric around the +2.5 V common node voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -200,3 +194,16 @@ How could you reconfigure this circuit to allow one end of the load resistor to 
 `Rectifiers <https://en.wikipedia.org/wiki/Rectifier>`_ `Bridge Rectifier <https://en.wikipedia.org/wiki/Diode_bridge>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-d1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f5.png
+   :width: 250px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-rectifier-f6.png
+   :width: 600px

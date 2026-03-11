@@ -38,15 +38,20 @@ Files
       -  Next copy the **ad9528** and **mykonos** folder to the **src** folder of your project. Do **NOT** copy the common.c and common.h files provided by the api. For now, use the ones downloaded from github.
       -  Make sure the paths for the directories are included. Right click on the src folder from Project Explorer and go to Properties -> C/C++ Build -> Settings -> ARM v7 gcc compiler -> Directories
 
-::
+      |resources-eval-user-guides-mykonos-src_properties.jpg|
 
-       {{ :resources:eval:user-guides:mykonos:src_properties.jpg?nolink&650 |}}
    * Click Add -> Workspace... ->ad9528
-       {{ :resources:eval:user-guides:mykonos:folder_selection.png?nolink&650 |}}
+
+       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/folder_selection.png
+
    * Repeat the procedure for mykonos, src and mykonos_debug. The included paths should look like this:
-       {{ :resources:eval:user-guides:mykonos:included_paths.png?nolink&650 |}}
+
+       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/included_paths.png
+
    * Add the above folders also for **Configuration: Debug**
-       {{ :resources:eval:user-guides:mykonos:configuration_debug.png?nolink&650 |}}
+
+       .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/configuration_debug.png
+
 
 -  **Transceiver Evaluation Software**
 
@@ -155,25 +160,34 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
 -  Open the NIOS II Software Build Tools for Eclipse. When NIOS II starts it asks to provide a folder, where to store the work space. Any folder can be provided.
 -  Go to **File -> New -> NIOS II Board Support Package**
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_new_bsp.png
+   :align: center
 
 -  Browse for the **SOPC Information File**:
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/sopc_file.png
+   :align: center
 
 -  Type a **Project name** and click **Finish**:
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/proj_name.png
+   :align: center
 
 -  Go to **File -> New -> NIOS II Application**
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_new_app.png
+   :align: center
 
 -  Select the **BSP location**, type a **Project name** and click **Finish**
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/bsp_location.png
+   :align: center
 
--  The brand new **NIOS II Application** should look like:|image6|
+-  The brand new **NIOS II Application** should look like:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/new_app.png
+   :align: center
+
 -  The next step is to copy all the relevant source code into the **software** directory.
 -  **AD9371/AD9375 No-OS Software**
 
@@ -200,24 +214,29 @@ Before the image can be loaded the **Quartus Prime 16.0** tool or the `Quartus P
 -  Nios II Eclipse should automatically build the projects and the Console window will display the result of the build. If the build is not done automatically select the **Project**→**Build Automatically** menu option.
 -  Note: if you get this error: warning: Unable to reach (null) (at 0x00088608) from the global pointer (at 0x000752b8) because the offset (78672) is out of the allowed range, -32678 to 32767, a quick workaround can be found on the `Altera support page <https://www.altera.com/support/support-resources/knowledge-base/solutions/rd02132012_291.html>`_: modify the linker.x file from your bsp by deleting **+ SIZEOF (.rwdata)** from this one line:
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/linker.png
+   :align: center
 
 -  At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system. You can program the FPGA by using **Quartus Prime Programmer**. Load your **.sof** file and click **Start**, the **Progress** bar should indicate **100% (Successful)**
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/quartus_programmer.png
+   :align: center
 
 -  Next, go to Nios II eclipse and select **Run -> Run Configurations...**
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/run_configurations.png
+   :align: center
 
 -  Select the **Nios II Hardware** configuration type.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_hw.png
+   :align: center
 
 -  Press the **New** button to create a new configuration.
 -  On the **Target Connection** tab, press the **Refresh Connections** button. You may need to expand the window or scroll to the right to see this button.
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/refresh_connection.png
+   :align: center
 
 -  Check the **Ignore mismatched system ID option**.
 -  Check the **Ignore mismatched system timestamp** option.
@@ -280,7 +299,8 @@ Below is defined the adc_core structure used by the adc_setup() and adc_capture(
 -  Once DDS or DMA mode is selected and the project configuration can be ran.
 -  Open an UART terminal, set the baud rate to 115200bps and make sure the initialization was completed, as in the screenshot bellow:
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_console_done.png
+   :align: center
 
 -  Next, download the capture scripts from the `git repository <https://github.com/analogdevicesinc/no-OS/tree/2018_R2/ad9371/scripts>`_.
 -  By running **capture.bat**, the **iq_rx1.csv** and **iq_rx2.csv** files will be generated inside the **nios2eds** folder
@@ -300,16 +320,4 @@ The source code of the no-OS software and the scripts can be downloaded from the
    -  **API Source Code** http://www.analog.com/en/design-center/landing-pages/001/transceiver-evaluation-software.html
    
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_new_bsp.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/sopc_file.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/proj_name.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_new_app.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/bsp_location.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/new_app.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/linker.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/quartus_programmer.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/run_configurations.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_hw.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/refresh_connection.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/nios_ii_console_done.png
+.. |resources-eval-user-guides-mykonos-src_properties.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/mykonos/src_properties.jpg

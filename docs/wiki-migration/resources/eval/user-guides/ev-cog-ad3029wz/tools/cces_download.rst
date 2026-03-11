@@ -49,20 +49,13 @@ CrossCore Embedded Studio Download Packages
    
    The EV-COG-AD3029WZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029WZ.
    
-   .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/ADI_CrossCoreEmbeddedStudio-Rel2.7.0.exe
-      :alt: CrossCore Embedded Studio 2.7.0 Windows Installer(Executable)
-      :align: left
+   `CrossCore Embedded Studio 2.7.0 Windows Installer(Executable) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/ADI_CrossCoreEmbeddedStudio-Rel2.7.0.exe>`_
    
-   .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.7.0.deb
-      :alt: CrossCore Embedded Studio 2.7.0 Ubuntu Linux Installer(Debian)
+   `CrossCore Embedded Studio 2.7.0 Ubuntu Linux Installer(Debian) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.7.0.deb>`_
    
-   .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/ADI_CrossCoreEmbeddedStudio-Rel2.6.0.exe
-      :alt: CrossCore Embedded Studio 2.6.0 Windows Installer(Executable)
-      :align: left
+   `CrossCore Embedded Studio 2.6.0 Windows Installer(Executable) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/ADI_CrossCoreEmbeddedStudio-Rel2.6.0.exe>`_
    
-   .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.6.0.deb
-      :alt: CrossCore Embedded Studio 2.6.0 Ubuntu Linux Installer(Debian)
-      :align: left
+   `CrossCore Embedded Studio 2.6.0 Ubuntu Linux Installer(Debian) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.6.0.deb>`_
    
 
 

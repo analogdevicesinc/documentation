@@ -23,9 +23,8 @@ At this point, right-click the block on its border or label to add another algor
 
 A block that contains no algorithms will have no controls or pins and you will only see the block's name (as shown in the figure below). You must add an algorithm to empty blocks before they can be used in the schematic design.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic3.png
-   :alt: algorithmpic3.png
-   :align: center
+
+|algorithmpic3.png|
 
 .. tip::
 
@@ -67,3 +66,5 @@ Reducing is the opposite of growing, it removes the extra controls and pins that
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic5.png
    :alt: algorithmpic5.png
+
+.. |algorithmpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithmpic3.png

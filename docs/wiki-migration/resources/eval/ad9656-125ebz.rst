@@ -11,7 +11,9 @@ The :adi:`AD9656` data sheet provides additional information and should be consu
 Typical Measurement Setup
 -------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656-125EBZ_top_level.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -135,14 +137,14 @@ Table 1. Jumper Settings
 +------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
-| |image2|
+| |image1|
 
 .. container:: centeralign
 
    *Figure 2. Default Jumper Connections for* :adi:`AD9656EBZ <EVAL-AD9656>` *Board*
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
@@ -158,7 +160,11 @@ The installers for VisualAnalog and SPIController are in the following locations
 
 After configuring the board hardware, set up the ADC data capture using the following steps:
 
--  Start VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 3). Average FFT is a good test to start with.\ |image4|\
+-  Start VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 3). Average FFT is a good test to start with.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_New_Canvas_window.PNG
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -166,7 +172,10 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
 
 -  After the template is selected, a message might appear asking if the default configuration can be used to program the FPGA (see Figure 4). If this message appears, click **Yes**, and the window will close.
-   |image5|\
+
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -175,24 +184,16 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
 -  To view the canvas and associated functional blocks, click the **Expand Display** button, located on the bottom right corner of the window (see Figure 5), to see what is shown in Figure 6.
 
-
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_toolbar_collapsed.PNG
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog Window Toolbar, Collapsed Display*
 
-   
 
-
-\
-
-
-   
-
-
-|image7|
+   |image4|
 
 .. container:: centeralign
 
@@ -203,7 +204,7 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
 
 
-|image8|
+|image5|
 
 .. container:: centeralign
 
@@ -214,7 +215,7 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
 
 
-|image9|
+|image6|
 
 .. container:: centeralign
 
@@ -225,7 +226,7 @@ After configuring the board hardware, set up the ADC data capture using the foll
 
 
 
-|image10|
+|image7|
 
 .. container:: centeralign
 
@@ -244,7 +245,7 @@ After configuring the board hardware, set up the ADC data capture using the foll
 Though the AD9656 supports a wide variety of converter/lane/sample rate configurations, the software supports only the configurations in the software menu as an out-of-the-box functional kit. If other sample rates or configurations are required, an additional external clock is likely needed.
 
 
-|image11|
+|image8|
 
 .. container:: centeralign
 
@@ -258,36 +259,58 @@ Setting up the SPI Controller Software
 
 After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
 
--  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select .cfg file whose name begins with AD9656. If not prompted, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 11).\ |image12|\
+-  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select .cfg file whose name begins with AD9656. If not prompted, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 11).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_Global_tab_ChipID.PNG
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 11. SPI Controller, CHIP ID(1) Box*\
 
 
--  Click the **New DUT** button in the **SPIController** window (see Figure 12)\ |image13|\
+-  Click the **New DUT** button in the **SPIController** window (see Figure 12)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_spicontroller_global_tab_newdUT_button.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   \ *Figure 12. SPI Controller, New DUT Button*-  In the **ADCBase0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 13), and the **MODES(8)** box (see Figure 14). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. If there is any interruption of the ADC clock during power-up or during operation, a Digital Reset may be needed to re-initialize the ADC (Figure 14). For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\ |image14|\
+   \ *Figure 12. SPI Controller, New DUT Button*-  In the **ADCBase0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 13), and the **MODES(8)** box (see Figure 14). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. If there is any interruption of the ADC clock during power-up or during operation, a Digital Reset may be needed to re-initialize the ADC (Figure 14). For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCBase0_tab_ClkDiv.png
+   :align: center
+   :width: 600px
+
+
 
 .. container:: centeralign
 
    \ *Figure 13. SPI Controller, CLOCK DIVIDE(B) Box*\
 
 
-|image15|\
+| |image9|
 
 .. container:: centeralign
 
    \ *Figure 14. SPI Controller, Chip Power Mode - Digital Reset Selection*\
 
 
--  In the **ADCBase1** tab of the **SPIController** window, set the number of lanes the AD9656 will be configured to. Note that the number of lanes selected here must match the settings made in VisualAnalog as shown in Step 7, Figure 10 above.\ |image16|\
+-  In the **ADCBase1** tab of the **SPIController** window, set the number of lanes the AD9656 will be configured to. Note that the number of lanes selected here must match the settings made in VisualAnalog as shown in Step 7, Figure 10 above.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCBase1_tab_QuickConfig.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   \ *Figure 15. SPI Controller, Quick Configure Box*-  Note that other settings can be changed on the **ADCBase0 tab** (see Figure 13) and the **ADC A** through **ADC D** tabs (see Figure 16) to set up the part in the desired mode. The **ADCBase0** tab settings affect the entire part, whereas the settings on the **ADC A** through **ADC D** tabs each affect the selected channel only. See the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image17|\
+   \ *Figure 15. SPI Controller, Quick Configure Box*-  Note that other settings can be changed on the **ADCBase0 tab** (see Figure 13) and the **ADC A** through **ADC D** tabs (see Figure 16) to set up the part in the desired mode. The **ADCBase0** tab settings affect the entire part, whereas the settings on the **ADC A** through **ADC D** tabs each affect the selected channel only. See the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCA_tab.PNG
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -295,7 +318,11 @@ After the ADC data capture board setup is complete, set up the SPI controller so
 
 
 -  Invoke a Digital Reset as shown in Figure 14 before testing. After selecting Reset, select Chip run to return to normal operation.
--  To begin testing, click the **Run** or **Continuous Run** button in the **VisualAnalog** toolbar (see Figure 17).\ |image18|\
+-  To begin testing, click the **Run** or **Continuous Run** button in the **VisualAnalog** toolbar (see Figure 17).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_toolbar_collapsed_run_button.PNG
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -307,7 +334,11 @@ Adjusting the Amplitude of the Input Signal
 
 The next step is to adjust the amplitude of the input signal for each channel as follows:
 
--  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9656 FFT** window (see Figure 18).\ |image19|\
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9656 FFT** window (see Figure 18).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/AD9656_FFT_example.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -347,40 +378,20 @@ If the FFT window remains blank after **Run** in VisualAnalog (see Figure 17) is
 -  Make sure that the FPGA has been programmed by verifying that the **CONFIG_DONE** LED is illuminated on the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` board. If the **CONFIG_DONE** LED is not illuminated, click the **Settings** icon in the **ADC Data Capture** block in VisualAnalog. Then select the **FPGA** tab and verify that the proper FPGA .mcs file (one containing "AD9656" in the filename) is selected for the part. Then push the **Program** button. The LED should light up.
 -  On the :adi:`AD9656EBZ <EVAL-AD9656>` there is an LED next to a reset button (S501). If this LED is not lit, push the reset button and try running again.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD9656-125EBZ_top_level.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/AD9656_125EBZ_default_jumpers.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/AD9656_125EBZ_default_jumpers.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9656_jumper_location_wiki_figure_3_-_white_box.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_New_Canvas_window.PNG
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/10235-005.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9656_jumper_location_wiki_figure_3_-_white_box.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/10235-005.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_toolbar_collapsed.PNG
-   :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_avg_FFT_window_2ch_expanded.PNG
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_avg_FFT_window_2ch_expanded.PNG
    :width: 700px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_button.PNG
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_button.PNG
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_GeneralTab.PNG
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_GeneralTab.PNG
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_CaptureBoardTab.PNG
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_CaptureBoardTab.PNG
    :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_DeviceTab.PNG
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/AD9656_ADC_DataCaptureSettings_DeviceTab.PNG
    :width: 500px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_Global_tab_ChipID.PNG
-   :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/AD9656_spicontroller_global_tab_newdUT_button.png
-   :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCBase0_tab_ClkDiv.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCBase0_tab_DigReset.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCBase1_tab_QuickConfig.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCA_tab.PNG
-   :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/AD9656_VA_toolbar_collapsed_run_button.PNG
-   :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/AD9656_FFT_example.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/AD9656_SPIController_ADCBase0_tab_DigReset.png
    :width: 600px

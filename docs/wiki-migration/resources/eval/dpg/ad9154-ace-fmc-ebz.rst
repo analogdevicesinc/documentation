@@ -99,7 +99,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image5|\ *Figure 5. ACE AD9154 Chipview Tab*\
+   |image5|\ *Figure 5. ACE AD9154 Chipview Tab*\
 
 
 -  In ACE, apply the configuration wizard settings enumerated below and shown in Figure 4. JESD204B PLL should lock and the indicator should turn green.
@@ -134,7 +134,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image8|\ *Figure 8. Oscilloscope Capture of Other DAC Outputs*\
+   |image8|\ *Figure 8. Oscilloscope Capture of Other DAC Outputs*\
 
 
 -  Press the download arrow (|9154_down_arrow.png|) then the play button (|9154_right_green_arrow.png|). As in Figure 6, **Serial Line Rate** should appear as 7.5 Gbps and **Sync Status** should have a check mark. FFT plot of one of the DAC outputs is shown in Figure 7 while the oscilloscope capture of the other outputs is Figure 8.

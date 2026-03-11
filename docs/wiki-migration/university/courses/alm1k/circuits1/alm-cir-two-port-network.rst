@@ -33,9 +33,8 @@ Background:
 
 In theory, a network may have one port, two-ports, or N ports, depending on the number of circuit mesh. The concept of a “port” is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -184,9 +183,8 @@ ADALM1000 module Solderless breadboard Jumper wires 1 – 68 Ω resistor 2 – 
 
 Construct the two-port network on the solderless breadboard as shown in figure . Since the negative terminal of port 1 and negative terminal of port 2 are the same node (i.e. shorted together) only one connection to the ground of the M1k connector is needed.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -201,36 +199,29 @@ Use the ALICE Meter Source tool to fill in table 1 for each of the four test con
 
 Table 1
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3, CH A on set to 5 V, CH B off open circuit test.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig4.png
-   :align: center
-   :width: 500px
+   |image4|
 
 .. container:: centeralign
 
    Figure 4, CH A on set to 5 V, CH B on set to 0 V, short circuit test.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig5.png
-   :align: center
-   :width: 500px
+   |image5|
 
 .. container:: centeralign
 
    Figure 5, CH A off, CH B set to 5 V open circuit test.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig6.png
-   :align: center
-   :width: 500px
+   |image6|
 
 .. container:: centeralign
 
@@ -244,3 +235,16 @@ Once you have all the measurements for V\ :sub:`1`, I\ :sub:`1`, V\ :sub:`2` and
 `Two Port Networks <https://en.wikipedia.org/wiki/Two-port_network>`_
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-two-port-net-fig6.png
+   :width: 500px

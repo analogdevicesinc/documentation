@@ -105,7 +105,9 @@ EV-SC594-SOM Rev B
 -  256 Mb Octal SPI Flash Memory
 -  FTDI USB-to-UART
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sc594_som.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -136,16 +138,14 @@ EV-SOMCRR-EZKIT Rev A
    \ **Figure:** EV-SOMCRR-EZKIT Rev A (Top view)
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/ev-somcrr-ezkit_ev-21569-som.png
-   :align: center
+   |image1|
 
 .. container:: centeralign
 
    \ **Figure:** EV-SOMCRR-EZKIT + EV-21569-SOM
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/ev-somcrr-ezkit_ev-sc594-som.png
-   :align: center
+   |image2|
 
 .. container:: centeralign
 
@@ -157,32 +157,29 @@ Connections
 
 To run the sample demo, the following setup connections are to be made.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections.png
-   :align: center
+
+|image3|
 
 .. container:: centeralign
 
    \ **Figure:** Multi-main connections using PC(Host) and EV-21569-SOM + EV-SOMCRR-EZKIT and ADZS-AD2435 MINI’s
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_for_audio_stream.png
-   :align: center
+   |image4|
 
 .. container:: centeralign
 
    \ **Figure:** Multi-main connections for audio stream from SOM carrier to sub-node line-out using EV-SC594-SOM + EV-SOMCRR-EZKIT (Host) and ADZS-AD2435 MINI’s
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_for_audio_stream_from_subnode.png
-   :align: center
+   |image5|
 
 .. container:: centeralign
 
    \ **Figure:** Multi-main connections for audio stream from subnode PDM mic to subnode line-out using SC594 SOM carrier kit (Host) and ADZS2435MINI’s
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_for_audio_stream_from_subnode_line-in.png
-   :align: center
+   |image6|
 
 .. container:: centeralign
 
@@ -227,5 +224,9 @@ Audio In/out for ADSP-SC594 as a host – multi-main
 -  Connect separate audio sinks (e.g., passive speakers) to output of Class-D amplifier ports as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>`, on subnode boards.
 -  Connect separate audio sinks such as headphones to line outs as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2435-with-som-carrier-ez-kit>`.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/sc594_som.png
-   :width: 500px
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/ev-somcrr-ezkit_ev-21569-som.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/ev-somcrr-ezkit_ev-sc594-som.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_for_audio_stream.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_for_audio_stream_from_subnode.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/multi-main_connections_for_audio_stream_from_subnode_line-in.png

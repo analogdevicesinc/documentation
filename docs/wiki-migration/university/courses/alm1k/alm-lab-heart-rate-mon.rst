@@ -26,12 +26,12 @@ The voltage variations change with the heartbeat and are acquired from the colle
 
 In order to have a relevant output, the input signal is passed through multiple circuits:
 
-::
 
-   *Preamplifier - the output signal from the heartbeat measurement setup is decoupled through the series capacitor and amplified using a negative feedback resistor(R4).
-   *Low-Pass Filter - RC filter that cuts the high frequencies (noise).
-   *[[/university/courses/alm1k/alm-lab-1|Voltage Follower]] - buffers the output of the low-pass filter and reproduces its voltage with a low impedance output;
-   *[[/university/courses/alm1k/alm-lab-1|Inverting Amplifier]] with Low-Pass Filter - amplifies the voltage signal and cuts the high frequencies (noise);
+
+- Preamplifier - the output signal from the heartbeat measurement setup is decoupled through the series capacitor and amplified using a negative feedback resistor(R4).
+- Low-Pass Filter - RC filter that cuts the high frequencies (noise).
+-  :doc:`Voltage Follower </wiki-migration/university/courses/alm1k/alm-lab-1>` - buffers the output of the low-pass filter and reproduces its voltage with a low impedance output;
+-  :doc:`Inverting Amplifier </wiki-migration/university/courses/alm1k/alm-lab-1>` with Low-Pass Filter - amplifies the voltage signal and cuts the high frequencies (noise);
 
 Materials
 ---------
@@ -80,9 +80,9 @@ Find resistors with the following color bands: 1 - 100Ω resistor (brown black 
 
 1 - Infrared Transistor (QSD-123) the longer of the two leads is the collector and the shorter lead is the emitter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g2.jpg
-   :align: center
-   :width: 250px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -93,7 +93,7 @@ Find resistors with the following color bands: 1 - 100Ω resistor (brown black 
 
 
 
-|image6|
+|image7|
 
 Directions
 ----------
@@ -102,9 +102,8 @@ On your solder-less breadboard construct the heartbeat monitor circuit as shown 
 
 The collector load resistor R\ :sub:`2` of the photo transistor can also be adjusted to optimally center the signal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_fig1_heart-rate-mon.png
-   :align: center
-   :width: 750px
+
+|image8|
 
 .. container:: centeralign
 
@@ -207,8 +206,7 @@ Considering the circuit designed in LTSpice or ADIsimPE, two types of simulation
 
    *AC Sweep - Connect at the input of the circuit a AC Source. Configure the source to have a magnitude of 250uV. Observe the output signal in a chosen frequency domain (100mHz - 1kHz) in order to determine graphically in which frequency range the output signal has the biggest amplification (Figure 3).
 
-
-   |image7|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-graph-ac.png
 
 .. container:: centeralign
 
@@ -226,7 +224,7 @@ Procedure
 The Heart Rate monitor can operate in either of two modes. In the first mode, as shown on the left of figure 4, the light from the LED is reflected as it passes into the tip of the finger and bounces back into the photo transistor. Arrange the LED and photo transistor right next to each other both facing up. It might be useful to shorten the leads so that they sit against the breadboard surface. In the second mode, as shown on the right of figure 4, the light from the LED passes through the tip of the finger and into the photo transistor on the other side. Put the tip of your finger between the IR LED (D1) and the Photo transistor (Q1). The emitter and the receiver should be aligned and pointing one to another.
 
 
-|image8|
+|image9|
 
 .. container:: centeralign
 
@@ -238,7 +236,7 @@ The red LED should blink on and off once per heart beat, about once per second.
 Observe the voltage waveform seen at the the output of the 3rd stage op amp (A\ :sub:`3`). The signal is very slow, low frequency, and is best viewed using the Alice M1K Strip Chart tool. Start the Strip Chart and select CH-A on 1 grid, then hit Run. An example of the output waveform is shown in Figure 5.
 
 
-|image9|
+|image10|
 
 .. container:: centeralign
 
@@ -303,10 +301,13 @@ Questions
    :width: 250px
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g1.jpg
    :width: 250px
-.. |image6| image:: https://wiki.analog.com/_media/university/tools/adalp2000/leds.jpg
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g2.jpg
    :width: 250px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-graph-ac.png
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-2modes.png
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/adalp2000/leds.jpg
+   :width: 250px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_fig1_heart-rate-mon.png
+   :width: 750px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-2modes.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-wave.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab_heart-rate-mon-wave.png
    :width: 750px

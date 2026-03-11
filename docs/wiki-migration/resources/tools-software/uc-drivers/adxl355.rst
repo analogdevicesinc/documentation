@@ -51,15 +51,10 @@ The source code for ADXL355 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADXL355 Driver <drivers/accel/adxl355/adxl355.h>`
+   -   :git-no-OS:`Implementation of ADXL355 Driver <drivers/accel/adxl355/adxl355.c>`
    
-   |Header file of ADXL355 Driver|
 
-   -
-
-   |Implementation of ADXL355 Driver|
 
 The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
 
@@ -67,15 +62,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADXL355 driver and have to be implemented:
 
@@ -106,15 +96,10 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for SPI Communication APIs|
 
-   -
-
-   |Generic header file for I2C Communication APIs|
 
 ADXL355 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,15 +268,10 @@ The source code for ADXL355 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADXL355 IIO Driver <drivers/accel/adxl355/iio_adxl355.h>`
+   -   :git-no-OS:`Implementation of ADXL355 IIO Driver <drivers/accel/adxl355/iio_adxl355.c>`
    
-   |Header file of ADXL355 IIO Driver|
 
-   -
-
-   |Implementation of ADXL355 IIO Driver|
 
 ADXL355 IIO Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,12 +417,3 @@ ADXL355 IIO Driver Application Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Below you can find an Application Example Project for ADXL355 IIO driver: :doc:`Evaluating the ADXL355 </wiki-migration/resources/eval/user-guides/eval-adxl355-pmdz/no-os-setup>`
-
-.. |Header file of ADXL355 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl355/adxl355`.h
-.. |Implementation of ADXL355 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl355/adxl355`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
-.. |Header file of ADXL355 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl355/iio_adxl355`.h
-.. |Implementation of ADXL355 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl355/iio_adxl355`.c

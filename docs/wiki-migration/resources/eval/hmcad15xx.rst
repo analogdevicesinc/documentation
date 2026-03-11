@@ -196,7 +196,7 @@ This section is intended to provide evaluation board characterization results on
 
 .. container:: centeralign
 
-   \ |image10|\ *Figure 8. Amplifier Path for Single-to-Differential Configuration in CH2*\
+   |image10|\ *Figure 8. Amplifier Path for Single-to-Differential Configuration in CH2*\
 
 
 Troubleshooting Tips

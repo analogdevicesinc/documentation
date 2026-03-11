@@ -38,9 +38,10 @@ The following steps will get your system up and running.
 -  Build the HDL project according to the :doc:`Building HDL wiki </wiki-migration/resources/fpga/docs/build>` and copy the resulting .hdf file to the **no-OS repo folder -> projects -> adv7511**.
 -  Choose the carrier board in the software by uncommenting the appropriate define in the **src/app_config.h** file. For example, if the Zedboard carrier is needed, uncomment the #define PLATFORM_ZED in the file.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/kc705/example_soft_platform_choice.png
+   :align: center
 
--  Build the software project according to the :git-no-OS:`Github wiki <wiki>`.50
+-  Build the software project according to the `Github wiki <https://github.com/analogdevicesinc/no-OS/wiki>`_.50
 
 .. note::
 
@@ -208,5 +209,3 @@ More information
 
 -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
 -  :doc:`Linux with HDMI video output on the ZED and ZC702 boards </wiki-migration/resources/tools-software/linux-drivers/platforms/zynq>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/kc705/example_soft_platform_choice.png

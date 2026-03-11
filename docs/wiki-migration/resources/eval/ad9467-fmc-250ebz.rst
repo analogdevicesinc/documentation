@@ -11,7 +11,9 @@ The :adi:`AD9467` data sheet provides additional information and should be consu
 AD9467-FMC-250EBZ
 -----------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467_board.png
+   :align: center
+   :width: 700px
 
 .. container:: centeralign
 
@@ -21,7 +23,9 @@ AD9467-FMC-250EBZ
 Typical Measurement Setup
 -------------------------
 
-|image2|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467_datacapture.png
+   :align: center
+   :width: 900px
 
 .. container:: centeralign
 
@@ -51,7 +55,7 @@ Software Needed
 ---------------
 
 -  :adi:`VisualAnalog`
--  :adi:`SPIController </en/design-center/interactive-design-tools/spicontroller.html>`
+-  :adi:`SPIController <en/design-center/interactive-design-tools/spicontroller.html>`
 
 Design and Integration Files
 ----------------------------
@@ -68,10 +72,7 @@ Equipment Needed
 -  PC running Windows®
 -  USB 2.0 port
 -  :adi:`AD9467-FMC-250EBZ <AD9467>` board
-
-::
-
-   *[[:adi:`en/system-demonstration-platform/controller-boards/evaluation/EVAL-SDP-H1/eb`.html|SDP-H1]]  FPGA-based data capture kit
+-  :adi:`SDP-H1 <en/system-demonstration-platform/controller-boards/evaluation/EVAL-SDP-H1/eb.html>` FPGA-based data capture kit
 
 Getting Started
 ---------------
@@ -85,11 +86,14 @@ Before using the software for testing, configure the evaluation board as follows
 
 -  Connect the :adi:`AD9467-FMC-250EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9467.html#eb-overview>` evaluation board to the :adi:`SDP-H1` data capture board, as shown in Figure 2.
 -  Connect one 12V, 2.5A switching power supply (such as the one supplied) to the :adi:`SDP-H1` board. Connect the Mini-B USB port of the :adi:`SDP-H1` board to the PC with the supplied USB cable.
--  The :adi:`SDP-H1 <en/system-demonstration-platform/controller-boards/evaluation/EVAL-SDP-H1/eb.html>` will appear in the Device Manager as shown in Figure 3. |image3|\
+-  The :adi:`SDP-H1 <en/system-demonstration-platform/controller-boards/evaluation/EVAL-SDP-H1/eb.html>` will appear in the Device Manager as shown in Figure 3.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/device_manger.png
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
-   
    //Figure 3. Device Manager Showing SDP-H1 //
 
 
@@ -105,70 +109,105 @@ Visual Analog Setup
 ~~~~~~~~~~~~~~~~~~~
 
 -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog.
--  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Single** :math:`right` **AD9467** :math:`right` **FFT**.\ |image4|\
+-  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Single** :math:`right` **AD9467** :math:`right` **FFT**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/visualanalog_newcanvas.png
+   :align: center
+   :width: 650px
 
 .. container:: centeralign
 
-   
-   //Figure 4. Selecting the AD9467 canvas *
+   //Figure 4. Selecting the AD9467 canvas //
 
 
-- If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see Figure 5).\
+-  If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see Figure 5).
 
-.. container:: centeralign
-
-   *Figure 5. Expanding the Display*
-
-
-- Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 6\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/expand_display.png
+   :align: center
+   :width: 75px
 
 .. container:: centeralign
 
-   *Figure 6. Changing the ADC Capture Settings*
+   //Figure 5. Expanding the Display //
 
 
-- On the **General** tab make sure the clock frequency is set to **250MHz** *(or other clock frequency). \
+-  Click the **Settings** button in the **ADC Data Capture** block as shown in Figure 6
 
-.. container:: centeralign
-
-   *Figure 7. Setting the clock frequency and capture length*
-
-
-- Click on the **Capture Board** tab and browse to the **ad9467_sdp_h1.bin** file. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the EVAL-SDP-CH1Z board indicating that the FPGA has been correctly programmed. The bin file is available at the ftp site* ftp://ftp.analog.com/pub/HSC_ADC_Apps/SDP-H1/ad9467_sdp_h1.bin\ *\* Click **OK**==== SPIController Setup ==== * Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \
+.. image:: https://wiki.analog.com/_media/resources/eval/fig5_change_adc_capture_settings.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
-   *Figure 8. Control Window for AD9647*
+   *Figure 6. Changing the ADC Capture Settings*\
 
 
-- Select the **AD9467_16Bit_250MSspiR03.cfg** if prompted. \* If necessary, click File :math:`right` Cfg Open :math:`right`**AD9467_16Bit_250MSsspiR03.cfg*** To enable SPI communications, click File :math:`right` Config :math:`right`**Controller Dialog** and un-check the **SDO Active** button \
+-  On the **General** tab make sure the clock frequency is set to **250MHz** (or other clock frequency).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/settings_2.png
+   :align: center
+   :width: 650px
 
 .. container:: centeralign
 
-   *Figure 9. Un-Selecting SDO Active in SPIController*
+   *Figure 7. Setting the clock frequency and capture length*\
+
+
+-  Click on the **Capture Board** tab and browse to the **ad9467_sdp_h1.bin** file. Click the **Program** button. The **FPGA_DONE** LED should illuminate on the EVAL-SDP-CH1Z board indicating that the FPGA has been correctly programmed. The bin file is available at the ftp site ftp://ftp.analog.com/pub/HSC_ADC_Apps/SDP-H1/ad9467_sdp_h1.bin
+-  Click **OK**
+
+SPIController Setup
+~~~~~~~~~~~~~~~~~~~
+
+-  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController
+
+.. image:: https://wiki.analog.com/_media/resources/eval/settings_window.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   *Figure 8. Control Window for AD9647*\
+
+
+-  Select the **AD9467_16Bit_250MSspiR03.cfg** if prompted.
+-  If necessary, click File :math:`right` Cfg Open :math:`right` **AD9467_16Bit_250MSsspiR03.cfg**
+-  To enable SPI communications, click File :math:`right` Config :math:`right` **Controller Dialog** and un-check the **SDO Active** button
+
+.. image:: https://wiki.analog.com/_media/resources/eval/sdo_active.png
+   :align: center
+   :width: 200px
+
+.. container:: centeralign
+
+   *Figure 9. Un-Selecting SDO Active in SPIController*\
+
 
 Obtaining an FFT
 ~~~~~~~~~~~~~~~~
 
 -  Click the Run button in VisualAnalog , you should see the captured data similar to the plot shown in Figure 9
 
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/sma_100a_5mhz.jpg
+   :align: center
+   :width: 650px
 
 .. container:: centeralign
 
-   
    *Figure 10. AD9467-FMC-250 FFT at 5MHz Analog Input*\
 
 
 -  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window). Usually about 16dBm of signal power from the signal generator will result in a -1dBFS Fundamental signal.
 -   To save the FFT plot do the following
 
-   -  Click on the Float Form button in the FFT window\ |image6|\
+   -  Click on the Float Form button in the FFT window
+
+.. image:: https://wiki.analog.com/_media/resources/eval/float_form.png
+   :align: center
+   :width: 150px
 
 .. container:: centeralign
 
-   
    *Figure 11. Floating the FFT window*\
 
 
@@ -211,9 +250,7 @@ The AD9467-FMC-250EBZ is configured from the factory to use an external clock co
 
 **Additional Software Needed**
 
-::
-
-    *[[https://wiki.analog.com/_media/resources/eval/ad9467fmc/configure_ad9517_ad9467-fmc-250ebz_.zip|configure_ad9517_AD9467-FMC-250EBZ MGP file]]
+-  `configure_ad9517_AD9467-FMC-250EBZ MGP file <https://wiki.analog.com/_media/resources/eval/ad9467fmc/configure_ad9517_ad9467-fmc-250ebz_.zip>`_
 
 \*\* Setup Instructions \*\*
 
@@ -222,30 +259,39 @@ The AD9467-FMC-250EBZ is configured from the factory to use an external clock co
 -  Launch a 2nd instance of SPIController.
 -  Load the AD9517spiR03.cfg configuration file.
 -  Click Config>Controller Dialog
--  Select "2" Under FIFO Chip Sel # |image7|\
+-  Select "2" Under FIFO Chip Sel #
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/SPI_Controller_Cfg_Dialog2.PNG
+   :align: center
+   :width: 262px
 
 .. container:: centeralign
 
-   
    *Figure 12. Select Fifo Chip Sel # 2 in SPIController*\
 
 
 -  Click Apply and OK
 -  Click File>Macro Group Open
 -  Select the configure_ad9517_AD9467-FMC-250EBZ .mgp file
--  Check the Enable Check Box |image8|\
+-  Check the Enable Check Box
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/MacroEditor-Enable.PNG
+   :align: center
+   :width: 375px
 
 .. container:: centeralign
 
-   
    *Figure 13. Select Enable Macro in SPIController*\
 
 
--  Click Run Macros |image9|\
+-  Click Run Macros
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/run.PNG
+   :align: center
+   :width: 23px
 
 .. container:: centeralign
 
-   
    *Figure 14. Click Run Macros in SPIController*\
 
 
@@ -255,32 +301,11 @@ The AD9467-FMC-250EBZ is configured from the factory to use an external clock co
 
 -  Click the Run button in VisualAnalog , you should see the captured data similar to the plot shown in Figure 9
 
-
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/fft-ad9517.png
+   :align: center
+   :width: 736px
 
 .. container:: centeralign
 
-   
    *Figure 15. AD9467-FMC-250 FFT at 140.3MHz Analog Input (performance may be degraded compared to high-quality direct clock)*\
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9467_board.png
-   :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9467_datacapture.png
-   :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/device_manger.png
-   :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/visualanalog_newcanvas.png
-   :width: 650px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/sma_100a_5mhz.jpg
-   :width: 650px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/float_form.png
-   :width: 150px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/SPI_Controller_Cfg_Dialog2.PNG
-   :width: 262px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/MacroEditor-Enable.PNG
-   :width: 375px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/run.PNG
-   :width: 23px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9467fmc/fft-ad9517.png
-   :width: 736px

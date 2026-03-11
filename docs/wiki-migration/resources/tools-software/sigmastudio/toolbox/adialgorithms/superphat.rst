@@ -93,4 +93,4 @@ Algorithm Details
 | Parameter RAM              | 52                                                           |
 +----------------------------+--------------------------------------------------------------+
 
-.. |superphatpic1.png| image:: https://wiki.analog.com/_media/superphatpic1.png
+.. |superphatpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/superphatpic1.png

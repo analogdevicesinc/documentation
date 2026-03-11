@@ -41,14 +41,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following LED transmitter and phototransistor receiver circuitry on the solderless breadboard\
+-  Construct the following LED transmitter and phototransistor receiver circuitry on the solderless breadboard
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_image_1.png
+   :alt: lab_7_image_1.png
+   :align: center
+   :width: 600px
 
-|lab_7_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard (note that the LED and phototransistor must face each other)
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard (note that the LED and phototransistor must face each other)\
-
-|lab_7_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_assembly_image_1.png
+   :alt: lab_7_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Run PixelPulse on the computer and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -57,22 +62,34 @@ Procedure
 -  Measure and record the voltage on Channel A
 -  Move a ruler or similar opaque object between the LED and the phototransistor and record the voltage on Channel A
 -  Move the object very slowly back and forth from completely between the LED and phototransistor to completely away from the LED and phototransistor and observe and record the behavior of the voltage on Channel A
--  Add the following comparator circuit to the breadboard (note that this is the same comparator with hysteresis that was used in the Simple Proximity Sensor lab)\
+-  Add the following comparator circuit to the breadboard (note that this is the same comparator with hysteresis that was used in the Simple Proximity Sensor lab)
 
-|lab_7_image_2a.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_image_2a.png
+   :alt: lab_7_image_2a.png
+   :align: center
+   :width: 1000px
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
-|lab_7_assembly_image_2a.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_assembly_image_2a.png
+   :alt: lab_7_assembly_image_2a.png
+   :align: center
+   :width: 1200px
 
 -  Move the object very slowly back and forth from completely between the LED and phototransistor to completely away from the LED and phototransistor and observe and record the behavior of the Red LED
--  Modify the infrared LED and phototransistor circuit as shown in the following schematic\
+-  Modify the infrared LED and phototransistor circuit as shown in the following schematic
 
-|lab_7_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_image_3.png
+   :alt: lab_7_image_3.png
+   :align: center
+   :width: 600px
 
--  Refer to the illustration below for one way to make the modifications to the LED and phototransistor circuits\
+-  Refer to the illustration below for one way to make the modifications to the LED and phototransistor circuits
 
-|lab_7_assembly_image_3a.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_assembly_image_3a.png
+   :alt: lab_7_assembly_image_3a.png
+   :align: center
+   :width: 1000px
 
 -  Set up Channel B to source voltage and measure current
 -  Generate a 0.0 V to 5.0 V 1 KHz square wave on Channel B
@@ -108,16 +125,3 @@ Observations and Conclusions
 -  A LED and phototransistor can be used to detect when an opaque object is placed between them
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_7_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_image_1.png
-   :width: 600px
-.. |lab_7_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_assembly_image_1.png
-   :width: 1000px
-.. |lab_7_image_2a.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_image_2a.png
-   :width: 1000px
-.. |lab_7_assembly_image_2a.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_assembly_image_2a.png
-   :width: 1200px
-.. |lab_7_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_image_3.png
-   :width: 600px
-.. |lab_7_assembly_image_3a.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_7_assembly_image_3a.png
-   :width: 1000px

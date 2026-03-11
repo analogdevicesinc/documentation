@@ -103,15 +103,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD5791 Driver. <drivers/dac/ad5791/ad5791.c>`
+   -  :git-no-OS:`Header file of AD5791 Driver. <drivers/dac/ad5791/ad5791.h>`
    
-   |Implementation of AD5791 Driver.|
 
-   -
-
-   |Header file of AD5791 Driver.|
-
-.. |Implementation of AD5791 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5791/ad5791`.c
-.. |Header file of AD5791 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5791/ad5791`.h

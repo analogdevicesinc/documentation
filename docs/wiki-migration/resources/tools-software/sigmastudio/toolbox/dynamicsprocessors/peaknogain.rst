@@ -20,8 +20,8 @@ Controls
 | Show Graph   | |peaknogainpic5.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +--------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |peaknogainpic1.png| image:: https://wiki.analog.com/_media/peaknogainpic1.png
-.. |peaknogainpic2.png| image:: https://wiki.analog.com/_media/peaknogainpic2.png
-.. |peaknogainpic3.png| image:: https://wiki.analog.com/_media/peaknogainpic3.png
-.. |peaknogainpic4.png| image:: https://wiki.analog.com/_media/peaknogainpic4.png
-.. |peaknogainpic5.png| image:: https://wiki.analog.com/_media/peaknogainpic5.png
+.. |peaknogainpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peaknogainpic1.png
+.. |peaknogainpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peaknogainpic2.png
+.. |peaknogainpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peaknogainpic3.png
+.. |peaknogainpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peaknogainpic4.png
+.. |peaknogainpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peaknogainpic5.png

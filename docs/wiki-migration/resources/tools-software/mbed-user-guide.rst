@@ -6,7 +6,7 @@ This user guide explains the steps necessary to set up the development environme
 Step 1 - Analog Devices mbed repository
 ---------------------------------------
 
-Download or clone the Analog Devices mbed repository from https://github.com/analogdevicesinc/mbed-adi
+Download or clone the Analog Devices mbed repository from :git-mbed-adi:`mbed-adi`
 
 Step 2 - Download and install compiler
 --------------------------------------

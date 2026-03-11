@@ -33,7 +33,7 @@ Temperature calibration
 
 .. important::
 
-   Only available from firmware version :git-m2k-fw:`releases/tag/v0.26`\
+   Only available from firmware version `v0.26 <https://github.com/analogdevicesinc/m2k-fw/releases/tag/v0.26>`_\
 
 
 Libm2k offers a way to use prerecorded calibration values that are stored in a context attribute. Using this approach, there is no need to disconnect the analog inputs/outputs at every run because the calibration parameters are stored on the device. Since calibration values are dependent on temperature, a script will record the values at different temperatures and eventually create a file that is compatible with libm2k and the context attribute format.

@@ -23,7 +23,9 @@ The following steps are involved in Bandwidth calculation
 -  Enter required details (Cable delay and Sampling Rate parameters) for calculation. Other values required for Bandwidth calculation like Slot format, data width and number of upstream /downstream slots etc. will be picked up from the device properties window settings.
 -  Press Run button to get the bandwidth information as shown in :doc:`Figure 72 </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>`
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bwpage.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -60,7 +62,9 @@ The following steps are involved in Power calculation
 -  Create an A2B schematic (or open an existing A2B Schematic project) in SigmaStudio+.
 -  Set power source and cable length in the Node ‘Device Properties’ window as shown in :doc:`Figure 74 </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>`
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/power_source.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -71,7 +75,9 @@ The following steps are involved in Power calculation
 -  Provide values for power calculation parameters of each A2B node in the system. Select the desired power calculation Mode.
 -  Press Run button to get the power consumption information as shown in :doc:`Figure 75 </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>`
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/power_calculation.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -113,8 +119,9 @@ The following steps are involved in Bandwidth calculation
 
 -  Press Run button to get the bit error information as shown in :doc:`Figure 77 </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>`.
 
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bert_calculation.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -133,9 +140,8 @@ Trace
 
 The Trace option in the Network properties window show in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/navigating-a2b-schematic>` enables user to log various transactions and network events into a .txt file. Upon enabling this feature the A2B stack running inside SigmaStudio Plus captures all transactions as per the ‘Level’ and ‘Domain’ set. :doc:`Figure 78 </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/networkanalysisanddebug>` shows a sample Trace file generated for selected Level (Debug, Info, Trace3) and Domain (Plugin, Message, I2C). The Trace file gets saved inside the ‘Settings’ folder corresponding to the A2B schematic project file location.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_trace_file.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -171,9 +177,9 @@ Following prerequisites shall be ensured to generate the sequence chart upon dis
 
 If the prerequisites are met and sequence chart option is enabled in the Network properties tab, then upon successful discovery of A2B network, the Sequence chart will be generated which can be viewed by clicking on the View button. A Sequence chart generated for a 3 node sample demo schematic is shown in Figure 80.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sequence_chart_sample.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -182,20 +188,18 @@ If the prerequisites are met and sequence chart option is enabled in the Network
 
 If the prerequisites are not met, then a pop up window will display the error message as shown in Figure 81.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/error_message_sequence_chart_prerequisites_not_met.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
    **Figure 81:** Error Message – Sequence Chart Prerequisites not met
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bwpage.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_trace_file.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/power_source.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sequence_chart_sample.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/power_calculation.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bert_calculation.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/error_message_sequence_chart_prerequisites_not_met.png
    :width: 600px

@@ -24,9 +24,8 @@ Not all capacitors are polarized, but when they are, it’s very important not t
 
 Ceramic capacitors – the small (typicaly 1µF and less), commonly blue or yellow colored ceramic bodies – are not polarized. You can connect those either way in the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ Electrolytic and Tantalum Capacitors
 
 Electrolytic capacitors (they contain electrolytes), which look like little tin cans, are polarized. The negative pin of the capacitor is usually indicated by a (-) marking, and/or a colored strip along the can. They might also have a longer positive leg. Below is an electrolytic capacitor which has a dash symbol to mark the negative leg, as well as a longer positive leg and a tantalum capacitor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -61,9 +59,8 @@ Getting polarity right in your circuit starts and ends with getting the power su
 
 Anyone that has ever replaced batteries knows how to find their polarity. Most batteries will indicate the positive and negative terminals with a “+” or “-” symbol. Other indicators of polarity might be the color of the wires, red for positive and black for negative.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f3.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -74,9 +71,8 @@ All batteries. Lithium polymer, coin cell, 9V alkaline, AA alkaline, and AA NiMH
 
 Power supplies usually have a standardized connector, which should usually have polarity itself. A barrel jack, for example, has two conductors: outer and inner; the inner/center conductor is usually the positive terminal. Other connectors, have keys so you they cannot be inserted backwards.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -90,9 +86,8 @@ Diode and LED Polarity
 
 Diodes are two terminal components that only allow current to flow in one direction, and they are always polarized. The positive terminal (+) is called the anode, and the negative terminal is called the cathode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f5.png
-   :align: center
-   :width: 550px
+
+|image5|
 
 .. container:: centeralign
 
@@ -103,9 +98,8 @@ Current through a diode can only flow from the anode to the cathode, which would
 
 Below are a few examples of diodes. The diode with a black plastic body is a 1N4001 rectifier and it has a grey ring near the cathode. The diode with a glass body is a 1N914 signal diode with a black ring to mark the cathode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -117,9 +111,8 @@ Light Emitting Diodes, LEDs
 
 LED stands for light-emitting diode, which means that much like other normal diodes, they’ are polarized. There are a handful of identifiers for distinguishing the positive and negative pins on an LED. One is to identify the longer leg, which should indicate the positive, anode pin. Sometimes the leads have been trimmed, try finding the flat edge on the LED’s outer casing. The pin nearest the flat edge will be the negative, cathode pin.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -133,9 +126,8 @@ LED polarity test with ALM1000
 
 The polarity of an LED can be tested with a digital multimeter. If the positive lead touches the anode and negative touches the cathode, the LED should light up. The ALICE Desktop Ohmmeter tool can be used to test diodes and LEDs as well as measure resistors. Connect the positive end of the diode to CH A and the negative end to CH B.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f8.png
-   :align: center
-   :width: 400px
+
+|image8|
 
 .. container:: centeralign
 
@@ -149,9 +141,8 @@ Transistors, MOSFETs, and Voltage Regulators
 
 These (traditionally) three-terminal, polarized components are lumped together because they share similar package types. Through-hole transistors, MOSFETs, and voltage regulators commonly come in a TO-92 or TO-220 package, seen below. To find which pin is which, look for the flat edge on the TO-92 package or the metal heatsink on the TO-220, and match that up to the pin-out in the datasheet.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f9.png
-   :align: center
-   :width: 550px
+
+|image9|
 
 .. container:: centeralign
 
@@ -167,9 +158,8 @@ Resistor arrays
 
 A SIP resistor pack, is an array of five 330Ω resistors, all tied together at one end. The dot represents the first, common pin. The resistors in side are not individually "polarized" but the common connection makes the overall array non-symetric.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -185,3 +175,24 @@ Now that you know what polarity is, and how to identify it, why not check out so
 **For Further Reading:**
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f3.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f5.png
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f8.png
+   :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f9.png
+   :width: 550px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-polarity-f10.png
+   :width: 600px

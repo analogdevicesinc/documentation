@@ -41,7 +41,7 @@ Applications
 Software Development
 ~~~~~~~~~~~~~~~~~~~~
 
-The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL GitHub repository <https://github.com/analogdevicesinc/gmsl>`_.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL GitHub repository <gmsl>`.
 
 Resources
 ---------

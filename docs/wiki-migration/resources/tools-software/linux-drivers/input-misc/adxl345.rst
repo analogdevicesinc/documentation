@@ -157,23 +157,23 @@ Starting with linux-2.6.36 the ADXL34x driver is mainlined. If you are using an 
 
 If you are using a kernel version **without the threaded irq capabilities (< 2.6.30) get there driver from here:**
 
--  :git-linux-kernel?drivers:`adxl34x.c <input/misc/adxl34x.c;h=c67bb179f81642fe1bf403d132567098fd492dee;hb=b03acb9bcd06d8495f9c2510a593a2adf9919aaa>`
+-  :git-linux-kernel:`drivers/input/misc/adxl34x.c`
 
    -  Copy to linux-2.6.x/drivers/input/misc/adxl34x.c
 
--  :git-linux-kernel?drivers:`adxl34x.h <input/misc/adxl34x.h;h=c67bb179f81642fe1bf403d132567098fd492dee;hb=b03acb9bcd06d8495f9c2510a593a2adf9919aaa;>`
+-  :git-linux-kernel:`drivers/input/misc/adxl34x.h`
 
    -  Copy to linux-2.6.x/drivers/input/misc/adxl34x.h
 
--  :git-linux-kernel?drivers:`adxl34x-i2c.c <input/misc/adxl34x-i2c;h=c67bb179f81642fe1bf403d132567098fd492dee;hb=b03acb9bcd06d8495f9c2510a593a2adf9919aaa>`
+-  :git-linux-kernel:`adxl34x-i2c.c <drivers/input/misc/adxl34x-i2c>`
 
    -  Copy to linux-2.6.x/drivers/input/misc/adxl34x-i2c.c
 
--  :git-linux-kernel?drivers:`adxl34x-spi.c <input/misc/adxl34x-spi.c;h=c67bb179f81642fe1bf403d132567098fd492dee;hb=b03acb9bcd06d8495f9c2510a593a2adf9919aaa>`
+-  :git-linux-kernel:`drivers/input/misc/adxl34x-spi.c`
 
    -  Copy to linux-2.6.x/drivers/input/misc/adxl34x-spi.c
 
--  :git-linux-kernel?include:`adxl34x.h <linux/input/adxl34x.h;h=c67bb179f81642fe1bf403d132567098fd492dee;hb=b03acb9bcd06d8495f9c2510a593a2adf9919aaa>`
+-  :git-linux-kernel:`include/linux/input/adxl34x.h`
 
    -  Copy to linux-2.6.x/include/linux/input/adxl34x.h
 

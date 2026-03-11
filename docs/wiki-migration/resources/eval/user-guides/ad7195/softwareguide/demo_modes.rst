@@ -42,24 +42,31 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 -  Double click the AD7195 Eval Board icon to open the AD7195 Eval Board view window. The demo wizard will be on the left, either as shown in the figure below (Label 1) or already expanded. Expand the wizard by clicking the arrow (Label 2).
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad7195noisetest.png
+   :align: center
+   :width: 600px
 
 -  With the wizard expanded, select the noise test button (Label 3).
 -  The settings required for the demo are displayed to be viewed prior to writing to the AD7195 (Label 4). Click apply (Label 5) to write these settings to the board.
 -  The summary is then displayed once the write is complete (Label 1).
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad7195noisesummary.png
+   :align: center
+   :width: 600px
 
 -  From here navigate to the chip view by double-clicking the AD7195 chip (Label 2).
 -  To make further changes to the configuration click on the dark blue block in the chip view (Label 1) or double click the memory map option (Label 2)
--  To begin capturing data double click the Analysis button (Label 3).\
+-  To begin capturing data double click the Analysis button (Label 3).
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad7195noisechip.png
+   :align: center
+   :width: 600px
 
--  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a noise test.\
+-  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a noise test.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad795noisewaveform.png
+   :align: center
+   :width: 600px
 
 -  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>`
 
@@ -84,12 +91,3 @@ Reading Samples from the ADC
 Find the waveforms resulting from the gathered samples in the Analysis tab. The waveform graph shows each successive sample of the ADC output (input referred). The indicators beside this graph show the channels converting. The navigation tools allow you to control the cursor, zooming, and panning. You can also display the conversions as voltages or codes. Below the graph are parameters, such as peak-to-peak noise and rms noise, in the Results section for the current batch of samples. If there are several enabled analog input channels, you can select each enabled channel and the conversions through the analyzed channel using the Results Tab. To save the data into an Excel file, select the Export button from the Results Tab. A Save dialog box is displayed, prompting you to save the data to an appropriate folder location.
 
 :doc:`Return to Software Guide </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad7195noisetest.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad7195noisesummary.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad7195noisechip.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7195/softwareguide/ad795noisewaveform.png
-   :width: 600px

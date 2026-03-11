@@ -133,7 +133,9 @@ One of the power up options for COG is through an external supply on VDD_MAIN ra
 -  Connect the MCU COG board to EV-GEAR-EXPANDER1Z board via C1 & C2 connectors
 -  Connect the power supply to EV-GEAR-EXPANDER1Z as shown in the following figure
 
-|image13|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/external_vdd_expander.png
+   :align: center
+   :width: 500px
 
 .. important::
 
@@ -166,5 +168,3 @@ One of the power up options for COG is through an external supply on VDD_MAIN ra
    :width: 500px
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/overall_external_supply.png
    :width: 700px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/external_vdd_expander.png
-   :width: 500px

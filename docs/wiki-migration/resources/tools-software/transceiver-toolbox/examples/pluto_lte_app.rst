@@ -17,7 +17,7 @@ The GitHub repository that contains the code can be found `here <https://github.
 
 Available versions of the app:
 
--  :git-TransceiverToolbox:`Standalone Compiled App (Release 20.1.1+) <releases>`
+-  `Standalone Compiled App (Release 20.1.1+) <https://github.com/analogdevicesinc/TransceiverToolbox/releases>`_
 -  `MATLAB Source <https://github.com/TransceiverToolbox?/pluto_lte_app/trx_examples/streaming/LTE_PA_App>`_
 
 During the application installation, the "Next" button shows up a few times. When you click it, it does not grey out and become non-sensitive. It is still active, and you may be tempted to click it again. Doing so will shoot off multiple (conflicting) processes that all eventually try to write to the same temporarily directory on your machine, eventually causing random failures, either during the installation, or during the first time you run the application. Instead, we suggest that you click "Next" once, and only once to avoid any issues, both during installation and during runtime.

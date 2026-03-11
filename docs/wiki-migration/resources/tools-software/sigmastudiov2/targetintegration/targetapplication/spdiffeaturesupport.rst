@@ -119,7 +119,8 @@ Once the sport configuration changes have been completed, regenerate the config 
 -  The generated config file for ADSP-2156x processor must be overwritten as **adi_ss_fw_config_2156x.h** in “\ **C:\\Analog Devices\\SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Framework\\Include**\ ” folder.
 -  For ADSP-SC5xx/ADSP-215xx processors, generated config file must be overwritten as **adi_ss_fw_config.h** in the same “\ **C:\\Analog Devices\\SigmaStudioPlus-Relx.y.z\\Target\\Examples\\Framework\\Include**\ ” folder.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/fw_code.png
+   :align: center
 
 .. container:: centeralign
 
@@ -131,7 +132,7 @@ Once the sport configuration changes have been completed, regenerate the config 
 In SigmaStudioPlus schematic, connect the audio data channels to the output channels 8 and 9, in order to route the data to SPORT of S/PDIF Tx as shown in below figure.
 
 
-|image8|
+|image7|
 
 .. container:: centeralign
 
@@ -160,5 +161,4 @@ With all the above changes incorporated, the target application and SigmaStudioP
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/sinksportconfig.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/processor_settings.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/generateconfigfile.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/fw_code.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/spdif_output.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/spdif_output.png

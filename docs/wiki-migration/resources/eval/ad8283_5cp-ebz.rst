@@ -61,7 +61,9 @@ Set the jumper settings/link options on the evaluation board for the required op
 | J601   | SPI lines. All jumpers must be shorted to enable connection to the data capture board. |
 +--------+----------------------------------------------------------------------------------------+
 
-|image1|
+.. image:: https://wiki.analog.com/_media/ad8283/ad8283_eval_bd_z_1_of_1_edlow.jpg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -76,7 +78,7 @@ Before using the software for testing, configure the evaluation board as follows
 1. Connect the evaluation board to the data capture board, as shown in Figure 2.
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -87,7 +89,7 @@ Before using the software for testing, configure the evaluation board as follows
 
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -98,7 +100,7 @@ Click Yes when the dialog box below appears to configure the part.
 
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -109,7 +111,7 @@ Click Yes when the dialog box below appears to configure the part.
 
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -120,7 +122,7 @@ Configure the part registers on the ADCBase0 tab. Individual registers may also 
 
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -131,7 +133,7 @@ Configure the part registers on the ADCBase0 tab. Individual registers may also 
 
 
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -246,17 +248,15 @@ Once all registers and settings have been configured, the FFT can now be run. 1.
 .. image:: https://wiki.analog.com/_media/ad8283/chana_40mhz_100mvpp_reg0cdat00h.png
    :align: center
 
-.. |image1| image:: https://wiki.analog.com/_media/ad8283/ad8283_eval_bd_z_1_of_1_edlow.jpg
+.. |image1| image:: https://wiki.analog.com/_media/ad8283/ad8283-hsc-adc_1_of_1_edlow.jpg
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/ad8283/ad8283-hsc-adc_1_of_1_edlow.jpg
+.. |image2| image:: https://wiki.analog.com/_media/ad8283/vanalog_startup.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/ad8283/vanalog_startup.png
+.. |image3| image:: https://wiki.analog.com/_media/ad8283/vanalog_program8283.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/ad8283/vanalog_program8283.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/ad8283/spicontroller_chipid_zoom.png
+.. |image4| image:: https://wiki.analog.com/_media/ad8283/spicontroller_chipid_zoom.png
    :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/ad8283/spicontroller_adcbase_zoom.png
+.. |image5| image:: https://wiki.analog.com/_media/ad8283/spicontroller_adcbase_zoom.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/ad8283/vanalog_play.png
+.. |image6| image:: https://wiki.analog.com/_media/ad8283/vanalog_play.png
    :width: 400px

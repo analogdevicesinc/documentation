@@ -16,9 +16,8 @@ Background
 
 A basic definition of a transformer is a component that takes an AC signal at one voltage (on the primary) and transforms it into another voltage either higher or lower than the original voltage (on the secondary), thus a “step-up or step-down transformer”. A transformer can also be used to isolate a circuit from the ground in which case the transformer is called an "isolation transformer". But importantly, the usage of the transformer that we are going to tackle is its capability to match impedances of circuits to achieve maximum power transfer. Consider the simulation circuit presented in figure 1. The circuit is a Transformer Coupled Class A Power Amplifier. This is like the normal common emitter amplifier circuit but connected to a transformer as the collector load.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -27,9 +26,9 @@ A basic definition of a transformer is a component that takes an AC signal at on
 
 The waveforms from the simulation are shown in figure2. The amplifier has considerable gain. A 50 mV peak-to-peak signal on the base, V(vbase), results in a 1.96 V peak-to-peak signal centered on the +5 V power supply on the collector, V(vcol). A gain of about 39.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -83,9 +82,8 @@ Hardware Setup
 
 Build the circuit from figure 1, using figure 3 as the reference. Use power supplied +5V and +2.5V of ADALM1000. The signal we need to apply to the base is rather small so a resistor divider consisting of the 6.8 k (R5) and 1 k (R6) is used to attenuate the channel A AWG sine source.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -99,9 +97,8 @@ Set AWG channel A in SVMI mode to Shape sine with a Min value of 1.75 and a Max 
 
 Monitor both channels on the oscilloscope. The result should be similar to Figure 4. The green trace is the AWG A output (before the resistor divider) and the orange trace is the secondary voltage across the load resistor. As can be seen the overall gain of the combined resistor divider and amplifier is nearly one. There is power gain however in that the input impedance will be greater than 6.8 k while the output load impedance is 100 Ω (a ratio of > 68:1).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -132,3 +129,12 @@ Refer to Transformers Lab activity to know more about the 6 winding transformer:
 -  :doc:`Transformers </wiki-migration/university/courses/alm1k/alm-lab-transformers>`
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-trans-coupled-amp-fig4.png
+   :width: 600px

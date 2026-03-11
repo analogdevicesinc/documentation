@@ -82,7 +82,7 @@ Data Tunnel Configuration tab in Stream Configuration allows user to add, edit a
 
 .. container:: centeralign
 
-   \ |image4|\
+   |image4|\
 
 
 .. container:: centeralign

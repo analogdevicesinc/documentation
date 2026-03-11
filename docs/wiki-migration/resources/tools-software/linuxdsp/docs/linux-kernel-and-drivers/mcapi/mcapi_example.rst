@@ -22,7 +22,7 @@ Here we take ADSP-SC589 EZ-kit as our example.
 Get the Source Code Ready
 -------------------------
 
-The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you can get the MCAPI example for SHARC+ Cores from the gitbub `lnxdsp-examples <https://github.com/analogdevicesinc/lnxdsp-examples.git>`_
+The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you can get the MCAPI example for SHARC+ Cores from the gitbub :git-lnxdsp-examples:`lnxdsp-examples`
 
 - MCAPI Examples for SHARC Cores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +37,7 @@ The MCAPI example for ARM core (Running Linux) is included in the YOCTO, and you
 
 .. code:: bash
 
-   git clone https://github.com/analogdevicesinc/lnxdsp-examples.git
+   git clone :git-lnxdsp-examples:`lnxdsp-examples`
    cd lnxdsp-examples
    git branch -a
    git checkout -b release/yocto-1.0.0 origin/release/yocto-1.0.0
@@ -175,7 +175,8 @@ Import the mcapi example into CCES
    : The mcapi example projects should appear in the **projects** pane of the **Import** window
    : Check the entry in the **projects** pane and click **Finish**
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/001_import_mcapi_example_into_cces.png
+   :align: center
 
 .. container:: centeralign
 
@@ -188,7 +189,7 @@ Build Mode Selection
 Select the "Build Tool" to choose Debug/Release mode for building the target projects:
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -200,8 +201,8 @@ Build the projects
 
 -  In the **Project Explorer** right click on the **mcapi_send_recv_sc589_Core1** and **mcapi_send_recv_sc589_Core2** projects to select the **Build Project** option from the menu
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/003_build_the_projects_in_cces.png
+   :align: center
 
 .. container:: centeralign
 
@@ -253,7 +254,7 @@ Or boot Linux, and then in Linux use the corecontrol utility to start the SHARC 
 After running SHARC core, CCES halts in the first line of the application code on SHARC core 1.
 
 
-|image4|
+|image2|
 
 Step5: Resume Core 1 & 2 Application running in CCES
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -513,7 +514,5 @@ Run 'arm_sharc_msg_demo' and 'arm_sharc_msg_test' command in Linux and the passe
 
 **BACK TO** :doc:`Multi-Core Support </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/start>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/001_import_mcapi_example_into_cces.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/002_debug_or_release_mode_choosing.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/003_build_the_projects_in_cces.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/cces_debug_config_resume.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/002_debug_or_release_mode_choosing.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/multicore/cces_debug_config_resume.jpg

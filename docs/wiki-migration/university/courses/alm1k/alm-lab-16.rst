@@ -20,9 +20,8 @@ Concept:
 
 The basic concept of capacitor based DC to DC converter is shown below in figure 1. These are often referred to as "flying capacitor" or "charge-pump" voltage converters. The operation alternates between the two configurations of the switches shown in figure 1. In one, switches S\ :sub:`1` and S\ :sub:`5` are closed connecting C\ :sub:`1` between ground and V\ :sub:`IN`. In the second, switches S\ :sub:`4` and S\ :sub:`8` are closed connecting C\ :sub:`2` between V\ :sub:`IN` and V\ :sub:`Boost`. For the half cycle shown capacitor C\ :sub:`1` is charged to the voltage at V\ :sub:`IN` and V\ :sub:`Boost` is the sum of the voltage at V\ :sub:`IN` and the voltage on capacitor C\ :sub:`2`. For the second half cycle the switches are reversed. Now with S\ :sub:`2` and S\ :sub:`6` closed C\ :sub:`1` is connected between V\ :sub:`IN` and V\ :sub:`Boost`. Also switches S\ :sub:`3` and S\ :sub:`7` will now be closed connecting C\ :sub:`2` between ground and V\ :sub:`IN`. So now we can see that after a few cycles V\ :sub:`Boost`, the voltage across capacitor C\ :sub:`3` will be equal to twice V\ :sub:`IN`. As you can see the capacitors "fly" back and forth between V\ :sub:`IN` and V\ :sub:`Boost`, thus the name "flying capacitor". One can also see that what is in effect happening is the charge on capacitors C\ :sub:`1` and C\ :sub:`2` is alternately transferred or pumped onto capacitor C\ :sub:`3` charging it up to two times V\ :sub:`IN`. This action gives rise to the second "charge pump" name.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,9 @@ The basic concept of capacitor based DC to DC converter is shown below in figure
 
 We will now replace the ideal switches in the diagram with actual electronic switches. There are a number of possible devices that could be used but the MOS FET transistor is most often used because it can have both a low voltage drop and resistance when turned on. The next diagram shows a direct substitution of NMOS ( S\ :sub:`1`,S\ :sub:`3`,S\ :sub:`5`,S\ :sub:`7` ) and PMOS ( S\ :sub:`2`,S\ :sub:`4`,S\ :sub:`6`,S\ :sub:`8` ) devices for the switches in the first diagram. It can be noted that switches S\ :sub:`1` and S\ :sub:`2` form a complementary pair and take the same form as a CMOS inverter logic gate. The other three sets of switches form similar complementary pairs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f2.png
-   :align: center
-   :width: 550px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -54,9 +53,8 @@ Directions:
 
 Before we build any of the DC-DC converter circuits we need to build an input voltage divider circuit to attenuate or reduce the voltages being measured to a low enough value to fit safely within the 0V to +5V range allowed for the ADALM1000 analog inputs. Build the simple voltage divider shown in figure 3 on one end of your solderless breadboard. A DC offset voltage is supplied from the fixed 5 V supply to allow the ability to measure both positive and negative voltages.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -65,9 +63,9 @@ Before we build any of the DC-DC converter circuits we need to build an input vo
 
 Use the ALICE Desk-top input attenuator gain and offset entry widgets ( figure 4A ) to calibrate the displayed voltage level by connecting the divider input ( end of R\ :sub:`1` ) to ground and the fixed +5 V supply on the ADALM1000. Adjust the offset value such that the scope trace displays 0 V with the input grounded. Next adjust the gain value so that the trace displays as +5 V with the input connected to +5 V supply. With R\ :sub:`2` = 200 KΩ the gain factor should be around 6 but is actually 7.2 due to the internal 1 MΩ input resistance of the input. You can double check your settings by connecting the input to the +2.5 V supply and the trace should read as 2.5V. You can now safely measure voltages within the range shown in figure 3. Be sure to only use the voltage divider input when measuring voltages in this Lab.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f4.png
-   :align: center
-   :width: 150px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -76,9 +74,9 @@ Use the ALICE Desk-top input attenuator gain and offset entry widgets ( figure 4
 
 For this lab you will be mainly making DC measurements but the frequency response of the input divider can also be adjusted. To adjust the compensation settings open the Change Settings screen. Set CHA to SVMI mode and Shape Square. Set Min value to 0.5 and Max to 4.5. Set the Frequency to 500 Hz. With CHB in Hi-Z mode and connected to the voltage divider connect CHA output to the input of the divider. Adjust the CHB compensation TC1, A1 and TC2, A2 until the CHB wave shape is a flat top square wave just like CHA. Something like the settings shown in Figure 4B.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f4b.png
-   :align: center
-   :width: 300px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -91,9 +89,8 @@ The software should now be calibrated for using the input divider with CHB.
 
 The breadboard connections for the first version are as shown in figure 5 below. The voltage divider circuit should be connected to measure the voltage at VBoost. (or DMM could be used). The +5V bench power supply or 4.5 V battery should be connected to the Vin node. The digital pulse output drives the input of the first Inverter gate at pin 1. Scope input CA-H through the external resistor divider (see figure 3) is connected to the drain terminal of M\ :sub:`1` and scope input CB-H through an external resistor divider is connected to the drain terminal of M\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f5.png
-   :align: center
-   :width: 550px
+
+|image6|
 
 .. container:: centeralign
 
@@ -132,9 +129,8 @@ Directions:
 
 The breadboard connections for another version are as shown in figure 6 below. A one package of CMOS inverters is used for the upper set of switches (INV1 and INV2) rather than the discrete FETs and diodes. The ground connection of the 74HC04 at pin 7 is connected to the VIN node and the supply connection at pin 14 becomes the V\ :sub:`Boost` node. The voltage divider input should be connected to measure the voltage at V\ :sub:`Boost`. The +5V power supply should be connected to the V\ :sub:`IN` node. The LT1054 is used as both the clock digital pulse source and first driver output for capacitor C\ :sub:`1` and drives the input of the Inverter at the gates of NMOS M\ :sub:`1` and PMOS M\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f6.png
-   :align: center
-   :width: 550px
+
+|image7|
 
 .. container:: centeralign
 
@@ -143,9 +139,9 @@ The breadboard connections for another version are as shown in figure 6 below. A
 
 Figure 7 shows an inverting DC-DC configuration that produces V\ :sub:`Boost` equal to –V\ :sub:`IN`. The 74HC04 is connected below ground as shown to produce a V\ :sub:`Boost` that is equal to –V\ :sub:`IN`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f7.png
-   :align: center
-   :width: 550px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -157,9 +153,8 @@ Digital pulse generator:
 
 What sort of circuit could you make to generate the 100 KHz square wave? There are four additional inverters in the 74HC04 package. The other inverters along with RC delay network, R\ :sub:`4` C\ :sub:`4` can be configured into a ring oscillator as shown below. The values for R\ :sub:`4` and C\ :sub:`4` are approximate for 100 KHz and can be adjusted as needed.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f8.png
-   :align: center
-   :width: 350px
+
+|image9|
 
 .. container:: centeralign
 
@@ -180,9 +175,8 @@ Appendix:
 
 Hex inverter Pinouts:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f3.png
-   :align: center
-   :width: 450px
+
+|image10|
 
 .. container:: centeralign
 
@@ -191,9 +185,9 @@ Hex inverter Pinouts:
 
 CD4007 Pinout:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -202,9 +196,9 @@ CD4007 Pinout:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown below is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -218,3 +212,28 @@ The third inverter is made by connecting pin 11 to V\ :sub:`DD`, pin 9 to V\ :su
 Two of these inverters can be used to construct the inverters needed in figure 5.
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f4.png
+   :width: 150px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f4b.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f5.png
+   :width: 550px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f6.png
+   :width: 550px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f7.png
+   :width: 550px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab16_f8.png
+   :width: 350px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f3.png
+   :width: 450px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
+   :width: 600px

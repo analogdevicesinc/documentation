@@ -44,7 +44,8 @@ Main Node   Represents A2B Bus Analyzer Main Node Emulator
 Sub Node    Represents A2B Bus Analyzer Sub Node Emulator
 =========== ==============================================
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzermain_monitor_subnode.png
+   :align: center
 
 .. container:: centeralign
 
@@ -59,7 +60,7 @@ Bus Monitor Node can be connected between any 2 nodes of the A2B network and rep
 Shown below is an A2B network, where A2B Bus Analyzer is connected for Bus Monitoring between Main and Sub Node 0.
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -71,8 +72,8 @@ Sub Node Emulation
 
 A2B Bus Analyzer Platform can be configured as a Sub Node when the A2B Bus Analyzer hardware must be used for Sub Node Emulation in an A2B network. Shown below is an example A2B network, where the A2B Bus Analyzer is used for Sub Node Emulation of Node 0
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_subnode.png
-   :align: center
+
+|image3|
 
 .. container:: centeralign
 
@@ -114,8 +115,8 @@ Main Node Emulation Configuration
 
 When the A2B Bus Analyzer platform is configured as a Main Node, the Main Node Transceiver of the platform can be configured from the settings view
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/main_node_settings.png
-   :align: center
+
+|image6|
 
 .. container:: centeralign
 
@@ -127,15 +128,15 @@ Bus Monitoring & Emulation
 
 A2B Bus Analyzer currently supports running Bus Monitoring and Main/Sub Node Emulation simultaneously. A2B Bus Analyzer Platform configured as Main/Sub Node platform and Bus Monitor can be connected in a network chain as shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_mainnode_monitor.png
-   :align: center
+
+|image7|
 
 .. container:: centeralign
 
    \ **Figure:** Schematic with A2B Bus Analyzer as Main Node Emulator & Bus Monitor
 
 
-   |image6|
+   |image8|
 
 .. container:: centeralign
 
@@ -206,8 +207,10 @@ Steps to use 2 A2B analyzer in a single chain
    :align: center
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/a2b_bus_analyzer_platform_tree_toolbox.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzermain_monitor_subnode.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzerasmonitor.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzerasmonitor.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_subnode.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sub_node_settings.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_mainnode.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_subnode_monitor.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/main_node_settings.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_mainnode_monitor.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/analyzer_subnode_monitor.png

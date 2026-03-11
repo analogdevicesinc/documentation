@@ -8552,7 +8552,7 @@ Software Guidelines
 -  CRC_ERR - at reg. 0x404(channel) - available in CRC_ERR flag
 -  READ_RAW \_DATA - at reg. 0x408(channel)
 
-Linux driver at :git-linux>`__
+Linux driver at :git-linux:`ADI Linux repository <linux>`
 
 Known Limitations
 -----------------
@@ -8567,11 +8567,11 @@ For LVDS interface, enabling the oversampling breaks the captured data when usin
 References
 ----------
 
--  `AD4858 IP source code <https::`ADI Linux repository </github.com/analogdevicesinc/hdl/tree/master/library/axi_ad4858>`
+-  :git-hdl:`AD4858 IP source code <library/axi_ad4858>`
 -  :adi:`AD4858 chip information <ad4858>`
 -  :doc:`ad4858_fmcz_hdl </wiki-migration/resources/eval/user-guides/ad4858_fmcz/ad4858_fmcz_hdl>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
--  `ADI Linux repository <https://github.com/analogdevicesinc/linux>`_
+-  :git-linux:`ADI Linux repository <linux>`
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#resources/fpga/docs/ip_cores
    :alt: IP cores#resources/fpga/docs/hdl|Main page#resources/fpga/docs/tips|Using and modifying the HDL design

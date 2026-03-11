@@ -72,10 +72,10 @@ Block Settings Example:
 | 6. Now there are two settings files which can be recalled at any time:                                                                                                                                                                                                                   | |schemsettingspic10.png|\ |schemsettingspic11.png| |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
 
-.. |schemsettingspic5.png| image:: https://wiki.analog.com/_media/schemsettingspic5.png
-.. |schemsettingspic6.png| image:: https://wiki.analog.com/_media/schemsettingspic6.png
-.. |schemsettingspic7.png| image:: https://wiki.analog.com/_media/schemsettingspic7.png
-.. |schemsettingspic8.png| image:: https://wiki.analog.com/_media/schemsettingspic8.png
-.. |schemsettingspic9.png| image:: https://wiki.analog.com/_media/schemsettingspic9.png
-.. |schemsettingspic10.png| image:: https://wiki.analog.com/_media/schemsettingspic10.png
-.. |schemsettingspic11.png| image:: https://wiki.analog.com/_media/schemsettingspic11.png
+.. |schemsettingspic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic5.png
+.. |schemsettingspic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic6.png
+.. |schemsettingspic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic7.png
+.. |schemsettingspic8.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic8.png
+.. |schemsettingspic9.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic9.png
+.. |schemsettingspic10.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic10.png
+.. |schemsettingspic11.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/schemsettingspic11.png

@@ -46,18 +46,15 @@ This can also be represented as a phasor vector on a polar plot with:
 
 :math:`Phase = Tan^-1((X_L - X_C) / R )`
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab10-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1: Impedance Measurement of Series RLC circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab10-screen1.png
-   :align: center
-   :width: 650px
+   |image2|
 
 .. container:: centeralign
 
@@ -88,9 +85,8 @@ B. Measurement of Circuit Impedance and Effects of Frequency on RLC circuit:
 
 1. Setup the series RLC circuit shown in Figure 1 with the given component values. R\ :sub:`EXT` = 1 KΩ, R\ :sub:`s` = 470 Ω, C\ :sub:`S` = 1.0 uF and L\ :sub:`S` = 20 mH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/imp_meas_bb.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -199,3 +195,10 @@ Figure 5: Effects of frequency on RLC circuit.
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab10-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab10-screen1.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/imp_meas_bb.png
+   :width: 500px

@@ -43,17 +43,19 @@ Installing the Software
 
 -  Download the `CN0345 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0345>`_ and unzip the **CN0345_Evaluation_Software.zip** folder and run **setup.exe**. // |image1| //
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_4_install2.png
+   :align: center
+   :width: 700px
 
-|image2|
+-  Click **Next** to view the installation review page. // |image2| //
+-  Click **Next** to start the installation. // |image3| //
+-  Upon completion of the installation of the **CN0345 Evaluation Software**, click **Next** for the installer of the **ADI SDP Drivers** to execute. (The SDP drivers include an installation of the .NET 4.0 framework.) // |image4| //
 
--  Click **Next** to view the installation review page. // |image3| //
--  Click **Next** to start the installation. // |image4| //
--  Upon completion of the installation of the **CN0345 Evaluation Software**, click **Next** for the installer of the **ADI SDP Drivers** to execute. (The SDP drivers include an installation of the .NET 4.0 framework.) // |image5| //
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_8_sdpinstallation1.png
+   :align: center
 
-|image6|
-
--  Press **Next** to set the installation location for the **SDP Drivers**. // |image7| //
--  Press **Install** to install the **SDP Drivers** and complete the installation of all software. Click **Close** when done. // |image8| //
+-  Press **Next** to set the installation location for the **SDP Drivers**. // |image5| //
+-  Press **Install** to install the **SDP Drivers** and complete the installation of all software. Click **Close** when done. // |image6| //
 
 Connecting the Hardware
 -----------------------
@@ -341,8 +343,8 @@ Establishing a USB Connection Link
 -  Verify that the most recent SDP drivers are properly installed (see **Installing the Software**).
 -  Ensure that the :adi:`CN0345` Evaluation Hardware and the SDP-B Controller Board are correctly connected and powered up (see **Connecting the Hardware**).
 -  Run the `CN0345 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0345>`_ (**CN0345.exe**).
--  If the :adi:`CN0345` Evaluation Hardware is properly connected to the PC, the evaluation software will automatically establish a connection with the SDP-B Controller Board. A window with a progress bar will appear. // |image9| //
--  If the software does not detect the :adi:`CN0345` Evaluation Hardware, a pop-up will appear with options to reattempt the connection or to run the software in stand-alone mode (see the **Using Stand-Alone Mode** section below). Selecting **Rescan** will attempt to establish the USB connection again. Selecting **Cancel** will instruct the software to run in stand-alone mode. // |image10| //
+-  If the :adi:`CN0345` Evaluation Hardware is properly connected to the PC, the evaluation software will automatically establish a connection with the SDP-B Controller Board. A window with a progress bar will appear. // |image7| //
+-  If the software does not detect the :adi:`CN0345` Evaluation Hardware, a pop-up will appear with options to reattempt the connection or to run the software in stand-alone mode (see the **Using Stand-Alone Mode** section below). Selecting **Rescan** will attempt to establish the USB connection again. Selecting **Cancel** will instruct the software to run in stand-alone mode. // |image8| //
 
 Using Stand-Alone Mode
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -402,30 +404,25 @@ Viewing Conversion Results
 
 After capturing samples or loading a previous set of conversion results, the data and analysis items for each channel can be viewed using the **Multi-Channel** tab and the **Single-Channel** tab and its sub-tabs (**Waveform**, **Histogram**, and **FFT**).
 
--  Select the **Multi-Channel** tab to view every channel's data on a single plot. The **Multi-Channel Selectors** set the visibility of each channel's data. // |image11| //
+-  Select the **Multi-Channel** tab to view every channel's data on a single plot. The **Multi-Channel Selectors** set the visibility of each channel's data. // |image9| //
 -  Select the **Single-Channel** tab to view each channel's data or analysis results independently. The **Waveform** sub-tab shows the conversion results for that channel. The **Histogram** and **FFT** sub-tabs show the dc and ac analysis for each channel's data. //
 
-|image12|
-
-|image13| |image14|
+|image10| |image11| |image12|
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_3_install1.png
    :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_4_install2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_5_install3.png
    :width: 700px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_5_install3.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_6_install4.png
    :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_6_install4.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_7_install5.png
    :width: 700px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_7_install5.png
-   :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_8_sdpinstallation1.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_9_sdpinstallation2.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_10_sdpinstallation3.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_17_loadingbar.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_9_sdpinstallation2.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_10_sdpinstallation3.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_17_loadingbar.png
    :width: 450px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_18_connectionfailure.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_multichanneldata.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_21_singlechannelwaveformdata.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_22_singlechannelhistodata.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_23_singlechannelfftdata.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_18_connectionfailure.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_multichanneldata.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_21_singlechannelwaveformdata.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_22_singlechannelhistodata.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0345_23_singlechannelfftdata.png

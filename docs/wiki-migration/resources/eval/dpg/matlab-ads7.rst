@@ -11,13 +11,13 @@ Code Samples
 General Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-::
 
-   *High Speed DAC evaluation board (see [[/resources/eval/dpg/eval-ad9162|AD9161/AD9162/AD9163/AD9164 Evaluation Boards]])
-   *ADS7-V1/-V2 pattern generator (see [[/resources/eval/dpg/ads7|ADS7-V1/-V2 for High-Speed DAC Evaluation]])
-   *DPGDownloader software for controlling the pattern generator (see [[/resources/eval/dpg/dacsoftwaresuite|High-Speed DAC Software Suite]])
-   *ACE software for configuring the eval board (see [[/resources/tools-software/ace|Analysis | Control | Evaluation (ACE) Software]])
-   *Recent version of MATLAB (e.g. R2014b)
+
+- High Speed DAC evaluation board (see :doc:`AD9161/AD9162/AD9163/AD9164 Evaluation Boards </wiki-migration/resources/eval/dpg/eval-ad9162>`)
+- ADS7-V1/-V2 pattern generator (see :doc:`ADS7-V1/-V2 for High-Speed DAC Evaluation </wiki-migration/resources/eval/dpg/ads7>`)
+- DPGDownloader software for controlling the pattern generator (see :doc:`High-Speed DAC Software Suite </wiki-migration/resources/eval/dpg/dacsoftwaresuite>`)
+- ACE software for configuring the eval board (see :doc:`Analysis | Control | Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>`)
+- Recent version of MATLAB (e.g. R2014b)
 
 This table contains a list of downloadable MATLAB sample scripts for various high speed DAC evaluation boards. The script source code is wrapped up in a zip file. Once downloaded, the zip file should be extracted to a folder of your choice.
 

@@ -25,9 +25,8 @@ Directions:
 
 The circuit and the connections to the ADALM2000 are as indicated in figure 1. NPN transistors Q\ :sub:`1`, Q\ :sub:`2` and PNP transistors Q\ :sub:`3` and Q\ :sub:`4` should be selected from the available devices with the best matching of V\ :sub:`BE`. Transistors fabricated in the same package such as the SSM2212, SM2220 or the CA3046 tend to match much better than individual devices. Scope input 1+ may optionally want to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`3` emitters or the collectors of either Q\ :sub:`1`\ or Q\ :sub:`3` while investigating the operation of this circuit. The current input node at the junction of the emitters of Q\ :sub:`1` and Q\ :sub:`3` is nominally a low impedance so as to be driven from a current source. The AWG outputs of ADALM2000 are more like voltage sources. So the 1KΩ resistor R\ :sub:`IN` serves to convert the voltage output of AWG1 to a current (I\ :sub:`IN` = V\ :sub:`IN`/1K),
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12a_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -76,9 +75,8 @@ Directions:
 
 Now we are going to reconfigure the input for voltage drive. Replace R\ :sub:`IN` with a 470Ω resistor and ground the other end as shown in figure 4. Disconnect the emitters of Q\ :sub:`2` and Q\ :sub:`4` from ground and connect them to the output of AWG1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12a_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -133,3 +131,8 @@ For Further Reading:
 -  `Current-to-voltage converter <https://en.wikipedia.org/wiki/Transimpedance_amplifier>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a12a_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a12a_f2.png
+   :width: 500px

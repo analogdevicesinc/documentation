@@ -15,13 +15,17 @@ In order to use EV-COG-AD3029WZ board with Keil, you will need to replicate the 
    -  https://developer.mbed.org/handbook/Windows-serial-configuration
 
 -  Open any example-workspace and project from the ADuCM3029 BSP(board support package). I used the SysTick example in the below images
--  In the Keil toolbar select **Project** → **Options** → **Debug**, and select the “CMSIS DAP” option\
+-  In the Keil toolbar select **Project** → **Options** → **Debug**, and select the “CMSIS DAP” option
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keildebug.png
+   :align: center
+   :width: 500px
 
--  Under the CMSIS DAP Settings, select the SW option\
+-  Under the CMSIS DAP Settings, select the SW option
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keilcmsisdap.png
+   :align: center
+   :width: 500px
 
 -  Push Crtl+F5 or in the Keil toolbar select **Debug** → **Start/Stop Debug Session**
 -  That’s it – You are ready to go.
@@ -29,8 +33,3 @@ In order to use EV-COG-AD3029WZ board with Keil, you will need to replicate the 
 // End of Document //
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029wz>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keildebug.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keilcmsisdap.png
-   :width: 500px

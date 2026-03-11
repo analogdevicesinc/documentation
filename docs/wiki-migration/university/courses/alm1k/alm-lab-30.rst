@@ -20,9 +20,8 @@ Background:
 
 To construct the logic functions in this lab activity you will be using the CD4007 CMOS array and discrete NMOS and PMOS transistors (ZVN2110A NMOS and ZVP2110A PMOS or similar) from the Analog Parts Kit. The CD4007 consists of 3 pairs of complimentary MOSFETs, as shown in figure 1. Each pair shares a common gate (pins 6,3,10). The substrates of all PMOSFETs are common (positive supply pin 14), as well as those of the NMOSFETs (ground pin 7). For the left pair, the NMOS Source terminal is tied to the NMOS substrate (pin 7), and the PMOS Source terminal is tied to PMOS substrate (pin 14). The other two pairs are more general purpose. For the right pair, the Drain terminal of the NMOS is tied to the Drain terminal of the PMOS on pin 12.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,9 @@ To construct the logic functions in this lab activity you will be using the CD40
 
 The CD4007 is a very versatile IC with many uses as we saw in the previous lab activity[1]. For example, a single CD4007 can be used to make three inverters, an inverter plus two transmission gates, or other complex logic functions such as NAND and NOR gates. Inverters and transmission gates are particularly useful for building transmission gate exclusive OR (XOR) and XNOR logic functions. The schematic symbols for XOR and XNOR logic gates are shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-xor_f2.png
-   :align: center
-   :width: 550px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -59,9 +58,8 @@ Build the XOR/XNOR circuit shown in figure 3 on your solder-less breadboard. Use
 
 There are two logic inputs A, and B to the circuit. The non-inverting XOR output is at node C and an inverting version of the output is at node Cbar to form the XNOR function.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-xor_f3.png
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
@@ -118,9 +116,8 @@ Directions:
 
 Add the RC low pass filter shown in figure 4 to your XOR breadboard circuit. Connect scope channel CA-In to the output of the RC filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-xor_f4.png
-   :align: center
-   :width: 550px
+
+|image4|
 
 .. container:: centeralign
 
@@ -167,3 +164,12 @@ The pair of inverters made using the four individual NMOS and PMOS transistors (
 [1] Build :doc:`CMOS Logic Functions Using CD4007 Array </wiki-migration/university/courses/alm1k/alm-lab-28>` `Exclusive OR logic gate <https://en.wikipedia.org/wiki/XOR_gate>`_ `Exclusive NOR logic gate <https://en.wikipedia.org/wiki/XNOR_gate>`_ `Phase detector <https://en.wikipedia.org/wiki/Phase_detector>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-xor_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-xor_f3.png
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-xor_f4.png
+   :width: 550px

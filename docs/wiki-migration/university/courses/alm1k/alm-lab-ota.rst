@@ -42,9 +42,8 @@ Directions:
 
 Construct the two stage CMOS OTA as shown in figure 1 on your solder-less breadboard. Transistors M1-M5 are contained in the CD4007 CMOS transistor array. The input differential pair M6 and M7 is composed of discrete ZVN2110A enhancement mode NMOS devices from the Analog Parts Kit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f2.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -75,9 +74,8 @@ Directions:
 
 Add the complementary NPN, PNP emitter follower output stage to the OTA circuit from figure 1 as shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f3.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -116,9 +114,8 @@ Simulation Directions:
 
 Simulate the time domain transient operation and AC frequency response of the circuit as shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f4.png
-   :align: center
-   :width: 750px
+
+|image3|
 
 .. container:: centeralign
 
@@ -127,9 +124,9 @@ Simulate the time domain transient operation and AC frequency response of the ci
 
 The transient time domain simulation of the inverting configuration is shown in figure 4s. The output at node Vout is seen to swing nearly rail to rail. The internal Vbias node is also plotted.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f4s.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -146,18 +143,15 @@ Hardware Directions:
 
 Build the amplifier as shown in figure 5 on your solderless breadboard. The schematic indicates how to connect the pins on the CD4007 package. Compensation resistor R3 and capacitor C1 are potentially optional and can be used to adjust the frequency stability / response of the amplifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5, CD4007 CMOS Op-amp Test Circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f6.png
-   :align: center
-   :width: 600px
+   |image6|
 
 .. container:: centeralign
 
@@ -166,9 +160,9 @@ Build the amplifier as shown in figure 5 on your solderless breadboard. The sche
 
 In figure 6b we probe the voltage of the bias node (with BIN as orange trace), at the gates of NMOS M6 and PMOS M5. Note that the bias voltage is constant because the non-inverting input (pin 3 of the CD4007) is connected to the fixed 2.5V rail in the inverting amplifier configuration. Compare the measured bias node voltage to your simulated result (from figure 4s).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f6b.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -177,9 +171,9 @@ In figure 6b we probe the voltage of the bias node (with BIN as orange trace), a
 
 Now explore the amplifier’s operation as a non-inverting follower with unity gain. Disconnect the channel A output, CH A, from the end of R1 and leave R1 floating. Disconnect the fixed +2.5 V supply from pin 3 of the CD4007 and connect the channel A output, CH A, to pin 3 of the CD4007. The amplifier should now be configured as a unity gain follower. Adjust the Min and Max values of AWG channel A until the output of the amplifier just starts to distort as shown in figure 7, green trace CH A and orange trace the amplifier output. In this example case, the output deviates from the input when the Min voltage was at 1.71 V and the Max voltage was at 3.84 V. Your results may vary. This now tells us the boundary of the usable input common mode range.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f7.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -188,9 +182,9 @@ Now explore the amplifier’s operation as a non-inverting follower with unity g
 
 In figure 8 we probe the voltage at the bias node (with BIN as orange trace), gates of NMOS M6 and PMOS M5. Note that the bias voltage is sort of an inverted version of the input common mode voltage until the limits are exceeded.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f8.png
-   :align: center
-   :width: 600px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -202,3 +196,22 @@ In figure 8 we probe the voltage at the bias node (with BIN as orange trace), ga
 [1] Bazes, Mel, "Two novel fully complementary self-biased CMOS differential amplifiers”, IEEE Journal of Solid State Circuits, 26.2 (1991): pg. 165-168. `Operational transconductance amplifier <https://en.wikipedia.org/wiki/Operational_transconductance_amplifier>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f2.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f4.png
+   :width: 750px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f4s.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f6b.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f7.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-ota-lab_f8.png
+   :width: 600px

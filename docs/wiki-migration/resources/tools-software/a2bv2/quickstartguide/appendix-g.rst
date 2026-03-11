@@ -123,8 +123,9 @@ A2B Bus Analyzer platform is configured by default as a Standard Power Main/Sub 
 
 -  Double Click on the A2B Bus Analyzer Platform or Click on the A2B Bus Analyzer Platform Canvas in the Project window to view the transceiver shape as shown below
 
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/high_power_configuration.png
+   :align: center
+   :width: 300px
 
 -  Choose the part number that supports High Power Configuration for High Power Main/Sub Node Emulation.
 
@@ -151,5 +152,3 @@ The A2B Bus Analyzer UI can be launched from SigmaStudio+ when A2B Bus Analyzer 
    :width: 600px
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/main_node_emulator_and_bus_monitor.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/high_power_configuration.png
-   :width: 300px

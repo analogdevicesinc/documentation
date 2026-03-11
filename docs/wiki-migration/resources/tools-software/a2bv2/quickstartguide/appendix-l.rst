@@ -10,8 +10,8 @@ Flowchart for Two Step Discovery
 
 Below figure captures the Two Step Discovery flow for AD2437 platforms
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/rj45_twostepdisc.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -63,10 +63,13 @@ Two Step Discovery configuration using SigmaStudio+
 
 User may decide to enable or disable the Two Step discovery for a given sub node using “Enable Two Step Discovery” checkbox. If this check box is unchecked, upstream node will directly enable 24V biasing without verifying the EEPROM content on sub node’s EEPROM.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/two_step_disovery.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
    \ **Figure:** Enable/Disable Two Step Discovery flow for RJ45 platforms
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/rj45_twostepdisc.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/two_step_disovery.png

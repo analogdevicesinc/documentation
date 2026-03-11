@@ -8,29 +8,33 @@
 Table of Contents
 =================
 
-::
+-  :doc:`Debug using CrossCore Embedded Studio </wiki-migration/resources/tools-software/sigmastudiov2/debug_using_crosscore_embedded_studio>`
+-  :doc:`Advanced Design Mode </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/advanceddesign>`
 
-   *[[/resources/tools-software/sigmastudiov2/debug_using_crosscore_embedded_studio|Debug using CrossCore Embedded Studio]]
-   *[[/resources/tools-software/sigmastudiov2/targetintegration/advanceddesign|Advanced Design Mode]]
-     *[[/resources/tools-software/sigmastudiov2/targetintegration/integratecommlibrary|Target and Communication Libraries Integration]]
-     *[[/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi|Target Library API]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/libfiles|Target Library and Header Files]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/apifuncs|API Functions]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/apidatatypes|API Data Types]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/apimacros|API Macros]]
-     *[[/resources/tools-software/sigmastudiov2/targetintegration/commapi|Communication API]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/commapi/libfiles|Communication library and interface header file details]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/commapi/apifuncs|API Functions of communication library]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/commapi/apidatastructures|API data structures of communication library]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/commapi/apimacros|API enumerations and type defines macros of communication library]]
-     *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication|Target Application]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/frameworkarc|Target Framework Architecture]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/frameworkstatus|Target Framework Status]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/audioiomodes|Audio Input Output Modes]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/multicoreprocess|Multi Core Processing and Multi Instancing]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/mcsupport|Microcontroller Mode Support]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/targetframework|Target Framework Default Parameters]]
-       *[[/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/systemintegration|System Integration]]
+   -  :doc:`Target and Communication Libraries Integration </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/integratecommlibrary>`
+   -  :doc:`Target Library API </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi>`
+
+      -  :doc:`Target Library and Header Files </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/libfiles>`
+      -  :doc:`API Functions </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/apifuncs>`
+      -  :doc:`API Data Types </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/apidatatypes>`
+      -  :doc:`API Macros </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetlibapi/apimacros>`
+
+   -  :doc:`Communication API </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/commapi>`
+
+      -  :doc:`Communication library and interface header file details </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/commapi/libfiles>`
+      -  :doc:`API Functions of communication library </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/commapi/apifuncs>`
+      -  :doc:`API data structures of communication library </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/commapi/apidatastructures>`
+      -  :doc:`API enumerations and type defines macros of communication library </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/commapi/apimacros>`
+
+   -  :doc:`Target Application </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication>`
+
+      -  :doc:`Target Framework Architecture </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/frameworkarc>`
+      -  :doc:`Target Framework Status </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/frameworkstatus>`
+      -  :doc:`Audio Input Output Modes </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/audioiomodes>`
+      -  :doc:`Multi Core Processing and Multi Instancing </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/multicoreprocess>`
+      -  :doc:`Microcontroller Mode Support </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/mcsupport>`
+      -  :doc:`Target Framework Default Parameters </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/targetframework>`
+      -  :doc:`System Integration </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/systemintegration>`
 
 Target Integration
 ==================

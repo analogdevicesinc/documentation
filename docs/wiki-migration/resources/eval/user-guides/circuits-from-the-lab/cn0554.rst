@@ -223,11 +223,9 @@ This demo uses a PyADI-IIO example script. This script will show the single-tone
 
    **Update image, file name, and location**
 
-   
-   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/cn0511_example_output.jpg
-      :align: center
-      :width: 600px
-   
+
+   |image9|
+
    .. admonition:: Download
       :class: download
 
@@ -261,7 +259,7 @@ Additional Information and Useful Links
 Reference Demos & Software
 ==========================
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -296,3 +294,5 @@ Hardware Registration
    :width: 500px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0554/19_-_loopback_measurement_of_cn0554_analog_io.png
    :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0511/cn0511_example_output.jpg
+   :width: 600px

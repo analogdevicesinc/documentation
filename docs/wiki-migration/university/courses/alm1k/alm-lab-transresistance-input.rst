@@ -25,9 +25,8 @@ Directions:
 
 The circuit and the connections to the ALM1000 hardware are as indicated in figure 1. NPN transistors Q\ :sub:`1`, Q\ :sub:`2` and PNP transistors Q\ :sub:`3` and Q\ :sub:`4` should be selected from the available devices with the best matching of V\ :sub:`BE`. Transistors fabricated in the same package such as the SSM2212, SM2220 or the CA3046 tend to match much better than individual devices. Split I/O input AIN may optionally want to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`3` emitters or the collectors of either Q\ :sub:`1` or Q\ :sub:`3` while investigating the operation of this circuit. The current input node at the junction of the emitters of Q\ :sub:`1` and Q\ :sub:`3` is nominally a low impedance so as to be driven from a current source. The AWG channel outputs of M1k are more like voltage sources. So the 1KΩ resistor R\ :sub:`IN` serves to convert the voltage output of AWG CH A to a current (I\ :sub:`IN` = V\ :sub:`IN`/1K),
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transresistance-input-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -62,9 +61,8 @@ Directions:
 
 Now we are going to reconfigure the input for voltage drive. Replace R\ :sub:`IN` with a 470 Ω resistor and connect the other end to the 2.5 V common mode level as shown in figure 2. Disconnect the emitters of Q\ :sub:`2` and Q\ :sub:`4` from the 2.5 V common mode voltage and connect them to the output of CH A.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transresistance-input-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -88,3 +86,8 @@ How closely does the voltage at the emitters of Q\ :sub:`1` and Q\ :sub:`3` foll
 :adi:`Current Feedback (CFB) Op Amps <static/imported-files/tutorials/MT-034.pdf>` `Op Amp Fundamentals: The Transresistance Amplifier <http://www.wisc-online.com/objects/ViewObject.aspx?ID=SSE3103>`_ `Current-to-voltage converter <https://en.wikipedia.org/wiki/Transimpedance_amplifier>`_
 
 **Return to Lab Activity Table of Contents.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transresistance-input-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transresistance-input-fig2.png
+   :width: 500px

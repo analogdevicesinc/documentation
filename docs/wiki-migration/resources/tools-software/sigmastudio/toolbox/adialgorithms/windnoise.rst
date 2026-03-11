@@ -125,6 +125,6 @@ Algorithm Details
 | Parameter RAM              | 15                                              |
 +----------------------------+-------------------------------------------------+
 
-.. |windnoisepic1.png| image:: https://wiki.analog.com/_media/windnoisepic1.png
-.. |windnoisepic2.png| image:: https://wiki.analog.com/_media/windnoisepic2.png
-.. |windnoisepic3.png| image:: https://wiki.analog.com/_media/windnoisepic3.png
+.. |windnoisepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/windnoisepic1.png
+.. |windnoisepic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/windnoisepic2.png
+.. |windnoisepic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/windnoisepic3.png

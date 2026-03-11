@@ -68,15 +68,10 @@ The source code for AD719X driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of AD719X Driver <drivers/adc/ad719x/ad719x.h>`
+   -  :git-no-OS:`Implementation of AD719X Driver <drivers/adc/ad719x/ad719x.c>`
    
-   |Header file of AD719X Driver|
 
-   -
-
-   |Implementation of AD719X Driver|
 
 The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
 
@@ -84,15 +79,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 The driver contains three parts:
 
@@ -108,7 +98,9 @@ For SPI Communication there are three functions which are called by the AD719X d
 -  no_os_spi_write_and_read() - Reads and writes data from/to device.
 -  no_os_spi_remove() - Removes SPI device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/no_os_spi_architecture.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -285,10 +277,3 @@ AD719X Driver Initialization Example on Xilinx Platform
    ret = ad719x_init(&dev, ad7190_dev_ip);
    if(ret)
        return FAILURE;
-
-.. |Header file of AD719X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad719x/ad719x`.h
-.. |Implementation of AD719X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad719x/ad719x`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/no_os_spi_architecture.png
-   :width: 500px

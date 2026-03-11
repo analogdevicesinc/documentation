@@ -10,8 +10,9 @@ The following on-chip drivers are provided as part of the ADuCM4x50 Device Famil
 
 -  spi
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/software/aducm4050-fbl.png
+   :align: right
+   :width: 600px
 
 -  i2c
 -  uart
@@ -62,6 +63,3 @@ The software pack can be installed directly by the tool chain's CMSIS pack manag
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad4050lz/software/aducm4050-fbl.png
-   :width: 600px

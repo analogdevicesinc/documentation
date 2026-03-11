@@ -47,15 +47,10 @@ The source code for the MAX14001 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX14001 Driver <drivers/adc/max14001/max14001.h>`
+   -  :git-no-OS:`Implementation of MAX14001 Driver <drivers/adc/max14001/max14001.c>`
    
-   |Header file of MAX14001 Driver|
 
-   -
-
-   |Implementation of MAX14001 Driver|
 
 The MAX14001 driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
 
@@ -63,15 +58,10 @@ The MAX14001 driver also uses the ADI utility library, so make sure you add the 
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 To use the MAX14001 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
 
@@ -113,11 +103,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
-   |Generic header file for SPI Communication APIs|
+
 
 Code Documentation
 ------------------
@@ -375,10 +363,5 @@ Example Initialization Using Maxim SDK as Platform
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max14001pmb.png
    :width: 400px
-.. |Header file of MAX14001 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max14001/max14001`.h
-.. |Implementation of MAX14001 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max14001/max14001`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max14001_configuration_flowchart.png
    :width: 600px

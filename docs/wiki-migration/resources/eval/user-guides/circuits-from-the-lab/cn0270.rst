@@ -58,15 +58,13 @@ Installing the Software
    \ **NOTE:** It is recommended that you install the `CN0270 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0270>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0270\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-\
-
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install1.jpg
+   :width: 500px
 
 -  Click **Next** to view the installation review page
 
-|image4|
+
+|image3|
 
 -  Click **Next** to start the installation
 -  Upon completion of the installation of the CN0270 Evaluation Software, the installer for the ADuCM360 and Segger J-Link Drivers will execute.
@@ -86,11 +84,8 @@ Installing the Software
    NOTE:Only these two options are required and included with the installer. To download the full ADuCM360 software bundle, please see the Additional Info section of this wiki.
 
 
-\
-
-
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/driver_install2.jpg
+   :width: 300px
 
 --------------
 
@@ -104,7 +99,7 @@ Main Window
 ^^^^^^^^^^^
 
 | This Window contains the block diagram of the system and gives access to the different controls and indicators.
-| |image6|
+| |image4|
 
 -  **Output Current**
 
@@ -138,7 +133,7 @@ AD5420 Configuration Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | This window allows for configuration of current output section of the circuit. This window must be closed to resume operation of the software.
-| |image7|
+| |image5|
 
 -  **Output Enabled**
 
@@ -168,7 +163,7 @@ HART Modem Window
 ^^^^^^^^^^^^^^^^^
 
 | This window holds the controls and displays for transmitting and reading data from the HART interface. This window can run in parallel to the main window.
-| |image8|
+| |image6|
 
 -  Receive Buffer – Displays the received HART Data
 
@@ -229,15 +224,11 @@ Registration
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_jlink_connect.png
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install1.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install2.jpg
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install2.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_main_window.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/driver_install2.jpg
-   :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_main_window.png
-   :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_ad5420_window.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_ad5420_window.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_ad5700_window.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_ad5700_window.png
    :width: 400px

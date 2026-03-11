@@ -92,11 +92,11 @@ Running the System
 
 -  Make sure the setting for S1 is correct based on the peripheral device.
 
-::
 
-   -Plug P1 of the board into the PC/host, the [[:adi:`CN0419|EVAL-CN0419-EBZ]]` is automatically turned on and providing isolation. DS1 will light up as an indication that the board is delivering power to the peripheral device.
-   -The PC/host must recognize the peripheral connected to make sure the setup is working.
-   -Upon successful connection, you can now provide your peripheral the isolated power!
+
+-Plug P1 of the board into the PC/host, the :adi:`EVAL-CN0419-EBZ <CN0419>` is automatically turned on and providing isolation. DS1 will light up as an indication that the board is delivering power to the peripheral device.
+-The PC/host must recognize the peripheral connected to make sure the setup is working.
+-Upon successful connection, you can now provide your peripheral the isolated power!
 
 --------------
 

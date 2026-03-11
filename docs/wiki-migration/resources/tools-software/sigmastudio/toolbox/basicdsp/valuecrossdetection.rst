@@ -94,5 +94,5 @@ Algorithm Addition Information
 | Parameter RAM Repetition | 1 per add                                                                                                                                                                                            |                 |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
-.. |valuepic1.png| image:: https://wiki.analog.com/_media/valuepic1.png
-.. |valuepic4.png| image:: https://wiki.analog.com/_media/valuepic4.png
+.. |valuepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/valuepic1.png
+.. |valuepic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/valuepic4.png

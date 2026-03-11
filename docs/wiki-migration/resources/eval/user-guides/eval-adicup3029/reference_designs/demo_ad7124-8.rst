@@ -56,12 +56,13 @@ Setting up the Hardware
 
 -  Connect **EVAL-AD7124-8-PMDZ** board to the **EVAL-ADICUP3029**.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124_pmod_unplug.jpg
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124_pmod_plug.jpg
+   :align: center
 
 Configuring the Software
 ------------------------
@@ -154,7 +155,7 @@ The software for the **ADuCM3029_demo_ad7124_8PMDZ** can be found here:
    Prebuilt AD7124-8 PMOD Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_ad7124_8PMDZ.Hex <releases/download/Latest/ADuCM3029_demo_ad7124_8PMDZ.hex>`
+   -  `ADuCM3029_demo_ad7124_8PMDZ.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad7124_8PMDZ.hex>`_
    
    Complete AD7124-8 PMOD Source Files
    
@@ -186,6 +187,3 @@ The application contains the platform drivers with the sources in **platform_sou
    :align: center
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124_pmod_unplug.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad7124_pmod_plug.jpg

@@ -91,4 +91,4 @@ Algorithm Details
 | Parameter RAM              | 1                                                |
 +----------------------------+--------------------------------------------------+
 
-.. |oneshotfallresetpic1.png| image:: https://wiki.analog.com/_media/oneshotfallresetpic1.png
+.. |oneshotfallresetpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/oneshotfallresetpic1.png

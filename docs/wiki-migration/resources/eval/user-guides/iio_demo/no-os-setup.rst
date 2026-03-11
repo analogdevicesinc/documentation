@@ -20,15 +20,10 @@ The source code for ADC Demo driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADC Demo Driver <drivers/adc/adc_demo/adc_demo.h>`
+   -   :git-no-OS:`Implementation of ADC Demo Driver <drivers/adc/adc_demo/adc_demo.c>`
    
-   |Header file of ADC Demo Driver|
 
-   -
-
-   |Implementation of ADC Demo Driver|
 
 ADC Demo Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,15 +45,10 @@ The source code for DAC Demo driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of DAC Demo Driver <drivers/dac/dac_demo/dac_demo.h>`
+   -   :git-no-OS:`Implementation of DAC Demo Driver <drivers/dac/dac_demo/dac_demo.c>`
    
-   |Header file of DAC Demo Driver|
 
-   -
-
-   |Implementation of DAC Demo Driver|
 
 DAC Demo Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,19 +70,11 @@ The source code for ADC IIO Demo driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADC IIO Demo Driver <drivers/adc/adc_demo/iio_adc_demo.h>`
+   -   :git-no-OS:`Implementation of ADC IIO Demo Driver <drivers/adc/adc_demo/iio_adc_demo.c>`
+   -   :git-no-OS:`Implementation of ADC IIO Demo Driver Trigger <drivers/adc/adc_demo/iio_adc_demo_trig.c>`
    
-   |Header file of ADC IIO Demo Driver|
 
-   -
-
-   |Implementation of ADC IIO Demo Driver|
-
-   -
-
-   |Implementation of ADC IIO Demo Driver Trigger|
 
 ADC IIO Demo Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,15 +97,10 @@ The source code for DAC IIO Demo driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of DAC IIO Demo Driver <drivers/dac/dac_demo/iio_dac_demo.h>`
+   -   :git-no-OS:`Implementation of DAC IIO Demo Driver <drivers/dac/dac_demo/iio_dac_demo.c>`
    
-   |Header file of DAC IIO Demo Driver|
 
-   -
-
-   |Implementation of DAC IIO Demo Driver|
 
 DAC IIO Demo Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,7 +134,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -865,7 +842,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
 
 ::
@@ -1029,7 +1006,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -1737,7 +1714,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -1901,7 +1878,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -2609,7 +2586,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -3958,7 +3935,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -4666,7 +4643,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers: 
 
 ::
@@ -4830,7 +4807,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -5538,7 +5515,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -5702,7 +5679,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -6410,7 +6387,7 @@ WSL should have a kernel version of 5.10.60.1 or later. You also need to run WSL
 
 ::
 
-    * You need to install the [[https://github.com/dorssel/usbipd-win/releases|usbipd-win]] project. Installation can be done manually, with a few clicks.
+    * You need to install the `usbipd-win <https://github.com/dorssel/usbipd-win/releases>`_ project. Installation can be done manually, with a few clicks.
     * You need to install from WSL, the user space tools for USB/IP and a database of USB hardware identifiers:
 
 ::
@@ -7360,15 +7337,6 @@ Below, you can see an example with software trigger usage:
 
 |image3|
 
-.. |Header file of ADC Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/adc_demo/adc_demo`.h
-.. |Implementation of ADC Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/adc_demo/adc_demo`.c
-.. |Header file of DAC Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/dac_demo/dac_demo`.h
-.. |Implementation of DAC Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/dac_demo/dac_demo`.c
-.. |Header file of ADC IIO Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/adc_demo/iio_adc_demo`.h
-.. |Implementation of ADC IIO Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/adc_demo/iio_adc_demo`.c
-.. |Implementation of ADC IIO Demo Driver Trigger| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/adc_demo/iio_adc_demo_trig`.c
-.. |Header file of DAC IIO Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/dac_demo/iio_dac_demo`.h
-.. |Implementation of DAC IIO Demo Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/dac_demo/iio_dac_demo`.c
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/iio_demo/iio_demo_plot.gif
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/iio_demo/iio_demo_loopback.gif
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/iio_demo/plot_sw_trigger.gif

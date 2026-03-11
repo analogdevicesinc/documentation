@@ -8,9 +8,8 @@ Transceiver settings
 
 The transceivers and peripheral settings window can be opened by double clicking on the transceiver/peripheral in the platform view. Additionally, it can also be opened by clicking on the “Settings” option under the transceiver/peripheral in the project window.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/a2b_transceivers_and_generic_devices.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -23,7 +22,7 @@ General View
 In General View, user can set the constraints using UI without making any changes in the registers. Below is the image to show different tabs in General view.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -36,7 +35,7 @@ Register View
 In Register View, user can change each register which will also affect in General view. Similar to General View, register view contains many tab for each functionality. User can download or upload the register values directly using this view.
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -49,7 +48,7 @@ Stream View
 Stream view provides information about number of upstream and downstream slots from each stream. It also in provides details about the slots add and used.
 
 
-|image3|
+|image4|
 
 .. container:: centeralign
 
@@ -62,7 +61,7 @@ Crossbar View
 Crossbar view provides ability for the users to rearrange the slots that are in the TX and RX buffers.
 
 
-|image4|
+|image5|
 
 .. container:: centeralign
 
@@ -85,7 +84,7 @@ Custom Node Information
 A Custom ID field allows users to provide unique information in hex format to every node which will be a part of only DAT file during export. In the target, stack parses the DAT file and user can retrieve the information from it.
 
 
-|image5|
+|image6|
 
 .. container:: centeralign
 
@@ -120,8 +119,8 @@ Use the ‘I2C Device’ option as shown in the below Figure when the Custom ID 
 
 Specify the Custom ID (either as an ASCII string or as a Hexadecimal number) – Max 50 characters, device address, address width and the memory location in the device where the ID is stored.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_i2c.png
-   :align: center
+
+|image7|
 
 .. container:: centeralign
 
@@ -137,8 +136,8 @@ Use ‘GPIO Pins’ option as shown in Figure when A2B Transceiver GPIO pins are
 
 As most GPIO pins are multiplexed with other functionality, user shall select pin(s) that are free for Node ID. Note that a GPIO pin will assume a multiplexed functionality only after the A2B Transceiver is discovered and configured. So, with additional on-board circuitry (pull-up/pull-downs) one should be able to use A2B GPIO pins (including multiplexed GPIO) for Custom Node ID. If multiple nodes in a network use GPIO pins for Identification, then each node shall have unique GPIO pin/level settings.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/gpio_pins.png
-   :align: center
+
+|image8|
 
 .. container:: centeralign
 
@@ -150,8 +149,8 @@ Mailbox
 
 Use ‘Mailbox’ option as shown in the below Figure when Custom Node Identifier for the sub-node is to be requested from a connected processor.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_mailbox.png
-   :align: center
+
+|image9|
 
 .. container:: centeralign
 
@@ -199,7 +198,7 @@ TX Crossbar registers (A2B_TXXBAR0 - A2B_TXXBAR31)
 
 .. container:: centeralign
 
-   \ |image6|\
+   \ |image10|\
 
 
 .. container:: centeralign
@@ -212,7 +211,7 @@ RX Crossbar registers (A2B_RXMASK0 - A2B_RXMASK7)
 
 .. container:: centeralign
 
-   \ |image7|\
+   \ |image11|\
 
 
 .. container:: centeralign
@@ -239,7 +238,8 @@ For example, considering the 3-node schematic with this stream configuration exa
 Sample Stream Definition & Assignment for 3 node schematics
 -----------------------------------------------------------
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sample_stream.png
+   :align: center
 
 .. container:: centeralign
 
@@ -262,7 +262,7 @@ Crossbar view at subnode1
 
 .. container:: centeralign
 
-   \ |image9|\
+   \ |image12|\
 
 
 .. container:: centeralign
@@ -277,7 +277,7 @@ The similar way Rx Interleave also works.
 
 .. container:: centeralign
 
-   \ |image10|\
+   \ |image13|\
 
 
 .. container:: centeralign
@@ -297,7 +297,7 @@ Crossbar supports the below options on Tx pin at the main node side as shown in 
 
 .. container:: centeralign
 
-   \ |image11|\
+   \ |image14|\
 
 
 .. container:: centeralign
@@ -315,7 +315,7 @@ Crossbar supports the below options on Rx pin as shown in the below snapshot:
 
 .. container:: centeralign
 
-   \ |image12|\
+   \ |image15|\
 
 
 .. container:: centeralign
@@ -323,15 +323,19 @@ Crossbar supports the below options on Rx pin as shown in the below snapshot:
    \ **Figure:** Context Menu's on Rx Crossbar
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/generalview_mainnodesettings.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/registerview_mainnode.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/streamview_mainnode.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbarview_mainnode.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customid.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tx_x-bar.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/ad243x_rx-x_bar.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sample_stream.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_subnode1.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_main_tx_rx.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_tx_settings.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_rx_settings.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/a2b_transceivers_and_generic_devices.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/generalview_mainnodesettings.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/registerview_mainnode.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/streamview_mainnode.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbarview_mainnode.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customid.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_i2c.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/gpio_pins.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/customenode_mailbox.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tx_x-bar.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/ad243x_rx-x_bar.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_subnode1.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_main_tx_rx.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_tx_settings.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_rx_settings.png

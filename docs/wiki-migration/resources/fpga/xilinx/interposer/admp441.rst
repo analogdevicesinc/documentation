@@ -42,10 +42,7 @@ More information
 ----------------
 
 -  :adi:`ADMP441 Product Info <ADMP441>` - pricing, samples, datasheet
--
-
-|EVAL-ADMP441Z evaluation board user guide|
-
+-  `EVAL-ADMP441Z evaluation board user guide <http://www.analog.com/static/imported-files/user_guides/UG-303.pdf>`_
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started
@@ -124,5 +121,3 @@ More information
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
 
-
-.. |EVAL-ADMP441Z evaluation board user guide| image:: http://www.analog.com/static/imported-files/user_guides/UG-303.pdf

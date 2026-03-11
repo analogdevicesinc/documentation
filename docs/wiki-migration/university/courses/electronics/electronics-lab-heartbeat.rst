@@ -19,12 +19,12 @@ The voltage variations change with the heartbeat and are acquired from the colle
 
 In order to have a relevant output, the input signal is passed through multiple circuits:
 
-::
 
-   *Preamplifier - the output signal from the heartbeat measurement setup is decoupled through the series capacitor and amplified using a negative feedback resistor(R4).
-   *Low-Pass Filter - RC filter that cuts the high frequencies (noise).
-   *[[/university/courses/electronics/electronics-lab-1|Voltage Follower]] - buffers the output of the low-pass filter and reproduces its voltage with a low impedance output;
-   *[[/university/courses/electronics/electronics-lab-1|Inverting Amplifier]] with Low-Pass Filter - amplifies the voltage signal and cuts the high frequencies (noise);
+
+- Preamplifier - the output signal from the heartbeat measurement setup is decoupled through the series capacitor and amplified using a negative feedback resistor(R4).
+- Low-Pass Filter - RC filter that cuts the high frequencies (noise).
+-  :doc:`Voltage Follower </wiki-migration/university/courses/electronics/electronics-lab-1>` - buffers the output of the low-pass filter and reproduces its voltage with a low impedance output;
+-  :doc:`Inverting Amplifier </wiki-migration/university/courses/electronics/electronics-lab-1>` with Low-Pass Filter - amplifies the voltage signal and cuts the high frequencies (noise);
 
 Materials
 ---------
@@ -36,9 +36,8 @@ Directions
 
 On your solder-less breadboard construct the heartbeat measurement circuit (designed in LTspice) as shown in Figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat_measurement.png
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. container:: centeralign
 
@@ -139,8 +138,7 @@ Considering the circuit designed in LTspice, two types of simulation are made:
 
    *AC Sweep - Connect at the input of the circuit a AC Source. Configure the source to have a magnitude of 500uV. Observe the output signal in a chosen frequency domain (100mHz - 1kHz) in order to determine graphically in which frequency range the output signal has the biggest amplification (Figure 3).
 
-
-   |image1|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-graph-ac.png
 
 .. container:: centeralign
 
@@ -154,8 +152,8 @@ Use the variable positive and negative power supply from the ADALM2000 module se
 
 The circuit implemented on the breadboard should look similar to the one in Figure 4. The blue LED represents the IR LED, and the grey one represents the Phototransistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-bb.png
-   :align: right
+
+|image2|
 
 .. container:: centeralign
 
@@ -167,7 +165,8 @@ Procedure
 
 Put the top of your finger between the IR LED(D1) and the Phototransistor(Q1). The emitter and the receiver should be alligned and pointing one to another. Observe the voltage waveform seen at the the output of the 3rd stage op amp (A\ :sub:`3`). An example of output waveform is presented in Figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-waveform.png
+
+|image3|
 
 .. container:: centeralign
 
@@ -221,4 +220,7 @@ Questions
 .. [3]
    `AC Op-amp Integrator with DC Gain Control <http://www.electronics-tutorials.ws/opamp/opamp_6.html>`_
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-graph-ac.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat_measurement.png
+   :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/heartbeat-waveform.png

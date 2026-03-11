@@ -23,14 +23,14 @@ To edit and run example code in Keil follow these steps:
    :class: download
 
    
-   `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
+   :git-ad5940-examples:`AD5940 SDK Source Code <ad5940-examples>`
    
 
 
-*(**Hint:** Also download the included submodule in examples/ad5940lib. This can be done with the git bash in one step by executing: "git clone --recurse-submodules* https://github.com/analogdevicesinc/ad5940-examples.git*" (without the double quotes))*
+*(**Hint:** Also download the included submodule in examples/ad5940lib. This can be done with the git bash in one step by executing: "git clone --recurse-submodules* :git-ad5940-examples:`ad5940-examples`.git*" (without the double quotes))*
 
 -  Navigate to the **examples->AD5940_ADC->ADICUP3029**
--  Double click on ADICUP3029.uvprojx file to open the project in Keil [The package at https://github.com/analogdevicesinc/ad5940-examples doesn't contain ADICUP3029.uvprojx in **examples->AD5940_ADC->ADICUP3029** or other folders]
+-  Double click on ADICUP3029.uvprojx file to open the project in Keil [The package at :git-ad5940-examples:`ad5940-examples` doesn't contain ADICUP3029.uvprojx in **examples->AD5940_ADC->ADICUP3029** or other folders]
 -  The project structure is shown in the left hand side of the screen. It is divided into 4 sub sections:
 
    -  **AD5940Lib** - This contains the AD5940.c source file which has all the AD5940 library functions. This file is common to all examples. The ADICUP3029Port.c file is located here also and contains port functions for the ADuCM3029 microcontroller.
@@ -38,7 +38,9 @@ To edit and run example code in Keil follow these steps:
    -  **CMSIS** - This contains the arm CMSIS math library.
    -  **Device** - This folder contains the startup code for the ADuCM3029 micrcontroller. These files should not be modified.
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/keil_adc.png
+   :align: center
+   :width: 600px
 
 -  Double click on AD5940_ADCPolling.c to open the file in the editor.
 -  Modify code as required.
@@ -53,22 +55,18 @@ To edit and run example code in Keil follow these steps:
 
 -  To download the code to the evaluation boards first ensure the boards are connected to the PC or laptop. Then click on the red icon in the toolbar to download the source code and begin the debugging session.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/keil_debug.png
+   :align: center
+   :width: 600px
 
 -  To set breakpoints click to the left of the line of code. A red dot will appear as in below screenshot.
 -  To begin executing press the "Run" button which is highlighted in below screenshot.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/keil_debugger.png
+   :align: center
+   :width: 600px
 
 -  Hint: If downloading the code didn't work because of an error like this: 'Failed to load flash loader: C:/Users/YourUsername/IAR-CMSIS-Packs/AnalogDevices/ADUCM302x_DFP/3.2.0/\\ARM\\config\\flashloader\\AnalogDevices\\FlashADUCM3029.flash':
 
    -  Try this method instead: :doc:`/wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers`
    -  If your board doesn't start after this, give flashing/debugging using the steps described above another try - sometimes it works again.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/keil_adc.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/keil_debug.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/tools/keil_debugger.png
-   :width: 600px

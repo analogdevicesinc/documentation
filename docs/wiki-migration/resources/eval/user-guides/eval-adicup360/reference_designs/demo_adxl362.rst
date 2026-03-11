@@ -52,14 +52,15 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.\
+-  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :width: 500px
 
 -  Set the jumpers on the EVAL-ADXL362-ARDZ shield as shown in the next figure.\
 
-|image2|
+
+|image1|
 
 .. note::
 
@@ -89,7 +90,7 @@ The software for the **ADuCM360_demo_adxl362** demo can be found here:
    Prebuilt ADXL362 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`AduCM3029_demo_adxl362.Bin <releases/download/Release-1.0/ADuCM360_demo_adxl362.bin>`
+   -  `AduCM3029_demo_adxl362.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adxl362.bin>`_
    
    Complete ADXL362 Source Files
    
@@ -213,7 +214,5 @@ The **RTE** folder contains device and system related files:
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/eval-adxl362-ardz_default_software_config.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/eval-adxl362-ardz_default_software_config.png
    :width: 360px

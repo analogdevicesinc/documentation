@@ -154,13 +154,17 @@ On PC1, go to the Start menu and search “Control Panel”. Once you see it, cl
 -  Choose **Networks and Internet**.
 -  Next, choose **Network and Sharing Center**.
 -  Click on **Advanced Sharing Settings**.
--  Choose **All Networks**. |image6|
+-  Choose **All Networks**.
 
-|image7|
+|image6|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings_2.png
+   :width: 400px
 
 -  Choose **Turn on Sharing**.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_and_sharing.png
+   :width: 400px
 
 -  Turn off Password Protection (Once Done with File Sharing Turn Password Protection Back On)
 -  Perform steps 2 through 6 for PC2.
@@ -175,7 +179,7 @@ To put both PCs on the same network, manually set up IP settings by opening **Co
 For PC1, choose “Use the following IP address”
 
 
-|image9|
+|image7|
 
 -  IP Address: **192.168.1.1**
 -  Subnet mask: **255.255.255.0**
@@ -189,7 +193,7 @@ Use the following DNS server address:
 For PC2, choose “Use the following IP address”
 
 
-|image10|
+|image8|
 
 -  IP Address: **192.168.1.2**.
 -  Subnet mask: **255.255.255.0**.
@@ -233,7 +237,7 @@ Example 3 – Use Iperf to Check Ethernet Link Speed
 ADMV9615 and ADMV9625 Contactless Ethernet Link Labeled Pair1 and Pair2
 
 
-|image11|
+|image9|
 
 Hardware Connections
 ^^^^^^^^^^^^^^^^^^^^
@@ -276,7 +280,7 @@ Iperf is a free tool for network performance and measurement, `download it here 
 <code> “iperf3.exe -c 192.168.1.1” </code>
 
 
-|image12|
+|image10|
 
 -  Iperf tests the link speed about 950 Mbps.
 
@@ -316,15 +320,11 @@ For questions and more information please contact us on the Analog Devices Engin
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_settings_2.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/ip_address.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/network_and_sharing.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/pc2_ip_address.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/ip_address.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/pc2_ip_address.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_3.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/use_case_3.png
    :width: 800px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/iperf_settings.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admv96s-wgbe-ek1/iperf_settings.png
    :width: 600px

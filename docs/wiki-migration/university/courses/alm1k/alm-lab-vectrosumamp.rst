@@ -23,9 +23,8 @@ Directions:
 
 Build the inverting summer shown in Figure 1. R\ :sub:`5` is added to stabilize the output of the OP484 when using large feedback resistances due to the large input capacitance of the CH-B input. One input signal is provided directly from the CH-A AWG output to 100 KΩ resistor R\ :sub:`1`. Another input signal through 100 KΩ resistor R\ :sub:`2` to the inverting input terminal is driven through a phase shifting low-pass RC filter, C\ :sub:`1` and R\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ Measure the amplifier output with each input applied individually and the other 
 
 Step one, connect the left end of R\ :sub:`4` to the 2.5 V common rail. With both CA-V and CB-V traces displayed measure the relative phase of the two signals. Because the amplifier inverts it should be 180 degrees. Also measure and record the amplitudes ( p-p ) of both traces. Save a snap shot of the CB-V trace ( or save a copy of the VBuffB array to another array ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,9 +50,9 @@ Step one, connect the left end of R\ :sub:`4` to the 2.5 V common rail. With bot
 
 In step two connect the V\ :sub:`1` end of R\ :sub:`1` to the 2.5 V common rail and connect CH-A to the left end of R\ :sub:`4` as shown in figure 3. Now a delayed ( or phase shifted ) version of CH-A will be applied at V\ :sub:`2`. With both CA-V and CB-V traces displayed measure the relative phase of the two signals. Now because of the delay the relative phase will not be 180 degrees. Also measure and record the amplitudes ( p-p ) of both traces. Save a snap shot of the CB-V trace ( or save a copy of the VBuffB array to another array ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f3.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -72,9 +70,8 @@ Appendix:
 
 By using one of the other amplifiers in the OP484 as a comparator, the sine wave from channel A can be converted into a square wave. The 0 to 5 V square wave at pin 1 of the OP484 is derived from the sine wave. The amplitude applied at V\ :sub:`2` is determined by the ratio of R\ :sub:`6`/(R\ :sub:`6`\ +R\ :sub:`4`). R\ :sub:`7` limits the current into the inverting input at pin 2 when the differential inputs are overdriven. The modified version of the summing amplifier test circuit shown in figure 4 outputs the sum of the sine and square waves.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -93,3 +90,12 @@ As an additional note, the square wave can be delayed with respect to the sine w
 :adi:`Inverting Summing Amplifier <media/en/training-seminars/tutorials/MT-214.pdf>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-labvsa_f4.png
+   :width: 600px

@@ -503,7 +503,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -1368,7 +1368,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -2233,7 +2233,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 

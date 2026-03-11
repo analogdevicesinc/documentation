@@ -3,9 +3,8 @@ ADALM1000 Digital Output Pins
 
 The ADALM1000 (M1K) active learning module provides access to some of the microcontroller digital input/output pins through the digital port connector. Four general purpose input/output pins along with ground and the 3.3V power supply are available as shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f1.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -14,18 +13,16 @@ The ADALM1000 (M1K) active learning module provides access to some of the microc
 
 Part of the ALM1000 rev D schematic is shown in figure 2D and rev F schematic is shown in figure 2F. As can be seen each of the four general purpose PIO pins ( connector P3 ) is connected to a 220 Ω and a 470 Ω resistor in rev D and in rev F 4.7K resistors in place of the 470 Ω resistors. The 220 Ω resistors connect to Port A pins 0-3 and the 470 Ω / 4.7k resistors connect to Port A pins 4-7. This configuration with two digital port pins connected though two different series resistors is unique and not generally typical of digital pins in other small portable USB based hardware such as the Analog Discovery module.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2D ALM1000 Rev D digital interface input/output diagram
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/m1k-f-digital-outputs_f2.png
-   :align: center
-   :width: 600px
+   |image3|
 
 .. container:: centeralign
 
@@ -52,9 +49,8 @@ The value after 0x91 is the number of the Port pin. The function returns the inp
 
 This configuration with two possible digital output drivers connected to a single connector pin through two different series resistors could be viewed in a different light. We might consider the CMOS output diver of the microcontroller pin as a three position single pole switch that can connect to ground or the 3.3 V supply or open circuit as shown in figure 3. This is more of an analog representation of the circuit. Looking at the circuit in this way it can perhaps be used in part to teach and learn concepts in DC resistor networks such as Thevenin and Norton equivalent circuits, series/parallel resistors, KVL, KCL, voltage dividers and nodal analysis etc.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f3.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -63,9 +59,9 @@ This configuration with two possible digital output drivers connected to a singl
 
 There are nine possible combinations of the switches which give rise to the 8 Thevenin equivalent circuits shown in figure 4, with the ninth being of course an open circuit. It is important to note here that the resistance and voltage values given are for ideal nominal conditions and actual values may be noticeably different. It also assumes that the ON resistance of the MOS FET switches is zero which is actually never the case.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f4.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -76,9 +72,8 @@ The first four cases are obvious. The next two are for the case where the 220 Ω
 
 A simple Python demonstration script has been written to control the 8 PA0-7 digital pins. Figure 5 is a screen shot of the controls. The 8 pins can be set to either 0, high Z, or 1. In the top row of the screen the DC values measured on Channels A and B are displayed and updated each time a bit state is changed. These can be used to measure node voltages at points in the network being investigated. An ALICE plug-in version of the control program is also included in the zip archive at the end of this document.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f5.png
-   :align: center
-   :width: 225px
+
+|image6|
 
 .. container:: centeralign
 
@@ -89,9 +84,8 @@ With four essentially identical copies of this circuit, the fixed 2.5V, 3.3V and
 
 If external resistors are used in place of the shorts some well know special case resistor networks can be constructed. One example, the R-2R digital-to-analog converter ladder network, is shown in figure 6. The two 220 Ω resistors in parallel are the 'R' part of the ladder and the internal 220 Ω resistors are the '2R' part of the ladder.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f6.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -107,3 +101,18 @@ In the case shown only the internal 220 Ω resistors are used. If the 7 220 Ω r
 :doc:`ADALM1000 Python Tutorials </wiki-migration/university/tools/python-tutorial/table-of-contents>` :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f1.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/m1k-f-digital-outputs_f2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f3.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f4.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f5.png
+   :width: 225px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k-digital-outputs_f6.png
+   :width: 600px

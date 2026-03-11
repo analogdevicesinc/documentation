@@ -107,15 +107,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD5761R Driver. <drivers/dac/ad5761r/ad5761r.c>`
+   -  :git-no-OS:`Header file of AD5761R Driver. <drivers/dac/ad5761r/ad5761r.h>`
    
-   |Implementation of AD5761R Driver.|
 
-   -
-
-   |Header file of AD5761R Driver.|
-
-.. |Implementation of AD5761R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5761r/ad5761r`.c
-.. |Header file of AD5761R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5761r/ad5761r`.h

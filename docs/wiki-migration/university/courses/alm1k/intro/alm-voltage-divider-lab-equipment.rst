@@ -29,9 +29,8 @@ Note that for this first part we are only concerned with the effect of the instr
 
 In order to analyze the effect an instrument will have on a circuit under test, we need to understand a fundamental concept of circuits, the voltage divider. Basically, when a voltage in a circuit exists across two or more resistances, that voltage divides up in a manner proportional to the resistances. That is, a larger resistance will have a larger fraction of the voltage dropped across it. The voltage drop will be proportional to its resistance divided by the total resistance of all the resistors combined (Series resistance).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig1.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -52,9 +51,8 @@ Note that R\ :sub:`1`\ +R\ :sub:`2` is the total resistance of the circuit.
 
 Another fundamental concept needed to understand in order to analyze the circuits you will build and measure is how to mathematically combine resistances. If any number of resistances are connected in series, you simply add them to find the total resistance. If any number of resistances are wired in parallel, the total resistance is the reciprocal of the sum of the reciprocals of all of the resistances. This is summarized in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -75,9 +73,8 @@ For only two resistors in parallel:
 
 Note that the voltage divider equation applies only to series circuits. Any time you use an instrument to measure the voltage across a device, V\ :sub:`Load`, as illustrated in figure 3, we are connecting that measurement instrument (R\ :sub:`Scope`) in parallel with the resistance of the circuit being measured. So just connecting the M1k analog input will affect the quantity being measured. In this case the effective load resistance on the battery is R\ :sub:`Total` and it is the parallel combination of the M1k input impedance (1 MegΩ) with the resistance of the load resistor (R\ :sub:`Load`). This results in a total load resistance, R\ :sub:`Total`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -116,9 +113,8 @@ DC Experiment :
 
 We can use a voltage divider to determine how much effect a device has on a circuit, or in this case, the effect that a circuit has on a device. In the simple electrical model of the battery shown in figure 4, the internal resistance of the battery depends on the battery size and chemistry. This more advanced lab activity uses :doc:`Electrochemical Impedance Spectroscopy </wiki-migration/university/courses/alm1k/alm-eis-lab>` to measure the internal impedance of a battery vs frequency. The simple model in figure 4 ignores much of the internal chemistry including changes as the battery is discharged. The default assumption normally is that the voltage output of a battery doesn’t change with the load. We will investigate how this works in an actual circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig4.png
-   :align: center
-   :width: 400px
+
+|image4|
 
 .. container:: centeralign
 
@@ -134,9 +130,8 @@ AC Measurements
 
 The experiment above showed that the load can affect the source, in this case a battery. Now we will look at how the instrument can affect the circuit. The M1k analog input (oscilloscope) can load the circuit and affect the circuit being tested. Now you can close the Voltmeter Tool and open the ALICE desktop Scope tool. Use the AWG generator, CHA, of the M1k to put an AC signal across a resistor divider circuit shown in figure 5. Set the CHA frequency to 500 Hz. Set Min to 1 V and Max to 4 V (the goal is 3 Vp-p) . The wave shape can be a Sine wave. Use R\ :sub:`1` = 1kΩ and R\ :sub:`2` = 1kΩ. Take data and plot the output using Excel.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -151,9 +146,8 @@ Repeat the above experiment using R\ :sub:`1` = R\ :sub:`2` = 47 KΩ and 470 K�
 
 The more exact model of this measurement is given in figure 6, were R\ :sub:`CHA` and R\ :sub:`BIN` represent the effective internal input resistances of the analog input channels of the M1k. The effective input resistance of CHA can be ignored (Do you know why?), but the input resistance of BIN effects the measurement. Using the measurements above, estimate the value of R\ :sub:`BIN`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -176,3 +170,16 @@ You can change the thickness of the waveform trace line by: Under the Options dr
 :doc:`Measuring voltages beyond 0 to 5V with the ADALM1000 (M1K) </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>` :doc:`Series, Parallel Resistors </wiki-migration/university/courses/alm1k/intro/series-parallel-2>` :doc:`Voltage and Current Division </wiki-migration/university/courses/alm1k/circuits1/alm-cir-2>` :doc:`Frequency compensated voltage dividers </wiki-migration/university/courses/alm1k/circuits1/alm-cir-voltage-divider>`
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig1.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig4.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-voltage-dividers-lab-fig6.png
+   :width: 500px

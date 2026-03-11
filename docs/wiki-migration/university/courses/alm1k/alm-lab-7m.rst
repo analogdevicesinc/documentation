@@ -25,9 +25,8 @@ Directions:
 
 The breadboard connections are as shown in the diagram below. The channel A generator voltage output drives one end of resistor R\ :sub:`1`. Resistor R\ :sub:`2` is connected between the gate and drain of transistor M\ :sub:`1` with the other end of resistor R\ :sub:`1` connected to the gate as well. The source of M\ :sub:`1`\ is grounded thus M\ :sub:`1` is in a common source configuration.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7m_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -54,3 +53,6 @@ What are the relative gains of the two paths when the drain current is less than
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7m_f1.png
+   :width: 600px

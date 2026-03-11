@@ -10,7 +10,7 @@ Files included in the AD996X Update:
 -  DPGDownloader Panel
 -  `Quick Start Guide <https://wiki.analog.com/_media/resources/eval/dpg/ad9963_evaluation_board_quick_start_guide.pdf>`_
 -  :adi:`AD996X Data Sheet <static/imported-files/data_sheets/AD9961_9963.pdf>`
--  IBIS Models: :adi:`AD9963 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9963.ibs>`, :adi:`AD9961 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9961.ibs>`
+-  IBIS Models: :adi:`AD9963 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9963.ibs>`, :adi:`AD9961 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9961.ibs>`
 -  Schematic: `Rev A <https://wiki.analog.com/_media/resources/eval/dpg/ad9963-ebz_reva_schematic.pdf>`_, `Rev B <https://wiki.analog.com/_media/resources/eval/dpg/ad9963-ebz_revb_schematic.pdf>`_
 -  Bill of Materials: `Rev A <https://wiki.analog.com/_media/resources/eval/dpg/ad9963-ebz_reva_bom.zip>`_, `Rev B <https://wiki.analog.com/_media/resources/eval/dpg/ad9963-ebz_revb_bom.zip>`_
 -  PCB Gerber files: `RevA <https://wiki.analog.com/_media/resources/eval/dpg/ad9963-ebz_reva_gerber_files.zip>`_, `RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9963-ebz_revb_gerber_files.zip>`_

@@ -4,7 +4,7 @@ Jupiter SDR
 Overview
 --------
 
-Jupiter is a versatile software-defined platform based on Analog Devices :adi:`ADRV9002` and Xilinx `Zynq UltraScale+ MPSoC <https://www.xilinx.com//products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`_. ADRV9002 is a new generation RF transceiver that has dual-channel transmitters, dual-channel receivers covering 30 MHz to 6 GHz frequency range with very good RF linearity performance and a set of advanced features like fast profiles switching, flexible power vs performance configuration, fast frequency hopping, multi-chip synchronization and DPD for narrow and wide band waveform. The evaluation platform includes XCZU3EG processing device that has a wide range of interfaces making the system capable of local processing or streaming to a remote host. It comes integrated in a self-contained ruggedised aluminum case which gives flexibility in evaluating and prototyping across different environments.
+Jupiter is a versatile software-defined platform based on Analog Devices :adi:`ADRV9002` and Xilinx `Zynq UltraScale+ MPSoC <https://www.xilinx.com/products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`_. ADRV9002 is a new generation RF transceiver that has dual-channel transmitters, dual-channel receivers covering 30 MHz to 6 GHz frequency range with very good RF linearity performance and a set of advanced features like fast profiles switching, flexible power vs performance configuration, fast frequency hopping, multi-chip synchronization and DPD for narrow and wide band waveform. The evaluation platform includes XCZU3EG processing device that has a wide range of interfaces making the system capable of local processing or streaming to a remote host. It comes integrated in a self-contained ruggedised aluminum case which gives flexibility in evaluating and prototyping across different environments.
 
 |jupitersdr_back1.png| |jupitersdr_front1.png|
 
@@ -170,19 +170,15 @@ Binaries:
 
 Osc for windows can be downloaded directly from Github. Go to to the following link and download the latest release.
 
--  :git-iio-oscilloscope:`IIO-Scope <releases>`
+-  `IIO-Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 The latest boot files for adrv9002 (for all supported carriers) can be found in the latest Kuiper Image release (note one can choose between downloading the full image or just the boot partition):
 
-::
-
-   *[[/resources/tools-software/linux-software/adi-kuiper_images/release_notes#release_image|Kuiper Image]]
+-  :doc:`Kuiper Image </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>`
 
 Below it's an **experimental** pre-release which enables DMA Coherency on the AXI DMA core. That means the IP core can snoop the caches and so samples can actually live in them. This gave some promising throughput improvements when using libiio IP and USB backends:
 
-::
-
-   *[[https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/jupiter-dma-coeherent.tar.gz|Jupiter DMA Coeherent]]
+-  `Jupiter DMA Coeherent <https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/jupiter-dma-coeherent.tar.gz>`_
 
 --------------
 
@@ -194,8 +190,7 @@ Reference Material
 Software Defined Radio using the Linux IIO Framework
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
-   :alt: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
+`iiosdr.mp4 <http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 
 ADI Articles
 ~~~~~~~~~~~~

@@ -50,7 +50,7 @@ Equipment Needed
 -  One (1) :adi:`EV-ADE9000SHIELDZ` Sensor Node
 -  One (1) MAX32625PICO Rapid Development Platform with 10-pin ribbon cable
 
-   -  with firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+   -  with firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
 
 -  One (1) CR123A Battery or any equivalent external DC power supply (+3 V to +4.7 V)
 
@@ -72,8 +72,9 @@ Equipment Needed
    **Make sure to check for the battery polarity in the BT1 connector, refer to the figure below. The DS3 LED will light up indicating that you have inserted the battery correctly and that power is provided in the base board.**\
 
 
-   
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.jpg
+   :align: center
+   :width: 600px
 
 -  Connect the :adi:`EV-ADE9000SHIELDZ` Sensor Node to the :adi:`MAX32670-SX-ARDZ` Base Board by aligning the corresponding Arduino headers on each board.
 -  Connect the :adi:`MAX32625PICO` programming adapter to the :adi:`MAX32670-SX-ARDZ` Base Board through the 10-pin ribbon cable.
@@ -87,13 +88,15 @@ Equipment Needed
 
    <details><summary>**How to flash the firmware image in the MAX32625PICO**
 
--   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+-   Download the firmware image: `MAX32625PICO Firmware Image for MAX32670 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`_
    -   Do not connect the MAX32625PICO to the :adi:`MAX32670-SX-ARDZ` Base Board yet.
    -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
-   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
-
-   |image2|
-
+   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+      :align: center
+      :width: 400px
+   
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
    -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the :adi:`MAX32670-SX-ARDZ` Base Board.
@@ -107,11 +110,9 @@ Equipment Needed
 
 -  Connect the :adi:`MAX32625PICO` programming adapter to the Host PC using the micro USB to USB cable.
 
-
-   
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
+   :align: center
+   :width: 1500px
 
 .. note::
 
@@ -152,10 +153,3 @@ For questions and more information about this product, connect with us through t
 
 
 // End of Document
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/base_board_with_battery.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz_to_maxpico.png
-   :width: 1500px

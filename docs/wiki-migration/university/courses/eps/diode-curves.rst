@@ -22,9 +22,8 @@ Diode schematic symbols:
 
 Each type of diode has a specific schematic symbol which are variations of the conventional diode symbol shown on the left in figure 1. A sort of "Z" shaped cathode denotes a zener diode as in the second symbol in figure 1. An "S" shaped cathode denotes a Schottky diode as in the next symbol. The arrows pointing away from the diode denotes an LED as in the symbol on the right.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,9 +35,8 @@ Zener Diode Fundamentals:
 
 A Zener diode is similar in construction and operation to an ordinary diode. Unlike a conventional diode where the intended use is to prevent current in the reverse direction, a zener diode is mostly used in the reverse region above the breakdown voltage. Its I vs, V characteristic curve is similar to ordinary diode. By adjusting the doping of the P and N sides of the junction, it is possible to design a Zener diode that breaks down at anywhere from a few volts to a few hundred volts. See Figure 2. In this breakdown or zener region the diode voltage will remain approximately constant over a wide range of currents. The maximum reverse-bias potential that can be applied before entering the Zener region is called the Peak Inverse Voltage (PIV) or the Peak Reverse Voltage (PRV).
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -76,9 +74,8 @@ LED Fundamentals:
 
 The LED is a junction diode that emits light when forward biased. Actually all PN junction diodes emit photons when forward biased, it is just that the photons are in the infrared band and the physical shape of the diode does not allow the photons to escape the package. To achieve the visible light emitting property, it is necessary to fabricate the LED from materials with larger band-gaps other than silicon. As a result, the forward voltage drop of the LED is greater than 0.7V; usually on the order of 1.5 to 2 volts depending on the wavelength of the emitted light. The LED is also built in a special transparent package as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f3.png
-   :align: center
-   :width: 650px
+
+|image3|
 
 .. container:: centeralign
 
@@ -108,9 +105,8 @@ Directions:
 
 The current vs. voltage characteristics of the PN junction diode can be measured using the Discovery Board and the following connections shown in figure 4. The green boxes indicate where to connect the Discovery board. Set up the breadboard with waveform generator output, W1, attached to one end of the resistor. The 2+ scope input is also connected here. The other end of the resistor is connected to one end of the diode being measured as shown in the diagram. The 2- scope input as well as the 1+ scope input is also connected to the second end of the resistor. The other end of the diode is connected to ground along with the 1- scope input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -151,9 +147,8 @@ Directions:
 
 To measure the reverse breakdown voltage of your zener diode modify your measurement set up as shown in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -180,3 +175,14 @@ What is the slope (effective resistance) of the curve above the breakdown voltag
 http://en.wikipedia.org/wiki/Diode http://en.wikipedia.org/wiki/Schottky_diode https://en.wikipedia.org/wiki/Light-emitting_diode
 
 **Return to EPS Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/eps/main-page>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f3.png
+   :width: 650px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/eps/eps_diode-curves-f5.png
+   :width: 600px

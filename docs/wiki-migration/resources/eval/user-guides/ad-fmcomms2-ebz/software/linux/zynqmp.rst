@@ -47,11 +47,11 @@ Please see here: :doc:`Building with Petalinux </wiki-migration/resources/tools-
 On the development host
 -----------------------
 
-Create a local copy of ADI's kernel tree. From now on, we will be working in this "linux" folder, the :git-linux>`__.
+Create a local copy of ADI's kernel tree. From now on, we will be working in this "linux" folder, the :git-linux:`ADI Linux repository <linux>`.
 
 ::
 
-   user@analog:~$ git clone https::`ADI Linux repository </github.com/analogdevicesinc/linux.git
+   user@analog:~$ git clone :git-linux:`linux`
    user@analog:~$ cd linux/
 
 or do a git pull in an existing repository.
@@ -137,7 +137,7 @@ Build the one that fits your FPGA carrier and FMC card
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | device tree                               | board                                                                                                                                                                                                                                           |
 +===========================================+=================================================================================================================================================================================================================================================+
-| zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dts | `ZCU102 <https://www.xilinx.com/ZCU102>` **Rev. 1.0** and the :doc:`AD-FMCOMMS2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>` or :doc:`AD-FMCOMMS3-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz>` board  |
+| zynqmp-zcu102-rev10-ad9361-fmcomms2-3.dts | `ZCU102 <https://www.xilinx.com/ZCU102>`_ **Rev. 1.0** and the :doc:`AD-FMCOMMS2-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz>` or :doc:`AD-FMCOMMS3-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz>` board |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | zynqmp-zcu102-rev10-ad9364-fmcomms4.dts   | `ZCU102 <https://www.xilinx.com/ZCU102>`_ **Rev. 1.0** and the :doc:`AD-FMCOMMS4-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms4-ebz>` or :doc:`AD-FMCOMMS4-EBZ </wiki-migration/resources/eval/user-guides/ad-fmcomms3-ebz>` board |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

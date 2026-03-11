@@ -114,13 +114,14 @@ Required setup steps
 
    |image1|
 
-   -  P20, P18 in 1 and 2
+-  P20, P18 in 1 and 2
 
-   |image2|
 
-   -  S9 in “Carrier”
+|image2|
 
-   |image3|
+-  S9 in “Carrier”
+
+|image3|
 
 -  Connect HDMI cable to Raspberry Pi
 -  Connect USB keyboard to Raspberry Pi
@@ -141,7 +142,9 @@ First make sure all the required setup explained above is completed. Once the te
 -  Power on both DUT and Raspberry Pi
 -  The following screen should be visible after Raspberry Pi booted:
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-screen.png
+   :align: center
+   :width: 800px
 
 .. important::
 
@@ -150,9 +153,9 @@ First make sure all the required setup explained above is completed. Once the te
 
 -  Testing sequence can be started by selecting one of the menu items. In order to start testing an Ethernet cable should be connected between Raspberry Pi and DUT. At the beginning of every test the correct connection with DUT is checked. If the connection cannot be established the following error message will be printed:
 
-
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-eth-conn.png
+   :align: center
+   :width: 800px
 
 .. tip::
 
@@ -204,7 +207,3 @@ First make sure all the required setup explained above is completed. Once the te
    :width: 300px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv2crr-fmc/adrv2crr-crr-switch.jpg
    :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-screen.png
-   :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9009-zu11eg/boot-pi-eth-conn.png
-   :width: 800px

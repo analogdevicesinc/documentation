@@ -104,10 +104,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
+   :align: center
+   :width: 500px
 
 -  Connect the **EVAL-CN0338-ARDZ** to the Arduino connectors **P2, P3, P5, P6, P7, P8, P9** of the **EVAL-ADICUP360** board.
 -  Plug in the DC Power supply into the DC barrel jack (P11) on the EVAL-ADICUP360.
@@ -133,7 +134,7 @@ The software for the **ADuCM360_demo_cn0338** demo can be found here:
    Prebuilt CN0338 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0338.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0338.bin>`
+   -  `ADuCM360_demo_cn0338.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0338.bin>`_
    
    Complete CN0338 Source Files
    
@@ -223,6 +224,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0337_demo_3.png
-   :width: 500px

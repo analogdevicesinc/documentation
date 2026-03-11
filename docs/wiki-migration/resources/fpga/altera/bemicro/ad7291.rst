@@ -48,7 +48,7 @@ More information
 ----------------
 
 -  :adi:`AD7291 Product Info <AD7291>` - pricing, samples, datasheet
--  :adi:`EVAL-AD7291SDZ evaluation board user guide </static/imported-files/user_guides/UG-253.pdf>`
+-  :adi:`EVAL-AD7291SDZ evaluation board user guide <static/imported-files/user_guides/UG-253.pdf>`
 -  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 -  `Micrium uC-Probe <https://www.micrium.com/ucprobe/about/>`_

@@ -34,9 +34,8 @@ Magnetic Field Directions:
 
 In this part of the activity we will be using magnetic coils to detect varying magnetic fields though inductive coupling. Connect 10 mH and 1 mH coils to the two scope input channels on the ADALM1000 as shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -55,18 +54,15 @@ The various electrical devices in the room (and elsewhere in the building) produ
 
 The following two scope screen shots are included here as examples of the kinds of signals you might pick up with the coils. The first one in figure 2 is with the two coils set next to or on top of an external powered USB hub. The second in figure 3 is with the two coils set on top of the keyboard of a lop-top computer. The amount of “activity” seen in the signal can be a different depending on if you are typing or using the touch pad device.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2, 10 mH and 1 mH coils next to powered USB hub.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig3.png
-   :align: center
-   :width: 600px
+   |image3|
 
 .. container:: centeralign
 
@@ -77,9 +73,8 @@ One potential source of EMI radiation is the M1k PC board itself. The various in
 
 Flip the M1k board over so the component side is facing up as shown in figure 4. Hold the pick-up coil vertically directly over various places on the PC board and observe the amplitude of the signals you pick up. As shown in the figure a couple of the good places to see large EMI signals is near the switching power supply regulator sections especially the inductors. Another place you might pick-up a strong signal is over the main crystal oscillator for the micro-controller.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -88,9 +83,9 @@ Flip the M1k board over so the component side is facing up as shown in figure 4.
 
 For example figure 5 shows the more than 100 mV p-p signal seen when holding the 100 uH coil directly over the master crystal oscillator Y1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig5.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -106,9 +101,8 @@ Electric Field Directions:
 
 Up until now we have been using magnetic coils to detect varying magnetic fields. Now we will be using just an open (un-shielded) wire and the very high input resistance of the scope input to detect a changing or varying electric field through capacitive coupling.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -131,9 +125,8 @@ Shown in figure 7 is the waveform detected when the header wire is held parallel
 
 Or 336 Vp-p, so the coupling factor is about 1/1000.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -150,3 +143,18 @@ a) Describe the “antenna” you are using. b) Qualitatively describe (sketch o
 `Electromagnetic radiation <https://en.wikipedia.org/wiki/Electromagnetic_radiation>`_ `Electromagnetic interference <https://en.wikipedia.org/wiki/Electromagnetic_interference>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-emi-fig7.png
+   :width: 600px

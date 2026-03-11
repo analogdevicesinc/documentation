@@ -27,11 +27,11 @@ AD-FMCOMMS1-EBZ Calibration EEPROM Utility
 Download/Install
 ----------------
 
-Git: https://github.com/analogdevicesinc/fmcomms1-eeprom-cal
+Git: :git-fmcomms1-eeprom-cal:`fmcomms1-eeprom-cal`
 
 ::
 
-   root@linaro-ubuntu-desktop:~# **git clone https://github.com/analogdevicesinc/fmcomms1-eeprom-cal.git**
+   root@linaro-ubuntu-desktop:~# **git clone :git-fmcomms1-eeprom-cal:`fmcomms1-eeprom-cal`.git**
    root@linaro-ubuntu-desktop:~# **cd fmcomms1-eeprom-cal**
    root@linaro-ubuntu-desktop:~# **make**
    root@linaro-ubuntu-desktop:~# **make install**

@@ -186,11 +186,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`ad738x HDL Project. <projects/ad738x_fmc>`
    
-   |ad738x HDL Project.|
+
 
 No-OS Downloads
 ---------------
@@ -202,5 +200,3 @@ No-OS Downloads
    -  :git-no-OS:`ad738x No-OS Project <projects/ad738x_fmcz>`
    
 
-
-.. |ad738x HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad738x_fmc`

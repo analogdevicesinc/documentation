@@ -85,14 +85,13 @@ Development
 
 An open-source SDK that accompanies the hardware platform enables you to configure the system and extract depth and RGB data from the camera on the system of your choice. Windows and Linux support are built into the SDK as well as sample code and wrappers for various languages including Python, C/C++ and MATLAB. The SDK also integrates with 3rd party technologies like OpenCV and RoS.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/logos.png
-   :alt: Bindings
-   :width: 500px
+
+|Bindings|
 
 .. admonition:: Download
    :class: download
 
-   :git-aditof_sdk>`__
+   :git-aditof_sdk:`Access the open source ADI 3D ToF SDK to get started <aditof_sdk>`
 
 
 --------------
@@ -113,7 +112,7 @@ Detecting and measuring the size of boxes is the base of many use cases for logi
 
 .. note::
 
-   `Box dimensioning app <https::`Access the open source ADI 3D ToF SDK to get started </github.com/robotics-ai/tof_process_public/tree/main/box_measure>`
+   `Box dimensioning app <https://github.com/robotics-ai/tof_process_public/tree/main/box_measure>`_
 
 
 People detection and tracking
@@ -186,8 +185,10 @@ For questions and more information please contact us on the Analog Devices Engin
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-3dsmartcam1-prz/samxl.png
    :width: 400px
-.. |youtube>-CErH6ROli8| image:: https://wiki.analog.com/_media/youtube>-CErH6ROli8
-.. |youtube>XKTGsVNyvrg| image:: https://wiki.analog.com/_media/youtube>XKTGsVNyvrg
-.. |youtube>mL542eUw_dg| image:: https://wiki.analog.com/_media/youtube>mL542eUw_dg
+.. |Bindings| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/logos.png
+   :width: 500px
+.. |youtube>-CErH6ROli8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-CErH6ROli8
+.. |youtube>XKTGsVNyvrg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>XKTGsVNyvrg
+.. |youtube>mL542eUw_dg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>mL542eUw_dg
 .. |Smart Camera Desktop| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/jetson_desktop.png
    :width: 300px

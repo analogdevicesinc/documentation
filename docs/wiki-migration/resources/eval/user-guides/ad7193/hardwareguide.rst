@@ -16,13 +16,15 @@ After following the instructions in the :doc:`Software Procedures </wiki-migrati
          -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
          -  Using the Arduino Connectors
 
-         |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7193/sdp_connect.png
+   :align: center
+   :width: 400px
 
-   -  **Option B:** Connect the EVAL-AD7193ASDZ to the EVAL-SDP-CB1Z
+-  **Option B:** Connect the EVAL-AD7193ASDZ to the EVAL-SDP-CB1Z
 
-      -  Using the 120 pin connector
+   -  Using the 120 pin connector
 
-         -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
+      -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
 
 Block Diagram
 =============
@@ -230,9 +232,9 @@ Serial communication options
 
 -  SDP-B board and the respective 120 pin SDP connector.
 
-::
 
-     *When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® [[:adi:`en/products/adsp-bf527`.html|ADSP-BF527]] on the SDP-B board.
+
+- When using the SDP-B connection (120 pin) The evaluation board connects via the serial peripheral interface (SPI) to the Blackfin® :adi:`ADSP-BF527 <en/products/adsp-bf527.html>` on the SDP-B board.
    * Arduino connection SDP-K1
    * PMOD connector
    * Standalone mode
@@ -331,6 +333,3 @@ Bill of Materials
 :doc:`Next Page: Software Procedures </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
 
 :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7193>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7193/sdp_connect.png
-   :width: 400px

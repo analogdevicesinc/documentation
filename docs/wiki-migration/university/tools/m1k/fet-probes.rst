@@ -3,9 +3,8 @@ ADALM1000 Low Capacitance FET Input Buffers
 
 In the High-Z mode the two analog input channels of the ADALM1000 provide a 1 mega ohm input resistance but in parallel there is nearly 400 pF of capacitance as we learned in this document on the :doc:`ALM1000 analog inputs </wiki-migration/university/tools/m1k/analog-inputs>`. While working on this example lab activity on a :doc:`CMOS output transconductance amplifier </wiki-migration/university/courses/alm1k/alm-lab-ota>` (OTA) it was found that the ALM1000 analog input was unable to probe the output of the second stage, at the drains of PMOS M\ :sub:`4` and NMOS M\ :sub:`5` in `figure 2 <https://wiki.analog.com/_detail/university/courses/alm1k/alm-ota-lab_f3.png>`_ of the Lab, without the amplifier becoming very unstable. Note the screen shot of the scope display when channel B is connected to this node. The channel A green curve is the input of the amplifier which is configured with an inverting gain of 6.8. The channel B orange curve shows the oscillation.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ota_hi-z-node-un-buffered.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -14,9 +13,9 @@ In the High-Z mode the two analog input channels of the ADALM1000 provide a 1 me
 
 Figure 2 is the schematic for one channel of an N-JFET input buffer source follower. The design in its most simple form uses one N channel JFET, Q\ :sub:`1`, and an NPN current mirror, Q\ :sub:`2` and Q\ :sub:`3`, as the current to drive the source of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-fet-probe_f2.png
-   :align: center
-   :width: 500px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -31,9 +30,8 @@ The FET buffer can be powered directly from the fixed +5 V supply on the ALM1000
 
 Now with the very high input resistance and very low input capacitance of the FET buffer we can observe the sensitive internal node of the OTA without disturbing the frequency stability of the amplifier. As we can now see in the scope screen shot in figure 3. Again the green curve is the input signal. The dark orange curve is the output of the amplifier and the lighter orange curve is the output of the second stage of the amplifier. We can now see this node as we should, quickly jumping as the NPN and PNP halves of the push-pull output stage turn on and off.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ota_hi-z-node-fet-buffer.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -42,9 +40,9 @@ Now with the very high input resistance and very low input capacitance of the FE
 
 A second important benefit of the significantly lower capacitance is the ability to use just resistors for input attenuators rather than needing frequency response compensating capacitors as in this note on the :doc:`ALM1000 analog inputs </wiki-migration/university/tools/m1k/analog-inputs>`. To confirm this two 510 KΩ resistors as a 2X attenuator was used as shown in figure 4:
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-fet-probe_f4.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -53,9 +51,9 @@ A second important benefit of the significantly lower capacitance is the ability
 
 Figure 5 is a screen shot showing channel A generating a 2 KHz 0 to 5 V square wave, green trace, and the attenuated and buffered signal on channel B, orange trace. Note the vertical scale of channel B goes from -2.5 V to +7.5 V. We see that the insertion of the 510 KΩ resistor in series with the gate of the FET without a frequency compensation capacitor has not affected the rise/fall time of the signal enough to be visible within the bandwidth of the ALM1000.
 
-.. image:: https://wiki.analog.com/_media/university/tools/fet-buffer-input-divider.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -64,9 +62,9 @@ Figure 5 is a screen shot showing channel A generating a 2 KHz 0 to 5 V square w
 
 Figure 6 is a rendering of what the top of the 0.8" X 2.0" PCB with two FET buffers will look like. Design files for this board are included in the zip file attached to this blog.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1000_fet_probe_pcb.png
-   :align: center
-   :width: 350px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -77,9 +75,8 @@ On the top left the 6/8 pins of the ANALOG1 connector pass through to the 1X8 pi
 
 The plus and minus button batteries can be inserted into the two 2X2 0.1" header sockets using the technique shown in figure 7. The spacing between diagonal pins in the 2X2 header is just about right to fit the thickness of the battery. Shorting jumpers can be inserted to operate from just the fixed +5 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/tools/coin_cell_holder.png
-   :align: center
-   :width: 175px
+
+|image7|
 
 .. container:: centeralign
 
@@ -88,9 +85,9 @@ The plus and minus button batteries can be inserted into the two 2X2 0.1" header
 
 An integrated option is to use the AD8541 CMOS single supply rail-to-rail input/output single opamp from the Analog Parts Kit ( or AD8542 dual ) as a unity gain follower. The CMOS input of the AD8541 offers very low input bias current and low capacitance.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k-fet-probe_f8.png
-   :align: center
-   :width: 500px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -99,9 +96,9 @@ An integrated option is to use the AD8541 CMOS single supply rail-to-rail input/
 
 The AD854X datasheet does not specify the input capacitance but test results were very similar to what was seen using the N-JFET followers. The rail-to-rail input and output capabilities of these op-amps means they can operate directly from the fixed +5 V power supply without needing the extra external 1.5 V batteries on the positive and negative supplies as with the N-JFET followers. Figure 9 is a rendering of the top of this buffer circuit.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1000_cmos_buffer_pcb.png
-   :align: center
-   :width: 350px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -111,3 +108,22 @@ The AD854X datasheet does not specify the input capacitance but test results wer
 In conclusion we now have ways to effectively buffer the adverse effects of the large input capacitance of the ALM1000 analog inputs.
 
 `Design file archive: <https://wiki.analog.com/_media/university/tools/wiki-m1k_fet_probes.zip>`_
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/ota_hi-z-node-un-buffered.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k-fet-probe_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/ota_hi-z-node-fet-buffer.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k-fet-probe_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/fet-buffer-input-divider.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1000_fet_probe_pcb.png
+   :width: 350px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/coin_cell_holder.png
+   :width: 175px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k-fet-probe_f8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1000_cmos_buffer_pcb.png
+   :width: 350px

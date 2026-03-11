@@ -211,9 +211,8 @@ Kelvin vs. Two-Wire Connection
 
 An example is shown below where 6-inches of 30 gauge twisted pair wire was used for the two-wire and kelvin connections.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/system2.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: center
 
@@ -232,7 +231,7 @@ To measure the true loop gain, another dummy resistor divider, R3 and R4, is con
 Follow below configuration to set up the system using Module Connection:
 
 
-|image12|
+|image13|
 
 .. container:: center
 
@@ -247,7 +246,7 @@ In this type of connection, the test voltage is injected across Rs which is in s
 The common-mode range of the LTPowerAnalyzer is ±100 V, and Rs is typically 20 Ω to 40 Ω.
 
 
-|image13|
+|image14|
 
 .. container:: center
 
@@ -304,7 +303,9 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :width: 250px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/voutrangeextension.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/modulebodesetup.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/system2.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ledriver2.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/modulebodesetup.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ledriver2.jpg
    :width: 700px

@@ -155,7 +155,7 @@ Yup, this really works!
    
    ::
    
-      git clone https://github.com/analogdevicesinc/libiio.git
+      git clone :git-libiio:`libiio`
       cd libiio
       git checkout master
       mkdir build && cd build && cmake -DWITH_SYSTEMD=ON -DWITH_HWMON=ON -DWITH_EXAMPLES=ON ../ && make && sudo make install
@@ -186,7 +186,7 @@ Conclusion
 
 Existing PSM tools are the workhorse of system design and bringup. The Linux HWMON drivers and utilities are additional tools available for run-time debug and monitoring. (obviously this conclusion needs work...)
 
-.. |youtube>mR9V8uN390M| image:: https://wiki.analog.com/_media/youtube>mR9V8uN390M
+.. |youtube>mR9V8uN390M| image:: https://wiki.analog.com/_media/university/labs/software/youtube>mR9V8uN390M
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/software/psm_hwmon_linux_tutorial/rpi_power_stick_jumpers.jpg
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/university/labs/software/psm_hwmon_linux_tutorial/rpi_adapter_power_stick.jpg

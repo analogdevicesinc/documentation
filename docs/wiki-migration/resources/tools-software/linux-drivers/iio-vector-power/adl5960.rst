@@ -36,7 +36,7 @@ Files
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function      | File                                                                                                                                                                                          |
 +===============+===============================================================================================================================================================================================+
-| driver        | `drivers/iio/frequency/adl5960.c </linux.github>master?drivers/iio/frequency/adl5960.c>`__                                                                                                    |
+| driver        | :git-linux:`drivers/iio/frequency/adl5960.c`                                                                                                                                                  |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Documentation | :git-linux:`Documentation/ABI/testing/sysfs-bus-iio-frequency-adl5960`                                                                                                                        |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -328,5 +328,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-vector-power/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-vector-power/youtube>p_VntEwUe24
 

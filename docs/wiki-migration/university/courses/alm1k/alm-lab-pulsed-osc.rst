@@ -11,9 +11,8 @@ Background:
 
 A sinusoidal (sine-wave) oscillator is will produce an output waveform at a predetermined frequency for an indefinite period of time; that is, it operates continuously. Many electronic circuits in equipment such as radar require that an oscillator be turned on for a specific period of time and that it remain in an off condition until required at a later time. These circuits are referred to as Pulsed Oscillators or Ringing Oscillators. They are nothing more than sine-wave oscillators that are turned on and off at specific times. Figure 1 shows the circuit diagram of a pulsed oscillator with the resonant tank in the emitter circuit. A positive input on V\ :sub:`Gate` makes Q\ :sub:`1` conduct heavily and current flows through L\ :sub:`1`; therefore no oscillations can take place. A negative-going input pulse (referred to as a gate) cuts off Q\ :sub:`1`, and the tank oscillates or rings until the gate input ends or until the ringing dies out or stops, whichever comes first.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apulse_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ Directions:
 
 Build the pulsed oscillator circuit shown in figure 2 on your solder-less breadboard. The green squares indicate where to connect the ALM1000 AWG output and input channels and power supply. Be sure to only connect the power supply after you double check your wiring.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-pulsed-oscillator-fig2.png
-   :align: center
-   :width: 450px
+
+|image2|
 
 .. container:: centeralign
 
@@ -71,3 +69,8 @@ How does the measured output sinewave frequency compare to what you calculate us
 **For Further Reading:**
 
 **Return to Lab Activity Table of Contents.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/apulse_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-pulsed-oscillator-fig2.png
+   :width: 450px

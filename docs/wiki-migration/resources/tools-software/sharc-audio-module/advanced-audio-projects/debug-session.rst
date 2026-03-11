@@ -278,7 +278,7 @@ Debug Session - EV-SC598-SOM + Carrier
 
 --------------
 
-`Shell Commands#.|Advanced Audio Projects#.appendix-a|Appendix A - Compatibility Matrix <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.shell-commands>`_
+`Shell Commands#.|Advanced Audio Projects#.appendix-a|Appendix A - Compatibility Matrix <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.shell-commands>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cces.png
    :width: 600px

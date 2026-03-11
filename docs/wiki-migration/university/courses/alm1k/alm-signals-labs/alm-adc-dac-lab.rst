@@ -16,9 +16,8 @@ Background:
 
 Let’s first examine the simple CMOS inverter logic gate. In the simplest form, it consists of one PMOS device, M1 and one NMOS device M2. Generally the CMOS fabrication process is designed such that the magnitude of the threshold voltage, VTH, of the NMOS and PMOS devices are roughly equal i.e. complementary. The designer of the inverter then adjusts the width to length ratio, W/L, of the NMOS and PMOS devices such that their respective transconductance is also equal. This results in the input threshold of the gate being very close to one half of the supply voltage VDD.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -35,14 +34,10 @@ ADALM1000 Lab module Solder-less breadboard Jumper wires 1 – 860 Ω Resistor 
 Directions:
 ~~~~~~~~~~~
 
-First build the simple example shown here to test the input threshold of the simple CMOS inverter. Connect +5V power to VCC (pin 14) and ground to GND (pin 7). Connect the output of the waveform generator channel A to one of the 74HC04 inverter inputs (pin 1) and connect the inverter output (pin 2) to channel B input in Hi-Z mode.
+First build the simple example shown here to test the input threshold of the simple CMOS inverter. Connect +5V power to VCC (pin 14) and ground to GND (pin 7). Connect the output of the waveform generator channel A to one of the 74HC04 inverter inputs (pin 1) and connect the inverter output (pin 2) to channel B input in Hi-Z mode. |image2|
 
 
-|image1|
-
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f3.png
-   :align: center
-   :width: 500px
+|image3|
 
 .. container:: centeralign
 
@@ -78,18 +73,15 @@ An input reference resistor ladder is formed by 7 equal value (50Ω or similar)
 
 **74HC273 functional block diagram**
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
-   :align: center
-   :width: 200px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 3 74HC273 Pinout
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f4.png
-   :align: center
-   :width: 600px
+   |image5|
 
 .. container:: centeralign
 
@@ -147,9 +139,7 @@ Questions:
    Figure 5, 9 level “thermometer” DAC
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f6.png
-   :align: center
-   :width: 600px
+   |image6|
 
 .. container:: centeralign
 
@@ -164,9 +154,8 @@ Directions:
 
 Build the circuit as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -188,9 +177,7 @@ Procedure:
    Figure 8, Input / Output using triangle wave
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f9.png
-   :align: center
-   :width: 600px
+   |image8|
 
 .. container:: centeralign
 
@@ -202,5 +189,19 @@ Questions:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f2.png
    :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
+   :width: 200px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f4.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-adc-dac-f9.png
+   :width: 600px

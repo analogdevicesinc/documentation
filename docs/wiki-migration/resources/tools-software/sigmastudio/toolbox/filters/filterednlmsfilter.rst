@@ -61,4 +61,4 @@ where,
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/anc.png
    :alt: anc.png
 
-.. |fxlms.png| image:: https://wiki.analog.com/_media/fxlms.png
+.. |fxlms.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/fxlms.png

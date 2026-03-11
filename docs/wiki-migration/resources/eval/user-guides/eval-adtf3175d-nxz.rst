@@ -6,7 +6,7 @@ News
    Support or Query: tof@analog.com
 
 
-**2025-09-12**: Release 6.1.0 is available on GitHub; see :git-ToF:`releases`
+**2025-09-12**: Release 6.1.0 is available on GitHub; see `releases <https://github.com/analogdevicesinc/ToF/releases>`_
 
 .. important::
 
@@ -119,12 +119,12 @@ System Information
 
 Note: Do not use USB Type-C to USB Type-A adapters.
 
-::
 
-   ; Dimensions : 66mm x 58.6mm x 67.9mm
-   ; Enclosure Drawing : [[https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz_drawing_v1.pdf|Link]]
-   ; Laser Safety : Class 1
-   ; Operating Environment : //TO BE COMPLETED//
+
+; Dimensions : 66mm x 58.6mm x 67.9mm
+; Enclosure Drawing : `Link <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adtf3175d-nxz_drawing_v1.pdf>`_
+; Laser Safety : Class 1
+; Operating Environment : //TO BE COMPLETED//
 
 --------------
 
@@ -137,21 +137,21 @@ Index of Pages
    -  :doc:`ADSD3500 Guide </wiki-migration/resources/eval/user-guides/eval-adtf3175x-adsd3500>`
    -  `User Guide for Release 6.1.0 <https://github.com/analogdevicesinc/ToF/blob/v6.1.0/doc/user-guide/ADTF3175D-EvalKit-610.md>`_
    
-   ::
    
-      Pre-release 6.1.0 documentation - these links have been deprecated:
-      * [[/eval-adtf3175d-nxz-startup|Start Up Guide]]
-      * [[/resources/eval/user-guides/eval-adtf3175d-nxz/workflow|Workflow]]
-      * System Maintenance
-        * [[/resources/eval/user-guides/eval-adsd3100-nxz-software-installation|Installation]]
-        * [[/resources/eval/user-guides/eval-adtf3175d-nxz/system_update|System Update]]
-        * [[/resources/eval/user-guides/eval-adtf3175x-access|Accessing the ADTF3175D]]
-        * [[/resources/eval/user-guides/aditofgui_ts|Troubleshooting Guide]]
-      * Tools
-        * [[/resources/eval/user-guides/eval-adsd3100-nxz-gui|ADIToFGUI Tool]]
-        * [[/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli|Data Collect CLI Tool]]
-        * [[/resources/eval/user-guides/eval-adsd3100-nxz/tof_auxtools_cli|Python Tools]]
-        * [[/resources/eval/user-guides/eval-adsd3100-nxz/depthcompute_cli|Depth Compute CLI Tool (4.3.0 or older)]]
+   
+   Pre-release 6.1.0 documentation - these links have been deprecated:
+   -  :doc:`Start Up Guide </wiki-migration/eval-adtf3175d-nxz-startup>`
+   -  `Workflow <https://wiki.analog.com/resources/eval/user-guides/eval-adtf3175d-nxz/workflow>`_
+   -  System Maintenance
+     * :doc:`Installation </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-software-installation>`
+     * :doc:`System Update </wiki-migration/resources/eval/user-guides/eval-adtf3175d-nxz/system_update>`
+     * :doc:`Accessing the ADTF3175D </wiki-migration/resources/eval/user-guides/eval-adtf3175x-access>`
+     * :doc:`Troubleshooting Guide </wiki-migration/resources/eval/user-guides/aditofgui_ts>`
+   -  Tools
+     * :doc:`ADIToFGUI Tool </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui>`
+     * :doc:`Data Collect CLI Tool </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`
+     * :doc:`Python Tools </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/tof_auxtools_cli>`
+     * :doc:`Depth Compute CLI Tool (4.3.0 or older) </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/depthcompute_cli>`
    
 
 
@@ -161,7 +161,7 @@ Support Links
 ~~~~~~~~~~~~~
 
 -  Module and Eval kit questions : :ez:`EngineerZone <depth-perception-ranging-technologies/continuous-wave-cmos-time-of-flight-tof>`
--  Software/SDK questions : :git-ToF:`issues`
+-  Software/SDK questions : `issues <https://github.com/analogdevicesinc/ToF/issues>`_
 -  Lumentum VSCEL Information :
 
    -  https://www.lumentum.com/en/products/10-w-940-nm-triple-junction-vcsel-array

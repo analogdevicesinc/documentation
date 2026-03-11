@@ -16,9 +16,8 @@ Background:
 
 The Wien bridge oscillator is one of the simplest oscillators circuits, figure 1 shows the basic circuit configuration. An op-amp is used as the amplifying stage and the RC band pass Wien Bridge consisting of R1, C1 and R2, C2 is used as the frequency selective positive feedback network.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -27,9 +26,9 @@ The Wien bridge oscillator is one of the simplest oscillators circuits, figure 1
 
 The Wien Bridge oscillator as shown in figure 1 provides a good example to better understand oscillator design using feedback analysis. Feedback analysis is used to test if your design is stable (well behaved) or unstable (may oscillate). Feedback analysis simply means opening the feedback loop and injecting an AC signal where the new configuration can now be considered the input as shown in figure 2. We can open the loop of the oscillator between the output of the amplifier and the frequency selective network. This works as a good point to break the loop because of the relatively low output impedance of the amplifier. Similarly, the AC source VINJ also has a low output impedance. Therefore, opening the loop at this point does not significantly alter the circuit behavior.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -79,9 +78,8 @@ Directions:
 
 Construct the oscillator circuit as shown in figure 3 on the solder-less breadboard. Be sure to carefully note the power and ground connections to the OP848 op-amp before applying power to the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -102,3 +100,10 @@ To measure the loop gain use the Bode Plotting tool. Open the loop by disconnect
 :adi:`Bridge Circuits Application Note 43 <media/en/technical-documentation/application-notes/an43f.pdf>` :adi:`LT1007/LT1037 Ultrapure 1kHz Sine Wave Generator <en/design-center/reference-designs/circuit-collections/lt1007-lt1037-ultrapure-1khz-sine-wave-generator.html>` :adi:`Injection-Lock a Wien-Bridge Oscillator <en/technical-articles/injection-lock-a-wien-bridge-oscillator.html>` `"Thank You, Bill Hewlett", Jim Williams, EDN Magazine Feb. 2001 <https://m.eet.com/media/1146147/22254-61856.pdf>`_ `U.S. Patent 2,268,872 <https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf>`_ `Wien_bridge_oscillator <https://en.wikipedia.org/wiki/Wien_bridge_oscillator>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_wien-brigde-osc-fig3.png
+   :width: 600px

@@ -26,9 +26,8 @@ Directions:
 
 The current vs. voltage characteristics of the base-emitter junction of an NPN transistor can be measured using the ALM1000 module and the following connections. Set up the breadboard with the channel A generator, CA-V, attached to one end of resistor R\ :sub:`1`. Connect the base and collector of Q\ :sub:`1` to the opposite end of R\ :sub:`1` as shown in the diagram. The emitter of Q\ :sub:`1` is connected to ground. Connect channel B scope input, CB-H, to the base - collector node of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -68,9 +67,8 @@ Directions:
 
 Set up the breadboard with the channel A generator output attached to one end of the series connected resistor 100 ? R\ :sub:`1` and base and collector of Q\ :sub:`1` as shown in figure 2. The emitter is connected to the negative 4.5 Volt fixed battery voltage. The channel B scope input, CB-H, is connected to the base - collector node. Scope trace CA-I measures the current through Q\ :sub:`1`. The PNP 2N3906 is chosen over the NPN 2N3904 because the PNP emitter base breakdown voltage is less than the +9.5 V max that can be generated using ALM1000 and the external 4.5V battery while the NPN's is likely to be higher than 10 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -114,9 +112,8 @@ Directions:
 
 Set up the breadboard, as shown in figure 3, with the channel A generator attached to one end of the series connected resistor R\ :sub:`1` and collector of NPN Q\ :sub:`1` and the base of PNP Q\ :sub:`2`. The emitter of Q\ :sub:`1` is connected to ground. The collector of Q\ :sub:`2`\ is connected to ground. The first end of Resistor R\ :sub:`2` is connected to +5V. The second end of R\ :sub:`2` is connected to the base of Q\ :sub:`1` and the emitter of Q\ :sub:`2`. The channel B scope input, CB-H, is connected to the collector of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -158,9 +155,8 @@ Directions:
 
 Set up the breadboard, as shown in figure 4, with the channel A generator attached to one end of resistor R\ :sub:`1`. The emitter of Q\ :sub:`1` is connected to ground. Resistors R\ :sub:`2`, R\ :sub:`3` and R\ :sub:`4` form a voltage divider with the wiper of potentiometer R\ :sub:`3` connected to the base of Q\ :sub:`1`. The collector of Q\ :sub:`1` is connected to the second end of R\ :sub:`1` and the top of the voltage divider at R\ :sub:`2`. Scope channel B is connected to the collector of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -192,3 +188,12 @@ Aside from the position of the potentiometer wiper, do the values of R\ :sub:`2`
 **For Further Reading:**
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3_f4.png
+   :width: 600px

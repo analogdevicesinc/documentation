@@ -167,7 +167,9 @@ Program the voltage injection signal amplitude sweep based on your frequency of 
 | **Amplitude** | Set the peak-to-peak amplitude of the injection voltage signal. These values may be set between 0 mV pk-pk to 500 mV pk-pk.                                |
 +---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/sourceamplitudebode.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -186,7 +188,9 @@ Set the load current sweep level for output impedance measurement. Rows can be a
 | **Amplitude** | Set the peak-to-peak amplitude of the loading current for each selected frequency. These values may be set between 0A peak-to-peak up to 5A peak-to-peak. |
 +---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/amplitude_sweeping_for_output_impedance_measurement.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -253,7 +257,7 @@ The Bode Measurement Setup is on the left side of the window.
    | **Enabled**           | Enables the Current Probe to act as a DC Load when checked                                                                                                                                                                                |
    +-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   |image6|
+   |image4|
 
 .. container:: center
 
@@ -300,7 +304,7 @@ Click on the **Graph tab** on the right to bring up the graph setup.
    | **AutoScale**     | The Y2 Axis data will be automatically scaled when checked |
    +-------------------+------------------------------------------------------------+
 
-   |image7|
+   |image5|
 
 .. container:: center
 
@@ -333,7 +337,7 @@ Click on the **Analysis tab** on the right to bring up the sweep results.
    | **Gain Margin**       | The gain margin which is (0 dB - gain) when the phase crosses 0 on the plot for the first time   |
    +-----------------------+--------------------------------------------------------------------------------------------------+
 
-   |image8|
+   |image6|
 
 .. container:: center
 
@@ -383,9 +387,8 @@ Right-click on the **Bode Plot** to show the pop-up menu.
 
 1. Launch the LTpowerAnalyzer software.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/launching_the_ltpoweranalyzer_software_without_the_current_probe.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: center
 
@@ -398,9 +401,8 @@ Check the status bar at the bottom of the main window. It should indicate that i
 
 Turn off the power to the demo board, then run a calibration.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_plot_getting_started_calibration_2.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: center
 
@@ -417,9 +419,8 @@ Turn off the power to the demo board, then run a calibration.
 
 The sweep injection amplitude vs. frequency graph is updated as additional rows or points are added.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/impedanceinjectionlevelwithmenu.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: center
 
@@ -453,9 +454,8 @@ The sweep injection amplitude vs. frequency graph is updated as additional rows 
 
 The legend will automatically be updated to the new name.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_bodemeas.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: center
 
@@ -472,7 +472,7 @@ The legend will automatically be updated to the new name.
 
 The plot title will be automatically updated to the new title.
 
-|image9| |image10|
+|image11| |image12|
 
 .. container:: center
 
@@ -489,7 +489,7 @@ The plot title will be automatically updated to the new title.
 
 Next, select the new annotation by placing the cursor over it and then left click. The annotation can then be resized and moved as needed.
 
-|image11| |image12| |image13|
+|image13| |image14| |image15|
 
 .. container:: center
 
@@ -506,7 +506,7 @@ Next, select the new annotation by placing the cursor over it and then left clic
 
 Note that the **Setup File** type will only save the setup.
 
-|image14| |image15|
+|image16| |image17|
 
 .. container:: center
 
@@ -520,9 +520,8 @@ The injected signal level can affect the results of the gain and phase measureme
 
 The injection level vs. frequency can be set by clicking on the Bode Source tab and entering the break points into the table on the left. The maximum signal level is 500 mV pk-pk. Right click on the table to bring up a menu which will help edit the data in the table.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeinjlvl.png
-   :align: center
-   :width: 600px
+
+|image18|
 
 .. container:: center
 
@@ -530,7 +529,7 @@ The injection level vs. frequency can be set by clicking on the Bode Source tab 
 
 
 +-----------------------------------------------------------+------------------------------------------------------------+
-| |image18| **Tapered vs. Constant 20 mV Injection Levels** | |image19| **Tapered vs. Constant 100 mV Injection Levels** |
+| |image21| **Tapered vs. Constant 20 mV Injection Levels** | |image22| **Tapered vs. Constant 100 mV Injection Levels** |
 +-----------------------------------------------------------+------------------------------------------------------------+
 
 | 
@@ -569,16 +568,16 @@ Acquired data are arranged under the following:
 -  STEP #3: Type **CTRL+C** to copy the selected or highlighted data to the clipboard.
 -  Go to **EXCEL** and type **CTRL-V** to paste the data.
 
-|image20|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotdatagrid.jpg
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Bode Plot Measurement Data View**
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotanalysisdatatabexel.jpg
-   :align: center
-   :width: 400px
+   |image23|
 
 .. container:: center
 
@@ -659,7 +658,9 @@ Transient Pulse Measurement Setup
 |              | If the voltages are much less than 1mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to filter the voltage waveform before calculating the settling times |
 +--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image21|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -673,8 +674,9 @@ The current can also be described by a Piece Wise Linear (PWL) set of time, valu
 
 -  Right click on the **PWL table** to bring up the PWL menu to modify the contents of the table.
 
-
-|image22|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pwlmeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -734,7 +736,9 @@ Transient Graph Tab Interface
 | **Visible**         | The graph markers are visible when checked                                                                                                                                                    |
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image23|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas1.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -778,7 +782,9 @@ If the voltage waveform remains inside the box, the limit text will turn green, 
 | **Show Limits**      | The limits window will be displayed when checked                                                                                |
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-|image29|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_tranana.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -794,7 +800,9 @@ Copying the measurement data from the analysis tab works differently. This secti
 -  After the **Copy Data** option comes out, left-click to copy the measurement data.
 -  Paste the data to an excel spreadsheet by pressing **CTRL+V**.
 
-|image30|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1trananalysiscopy.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -810,8 +818,9 @@ After setting up the hardware, here's a step-by-step guide on how to use the Tra
 
 -  Click on the **Transient tab** and check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LB3031A main board and LB3058A current probe is connected. The measurement output voltage and current probe temperature should be displayed.
 
-
-|image31|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -822,8 +831,9 @@ After setting up the hardware, here's a step-by-step guide on how to use the Tra
 
 -  Turn off the power to the demo board, discharge the demo board output capacitor by shorting the outputs, then run a calibration.
 
-
-|image32|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -844,14 +854,16 @@ This transient control sends a rectangular load pulse or a train of load pulses 
 -  STEP #2: Set the low current, high current, pulse width, pulse duty cycle, pulse count, and the rise and fall time of the pulse transient for the DUT.
 -  STEP #3: Click the **RUN** button to start the measurements. Wait until the graph of the transient measurements appear at the window.
 
-|image33|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extranmeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Guide on Running a Pulse Control Transient**
 
 
-   |image34|
+   |image29|
 
 .. container:: center
 
@@ -863,14 +875,16 @@ The Piecewise Linear (PWL) control scheme sends a piecewise linear load waveform
 -  STEP #2: Set the different current levels for each point in time. Add succeeding rows to increase the number of data points for the PWL control.
 -  STEP #3: Click the RUN button to start the measurements. Wait until the graph of the transient measurements appear at the window.
 
-|image35|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_extranmeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
    **Setting up a Piece Wise Linear Transient Control**
 
 
-   |image36|
+   |image30|
 
 .. container:: center
 
@@ -890,7 +904,9 @@ Sometimes the voltage response depends on the timing of the current pulse with r
 -  STEP #2: Select the number of pulse counts.
 -  STEP #3: Indicate the desired pulse width of the pulse train.
 
-|image37|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_multipulana.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -901,7 +917,7 @@ Sometimes the voltage response depends on the timing of the current pulse with r
 
 
 
-|image38|
+|image31|
 
 .. container:: center
 
@@ -913,9 +929,8 @@ Transient Rise and Fall Times
 
 The effect of different load current rise and fall times on the transient response can be explored by setting their values with the Rise Time and Fall Time combo boxes. The rise times are programmable only when the Low Current is set to a minimum value other than zero in order to overcome the offset of the amplifier in the current control loop on the current probe.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rifati.png
-   :align: center
-   :width: 600px
+
+|image32|
 
 .. container:: center
 
@@ -926,7 +941,7 @@ When the Low Current is set to zero, the rise and fall times will be fixed at ~2
 
 
 
-|image39|
+|image33|
 
 .. container:: center
 
@@ -939,7 +954,7 @@ Extending VOUT Measurement Range
 The Vout+ to GND and Vout- to GND signal range is limited to ±600 mV which is sufficient for the majority of applications. The plot below shows Vout+ being driven with a sine wave generator at two different amplitudes to show the clipping that occurs when the signal level gets too high. Notice that the Output Voltage Scale Factor is set to 1.0
 
 
-|image40|
+|image34|
 
 .. container:: center
 
@@ -950,7 +965,7 @@ Sometimes the range needs to be extended, which can be accomplished by placing a
 
 
 
-|image41|
+|image35|
 
 .. container:: center
 
@@ -959,9 +974,9 @@ Sometimes the range needs to be extended, which can be accomplished by placing a
 
 The plot below shows the Vout+ input being driven with a sine wave generator with two different amplitudes driving the input to the 1k-1k resistor divider. Notice that the range has doubled and that the Output Voltage Scale Factor is set to 2.0 to get the right values.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extmeasran.png
-   :align: center
-   :width: 600px
+
+
+|image36|
 
 .. container:: center
 
@@ -1026,7 +1041,9 @@ After successfully connecting a current probe to the DUT, the status bar at the 
 |              | If the voltages are much less than 1 mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to adjust the injection frequency in order to avoid aliased switching frequency harmonics. |
 +--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image42|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impmeasset.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1069,7 +1086,7 @@ Impedance Graph Tab
    | **AutoScale**        | The Y2 Axis data will be automatically scaled when checked |
    +----------------------+------------------------------------------------------------+
 
-   |image43|
+   |image37|
 
 .. container:: center
 
@@ -1086,7 +1103,7 @@ Ensure that the hardware has been properly set up as described in the :doc:`EVAL
 Click on the **Impedance tab** and check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LB3031A mother board and LB3058A current probe is connected. The measurement output voltage and current probe temperature should be displayed.
 
 
-|image44|
+|image38|
 
 .. container:: center
 
@@ -1097,9 +1114,8 @@ Click on the **Impedance tab** and check the status bar at the bottom of the mai
 
 Turn off the power to the demo board, discharge the demo board output capacitor by shorting the outputs, then run a calibration.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_impemeas.png
-   :align: center
-   :width: 600px
+
+|image39|
 
 .. container:: center
 
@@ -1115,7 +1131,7 @@ Turn off the power to the demo board, discharge the demo board output capacitor 
 The graph displaying the sweeping of the load current amplitude vs. frequency graph is updated as additional rows or points are added.
 
 
-|image45|
+|image40|
 
 .. container:: center
 
@@ -1128,7 +1144,9 @@ The graph displaying the sweeping of the load current amplitude vs. frequency gr
 -  STEP #2: Set the Start and Stop frequency for the impedance sweep. You may also set the number of points and the acquisition speed for the output impedance measurement.
 -  STEP #3: Click **Run**. Wait until the output impedance measurement is finished.
 
-|image46|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_impemeas.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1145,7 +1163,7 @@ The current load signal level can affect the results of the impedance measuremen
 The current load amplitude vs. frequency can be set by clicking on the **Impedance Source tab** and entering the break points into the table on the left. The maximum current signal level is determined by which current probe is connected. Right-click on the table to bring up a menu which allows data editing in the table.
 
 
-|image47|
+|image41|
 
 .. container:: center
 
@@ -1157,7 +1175,7 @@ The average current of the sine wave is equal to approximately 1.1 (I\ :sub:`pea
 The 10 A current probe gives the best results for an output impedance measurement since the injection current is a larger fraction of the maximum probe current, leading to a less noisy sine wave.
 
 
-|image48|
+|image42|
 
 .. container:: center
 
@@ -1233,7 +1251,9 @@ Click on the **Scope tab** to display the oscilloscope instrument which lets the
 | **Single**                                                      | Make a single sample                                                                                                                                                                                                                                                                                                                 |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image49|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopegraph.jpg
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1263,7 +1283,9 @@ Click on the Cursor tab on the right to bring up the cursor setup. There are two
 | **Show Cross Hairs** | The horizontal cross hairs will be visible when checked.                                                                        |
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-|image50|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopecursors.jpg
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1305,7 +1327,9 @@ When the Bode analysis configuration is selected, click on the **Analysis tab** 
 | **Phase (IN-OUT)**     | The IN-OUT phase at the Signal FFT Bin in Deg                                                           |
 +------------------------+---------------------------------------------------------------------------------------------------------+
 
-|image51|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopebode.jpg
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1320,7 +1344,7 @@ Copying Analysis Data
 Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.
 
 
-|image52|
+|image43|
 
 .. container:: center round box
 
@@ -1368,7 +1392,9 @@ When the impedance analysis configuration is selected, click on the **Analysis t
 | **Zphase**               | The ILOAD-VOUT phase at the Signal FFT Bin in Deg                                                                 |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------+
 
-|image53|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_scopeimpe.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1385,14 +1411,14 @@ When the scope is not able to trigger on a waveform, the **Missing Trigger** mes
 Notice that measured Vout displayed at the bottom is close to ground in this screen shot. If the supply is on and it still won't trigger, check the trigger level or switch the trigger mode from Normal to Auto to force the trigger.
 
 
-|image54|
+|image44|
 
 .. container:: center
 
    **Oscilloscope Missing Trigger**
 
 
-   |image55|
+   |image45|
 
 .. container:: center
 
@@ -1411,7 +1437,9 @@ The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements 
 -  If an external load is not available, attach a current probe to your DUT and set a DC current at the DC Probe Current setting and click the **Enable** checkbox.
 -  Click **RUN** to start displaying the signal waveform. The scope window should start showing the measured waveform.
 
-|image56|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_meswripv.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1422,8 +1450,9 @@ The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements 
 
 -  Waveform ripple in the scope window can be measured by checking the **Analysis tab**.
 
-
-|image57|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopeswitchingfrequency.jpg
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1434,8 +1463,9 @@ The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements 
 
 -  The switcher frequency can also be checked from the FFT waveform by using the cursor tab.
 
-
-|image58|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_meswripv.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1470,7 +1500,9 @@ Click on the **Cursor tab** on the right to bring up the cursor setup.
 | **Show Cross Hairs** | The horizontal cross hairs will be visible when checked                                                                        |
 +----------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-|image59|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_curstab.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1508,7 +1540,7 @@ The **Data tab** allows users to modify each dataset, such as renaming, deleting
    | **Delete**     | The selected data will be deleted when clicked                          |
    +----------------+-------------------------------------------------------------------------+
 
-   |image60|
+   |image46|
 
 .. container:: center
 
@@ -1524,12 +1556,15 @@ To rename a trace, click on the **Data tab** on the right.
 
 -  Click on the **Data tab** to access the Waveform Data Editor.
 
-
-|image61|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rename.png
+   :align: center
+   :width: 600px
 
 -  Click on a box in the **Name column** and change the name.
 
-|image62|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rename.png
+   :align: center
+   :width: 600px
 
 -  Click the **RETURN** or **ENTER** key to update the trace names. Trace legend names are automatically updated.
 
@@ -1538,9 +1573,8 @@ How to Hide Traces
 
 Appending multiple data increases the number of legends and start blocking measurement traces. This can be resolved using these ways: by removing the legends completely, editing the number of visible traces, or by adding an offset to the **Graph tab** or by dragging it up.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_hiding.png
-   :align: center
-   :width: 600px
+
+|image47|
 
 .. container:: center
 
@@ -1551,8 +1585,9 @@ Appending multiple data increases the number of legends and start blocking measu
 
 -  Click and drag the red origin cursor up or down to move the covered traces.
 
-
-|image63|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_hiding.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1563,8 +1598,9 @@ Appending multiple data increases the number of legends and start blocking measu
 
 -  Hide all trace labels by clicking the **Legend** checkbox.
 
-
-|image64|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_hiding.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1576,7 +1612,9 @@ Appending multiple data increases the number of legends and start blocking measu
 -  Click on the **Data tab** to access the Waveform Data Editor.
 -  Click the corresponding checkbox of the trace under visible that you want to hide. Trace legends are automatically updated.
 
-|image65|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_hiding.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1593,7 +1631,9 @@ Measurement traces that are no longer needed can be removed to avoid cluttering 
 -  In the **Data tab**, under the Waveform Data Editor, tick the check box of the corresponding traces you would like to delete.
 -  Click **Delete**. Selected traces will be automatically removed.
 
-|image66|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_delete.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1605,7 +1645,9 @@ Measurement traces that are no longer needed can be removed to avoid cluttering 
 -  To delete all traces, click the **Delete All** button.
 -  The windowpane will be automatically updated with all traces removed.
 
-|image67|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_delete.png
+   :align: center
+   :width: 600px
 
 .. container:: center
 
@@ -1623,7 +1665,7 @@ Each form in the main window (right window below) can be undocked by right click
 The undocked form will appear as a separate pop-up window.
 
 
-|image68|
+|image48|
 
 .. container:: center
 
@@ -1634,7 +1676,7 @@ Separated forms can be merged back into the main window by clicking on the **X**
 
 
 
-|image69|
+|image49|
 
 .. container:: center
 
@@ -1650,24 +1692,33 @@ The Bode Plot data measured by the LTpowerAnalyzer can be imported into the LTpo
 
 -  Launch LTpowerCAD and open LTpowerAnalyzer interface.
 
-
-|image70|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad1.png
+   :align: center
+   :width: 600px
 
 -  Copy and paste from LTpowerAnalyzer to LTpowerCAD.
 
-|image71|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad2.png
+   :align: center
+   :width: 600px
 
 -  Import LTpowerAnalyzer data to LTpowerCAD.
 
-|image72|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad3.png
+   :align: center
+   :width: 600px
 
 -  Re-compensate measured loop gain in LTpowerCAD.
 
-|image73|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad4.png
+   :align: center
+   :width: 600px
 
 -  Re-adjust loop compensation network.
 
-|image74|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad5.png
+   :align: center
+   :width: 600px
 
 --------------
 
@@ -1679,28 +1730,28 @@ Checking for Software Updates
 The updater will contact the server for the latest software version information, and if the server version is newer, the Update button will be enabled. Clicking on the **Update button** will download and launch the latest install file.
 
 
-|image75|
+|image50|
 
 .. container:: center
 
    **Checking for Updates in the Help Menu**
 
 
-   |image76|
+   |image51|
 
 .. container:: center
 
    **Local Version Out-of-Date Status Message**
 
 
-   |image77|
+   |image52|
 
 .. container:: center
 
    **LTpowerAnalyzer Software Installer File**
 
 
-   |image78|
+   |image53|
 
 .. container:: center
 
@@ -1728,46 +1779,46 @@ Additional Resources
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/calibrationwarning2.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/sourceamplitudebode.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/amplitude_sweeping_for_output_impedance_measurement.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab1.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeanatab.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab1.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/launching_the_ltpoweranalyzer_software_without_the_current_probe.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeanatab.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_plot_getting_started_calibration_2.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_bodemeas.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/impedanceinjectionlevelwithmenu.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib7_bodemeas.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_bodemeas.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib8_bodemeas.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_bodemeas.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib9_bodemeas.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib7_bodemeas.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib10_bodemeas.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib8_bodemeas.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib11_bodemeas.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib9_bodemeas.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib12_bodemeas.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib10_bodemeas.png
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib11_bodemeas.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib12_bodemeas.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeinjlvl.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
    :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
    :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png
    :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotdatagrid.jpg
-   :width: 600px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas.png
-   :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pwlmeas.png
-   :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas1.png
-   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotanalysisdatatabexel.jpg
+   :width: 400px
 .. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_limidisp.png
    :width: 600px
 .. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png
@@ -1778,103 +1829,53 @@ Additional Resources
    :width: 500px
 .. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png
    :width: 500px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_tranana.png
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/pwltransient.jpg
    :width: 600px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1trananalysiscopy.png
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_extranmeas.png
    :width: 600px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_multipulana.png
    :width: 600px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rifati.png
    :width: 600px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extranmeas.png
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rifati.png
    :width: 600px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/pwltransient.jpg
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_extmeasran.png
    :width: 600px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_extranmeas.png
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_extmeasran.png
    :width: 600px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_extranmeas.png
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extmeasran.png
    :width: 600px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_multipulana.png
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impegraph.png
    :width: 600px
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_multipulana.png
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impemeas.png
    :width: 600px
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rifati.png
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_impemeas.png
    :width: 600px
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_extmeasran.png
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_impemeas.png
    :width: 600px
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_extmeasran.png
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impelvl.png
    :width: 600px
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impmeasset.png
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impelvl.png
    :width: 600px
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impegraph.png
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_copyanalysis.png
    :width: 600px
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impemeas.png
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_mistrig.png
    :width: 600px
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_impemeas.png
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_mistrig.png
    :width: 600px
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_impemeas.png
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_dattab.png
    :width: 600px
-.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impelvl.png
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_hiding.png
    :width: 600px
-.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impelvl.png
+.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_undock.png
    :width: 600px
-.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopegraph.jpg
+.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_undock.png
    :width: 600px
-.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopecursors.jpg
+.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_upcheck.png
    :width: 600px
-.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopebode.jpg
-   :width: 600px
-.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_copyanalysis.png
-   :width: 600px
-.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_scopeimpe.png
-   :width: 600px
-.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_mistrig.png
-   :width: 600px
-.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_mistrig.png
-   :width: 600px
-.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_meswripv.png
-   :width: 600px
-.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopeswitchingfrequency.jpg
-   :width: 600px
-.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_meswripv.png
-   :width: 600px
-.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_curstab.png
-   :width: 600px
-.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_dattab.png
-   :width: 600px
-.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rename.png
-   :width: 600px
-.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rename.png
-   :width: 600px
-.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_hiding.png
-   :width: 600px
-.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_hiding.png
-   :width: 600px
-.. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_hiding.png
-   :width: 600px
-.. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_delete.png
-   :width: 600px
-.. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_delete.png
-   :width: 600px
-.. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_undock.png
-   :width: 600px
-.. |image69| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_undock.png
-   :width: 600px
-.. |image70| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad1.png
-   :width: 600px
-.. |image71| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad2.png
-   :width: 600px
-.. |image72| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad3.png
-   :width: 600px
-.. |image73| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad4.png
-   :width: 600px
-.. |image74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad5.png
-   :width: 600px
-.. |image75| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_upcheck.png
-   :width: 600px
-.. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_upcheck.png
+.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_upcheck.png
    :width: 400px
-.. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_upcheck.png
+.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_upcheck.png
    :width: 400px
-.. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_upcheck.png
+.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_upcheck.png
    :width: 400px

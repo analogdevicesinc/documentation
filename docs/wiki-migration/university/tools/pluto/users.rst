@@ -29,7 +29,7 @@ Make sure all things are in ./users
          -  :doc:`Dealing with Non-Quadrature signals </wiki-migration/university/tools/pluto/users/non_quad>`
 
    -  :doc:`Antennas </wiki-migration/university/tools/pluto/users/antennas>`
-   -  `Letter of Volatility <https://wiki.analog.com/_media/./users/letter_of_volatility_pluto.pdf>`_
+   -  `Letter of Volatility <https://wiki.analog.com/_media/users/letter_of_volatility_pluto.pdf>`_
 
 -  :doc:`Quick Start </wiki-migration/university/tools/pluto/users/quick_start>`
 -  Intro to the Software. Installing Device Drivers on:

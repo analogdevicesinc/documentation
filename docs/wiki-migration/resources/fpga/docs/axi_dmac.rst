@@ -1,7 +1,8 @@
 High-Speed DMA Controller Peripheral
 ====================================
 
-`index.html <https://wiki.analog.com/_media/migrated>hdl/library/axi_dmac/index.html>`__
+.. image:: https://wiki.analog.com/_media/resources/fpga/docs/migrated>hdl/library/axi_dmac/index.html
+   :alt: migrated>hdl/library/axi_dmac/index.html
 
 The AXI DMAC is a high-speed, high-throughput, general purpose DMA controller intended to be used to transfer data between system memory and other peripherals like high-speed converters.
 

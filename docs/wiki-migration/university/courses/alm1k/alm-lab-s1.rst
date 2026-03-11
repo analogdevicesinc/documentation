@@ -23,9 +23,8 @@ The terminals:
 
 The terminal with a solder mark (connecting to the case) is negative and the terminal without a mark is positive as shown for a typical microphone in figure 1. Case styles and terminal markings may vary from manufacturer to manufacturer. Double check the polarity of your microphone before connecting it to your circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-s1_f1.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -42,9 +41,8 @@ Directions:
 
 Build the microphone bias and preamplifier circuit shown in figure 2 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-s1_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -73,3 +71,8 @@ Change the relative distance between the speaker and microphone an observe the a
 `Electret <https://en.wikipedia.org/wiki/Electret>`_ `Electret microphone <https://en.wikipedia.org/wiki/Electret_microphone>`_
 
 **Return to ALM Lab Activity\**\ :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`**.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-s1_f1.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-s1_f2.png
+   :width: 600px

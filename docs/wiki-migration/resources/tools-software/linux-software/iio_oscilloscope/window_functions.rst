@@ -99,7 +99,7 @@ Each `window function <https://en.wikipedia.org/wiki/Window_function>`_ has its 
 Hann Window
 -----------
 
-`Hann <https://en.wikipedia.org/wiki//Hann_function>`_ (also known as Hanning, raised cosine, or von Hann) window, is named after the Austrian meteorologist `Julius von Hann <https://en.wikipedia.org/wiki/Julius_von_Hann>`_. The math looks like:
+`Hann <https://en.wikipedia.org/wiki/Hann_function>`_ (also known as Hanning, raised cosine, or von Hann) window, is named after the Austrian meteorologist `Julius von Hann <https://en.wikipedia.org/wiki/Julius_von_Hann>`_. The math looks like:
 
 :math:`\displaystyle w[n] = \frac{1}{2}(1 - cos\frac{2 \pi n}{N})`
 
@@ -157,7 +157,7 @@ Cosine
 
 The cosine window is also known as the sine window, as it represents half a cycle of a sinusoidal function,
 
-:math:`\displaystyle w[n] = cos\frac{\pi n}{{N} - \pi/2} = sin\frac{\pi n}{{N}}`
+:math:`\displaystyle w[n] = cos\frac{\pi n}{{N} - \pi/2} = sin\frac{\pi n}|N|`
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_oscilloscope/window_function-cosine.png
    :width: 400px
@@ -203,3 +203,5 @@ Flat Top
    :width: 420px
 .. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_oscilloscope/64_triangle_fft.png
    :width: 420px
+
+.. |N| image:: https://wiki.analog.com/_media/N

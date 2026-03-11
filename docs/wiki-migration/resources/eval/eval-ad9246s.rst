@@ -11,7 +11,9 @@ The :adi:`ad9246S` and :adi:`ad9246` data sheets provide additional information 
 Typical Measurement Setup
 -------------------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_eval_board_connections.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -158,7 +160,7 @@ Table 1. Jumper Settings for the AD9246S Evaluation Board
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
-| |image2|\
+| |image1|
 
 .. container:: centeralign
 
@@ -188,7 +190,11 @@ Setting up the ADC Data Capture
 
 After configuring the board, set up the ADC data capture using the following steps:
 
--  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – Existing Canvas** window. Navigate to the location where the AD9246S canvases have been store and select the template that corresponds to the type of testing to be performed (see Figure 3a). Click the "Open" button. |image3|\
+-  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – Existing Canvas** window. Navigate to the location where the AD9246S canvases have been store and select the template that corresponds to the type of testing to be performed (see Figure 3a). Click the "Open" button.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_canvas_select.png
+   :align: center
+   :width: 450px
 
 .. container:: centeralign
 
@@ -197,7 +203,9 @@ After configuring the board, set up the ADC data capture using the following ste
 
 -   Once Visual Analog opens click on the settings in the ADC Data Capture block to select the appropriate FPGA bin file for the AD9246S. For this product the FPGA bin file is AD9265_CMOS.bin. Download this file from this Wiki page and save to a known location such as the one shown in Figure 3B. Select this file and click the **Program** button. (See Figure 3b)
 
-|image4|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_program_fpga.png
+   :align: center
+   :width: 450px
 
 .. container:: centeralign
 
@@ -207,10 +215,8 @@ After configuring the board, set up the ADC data capture using the following ste
 -  To change features to settings other than the default settings, click the **Expand Display** button, located in the bottom right corner of the window (see Figure 4), to see what is shown in Figure 5.
 -  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog\ TM Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button.
 
-\\\\\
 
-
-|image5|
+| |image2|
 
 .. container:: centeralign
 
@@ -219,7 +225,7 @@ After configuring the board, set up the ADC data capture using the following ste
 
 .. container:: centeralign
 
-   \ |image6|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -235,29 +241,41 @@ Setting up the SPI Controller Software
 
 After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
 
--  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6). |image7|\
+-  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcglobal.png
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
    \ *Figure 6. SPI Controller, CHIP ID(1) Box*\
 
 
--  Click the **New DUT** button in the **SPIController** window (see Figure 11).\ |image8|\
+-  Click the **New DUT** button in the **SPIController** window (see Figure 11).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcglobal_newdut.png
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
-   \ *Figure 7. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\
+   \ *Figure 7. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, various selections can be made to change the device settings for the :adi:`ad9246S`. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
-
-
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcbase0.png
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
    \ *Figure 8. SPI Controller, ADCBase0*\
 
 
--  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 9). |image10|\
+-  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 9).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_run_button.jpg
+   :align: center
+   :width: 950px
 
 .. container:: centeralign
 
@@ -269,7 +287,11 @@ Adjusting the Amplitude of the Input Signal
 
 The next step is to adjust the amplitude of the input signal for each channel as follows:
 
--  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9246S FFT** window (see Figure 9).\ |image11|\
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9246S FFT** window (see Figure 9).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9246s_fft.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -304,25 +326,9 @@ If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
 
 -  Make sure that all power and USB connections are secure.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_eval_board_connections.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_eval_board_jumpers.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_eval_board_jumpers.jpg
    :width: 850px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_canvas_select.png
-   :width: 450px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_program_fpga.png
-   :width: 450px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_expand_display.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_expand_display.jpg
    :width: 1100px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_fft.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_fft.png
    :width: 850px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcglobal.png
-   :width: 750px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcglobal_newdut.png
-   :width: 750px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_spicontroller_adcbase0.png
-   :width: 750px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_va_run_button.jpg
-   :width: 950px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9246s_fft.png
-   :width: 600px

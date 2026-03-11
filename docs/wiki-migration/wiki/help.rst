@@ -3,7 +3,7 @@ Wiki Help
 
 The following resources will help you use the Analog Devices Wiki.
 
-`Wiki Syntax - Quick Reference <https://wiki.analog.com/_media/./wiki_syntax_quick_reference.pdf>`_ A one page reference to the common syntax used on the Wiki.
+`Wiki Syntax - Quick Reference <https://wiki.analog.com/_media/wiki/wiki_syntax_quick_reference.pdf>`_ A one page reference to the common syntax used on the Wiki.
 
 :doc:`Wiki Getting Started Guide </wiki-migration/wiki/help/getting-started>` This guide is intended to provide you with the basic information you need to get started using the Wiki. Each topic also includes a brief video tutorial.
 

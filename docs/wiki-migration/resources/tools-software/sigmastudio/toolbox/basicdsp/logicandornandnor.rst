@@ -22,5 +22,5 @@ Logic - And, Or, Nand, Nor, Xor
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/logicpic3.png
    :alt: logicpic3.png
 
-.. |logicpic1.png| image:: https://wiki.analog.com/_media/logicpic1.png
-.. |logicpic2.png| image:: https://wiki.analog.com/_media/logicpic2.png
+.. |logicpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/logicpic1.png
+.. |logicpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/logicpic2.png

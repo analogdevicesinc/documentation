@@ -232,7 +232,8 @@ The typical workflow using faust to design algorithms for the SHARC Audio Module
 -  Once the developer is satisfied with the algorithm **faust2sam** (run in the background) can be used to generate a set of C++ files for the algorithm that are intended to be used with a CCES framework.
 -  Click the ``Export/compile to a specific platform`` button
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
+   :width: 50px
 
 -  In the second dropdown box, choose ``sam`` and then ``Export``
 -  Click on the QR code that shows to download the files
@@ -259,6 +260,4 @@ Example Workflows
    :alt: Hardware Reference#.|SHARC Audio Module#.micropython|MicroPython Overview
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/play_button.png
-   :width: 50px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
    :width: 50px

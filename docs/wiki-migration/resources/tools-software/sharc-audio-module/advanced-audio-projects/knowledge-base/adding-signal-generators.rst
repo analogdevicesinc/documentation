@@ -6,9 +6,8 @@ Overview
 
 This article gives a brief overview of how to modify the signal generator feature to add custom signal generators to the signal command, how to increase the number of indices in the table, and how to increase the number of channels.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/custom-signal-example.jpg
-   :alt: custom-signal-example.jpg
-   :width: 600px
+
+|custom-signal-example.jpg|
 
 .. note::
 
@@ -101,3 +100,6 @@ Follow these steps to increase the number of channels each signal generator will
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 5. Repeat the previous step for all signal generator functions                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. |custom-signal-example.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/custom-signal-example.jpg
+   :width: 600px

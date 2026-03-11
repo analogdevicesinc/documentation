@@ -16,9 +16,8 @@ Directions:
 
 The configuration, shown in figure 1, demonstrates the NMOS transistor used as the common source amplifier. Output load resistor R\ :sub:`L` is chosen such that, for the desired nominal drain current I\ :sub:`D`, the voltage appearing at V\ :sub:`DS` is approximately half way between Vp and Vn (0 volts). Adjustable resistor Rpot a sets the nominal bias operating point for the transistor (V\ :sub:`GS`) to set the required I\ :sub:`D`. Voltage divider R\ :sub:`1`/R\ :sub:`2` is chosen to provide a sufficiently large attenuation of the input stimulus from waveform generator W1 such that the amplitude of W1 is approximately the same as the signal amplitude seen at V\ :sub:`DS`.. This is done to more easily view the waveform generator W1 signal, given the rather small signal that will appear at the gate of the transistor, V\ :sub:`GS`. The attenuated W1 signal is AC coupled into the gate of the transistor with 4.7 uF C\ :sub:`1`\ so as not to disturb the DC bias condition.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,7 +30,7 @@ Hardware Setup:
 The waveform generator W1 should be configured for a 1 KHz Sine wave with 3 volt amplitude peak-to-peak and 0 volt offset. The setup should be configured with scope channel 1+ connected to display the output W1. Scope channel 2 (2+) is used to measure alternately the waveform at the gate and drain of M\ :sub:`1`.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -52,11 +51,11 @@ Procedure:
 
 The voltage gain, A, of the common source amplifier can be expressed as the ratio of load resistor R\ :sub:`L` to the small signal source resistance r\ :sub:`s`. The transconductance, g\ :sub:`m`, of the transistor is a function of the drain current I\ :sub:`D` and the so called gate overdrive voltage, V\ :sub:`GS`-V\ :sub:`th` where V\ :sub:`th` is the threshold voltage.
 
-|image2| (1)
+|image3| (1)
 
 The small signal source resistance is 1/g\ :sub:`m` and can be viewed as being in series with the source. Now with a signal applied to the gate the same current flows in r\ :sub:`s` and the drain load R\ :sub:`L`. Thus the gain A is given by R\ :sub:`L` times g\ :sub:`m`.
 
-|image3| (2)
+|image4| (2)
 
 Adding source degeneration
 ==========================
@@ -76,9 +75,8 @@ Directions:
 
 Disconnect the source of M\ :sub:`1` from ground and insert R\ :sub:`S`, a 5KΩ potentiometer, as shown in the following diagram. Adjust R\ :sub:`S` while noting the output signal seen at the drain of the transistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_f4.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -126,9 +124,8 @@ Increasing AC gain of source degenerated amplifier
 
 Adding the source degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor C\ :sub:`2`\ across the degeneration resistor R\ :sub:`S` as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_f5.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -216,8 +213,14 @@ http://en.wikipedia.org/wiki/Common_source_amplifier
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_nf2.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_e1.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_nf2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_e1.png
    :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_e2.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_e2.png
    :width: 100px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_f4.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a5m_f5.png
+   :width: 500px

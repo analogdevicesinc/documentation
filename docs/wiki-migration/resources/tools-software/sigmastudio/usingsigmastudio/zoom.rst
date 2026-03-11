@@ -3,7 +3,8 @@ Zoom
 
 The Sigma Studio View menu supports the following options
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/zoom1.png
+
+|image1|
 
 .. tip::
 
@@ -35,7 +36,7 @@ The below figure shows the viewable area of the current schematic workspace
 Select the module/modules and right click to open the context menu and click on 'zoom to selection' as seen below
 
 
-|image1|
+|image2|
 
 The view zooms to the selected area with unity magnification allowing the tuning of module parameters
 
@@ -52,4 +53,5 @@ Resize
 
 The Resize option crops the working area of the schematic to fit the schematic, the option resizes the schematic area and aligns the modules starting from the top left corner of the view-able area. The shortcut for resize is Ctrl+Shift+F8.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/zoom_to_selection.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/zoom1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/zoom_to_selection.png

@@ -19,9 +19,8 @@ Directions:
 
 The drain current vs. gate voltage characteristics of an NMOS transistor can be measure using the ADALM2000 Lab hardware and the following connections as shown in figure 1. Set up the breadboard with the arbitrary waveform generator output W1 attached to the gate terminal of M\ :sub:`1`. Connect one end of resistor R\ :sub:`1` to both the positive Vp supply and the 2+ scope input. Connect the opposite end of resistor R\ :sub:`1` to both the drain of M\ :sub:`1` and scope inputs 2- and 1+. The source of M\ :sub:`1` is connected to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a4m_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -33,7 +32,7 @@ Hardware Setup:
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -48,7 +47,7 @@ Procedure:
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image3|\
 
 
 .. container:: centeralign
@@ -83,9 +82,8 @@ Directions:
 
 Starting with the previous breadboard setup, Remove the Vp supply connection and replace it with W1 taken from the gate terminal. Now place W2 on the gate terminal (in place of W1).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a4m_f2.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -97,7 +95,7 @@ Hardware Setup:
 
 .. container:: centeralign
 
-   \ |image3|\
+   \ |image5|\
 
 
 .. container:: centeralign
@@ -114,7 +112,7 @@ Procedure:
 
 .. container:: centeralign
 
-   \ |image4|\
+   \ |image6|\
 
 
 .. container:: centeralign
@@ -142,7 +140,11 @@ Add questions here:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-xy.png
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-bb2.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a4m_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-xy.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a4m_f2.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-bb2.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_id_vs_vgs-wav.png

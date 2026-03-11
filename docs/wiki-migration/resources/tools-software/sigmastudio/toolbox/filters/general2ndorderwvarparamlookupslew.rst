@@ -31,5 +31,5 @@ The chief difference between the :doc:`General (2nd-Order / Lookup) </wiki-migra
    Note: For n curves, the selected index shouldn't exceed n - 1, i.e., the index range is 0 to n - 1. If you select an n th curve, misbehavior or errors may result.
 
 
-.. |general2ndparampic1.png| image:: https://wiki.analog.com/_media/general2ndparampic1.png
-.. |general2ndparampic2.png| image:: https://wiki.analog.com/_media/general2ndparampic2.png
+.. |general2ndparampic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndparampic1.png
+.. |general2ndparampic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndparampic2.png

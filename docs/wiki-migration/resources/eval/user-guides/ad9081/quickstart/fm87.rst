@@ -19,7 +19,7 @@ Build Linux kernel
 
 ::
 
-   analog@debian:~$ **git clone -b agilex https://github.com/analogdevicesinc/linux**
+   analog@debian:~$ **git clone -b agilex :git-linux**:`linux**`
    analog@debian:~$ **cd ./linux**
    analog@debian:~/linux$ **make adi_zynqmp_defconfig**
    analog@debian:~/linux$ **make Image**
@@ -64,7 +64,7 @@ Generate .jic (JTAG Indirect Configuration) and .rbf (Raw Binary File) files
 
 ::
 
-   analog@debian:~$ **git clone https://github.com/analogdevicesinc/hdl**
+   analog@debian:~$ **git clone :git-hdl**:`hdl**`
    analog@debian:~$ **cd hdl/projects/ad9081_fmca_ebz/fm87**
    analog@debian:~/hdl/projects/ad9081_fmca_ebz/fm87$ **make**
    Building ad9081_fmca_ebz_fm87 [/home/analog/hdl/projects/ad9081_fmca_ebz/fm87/ad9081_fmca_ebz_fm87_quartus.log] ... OK

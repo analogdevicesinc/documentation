@@ -35,10 +35,10 @@ Features List:
 
       -  Received Signal Strength Indicator: 100 dB (±2 dB)
 
--  `Xilinx Zynq <https://www.xilinx.com//products/silicon-devices/soc.html>`_ XC7Z010-1CLG225C
+-  `Xilinx Zynq <https://www.xilinx.com/products/silicon-devices/soc.html>`_ XC7Z010-1CLG225C
 
-   -  `Zynq-7000 All Programmable SoC Overview <https://www.xilinx.com//support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`_
-   -  `Datasheet <https://www.xilinx.com//support/documentation/data_sheets/ds187-XC7Z010-XC7Z020-Data-Sheet.pdf>`_
+   -  `Zynq-7000 All Programmable SoC Overview <https://www.xilinx.com/support/documentation/data_sheets/ds190-Zynq-7000-Overview.pdf>`_
+   -  `Datasheet <https://www.xilinx.com/support/documentation/data_sheets/ds187-XC7Z010-XC7Z020-Data-Sheet.pdf>`_
    -  FPGA
 
       -  Logic Cells: 28k

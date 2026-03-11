@@ -258,11 +258,9 @@ Hardware Setup
 -  Next is to connect the other end of the SWD debug cable to the MAX32625 Pico.
 -  Use the micro-USB to USB cable to connect the MAX32625 Pico to your PC/Laptop. This connection allows the user to upload firmware to the board.
 -  Then, connect the other micro-USB to USB cable to port P5. This connection allows the USB-UART communication that enables the user to access the Graphical User Interface (GUI).
--  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.\
+-  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
-|image1|
-
-//Figure 6. DAPLINK Drive //
+|image1| //Figure 6. DAPLINK Drive //
 
 -  Connect the positive terminal of the +48V Power Supply to port P2.1.
 -  Then, connect the negative terminal to port P2.2. Do not turn-on the power supply yet.
@@ -338,19 +336,14 @@ Basic Operation
    -  VG1: -2.75V
    -  VG2: -2.75V
 
--  There are two ways to set the voltages. The first is by using the spin box and the second is by using the slider.\
+-  There are two ways to set the voltages. The first is by using the spin box and the second is by using the slider.
 
-
-|image2|
-
-*Figure 7. Setting the GaN gate voltages through GUI*
+|image2| *Figure 7. Setting the GaN gate voltages through GUI*
 
 -  Once the voltages are entered, press the set button. Do this process on each of the GaN gates to replicate the oscilloscope result.
--  You will see the voltage translation from pinch-off to operating voltage. The oscilloscope will display the voltage transition and the time response. The result should be the same as the images below.\
+-  You will see the voltage translation from pinch-off to operating voltage. The oscilloscope will display the voltage transition and the time response. The result should be the same as the images below.
 
-|image3|
-
-*Figure 7. VGC2 Voltage Time Response* |image4| *Figure 8. VGP2 Voltage Time Response* |image5| *Figure 9. VG1 Voltage Time Response* |image6| *Figure 10. VG2 Voltage Time Response*
+|image3| *Figure 7. VGC2 Voltage Time Response* |image4| *Figure 8. VGP2 Voltage Time Response* |image5| *Figure 9. VG1 Voltage Time Response* |image6| *Figure 10. VG2 Voltage Time Response*
 
 -  Let's measure this time the DAC voltage transition of the LDMOS gate pins (VGC1, VGP1).
 -  Connect a 10nF capacitive load on each LDMOS gate pins (VGC1, VGP1) pin with respect to ground.
@@ -362,18 +355,13 @@ Basic Operation
 -  The default voltages of the LDMOS gate pins are pinch-off voltages (0V). Set the gate to its operating voltages.
 
    -  VGC1: +3.8V
-   -  VGP1: +1.9V\
+   -  VGP1: +1.9V
 
-   |image7|
+|image7| *Figure 7. Setting the LDMOS gate voltages through GUI*
 
-*Figure 7. Setting the LDMOS gate voltages through GUI*
+-  Once the voltages are entered, press the set button. You will see the voltage translation from pinch-off to operating voltage. The oscilloscope will display the voltage transition and the time response. The result should be the same as the images below.
 
--  Once the voltages are entered, press the set button. You will see the voltage translation from pinch-off to operating voltage. The oscilloscope will display the voltage transition and the time response. The result should be the same as the images below.\
-
-
-|image8|
-
-*Figure 11. VGC1 Voltage Time Response* |image9| *Figure 12. VGP1 Voltage Time Response*
+|image8| *Figure 11. VGC1 Voltage Time Response* |image9| *Figure 12. VGP1 Voltage Time Response*
 
 -  At this point, all the gate pins are in the normal operating voltage state. We are now ready to measure the voltage transition from normal operating to pinch-off voltage.
 -  Connect all 4-channels of the oscilloscope probes in parallel with all the capacitor pins.
@@ -388,18 +376,13 @@ Basic Operation
    -  VGC1: 0V
    -  VGP1: 0V
    -  VG1: -5V
-   -  VG2: -5V\
+   -  VG2: -5V
 
-   |image10|
+|image10| *Figure 7. Setting the GaN gate voltages through GUI*
 
-*Figure 7. Setting the GaN gate voltages through GUI*
+-  Press the set button to reflect the changes. The result should be the same as the image below.
 
--  Press the set button to reflect the changes. The result should be the same as the image below.\
-
-
-|image11|
-
-*Figure 13. VGC2 Voltage Time Response* |image12| *Figure 14. VGP2 Voltage Time Response* |image13| *Figure 15. VG1 Voltage Time Response* |image14| *Figure 16. VG2 Voltage Time Response* |image15| *Figure 17. VGC1 Voltage Time Response* |image16| *Figure 18. VGP1 Voltage Time Response*
+|image11| *Figure 13. VGC2 Voltage Time Response* |image12| *Figure 14. VGP2 Voltage Time Response* |image13| *Figure 15. VG1 Voltage Time Response* |image14| *Figure 16. VG2 Voltage Time Response* |image15| *Figure 17. VGC1 Voltage Time Response* |image16| *Figure 18. VGP1 Voltage Time Response*
 
 .. note::
 
@@ -407,18 +390,14 @@ Basic Operation
 
 
 -  We are done capturing the voltage transition from power-up and power-down. Now, we will capture the time it takes from when the fault is detected until the DAC outputs the gate pinch-off voltage.
--  We have already gathered data from the fault protection circuit, LTC7000. When it detects a fault event, it sends a signal from LTC7000 to the MCU in approximately 1 microsecond. This value will then be added to the system power-down measurement and the time it takes for the MCU to process the fault flag up to the DAC command.\
+-  We have already gathered data from the fault protection circuit, LTC7000. When it detects a fault event, it sends a signal from LTC7000 to the MCU in approximately 1 microsecond. This value will then be added to the system power-down measurement and the time it takes for the MCU to process the fault flag up to the DAC command.
 
-|image17|
-
-//Figure 19. LTC7000 -> MCU GPIO Fault Flag Time //
+|image17| //Figure 19. LTC7000 -> MCU GPIO Fault Flag Time //
 
 -  Follow the below steps:
--  Place the positive terminal of the oscilloscope probe into the provided wire as shown in the image below. Then connect the negative terminal of the oscilloscope probe to the GND of the board.\
+-  Place the positive terminal of the oscilloscope probe into the provided wire as shown in the image below. Then connect the negative terminal of the oscilloscope probe to the GND of the board.
 
-|image18|
-
-*Figure 20. Fault Detection Time Measurement Setup*
+|image18| *Figure 20. Fault Detection Time Measurement Setup*
 
 -  Set the required oscilloscope settings.
 
@@ -426,25 +405,17 @@ Basic Operation
    -  1us/div and 1V/div
 
 -  For this test, we will introduce an overvoltage fault. To do this, increase the voltage from the external power supply from +48V to +56V. This will cause a fault event since the preset threshold for an overvoltage is +55V.
--  The oscilloscope will display a similar time response as shown below.\
+-  The oscilloscope will display a similar time response as shown below.
 
-|image19|
+|image19| *Figure 21. MCU Processing Time*
 
-*Figure 21. MCU Processing Time*
+-  On the GUI, it will notify the user that a fault event occurred and show a warning message as in the image below.
 
--  On the GUI, it will notify the user that a fault event occurred and show a warning message as in the image below.\
+|image20| *Figure 21. Warning Message*
 
+-  Also, the GUI is capable of logging and displaying the fault event time and on which device it occurs.
 
-|image20|
-
-*Figure 21. Warning Message*
-
--  Also, the GUI is capable of logging and displaying the fault event time and on which device it occurs.\
-
-
-|image21|
-
-//Figure 21. Fault Logging //
+|image21| //Figure 21. Fault Logging //
 
 -  The overall time from LTC7000 fault detection up to the DAC pinch-off voltage is shown on the Fault Event Time Summary below.
 

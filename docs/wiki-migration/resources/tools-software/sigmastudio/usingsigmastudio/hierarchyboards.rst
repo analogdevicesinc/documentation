@@ -33,7 +33,9 @@ Along with the hierarchy board block, a hierarchy tab is created, located at the
    Note: It is possible to create nested hierarchy boards (a hierarchy board with-in another hierarchy board's tab). To create a nested board, first select a hierarchy tab at the bottom of the Schematic window, then drag-and-drop a hierarchy board block. If you hover the mouse button over a board tab, the tool-tip will display the "path" of the board (the location of the board block relative to Main). This is helpful when several board's have the same name, which is common when using board files.
 
 
-   |hierarchypic3.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic3.png
+   :alt: hierarchypic3.png
+   :align: center
 
 See the :doc:`Hierarchy Board </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyboard>`, :doc:`Hierarchy Input </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyinput>`, and :doc:`Hierarchy Output </wiki-migration/resources/tools-software/sigmastudio/toolbox/systemschematicdesign/hierarchyoutput>` topics for more information.
 
@@ -82,5 +84,3 @@ Note, the *Mixer* and *Mixer_2* schematic layers are identical.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/hierarchypic8.png
    :alt: hierarchypic8.png
-
-.. |hierarchypic3.png| image:: https://wiki.analog.com/_media/hierarchypic3.png

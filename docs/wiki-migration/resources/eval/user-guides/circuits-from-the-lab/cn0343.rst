@@ -69,8 +69,7 @@ The CN0343 have six tactile button, the function of each button marked as red fo
    In this chapter the *press button* or *button pressed* event expression means single click the tactile button.
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_usage.png
-   :align: center
+   |image1|
 
 .. note::
 
@@ -366,3 +365,5 @@ Registration
 
 
 *End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0343/cn0343_usage.png

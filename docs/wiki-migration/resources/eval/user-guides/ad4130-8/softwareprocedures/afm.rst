@@ -198,14 +198,13 @@ The sequencer timing diagram in continuous conversion mode or duty cycling mode 
    The /RDY falling edge to /RDY falling edge time between subsequent conversions = t\ :sub:`1ST_CNV_IDEAL` + t\ :sub:`SETTLE`
 
 
-   |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/falling_edge_to_falling_edge.png
+   :align: center
 
-If we use the timing tool (two sequences shown each with 3 conversions per sequence shown) we see exactly what is happening. We can tell the rate of the conversion on a per channel basis or the throughput rate.
+If we use the timing tool (two sequences shown each with 3 conversions per sequence shown) we see exactly what is happening. We can tell the rate of the conversion on a per channel basis or the throughput rate. |image5|
 
 
 |image6|
-
-|image7|
 
 .. note::
 
@@ -254,12 +253,8 @@ In all of the examples we are excluding Repeat conversions but when we enable re
    -  *FS = 1*
    -  //SETTLE_n = 1 //
    -  // Number of Channels Enabled = 3 or 5//
-   
 
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/example_2d.png
-   :align: center
-   :width: 1100px
+   |image7|
 
 .. note::
 
@@ -393,10 +388,11 @@ This window simulates the step response associated with the analog input ideal s
    :width: 800px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/first_conversion_on_a_new_channel_diagram.png
    :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/falling_edge_to_falling_edge.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/2_cycles_sync_3_same_setup_3_channels_enabled.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/2_cycles_sync_3_same_setup_3_channels_enabled.png
    :width: 1100px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/2_cycles_sync_3_same_setup_3_channels_enabled_zoomed.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/2_cycles_sync_3_same_setup_3_channels_enabled_zoomed.png
+   :width: 1100px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/example_2d.png
    :width: 1100px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/power.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130/idd_timing_window.png

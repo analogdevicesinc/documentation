@@ -23,9 +23,8 @@ The switched capacitor resistor:
 
 The most simple switched capacitor circuit is shown in figure 1, the switched capacitor resistor. It consists of one capacitor C\ :sub:`1` and two switches S\ :sub:`1` and S\ :sub:`2` which connect the capacitor alternately to the input, V\ :sub:`IN` and the output, V\ :sub:`OUT`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig1.png
-   :align: center
-   :width: 450px
+
+|image1|
 
 .. container:: centeralign
 
@@ -75,9 +74,8 @@ Example Circuit
 
 The next step is to build an example circuit using the Switched Capacitor as a resistor. By adding a second capacitor C\ :sub:`2` across the output of figure 1, we get the RC low pass circuit shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -91,9 +89,8 @@ ADALM1000 hardware module Solder-less breadboard Jumper wires 1 – LTC1043 Swit
 
 Below in figure 3 is the schematic and pinout for the LTC1043. The LTC1043 contains four SPDT CMOS switches all driven from the same non-overlapping clock source.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig3.png
-   :align: center
-   :width: 175px
+
+|image3|
 
 .. container:: centeralign
 
@@ -105,9 +102,8 @@ Directions:
 
 The breadboard connections are as shown in figure 4. The circuit will operate from the fixed +5V supply provided from the ALM1000 board.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -132,9 +128,8 @@ The approximate frequency of the internal oscillator can be calculated using thi
 
 Export the amplitude and phase data for each sweep to a .csv file and using a spreadsheet program make plots of the amplitude and phase vs. frequency similar to the plot in figure 5. The darker curves are for the case with no C\ :sub:`OSC` connected and the lighter curves are for the case when C\ :sub:`OSC` = 100 pF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -160,9 +155,8 @@ Procedure:
 
 Modify the circuit on your breadboard as shown in figure 6. Perform the same Bode plot sweeps you did on the low pass configuration for each switching frequency by changing C\ :sub:`OSC`, no external Cap, 39 pF, 2 39 pF caps in parallel and 100 pF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -171,9 +165,9 @@ Modify the circuit on your breadboard as shown in figure 6. Perform the same Bod
 
 Export the amplitude and phase data for each sweep to a .csv file and using a spreadsheet program make plots of the amplitude and phase vs. frequency similar to the plot in figure 7. The darker curves are for the case with no C\ :sub:`OSC` connected and the lighter curves are for the case when C\ :sub:`OSC` = 100 pF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig7.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -199,9 +193,8 @@ Analog Switch Alternatives to the LTC1043:
 
 Other analog switches can be substituted for the LTC1043 in the event one is not available. There are four members of the CD4000 family of ICs that can possibly be used: the CD4066 Quad SPST switch, CD4051 8-channel analog multiplexer/demultiplexer, CD4052 Dual 4-channel analog multiplexer/demultiplexer, CD4053 Triple 2-channel analog multiplexer/demultiplexer. The CD4007 CMOS transistor array can be configured as a single SPDT analog switch as shown in figure 8.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -213,3 +206,20 @@ To use any of these alternatives in this Lab you will need to supply an external
 :adi:`Take the Mystery Out of the Switched-Capacitor Filters <media/en/technical-documentation/application-notes/an40f.pdf>` `Low Pass Filters <https://en.wikipedia.org/wiki/Low-pass_filter>`_ `High Pass Filters <https://en.wikipedia.org/wiki/High-pass_filter>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig1.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig3.png
+   :width: 175px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-switch-cap-filter-lab-fig8.png
+   :width: 600px

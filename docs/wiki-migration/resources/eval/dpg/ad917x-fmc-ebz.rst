@@ -105,7 +105,11 @@ You can confirm proper installation by following these steps:
 
 -  Using the USB3.0 cable, plug the FX3 FMC module into your computer WITHOUT the KCU105 connected.
 -  Open Device Manager.
--  Confirm successful driver installation by verifying the presence of “High Speed Converter USB3.0 Evaluation Platform” under “ADI Development Tools” as shown below:|image3|
+-  Confirm successful driver installation by verifying the presence of “High Speed Converter USB3.0 Evaluation Platform” under “ADI Development Tools” as shown below:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure16_fx3_device_manager.png
+   :align: center
+   :width: 400px
 
 If you have confirmed successful driver installation, you can proceed to the next section which covers the FPGA image. If you do not see the device “High Speed Converter USB3.0 Evaluation Platform”, look for a device named “FX3” with a warning message. If you cannot locate the device “High Speed Converter USB3.0 Evaluation Platform” or the device “FX3”, try reinstalling the FX3 SDP Drivers.
 
@@ -115,13 +119,17 @@ Most FX3 boards come preprogrammed with ADI’s firmware, but there are some ins
 
 -  Download and install the Cypress SDK via http://www.cypress.com/documentation/software-and-drivers/ez-usb-fx3-software-development-kit.
 -  Open the "USB Control Center" tool located at: All Programs >> Cypress >> EZ-USB FX3 SDK >> Cypress USBSuite >> Control Center
--  **Connect jumper J4** on the FX3 and connect the FX3’s USB cable to your computer. The FX3 will appear as "Cypress USB Bootloader".\
+-  **Connect jumper J4** on the FX3 and connect the FX3’s USB cable to your computer. The FX3 will appear as "Cypress USB Bootloader".
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure17_fx3_programming_step_3.png
+   :align: center
+   :width: 400px
 
--  Click on the "Cypress USB Bootloader" and select the I2C EEPROM option from the Program menu. Note: if you are not presented with a file selection dialog after clicking I2C EEPROM, then your FX3 needs additional programming. On the FX3 board, press the “reset” switch next to the USB3.0 connector and repeat Step #4.\
+-  Click on the "Cypress USB Bootloader" and select the I2C EEPROM option from the Program menu. Note: if you are not presented with a file selection dialog after clicking I2C EEPROM, then your FX3 needs additional programming. On the FX3 board, press the “reset” switch next to the USB3.0 connector and repeat Step #4.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure18_fx3_programming_step_4.png
+   :align: center
+   :width: 400px
 
 -  Select the FX3 firmware image (image can be downloaded at the start of this section) when prompted by the file selection dialog.
 -  After the programming finishes, **disconnect jumper J4** and reset the FX3 via the pushbutton switch near the USB3.0 connector.
@@ -131,7 +139,11 @@ As described earlier, successful firmware installation can be confirmed by follo
 
 -  Using the USB3.0 cable, plug the FX3 FMC module into your computer WITHOUT the KCU105 connected.
 -  Open Device Manager.
--  Confirm successful firmware installation by verifying the presence of “High Speed Converter USB3.0 Evaluation Platform” under “ADI Development Tools” as shown below:|image6|
+-  Confirm successful firmware installation by verifying the presence of “High Speed Converter USB3.0 Evaluation Platform” under “ADI Development Tools” as shown below:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure16_fx3_device_manager.png
+   :align: center
+   :width: 400px
 
 Programming the Micro SD Card for KCU105 Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,12 +153,12 @@ Programming the Micro SD Card for KCU105 Setup
 Download the KCU105 FPGA image files and copy them to the MicroSD card so that the xilinx.sys file and kcu105 folder are at the top level of the MicroSD card:
 
 
-|image7|
+|image3|
 
 KCU105 Hardware Setup
 ~~~~~~~~~~~~~~~~~~~~~
 
-Connect the boards and cables to the KCU105 board as shown in Figure 1 below. |image8| Figure 1. Evaluation Board Kit Components Hardware Connection Setup
+Connect the boards and cables to the KCU105 board as shown in Figure 1 below. |image4| Figure 1. Evaluation Board Kit Components Hardware Connection Setup
 
 Connect a reference clock frequency to the “Board Ref Clock” connection shown in Figure 1 (SMA connector J4). This is the configuration required any time the evaluation board is to be measured and used. Turn on the KCU105 power and plug in both USB cables to the host computer.
 
@@ -155,7 +167,7 @@ Using KCU105 with DPG Downloader
 
 The KCU105 board requires some additional setup steps to be compatible with the DPGDownloader software, and these steps only need to be done **once** to properly configure the FPGA for future use with DPGDownloader. Before powering on the KCU105 unit, insert the Micro SD card with FPGA image into the appropriate slot on the bottom right-hand side of the KCU105 evaluation board as shown in Figure 1. Be certain to verify that the Micro SD card clicks into place when inserted. In order to boot up the KCU105 board using the image from the Micro SD card, ensure that the DIP switch settings on SW15 are set according to Figure 2 below.
 
-|image9| Figure 2. KCU105 DIP Switch Settings for Loading Image from Micro-SD Card
+|image5| Figure 2. KCU105 DIP Switch Settings for Loading Image from Micro-SD Card
 
 Once these steps are complete, the KCU105 board can be powered on and plugged into the USB ports on the host PC. After powering on the KCU105, wait approximately 10 seconds so that the KCU105 has adequate time to load the FPGA image. If the KCU105's LEDs begin flashing immediately after power on, then the FPGA image has not been loaded correctly. In this case, remove the Micro SD card, confirm that the appropriate files are stored on the card, and repeat the above procedure. Be sure to verify that your Micro SD card is not being encoded when you write the FPGA image to it. Proper FPGA image programming can be confirmed by looking at the 3 LEDs near the KCU105's power switch--these 3 LEDs should be toggling in a heartbeat pattern.
 
@@ -186,14 +198,14 @@ Using DPGDownloader Software
 
 Launch the DPGDownloader software from the Start Menu (Start → All Programs → Analog Devices → DPG → DPG Downloader). When the program starts the DPG Panel should look recognize the evaluation board connected as shown in the AD917x panel being displayed as shown in Figure 5. The desired SERDES JESD204B mode can be selected by using the “JSED Mode” drop-down menu. If running in Dual Link mode, check the “Dual Link” checkbox on the panel to enable the second link options. Use the “Add Generated Waveform” drop-down menu to create vectors to send to the evaluation board as desired. *Note: If using the KCU105, first power up the KCU105 board and wait for the heartbeat LEDs shown in Figure 1 to begin flashing. Then open up DPGDownloader and ensure the Configuration Version displays 11/07/16, confirming that the FPGA image is loaded properly from the microSD card. If this does not display or if the KCU105 has been powered off and back on again, reselect the AD917x from the Evaluation Board dropdown menu to reinitialize the panel and the configuration version should display properly.*
 
-|image10| Figure 5. DPGDownloader AD917x Panel
+|image6| Figure 5. DPGDownloader AD917x Panel
 
 Depending on the JESD Mode selected, different combinations of channels and DAC selection options become active on the GUI and allow for user input. The “Link Params” readback displays the JESD204B link parameters that are configured in the FPGA. The following GUI button controls operate as follows:
 
 -  |Unordered List Item| Stops playing the current vector in memory and downloads the selected vectors in each channel drop-down selection
--  |image11| Resynchronizes the SERDES PLL band based on the Serial Line Rate detected – needed every time the lane rate changes for a different configuration or the SERDES clock glitches due to reprogramming of the HMC7044
--  |image12| Plays the selected vectors in each channel drop-down selection
--  |image13| Stops the selected vectors in each channel drop-down selection from playing
+-  |image7| Resynchronizes the SERDES PLL band based on the Serial Line Rate detected – needed every time the lane rate changes for a different configuration or the SERDES clock glitches due to reprogramming of the HMC7044
+-  |image8| Plays the selected vectors in each channel drop-down selection
+-  |image9| Stops the selected vectors in each channel drop-down selection from playing
 
 Loading Custom Vectors
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -206,20 +218,20 @@ Using ACE Software
 Plugin Installation
 ~~~~~~~~~~~~~~~~~~~
 
-To get the AD917x plugins, launch the ACE software from the Start Menu (Start → All Programs → Analog Devices → ACE → ACE) and select "Tools" → "Manage Plugins" or click the 'Plugin Manager Icon' in the bottom right-hand corner of the ACE application, shown in Figure 6. This will launch the plugin manager in ACE. |image14| Figure 6. ACE Plugin Manager
+To get the AD917x plugins, launch the ACE software from the Start Menu (Start → All Programs → Analog Devices → ACE → ACE) and select "Tools" → "Manage Plugins" or click the 'Plugin Manager Icon' in the bottom right-hand corner of the ACE application, shown in Figure 6. This will launch the plugin manager in ACE. |image10| Figure 6. ACE Plugin Manager
 
-In the plugin manager, look under "Available Packages" for the Board.AD9172 plugins, select it and click "Install Selected", shown in Figure 7. |image15| Figure 7. Install AD917x Board Plugins
+In the plugin manager, look under "Available Packages" for the Board.AD9172 plugins, select it and click "Install Selected", shown in Figure 7. |image11| Figure 7. Install AD917x Board Plugins
 
 Once the installation finishes click "Close" and you should see the AD917x-FMC-EBZ board plugin show up in the offline area for "Explore Local Plugins". If the evaluation board is connected through USB, the ACE GUI should look recognize the AD917x-FMC-EBZ evaluation board connected as shown in Figure 8 in the “Attached Hardware” section. If it does not recognize the board immediately, try closing ACE after the installation is complete and relaunching and the software should bring up the board plugin with the version of the plugin that was installed displaying (Version 1.2.1.0 in this example shown).
 
-|image16| Figure 8. ACE Software GUI
+|image12| Figure 8. ACE Software GUI
 
 Board Plugin
 ~~~~~~~~~~~~
 
-|image17| Figure 9. AD917x-FMC-EBZ Board Plugin View with Startup Wizard
+|image13| Figure 9. AD917x-FMC-EBZ Board Plugin View with Startup Wizard
 
-By double-clicking on the AD917x-FMC-EBZ icon the board plugin view will be automatically displayed, as shown in Figure 9.The board view contains an easy Startup Wizard which allows the user to choose the different configurations for how to set up the AD917x (along with the HMC7044 clock chip) easily without manually programming the part. It supports both DC Test Mode functionality as well as SERDES interface functionality. The various sections of the wizard can be expanded or collapsed by pressing the |image18| or |image19| buttons. The following GUI inputs are defined as follows:
+By double-clicking on the AD917x-FMC-EBZ icon the board plugin view will be automatically displayed, as shown in Figure 9.The board view contains an easy Startup Wizard which allows the user to choose the different configurations for how to set up the AD917x (along with the HMC7044 clock chip) easily without manually programming the part. It supports both DC Test Mode functionality as well as SERDES interface functionality. The various sections of the wizard can be expanded or collapsed by pressing the |image14| or |image15| buttons. The following GUI inputs are defined as follows:
 
 Board Clock Settings:
 
@@ -272,14 +284,14 @@ Chip Plugin
 By double-clicking on the AD917x plugin on the board diagram the software will navigate down to the AD917x chip view displaying a non-interactive block diagram view representative of the functional block diagram of the part, as shown in Figure 10. By clicking the “Proceed to Memory Map” button in the bottom right hand corner the Memory Map view will be displayed and the full register map can be viewed. Using the Functional Group menu along the left hand side displays groups of controls according to functionality for a filtered view of the SPI map controls, as shown in Figure 11.
 
 
-|image20|
+|image16|
 
 .. container:: centeralign
 
    Figure 10. AD917x Chip View
 
 
-   |image21|
+   |image17|
 
 .. container:: centeralign
 
@@ -371,7 +383,7 @@ Begin by connecting the hardware according to Figure 1 and powering up the FPGA 
 
 From the JESD Mode drop-down, select mode 1 and check the “Dual Link” checkbox. For each of the channel input drop-downs select the single-tone vector generated. All these settings should be configured as shown in Figure 12.
 
-|image22| Figure 12. DPGDownloader Panel Setup
+|image18| Figure 12. DPGDownloader Panel Setup
 
 Launch ACE from the Start Menu and configure the wizard as listed below and shown in Figure 13 and Figure 14:
 
@@ -383,55 +395,47 @@ Launch ACE from the Start Menu and configure the wizard as listed below and show
 -  Input Data Rate: 491.52MHz
 -  NCO Controls: Channel 0: -152.5MHz, Channel 1: +152.5MHz, Final NCO 0: 1.9875GHz, Channel 3: -152.5MHz, Channel 4: +152.5MHz, Final NCO 1: 1.9875GHz
 
-|image23| Figure 13. AD917x-FMC-EBZ ACE Wizard Setup
+|image19| Figure 13. AD917x-FMC-EBZ ACE Wizard Setup
 
-|image24| Figure 14. AD917x-FMC-EBZ ACE Wizard Setup
+|image20| Figure 14. AD917x-FMC-EBZ ACE Wizard Setup
 
 In ACE, hit “Apply” and let the sequence finish running. Then in DPGDownloader hit “Stop”, then “Download”, then “Resync”, then “Play” (should always be this order when downloading a vector or setting up the link) and the links should go high and the Serial Line Rate on the GUI should read 9.8304Gbps, as seen in Figure 15.
 
-|image25| Figure 15. DPGDownloader Panel with Links Established
+|image21| Figure 15. DPGDownloader Panel with Links Established
 
 In ACE, hit the “Read SERDES Status” button on the board view and the readbacks should display that the JESD PLL, DAC PLL and both Logical Lane 0 and 1 on both links are high for all flag readbacks, as shown in Figure 16.
 
-|image26| Figure 16. AD917x-FMC-EBZ ACE Setup with Links Established
+|image22| Figure 16. AD917x-FMC-EBZ ACE Setup with Links Established
 
 When looking at the spectrum, there should be tones at 1.9875GHz - 152.5MHz ± 37.5MHz = 1797.5MHz and 1872.5MHz for one band and 1.9875GHz + 152.5MHz ± 30MHz = 2110.0MHz and 2170.0MHz for the second band as shown in Figure 17.
 
-|image27| Figure 17. AD917x-FMC-EBZ DAC0 Spectrum Output for Dual Band Case
+|image23| Figure 17. AD917x-FMC-EBZ DAC0 Spectrum Output for Dual Band Case
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/figure4_ad9172fmc.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure3_ads8_ad9172fmc.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure16_fx3_device_manager.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure19_fx3_micro_sd_fpga_files.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure17_fx3_programming_step_3.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure18_fx3_programming_step_4.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure16_fx3_device_manager.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure19_fx3_micro_sd_fpga_files.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure1_kcu_ad9172fmc.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure2_kcuswitch.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure5_ad9172dpgdownloaderpanel.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure1_kcu_ad9172fmc.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure2_kcuswitch.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure5_ad9172dpgdownloaderpanel.png
 .. |Unordered List Item| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_download.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_resync.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_play.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_stop.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure6a_manageplugins.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure6b_installad9172plugins.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure6_acesoftwaregui.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure7_boardplugin.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_collapseup.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_collapsedown.png
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure8_chipplugin.png
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure9_memorymap.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_resync.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_play.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_stop.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure6a_manageplugins.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure6b_installad9172plugins.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure6_acesoftwaregui.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure7_boardplugin.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_collapseup.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/icon_collapsedown.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure8_chipplugin.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure9_memorymap.png
 .. |ad9122_macrocommands.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_macrocommands.png
 .. |ad9122_m2hconvert_5.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_m2hconvert_5.png
 .. |ad9122_m2hconvert_4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9122_m2hconvert_4.png
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure10_dpgdownloaderpaneldetails.png
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure11_ad9172acewizardsetup.png
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure12_ad9172acewizardsetup2.png
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure13_dpgdownloaderwithlinksestablished.png
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure14_acewithlinksestablished.png
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure15_outputspectrum.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure10_dpgdownloaderpaneldetails.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure11_ad9172acewizardsetup.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure12_ad9172acewizardsetup2.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure13_dpgdownloaderwithlinksestablished.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure14_acewithlinksestablished.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9172/figure15_outputspectrum.png

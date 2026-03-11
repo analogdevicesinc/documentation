@@ -8,10 +8,11 @@ The ADuCM302x Device Family Pack (DFP) provides access to all the necessary on-c
 
 The following on-chip drivers are provided as part of the ADuCM302x Device Family Pack:
 
--  spi\
+-  spi
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/software/software_packs_aducm302x_device_block_diagram.png
+   :align: right
+   :width: 600px
 
 -  i2c
 -  uart
@@ -67,6 +68,3 @@ The software pack can be installed directly by the tool chain's CMSIS pack manag
 // End of Document //
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/software/software_packs_aducm302x_device_block_diagram.png
-   :width: 600px

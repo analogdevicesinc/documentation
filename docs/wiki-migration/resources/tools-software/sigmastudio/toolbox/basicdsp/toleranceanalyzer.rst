@@ -15,5 +15,5 @@ The operation of the Tolerance Analyzer can be readily understood from this grap
 
 As long as the input remains within the limit (1 - 3, designated by green lines), the block outputs 1. When the signal is out of (above or below) the limit, the block outputs 0.
 
-.. |tolerancepic1.png| image:: https://wiki.analog.com/_media/tolerancepic1.png
-.. |tolerancepic2.png| image:: https://wiki.analog.com/_media/tolerancepic2.png
+.. |tolerancepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/tolerancepic1.png
+.. |tolerancepic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/tolerancepic2.png

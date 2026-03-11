@@ -29,7 +29,7 @@ Windows:
 Linux:
 ~~~~~~
 
-`libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+:git-libsmu:`libpysmu.so <libsmu>`
 
 Directions:
 -----------
@@ -47,9 +47,8 @@ Screen Setup:
 
 Once the program is running the main screen, as shown in figure 1, should appear. Be sure that the ALM1000 is plugged into the USB port before starting the program. When first started the chart will be blank. Figure 1 was taken after running the recorder for around 20 seconds measuring the voltage on two different flashing LEDs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/strip-chart-screen-0.png
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. container:: centeralign
 
@@ -72,9 +71,8 @@ Use Example:
 
 To demonstrate how to use the Strip Chart Tool consider the two resistor/capacitor networks shown in figure E1. Resistor R\ :sub:`1` and capacitor C\ :sub:`1` form a low pass RC integrator and capacitor C\ :sub:`2` and resistor R\ :sub:`2` form a high pass RC differentiator. We want to measure the voltages at the RC junctions as shown. The mid rail fixed 2.5 V supply is used as the reference point so the waveforms are centered in the 0 to 5 V range of the inputs. Single pole double throw (SPDT) switch S1 is used to switch the input side of the RC network between +5 V and ground.
 
-.. image:: https://wiki.analog.com/_media/university/tools/strip-chart-fige1.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -83,18 +81,16 @@ To demonstrate how to use the Strip Chart Tool consider the two resistor/capacit
 
 The screen shots shown in figures E2 and E3 were obtained by manually switching the SPDT switch S1 back and forth between +5 and ground every few seconds after the signals have more or less settled back to a constant value. Figure E2 was done with both channels recorded on the same grid while E3 was recorded with the channels on 2 separate grids.
 
-.. image:: https://wiki.analog.com/_media/university/tools/strip-chart-screen-1.png
-   :align: center
-   :width: 800px
+
+
+|image3|
 
 .. container:: centeralign
 
    Figure E2, Both signals on same grid
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/strip-chart-screen-2.png
-   :align: center
-   :width: 800px
+   |image4|
 
 .. container:: centeralign
 
@@ -106,3 +102,12 @@ Two different resistor values and two different capacitor values are used but th
 **For Further Reading:**
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/strip-chart-screen-0.png
+   :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/strip-chart-fige1.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/strip-chart-screen-1.png
+   :width: 800px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/strip-chart-screen-2.png
+   :width: 800px

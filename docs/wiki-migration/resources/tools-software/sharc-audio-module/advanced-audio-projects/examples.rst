@@ -51,7 +51,7 @@ Audio Connection Setup
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
 
 
-`Bootloader and Application Flash#.|Advanced Audio Projects#.|Application Examples <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.program-flash>`_
+`Bootloader and Application Flash#.|Advanced Audio Projects#.|Application Examples <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.program-flash>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld2.png
    :width: 400px

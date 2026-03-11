@@ -30,9 +30,8 @@ The relation between pulse width and frequency for the square wave is given by:
 
 :math:`f=1/(2t_p)` (2)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ The expression for the current in the Inductor is given by:
 
 where, V is the applied source voltage to the circuit for t = 0. The response curve is increasing and is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -70,9 +68,8 @@ L/R = t is time constant.
 
 The response curve is a decaying exponential and is shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -97,18 +94,15 @@ Procedure:
 
 2. Set up the circuit shown in figure 4 on your solderless breadboard with the component values R\ :sub:`1` = 220 Ω and L\ :sub:`1` = 20mH. Open the ALICE 1.2 Desktop software
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4: Experiment Set-Up
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/tr_rl_bb.png
-   :align: center
-   :width: 500px
+   |image5|
 
 .. container:: centeralign
 
@@ -121,9 +115,8 @@ Calculate the applied frequency using equation (2) for tp = 5t
 
 4. From the ALICE Curves drop down Menu select CA-V, CA-I and CB-V for display. From the Trigger drop down menu select CA-V and Auto Level. Adjust the time base until you have at approximately two cycles of the square wave on the display grid.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-screen1.png
-   :align: center
-   :width: 750px
+
+|image6|
 
 .. container:: centeralign
 
@@ -153,3 +146,16 @@ Questions:
 :doc:`ALICE Oscilloscope User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` :doc:`Oscilloscope Terminology </wiki-migration/university/courses/alm1k/intro/oscilloscope-terminology>`
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/tr_rl_bb.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-screen1.png
+   :width: 750px

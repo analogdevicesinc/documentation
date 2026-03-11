@@ -38,7 +38,7 @@ You will need to:
    -
 
 
-   |http://www.xilinx.com/images/product-images/zc706-base-board.jpg|
+   |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
 -  Insert the SD-CARD into the SD Card Interface Connector (J30)
 -  Plug the AD-FMCDAQ2-EBZ into the HPC Connector
@@ -47,7 +47,10 @@ You will need to:
 -  Plug the Power Supply into 12V Power input connector (J22) (DO NOT turn the device on).
 -  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)
 
-|zc706plusfmcjesdadc1.png|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
+   :alt: zc706plusfmcjesdadc1.png
+   :align: right
+   :width: 200px
 
 -  Turn it on.
 -  Wait ~30 seconds for the "DONE" LED to turn green. This is above the power switch.
@@ -663,6 +666,6 @@ After booting process is complete, you can open IIO-Oscilloscope. Learn more abo
    
 
 
-.. |http://www.xilinx.com/images/product-images/zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
-.. |zc706plusfmcjesdadc1.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
-   :width: 200px
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
+
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: https://wiki.analog.com/_media/http///www.xilinx.com/images/product-images/zc706-base-board.jpg

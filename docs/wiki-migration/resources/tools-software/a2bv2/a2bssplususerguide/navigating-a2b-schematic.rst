@@ -82,7 +82,7 @@ A2B Platforms different from standard platforms can be created using custom plat
 Generic device
 --------------
 
-A generic device is not a fixed-function peripheral but rather a configurable node that can be programmed to behave in specific ways depending on the system requirements. These generic devices can be programmable or non-programmable. This is part of custom platform / standard platform. This can be programmed via I2C/SPI using xml files which is provided as an input as shown in the figure.\
+A generic device is not a fixed-function peripheral but rather a configurable node that can be programmed to behave in specific ways depending on the system requirements. These generic devices can be programmable or non-programmable. This is part of custom platform / standard platform. This can be programmed via I2C/SPI using xml files which is provided as an input as shown in the figure.
 
 
 |image2|

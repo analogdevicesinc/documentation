@@ -24,8 +24,8 @@ Six LEDs are used within the application to indicate the Target status. The LED 
 
 2. LED 15 of ADSP-SC573 EZ-Board will always be turned ‘On’ when USBi is connected to ADSP-SC573 EZ-Board and cannot be used as the GPIO pin used for LED 15 and SPI 1 are same. Hence, LED 16 is used instead of LED 15 to indicate the Target Framework and processing errors for ADSP-SC573 EZ-Board.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/led2156x.png
-   :width: 600px
+
+|image1|
 
 .. note::
 
@@ -37,10 +37,15 @@ LED Pattern for indicating non-terminal processing error
 
 While processing, there can be non-terminal errors such as data clipping and NAN errors. These are indicated by the following LED patterns.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/lednonterminal2156x.png
-   :width: 600px
+
+|image2|
 
 .. note::
 
    The Library Integration examples available in the package won't support LED status.
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/led2156x.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/targetapplication/lednonterminal2156x.png
+   :width: 600px

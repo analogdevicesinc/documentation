@@ -16,9 +16,8 @@ Transformers only work with alternating current, AC. For example transformers re
 
 The transformer core has high magnetic permeability, i.e. a material that forms a magnetic field much more easily than in free space, due to the orientation of atomic dipoles. In figure 1, the core is made of laminated soft iron but at higher frequencies ferrite is more common. The result is that the magnetic field is concentrated inside the core, and almost no field lines leave the core.
 
-.. image:: https://wiki.analog.com/_media/university/labs/atrans_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -107,9 +106,8 @@ Directions:
 
 Build the circuit shown in figure 2 on your solder-less breadboard. You will be using this setup to measure the frequency response of each of the two transformer model numbers in three different configuration with 1:1 primary to secondary turns ratios. The two red arrows indicate where to connect the source and load resistors for the configuration where one coil is used for the primary and secondary. The blue arrows are for the configuration where two coils in series are used for the primary and secondary. The green arrows are for the configuration where three coils in series are used for the primary and secondary.
 
-.. image:: https://wiki.analog.com/_media/university/labs/atrans_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -153,9 +151,8 @@ Step Up and Step Down Configurations
 
 Connect to the transformer for a 1:2 step up configuration (red arrows) and a 2:1 step down configuration as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/labs/atrans_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -205,3 +202,10 @@ For additional credit calculate the correct R\ :sub:`L` for other possible step 
 http://en.wikipedia.org/wiki/Electromagnetic_coil http://www.coilcraft.com/pdfs/doc157_SigXfrmApp.pdf `Simulating Non-linear Transformers in LTspice <https://www.allaboutcircuits.com/technical-articles/simulating-non-linear-transformers-in-ltspice/>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/atrans_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/atrans_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/atrans_f3.png
+   :width: 500px

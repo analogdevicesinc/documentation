@@ -46,11 +46,7 @@ This script allows you to execute a set of commands, automatically at startup. T
 
 Below is a simple example to set up a route, turn on a wav recording, record for 30 seconds, then stop and close the file.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase10.jpg
-   :width: 600px
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase11.jpg
-   :width: 400px
+|image1| |image2|
 
 .. important::
 
@@ -109,4 +105,9 @@ The run command works similarly to the pushbutton commands, except that you can 
 
 
 
-`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/navigation Knowledge Base#.>`_
+`Knowledge Base#.|Knowledge Base#.|Knowledge Base <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/navigation Knowledge Base#.>`_
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase10.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/knowledge-base/knowledgebase11.jpg
+   :width: 400px

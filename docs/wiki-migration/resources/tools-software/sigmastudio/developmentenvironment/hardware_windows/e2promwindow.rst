@@ -75,6 +75,6 @@ To open the E2Prom Read/Write window, Click the WinE2PromLoader tab at the botto
 
 **Values Display:** In additional to displaying the data, the right-hand values display allows you to edit the program data bytes directly. Value changes can be written to the E2Prom using the "Write Display to E2Prom" button.
 
-.. |e2prompic1.png| image:: https://wiki.analog.com/_media/e2prompic1.png
-.. |e2prompic2.png| image:: https://wiki.analog.com/_media/e2prompic2.png
-.. |e2prompic3.png| image:: https://wiki.analog.com/_media/e2prompic3.png
+.. |e2prompic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/e2prompic1.png
+.. |e2prompic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/e2prompic2.png
+.. |e2prompic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardware_windows/e2prompic3.png

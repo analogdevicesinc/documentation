@@ -54,10 +54,12 @@ Setting up the MAX32625PICO
    -   Download the firmware image: `MAX32625PICO Firmware <https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/max32625_max32666fthr_if_crc_swd_v1.0.5.bin.zip>`_
    -   Do not connect the MAX32625PICO from the PC and the AD-PAARRAY3552R-SL board.
    -   Plug the micro-USB cable only in the MAX32625PICO.
-   -   Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
-
-   |image1|
-
+   -   Press the button on the MAX32625PICO and then plug the other end of the micro-USB cable into the PC. **(Do not release the button until the MAINTENANCE drive is mounted)**.
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+      :align: center
+      :width: 400px
+   
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
    -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-PAARRAY3552R-SL board.
@@ -135,7 +137,7 @@ Graphical User Interface Walkthrough
    
    .. container:: indent
 
-      |image2| The **Home Page** provides an overview of the AD-PAARRAY3552R-SL, showcasing the description of the actual hardware and relevant links to help users to get started.
+      |image1| The **Home Page** provides an overview of the AD-PAARRAY3552R-SL, showcasing the description of the actual hardware and relevant links to help users to get started.
 
          
          
@@ -146,7 +148,7 @@ Graphical User Interface Walkthrough
    
    .. container:: indent
 
-      |image3| The **Dashboard** is where the user interacts with the hardware. It displays various groups with distinct functions.
+      |image2| The **Dashboard** is where the user interacts with the hardware. It displays various groups with distinct functions.
 
          
          
@@ -157,7 +159,7 @@ Graphical User Interface Walkthrough
    
    .. container:: indent
 
-      |image4| The **Historical Graph** pane shows the real-time temperature monitoring.
+      |image3| The **Historical Graph** pane shows the real-time temperature monitoring.
 
          
          
@@ -168,7 +170,7 @@ Graphical User Interface Walkthrough
    
    .. container:: indent
 
-      |image5| The **Device Connection** displays a list of connected devices to connect and configure.
+      |image4| The **Device Connection** displays a list of connected devices to connect and configure.
 
          
          
@@ -179,7 +181,7 @@ Graphical User Interface Walkthrough
    
    .. container:: indent
 
-      |image6| |image7|
+      |image5| |image6|
 
          
          The **Control Group** presents the control options and live values. This is where users can configure and monitor board functions.
@@ -192,7 +194,7 @@ Graphical User Interface Walkthrough
    
    .. container:: indent
 
-      |image8| The **Logs** pane displays the run-time logs that occur during board monitoring/configuration.
+      |image7| The **Logs** pane displays the run-time logs that occur during board monitoring/configuration.
 
          
          
@@ -215,19 +217,17 @@ For questions and more information about this product, connect with us through t
 .. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/ad-paarray3552r-sl
    :alt: Overview #:resources:eval:user-guides:ad-paarray3552r-sl:hardware \| AD-PAARRAY3552R-SL Hardware User Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_home.png
    :width: 410px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_dashboard.png
    :width: 410px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_historical_graph.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_historical_graph.png
    :width: 410px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_device_group.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_device_group.png
    :width: 410px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_control_group.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_control_group.png
    :width: 410px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_control_group_main.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_control_group_main.png
    :width: 410px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_logs_groups.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pa_array/gui_logs_groups.png
    :width: 410px

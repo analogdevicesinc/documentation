@@ -54,7 +54,7 @@ The design is built upon ADI's generic HDL reference design framework. More info
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
@@ -65,11 +65,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`CN0561 HDL Project. <projects/cn0561>`
    
-   |CN0561 HDL Project.|
+
 
 Software sources
 ----------------
@@ -81,5 +79,3 @@ Software sources
    -  `CN0561 software support <https://wiki.analog.com/resources/eval/user-guides/cn0561/sw>`_
    
 
-
-.. |CN0561 HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/cn0561`

@@ -31,9 +31,8 @@ ADALM1000 hardware module 1 – OP97 opamp 2 – 100 Ω resistors 2 – 4.7 K�
 
 Construct the circuit shown in figure 1. Before inserting the 1 MΩ and 100 Ω R\ :sub:`1` and R\ :sub:`2` resistors in the circuit, measure and record the values of the two resistors using a DMM if available. Use these measurements to accurately compute the ratio of the input sweep voltage output by CH-A to the attenuated voltage at the opamp non-inverting input ( pin 3 ). Offset trim resistors R\ :sub:`4` and R\ :sub:`5` are optional and may be needed if the offset voltage of the op-amp being tested is too large such that the output voltage does not change over the full range of the CHA output voltage swing.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -65,9 +64,8 @@ A second test circuit for measuring DC open-loop gain ( and gain nonlinearity ) 
 
 The value of R\ :sub:`1` is chosen to result in a voltage at V\ :sub:`Y` measurable by the ALM1000 input channel B depending on the expected values of V\ :sub:`OS`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -88,3 +86,8 @@ Reminder: You must take into account the scaling factor of the resistive divider
 Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <en/analog-dialogue/articles/simple-op-amp-measurements.html>` :adi:`Open Loop Gain and Open Loop Gain Nonlinearity <media/en/training-seminars/tutorials/MT-044.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-olg-f2.png
+   :width: 600px

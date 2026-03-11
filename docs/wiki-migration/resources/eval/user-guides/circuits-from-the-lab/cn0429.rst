@@ -181,7 +181,7 @@ The software for the **ADuCM3029_demo_cn0429** can be found here:
    Prebuilt CN0429 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_cn0428_cn0429.Hex <releases/download/Latest/ADuCM3029_demo_cn0428_cn0429.hex>`
+   -  `ADuCM3029_demo_cn0428_cn0429.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0428_cn0429.hex>`_
    
    Complete CN0429 Source Files
    

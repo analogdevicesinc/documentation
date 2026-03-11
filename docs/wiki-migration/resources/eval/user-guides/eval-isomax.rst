@@ -61,7 +61,9 @@ System Architecture
 Components and Connections
 ==========================
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/primary_side.png
+   :align: center
+   :width: 800px
 
 .. container:: center
 
@@ -97,14 +99,14 @@ Option 2: Using the EVAL-ISOMAX as a Secondary Device to other MCU Boards
    See below configuration using different MCUs:
 
 
-   |image2|
+   |image1|
 
 .. container:: center
 
    **Sample Cell Monitoring Setup using the AD-APARD32690-SL as Main Microcontroller Board and EVAL-ISOMAX as isoSPI Adapter**
 
 
-   |image3|
+   |image2|
 
 .. container:: center
 
@@ -167,9 +169,7 @@ For questions and more information about this product, connect with us through t
 .. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/eval-isomax
    :alt: Overview #:resources:eval:user-guides:eval-isomax:hardware\| EVAL-ISOMAX Hardware Guide# :resources:eval:user-guides:eval-isomax:software\| EVAL-ISOMAX Software Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/primary_side.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_with_ad-apard32690-sl.png
    :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/eval-isomax_with_ad-apard32690-sl.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/adbms2950_with_isomax_and_sdp-k1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-isomax/adbms2950_with_isomax_and_sdp-k1.png
    :width: 700px

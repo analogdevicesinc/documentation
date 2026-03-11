@@ -16,9 +16,8 @@ From the equation we can see that in order to obtain a gain close to one we can 
 
 Looking at the follower in another way, because of the inherent DC shift due to the transistor's V\ :sub:`BE`, the difference between input and output should be constant over the intended signal swing. Due to the simple resistive load R\ :sub:`L`\ in figure 16.1(a), the emitter current I\ :sub:`E` increases and decreases as the output swings up and down. We know that V\ :sub:`BE` is an exponential function of I\ :sub:`E` and will change approximately 18 mV (at room temperature) for a factor of 2 change in I\ :sub:`E`. Given R\ :sub:`L` = 2.2KΩ and a +/- 2V swing and an 8V total supply voltage, ( V+ = +4V and V- = -4V ), the minimum I\ :sub:`E`\ = 2V/2.2KΩ or 0.91 mA and the maximum I\ :sub:`E`\ = 6V/2.2KΩ or 2.7 mA. This results in a difference of 1.8 mA and results in a 28 mV change in V\ :sub:`BE`. This observation leads us to the first possible improvement in the emitter follower shown in figure 16.1(b).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -34,9 +33,8 @@ Viewed another way, the very high output resistance of the current source has ef
 
 An alternate approach to improving the emitter follower is to reduce the effective r\ :sub:`e` through negative feedback. Reducing r\ :sub:`e` can be addressed by adding a second transistor to increase the negative feedback factor by increasing the open-loop-gain. The single transistor is replaced by a pair of transistors with 100% voltage feedback to the emitter of the first transistor. This is often referred to as a complementary feedback pair as shown in figure 16.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -90,9 +88,8 @@ where, V\ :sub:`Z` is the Zener voltage, I\ :sub:`B` is the transistor's base cu
 
 where: I\ :sub:`L` is the required load current, also the transistor's emitter current (assumed to be approximately equal to the collector current) ß\ :sub:`(min)` is the minimum acceptable DC current gain for the transistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -108,9 +105,8 @@ The circuit can be made adjustable by adding a variable resistor as a voltage di
 
 In a related power supply circuit shown in figure 16.3.2 the effective capacitance of capacitor C\ :sub:`1`\ is multiplied by the transistor's current gain (β).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -132,9 +128,8 @@ The operation of the current limiter is very straightforward. When the power sup
 
 As the voltage across the current sense resistor approaches 0.6 volts, the current sense transistor starts to turn on. When it does, the voltage at the base of the main power supply pass transistor is pulled down, thereby preventing any increase in the output current of the power supply. In this way it is very easy to calculate the value for the sense resistor using Ohms Law. It is simply V\ :sub:`BE` / I\ :sub:`Lmax`. The current sense transistor, Q\ :sub:`2`, should have a sufficiently large current capacity to be able to take away all the current from the base of the main series pass transistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -154,9 +149,8 @@ The active high pass transistor circuit is quite straightforward, using just a t
 
 The filter components are included in negative feedback from the output of the circuit to the input. The components that form the active filter network consist of C\ :sub:`1`, C\ :sub:`2`, R\ :sub:`1` and the combination of R\ :sub:`2` and R\ :sub:`3` in parallel, assuming that the input resistance to the emitter follower circuit are very high and can be ignored.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -184,9 +178,8 @@ Frequency Multipliers are a special class of amplifiers that are biased at 3 to 
 
 Figure 16.5.1 illustrates a frequency multiplier known as a Frequency Doubler or Second Harmonic Generator. As illustrated, the input is 10 KHz and the output is 20 KHz, or twice the input frequency. In other words, the second harmonic of 10 KHz is 20 KHz. The third harmonic (frequency tripler) would be 30 KHz, or 3 times the input signal. The fourth harmonic (quadruplet) would be 40 KHz, or 4 times the 10 KHz input signal. The fifth harmonic (frequency quintupler) is normally as high in multiplication as is practical, because at harmonics higher than the fifth, the output diminishes to a very weak signal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -201,9 +194,8 @@ Frequency multipliers are operated by the pulses of collector current produced b
 
 The following circuit, figure 16.5.2, is a better frequency multiplier using an NPN differential amplifier with an LC resonate output load. With the component values shown in the figure, the output level is about 4V p-p at 33 KHz with a 1v p-p, 11 KHz input. Other frequencies and multiplication factors are possible by adjusting the resonate frequency of the L\ :sub:`1`,C\ :sub:`1`\ tank.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -218,6 +210,23 @@ Figure 16.5.3
 
 **Return to** :doc:`Previous Chapter </wiki-migration/university/courses/electronics/text/chapter-15>`
 
-**Go to** :adi:`Next Chapter </media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter9.pdf>`
+**Go to** :adi:`Next Chapter <media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter9.pdf>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr16_f8.png
+   :width: 600px

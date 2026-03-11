@@ -60,9 +60,8 @@ Raspberry Pi
 
 The AD-FMCXMWBR1-EBZ can be used with a standalone Raspberry Pi. It doesn't have as many benefits as the setup with a FPGA board, but it can simplify the wiring and power supplies needed in an X-microwave prototype.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/phaser_proto_xmw_bridge.jpg
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -73,3 +72,5 @@ The AD-FMCXMWBR1-EBZ can be used with a standalone Raspberry Pi. It doesn't have
    :width: 700px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/xmwcontrollersetup.png
    :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/phaser_proto_xmw_bridge.jpg
+   :width: 400px

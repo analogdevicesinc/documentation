@@ -23,9 +23,8 @@ Directions:
 
 The breadboard connections for the common gate amplifier tests are shown in figure 1. The 2.5V mid supply voltage output is used as the fixed common voltage point for the gate terminal. An input current is supplied to the source from channel A in source current mode. Channel B in Hi-Z mode measures the drain voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcg_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -72,9 +71,8 @@ Directions:
 
 Modify the test circuit on your breadboard to look like figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcg_f2.png
-   :align: center
-   :width: 450px
+
+|image2|
 
 .. container:: centeralign
 
@@ -105,3 +103,8 @@ Increase the negative swing of channel A's current until the channel A voltage w
 http://en.wikipedia.org/wiki/Common_gate http://en.wikipedia.org/wiki/Cascode
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcg_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcg_f2.png
+   :width: 450px

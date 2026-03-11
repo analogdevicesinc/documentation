@@ -16,7 +16,7 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 -  Ensure that the system time is synchronized and that there is an active internet connection to access the necessary sources. Install Git and the build dependencies with the following commands: ``sudo apt update
    sudo apt install git
    sudo apt install bc bison flex libssl-dev make``
--  Clone the ADI Linux kernel repository with the rpi-5.15.y branch using the following command: ``git clone -b rpi-5.15.y https://github.com/analogdevicesinc/linux.git``
+-  Clone the ADI Linux kernel repository with the rpi-5.15.y branch using the following command: ``git clone -b rpi-5.15.y :git-linux:`linux`.git``
 -  For the Raspberry Pi 4 with the default 64-bit build configuration, navigate to the linux directory and configure the build with the following commands: ``cd linux
    KERNEL=kernel8
    make bcm2711_defconfig``
@@ -42,22 +42,24 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
 
 -  Reboot the Raspberry Pi to apply the changes.\ ``sudo reboot``
--  After rebooting, check the connected I2C devices with the following command: ``i2cdetect –y 1``\ The AD2428 Mini should be detected as an I2C device. In this scenario, 0x6C and 0x6D are the I2C addresses of the connected devices with the Raspberry Pi 4.\
+-  After rebooting, check the connected I2C devices with the following command: ``i2cdetect –y 1``\ The AD2428 Mini should be detected as an I2C device. In this scenario, 0x6C and 0x6D are the I2C addresses of the connected devices with the Raspberry Pi 4.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/i2c_detect.png
+   :align: center
 
 -  In Terminal 1, run aplay on the corresponding AD242x card, which can be identified by running *aplay –l* and *arecord -l*. For example, as shown in image below, the AD2428 Mini should be detected as follows:
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/arecord_aplay.png
+   :align: center
 
-   -  PLAYBACK device: Card 1, Device 0
+::
 
-      -  CAPTURE device: Card 1, Device 1
+     * PLAYBACK device: Card 1, Device 0
+       * CAPTURE device: Card 1, Device 1
+   * In Terminal 2, run the aplay command on the AD24xx card, specifically Card 0 and Device 0, as shown in below image. This step provides BCLK and FS to the AD2428 Mini node, which is necessary for the discovery process to succeed.
 
--  In Terminal 2, run the aplay command on the AD24xx card, specifically Card 0 and Device 0, as shown in below image. This step provides BCLK and FS to the AD2428 Mini node, which is necessary for the discovery process to succeed.\
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/aplay-d.png
+   :align: center
 
 .. note::
 
@@ -91,11 +93,10 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
    Make sure to run the aplay or arecord command mentioned in above steps to enable BCLK and FS to the AD2428 Mini.
 
 
--  Discovery should occur as shown in below image, and downstream audio will be available at Sub node 1's Headphone OUT.\
+-  Discovery should occur as shown in below image, and downstream audio will be available at Sub node 1's Headphone OUT.
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/ouput_disc.png
+   :align: center
 
 .. note::
 
@@ -107,11 +108,10 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
    The *-dv* option is used to specify debug and verbose logging during the execution of the application. This causes additional information pertaining to the a2b interrupts to be displayed on the console.
 
 
--  To verify Upstream Audio at RPi’s Headphones, provide Audio IN at Sub Node 1. Record on Card 1, Device 1 (ad242x) interface of RPi and play on Card 0, Device 0 (Headphones) as shown in below image.\
+-  To verify Upstream Audio at RPi’s Headphones, provide Audio IN at Sub Node 1. Record on Card 1, Device 1 (ad242x) interface of RPi and play on Card 0, Device 0 (Headphones) as shown in below image.
 
-
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/audio_check.png
+   :align: center
 
 .. note::
 
@@ -119,9 +119,3 @@ To build the kernel locally on the Raspberry Pi 4, follow the appropriate steps 
 
 
 **PREV :** :doc:`Setup Details </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/setupdetails>` **NEXT :** :doc:`DTS Overlay </wiki-migration/resources/tools-software/a2bv2/a2braspberrypi/dtsoverlay>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/i2c_detect.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/arecord_aplay.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/aplay-d.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/ouput_disc.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2braspberrypi/audio_check.png

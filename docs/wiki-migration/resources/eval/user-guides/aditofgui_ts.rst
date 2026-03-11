@@ -105,7 +105,7 @@ Troubleshooting
 
 -  GUI Crashes on Play (Windows)
 
-   -  Use :git-ToF:`releases/tag/v3.2.0` or newer
+   -  Use `v3.2.0 <https://github.com/analogdevicesinc/ToF/releases/tag/v3.2.0>`_ or newer
    -  If above step doesn't work, install OpenCL GPU binaries : :doc:`Instructions </wiki-migration/resources/eval/user-guides/eval-adtf3175d-depth-compute-libs>`
 
       -  Copy the contents from TOF_DepthComputeEngine_Windows-Rel3.0.0\\prebuilt_binary\\ to TOF_Evaluation_ADTF3175D-Rel3.2.0.1\\bin\\ folder

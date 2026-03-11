@@ -25,9 +25,8 @@ The relation between pulse width and frequency is then given by,
 
 :math:`f = 1/(2t_p)` (2)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ From Kirchhoff's laws, it can be shown that the charging voltage V\ :sub:`C` (t)
 
 where, V is the applied source voltage to the circuit at time t = 0. The product RC is the time constant. The response curve is increasing and is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -55,9 +53,8 @@ The discharge voltage for the capacitor is given by:
 
 Where Vo is the initial voltage stored in capacitor at t = 0. The product RC is often referred to the so called time constant, τ. The response curve is a decaying exponential as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -75,14 +72,14 @@ Hardware setup:
 Set up the circuit shown in Figure 4 on your solderless breadboard with the component values R\ :sub:`1` = 2.2 KΩ and C\ :sub:`1` = 1 µF.
 
 
-|image1|
+|image4|
 
 .. container:: centeralign
 
    Figure 4. Series RC circuit R\ :sub:`1` = 2.2 KΩ and C\ :sub:`1` = 1 µF.
 
 
-   |image2|
+   |image5|
 
 .. container:: centeralign
 
@@ -97,7 +94,7 @@ On Channel 1 of the oscilloscope you will visualize the input voltage, and on ch
 a. Pulse width » 5t : Set the frequency of W1 output such that the capacitor has enough time to fully charge and discharge during each cycle of the square wave. So let the pulse width be 15t and set the frequency according to equation (2). The value you have found should be approximately 15 Hz. Determine the time constant from the waveforms obtained on the screen if you can. If you cannot obtain the time constant easily, explain possible reasons.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -108,7 +105,7 @@ b. Pulse width = 5t : Set the frequency such that the pulse width = 5t (this sho
 
 
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
@@ -119,7 +116,7 @@ c. Pulse width « 5t : In this case the capacitor does not have time to charge s
 
 
 
-|image5|
+|image8|
 
 .. container:: centeralign
 
@@ -148,13 +145,19 @@ Questions:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/series_rc.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/series_rc.png
    :width: 350px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_series_bb.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_series_bb.png
    :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_15t.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_15t.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_5t.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_5t.png
    :width: 900px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_1t.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/rc_1t.png
    :width: 900px

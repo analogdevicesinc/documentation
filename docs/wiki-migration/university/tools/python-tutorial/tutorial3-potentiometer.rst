@@ -34,9 +34,8 @@ Directions:
 
 On your solderless breadboard connect the potentiometer or variable resistor to the ALM1000 analog input connector as shown in figure 1. You will connect three wires to the ALM1000 board. The first goes to ground from one of the outer pins of the potentiometer. The second goes from +5 volts to the other outer pin of the potentiometer. The third goes from analog input CA-H to the middle pin of the potentiometer.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial3_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -80,3 +79,6 @@ Modify the program(s) to display both the Channel A and B inputs. Connect a seco
 `Potentiometer <https://en.wikipedia.org/wiki/Potentiometer>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial3_f1.png
+   :width: 500px

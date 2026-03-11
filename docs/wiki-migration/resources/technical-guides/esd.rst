@@ -49,22 +49,23 @@ The AD74115H was tested using 3 use cases to exercise all terminal blocks.
 
      *
 
-
-     |image1|
+.. image:: https://wiki.analog.com/_media/resources/technical-guides/IMG_20211012_142910.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H Current Output ESD Setup*
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
    *Figure 1 ADP1034 and AD74115H 4 wire RTD ESD Setup*
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
@@ -168,9 +169,7 @@ Table 4 Air Discharge Results
 | 
 | :doc:`Return to AD74115H Immunity Performance </wiki-migration/resources/technical-guides/ad74115_immunity_performance>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/IMG_20211012_142910.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/4rtd.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/technical-guides/4rtd.jpg
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/technical-guides/esd_block_diagram_2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/technical-guides/esd_block_diagram_2.png
    :width: 800px

@@ -21,7 +21,7 @@ Required Software
 -  A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
 -  Xilinx Vivado 2019.1 or later - Xilinx Software Commandline Tool(XCST)
 -  Bitfile and Linux ELF image
--  IIO Scope `Download <https://wiki.analog.com/https/github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+-  IIO Scope `Download <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 .. tip::
 
@@ -33,16 +33,23 @@ Setting up the hardware (VCU118)
 
 You will need to:
 
-::
 
-   -Get the [[https://www.xilinx.com/VCU118| Xilinx VCU118]]
-   {{ resources:eval:user-guides:ad-fmcdaq3-ebz:quickstart:vcu118.png?900 }}
-   -Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC+** socket(J22).
-   -Connect USB UART J4 (Micro USB) and USB JTAG J106 (Micro USB) to your host PC.
-   -Set the jumpers of SW16 - which controls the JTAG Mode: 1: **off**, 2: **on**, 3: **off**, 4: **on** as seen in the below picture
-   {{ resources:eval:user-guides:ad-fmcdaq3-ebz:quickstart:sw16_vcu118.jpg?400 }}
-   -Plug the Power Supply into 12V Power input connector (J15).
-   -Turn it on.
+
+-Get the ` Xilinx VCU118 <https://www.xilinx.com/VCU118>`_
+
+
+
+
+|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-vcu118.png|
+
+-Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC+** socket(J22).
+-Connect USB UART J4 (Micro USB) and USB JTAG J106 (Micro USB) to your host PC.
+-Set the jumpers of SW16 - which controls the JTAG Mode: 1: **off**, 2: **on**, 3: **off**, 4: **on** as seen in the below picture
+
+|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw16_vcu118.jpg|
+
+-Plug the Power Supply into 12V Power input connector (J15).
+-Turn it on.
 
 
 .. note::
@@ -374,30 +381,30 @@ Useful links
 
 ::
 
-         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
-         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
-        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
-   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
-        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
-        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+         - :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         - :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+         - :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         - :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           - :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+         - :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         - :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   * :doc:`MATLAB Support </wiki-migration/resources/tools-software/hsx-toolbox>`
+        * MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`
+   * :doc:`Python Support </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+        * PYTHON support is provided through the :doc:`Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` 
+        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
+        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
    * Product Datasheet
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
+       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
+       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
+   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
 
 Support
 -------
@@ -413,3 +420,6 @@ Software support
 .. |VCU118_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/VCU118_daq3.jpg
    :width: 550px
 .. |iio_scope_board_ip-VCU118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-VCU118.png
+
+.. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw16_vcu118.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/sw16_vcu118.jpg
+.. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-vcu118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/vcu118.png

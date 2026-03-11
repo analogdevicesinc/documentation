@@ -92,7 +92,7 @@ This library provides an abstracted library interface to communicate IIO device 
    Libiio installer for Windows (Use below link):
 
    
-   -  :git-libiio:`libiio windows installer (.exe) <releases>`
+   -  `libiio windows installer (.exe) <https://github.com/analogdevicesinc/libiio/releases>`_
    
 
 
@@ -107,7 +107,7 @@ This is a GUI (Graphical User Interface) based IIO client application for data v
    IIO Oscilloscope installer for Windows (Use below link):
 
    
-   -  :git-iio-oscilloscope:`IIO Oscilloscope windows installer (.exe) <releases>`
+   -  `IIO Oscilloscope windows installer (.exe) <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
    
 
 
@@ -204,7 +204,7 @@ Setting-up Python Environment
 
 |image8| |image9|
 
--  Install the “pyadi-iio” python package by executing command “python -m pip install pyadi-iio”. Detailed guide on installing it is available in `Python Interfaces for ADI Hardware <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  Install the “pyadi-iio” python package by executing command “python -m pip install pyadi-iio”. Detailed guide on installing it is available in :git-pyadi-iio:`Python Interfaces for ADI Hardware <pyadi-iio>`
 
 *\*Make sure to install additional support packages by running requirements.txt file using command “python -m pip install -r requirements.txt from “scripts/” directory”*
 

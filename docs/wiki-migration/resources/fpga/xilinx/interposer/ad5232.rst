@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5232 Product Info <AD5232>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5232SDZ evaluation board user guide </static/imported-files/user_guides/UG-347.pdf>`
+-  :adi:`EVAL-AD5232SDZ evaluation board user guide <static/imported-files/user_guides/UG-347.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

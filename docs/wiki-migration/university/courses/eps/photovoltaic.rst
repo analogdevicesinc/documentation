@@ -11,9 +11,8 @@ Background:
 
 A solar cell is a semiconductor PN junction diode as shown in figure 1. The large surface area indicated in light blue is exposed to incident light energy. Solar cells are usually coated with anti-reflective materials so that they absorb the maximum amount of light energy. Normally no external bias is applied to the cell. When a photon of light is absorbed near the PN junction a hole / electron pair is produced. This occurs when the energy of the photon is higher than the energy band-gap of the semiconductor. The built in electric field of the junction cause the pair to separate and head toward the respective + and - terminals. The energy from the light causes a current to flow in an external load when the cell is illuminated.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -22,9 +21,9 @@ A solar cell is a semiconductor PN junction diode as shown in figure 1. The larg
 
 A typical voltage vs. current characteristic, known as an I/V curve, of a PN diode without illumination is shown in green in figure 2. The applied voltage is in the forward bias direction. The curve shows the turn-on and the buildup of the forward bias current in the diode. Without illumination, no current flows through the diode unless there is external potential applied. With incident sunlight, the I/V curve shifts up showing that there is external current flow from the solar cell to a resistive load as shown with the red curve.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f2.png
-   :align: center
-   :width: 350px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -33,9 +32,9 @@ A typical voltage vs. current characteristic, known as an I/V curve, of a PN dio
 
 Short circuit current, I\ :sub:`SC`, flows when the external resistance is zero (V = 0) and is the maximum current delivered by the solar cell at a given illumination level. The short circuit current is a function of the PN junction area collecting the light. Similarly, the open circuit voltage, V\ :sub:`OC`, is the potential that develops across the terminals of the solar cell when the external load resistance is very large, R\ :sub:`LOAD` = ∞. For silicon based cells a single PN junction produces a voltage near 0.5V. Multiple PN junctions are connected in series in a larger solar panel to produce higher voltages. Photovoltaic cells can be arranged in a series configuration to form small modules, and modules can then be connected in parallel-series configurations to form larger arrays. When connecting cells or modules in series to produce higher output voltages, they must have the same current rating ( if not the cell with the lowest current specification will limit the ultimate current of the module ), and similarly, modules must have the same voltage specification when connected in parallel to generate larger currents. The power delivered to the load is of course zero at both extremes of the I/V curve and reaches a maximum (P\ :sub:`MAX`) at a single load resistance value. In figure 3, P\ :sub:`MAX` is shown as the area of the shaded rectangle.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f3.png
-   :align: center
-   :width: 350px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -71,13 +70,7 @@ Where I\ :sub:`S` is the saturation current of the diode, q is the charge on an 
 
 Expanding the equation gives the simplified circuit model shown below and the following associated equation, where n is the diode ideality factor (typically between 1 and 2), and R\ :sub:`S` and R\ :sub:`SH` represents the series and shunt resistances.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-e4.png
-   :align: center
-   :width: 350px
-
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f4.png
-   :align: center
-   :width: 500px
+|image4| |image5|
 
 .. container:: centeralign
 
@@ -86,7 +79,7 @@ Expanding the equation gives the simplified circuit model shown below and the fo
 
 During operation, the efficiency of solar cells is reduced by the dissipation of power across internal resistances. These parasitic resistances can be modeled as a parallel shunt resistance (R\ :sub:`SH`) and series resistance (R\ :sub:`S`). For an ideal cell, R\ :sub:`SH` would be infinite and would not provide an alternate path for current to flow, while R\ :sub:`S` would be zero, resulting in no voltage drop and power loss before the load. Decreasing R\ :sub:`SH` and increasing R\ :sub:`s` will decrease the fill factor (FF) and P\ :sub:`MAX` as shown in figure 5. If R\ :sub:`SH` is decreased too much, V\ :sub:`OC` will drop, while increasing R\ :sub:`S` excessively can cause I\ :sub:`SC` to drop instead.
 
-|eps_photovoltais-f5.png|\ |image1|
+|eps_photovoltais-f5.png| |image6|
 
 .. container:: centeralign
 
@@ -95,9 +88,9 @@ During operation, the efficiency of solar cells is reduced by the dissipation of
 
 It is possible to approximate the series and shunt resistances, R\ :sub:`S` and R\ :sub:`SH`, from the slopes of the I/V curve at V\ :sub:`OC` and I\ :sub:`SC`, respectively. The resistance at V\ :sub:`OC`, however, is at best proportional to the series resistance but it is larger than the series resistance. R\ :sub:`SH` is represented by the slope at I\ :sub:`SC`. Typically, the resistances at I\ :sub:`SC` and at V\ :sub:`OC` will be measured and noted, as shown in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f7.png
-   :align: center
-   :width: 500px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -109,9 +102,8 @@ I-V Curves for Modules
 
 For a module or array of solar cells, the shape of the I/V curve does not change. However, it is scaled based on the number of cells connected in series and in parallel. If n is the number of cells connected in series and m is the number of cells connected in parallel and I\ :sub:`SC` and V\ :sub:`OC` are values for individual cells, then the short circuit current for the array is nI\ :sub:`SC` and the open circuit voltage is mV\ :sub:`OC`. An example I/V curve is shown in figure 8 with an overall I\ :sub:`SC` of about 80mA and a V\ :sub:`OC` of about 4.2V and P\ :sub:`MAX` is slightly higher than 160mW.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f8.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -130,9 +122,8 @@ The +/- 5 volt User power supplies and waveform generators in the ALM2000 hardwa
 
 On your solder-less breadboard construct the circuit shown in figure 9. This measurement setup will work for solar panels with open circuit voltages less than 5 volts. Power NMOS transistor M\ :sub:`1` along with resistor R\ :sub:`2` acts as a source follower. It will force a variable voltage, provided by waveform generator W1, across the solar panel. The 10 Ω resistor R\ :sub:`1` is used to measure the current flowing in the solar panel. The solar panel current flows from the + terminal through the two batteries, B\ :sub:`1,2`, M\ :sub:`1` and R\ :sub:`1` back to the negative terminal thus not needing to flow in any of the Discovery supplies.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f9.png
-   :align: center
-   :width: 500px
+
+|image9|
 
 .. container:: centeralign
 
@@ -143,9 +134,8 @@ Scope channel 1 measures the solar panel voltage with input 1+ connected to the 
 
 The configuration shown in figure 9 can measure only part of the I/V curve for panels with V\ :sub:`OC` greater than about 5V. It should be used to measure I\ :sub:`SC`\ for any panel. To measure the rest of the I/V curve for panels with V\ :sub:`OC` up to 10 volts the circuit can be modified as shown in figure 10. The waveform generator in the ALM2000 can swing a maximum of 10 Volts (-5 to +5) so that will be the ultimate limit of the total voltage range of any I/V measurements that can be produced using these setups.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltaics-f10-r1.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -215,9 +205,8 @@ Solar panels come in many sizes with various voltage and current specifications 
 
 Sun Power panels are made of Copper Indium Diselenide. They are 60mm (2-3/8") square, with nominal 4.5 V\ :sub:`OC` and 90mA I\ :sub:`SC` in full sunlight. Two of these small panels could be used in series.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f11.jpg
-   :align: center
-   :width: 300px
+
+|image11|
 
 .. container:: centeralign
 
@@ -234,7 +223,27 @@ OSEPP SC10072 Monocrystalline Solar Cell - Barrel Plug Termination, 100mA I\ :su
 
 Supplier: http://www.tigerdirect.com/applications/SearchTools/item-details.asp?EdpNo=4368549&csid=_61
 
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f2.png
+   :width: 350px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f3.png
+   :width: 350px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-e4.png
+   :width: 350px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f4.png
+   :width: 500px
 .. |eps_photovoltais-f5.png| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f5.png
    :width: 350px
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f6.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f6.png
    :width: 350px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f9.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltaics-f10-r1.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/eps/eps_photovoltais-f11.jpg
+   :width: 300px

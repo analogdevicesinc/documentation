@@ -16,4 +16,4 @@ There is also an "accurate" version, which (likely) uses inter-sample interpolat
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakpic2.png
    :alt: envelopepeakpic2.png
 
-.. |envelopepeakpic1.png| image:: https://wiki.analog.com/_media/envelopepeakpic1.png
+.. |envelopepeakpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakpic1.png

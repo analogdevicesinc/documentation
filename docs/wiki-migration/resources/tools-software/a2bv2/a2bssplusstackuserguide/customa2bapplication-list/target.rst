@@ -10,7 +10,8 @@ The best way of building Target software for a custom platform is to port a matc
 A2B Target Software Examples
 ----------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2btargetsoftwareexamplesa2bplus.jpg
+   :align: center
 
 .. container:: centeralign
 
@@ -68,5 +69,3 @@ The steps involved in porting the A2B stack and defining application response to
 -  `Porting A2B Software Stack to a custom platform <https://wiki.analog.com/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication-list/target/porting-a2b>`_
 -  :doc:`Apply A2B System Configuration </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication-list/target/apply-network-config>`
 -  :doc:`Modify the application callback code </wiki-migration/resources/tools-software/a2bv2/a2bssplusstackuserguide/customa2bapplication-list/target/modify-functions>` (if necessary)
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2btargetsoftwareexamplesa2bplus.jpg

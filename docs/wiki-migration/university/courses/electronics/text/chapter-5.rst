@@ -22,9 +22,8 @@ In a PN junction, without an external applied voltage, an equilibrium condition 
 
 At the junction of p-type and n-type semiconductors, higher concentration of electrons in the n-type region near the PN interface tend to diffuse into the p-type region. As electrons diffuse, they leave positively charged ions (donors) in the n region. Similarly, the higher concentration of holes on the p-type side near the PN interface begin to diffuse into the n-type region leaving fixed ions (acceptors) with negative charge. The regions just adjacent on either side of the PN interface lose their neutrality and become charged, forming the space charge region or depletion layer (see figure 5.1).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -35,9 +34,8 @@ The electric field created by the space charge region opposes the diffusion proc
 
 The space charge region is a zone with a net charge provided by the fixed ions (donors or acceptors) that have been left uncovered by majority carrier diffusion. When equilibrium is reached, the charge density is approximated by the displayed step function in the figure 5.2 Q(x) graph. In fact, the region is completely depleted of majority carriers (leaving a charge density equal to the net doping level), and the edge between the space charge region and the neutral region is quite sharp. The space charge region has the same charge on both sides of the PN interface, thus it extends farther into the less heavily doped side (the n side in figures 5.1 and 5.2).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -78,18 +76,15 @@ The forward-bias and the reverse-bias properties of the PN junction imply that i
 
 The figure 5.3 below gives the schematic symbol for a diode (a) and a picture of a typical diode from the lab (b). Diodes are quite common and useful devices. One can think of a diode as a device which allows current to flow in only one direction. This is an over-simplification, but a good approximation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f3.png
-   :align: center
-   :width: 300px
+
+|image3|
 
 .. container:: centeralign
 
    (a)
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f4.jpg
-   :align: center
-   :width: 300px
+   |image4|
 
 .. container:: centeralign
 
@@ -103,9 +98,9 @@ The figure 5.3 below gives the schematic symbol for a diode (a) and a picture of
 
 As was discussed earlier, semiconductor diodes are fabricated as a two layer structure forming a PN junction. Semiconductors, such as silicon or germanium, can be doped with small concentrations of specific impurities to yield a material which conducts electricity via electron transport (n-type) or via holes (p-type). When layers of these two types of doped semiconductor are constructed to form a PN junction, electrons migrate away from the n-type side and holes migrate away from the p-type side, as shown in figure. 5.1. This redistribution of charge gives rise to a potential gap V\ :sub:`BI` across the junction, as depicted in the Figure. This gap is *VBI ~*0*.*7 V for silicon and *~*\ 0*.*\ 3 V for germanium.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f5.png
-   :align: center
-   :width: 500px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -116,19 +111,18 @@ When this PN junction diode is now connected to an external voltage, this can ef
 
 The expression for the (forward bias) diode voltage V\ :sub:`D` is as follows:
 
-|image1| (5.1)
+|image6| (5.1)
 
 Where: V\ :sub:`D` = applied voltage across the diode k = Boltzman constant (1.38E-23 Joules/Kelvin) T = the absolute temperature in Kelvin q = the electron charge (1.6E-19 Coulombs) I\ :sub:`D` = the actual current through the diode I\ :sub:`S` = the diffusion current (a device dependent constant) (The so called thermal voltage, V\ :sub:`T`, is //kT/q //= 26 mV at room temperature.)
 
 The equation above can be rearranged to provide I\ :sub:`D`:
 
-|image2| (5.2)
+|image7| (5.2)
 
 Thus, when reverse biased, the diode behaves much like an open switch; and when forward biased, for currents of about 10 mA or greater, the diode gives a nearly constant voltage drop of ~0.7 V. The diffusion current, I\ :sub:`S,`\ is dependent on the doping level of n-type and p-type impurities, the area of the diode and (very much) on temperature. A reasonable starting point for a small-geometry Integrated Circuit diode is I\ :sub:`S`\ =1E\ :sup:`-16`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f6.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -137,9 +131,9 @@ Thus, when reverse biased, the diode behaves much like an open switch; and when 
 
 The opposing charges in a semiconductor junction are no different from those on the plates of a capacitor. So every junction has a capacitance; but since the distance between the electrons and holes, the depletion layer, changes with applied voltage, the capacitance depends on the applied voltage. The lower the voltage, the higher the capacitance, and it will increase right into the forward bias region.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f7.png
-   :align: center
-   :width: 600px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -155,20 +149,19 @@ From the diode voltage equation, 5.1, we can see that it contains the absolute t
 
 In the upper plot the difference between the 2mA and the 1mA curves is plotted along with the difference between the 5mA and 10mA curves. These two results lie exactly on top of each other. The reason for this is apparent if we examine the diode voltage equation more closely.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f8.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
    Figure 5.7 Diode Voltage vs. Temperature at 1mA, 2mA, 5mA and 10mA
 
 
-|image3| (5.3)
+|image11| (5.3)
 
 Rearranging and assuming I\ :sub:`S1` = I\ :sub:`S2` we get:
 
-|image4| (5.4)
+|image12| (5.4)
 
 Now the strong temperature effect of I\ :sub:`S`\ drops out of the equation and we are left with just the absolute temperature term, T, which makes ΔV\ :sub:`D`\ proportional to absolute temperature (PTAT). Both V\ :sub:`D2`-V\ :sub:`D1` and V\ :sub:`D4`-V\ :sub:`D3` have the same 2:1 ratio for their currents and thus the ΔV\ :sub:`D` curves will exactly lie on top of each other. At room temperature the thermal voltage V\ :sub:`T` is about 26 mV which when multiplied by ln(2) is the approximately 18mV seen in the graph at 25 degrees.
 
@@ -177,9 +170,8 @@ Now the strong temperature effect of I\ :sub:`S`\ drops out of the equation and 
 
 The linear model of the diode approximates the exponential I - V characteristics by a straight line that is tangent to the actual curve at the DC bias point. Figure 5.8 shows the curve with the tangent line at the point (V\ :sub:`D`, I\ :sub:`D`). The curve intersects the horizontal axis at the voltage V\ :sub:`D0`. For small changes in V\ :sub:`D`\ and I\ :sub:`D` about the tangent point, the tangent line gives a good approximation to the actual curve.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f9.png
-   :align: center
-   :width: 550px
+
+|image13|
 
 .. container:: centeralign
 
@@ -188,15 +180,15 @@ The linear model of the diode approximates the exponential I - V characteristics
 
 The slope of the tangent line is given by:
 
-|image5| (5.5)
+|image14| (5.5)
 
 I\ :sub:`D` is often much larger than I\ :sub:`S`\ so the equation is often simplified to:
 
-|image6| (5.6)
+|image15| (5.6)
 
 The equation of the tangent line is:
 
-|image7| (5.7)
+|image16| (5.7)
 
 5.5 Small-Signal Model
 ----------------------
@@ -215,7 +207,7 @@ Where: V\ :sub:`D` and I\ :sub:`D` are DC bias values and v\ :sub:`d` and i\ :su
 
 The small-signal resistance is defined as the ratio of v\ :sub:`d` to i\ :sub:`d` and is given by:
 
-|image8| (5.8)
+|image17| (5.8)
 
 This results in the same r\ :sub:`d` as in the linear tangent model of the diode in figure 5.8. Thus the small-signal model of the diode when forward biased is a resistor of value r\ :sub:`d`. The value of r\ :sub:`d` is inversely proportional to the current through it. Each time the current is doubled, the resistance is halved. It follows from the linear diode model that r\ :sub:`d` can be interpreted graphically as the reciprocal of the slope of the i\ :sub:`D` versus v\ :sub:`D` curve at the point (V\ :sub:`D`, I\ :sub:`D`).
 
@@ -250,19 +242,37 @@ Section Summary
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e1.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f3.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f4.jpg
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e1.png
    :width: 180px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e2.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e2.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e3.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f6.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f7.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f8.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e3.png
    :width: 350px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e4.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e4.png
    :width: 350px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e5.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-f9.png
+   :width: 550px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e5.png
    :width: 370px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e6.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e6.png
    :width: 100px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e7.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e7.png
    :width: 180px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e10.png
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr5-e10.png
    :width: 200px

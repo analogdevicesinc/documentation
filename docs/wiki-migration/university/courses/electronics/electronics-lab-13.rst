@@ -19,9 +19,8 @@ Directions:
 
 On your solder-less breadboard construct the amplifier circuit shown in figure 1 below. The breadboard connections are shown in figure 2. The green boxes indicate connections to the connector on ADALM2000.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13_f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -33,8 +32,8 @@ Hardware Setup:
 
 Connect your circuit to the ADALM2000 I/O connector as indicated by the green boxes. It is best to ground the unused negative scope inputs when not being used. If the SSM2212 NPN matched pair is used then it is best to use it for Q\ :sub:`1` and Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13_amp.png
-   :align: right
+
+|image2|
 
 .. container:: centeralign
 
@@ -46,8 +45,8 @@ Procedure:
 
 Configure waveform generator for a 1 KHz sine wave with an amplitude of 400 mV peak-to-peak and zero offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier at R\ :sub:`L`, record the input to output amplitude and phase relationship.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13_wf_amp.png
-   :align: center
+
+|image3|
 
 .. container:: centeralign
 
@@ -89,9 +88,8 @@ Directions:
 
 Construct the circuit shown in figure 4 on your solder-less breadboard. The breadboard connections are shown in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13_f2.png
-   :align: center
-   :width: 550px
+
+|image4|
 
 .. container:: centeralign
 
@@ -103,8 +101,8 @@ Hardware Setup:
 
 Connect your circuit to the ADALM2000 I/O connector as indicated by the green boxes. It is best to ground the unused negative scope inputs when not being used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a13_ug.png
-   :align: center
+
+|image5|
 
 .. container:: centeralign
 
@@ -117,7 +115,7 @@ Procedure:
 Configure AWG1 for a 1 KHz sine wave with an amplitude of 2 V peak-to-peak and zero offset. Using scope channel 1 to observe the input at W1 and scope channel 2 to observe the output of the amplifier, record the input to output amplitude and phase relationship.
 
 
-|image1|
+|image6|
 
 .. container:: centeralign
 
@@ -212,4 +210,11 @@ To make it somewhat easier to install the components, figure 6 for the DIP versi
 
 
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_wf_ug.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_f1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_amp.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_wf_amp.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_f2.png
+   :width: 550px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_ug.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a13_wf_ug.png

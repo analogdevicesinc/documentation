@@ -51,7 +51,9 @@ Figure 1 below shows the boost power stage from the open-loop exercise, but with
 -  If the output voltage is MUCH too high, the output voltage ramps down quickly.
 -  And finally, if the output voltage is "just right", hold the output voltage constant
 
-|image1|
+.. image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_voltage_mode_no_mbrook.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -68,7 +70,7 @@ Also note the following simplifications:
 Open the CL_boost_voltage_mode.asc simulaton, verify that the lower two 200Ω load resistors are connected (100Ω total load), and run it. Observe the turn-on transient, which has quite a bit of overshoot, but then stabilizes at 12.0V. Zoom in on the switch node and inductor current after the intial transient, shown in Figure 2. Note that the circuit is operating in DCM.
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -79,7 +81,7 @@ BEFORE APPLYING POWER… Configure the ADALM-SR1 board as shown in Figure 3 belo
 
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -116,7 +118,7 @@ Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this
 Ramp the Power Input to 5V and observe the current sense and switch node waveforms. Note that Scopy's vertical scale can be entered arbitrarily - enter a value of 280mV/Div, which corresponds to 400mA/Div. Figure 4 shows the measured results; compare with the simulated result in Figure 3.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -127,7 +129,7 @@ Decrease the load to 200Ω by removing one of the 200Ω jumpers and note that th
 
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -138,7 +140,7 @@ Adjusting the LTspice simulation accordingly shows close correlation to the meas
 
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -196,15 +198,13 @@ Intro on differences in control dynamics...
 
 **Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_voltage_mode_no_mbrook.png
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_100_load_sim.png
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_100_load_sim.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/sr1_config_cl_vmode_boost.png
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/sr1_config_cl_vmode_boost.png
    :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_100_load_scopy.png
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_100_load_scopy.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_200_load_scopy.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_200_load_scopy.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_200_load_sim.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_boost_adalm2000/cl_boost_vmode_5vin_12vout_200_load_sim.png
    :width: 600px

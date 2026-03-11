@@ -3,7 +3,7 @@ AD-FMCADC7-EBZ HDL Reference Design
 
 .. important::
 
-   This HDL project is obsolete, and is no longer supported. The source code can be found in the last release where it was present, :git-hdl:`hdl_2021_r2 <releases/tag/2021_R2>`.
+   This HDL project is obsolete, and is no longer supported. The source code can be found in the last release where it was present, `hdl_2021_r2 <https://github.com/analogdevicesinc/hdl/releases/tag/2021_R2>`_.
 
 
 Functional Overview

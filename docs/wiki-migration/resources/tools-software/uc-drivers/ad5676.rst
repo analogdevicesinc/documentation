@@ -203,15 +203,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD5686 Driver. <drivers/dac/ad5686/ad5686.c>`
+   -  :git-no-OS:`Header file of AD5686 Driver. <drivers/dac/ad5686/ad5686.h>`
    
-   |Implementation of AD5686 Driver.|
 
-   -
-
-   |Header file of AD5686 Driver.|
-
-.. |Implementation of AD5686 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5686/ad5686`.c
-.. |Header file of AD5686 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5686/ad5686`.h

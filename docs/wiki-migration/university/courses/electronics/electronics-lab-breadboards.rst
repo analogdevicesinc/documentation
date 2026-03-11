@@ -8,9 +8,8 @@ The purpose of this activity is to familiarize the reader with solder-less bread
 
 A breadboard is used to build and test circuits quickly before finalizing any circuit design. The breadboard has many holes into which circuit components like ICs and resistors can be inserted. The holes are most commonly spaced 0.1" apart to accommodate standard DIP components. A typical breadboard that includes top and bottom power distribution rails is shown below:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f1.png
-   :align: center
-   :width: 450px
+
+|image1|
 
 .. container:: centeralign
 
@@ -19,9 +18,9 @@ A breadboard is used to build and test circuits quickly before finalizing any ci
 
 The breadboard has strips of metal sockets which run underneath the board, yellow rectangles in figure 2, and connect the groups of five holes on the board. The metal strips are arranged as shown below. Note that the top and bottom rows of holes are connected horizontally while the holes in the center sections are connected vertically.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f2.png
-   :align: center
-   :width: 450px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -34,9 +33,8 @@ ICs are placed in the middle of the board so that half of the leads are on one s
 
 A completed circuit might look like the following.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f3.jpg
-   :align: center
-   :width: 420px
+
+|image3|
 
 .. container:: centeralign
 
@@ -63,7 +61,7 @@ All the connections to the ADALM2000 design kit are made though the 30 pin male 
 
 Adapters such as those shown below are workable alternatives. They adapt the square male pins of the ADALM2000 connector to two rows of male pins on 300 mil spacing (like DIP packages) that will plug nicely into a solder-less breadboard.
 
-|image1| |dual_row_receptical-14.jpg| |image2|
+|image4| |dual_row_receptical-14.jpg| |image5|
 
 These adapters can be easily constructed from dual row female receptacles, a small section of protoboard with rows of holes on 0.1" centers and single row male headers. They can also be purchased in 10, 14, 16, and 20 pin versions from: `Technological Arts <http://www.technologicalarts.ca/shop/store/category/54/adapters/receptacle.html>`_
 
@@ -73,9 +71,8 @@ The smaller adapters can be used individually or combined to fill out the entire
 
 Another more convenient arrangement would be an adapter PC board that connects to the 30 pin male header of ADALM2000 and brings all the connections to a female header positioned right alongside the breadboard area. By using a female header simple 22 gage solid wire jumpers can be used to connect to the breadboard rather than the long female to female fly-wires supplied with the kit. An example 3.1" by 3.4" adapter PC board layout is shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f4.jpg
-   :align: center
-   :width: 350px
+
+|image6|
 
 .. container:: centeralign
 
@@ -84,9 +81,9 @@ Another more convenient arrangement would be an adapter PC board that connects t
 
 The board consists of a grid of 21 by 30 plated through holes on 0.1" centers which can be used to solder test circuits. Three of the columns of holes on the left side of the grid are shorted together and tied to the +5V, -5V and ground connections on the 30 pin right angle female connector that mates with ADALM2000. Three of the columns of holes on the right side of the grid are shorted together and tied to the +9V, -9V and ground connections for use with external batteries or other sources of power. The 30 ADALM2000 connections are brought to a breakout space for a 40 pin vertical female header positioned alongside the breadboard area. The 21 X 30 grid is sized to accommodate the popular 30 position (400 total connection points) solder-less breadboards with power busses along both sides which are 2 1/8" by 3 1/4". These breadboards come with adhesive backs that will stick the breadboard to the adapter PC board. The schematic of the adapter board is shown in figure 5. The signals and power supplies that ADALM2000 can generate are limited by the USB power available from the computer. The analog inputs can measure much larger +/- 20 volt signals. This board provides a place to connect external power sources such as a pair of 9 V batteries. A socket for a dual op-amp is included with the two amplifiers configured as non-inverting gain stages and are powered from the external power supplies. A pair of resistors for each amplifier sets the gain. Depending on the choice of amplifier it can be used, for example, to boost the voltage and/or current available from the AWGs or for other purposes in the circuit being breadboarded. The external power supplies along with the inputs and outputs of the two amplifiers fill out the extra 10 pins on the 40 pin header.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f5.jpg
-   :align: center
-   :width: 450px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -104,9 +101,19 @@ http://www.analog.com/static/imported-files/tutorials/MT-100.pdf http://en.wikip
 
 **Return to Labs** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_row_receptical-10.jpg
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f1.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f2.png
+   :width: 450px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f3.jpg
+   :width: 420px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_row_receptical-10.jpg
    :width: 300px
 .. |dual_row_receptical-14.jpg| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_row_receptical-14.jpg
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_row_receptical-20.jpg
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/dual_row_receptical-20.jpg
    :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f4.jpg
+   :width: 350px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/abb_f5.jpg
+   :width: 450px

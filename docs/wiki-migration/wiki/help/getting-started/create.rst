@@ -36,7 +36,8 @@ Go to an existing page on the Wiki that is in the same section that you want you
 
 For example, if you're creating a new software page for "Other Software", go to the main software index page (:doc:`/wiki-migration/resources/tools-software`) and edit the URL so it has the location of the new page you want to create (http://wiki.analog.com/resources/tools-software/other-software).
 
-.. image:: https://wiki.analog.com/_media/wiki/help/getting-started/create1.png
+
+|image1|
 
 .. tip::
 
@@ -52,3 +53,5 @@ The editor will then be displayed where you can add the content for your new pag
 .. image:: https://wiki.analog.com/_media/wiki/help/getting-started/level1.png
 
 Add the remaining content using the :doc:`Wiki syntax </wiki-migration/wiki/syntax>` for formatting. Preview and click Save to publish.
+
+.. |image1| image:: https://wiki.analog.com/_media/wiki/help/getting-started/create1.png

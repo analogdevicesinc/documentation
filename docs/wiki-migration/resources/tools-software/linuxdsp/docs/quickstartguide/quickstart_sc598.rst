@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
+   These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
 
 Yocto Linux 2.1.0 Quickstart Guide for ADSP-SC598
@@ -109,7 +109,7 @@ To install the sources: TODO: Make sure its the correct repo, branch, manifest f
    $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ./bin/repo
    $ chmod a+x ./bin/repo
    $ ./bin/repo init \
-      -u https://github.com/analogdevicesinc/lnxdsp-repo-manifest.git \
+      -u :git-lnxdsp-repo-manifest:`lnxdsp-repo-manifest` \
       -b release/yocto-2.1.0 \
       -m release-yocto-2.1.0.xml
    $ ./bin/repo sync

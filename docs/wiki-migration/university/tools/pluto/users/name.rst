@@ -67,7 +67,7 @@ A typical utilization report is below. If you do not need some of the above logi
 
 The additional decimation and interpolation filters use 20 DSP slices each (40 in total). The optional DDS uses 20 DSP slices, and the optional 2 x 2 matrix multiply (sometimes used for IQ correction, or phase rotation) are 2 per channel, and the DC filter is 1 per channel.
 
-This can easily be overcome by using a different `Zynq <https://www.xilinx.com//support/documentation/selection-guides/zynq-7000-product-selection-guide.pdf>`_ device - we picked the one in the smallest pin count, to make layout easier, to hit the price point we needed. Going to a larger device, larger package, will impact size, and cost.
+This can easily be overcome by using a different `Zynq <https://www.xilinx.com/support/documentation/selection-guides/zynq-7000-product-selection-guide.pdf>`_ device - we picked the one in the smallest pin count, to make layout easier, to hit the price point we needed. Going to a larger device, larger package, will impact size, and cost.
 
 RF Issues
 ---------

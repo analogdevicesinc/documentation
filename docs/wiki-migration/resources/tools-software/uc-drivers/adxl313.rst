@@ -60,15 +60,10 @@ The source code for the ADXL313 driver:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADXL313 Driver <drivers/accel/adxl313/adxl313.h>`
+   -   :git-no-OS:`Implementation of ADXL313 Driver <drivers/accel/adxl313/adxl313.c>`
    
-   |Header file of ADXL313 Driver|
 
-   -
-
-   |Implementation of ADXL313 Driver|
 
 The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library:
 
@@ -76,15 +71,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADXL313 driver and have to be implemented:
 
@@ -115,15 +105,10 @@ Example of a header file containing the prototypes of the functions which have t
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for SPI Communication APIs|
 
-   -
-
-   |Generic header file for I2C Communication APIs|
 
 ADXL313 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,15 +273,10 @@ Source code for ADXL313 driver:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADXL313 IIO Driver <drivers/accel/adxl313/iio_adxl313.h>`
+   -   :git-no-OS:`Implementation of ADXL313 IIO Driver <drivers/accel/adxl313/iio_adxl313.c>`
    
-   |Header file of ADXL313 IIO Driver|
 
-   -
-
-   |Implementation of ADXL313 IIO Driver|
 
 ADXL313 IIO Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -394,12 +374,3 @@ ADXL313 IIO Driver Application Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Application Example Project for the ADXL313 IIO driver: :doc:`Evaluating the ADXL313 </wiki-migration/resources/eval/user-guides/eval-adxl313z/no-os-setup>`.
-
-.. |Header file of ADXL313 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl313/adxl313`.h
-.. |Implementation of ADXL313 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl313/adxl313`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
-.. |Header file of ADXL313 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl313/iio_adxl313`.h
-.. |Implementation of ADXL313 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl313/iio_adxl313`.c

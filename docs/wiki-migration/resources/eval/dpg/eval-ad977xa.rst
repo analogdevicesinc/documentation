@@ -66,67 +66,98 @@ Quick Start Guide
 -  Connect the evaluation board to PC via USB and to a 5Vdc 1A power supply on P4 and P5. Refer to Figure 1.
 -  Connect continuous wave generator for clock input to SMA J2 DAC_CLK/DAC_CLK_P and DAC output from SMA J4 (IOUT1P) or SMA J8 (IOUT2P) to a signal/spectrum analyzer.
 -  Set clock input to 400MHz, 3dBm.
--  Open ACE. The board will be automatically recognized by the software. Click the plugin. Otherwise, install the :adi:`ACE plugin <plugins/ace/Board.AD9779A.1.2020.3200.acezip>` for AD977xA. |image2|\
+-  Open ACE. The board will be automatically recognized by the software. Click the plugin. Otherwise, install the :adi:`ACE plugin <plugins/ace/Board.AD9779A.1.2020.3200.acezip>` for AD977xA.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_startw.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   
-   //Figure 2. AD9779A Plugin *
+   //Figure 2. AD9779A Plugin //
 
 
-- To change the settings of the AD977xA chip, double click on the AD977xA block on the board view to access the chip. The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to* :adi:`AD977XA <static/imported-files/data_sheets/AD9776A_AD9778A_AD9779A.pdf>` *datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window. \
+-  To change the settings of the AD977xA chip, double click on the AD977xA block on the board view to access the chip. The default values for the register is displayed and set. The values can be changed on the Chip View GUI, or on the **Memory Map** for registers not available in the GUI. For more info on the memory map, refer to :adi:`AD977XA <static/imported-files/data_sheets/AD9776A_AD9778A_AD9779A.pdf>` datasheet. Once the desired values are set, Click **Apply Changes** and then **Read All** on the upper right window.
 
-.. container:: centeralign
-
-   *Figure 3. Apply Changes and Read All button*
-
-
-- Apply the values in the **Initial Configuration** wizard as shown in Figure 4. \
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_apply_change.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   *Figure 4. AD9779A Initial Configuration Window*
+   //Figure 3. Apply Changes and Read All button //
 
 
-- Start DPG Downloader Lite. At the SDP-H1 part of the software, the device part number and clock frequency should be displayed. \
+-  Apply the values in the **Initial Configuration** wizard as shown in Figure 4.
 
-.. container:: centeralign
-
-   *Figure 5. DPG Lite Session for EVAL-AD9779A*
-
-
-- In DPG Downloader Lite, from the **Add Generator Waveforms** pulldown menu select **Single Tone** and apply the settings as shown in Figure 5. Set the **Data Rate** to 100MHz and Desired Frequency to 10.2MHz. Uncheck the **Unsigned Data** box and Check the **Generate Complex Data (I & Q)**. * Select the I/Q tone from the **I/Q Data Vector** pulldown menu. \* Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer.\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_settings.jpg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   *Figure 6. Spectrum Output for AD9779A; Fdac = 100MSPS, Fout = 10.2MHz*
+   *Figure 4. AD9779A Initial Configuration Window*\
+
+
+-  Start DPG Downloader Lite. At the SDP-H1 part of the software, the device part number and clock frequency should be displayed.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9779a_dpg_window.jpg
+   :align: center
+   :width: 800px
+
+.. container:: centeralign
+
+   //Figure 5. DPG Lite Session for EVAL-AD9779A //
+
+
+-  In DPG Downloader Lite, from the **Add Generator Waveforms** pulldown menu select **Single Tone** and apply the settings as shown in Figure 5. Set the **Data Rate** to 100MHz and Desired Frequency to 10.2MHz. Uncheck the **Unsigned Data** box and Check the **Generate Complex Data (I & Q)**.
+-  Select the I/Q tone from the **I/Q Data Vector** pulldown menu.
+-  Press the download arrow and then the play button. The spectrum similar to Figure 6 should appear in the signal/spectrum analyzer.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/c_ad9779a_10.2mhz.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   *Figure 6. Spectrum Output for AD9779A; Fdac = 100MSPS, Fout = 10.2MHz*\
+
 
 Using the AD9516 as clock source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, solder jumpers JP5 and JP6 are configured to drive the AD977xA clock inputs directly by SMA J2. This jumper setting is shown on Figure 7a. The AD9516 is included so the user can test the performance (e.g. ACLR) with the AD9516 clock multiplication.
 
--  To use the AD9616 to drive the clock inputs, the solder jumpers should be reconfigured as shown in Figure 7b. Connect continuous wave generator for clock input to SMA J1 (REF_CLK_IN). Set to 100MHz, 3dBm output. |image3|\
+-  To use the AD9616 to drive the clock inputs, the solder jumpers should be reconfigured as shown in Figure 7b. Connect continuous wave generator for clock input to SMA J1 (REF_CLK_IN). Set to 100MHz, 3dBm output.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9516_enables.jpg
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
-   
    *Figure 7a (left). Direct Clock Configuration; Figure 7b (right) AD9516 Clock Configuration*\
 
 
--  On the ACE Initial Configuration window, apply the following values shown on Figure 8. |image4|\
+-  On the ACE Initial Configuration window, apply the following values shown on Figure 8.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9516_config.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
-   
    *Figure 8. Settings for using AD9516 as clock source*\
 
 
--  Make sure that the PLL Lock LED on the ACE GUI and the LD LED on the evaluation board are lit up.\ |image5|\
+-  Make sure that the PLL Lock LED on the ACE GUI and the LD LED on the evaluation board are lit up.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ld_led.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   
    *Figure 9. LD and PLL Lock LED*\
 
 
@@ -135,7 +166,10 @@ By default, solder jumpers JP5 and JP6 are configured to drive the AD977xA clock
 Using the ADL5375 Modulator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, solder jumpers JP1, JP2, JP3, and JP4 are configured to route the DAC outputs to SMA J4 (IOUT1P) and to J8 (IOUT2P). This jumper setting is shown on Figure 10a. To connect the DAC output to the filter that feeds into the ADL5375, the solder jumpers should be reconfigured as shown in Figure 7b. Source the desired LO of the modulator (e.g. 900 or 1800MHz, 3dBm) on SMA J19 (LO IN). The ADL5375 Modulator output can be observed on SMA J6 (RF OUT). |image6|\
+By default, solder jumpers JP1, JP2, JP3, and JP4 are configured to route the DAC outputs to SMA J4 (IOUT1P) and to J8 (IOUT2P). This jumper setting is shown on Figure 10a. To connect the DAC output to the filter that feeds into the ADL5375, the solder jumpers should be reconfigured as shown in Figure 7b. Source the desired LO of the modulator (e.g. 900 or 1800MHz, 3dBm) on SMA J19 (LO IN). The ADL5375 Modulator output can be observed on SMA J6 (RF OUT).
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -158,13 +192,5 @@ This section lists items to check and practices to use when debugging any unexpe
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9779a_setup.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ace_startw.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9516_enables.jpg
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9516_config.png
-   :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ld_led.jpg
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/modulator_output_config.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/modulator_output_config.jpg
    :width: 800px

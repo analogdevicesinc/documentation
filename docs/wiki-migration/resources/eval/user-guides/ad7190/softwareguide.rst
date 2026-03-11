@@ -28,31 +28,45 @@ Installing ACE
 -  A dialog box opens asking for permission to allow the program to make changes to the PC. Click Yes to begin the installation process.
 -  In the ACE Setup window, click Next > to continue the installation.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_1.png
+   :align: center
+   :width: 400px
 
 -  Read the software license agreement and click I Agree
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_2.png
+   :align: center
+   :width: 400px
 
 -  Click Browse … to choose the installation location and then click Next >
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_3.png
+   :align: center
+   :width: 400px
 
--  The ACE software components to install are preselected. Click Install.\
+-  The ACE software components to install are preselected. Click Install.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_4.png
+   :align: center
+   :width: 400px
 
 -  The Windows Security window opens . Click Install
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_5.png
+   :align: center
+   :width: 400px
 
 -  The installation in progress in the window below. No action is required.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_6.png
+   :align: center
+   :width: 400px
 
 -   When the installation is complete, click Next >, and then click Finish to complete the installation process
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_7.png
+   :align: center
+   :width: 400px
 
 AD7190 Plugin Install
 ~~~~~~~~~~~~~~~~~~~~~
@@ -63,11 +77,15 @@ After the AD7190 Plugin is downloaded follow the steps to install the file: - Do
 -  Click on the Plug-in Manager Tab in the top left panel in Ace.
 -  Click on the Settings… button.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_install_page_1.png
+   :align: center
+   :width: 400px
 
 -  Hit the + button next to the Zipped Plug-in Sources.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190_ace_plugin_install.png
+   :align: center
+   :width: 400px
 
 -  Under the Name write “AD7190”
 -  Under Source hit the … button and set the path to where you have stored the AD7190 Plugin.
@@ -85,13 +103,22 @@ After the EVAL-AD7190ASDZ and controller board are properly connected to the PC,
 -  From the Start menu of the PC, select All Programs > Analog Devices > ACE> ACE.exe to open the ACE software main window shown below
 -  If the EVAL-AD7190ASDZ is not connected to the USB port via the controller board when the software launches, the AD7190 Eval Board icon does not appear in the Attached Hardware section in ACE (see Figure below).To make the AD7190Eval Board icon appear, connect the EVAL-AD7190ASDZ and the controller board to the USB port of the PC, wait a few seconds, and then follow the instructions in the dialog box that opens.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190attach_hardware.png
+   :align: center
+   :width: 400px
 
--  Double click the AD7190 Eval Board icon to open the AD7190 Eval Board view window shown below:|image11|
+-  Double click the AD7190 Eval Board icon to open the AD7190 Eval Board view window shown below:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190board_view.png
+   :align: center
+   :width: 400px
+
 -  Double click the AD7190 chip icon in the AD7190 Eval Board view window to open the AD7190 chip view window shown below:
--  Click Software Defaults and then click Apply Changes to apply the default settings to the AD7190 (see figure below)\
+-  Click Software Defaults and then click Apply Changes to apply the default settings to the AD7190 (see figure below)
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190_chipview.png
+   :align: center
+   :width: 400px
 
 Chip view window
 ~~~~~~~~~~~~~~~~
@@ -118,7 +145,7 @@ The data waveform graph shows each successive sample of the ADC output. Zoom in 
 The Result section shows the analysis of the channel selected
 
 
-|image13|
+|image1|
 
 3) Samples
 ~~~~~~~~~~
@@ -161,7 +188,7 @@ The Bitfields section shows the individual bitfield of the selected register. Th
 For more information of the register and the bitfields in the register, double click on the register shown by label 2. This will show up the register description shown by label 6.\
 
 
-|image14|
+|image2|
 
 AD7190 Demo Modes
 -----------------
@@ -182,7 +209,9 @@ This page provides a step by step guide to launching and using ADI's new Virtual
 -  Navigate to the Virtual Eval tool by clicking this link: `Virtual Eval <http://beta-tools.analog.com/virtualeval/>`_ or alternatively, by going to the AD7190 homepage on analog.com and finding the link there.
 -  Select the AD7190 by going to 'Precision ADC < 10MSPS' and finding the part there.
 
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad719x_virtual_eval.png
+   :align: center
+   :width: 600px
 
 -  Now you are ready to start using the tool.
 
@@ -193,33 +222,7 @@ Firmware Install Guide
 
 :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7190>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7192_waveformpage.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_2.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_3.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_4.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_5.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_6.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_page_7.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/AD4170/softwareprocedures/4170_ace_plugin_install_page_1.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190_ace_plugin_install.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190attach_hardware.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190board_view.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7190_chipview.png
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7192_waveformpage.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7192_memory_page.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad719x_virtual_eval.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7190/ad7192_memory_page.png
    :width: 600px

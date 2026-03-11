@@ -1,6 +1,6 @@
 .. warning::
 
-   These pages are not updated anymore. Documentation has been moved to :git-lnxdsp-adi-meta:`wiki`
+   These pages are not updated anymore. Documentation has been moved to https://github.com/analogdevicesinc/lnxdsp-adi-meta/wiki
 
 
 SHARC-ALSA Example
@@ -99,7 +99,8 @@ Playing Audio
    The audio from the SHARC is routed to DAC1/2. Connect a set of speakers to J17 also labelled as DAC1/2.
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-alsa-example.jpg
+   :width: 400px
 
 Play back the audio sample file stored in ``/usr/share/sounds/alsa/``
 
@@ -135,6 +136,3 @@ When running aplay again you will hear a dual tone frequency on both channels. T
 .. code:: bash
 
    $ aplay /usr/share/sounds/alsa/2Ch_L440_R200_48kHz_16bit_6s.wav
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-alsa-example.jpg
-   :width: 400px

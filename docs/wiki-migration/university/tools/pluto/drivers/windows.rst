@@ -19,7 +19,7 @@ To install the drivers, it's a simple matter of downloading and executing the dr
    This download should support all of: Windows 11, Windows 10, Windows 8.1, Windows 8, Windows 7 Service Pack 1. If you run into issues, please :ez:`let us know <community/university-program>`.
 
    
-   -  :git-plutosdr-drivers-win:`Windows USB drivers for PlutoSDR and M2k (Windows 32-bit / 64-bit) <releases>`
+   -  `Windows USB drivers for PlutoSDR and M2k (Windows 32-bit / 64-bit) <https://github.com/analogdevicesinc/plutosdr-drivers-win/releases>`_
    
 
 

@@ -16,14 +16,16 @@ This guide shows how AD9739A-EBZ works with SDP-H1 or ADS7-V2 controller board d
 Typical Setup
 -------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_setup_sdph1.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 1a. EVAL-AD9739A Setup with SDP-H1*\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -96,12 +98,12 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image3|\ *Figure 2a. ACE Initial Board Configuration Wizard for SDP-H1*\
+   \ |image2|\ *Figure 2a. ACE Initial Board Configuration Wizard for SDP-H1*\
 
 
 .. container:: centeralign
 
-   \ |image4|\ *Figure 2a. ACE Initial Board Configuration Wizard for ADS7-V2*\
+   |image3|\ *Figure 2a. ACE Initial Board Configuration Wizard for ADS7-V2*\
 
 
 -  Double click the AD9739A Box to open chip view.
@@ -111,12 +113,12 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image5|\ *Figure 3a. ACE Initial Board Configuration Wizard for SDP-H1*\
+   \ |image4|\ *Figure 3a. ACE Initial Board Configuration Wizard for SDP-H1*\
 
 
 .. container:: centeralign
 
-   \ |image6|\ *Figure 3b. ACE Initial Board Configuration Wizard for ADS7-V2*\
+   |image5|\ *Figure 3b. ACE Initial Board Configuration Wizard for ADS7-V2*\
 
 
 -  Start DPG Lite or DPG Downloader.
@@ -134,24 +136,24 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image7|\ *Figure 4a. DPG Lite session for SDP-H1*\
+   \ |image6|\ *Figure 4a. DPG Lite session for SDP-H1*\
 
 
 .. container:: centeralign
 
-   \ |image8|\ *Figure 4b. DPG Lite session for ADS7-V2*\
+   |image7|\ *Figure 4b. DPG Lite session for ADS7-V2*\
 
 
 -  Press the download arrow and then the play button. The FFT plots similar to Figures 5a and 5b should appear in the signal/spectrum analyzer.
 
 .. container:: centeralign
 
-   {{ :resources:eval:dpg:ad9739a_sdp-h1_fft.png?nolink&600 \|\ |image9|\ *Figure 5a. EVAL-AD9739A FFT for Data Rate = 300 MHz, Fout = 20 MHz using SDP-H1*\
+   {{ :resources:eval:dpg:ad9739a_sdp-h1_fft.png?nolink&600 \|\ |image8|\ *Figure 5a. EVAL-AD9739A FFT for Data Rate = 300 MHz, Fout = 20 MHz using SDP-H1*\
 
 
 .. container:: centeralign
 
-   \ |image10|\ *Figure 5b. EVAL-AD9739A FFT for Data Rate = 2 GHz, Fout = 180 MHz using AD7-V2*\
+   |image9|\ *Figure 5b. EVAL-AD9739A FFT for Data Rate = 2 GHz, Fout = 180 MHz using AD7-V2*\
 
 
 Troubleshooting
@@ -166,23 +168,21 @@ This section lists items to check and practices to use when debugging any unexpe
 -  Check on the Spectrum Analyzer if the DAC clock inputs are properly driven. For 300MHz clock using SDP-H1, the spectrum analyzer should detect a weak signal at 300MHz. For 2GHz clock using ADS7-V2, the spectrum analyzer should detect a weak signal at 2GHz. If not detected, check properly the clock source and connections.
 -  Disconnect and reconnect the SDP-H1 /ADS7-V2 and AD9739A evaluation board. Reopen DPG Lite software.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_setup_sdph1.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_setup_ads.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_setup_ads.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_board_ads7.png
    :width: 600px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_board_ads7.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_board_ads7.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_chip_sdp-h1.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_chip_sdp-h1.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_chip_ads7.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ace_chip_ads7.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_sdp-h1_dpg.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_sdp-h1_dpg.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_adsv7_dpg.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_adsv7_dpg.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739_fout_sdp-h1.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739_fout_sdp-h1.png
-   :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ads7_fft.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9739a_ads7_fft.jpg
    :width: 600px

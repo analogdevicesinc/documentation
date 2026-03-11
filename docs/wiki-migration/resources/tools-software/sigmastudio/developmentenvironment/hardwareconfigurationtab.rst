@@ -19,10 +19,12 @@ To insert a processor (IC/DSP) into your design:
 
 -  Drag and Drop the processor block into the Hardware Configuration Window on the right:
 
-   -
+::
 
+     -
 
-   |hardwareconfpic2.png|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardwareconfpic2.png
+   :alt: hardwareconfpic2.png
 
 .. tip::
 
@@ -57,5 +59,4 @@ The "Connected" background color is white when all board ICs are connected, and 
    :alt: hardwareconfpic5.png
    :align: center
 
-.. |hardwareconfpic1.png| image:: https://wiki.analog.com/_media/hardwareconfpic1.png
-.. |hardwareconfpic2.png| image:: https://wiki.analog.com/_media/hardwareconfpic2.png
+.. |hardwareconfpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/hardwareconfpic1.png

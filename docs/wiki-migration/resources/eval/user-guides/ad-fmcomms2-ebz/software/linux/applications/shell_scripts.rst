@@ -34,7 +34,7 @@ To check out these scripts, simply do something like:
    
    ::
    
-      rgetz@pinky ~ $ **git clone https://github.com/analogdevicesinc/linux_image_ADI-scripts.git**
+      rgetz@pinky ~ $ **git clone :git-linux_image_ADI-scripts:`linux_image_ADI-scripts`.git**
    
 
 

@@ -50,9 +50,9 @@
 
 -  You can program the FPGA by opening **Programmer (Quartus Prime)** provided by the Quartus Prime Software Suite. Click the **Auto Detect** button. The detected devices should be displayed now in the device list.
 
-::
 
-    {{ :resources:fpga:altera:programmer.png?650 |Programmer}}
+|Programmer|
+
    * Double-click the first device under the **File** column and browser for the **.sof** file required for the project. Make sure the **Program/Configure** column is checked. Press the **Start** button to program the FPGA.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/altera/add_sof.png

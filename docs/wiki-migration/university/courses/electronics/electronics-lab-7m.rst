@@ -16,9 +16,8 @@ Directions:
 
 The breadboard connections are as shown in the diagram below. The Arbitrary Waveform Generator 1 output drives one end of resistor R\ :sub:`1`. Resistor R\ :sub:`2` is connected between the gate and drain of transistor M\ :sub:`1` with the other end of resistor R\ :sub:`1` connected to the gate as well. The source of M\ :sub:`1`\ is grounded thus M1 is in a common source configuration.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7m_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -44,7 +43,7 @@ Remembering back to the common source amplifier in the previous section, if R\ :
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -54,7 +53,7 @@ Remembering back to the common source amplifier in the previous section, if R\ :
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -62,9 +61,7 @@ Remembering back to the common source amplifier in the previous section, if R\ :
    Figure 4 V\ :sub:`gate` Plot
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a7m_f2.png
-   :align: center
-   :width: 500px
+   |image4|
 
 .. container:: centeralign
 
@@ -89,7 +86,11 @@ What are the relative gains of the two paths when the drain current is less than
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_zero_gain_vds-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a7m_f1.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_zero_gain_vgs-wav.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_zero_gain_vds-wav.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_zero_gain_vgs-wav.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a7m_f2.png
    :width: 500px

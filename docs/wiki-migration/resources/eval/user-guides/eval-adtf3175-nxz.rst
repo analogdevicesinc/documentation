@@ -3,7 +3,7 @@ adding
 .. admonition:: Download
    :class: download
 
-   :git-ToF:`Download the latest software package from here <releases>`
+   `Download the latest software package from here <https://github.com/analogdevicesinc/ToF/releases>`_
 
 
 EVAL-ADTF3175-NXZ

@@ -38,8 +38,8 @@ The target processor is the controller that connects to the main A2B node in the
 
 In the schematic, the target processor is represented as shown in the below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/schematics-components>`. This is the starting node in an A2B schematic and has one output pin (in brown color) representing I2C or SPI connectivity.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/toolbox.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -65,7 +65,7 @@ AD243x is not pin compatible with AD242x. However, both can be part of same netw
 Different variants of transceiver node can be selected using the drop-down box on the node of a custom platform. Depending on the variant selected features/pins become available. Refer A2B Transceiver variant data sheet for more details on the supported features.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -92,7 +92,7 @@ Unlike AD242x, Rx and Tx Pins of AD243x are highly flexible and programmable. Th
 Also note that, Main AD243x transceiver can either interface via SPI or I2C.
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -107,14 +107,14 @@ A **custom platform's** A2B transceiver nodes are able to connect to peripheral 
 There are multiple variants of peripheral devices available as shown in the below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/schematics-components>` (Peripheral nodes in TreeToolBox). The Tx slots of the peripherals can be connected to the corresponding Rx slots of the A2B nodes and the Rx slots of the peripherals can be connected to the corresponding Tx slots of the A2B nodes. The Tx pins can be swapped by using the right click option as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/schematics-components>`.
 
 
-|image3|
+|image4|
 
 .. container:: centeralign
 
    **Figure:** Swapping Tx Rx pins
 
 
-   |image4|
+   |image5|
 
 .. container:: centeralign
 
@@ -126,7 +126,8 @@ There are multiple variants of peripheral devices available as shown in the belo
    Refer :doc:`Peripheral Properties </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/peripheralproperties>` for further details
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/transceiver_nodes.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/pin_assign_tab.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/swapping_rx_tx_pin.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/peripheral_tree_toolbox.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/toolbox.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/transceiver_nodes.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/pin_assign_tab.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/swapping_rx_tx_pin.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/peripheral_tree_toolbox.png

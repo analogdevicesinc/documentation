@@ -35,10 +35,10 @@ The LCD backlight (if present) is controllable by the GPIO Expander. Please refe
 Board Interface
 ~~~~~~~~~~~~~~~
 
--  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.\
+-  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
+   :width: 600px
 
 Pin Connection
 ~~~~~~~~~~~~~~
@@ -104,6 +104,3 @@ References and Links
 -  :doc:`EV-COG-AD3029LZ User guide with the BSP </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 -  `EA-DOGM128w6 (LCD) <http://www.lcd-module.com/eng/pdf/grafik/dogm128e.pdf>`_
 -  Schematics of EV-COG-AD3029LZ and AD-GEAR-DISPLAY1Z are found in the Docs folder of the lcd_example project.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
-   :width: 600px

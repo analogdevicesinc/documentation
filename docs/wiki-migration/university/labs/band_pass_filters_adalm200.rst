@@ -47,9 +47,8 @@ OR
 
 To show how a circuit responds to a range of frequencies a plot of the magnitude ( amplitude ) of the output voltage of the filter as a function of the frequency can be drawn. It is generally used to characterize the range of frequencies in which the filter is designed to operate within. Figure 2 shows a typical frequency response of a Band Pass filter.
 
-.. image:: https://wiki.analog.com/_media/university/labs/alm-cir-lab9-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -67,14 +66,14 @@ Hardware setup
 Build the circuit presented in Figure 3 on the solderless breadboard.
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
    Figure 3: Band Pass Filter circuit
 
 
-   |image3|
+   |image4|
 
 .. container:: centeralign
 
@@ -87,7 +86,7 @@ Procedure
 The band pass filter frequency response can be plotted using the Network Analyzer tool. Compute the center frequency of the filter using equation (4). According to this you will set the start and stop frequencies of the logarithmic sweep. For this filter the center frequency is 7.3 KHz. In the network analyzer set the start frequency at 1 KHz and the stop frequency at 20 KHz. Set the minimum phase at -90 the maximum phase at 90. Magnitude axis can be set from -30 dB to 10dB. In Figure 5 is presented the transfer function of the filter obtained by running the network analyzer.
 
 
-|image4|
+|image5|
 
 .. container:: centeralign
 
@@ -98,7 +97,7 @@ In the Signal Generator tool, on Channel 1, generate a waveform with the frequen
 
 
 
-|image5|
+|image6|
 
 .. container:: centeralign
 
@@ -125,11 +124,13 @@ Compute the cut-off frequencies for each Band Pass filter constructed using the 
 
 .. |image1| image:: https://wiki.analog.com/_media/university/labs/alm-cir-lab9-fig1.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/bpf_circuit.png
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/alm-cir-lab9-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/bpf_circuit.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/bpf_bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/bpf_bb.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/bpf_freq_plot.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/bpf_freq_plot.png
    :width: 900px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/bpf_7.3k_signal.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/bpf_7.3k_signal.png
    :width: 900px

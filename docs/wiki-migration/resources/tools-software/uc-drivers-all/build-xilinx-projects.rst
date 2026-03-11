@@ -150,10 +150,13 @@ Open "Xilinx SDK" and browse for the location of the workspace.
 
 The prebuilt project is included in the opened workspace.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/build-xilinx-projects/sdk_workspace.png
-   :width: 400px
+
+|image1|
 
 .. tip::
 
    All the scripts described previously are dependent of the README.md file, from which the list and the path of the drivers used by each project is obtained. By moving the files to other locations will cause scripts malfunctions.
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers-all/build-xilinx-projects/sdk_workspace.png
+   :width: 400px

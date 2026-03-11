@@ -207,17 +207,17 @@ More Information and Useful Links
 
 *End of Document*
 
-.. |youtube>dUn2_fiOh94| image:: https://wiki.analog.com/_media/youtube>dUn2_fiOh94
-.. |youtube>-Vqbgf0MjPk| image:: https://wiki.analog.com/_media/youtube>-Vqbgf0MjPk
-.. |youtube>jBGzOlThpRE| image:: https://wiki.analog.com/_media/youtube>jBGzOlThpRE
-.. |youtube>5lihNPh4Rm0| image:: https://wiki.analog.com/_media/youtube>5lihNPh4Rm0
-.. |youtube>AKmxmQUwYw0| image:: https://wiki.analog.com/_media/youtube>AKmxmQUwYw0
-.. |youtube>UQgmtWChNfM| image:: https://wiki.analog.com/_media/youtube>UQgmtWChNfM
-.. |youtube>be_5D4eNtCY| image:: https://wiki.analog.com/_media/youtube>be_5D4eNtCY
-.. |youtube>qksh4lGysbI| image:: https://wiki.analog.com/_media/youtube>qksh4lGysbI
-.. |youtube>LYVD014ClZI| image:: https://wiki.analog.com/_media/youtube>LYVD014ClZI
-.. |youtube>51O5FLVZE4c| image:: https://wiki.analog.com/_media/youtube>51O5FLVZE4c
-.. |youtube>hMiJs2NdXZY| image:: https://wiki.analog.com/_media/youtube>hMiJs2NdXZY
-.. |youtube>hZDopcNjVzY| image:: https://wiki.analog.com/_media/youtube>hZDopcNjVzY
-.. |youtube>CXSbLQgRFAA| image:: https://wiki.analog.com/_media/youtube>CXSbLQgRFAA
-.. |youtube>igrN_wd_g74| image:: https://wiki.analog.com/_media/youtube>igrN_wd_g74
+.. |youtube>dUn2_fiOh94| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>dUn2_fiOh94
+.. |youtube>-Vqbgf0MjPk| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>-Vqbgf0MjPk
+.. |youtube>jBGzOlThpRE| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>jBGzOlThpRE
+.. |youtube>5lihNPh4Rm0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>5lihNPh4Rm0
+.. |youtube>AKmxmQUwYw0| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>AKmxmQUwYw0
+.. |youtube>UQgmtWChNfM| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>UQgmtWChNfM
+.. |youtube>be_5D4eNtCY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>be_5D4eNtCY
+.. |youtube>qksh4lGysbI| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>qksh4lGysbI
+.. |youtube>LYVD014ClZI| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>LYVD014ClZI
+.. |youtube>51O5FLVZE4c| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>51O5FLVZE4c
+.. |youtube>hMiJs2NdXZY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>hMiJs2NdXZY
+.. |youtube>hZDopcNjVzY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>hZDopcNjVzY
+.. |youtube>CXSbLQgRFAA| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>CXSbLQgRFAA
+.. |youtube>igrN_wd_g74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>igrN_wd_g74

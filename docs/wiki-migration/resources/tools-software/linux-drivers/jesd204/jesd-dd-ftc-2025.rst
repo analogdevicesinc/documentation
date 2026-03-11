@@ -45,4 +45,4 @@ Install pyadi-jif with optional dependencies
 Download the pyadi-jif Repo Examples
 ------------------------------------
 
-Download the pyadi-jif repo which will contain examples of using JIF: :git-pyadi-jif:`archive/refs/heads/main.zip`
+Download the pyadi-jif repo which will contain examples of using JIF: `main.zip <https://github.com/analogdevicesinc/pyadi-jif/archive/refs/heads/main.zip>`_

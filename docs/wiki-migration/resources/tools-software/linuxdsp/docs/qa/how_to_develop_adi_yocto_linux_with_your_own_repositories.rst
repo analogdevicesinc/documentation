@@ -21,7 +21,7 @@ Download Source code
 .. code:: bash
 
    $ mkdir ~/yocto
-   $ repo init -u https://github.com/analogdevicesinc/lnxdsp-repo-manifest.git -b release/yocto-1.0.0
+   $ repo init -u :git-lnxdsp-repo-manifest:`lnxdsp-repo-manifest` -b release/yocto-1.0.0
 
 Change lnxdsp-adi-meta and lnxdsp-scripts to point to your own repo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

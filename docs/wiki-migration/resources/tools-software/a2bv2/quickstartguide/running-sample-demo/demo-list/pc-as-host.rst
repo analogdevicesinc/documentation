@@ -27,8 +27,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 
 -  Open an A2B schematic from (<A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC).
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png
+   :align: center
 
 .. container:: centeralign
 
@@ -39,8 +39,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    -  Open the platform view either by double clicking on the platform or by clicking on “Canvas” option under the platform in the Project tree as shown in figure.
 
-
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/platform_view_in_sigmastudio_.png
+   :align: center
 
 .. container:: centeralign
 
@@ -49,21 +49,22 @@ The following steps describe the procedure to run a sample demo in PC mode
 
 -  The peripheral settings can be opened by double clicking on the peripheral or by clicking on the “Settings” option under the peripheral in project tree and select the xml as shown in figure.
 
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/peripheral_window_new.png
+   :align: center
 
 .. container:: centeralign
 
    \ **Figure:** Peripheral Settings window
 
 
--  **Note:** The adi_a2b_main_ADAU1452.xml, adi_a2b_main_ADAU1761.xml, adi_a2b_sub_ADAU1961.xml files are available in <A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC\\xml folder
+::
 
--  Make sure that USBi cable is connected to eval board as shown in figure and the board is powered on.
--  Click on “LinkCompileDownload” icon in SigmaStudio+ as shown in figure. This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
+     **Note:** The adi_a2b_main_ADAU1452.xml, adi_a2b_main_ADAU1761.xml, adi_a2b_sub_ADAU1961.xml files are available in <A2B plugin for SigmaStudio+ installation path>>\Schematics\PC\xml folder
+   * Make sure that USBi cable is connected to eval board as shown in figure and the board is powered on.
+   * Click on “LinkCompileDownload” icon in SigmaStudio+ as shown in figure. This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/link_compile_download.png
+   :align: center
 
 .. container:: centeralign
 
@@ -71,8 +72,3 @@ The following steps describe the procedure to run a sample demo in PC mode
 
 
 -  After successful discovery and initialization audio routing can be observed as per the sample demo configuration.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/platform_view_in_sigmastudio_.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/peripheral_window_new.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/link_compile_download.png

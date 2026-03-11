@@ -219,11 +219,11 @@ The board was setup to facilitate gate pulsing usage by enabling the *VDD*/drain
 
 |LTC7000A automatic turn-on circuit|
 
-.. |Input bulk capacitors| image:: https://wiki.analog.com/_media/\input_bulk_capacitors.png
+.. |Input bulk capacitors| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulser-plus/\input_bulk_capacitors.png
    :width: 400px
-.. |Electronic circuit breaker| image:: https://wiki.analog.com/_media/\electronic_circuit_breaker.png
+.. |Electronic circuit breaker| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulser-plus/\electronic_circuit_breaker.png
    :width: 1000px
-.. |Gate pulse generator diagram| image:: https://wiki.analog.com/_media/\gate_pulse_generator_diagram.png
+.. |Gate pulse generator diagram| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulser-plus/\gate_pulse_generator_diagram.png
    :width: 1000px
-.. |LTC7000A automatic turn-on circuit| image:: https://wiki.analog.com/_media/\ltc7000a_automatic_turn-on_circuit.png
+.. |LTC7000A automatic turn-on circuit| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/pulser-plus/\ltc7000a_automatic_turn-on_circuit.png
    :width: 1000px

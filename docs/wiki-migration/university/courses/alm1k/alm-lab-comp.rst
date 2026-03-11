@@ -18,9 +18,8 @@ The Voltage Comparator:
 
 A Differential Voltage Comparator such as the AD8561 from the analog parts kit has a pinout similar in many ways to that of a conventional opamp but with many important differences (figure 1). There are the usual V+ and V– power supply pins but a comparator will also have a ground (GND) pin as well. The differential +IN and –IN pins are essentially the same as a conventional op-amp. There will also be an output pin as in an opamp but there is often a second "inverting" ( or complementary ) output. Also, while the voltage at the output of an opamp can generally swing close to the + and – supply rails, the output of a comparator will swing only between ground and the + supply. This makes the output more like a digital signal and compatible with standard logic gates such as TTL or CMOS. The voltage comparator can be thought of as a single bit analog-to-digital converter (ADC). The AD8561 also includes a LATCH input which will latch or freeze the output and prevent it from changing even if the inputs change.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f1.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,9 +36,8 @@ Directions:
 
 Construct the comparator test circuit as shown in figure 1 on your solder-less breadboard. The two 4.7 KΩ pull-up resistors are optional and are used to increase the peak positive output swing to closer to the +5 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -67,9 +65,8 @@ A common solution to the problem just outlined is to add noise immunity to the c
 
 By "hysteresis" we mean that the threshold voltage is a function of the system’s current operating state, which is defined for this circuit by its output voltage: positive or negative saturation. Because Vth, the voltage at pin 2, is determined by the voltage divider constructed from resistors R\ :sub:`1`\ and R\ :sub:`2`, it changes in response to a change in the output voltage: once the output has gone high in response to an input which has passed below the threshold voltage, the threshold voltage is changed to a higher value Vth+ ( 2.5 V + a fraction of the output high voltage ); conversely, an input voltage climbing through Vth+ will change the output to its low state and cause the threshold voltage to be set to a lower value Vth- ( 2.5 V - a fraction of the output low voltage ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -127,9 +124,8 @@ Directions:
 
 From here on the pin numbers and power / ground connections have been left off the schematics for simplification. Be sure power and ground are always properly connected. Add the RC feedback to your Schmitt trigger circuit as shown in figure 4. Use both scope channels in Hi-Z mode to observe the waveforms across capacitor C\ :sub:`T` at the inverting input and the output as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -143,9 +139,8 @@ Function generator
 
 Using an integrator circuit rather than a simple RC network would charge the capacitor at a constant rate, so the exponential wave shape of the capacitor voltage in the last circuit would be replaced by a linear ramp. The circuit with an op-amp based integrator ( A\ :sub:`2` ) is shown in figure 6. We must now use the noninverting form of the Schmitt trigger because the integrator is inverting.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -161,9 +156,8 @@ Since the voltage applied to the integrator resistor R\ :sub:`I` is constant bet
 
 Figure 6 shows a variation of the function generator circuit which incorporates both frequency and symmetry adjustments of the output waveforms. Note how the diodes D\ :sub:`1` and D\ :sub:`2` select which side of the symmetry potentiometer is used to set the rising and falling current through the integrator’s capacitor (depending on the sign of the voltage follower’s output with respect to the 2.5 V common mode level). An additional opamp connected as a voltage follower (A\ :sub:`3`) isolates the Schmitt trigger’s square wave output and the frequency adjust potentiometer from the current load required by the integrator, so changing the symmetry potentiometer setting will not affect the voltage divider ratio set by the frequency potentiometer or comparator A\ :sub:`2`\ ‘s output saturation voltages, especially important when the symmetry potentiometer is set near one of its limits.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -177,9 +171,8 @@ The op-amp as a "comparator":
 
 Consider an op-amp used to amplify a signal without feedback as shown in figure 7. Because no feedback is used, the input signal is amplified by the full open-loop gain of the op-amp. Even a very small input voltage (less than a millivolt either side of Vth) will be enough to drive the output to either the minimum or maximum output voltage, as shown in the plots of Vin and Vout. Thus, in this case because the op-amp -Input is connected to Vth, the output represents the sign of Vin ( "0" if Vin < Vth, "1" if Vin > Vth ) 1, and the circuit is like a one-bit analog to digital converter (ADC), and functions like a voltage comparator.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f7.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -202,9 +195,8 @@ Directions:
 
 The ADALP2000 Analog Parts Kit contains a wide variety of op-amps. Using as many of the available opamps as possible, build the test circuit shown in figure 8. Be sure to properly note the different pinouts for the various op-amp packages, Single vs Dual vs Quad and connect the input, output power and ground accordingly.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f8.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -230,3 +222,20 @@ Repeat the above tests for each of the different op-amps from the parts kit and 
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f1.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-comp-f8.png
+   :width: 500px

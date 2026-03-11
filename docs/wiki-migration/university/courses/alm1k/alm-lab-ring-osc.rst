@@ -20,9 +20,8 @@ A ring oscillator is an odd number (N) of inverting stages connected in series w
 
 :math:`F = 1 / ( tp_LH + tp_HL) \times n`
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-osc-f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -39,9 +38,8 @@ Making inverters with the CD4007 transistor array
 
 Below in figure 2 is the schematic and pinout for the CD4007 CMOS array:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 450px
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,9 +48,9 @@ Below in figure 2 is the schematic and pinout for the CD4007 CMOS array:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown in figure 3 is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcmg_f2.png
-   :align: center
-   :width: 650px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -66,9 +64,8 @@ Directions:
 
 First you should connect the three inverters from the CD4007 in series to create a delay line of sorts as shown in figure 4. Start with each inverter having a 0.1uF capacitor load. If you don’t have three 0.1 uF capacitors in your parts kit you can use 2 0.047 uF capacitors in parallel. Be sure that you power the circuit using the 3.3 V fixed supply from the digital I/O connector. A square wave from CA-V will be applied to the input of the first inverter and the delay of each stage will be measured by connecting CB-H in Hi-Z mode to the output of each inverter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-osc-f4.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -113,3 +110,12 @@ The output of the ring oscillator is not a very good square wave with sharp rise
 `Ring oscillator <https://en.wikipedia.org/wiki/Ring_oscillator>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-osc-f1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 450px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcmg_f2.png
+   :width: 650px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ring-osc-f4.png
+   :width: 650px

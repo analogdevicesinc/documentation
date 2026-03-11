@@ -52,9 +52,11 @@ Setting up the Hardware
    -  Note, the boards should only plug together one way, preventing reverse connections.
 
 -  Connect your electrochemical gas sensor to the EVAL-CN0396-ARDZ via **M1**.
--  Set the jumpers on EVAL-CN0396-ARDZ board, as shown in the picture below.\
+-  Set the jumpers on EVAL-CN0396-ARDZ board, as shown in the picture below.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_4.png
+   :align: center
+   :width: 600px
 
 -   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
 
@@ -171,6 +173,3 @@ For more information on how to use the tool basics, please check out the `Arduin
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_4.png
-   :width: 600px

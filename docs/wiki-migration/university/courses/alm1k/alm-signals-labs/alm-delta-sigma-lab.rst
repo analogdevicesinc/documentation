@@ -11,9 +11,8 @@ Background:
 
 The delta sigma modulator is the central part of delta sigma analog to digital converters which are also often referred to as over-sampling converters. In its simplest form, which features a single bit quantizer, it produces a bit stream. The digital average of this bit stream represents the input signal level. A simple continuous time first order delta sigma modulator block diagram is shown here:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -32,9 +31,8 @@ Directions:
 
 The breadboard connections are as shown in figure 2. The circuit is powered from the fixed +5V supply. The digital pulse source output drives the clock input of the flip flop at pin 11. The channel A AWG output is connected to resistor R\ :sub:`1` to provide the analog input test signals. The fixed +2.5 V source provides a common mode bias point at the positive input of the opamp. Ground and +5V can now be considered as –Vref and +Vref respectively. The amplifier and capacitor C\ :sub:`1` form the integrator function. Feedback resistor R\ :sub:`2` serves as the one bit feedback DAC. The Channel B input should be connected to alternately measure the digital and analog output waveforms at Dout and Aout. C\ :sub:`2` and R\ :sub:`3` form a simple RC low pass analog reconstruction filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -58,9 +56,8 @@ Directions:
 
 Alongside the other circuit from figure 2 construct the AD645 based digital clock source generator shown in figure 3. Refer to the AD654 datasheet for more details on the operation of the circuit. The output frequency is determined by the values of C\ :sub:`2` and R\ :sub:`5` and the voltage applied to pin 4 (V\ :sub:`REF`). A variable voltage divider consisting of R\ :sub:`1`, R\ :sub:`3` and potentiometer R\ :sub:`2`, across the 2.5 V supply creates V\ :sub:`REF`. The square wave output at pin 1 of the AD654 drives the clock input of the 74HC273 at pin 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -79,18 +76,15 @@ AWG output CA-V should start out set as a DC shape with an Max value of 0.5 volt
 
 Change the shape of AWG channel A to Sine. Change the Min value to 1.5 and the Max value to 3.5 (amplitude equal to 1 V). Now save the waveforms as plot number 4 in your lab report. Open the spectrum analyzer window. The frequency spectrum of the digital waveform and analog waveforms can now be measured and saved as plot number 4 in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4, Dout waveform for 200 Hz input sinewave
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_5.png
-   :align: center
-   :width: 600px
+   |image5|
 
 .. container:: centeralign
 
@@ -107,9 +101,8 @@ Using Semi-Digital FIR Reconstruction Filter:
 
 The remaining 7 stages in the 74HC273 can be configured as a Semi-digital FIR filter as in this Lab Activity. Connect the remaining 7 FF stages in the 74HC273 as a shift register as shown in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -118,9 +111,9 @@ The remaining 7 stages in the 74HC273 can be configured as a Semi-digital FIR fi
 
 Observe the FIR reconstructed analog output as shown in figure 7. How does it compare to the digital and analog outputs without the FIR filter as in figure 2?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_7.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -129,9 +122,9 @@ Observe the FIR reconstructed analog output as shown in figure 7. How does it co
 
 Further analog smoothing/filtering can be done by adding a 0.1 uF capacitor from the output to ground as we see in the next screen shot, figure 8. Higher order active filters can be constructed based on this earlier lab activity. Be sure to include waveform plots of the analog output for both cases in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_8.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -145,9 +138,8 @@ Appendix:
 
 **74HC273 functional block diagram**
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
-   :align: center
-   :width: 250px
+
+|image9|
 
 .. container:: centeralign
 
@@ -169,9 +161,8 @@ Directions:
 
 Construct the D type flip-flop circuit as shown in figure A1 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -183,3 +174,24 @@ Construct the D type flip-flop circuit as shown in figure A1 on your solder-less
 http://www.analog.com/media/en/training-seminars/tutorials/MT-023.pdf http://www.analog.com/en/analog-dialogue/articles/using-sigma-delta-converters-1.html http://www.analog.com/en/analog-dialogue/articles/using-sigma-delta-converters-2.html http://www.analog.com/en/design-center/interactive-design-tools/sigma-delta-adc-tutorial.html http://www.mathworks.com/matlabcentral/fileexchange/19-delta-sigma-toolbox http://en.wikipedia.org/wiki/Delta-sigma_modulation]] http://www2.ece.rochester.edu/~zduan/teaching/ece472/reading/Aziz_1996.pdf
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
+   :width: 250px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_10.png
+   :width: 600px

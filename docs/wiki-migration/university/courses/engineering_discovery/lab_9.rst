@@ -36,14 +36,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard. The circuit should be built in such a way as to allow three more resistors to be added in parallel to R\ :sub:`B`\
+-  Construct the following circuit on the solderless breadboard. The circuit should be built in such a way as to allow three more resistors to be added in parallel to R\ :sub:`B`
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_image_1.png
+   :alt: lab_9_image_1.png
+   :align: center
+   :width: 600px
 
-|lab_9_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard. Note that the R\ :sub:`B` jumper wires are added to facilitate adding resistors in parallel with the 200 KΩ resistor
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard. Note that the R\ :sub:`B` jumper wires are added to facilitate adding resistors in parallel with the 200 KΩ resistor\
-
-|lab_9_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_assembly_image_1.png
+   :alt: lab_9_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -62,9 +67,12 @@ Procedure
 -  Add a 200 KΩ resistor in parallel with the existing base resistor and repeat the previous six steps
 -  Add two more 200 KΩ resistors, one at a time, repeating the above procedure
 -  Observe that as the base current increases the slope of the i\ :sub:`C` versus v\ :sub:`CE` characteristic increases as a manifestation of the Early effect.
--  If the breadboard was constructed as shown above, when completed it should appear as shown below\
+-  If the breadboard was constructed as shown above, when completed it should appear as shown below
 
-|lab_9_assembly_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_assembly_image_2.png
+   :alt: lab_9_assembly_image_2.png
+   :align: center
+   :width: 500px
 
 Theory
 ------
@@ -82,10 +90,3 @@ Observations and Conclusions
 -  There is a slight variation in collector current versus collector-to-emitter voltage in the forward active region due to the Early effect
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_9_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_image_1.png
-   :width: 600px
-.. |lab_9_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_assembly_image_1.png
-   :width: 1000px
-.. |lab_9_assembly_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_9_assembly_image_2.png
-   :width: 500px

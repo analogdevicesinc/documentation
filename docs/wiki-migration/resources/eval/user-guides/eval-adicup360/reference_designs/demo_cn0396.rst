@@ -49,15 +49,18 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :align: center
+   :width: 500px
 
 -  Connect the **EVAL-CN0396-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
--  Set the jumpers on EVAL-CN0396-ARDZ board, as shown in the picture below.\
+-  Set the jumpers on EVAL-CN0396-ARDZ board, as shown in the picture below.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_4.png
+   :align: center
+   :width: 600px
 
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
 
@@ -81,7 +84,7 @@ The software for the **ADuCM360_demo_cn0396** demo can be found here:
    Prebuilt CN0396 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0396.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0396.bin>`
+   -  `ADuCM360_demo_cn0396.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0396.bin>`_
    
    Complete CN0396 Source Files
    
@@ -188,7 +191,3 @@ The **RTE** folder contains device and system related files:
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_1.png
    :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0396/cn0396_demo_4.png
-   :width: 600px

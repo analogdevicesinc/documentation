@@ -138,7 +138,7 @@ The software for the **ADICUP3029_ADXRS290** demo can be found here:
    Prebuilt ADXRS290_IIO Hex File
 
    
-   -  :git-no-OS:`ADXRS290-PMDZ.zip <releases/download/Latest/adxrs290-pmdz.zip>`
+   -  `ADXRS290-PMDZ.zip <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/adxrs290-pmdz.zip>`_
    
    Complete ADXRS290_IIO Source Files
    
@@ -146,7 +146,7 @@ The software for the **ADICUP3029_ADXRS290** demo can be found here:
    
 
 
-To build the project from source, follow the instructions in the :git-no-OS:`no-os wiki <wiki>`.
+To build the project from source, follow the instructions in the `no-os wiki <https://github.com/analogdevicesinc/no-OS/wiki>`_.
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +169,9 @@ Flashing the Firmware/Program
 -  Connect the ADICuP3029 to the PC host via micro-USB cable as shown below.
 -  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg
+   :align: center
+   :width: 200px
 
 -  Simply extract the provided zip file. Do note that when you extract the zip file, there are two Hex file compressed inside. For this demo use the **adxrs290-pmdz_aducm3029_iio_uart.hex**. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
 -  The DS2 will stop blinking and will stay ON once the programming is done.
@@ -234,7 +236,7 @@ Setting up the Hardware
 To set up the circuit for evaluation, consider the following steps:
 
 
-|image2|
+|image1|
 
 .. important::
 
@@ -247,9 +249,7 @@ To set up the circuit for evaluation, consider the following steps:
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
 -  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
 
-::
-
-   {{ :resources:eval:user-guides:circuits-from-the-lab:eval-adxrs290-pmdz:system_con.jpg?600 |}}
+|resources-eval-user-guides-circuits-from-the-lab-eval-adxrs290-pmdz-system_con.jpg|
 
 --------------
 
@@ -266,7 +266,7 @@ The Libiio is a library for interfacing with IIO devices.
 .. admonition:: Download
    :class: download
 
-   Install the :git-libiio:`Libiio package <releases>` on your machine.
+   Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
@@ -346,7 +346,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -378,7 +378,7 @@ Waveform Panel
 The Waveform panel, also known as the Capture window, displays the real-time waveform of ADXRS290's response.
 
 
-|image3|
+|image2|
 
 .. note::
 
@@ -437,13 +437,17 @@ Running the Example
 
 It will return these lines of data on the terminal:
 
-
-
-|Output on Terminal|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_output.png
+   :alt: Output on Terminal
+   :align: center
+   :width: 700px
 
 -  You can opt to see a real-time plot of ADXRS290's output. To do this, open *adxrs290.py* and set *enable_plot* to True. |Enable plot| A plot will pop-up after running the code:
 
-|ADXRS290's Real-time Plot|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_plot.png
+   :alt: ADXRS290's Real-time Plot
+   :align: center
+   :width: 500px
 
 --------------
 
@@ -486,7 +490,7 @@ Additional Information and Useful Links
 Reference Demos & Software
 --------------------------
 
--  :git-no-OS:`ADXRS290 No-OS Build Instruction Guide <wiki>`
+-  `ADXRS290 No-OS Build Instruction Guide <https://github.com/analogdevicesinc/no-OS/wiki>`_
 -  :git-no-OS:`ADXRS290 No-OS Drivers <projects/adxrs290-pmdz>`
 -  :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
@@ -500,20 +504,16 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/rpi_pmod_con.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/rpi_pmod_con.jpg
    :width: 800px
 .. |ADXRS290 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_debug.png
    :width: 400px
 .. |ADXRS290 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_dmm-2.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/iio_osc_graph.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/iio_osc_graph.jpg
    :width: 400px
-.. |Output on Terminal| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_output.png
-   :width: 700px
 .. |Enable plot| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_enable-plot.png
    :width: 500px
-.. |ADXRS290's Real-time Plot| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adxrs290_plot.png
-   :width: 500px
-.. |youtube>LwD-MHoSlWk| image:: https://wiki.analog.com/_media/youtube>LwD-MHoSlWk
+.. |youtube>LwD-MHoSlWk| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>LwD-MHoSlWk
+
+.. |resources-eval-user-guides-circuits-from-the-lab-eval-adxrs290-pmdz-system_con.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/system_con.jpg

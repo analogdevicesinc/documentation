@@ -16,9 +16,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1 below. The output of waveform generator W1 drives one end of resistor R\ :sub:`1`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor M\ :sub:`1` are connected as in previous zero gain amplifier section. Since the V\ :sub:`GS` of M\ :sub:`2` is always smaller than the V\ :sub:`GS` of Q\ :sub:`1`, you should, if possible, select M\ :sub:`1` and M\ :sub:`2` from your inventory of devices such that (at the same drain current) M\ :sub:`2`'s V\ :sub:`GS` is less than M\ :sub:`1`'s V\ :sub:`GS`. The gate of transistor M\ :sub:`2` is connected to the zero gain output at the drain of M\ :sub:`1`. R\ :sub:`3`, connected between the Vp supply and the drain of M\ :sub:`2`, is used along with the 2+ (Single Ended) scope input to measure the drain current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a8m_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -44,7 +43,7 @@ The zero gain amplifier can be used to create a stabilized current source. Becau
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -78,5 +77,7 @@ The output current has a narrow peak. How could multiple copies of the peaking c
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_stabilized_cs.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a8m_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_stabilized_cs.png
    :width: 500px

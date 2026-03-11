@@ -30,13 +30,13 @@ How to Recover the ADICUP360
 -  On the EVAL-ADICUP360 board, hold down the "**BOOT**" button
 -  On the EVAL-ADICUP360 board press and release the "**RESET**" button, but continue holding the "**BOOT**" button
 -  Go back to the CM3WSD UART Programmer application and hit the "**Start**" button
--  Allow the program to finish erasing the memory, and once its complete your EVAL-ADICUP360 will be ready for use once again.\
+-  Allow the program to finish erasing the memory, and once its complete your EVAL-ADICUP360 will be ready for use once again.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/cm3wsd_success.png
+   :align: center
+   :width: 400px
 
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/cm3wsd_setup.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/cm3wsd_success.png
    :width: 400px

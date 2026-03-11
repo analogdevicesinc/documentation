@@ -93,11 +93,9 @@ Connecting the Hardware
    \ **NOTE:** If a different LVDT is used other than the E-100 LVDT from Measurement Specialties, Inc the wiring schematic will be different!
 
 
-\
-
-
-
-|cn0371-wiring_schematic.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-wiring_schematic.png
+   :alt: cn0371-wiring_schematic.png
+   :width: 600px
 
 -  Connect **P3** of the :adi:`EVAL-CN0371-SDPZ` **(CN-0371 Board)** to **CON A** of the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
 -  Connect the USB cable to **J1** of the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
@@ -180,8 +178,6 @@ Registration
 .. |CN0371-install4.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install4.png
    :width: 600px
 .. |CN0371-install5.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0371/CN0371-install5.png
-   :width: 600px
-.. |cn0371-wiring_schematic.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-wiring_schematic.png
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0371/cn0371-hardware1.jpg
    :width: 600px

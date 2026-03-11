@@ -1,6 +1,6 @@
 The hardware platform for each reference projects with FMC-SDP interposer and KC705 evaluation board is common. The next steps should be followed to recreate the software project of the reference design:
 
--  First download the **KC705 Reference project** from Github on your computer. You can do this by clonning this repository: https://github.com/analogdevicesinc/fpgahdl_xilinx.
+-  First download the **KC705 Reference project** from Github on your computer. You can do this by clonning this repository: :git-fpgahdl_xilinx:`fpgahdl_xilinx`.
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/github_repository_folder.jpg
    :alt: Github Repository
@@ -47,13 +47,12 @@ The hardware platform for each reference projects with FMC-SDP interposer and KC
 
    
    -  Before compilation in the file called **Communication.h** you have to uncomment the name of the device that you currently use. In the picture below there is an example of this, which works only with AD5629R project. For another device, uncomment only the respective name. You can have one driver working on multiple devices, so the drivers's name and the uncommented name may not be the same for every project.
-
-
    
-   |Communication.h|
+
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/uncomment_com_file.jpg
+   :alt: Communication.h
+   :width: 200px
 
 -  The SDK should automatically build the project and the *Console* window will display the result of the build. If the build is not done automatically, select the **Project->Build Automatically** menu option.
 -  If the project was built without any errors, you can program the FPGA and run the software application.
-
-.. |Communication.h| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/uncomment_com_file.jpg
-   :width: 200px

@@ -108,23 +108,19 @@ Firstly, make sure all the required steps from the setup explained above are com
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/test_2.png
    :align: center
 
--  Firstly, we will test the outputs on the front panel of Synchrona. Attach the front panel SMA cable to Channel 01, port P and press 'Enter' when ready.\
+-  Firstly, we will test the outputs on the front panel of Synchrona. Attach the front panel SMA cable to Channel 01, port P and press 'Enter' when ready.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/channel1_test.png
+   :align: center
 
 -  Proceed doing the same process for each 'P' and 'N' ports of the channels.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/test_4.png
    :align: right
 
--  For channels 11-14, attach the front panel cable to the Twinax to SMA adapter. Use the new probe to test.\
+-  For channels 11-14, attach the front panel cable to the Twinax to SMA adapter. Use the new probe to test.
 
-
-|image2|
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/testt_5.png
-   :align: right
+|image1| |image2|
 
 -  The next step is testing the inputs, on the back panel. Use the SMA cable for back panel and attach it one at a time to REF IN, PPS, CH2 and CH3. \**For CH2 and CH3 inputs you only need to connect to one of the SMA connectors, P or N. On the input (P or N) you are not connecting the SMA cable place a SMA 50 Ohm terminator.**
 
@@ -150,8 +146,8 @@ Firstly, make sure all the required steps from the setup explained above are com
 
 -  After these steps, the board will power-off and display a message asking you to power up Synchrona in order to perform clean-up. Remove the BR-068851 board from the Synchrona before powering it back on.
 
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/synchrona_clean_up.jpg
+   :align: right
 
 .. important::
 
@@ -168,8 +164,7 @@ Firstly, make sure all the required steps from the setup explained above are com
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/passed_final.png
    :align: center
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/channel1_test.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/channel11.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/channel11.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/testt_5.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/gpio.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/test_6.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-synchrona14-ebz/synchrona_clean_up.jpg

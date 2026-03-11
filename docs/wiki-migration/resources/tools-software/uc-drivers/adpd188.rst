@@ -392,15 +392,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADPD188 Driver. <drivers/photo-electronic/adpd188/adpd188.c>`
+   -  :git-no-OS:`Header file of ADPD188 Driver. <drivers/photo-electronic/adpd188/adpd188.h>`
    
-   |Implementation of ADPD188 Driver.|
 
-   -
-
-   |Header file of ADPD188 Driver.|
-
-.. |Implementation of ADPD188 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/photo-electronic/adpd188/adpd188`.c
-.. |Header file of ADPD188 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/photo-electronic/adpd188/adpd188`.h

@@ -19,4 +19,4 @@ Input to Q pin = :math:`1/Q`
 
 :ez:`dsp/sigmadsp/f/q-a/66757/numeric-format-for-state-variable-q-f-input`
 
-.. |stateqpic1.png| image:: https://wiki.analog.com/_media/stateqpic1.png
+.. |stateqpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/stateqpic1.png

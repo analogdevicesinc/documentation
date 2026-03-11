@@ -5,7 +5,7 @@ MicroPython Overview
 
 To be short, MicroPython is a Python environment running on the bare metal.
 
-Though the :adi:`SHARC Audio Module <sharcaudiomodule>` is powerful enough to run the full Python 3 on the Linux operating system, depending on the use case, it might be favorable to use the Python on bare metal. The MicroPython has been ported over to the SHARC Audio Module, and can be used in conjunction with the :doc:`Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal>` to utilize the on-chip :adi:`sharc` DSP. You can get the latest version of source code at https://github.com/analogdevicesinc/micropython
+Though the :adi:`SHARC Audio Module <sharcaudiomodule>` is powerful enough to run the full Python 3 on the Linux operating system, depending on the use case, it might be favorable to use the Python on bare metal. The MicroPython has been ported over to the SHARC Audio Module, and can be used in conjunction with the :doc:`Bare Metal Framework </wiki-migration/resources/tools-software/sharc-audio-module/baremetal>` to utilize the on-chip :adi:`sharc` DSP. You can get the latest version of source code at :git-micropython:`micropython`
 
 The SHARC Audio Module port of MicroPython currently has drivers for ``GPIO``, ``TWI``, ``SPI``, ``RTC``, ``Timer``, and ``SD`` card, and is compatible with the drivers in the official pyboard by MicroPython.
 
@@ -38,4 +38,4 @@ Follow these tutorials to become familiar with using MicroPython on the SHARC Au
 
 --------------
 
-`Faust and the SHARC Audio Module#.|SHARC Audio Module#.|Back to main SHARC Audio Module <https://wiki.analog.com/_media/navigation SHARC Audio Module#.faust>`_
+`Faust and the SHARC Audio Module#.|SHARC Audio Module#.|Back to main SHARC Audio Module <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation SHARC Audio Module#.faust>`_

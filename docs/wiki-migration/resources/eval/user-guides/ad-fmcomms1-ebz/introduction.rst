@@ -13,10 +13,8 @@ The :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` is an analog fro
 
 When combined with the Xilinx ZYNQ® Software-Defined Radio Kit, :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` enables a variety of wireless communications functions at the physical layer, from baseband to RF. With up to 4 GB of flash storage space, 512 MB of RAM, Gigabit Ethernet interface (depending on the base platform) and a Linux image built specifically for the :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>`, you can get everything you need for a easy out of the box experience. The platform offers enough flexibility for many applications, and supports streaming data, and standard web interfaces to analyze transmited RF data.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/dscn1188.png
-   :alt: FMComms + Zynq Board
-   :align: center
-   :width: 400px
+
+|FMComms + Zynq Board|
 
 .. warning::
 
@@ -53,3 +51,6 @@ Specifications & Features
 -  Includes schematics, layout, BOM, HDL, Linux drivers and application software
 -  Supports add on cards for spectrum specific designs (PA, LNA etc)
 -  Common I\ :sup:`2`\ C access for all device registers
+
+.. |FMComms + Zynq Board| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/dscn1188.png
+   :width: 400px

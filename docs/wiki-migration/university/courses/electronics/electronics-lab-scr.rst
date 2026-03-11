@@ -15,9 +15,8 @@ SCRs are generally used in power switching applications. In the normal OFF state
 
 Looking at figure 1(a), the four layer structure of the SCR, we see the three terminals, one from the outer p-type layer called the anode A, the second from the outer n-type layer called the cathode K and the third from the base of the lower NPN transistor section and is called gate G.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -50,9 +49,8 @@ Directions:
 
 Build the model of the equivalent circuit of an SCR as shown in figure 2 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -67,7 +65,7 @@ Hardware Setup:
 AWG1 should be configured as a sine wave with an amplitude of 10 V peak-to-peak, zero offset and a frequency of 100 Hz. AWG2 should be configured as a square wave with an amplitude of 800 mV peak-to-peak, 400 mV offset, a frequency of 100 Hz. Be sure to run the two AWG channels synchronously.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -80,15 +78,14 @@ Procedure:
 Trigger the scope on channel 1. While observing the input sine wave on scope channel 1 and the voltage across R\ :sub:`L` on scope channel 2, adjust the phase of AWG2 in steps from 180º to 360º. Depending on the phase setting of AWG2 you should see something that looks similar to the figures below. You will notice that the voltage across R\ :sub:`L` is zero, SCR in OFF state, until the trigger pulse from AWG2 occurs and the SCR remains in the ON state until the input sine wave voltage crosses zero.
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
    Figure 4 Example waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f3a.png
-   :align: center
+   |image5|
 
 .. container:: centeralign
 
@@ -127,9 +124,8 @@ Latch-up is a potentially destructive situation in which a parasitic SCR is trig
 
 Since all these MOS devices are located close together on the monolithic die, with appropriate external excitation, the parasitic SCR devices may turn on, a behavior common with poorly designed CMOS circuits. Figure 4 illustrates a simplified cross section showing two transistors, one PMOS and one NMOS; these could be connected together as logic gates or as an analog amplifier or switch. The parasitic bipolar transistors responsible for latch-up behavior, Q\ :sub:`1` (vertical PNP) and Q\ :sub:`2` (lateral NPN) are as indicated.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f4.png
-   :align: center
-   :width: 650px
+
+|image6|
 
 .. container:: centeralign
 
@@ -160,6 +156,13 @@ The Programmable unijunction transistor or PUT is a close relative of other four
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f3.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f3.png
    :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f3a.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/ascr_f4.png
+   :width: 650px

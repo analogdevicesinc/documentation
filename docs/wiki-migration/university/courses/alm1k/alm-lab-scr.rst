@@ -22,9 +22,8 @@ SCRs are generally used in power switching applications. In the normal OFF state
 
 Looking at figure 1(a), the four layer structure of the SCR, we see the three terminals, one from the outer p-type layer called the anode A, the second from the outer n-type layer called the cathode K and the third from the base of the lower NPN transistor section and is called gate G.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,9 +56,8 @@ Directions:
 
 Build the model of the equivalent circuit of an SCR as shown in figure 2 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -78,9 +76,8 @@ Procedure:
 
 Select all four traces to be displayed, CA-V, CA-I, CB-V and CB-I. While observing the input sine wave on trace CA-V and the voltage across R\ :sub:`L` on trace CB-V, adjust the phase of the channel A sine wave in steps from 90º to 270º. Depending on the phase setting of the channel B square wave you should see something that looks similar to figure 3. The trigger pulse should happen at some time point when CV-A is above the 2.5 V level. You will notice that the voltage across R\ :sub:`L` is zero, SCR in OFF state, until the trigger pulse from the square wave occurs and the SCR remains in the ON state until the input sine wave voltage crosses zero (below the 2.5V level).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -117,9 +114,8 @@ Latch-up is a potentially destructive situation in which a parasitic SCR is trig
 
 Since all these MOS devices are located close together on the monolithic die, with appropriate external excitation, the parasitic SCR devices may turn on, a behavior common with poorly designed CMOS circuits. Figure 4 illustrates a simplified cross section showing two transistors, one PMOS and one NMOS; these could be connected together as logic gates or as an analog amplifier or switch. The parasitic bipolar transistors responsible for latch-up behavior, Q\ :sub:`1` (vertical PNP) and Q\ :sub:`2` (lateral NPN) are as indicated.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -135,9 +131,8 @@ Looking back at figure 1 we note that the triggering current is injected at the 
 
 The Programmable unijunction transistor or PUT is a close relative of other four layer devices in the thyristor family. Its has a four layered construction just like the SCR and has three terminals named anode(A), cathode(K) and gate(G) again like the thyristors. It is often referred to as a programmable Uni-Junction Transistor because its characteristics and parameters are similar to those of the UJT. The programmability of typical UJT parameters like intrinsic standoff ratio (η), peak voltage(Vp) etc is made by connecting two external resistors. In a conventional UJT, the parameters like Vp, η etc are fixed by the device processing and cannot be changed by the user. The main application of programmable UJT are relaxation oscillators , thyristor triggering, pulse circuits and timing circuits. ON Semiconductor® is the only manufacturer of PUTs today. 2N6027 is the most common type number and it is available in a TO-92 plastic package. The internal block diagram and circuit symbol of PUT are shown below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -151,9 +146,8 @@ PUT characteristics.
 
 PUT characteristics are best shown as a plot of the anode voltage Va and anode current Ia of the PUT. The typical biasing diagram and characteristics plot of a PUT is shown in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -177,9 +171,8 @@ Directions:
 
 Modify your circuit from figure 2 to look like figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f7.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -196,9 +189,8 @@ PUT relaxation oscillator.
 
 A relaxation oscillator is a common application of a programmable UJT. A PUT relaxation oscillator can be used for generating a wide range of saw tooth wave forms. It is called a relaxation oscillator because the timing interval is started by the gradual charging of a capacitor and the timing interval is terminated by the sudden discharge of the capacitor when the PUT is triggered. The circuit diagram of a PUT relaxation oscillator is shown below in figure 8.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f8.png
-   :align: center
-   :width: 400px
+
+|image8|
 
 .. container:: centeralign
 
@@ -207,9 +199,9 @@ A relaxation oscillator is a common application of a programmable UJT. A PUT rel
 
 Resistors R\ :sub:`1` and R\ :sub:`2` set the peak voltage (Vp) and intrinsic standoff ratio (η) of the PUT. Resistor R\ :sub:`k` limits cathode current of the PUT. Resistor R\ :sub:`T` and capacitor C\ :sub:`T` set the frequency of the oscillator. When the supply voltage V\ :sub:`CC` is applied, the capacitor C\ :sub:`T` starts charging through resistor R\ :sub:`T`. When the voltage across the capacitor exceeds the peak voltage (Vp) the PUT is triggered and goes into negative resistance mode and this creates a low resistance path from anode(A) to cathode(K). The capacitor discharges through the PUT. When the voltage across the capacitor goes below valley point voltage (Vv) the PUT reverts to its OFF initial condition and the capacitor C\ :sub:`T` will stop discharging. The capacitor will start to charge again and the cycle is repeated. This series of charging and discharging results in a exponential sawtooth waveform across the capacitor as shown in the figure 9 below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f9.png
-   :align: center
-   :width: 600px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -237,9 +229,8 @@ Directions:
 
 Build the circuit of the ramp generator with PUT (SCR) trigger as shown in figure 10 on your solder-less breadboard. PNP transistors Q\ :sub:`1` and Q\ :sub:`2` form a current mirror current source. PNP Q\ :sub:`3` and NPN Q\ :sub:`4` simulate the operation of the PUT. Emitter follower, Q\ :sub:`5`, is added to provide a low impedance output for the ramp signal. The peak voltage where the simulated PUT triggers is set by potentiometer R\ :sub:`6`. The charging current is fixed ( set by R\ :sub:`3` ) so changing the trigger voltage not only changes the amplitude of the ramp but also the ramp time.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -267,9 +258,8 @@ Stair Step Waveform Generator:
 
 As a further demonstration of the switching function of the PUT device configuration consider the LTspice simulation schematic shown in figure 11. To understand the operation of the circuit we first assume there is no charge on capacitor C5 and node Vcap is near the positive supply voltage. A square wave is applied at Vin and is capacitively coupled to the emitter of Q3. The falling edge of the input waveform induces a slug of charge equal to the change in voltage times the value of C4. The charge in voltage also drives the emitter of Q3 below ground turning it on until an equal amount of charge flows through Q3 discharging the voltage on node Vcap toward ground. The change is the voltage on C5 is proportional to the voltage swing of the input waveform and the ratio of C4/C5. The voltage on Vcap continues to discharge until the voltage reaches the trigger voltage of the (simulated) PUT formed by NPN Q4 and PNP Q6. Emitter follower Q1 buffers the Vcap waveform at Vout.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f11.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -278,9 +268,9 @@ As a further demonstration of the switching function of the PUT device configura
 
 The LTspice simulation results are shown in figure 12. A 3.5 V step at the input produces approximately 0.8 V change in the output stair step waveform.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f12.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -302,3 +292,28 @@ What other circuits could be used to generate the input waveform and does it hav
 http://en.wikipedia.org/wiki/Silicon-controlled_rectifier :adi:`Electrically Induced Damage to Standard Linear Integrated Circuits <static/imported-files/application_notes/AN-397.pdf>` :adi:`Winning the Battle Against Latch-up in CMOS Analog Switches <library/analogDialogue/archives/35-05/latchup/latchup.pdf>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f8.png
+   :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f12.png
+   :width: 600px

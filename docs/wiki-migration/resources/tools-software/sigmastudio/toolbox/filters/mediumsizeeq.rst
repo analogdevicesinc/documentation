@@ -30,7 +30,9 @@ To use this block:
      *6-channel - Single-Precision
    * Click the blue icon to choose which filter you want to implement: Peak or High- / Low-Shelf.
    * Double-click right in the middle of the block to bring up the EQ parameter window:
-   {{ idxpic2.png }}
+
+   .. image:: https://wiki.analog.com/_media/idxpic2.png
+
    * Select from the dropdown menu which of the two types of filters you want and enter the parameters desired. Peaking is the default.
 
 After choosing the filter type, right-click the block to either Grow or Add to it. Growing adds another frequency band to the block, equivalent to having two individual filters in series, while adding an algorithm adds another input/output pair, equivalent to adding a filter in parallel.
@@ -90,8 +92,8 @@ Handy for ear training, this is a quick and versatile block, as can be seen by c
 
 As with Peaking, Shelving parameters may be changed handily and the results immediately checked for audible effect.
 
-.. |medpic1.png| image:: https://wiki.analog.com/_media/medpic1.png
-.. |medpic3.png| image:: https://wiki.analog.com/_media/medpic3.png
-.. |medpic6.png| image:: https://wiki.analog.com/_media/medpic6.png
-.. |medpic7.png| image:: https://wiki.analog.com/_media/medpic7.png
-.. |medpic8.png| image:: https://wiki.analog.com/_media/medpic8.png
+.. |medpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic1.png
+.. |medpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic3.png
+.. |medpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic6.png
+.. |medpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic7.png
+.. |medpic8.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/medpic8.png

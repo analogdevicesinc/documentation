@@ -8,9 +8,8 @@ The differential pair we studied in chapter 12, in Bipolar or FET form, is the m
 
 The basic current feedback amplifier topology is shown in figure 13.1. Notice that within the model, a unity gain buffer connects the non-inverting input to the inverting input. In the ideal case, the output impedance of this buffer is zero (R\ :sub:`O` = 0), and the error signal is a small current, i, which flows into the inverting input. The error current, i, is mirrored into a high impedance, T(s), and the voltage developed across T(s) is equal to T(s)·i. (The quantity T(s) is generally referred to as the open-loop transimpedance gain.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ The CFB topology is primarily used where the ultimate in high speed and low dist
 
 Figure 13.2 shows a simplified schematic of an example of an early IC CFB op amp, the AD846-introduced by Analog Devices in 1988. Notice that full advantage is taken of a complementary bipolar (CB) process which provides well matched PNP and NPN transistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f2.png
-   :align: center
-   :width: 650px
+
+|image2|
 
 .. container:: centeralign
 
@@ -57,9 +55,8 @@ Transistors Q\ :sub:`1`-Q\ :sub:`2` buffer the non-inverting input (pin 3) and d
 
 One primary difference between the CFB and VFB amps is that the CFB amplifier does not have a constant gain-bandwidth product. While there is a small change in bandwidth with gain, it is much less than the 6 dB/octave we see with a VFB op amp. This is shown in figure 13.4. As previously mentioned, the bandwidth of a CFB op amp is proportional to the feedback resistor. For every CFB op amp there is a recommended value of feedback resistor for maximum bandwidth. If you increase the value of the resistor beyond this value, you reduce the bandwidth. If you use a lower value of resistor below this value, the phase margin is reduced, and the amplifier may become unstable.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f3.png
-   :align: center
-   :width: 700px
+
+|image3|
 
 .. container:: centeralign
 
@@ -68,9 +65,9 @@ One primary difference between the CFB and VFB amps is that the CFB amplifier do
 
 Gain is manipulated in a CFB op amp application by choosing the correct feedback resistor for the device (R\ :sub:`2`), and then selecting the bottom resistor (R\ :sub:`1`) to yield the desired closed loop gain. The gain relationship of R\ :sub:`2` and R\ :sub:`1` is identical to the case of a VFB op amp. The optimum feedback resistor may be different for different operational conditions. For instance, the value will change for different package types because of the variation in parasitic capacitances. Figure 13.5 shows the optimum feedback resistor for the AD8001 op amp for various gains for the PDIP, SOIC, and SOT-23 packages.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f4.png
-   :align: center
-   :width: 800px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -105,3 +102,12 @@ while CFB amplifiers offer: • Faster Slew Rates • Lower Distortion • Feedb
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-14>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f2.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f3.png
+   :width: 700px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr13-f4.png
+   :width: 800px

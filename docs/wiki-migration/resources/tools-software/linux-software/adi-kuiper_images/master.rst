@@ -1,4 +1,4 @@
-HDL and Linux projects are build whenever there are new commits in `HDL </repo>hdl/tree/master>`__ or `Linux </repo>linux>`__ repositories. Output boot files are structured in folders as they would be on SD card, and archived.
+HDL and Linux projects are build whenever there are new commits in :git-hdl:`HDL <tree/master>` or :git-linux:`Linux <linux>` repositories. Output boot files are structured in folders as they would be on SD card, and archived.
 
 Master Boot partition files
 ===========================
@@ -12,7 +12,7 @@ Master Boot partition files
          
          -  `Master boot files <https://swdownloads.analog.com/cse/boot_partition_files/master/latest_boot_partition.tar.gz>`_
          
-         -  MD5 checksum can be verified `here <https://wiki.analog.com/https/swdownloads.analog.com/cse/boot_partition_files/master/latest_boot.txt>`_
+         -  MD5 checksum can be verified `here <https://swdownloads.analog.com/cse/boot_partition_files/master/latest_boot.txt>`_
          
 
    

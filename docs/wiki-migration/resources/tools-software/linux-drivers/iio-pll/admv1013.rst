@@ -34,7 +34,7 @@ Files
 +---------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | Function      | File                                                                                                                                |
 +===============+=====================================================================================================================================+
-| driver        | `drivers/iio/frequency/admv1013.c </linux.github>master?drivers/iio/frequency/admv1013.c>`__                                        |
+| driver        | :git-linux:`drivers/iio/frequency/admv1013.c`                                                                                       |
 +---------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | Documentation | `sysfs-bus-iio <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-bus-iio>`_  |
 +---------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -301,5 +301,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_VntEwUe24
 

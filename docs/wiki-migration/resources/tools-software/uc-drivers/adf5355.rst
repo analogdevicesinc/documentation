@@ -65,15 +65,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADF5355 Driver. <drivers/frequency/adf5355/adf5355.c>`
+   -  :git-no-OS:`Header file of ADF5355 Driver. <drivers/frequency/adf5355/adf5355.h>`
    
-   |Implementation of ADF5355 Driver.|
 
-   -
-
-   |Header file of ADF5355 Driver.|
-
-.. |Implementation of ADF5355 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5355/adf5355`.c
-.. |Header file of ADF5355 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5355/adf5355`.h

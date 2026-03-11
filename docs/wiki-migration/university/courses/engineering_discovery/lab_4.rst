@@ -41,14 +41,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard; note that the +5 V power is to be supplied by the M1K\
+-  Construct the following circuit on the solderless breadboard; note that the +5 V power is to be supplied by the M1K
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_image_1.png
+   :alt: lab_4_image_1.png
+   :align: center
+   :width: 700px
 
-|lab_4_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard; note that the top rows are reserved for 5.0 V and GND connections
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard; note that the top rows are reserved for 5.0 V and GND connections\
-
-|lab_4_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_assembly_image_1.png
+   :alt: lab_4_assembly_image_1.png
+   :align: center
+   :width: 800px
 
 -  Refer to the included section below for details regarding the microphone pin assignments
 
@@ -139,15 +144,19 @@ Change the relative distance between the speaker and microphone an observe the a
 **Return to ALM Lab Activity\**\ :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`**.**
 
 
--  Refer to the illustration below that shows how to connect the components\
+-  Refer to the illustration below that shows how to connect the components
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_assembly_image_2.png
+   :alt: lab_4_assembly_image_2.png
+   :align: center
+   :width: 1200px
 
+-  See the illustration below that shows how to connect an extension cable to the loudspeaker
 
-|lab_4_assembly_image_2.png|
-
--  See the illustration below that shows how to connect an extension cable to the loudspeaker\
-
-|lab_4_assembly_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_assembly_image_3.png
+   :alt: lab_4_assembly_image_3.png
+   :align: center
+   :width: 600px
 
 -  Run PixelPulse on the computer and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -182,12 +191,3 @@ Observations and Conclusions
 -  Positive feedback can occur in an audio amplifier with a microphone input and loudspeaker output if the microphone is placed too close to the loudspeaker
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_4_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_image_1.png
-   :width: 700px
-.. |lab_4_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_assembly_image_1.png
-   :width: 800px
-.. |lab_4_assembly_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_assembly_image_2.png
-   :width: 1200px
-.. |lab_4_assembly_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4_assembly_image_3.png
-   :width: 600px

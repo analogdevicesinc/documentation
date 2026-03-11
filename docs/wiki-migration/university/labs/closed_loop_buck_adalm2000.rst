@@ -51,7 +51,9 @@ Figure X below shows the buck power stage from the open-loop exercise, but with 
 -  If the output voltage is MUCH too high, the output voltage ramps down quickly.
 -  And finally, if the output voltage is "just right", hold the output voltage constant
 
-|image1|
+.. image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_voltage_mode_no_mbrook.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -68,7 +70,7 @@ Also note the following simplifications:
 Open the CL_buck_voltage_mode.asc simulaton and run it. Observe the turn-on transient, which has quite a bit of overshoot, but then stabilizes at 5.0V. Zoom in on the switch node and inductor current after the intial transient, shown in Figure X. Note that the circuit is operating in DCM.
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -79,7 +81,7 @@ BEFORE APPLYING POWER… Configure the ADALM-SR1 board as shown in Figure X belo
 
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -115,7 +117,7 @@ Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this
 Ramp the Power Input to 12V and observe the current sense and switch node waveforms. Note that Scopy's vertical scale can be entered arbitrarily - enter a value of 350mV/Div, which corresponds to 500mA/Div. Figure X shows the measured results; compare with the simulated result in Figure X.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -149,7 +151,7 @@ Buck Power Stage Continuous model, voltage-mode
 Consider the ADALM-SR1 power stage when configured for open-loop, duty cycle control mode, with the LTC6992-3 PWM generator providing the gate control:
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -160,7 +162,7 @@ The property of this circuit that needs to be extracted is the transfer function
 
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -176,7 +178,7 @@ noting that the inductance, output capacitors, and load resistor are identical t
 will allow us to measure the transfer function from 5Hz to 50kHz, with the result shown here:
 
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -204,7 +206,7 @@ Which is great! But... remember that we can't use a .AC directive on the switchi
 performs a roughly equivalent analysis, stepping the input frequency from 100Hz to 100kHz, but at each step, capturing the input and output waveforms and performing a Fourier analysis to extract gain and phase. The result is shown below:
 
 
-|image8|
+|image7|
 
 .. container:: centeralign
 
@@ -215,7 +217,7 @@ So now that we're convinced that these two simulation methods produce approximat
 
 
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -235,7 +237,7 @@ The last step, naturally is to measure the actual power stage and see how it com
 
 
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
@@ -258,7 +260,7 @@ Set the Signal Generator Channel 1 (W1 in Figure 10) to 25Hz sinewave, 500mV p-p
 Set the oscilloscope to 10ms/div, CH1 to 5mV/div, and CH2 to 50mV/div. We know that a duty cyle range of 0 to 100% should correspond to an output voltage of 0 to 12V, which is "a bit more than 10", so the CH2 amplitude should apper about 20% larger than the CH1 amplitude. But let's illuminate one more subtelety about our test equipment - the output trace looks suspiciously "clean" given the regulator's switching nature, doesn't it? And the stimulus trace has some strange "steppiness" as well. It turns out that there are several filters in the ADALM2000 itself and Scopy, and we can use them to our advantage.
 
 
-|image11|
+|image10|
 
 .. container:: centeralign
 
@@ -269,7 +271,7 @@ Open the Settings (gear icon) in Scopy, and de-select sample rate filtering. The
 
 
 
-|image12|
+|image11|
 
 .. container:: centeralign
 
@@ -286,7 +288,7 @@ The next step is to measure the relative amplitude of both the stimulus and the 
 Next, increase the frequency in 10Hz increments, until the output amplitude drops to 70.7% of its initial value. (about 160Hz in Figure 13) This is the -3dB, or cutoff frequency of the power stage. You should also see a delay between the stimulus and output - use the time cursors to measure the time between the peak of the stimulus waveform and the peak of the output waveform.
 
 
-|image13|
+|image12|
 
 .. container:: centeralign
 
@@ -321,29 +323,27 @@ Intro on differences in control dynamics...
 
 **Return to** :doc:`Power Based Lab Activity Material </wiki-migration/university/labs/power>` **Return to** :doc:`Engineering University Program Home </wiki-migration/university>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_voltage_mode_no_mbrook.png
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_12vin_5vout_12p5_load_sim.png
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_12vin_5vout_12p5_load_sim.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/sr1_config_cl_vmode_buck.png
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/sr1_config_cl_vmode_buck.png
    :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_12vin_5vout_12p5_load_scopy.png
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/cl_buck_vmode_12vin_5vout_12p5_load_scopy.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_sw.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_sw.png
    :width: 800px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin.png
    :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin_response_ac.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin_response_ac.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin_response_step.png
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_lin_response_step.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_sw_response.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_sw_response.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/SR1_config_CL_Vmode_buck_pwr_stage_char.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/SR1_config_CL_Vmode_buck_pwr_stage_char.png
    :width: 1000px
-.. |image11| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_actual_filtered.png
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_actual_filtered.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_actual_noisy.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_actual_noisy.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_at_cutoff.png
+.. |image12| image:: https://wiki.analog.com/_media/university/labs/closed_loop_buck_adalm2000/CL_Buck_vmode_powers_stage_at_cutoff.png
    :width: 600px

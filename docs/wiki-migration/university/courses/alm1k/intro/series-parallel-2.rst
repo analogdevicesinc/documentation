@@ -15,9 +15,8 @@ In this lab activity, we will first discuss the difference between series circui
 
 Before we get too far into the explanation, we need to define what a circuit node is. A node in a circuit is nothing more than the electrical junction between two or more components. When a circuit is depicted in a schematic such as figure 1, the nodes are represented by the wires (lines) between components.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,9 +42,8 @@ When resistors are in series, they can be combined or lumped together as an equi
 
 :math:`R_SERIES = R_1 + R_2 + R_3 + ...`
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-3.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -83,9 +81,8 @@ For two resistors in parallel this simplifies to:
 
 :math:`\displaystyle R_PAR = \frac{R_1 \times R_2}{R_1+R_2}`
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-4.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -127,9 +124,8 @@ Resistors in Series:
 
 Place three 100Ω resistors in series on your solderless bread board as shown in figure 4. Connect using jumper wires connect the CH A input to the left side of the first resistor and the CH B input to the right side of the same resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-5.png
-   :align: center
-   :width: 300px
+
+|image4|
 
 .. container:: centeralign
 
@@ -144,9 +140,8 @@ Start the ALICE M1K Ohm Meter tool. The screen is shown here. The software uses 
 
 Move the CH B jumper wire to the right end of the second resistor as shown next.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-7.png
-   :align: center
-   :width: 300px
+
+|image5|
 
 .. container:: centeralign
 
@@ -155,9 +150,9 @@ Move the CH B jumper wire to the right end of the second resistor as shown next.
 
 The ohm meter should now read the value for the two resistors in series or about 200 Ω. Now move the CH B jumper wire to the right end of the third resistor as shown next.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-8.png
-   :align: center
-   :width: 300px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -171,9 +166,8 @@ Resistors in Parallel:
 
 Now replace the 100 Ω resistors with 470 Ω resistors as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-9.png
-   :align: center
-   :width: 300px
+
+|image7|
 
 .. container:: centeralign
 
@@ -182,9 +176,9 @@ Now replace the 100 Ω resistors with 470 Ω resistors as shown in figure 7.
 
 The ohm meter should now read the value for the single resistor or about 470 Ω. Move the middle 470 Ω resistor so it is in parallel with the resistor on the right as shown next.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-10.png
-   :align: center
-   :width: 300px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -195,9 +189,8 @@ The ohm meter should now read the value for the two 470 Ω resistors in parallel
 
 Move the third 470 Ω resistor so it is in parallel with the other two resistors on the right as shown next.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-11.png
-   :align: center
-   :width: 300px
+
+|image9|
 
 .. container:: centeralign
 
@@ -215,9 +208,8 @@ More complex connections of resistors are generally just combinations of series 
 
 A combination circuit can be broken up into similar parts that are either series or parallel, as shown in figure 7. In the figure, the total resistance can be calculated by relating the three resistors to each other as in series or in parallel.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-12.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -237,3 +229,24 @@ For more complicated combination circuits, various parts can be identified as se
 **For Further Study:** `Khan Academy - Resistor circuits <https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-resistor-circuits/v/ee-series-resistors>`_ `Boundless Physics <https://courses.lumenlearning.com/boundless-physics/chapter/overview-5/>`_ `Series and parallel circuits (in Physics) <http://physics.bu.edu/py106/notes/Circuits.html>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-3.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-4.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-5.png
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-7.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-8.png
+   :width: 300px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-9.png
+   :width: 300px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-10.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-11.png
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ser-par-12.png
+   :width: 500px

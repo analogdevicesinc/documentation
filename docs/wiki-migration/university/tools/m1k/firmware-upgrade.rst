@@ -30,7 +30,7 @@ The ``smu`` executable (part of the :doc:`libsmu </wiki-migration/university/too
    
 
 
-As you can see in the above, the ``smu`` application provides an option for flashing a firmware to an ADALM1000 board (the ``-f`` or ``--flash`` option). Before running this command, you must first download the firmware image from :git-m1k-fw:`m1k-fw <releases>` project. We recommend to always use the latest firmware release in order to be able to access all supported features. You should download the m1000.bin file.
+As you can see in the above, the ``smu`` application provides an option for flashing a firmware to an ADALM1000 board (the ``-f`` or ``--flash`` option). Before running this command, you must first download the firmware image from `m1k-fw <https://github.com/analogdevicesinc/m1k-fw/releases>`_ project. We recommend to always use the latest firmware release in order to be able to access all supported features. You should download the m1000.bin file.
 
 After downloading the firmware binary, run the following command in your OS specific preferred terminal:
 
@@ -45,9 +45,8 @@ Automatic update from Pixelpulse
 
 Pixelpulse is capable of detecting whether the connected devices have the latest firmware and provides an easy way to upgrade the firmware. It automatically searches on the internet for the latest firmware, downloads it and checks if the connected devices need to be upgraded. The firmware status of the connected devices can be seen by opening the Pixelpulse Device Manager.
 
-.. image:: https://wiki.analog.com/_media/university/tools/dev_manager.png
-   :alt: Device Manager
-   :width: 200px
+
+|Device Manager|
 
 .. tip::
 
@@ -114,6 +113,8 @@ In this case, you need to make sure you installed the latest Pixelpulse2 release
 
 After performing these steps, Pixelpulse2 should be able to detect your device and upgrade the firmware.
 
+.. |Device Manager| image:: https://wiki.analog.com/_media/university/tools/dev_manager.png
+   :width: 200px
 .. |Device Manager devices list| image:: https://wiki.analog.com/_media/university/tools/fw_multiple_devices.png
    :width: 600px
 .. |Device Manager no internet connection error| image:: https://wiki.analog.com/_media/university/tools/fw_no_internet_error.png

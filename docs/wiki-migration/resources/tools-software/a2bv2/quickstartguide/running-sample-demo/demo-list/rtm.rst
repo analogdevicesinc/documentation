@@ -106,9 +106,11 @@ Running sample demo: BF as host
 ::
 
     *The SigmaStudio+ schematic for this demo can be found at "C:\Analog Devices\ADI_A2B-SSPlus_Software-Relx.y.z\Schematics\PC\adi_a2b_3NodeRTMDemoConfig.ssprj". The demo application already uses the exported BCF from this schematic.
-   * The demo project is in /Target/examples/advancedapp/remoteTuner folder. This can be used for downloading using CCES- similar to BF project in [[/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/bf-as-host|running sample demo with BF as host]]
+   * The demo project is in /Target/examples/advancedapp/remoteTuner folder. This can be used for downloading using CCES- similar to BF project in `running sample demo with BF as host <https://wiki.analog.com/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/bf-as-host>`_
 
-   |image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_bf.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -120,6 +122,4 @@ Running sample demo: BF as host
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_ss.jpg
    :width: 600px
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_module_setup.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/rtm_bf.jpg
    :width: 600px

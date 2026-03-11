@@ -97,7 +97,7 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image10|\ *Figure 2b. ACE Initial Configuration Wizard on AD9148-M5375-EBZ Evaluation board*\
+   |image10|\ *Figure 2b. ACE Initial Configuration Wizard on AD9148-M5375-EBZ Evaluation board*\
 
 
 -  Open DPGDownloaderLite. The evaluation board, controller board and **DCO Frequency** of **100MHz** will be automatically recognized by DPG.
@@ -161,7 +161,7 @@ To implement external supply configuration, remove the header shunt of six pin j
 
 .. container:: centeralign
 
-   \ |image13|\ *Table 1. AD9148-EBZ/AD9148-M5375-EBZ Jumper Connection*\
+   |image13|\ *Table 1. AD9148-EBZ/AD9148-M5375-EBZ Jumper Connection*\
 
 
 Other Provisions
@@ -176,7 +176,7 @@ The AD9148-EBZ and AD9148-M5375-EBZ have test points (TP) to check the power sup
 
 .. container:: centeralign
 
-   \ |image15|\ *Table 3. AD9148-M5375-EBZ TP measurements*\
+   |image15|\ *Table 3. AD9148-M5375-EBZ TP measurements*\
 
 
 Reference and Synchronization Clock

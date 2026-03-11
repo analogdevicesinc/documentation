@@ -66,18 +66,21 @@ Getting started
          -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
          -  Using the Arduino Connectors
 
-         |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
+   :align: center
+   :width: 400px
 
-   -  **Option B:** Connect the EVAL-AD7195ASDZ to the EVAL-SDP-CB1Z
+::
 
-      -  Using the 120 pin connector
+     **Option B:** Connect the EVAL-AD7195ASDZ to the EVAL-SDP-CB1Z
+       * Using the 120 pin connector
+         *  Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
+   * If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
+   * Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.
 
-         -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
-
--  If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
--  Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.\
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
+   :align: center
+   :width: 300px
 
 -  The :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>` is a useful demo mode of the Ace Plugin software to ensure that the Evaluation board is communicating correctly with the Ace Plugin software.
 
@@ -115,8 +118,3 @@ Software Guide
 
 -  :doc:`Virtual Eval Guide </wiki-migration/resources/eval/user-guides/ad7195/softwareguide>`
 -  :doc:`AD7195 Firmware </wiki-migration/resources/tools-software/product-support-software/ad719x_mbed_iio_application>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
-   :width: 300px

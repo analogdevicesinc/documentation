@@ -166,11 +166,11 @@ In order to run this example, you need to get the libiio interface from here and
    :class: download
 
    
-   -  :git-libiio-matlab>`__
+   -  :git-libiio-matlab:`Libiio Interface <libiio-matlab>`
    
 
 
-The main function is `ad9361_LTE.m <https::`Libiio Interface </github.com/analogdevicesinc/MathWorks_tools/tree/master/hil_models/legacy/LTE_MATLAB/ad9361_LTE.m>`. This function mainly consists of four parts:
+The main function is :git-MathWorks_tools:`hil_models/legacy/LTE_MATLAB/ad9361_LTE.m`. This function mainly consists of four parts:
 
 -  Pick up LTE parameters according to LTE Mode
 -  Generate LTE Signal using LTE System Toolbox

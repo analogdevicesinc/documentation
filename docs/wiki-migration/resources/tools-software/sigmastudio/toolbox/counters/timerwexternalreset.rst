@@ -35,5 +35,5 @@ In this example schematic, DC input blocks along with a mono switch, allow for t
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/timerwresetpic4.png
    :alt: timerwresetpic4.png
 
-.. |timerwresetpic1.png| image:: https://wiki.analog.com/_media/timerwresetpic1.png
-.. |timerwresetpic2.png| image:: https://wiki.analog.com/_media/timerwresetpic2.png
+.. |timerwresetpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/timerwresetpic1.png
+.. |timerwresetpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/timerwresetpic2.png

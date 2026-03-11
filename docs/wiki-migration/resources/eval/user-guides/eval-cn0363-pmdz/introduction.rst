@@ -5,7 +5,7 @@ EVAL-CN0363-PMDZ Introduction
 | |image1|
 | A clock set to a user-programmable frequency modulates one of the three LED colors (R,G,B) with a constant current driver built around the :adi:`AD8615` op amp, the :adi:`ADG819` switch, and the :adi:`AD5201` digital potentiometer. The beam splitter sends half the light through the sample container and half through the reference container. The :adi:`ADA4528-1`, configured as a transimpedance amplifier, then converts the photodiode current into an output voltage square wave, whose amplitude is proportional to the light transmitted through the sample or reference containers. The transimpedance amplifiers use the ADG633 single-pole, double-throw (SPDT) switches to select one of two transimpedance gains. The :adi:`AD7175-2` Σ-Δ ADC samples the voltage and sends the digital data to an FPGA for digital demodulation.
 
-For a thorough circuit description, please visit :adi:`CN0363 Circuit Note </media/en/reference-design-documentation/reference-designs/CN0363.pdf>`.
+For a thorough circuit description, please visit :adi:`CN0363 Circuit Note <media/en/reference-design-documentation/reference-designs/CN0363.pdf>`.
 
 More Information
 ----------------

@@ -192,7 +192,9 @@ Follow these steps to prepare the SD Card,
 Hardware Connection
 -------------------
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/signal_chain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -221,7 +223,7 @@ Main Window
 Each plugin (or tab) can be detached from the main window simply by clicking on the button placed on the right side of the name of the plugin. Close the detached window to attach the plugin back to the main window. The Main Window is designed to display a configuration panel (plugin) for each device recognized by the system. Additional plugins will be loaded for device debugging and monitoring purposes such as Debug Tab/Plugin and DMM Tab/Plugin.
 
 
-|image13|
+|image12|
 
 .. container:: centeralign
 
@@ -243,7 +245,9 @@ Debug Tab/Plugin
          **b. Address:** The address of the register
          **c. Value:** The value of the register at the given address.
 
-         |image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/debug_tab.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -259,7 +263,9 @@ DMM Tab/Plugin
 -  **Active channels tab:** Displays the list of channels that belong to the enabled devices. All channels can be enabled simultaneously by using the *All Channels* button.
 -  **Right side tab:** Displays data readings of the enabled channels in Active channels tab.
 
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/dmm_tab.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -312,8 +318,9 @@ The Capture Window is where device data is displayed.
 
       -  **Graph Type:** Selects the type of all graphs: lines or dots.
 
-
-      |image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/time_domain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -330,8 +337,8 @@ The Capture Window is where device data is displayed.
 
             -  **PWR Offset:** Selects the offset of the FFT graph.
 
-
-            |image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/frequency_domain.png
+   :align: center
 
 .. container:: centeralign
 
@@ -381,7 +388,9 @@ Once a data is captured, it can be saved using on of the following formats:
 -  .mat
 -  .png
 
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/save.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -397,64 +406,102 @@ Evaluating the EVAL-ADAQ23876 FMCZ / EVAL-ADAQ23878FMCZ using IIO Oscilloscope
    Make sure to download/update to the latest version of IIO-Oscilloscope.
 
    
-   :git-iio-oscilloscope:`releases`
+   https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Ensure that you are using the latest version of IIO Oscilloscope.
--  Select the Refresh button to display the available IIO devices.\ |image19|\
+-  Select the Refresh button to display the available IIO devices.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/refresh.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   //Figure 15: Refreshing the IIO Oscilloscope Connection *
+   //Figure 15: Refreshing the IIO Oscilloscope Connection //
 
 
-- Once ltc2387 appears, select Connect. \
+-  Once ltc2387 appears, select Connect.
 
-.. container:: centeralign
-
-   *Figure 16: Connecting the IIO Oscilloscope*
-
-
-==== IIO Oscilloscope Capture Window ==== === Waveform Plot === \
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/connect.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 17: Time Domain Waveform Plot*
+   \ *Figure 16: Connecting the IIO Oscilloscope*\
 
 
-=== FFT Plot === \
+IIO Oscilloscope Capture Window
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Waveform Plot
+^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/waveform_plot.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 18: FFT Plot*
+   //Figure 17: Time Domain Waveform Plot //
+
+
+FFT Plot
+^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/fft_plot.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   //Figure 18: FFT Plot //
+
 
 To Start
-~~~~~~~~
+^^^^^^^^
 
 To obtain the FFT plot, follow the ff steps:
 
--  Select "Frequency Domain" for the plot type |image20|\
+-  Select "Frequency Domain" for the plot type
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/freq_domain.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 19: Selecting the Plot Type*\
 
 
--  Designate your preferred number of samples under FFT size |image21|\
+-  Designate your preferred number of samples under FFT size
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/sample_size.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figrue 20: Setting the No. of Samples*\
 
 
--  Specify the window type to "Blackmann-Harris". |image22|\
+-  Specify the window type to "Blackmann-Harris".
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/window_type.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 21: Selecting the Window Type*\
 
 
--  Press run to view the result. |image23|\
+-  Press run to view the result.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/run.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -512,26 +559,5 @@ Board Schematic and PCB Layout
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/4aaaaa.png
    :width: 600px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/5aaa.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/signal_chain.png
-   :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/main_window.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/main_window.png
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/debug_tab.png
-   :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/dmm_tab.png
-   :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/time_domain.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/frequency_domain.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/save.png
-   :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/refresh.png
-   :width: 600px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/freq_domain.png
-   :width: 600px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/sample_size.png
-   :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/window_type.png
-   :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adaq23876/run.png
-   :width: 600px

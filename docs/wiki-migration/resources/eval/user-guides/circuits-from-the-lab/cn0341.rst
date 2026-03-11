@@ -16,16 +16,16 @@ This circuit provides a contactless, AMR (Anisotropic Magneto Resistive) linear 
 General Setup
 -------------
 
-::
 
-   *One EVAL-CN0341-SDPZ Evaluation Board
-   *[[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
-   *CN0341 Evaluation Software
-   *One USB Type-A plug to USB Mini-B plug cable.
-   *One Neodymium magnet, approximately two inches in length. magnetized along the length of the magnet.
-   *One of the following:
-     *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-     *DC power supply with a 0-6V output.  (HP6236B)
+
+- One EVAL-CN0341-SDPZ Evaluation Board
+-  :adi:`EVAL-SDP-CB1Z` Evaluation board
+- CN0341 Evaluation Software
+- One USB Type-A plug to USB Mini-B plug cable.
+- One Neodymium magnet, approximately two inches in length. magnetized along the length of the magnet.
+- One of the following:
+  *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
+  *DC power supply with a 0-6V output.  (HP6236B)
 
 Minimum PC/System Requirements
 ------------------------------
@@ -40,25 +40,26 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0341 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0341 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0341\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0341 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0341 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0341\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/destination_directory.png
+   :align: center
 
-|image1|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/begin_install.png
+   :align: center
 
 -  Press **“Next”**.
 -  Upon completion of the installation of the **CN0341 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 -
 
-|image3|
+|image1|
 
 -  Press **“Next”**.
 -
 
-|image4|
+|image2|
 
 -  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
 -  Press **“Install”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0341-SDPZ**
@@ -69,7 +70,7 @@ Opening and Enabling the Evaluation Software
 -  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0341** and press the **“Connect"** button.
 -
 
-|image5|
+|image3|
 
 Step by Step Instruction for Calibrating the System
 ---------------------------------------------------
@@ -83,12 +84,12 @@ Step by Step Instruction for Calibrating the System
    -  It is important to note, the entire length of the magnet is not used for calculating position. In this instance, a linear range of +/-0.5 inches was used. Measurements outside of this range produce increasingly bad linearity errors.
    -
 
-   |image6|
+   |image4|
 
       -
 
 
-      |image7|
+      |image5|
 
 -  Step 1: Press the 'Click to Sample' button to begin data conversion.
 -  Step 2: Slide the magnet past the sensor and observe the changing ADC codes.
@@ -107,21 +108,21 @@ Error Sources, Common Pitfalls and Things to be Weary of
       -  The image below shows the correct position of the sensor with respect to the magnet. The errors introduced by mis-aligning the sensor and magnet vertically. This test consists of moving the PCB up or down by 0.25 inch and 0.5 inch before collecting data. For a measurement range of 1.0 inch, moving the 0.25 inch up or down seriously degrades the performance, adding several mils of error to the calculation. Moving the sensor 0.5 inch up or down makes matters worse, adding tens of mils of error to the original reading
       -
 
-      |image8|
+      |image6|
 
    -  Rotational Mis-alignment:
 
       -  The image below shows a second common error source, rotational misalignment. While the sensor and magnet are positioned ideally with respect to the vertical, the sensor is not parallel to the face of the magnet. Again, several mils of error are added to the calculation depending on the severity of the rotation.
       -
 
-      |image9|
+      |image7|
 
    -  The image below displays one last common error source, sensor-to-magnet distance. The ideal distance between the sensor and magnet is half of the magnet length. Increasing or decreasing this distance introduces errors into the measurement.
 
       -
 
 
-      |image10|
+      |image8|
 
 Registration
 ------------
@@ -131,17 +132,15 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0341-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/destination_directory.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/begin_install.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_2.1.1153.6.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_location.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/cn0341_-_front_panel.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0343.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_2.1.1153.6.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/sdp_drivers_location.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/cn0341_-_front_panel.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0343.jpg
    :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/software.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0345.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/software.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0345.jpg
    :width: 800px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0347.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0347.jpg
    :width: 800px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0350.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0341/img_0350.jpg
    :width: 800px

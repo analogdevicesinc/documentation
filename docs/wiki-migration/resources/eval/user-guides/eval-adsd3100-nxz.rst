@@ -4,7 +4,7 @@ EVAL-ADSD3100-NXZ
 .. admonition:: Download
    :class: download
 
-   :git-ToF:`Download the latest software package from here <releases>`
+   `Download the latest software package from here <https://github.com/analogdevicesinc/ToF/releases>`_
 
 
 Analog Devices 3D time of flight (ToF) camera products capture depth information, enabling advanced machine vision applications and allowing people and devices to sense, capture and interact with their spatial environments.
@@ -99,12 +99,12 @@ System Information
 
 Note: Do not use USB Type-C to USB Type-A adapters.
 
-::
 
-   ; Dimensions : 38mm x 72.5mm x 87mm
-   ; Schematics : [[https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz_drawing_v1.pdf|eval-adsd3100-nxz_drawing_v1.pdf]]
-   ; Laser Safety : Class 1
-   ; Operating Environment : //TO BE COMPLETED//
+
+; Dimensions : 38mm x 72.5mm x 87mm
+; Schematics : `eval-adsd3100-nxz_drawing_v1.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz_drawing_v1.pdf>`_
+; Laser Safety : Class 1
+; Operating Environment : //TO BE COMPLETED//
 
 --------------
 

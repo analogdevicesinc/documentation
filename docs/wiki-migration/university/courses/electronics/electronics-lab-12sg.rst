@@ -34,9 +34,8 @@ Set the AWG 1 to the Following:
 
 Adjust the 500 Ω potentiometer, R\ :sub:`6`, for the best symmetry in the output sine wave shape. Using the FFT display and looking for the minimum even order distortion may be a good way to test the quality of the output sine wave. You may want to adjust the amplitude and DC offset of the input triangle wave to see if that can improve the odd order harmonics in the output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_f1.png
-   :align: center
-   :width: 650px
+
+|image1|
 
 .. container:: centeralign
 
@@ -73,7 +72,7 @@ Hardware Setup
 Connect the circuit shown in figure 1 to a breadboard.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -84,7 +83,7 @@ With the use of M2K, the output s shown below.
 
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -101,9 +100,8 @@ Materials:
 
 2 - 1 KΩ resistors 1 - 47 KΩ resistor 1 - 6.8 KΩ resistor 1 - 220 Ω resistor 1 - 5 KΩ potentiometer 1 - 0.1 uF capacitor 1 - 1 uF capacitor 1 - Red LED 1 - AD654 V-to-F converter 1 - AD8226 IN-AMP 1 - Small signal NPN transistor (2N3904)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_f2.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -118,7 +116,7 @@ Hardware Setup
 Connect the circuit shown in figure 4 to a breadboard.
 
 
-|image3|
+|image5|
 
 .. container:: centeralign
 
@@ -129,7 +127,7 @@ With the use of M2K, the output s shown below. We can adjust the gain resistor o
 
 
 
-|image4|
+|image6|
 
 .. container:: centeralign
 
@@ -154,9 +152,13 @@ Wikipedia page on the hyperbolic tangent, http://en.wikipedia.org/wiki/Hyperboli
 
 **Return to Lab Activities** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf2.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf3.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_f1.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf3.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf5.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf6.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_f2.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf5.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a_sin_nf6.png
    :width: 500px

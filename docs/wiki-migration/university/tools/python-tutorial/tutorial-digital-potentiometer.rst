@@ -20,9 +20,8 @@ Background:
 
 In this tutorial we will be using the AD8402 dual digital potentiometer in the 14 pin DIP package. It contains two 10 KΩ resistor strings with 256 tap points that can be digitally selected through a 3 wire serial data port. The pin out is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f1.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -39,9 +38,8 @@ Directions:
 
 On your solderless breadboard connect the AD8042 digital variable resistor to the ALM1000 analog input connector and digital output connector as shown in figure 2. Refer to figure 1 for the pin numbers on the AD8042 14 pin DIP package.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -66,9 +64,8 @@ Scroll down to the Analog_in() function. You will see a while loop that run as l
 
 Run the program and make note of the measured voltages as you change the number entered for each pot.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f3.png
-   :align: center
-   :width: 200px
+
+|image3|
 
 .. container:: centeralign
 
@@ -79,9 +76,8 @@ Close the ad8402_dual_pot.py program and open the ad8402_dual_slider.py program.
 
 Run the program and make note of the measured voltages as you slide the controls back and forth for each pot.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f4.png
-   :align: center
-   :width: 300px
+
+|image4|
 
 .. container:: centeralign
 
@@ -108,9 +104,8 @@ Directions:
 
 Before making any additions to your breadboard circuit it is probably best to un-plug the ALM1000 from the USB cable. Starting with the circuit from figure 2 on your solderless breadboard remove the connections from the A1, B1, W1 and A2, B2, W2 pins on the AD8402. Add the 555 timer circuit as shown in figure 5 and connect the A1, B1, W1 and A2, B2, W2 pins as indicated by the blue arrows.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -136,3 +131,14 @@ Also explain the charging and discharging waveform on C\ :sub:`2` as the setting
 http://www.analog.com/media/en/technical-documentation/data-sheets/AD8400_8402_8403.pdf https://en.wikipedia.org/wiki/555_timer_IC
 
 **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f1.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f3.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f4.png
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-dig-pot_f5.png
+   :width: 600px

@@ -23,17 +23,20 @@ Additional Equipment Needed
 
 -  Controller Board Option 1 (Use with ADMX1002 only)
 
+   -  :adi:`sdp-s` or :adi:`sdp-b`
+
+      -  USB-A to mini-USB cable
+      -  :adi:`SDP-I-PMOD <eval_sdp-pmod>` interposer board
+
+         -  6V Power Adapter
+
 ::
 
-       *[[:adi:`sdp-s|SDP-S]]` or [[:adi:`sdp-b|SDP-B]]`
-   * USB-A to mini-USB cable
-       *[[:adi:`eval_sdp-pmod|SDP-I-PMOD]]` interposer board
-   * 6V Power Adapter
        *6-Pin PMOD Cable
    * Controller Board Option 2 (Use with ADMX1001 or ADMX1002)
-       *[[:adi:`sdp-h1|SDP-H1]]` controller board
-     * USB-A to mini USB cable
-       * 12V Power Adapter
+     * :adi:`sdp-h1` controller board
+       * USB-A to mini USB cable
+         * 12V Power Adapter
    *  SMA cables for output connection
    * Oscilloscope/Audio analyzer
 
@@ -99,7 +102,8 @@ P13  SYNC_IN                  Removed
 S1   Signal Loopback Enable   Loopback Off [2]_
 ==== ======================== ===================
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmcz_evaluation_board.png
+   :align: center
 
 .. container:: centeralign
 
@@ -124,7 +128,8 @@ Figure 3 illustrates the required setup to evaluate the ADMX1001 and ADMX1002 mo
 -  ADMX100X GUI software that will run on Windows 10
 -  SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to analyzer or oscilloscope
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-h1_setup.png
+   :align: center
 
 .. container:: centeralign
 
@@ -154,7 +159,9 @@ Follow the steps below to set up the full evaluation board.
      * The GUI will display "Connected" in green text at the bottom left corner if the connection was successful.
      **Caution**: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
 
-     |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/complete_setup_using_sdp-h1.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -208,7 +215,8 @@ Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The fol
 -  ADMX100X GUI software that will run on Windows 10
 -  SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to analyzer or oscilloscope
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-s_setup.png
+   :align: center
 
 .. container:: centeralign
 
@@ -243,14 +251,16 @@ Follow the steps below to set up the full evaluation board.
      * The GUI will display "Connected" in green text at the bottom left corner if the connection was successful.
      **Caution**: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
 
-     |image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/sdp-i-pmod_jumper-spi.jpg
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    Figure 6. SDP-I-PMD Interposer Board Jumper Connections
 
 
-   |image7|
+   |image2|
 
 .. container:: centeralign
 
@@ -281,14 +291,14 @@ ADMX1001 can act as master or slave when supporting coherent test signal generat
 The highly integrated data acquisition solution provides 7 programmable gain options with a maximum input range of ±7.5V differential and a maximum input common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up to −130dB. The total dynamic range of the acquisition channel is up to 128dB with a −115dB typical THD with a 1kHz input tone at full scale.
 
 
-|image8|
+|image3|
 
 .. container:: centeralign
 
    *Figure 8. ADMX100X Module*
 
 
-   |image9|
+   |image4|
 
 .. container:: centeralign
 
@@ -319,21 +329,21 @@ Sense Connection
 The DPD algorithm of ADMX100X requires the sense inputs to be connected to the output of ADMX1001 and ADMX1002 which will be used in the process routine of ADMX1001 and ADMX1002 to generate an ultra-high purity sine waveform. The sense connection can be used to combine a user buffer circuit as part of the signal generation in the DPD process by connecting the sense input to the output of the user’s buffer stage.
 
 
-|image10|
+|image5|
 
 .. container:: centeralign
 
    *Figure 10. Typical Performance at 2Vrms*
 
 
-   |image11|
+   |image6|
 
 .. container:: centeralign
 
    *Figure 11. FFT spectrum with 2Vrms at 1kHz before DPD*
 
 
-   |image12|
+   |image7|
 
 .. container:: centeralign
 
@@ -423,9 +433,9 @@ To install the ADMX100X GUI, take the following steps:
 
 -  The installer will begin to load, with the progress window visible on the desktop.
 
-
-
-|image13|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/extractingcomponents.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -434,9 +444,9 @@ To install the ADMX100X GUI, take the following steps:
 
 -  Once the Installer has loaded, the welcome screen will appear. Click Next >
 
-
-
-|image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_welcome.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -445,9 +455,9 @@ To install the ADMX100X GUI, take the following steps:
 
 -  Accept the license agreement on the following screen with the radio button and click Next >
 
-
-
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_licenseagreement.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -456,9 +466,9 @@ To install the ADMX100X GUI, take the following steps:
 
 -  The default installation location is C:\\Analog Devices\\. If another location is desired, click the Change... button on the following screen and navigate to the desired location. Click Next > once the installation location is finalized.
 
-
-
-|image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_installerlocation.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -467,9 +477,9 @@ To install the ADMX100X GUI, take the following steps:
 
 -  The installation can now begin. Click Install to proceed.
 
-
-
-|image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_begininstallation.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -478,9 +488,9 @@ To install the ADMX100X GUI, take the following steps:
 
 -  Once the installation has finished, a window will appear confirming it is completed and give an option to view the Release Notes (opted-in by default). Click Finish to close the installer.
 
-
-
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_complete.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -490,7 +500,8 @@ To install the ADMX100X GUI, take the following steps:
 Software Operation
 ------------------
 
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_overview.png
+   :align: center
 
 .. container:: centeralign
 
@@ -529,7 +540,7 @@ After clicking on the Bell icon in the bottom right of the ADMX100X GUI Status P
 15. Status: List of statuses updated during operation.
 
 
-|image20|
+|image8|
 
 .. container:: centeralign
 
@@ -550,7 +561,9 @@ The UI elements present in the Analog Output Panel, show in Figure 21, are as fo
 -  Profile Table: Displays all the saved profiles and their parameters.
 -  Enable Sequencing  [4]_: Enables running a set of profiles in a user-selected sequence.
 
-|image21|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_output.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -571,7 +584,9 @@ The UI elements present in the Analog Input Panel, shown in Figure 22, are as fo
 -  Triggered Acquisition: This button enables triggered acquisition of the signal. The acquisition will start from a positive zero-crossing for each set of samples.
 -  Start/Stop – Starts/Stops the sample acquisition.
 
-|image22|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_input.png
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -588,7 +603,9 @@ The plots to display the acquired data, shown in Figure 23, have the following e
 -  Waveform Graph control panel: This control panel can be used to scale the graph as needed.
 -  Waveform Graph Axes: The Axes dropdown has two options “Auto” and “Fixed”. If we use “Fixed” axes we can manually set the limits of the graph by clicking on the numbers at the edge of the graph and typing in the required value of the axis limit. The “Auto” setting will automatically scale the axes to fit the waveform in the window.
 
-|image23|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_captured_waveform.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -605,7 +622,9 @@ The settings available, shown in Figure 24, for the Spectrum waveform are as fol
 -  Samples to average: Specifies the number of sets of samples to average for the spectrum calculation. Only applicable when the “Continuous acquisition” checkbox in the Analog Input Panel is checked, or else the value in this textbox is ignored.
 -  Log frequency scale: The checkbox determines the scale of the Frequency axis (X-Axis). If the checkbox is checked the frequency scale is logarithmic, if the box is kept unchecked the frequency scale is linear.
 
-|image24|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_spectrum_settings.png
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -626,7 +645,9 @@ The measurements calculated for the time domain (waveform) and frequency domain 
 -  THD: Total harmonic distortion of the signal.
 -  THDPlusN: Total harmonic distortion and noise of the input signal.
 
-|image25|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_waveform_and_spectrum_measurements.png
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -642,7 +663,9 @@ To generate a single-tone signal without the DPD algorithm set the “Waveform T
 -  The cycles parameter can be used to shift the signal generation between “Single-Shot” and “Continuous” (cycles = 0) mode.
 -  Click on the "ENABLE" button to generate the signal. If the signal is in “Single-Shot” mode, the enable button should be clickable right after signal generation is completed. For a signal generation in “Continuous” mode, press the "DISABLE" button, which will appear once the board is ready to start generating the signal, to disable the waveform.
 
-|image26|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_singletone.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -660,7 +683,9 @@ To generate a single-tone waveform calibrated with the DPD algorithm, set the �
 -  Click on the “ENABLE” button to enable the calibrated signal generation.
 -  Note that any change in parameters would require running calibration again. Calibrated signals can be stored in a profile to eliminate having to run calibration in the future for the same set of parameters, see the Storing Profiles section for instructions.
 
-|image27|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_lowdistortion.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -676,7 +701,9 @@ The following sequence shall produce a two-tone signal, as shown in Figure 28:
 -  Set the appropriate parameters and click the "ENABLE" button.
 -  Click on the "DISABLE" button to disable the generation if needed.
 
-|image28|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dualtone.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -693,7 +720,9 @@ The following sequence shall produce a DC signal, as shown in Figure 29:
 -  Start the signal generation by clicking on the “ENABLE” button.
 -  Click on the "DISABLE" button to disable the generation.
 
-|image29|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dc.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -710,7 +739,9 @@ The ADMX100X GUI comes with 3 built-in AWG waveform options for signal generatio
 -  Start the signal generation by clicking on the “ENABLE” button.
 -  Click on the ‘DISABLE’ button to disable the generation.
 
-|image30|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/generate_awg.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -727,7 +758,9 @@ The following sequence shall produce an arbitrary waveform, as shown in Figure 3
 -  Start the signal generation by clicking on the “ENABLE” button.
 -  Click on the ‘DISABLE’ button to disable the generation if needed.
 
-|image31|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_awg.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -745,7 +778,9 @@ Perform the following sequence to save a waveform to a profile, as shown in Figu
 -  After selecting the profile ID and the waveform parameters, click on the “Save Waveform as profile” button. This might take up to 2 minutes for a "LowDistortion" waveform.
 -  If the profile is saved successfully, you will be able to see it in the profile table at the selected location.
 
-|image32|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_storingprofile.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -764,7 +799,9 @@ The following sequence shall load the previously saved profile, as shown in Figu
 -  To load and enable the selected profile, click on the “ENABLE” button.
 -  To stop the profile signal generation, click on “DISABLE".
 
-|image33|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_loadingprofile.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -783,7 +820,9 @@ The following sequence shall load the previously saved profile with sequencing, 
 -  Click on the “Enable” button to run the selected sequence.
 -  To stop the profile signal generation, click on “Disable".
 
-|image34|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/load_and_enable_profile_with_sequencing.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -802,7 +841,8 @@ The “Analog Input” panel is used to set the parameters for acquisition. Refe
 -  Use the “Spectrum Settings” panel to change the scale of the axes of the spectrum graph.
 -  Click on the “Stop” button to stop the acquisition.
 
-|image35|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_acquisition.png
+   :align: center
 
 .. container:: centeralign
 
@@ -817,7 +857,7 @@ The number of bins used for the fundamental, harmonics, and other components in 
 To do this, go to the GUI folder (C:\\Analog Devices\\Admx100xEvaluationSoftware-Rel2.3.0\\GUI), open **SpectrumSettings.json**, and adjust the number of bins as necessary.
 
 
-|image36|
+|image9|
 
 .. container:: centeralign
 
@@ -995,67 +1035,18 @@ DVDD Current 0.4  A
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmczkit-angle-web.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmcz_evaluation_board.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-h1_setup.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/complete_setup_using_sdp-h1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx1002_4.jpg
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-s_setup.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/sdp/sdp-i-pmod/sdp-i-pmod_jumper-spi.jpg
-   :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx1002_4.jpg
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_module.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_module.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_simplified_block_diagram.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_simplified_block_diagram.png
    :width: 800px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/dpd_before_and_after.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/dpd_before_and_after.png
    :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/before_dpd.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/before_dpd.png
    :width: 500px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/after_dpd.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/after_dpd.png
    :width: 500px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/extractingcomponents.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_welcome.png
-   :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_licenseagreement.png
-   :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_installerlocation.png
-   :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_begininstallation.png
-   :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_complete.png
-   :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_overview.png
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_status_panel.png
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_output.png
-   :width: 300px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_input.png
-   :width: 200px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_captured_waveform.png
-   :width: 300px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_spectrum_settings.png
-   :width: 200px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_waveform_and_spectrum_measurements.png
-   :width: 200px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_singletone.png
-   :width: 300px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_lowdistortion.png
-   :width: 300px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dualtone.png
-   :width: 300px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dc.png
-   :width: 300px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/generate_awg.png
-   :width: 300px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_awg.png
-   :width: 300px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_storingprofile.png
-   :width: 300px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_loadingprofile.png
-   :width: 300px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/load_and_enable_profile_with_sequencing.png
-   :width: 300px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_acquisition.png
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/spectrumsettings.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_status_panel.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/spectrumsettings.png
    :width: 400px

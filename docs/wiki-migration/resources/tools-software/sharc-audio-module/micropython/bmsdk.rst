@@ -299,4 +299,4 @@ Save the code inside the SD card, and run the code using ``execfile`` as before.
 
 --------------
 
-`Using Hardware Peripherals#..micropython|MicroPython Overview#.building|Building MicroPython with CCES <https://wiki.analog.com/_media/navigation SHARC Audio Module#.peripherals>`_
+`Using Hardware Peripherals#..micropython|MicroPython Overview#.building|Building MicroPython with CCES <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/navigation SHARC Audio Module#.peripherals>`_

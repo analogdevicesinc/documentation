@@ -116,4 +116,4 @@ This can be used to subtract two signals FFT's result as shown below.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/complexsub2.jpg
    :align: center
 
-.. |signalsubtractpic1.png| image:: https://wiki.analog.com/_media/signalsubtractpic1.png
+.. |signalsubtractpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/signalsubtractpic1.png

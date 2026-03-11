@@ -90,11 +90,11 @@ There are two device driver solutions that are provided for controlling the **EV
 
 -  **ADT7420 no-OS Driver**
 
-   -  The MAX32655FTHR example application uses the :doc:`ADT7420 no-OS drivers </wiki-migration/resources/tools-software/uc-drivers/adt7420>` and emulates the Linux IIO framework through the :git-libtinyiiod>`__. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
+   -  The MAX32655FTHR example application uses the :doc:`ADT7420 no-OS drivers </wiki-migration/resources/tools-software/uc-drivers/adt7420>` and emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
 -  **ADT7420 Linux Driver**
 
-   -  The `ADT7420 Linux driver <https::`tinyiiod daemon library </git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/hwmon/adt7x10.c>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
+   -  The `ADT7420 Linux driver <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/hwmon/adt7x10.c>`_ is used in applications running the Linux operating system, typically on larger processors and SoC devices.
 
       -  The ADT7420 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
 
@@ -119,7 +119,7 @@ The following is the list of items needed in order to replicate this demo.
 
    -  Prebuilt ADT7420 Hex File
 
-      -  :git-EVAL-ADICUP3029:`AduCM3029_demo_adt7420.Hex <releases/download/Latest/ADuCM3029_demo_adt7420.hex>`
+      -  `AduCM3029_demo_adt7420.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adt7420.hex>`_
 
    -  Complete ADT7420 Source Files
 
@@ -190,12 +190,12 @@ The following is the list of items needed in order to replicate this demo.
 
    -  For MAX32655FTHR,
 
-      -  Pre-built hex file "adt7420-pmdz_maxim_dummy_example_max32655.hex" in :git-no-OS:`adt7420_max32655fthr.hex <releases/download/Latest/adt7420-pmdz.zip>`
+      -  Pre-built hex file "adt7420-pmdz_maxim_dummy_example_max32655.hex" in `adt7420_max32655fthr.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/adt7420-pmdz.zip>`_
       -  PuTTY or other similar software
 
    -  For MAX32650FTHR,
 
-      -  Pre-built hex file "adt7420-pmdz_maxim_dummy_example_max32650.hex" in :git-no-OS:`adt7420_max32650fthr.hex <releases/download/Latest/adt7420-pmdz.zip>`
+      -  Pre-built hex file "adt7420-pmdz_maxim_dummy_example_max32650.hex" in `adt7420_max32650fthr.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/adt7420-pmdz.zip>`_
       -  PuTTY or other similar software
 
 MAX32655FTHR
@@ -320,21 +320,22 @@ To set up the circuit for evaluation, consider the following steps:
 
 -  Connect the P9 of the **PMOD to Raspberry Pi Interposer** board at the male header GPIO pin connector of the **Raspberry Pi** as shown below.
 
-
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
+   :align: center
+   :width: 500px
 
 -  Connect the \*\* :adi:`EVAL-ADT7420-PMDZ` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P3 or P4.
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_with_rpi.jpg
+   :align: center
+   :width: 300px
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card on the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
 -  Power on the RPi board by plugging in a 5 V power supply with a micro-USB connector. The final setup should look similar to the picture below.
 
-::
-
-   {{ :resources:eval:user-guides:circuits-from-the-lab:adt7420:2.png?nolink&500 |}}
+|resources-eval-user-guides-circuits-from-the-lab-adt7420-2.png|
 
 Application Software (All Platforms)
 ------------------------------------
@@ -347,7 +348,7 @@ The Libiio is a library used for interfacing with IIO devices and is required to
 .. admonition:: Download
    :class: download
 
-   Download and install the latest :git-libiio:`Libiio package <releases>` on your machine.
+   Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADT7420-PMDZ is attached. Two platforms are currently supported for the ADT7420: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS ADT7420 demo project. The user needs to supply a **URI**, which will be used in the context creation.
@@ -427,7 +428,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
@@ -474,7 +475,7 @@ At `line 38 of the example python script <https://github.com/analogdevicesinc/py
 Press enter and you will get these readings.
 
 
-|image12|
+|image10|
 
 .. admonition:: Download
    :class: download
@@ -508,7 +509,7 @@ Schematics, PCB Layout, Bill of Materials
 Additional Information
 ----------------------
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -543,13 +544,11 @@ Registration
    :width: 400px
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_max32650_0x48_hex_output.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
-   :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_with_rpi.jpg
-   :width: 300px
 .. |ADT7420 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_iio_debug_panel.png
    :width: 300px
 .. |ADT7420 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_iio_dmm_panel.png
    :width: 300px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_pyadiio_example_max32650.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/adt7420_pyadiio_example_max32650.png
    :width: 600px
+
+.. |resources-eval-user-guides-circuits-from-the-lab-adt7420-2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adt7420/2.png

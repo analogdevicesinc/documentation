@@ -154,9 +154,8 @@ When the application is opened, SPI communication is setup between ADIS16000 (Ga
 
 When the user clicks on **ok** in the above message, the main window with an active tab 'Sensor 1' appears on the screen as shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-main.png
-   :align: center
-   :width: 700px
+
+|image12|
 
 .. container:: center round box
 
@@ -336,3 +335,5 @@ MARC: Think about title for best branding
    :width: 370px
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system-done.png
    :width: 850px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-main.png
+   :width: 700px

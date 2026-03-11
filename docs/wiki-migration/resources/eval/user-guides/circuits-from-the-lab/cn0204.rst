@@ -25,7 +25,7 @@ Required Equipment
 
 -  :adi:`EVAL-CN0204-SDPZ Evaluation Board <CN0204>`
 -  :adi:`EVAL-SDP-CB1Z Controller Board (SDP-B Board) <EVAL-SDP-CB1Z>`
--  `CN0204 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_
+-  `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_
 -  ±25 V/1 A Triple Output DC Power Supply (**Agilent E3631A**)
 -  Optional Digital Multimeter for Verification (**Agilent 34401A 6.5 Digital Multimeter**)
 -  PC with USB interface
@@ -77,11 +77,11 @@ See the table in the image below for the jumper settings. Values in red are the 
 Installing the Evaluation Software
 ----------------------------------
 
--  Extract the file `CN0204 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ and open **setup.exe**
+-  Extract the file `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ and open **setup.exe**
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0204 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0204\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ **NOTE:** It is recommended that you install the `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0204\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
    |image1|
@@ -211,7 +211,7 @@ Running the System
 More Information and Useful Links
 ---------------------------------
 
--  `CN0204 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_
+-  `CN0204 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0204/cn0204%20sdp%20eval%20software.zip>`_
 -  :adi:`CN0204 Circuit Note Page <CN0204>`
 -  :adi:`CN0204 Design Support Package <CN0204 -DesignSupport>`
 -  :adi:`AD5662 Product Page <AD5662>`

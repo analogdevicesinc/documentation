@@ -28,7 +28,7 @@ AD8479 Evaluation Board Photograph
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image2|\
 
 
 .. container:: centeralign
@@ -194,7 +194,7 @@ Evaluation Board Layout
 
 .. container:: centeralign
 
-   \ |image11|\
+   |image11|\
 
 
 .. container:: centeralign

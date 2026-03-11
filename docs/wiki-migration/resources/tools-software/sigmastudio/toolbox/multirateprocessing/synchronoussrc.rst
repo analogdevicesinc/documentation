@@ -78,9 +78,8 @@ Down sampling
 
 The module acts as an down sampler when the input sample rate is greater than the output sample rate. The following example interpolates the input signal which is a sine tone of 800Hz sampled at 48 KHz to an output sine tone at 800Hz sampled at the output sampling frequency of 44.1KHz. Here tone1_2 is set to a sampling rate of 48khz tone1_3 is set to a sampling rate of 44.1khz.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/multirateprocessing/src_example2_schema.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. note::
 
@@ -99,3 +98,6 @@ Supported IC's
 --------------
 
 1. ADAU145x
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/multirateprocessing/src_example2_schema.png
+   :width: 400px

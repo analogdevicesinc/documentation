@@ -121,8 +121,8 @@ Creating Files for use with the Baremetal Framework
 
 -  Click the ``Export/compile to a specific platform`` button
 
-
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
+   :width: 50px
 
 -  In the first dropdown box, choose ``sam``
 -  In the second dropdown box, choose ``sam-source-poly-1``\ (core 1) or ``sam-source-midi``\ (core 2) and then Export:
@@ -321,6 +321,4 @@ The Effects Chain Page:
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
    :width: 50px
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/diagram_button.png
-   :width: 50px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
    :width: 50px

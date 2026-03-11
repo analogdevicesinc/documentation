@@ -98,12 +98,8 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
 
 .. container:: centeralign
 
-   \
-
-
-   |image2|
-
-   *Figure 2. Verifying ADI Kuiper Linux Image File using WinMD5*\
+   
+   |image2| *Figure 2. Verifying ADI Kuiper Linux Image File using WinMD5*\
 
 
 -  If SD Card format is unknown or needs to be reconfigured/reformatted. Download and install `SD Card Formatter <https://www.sdcardformatter.com/>`_ if no formatter software installed on your computer.
@@ -116,12 +112,8 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
 
 .. container:: centeralign
 
-   \
-
-
-   |image3|
-
-   *Figure 3. Formatting the Selected SD Card*\
+   
+   |image3| *Figure 3. Formatting the Selected SD Card*\
 
 
 -  Download and install `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/files/latest/download?source=navbar>`_ (Image Flasher), to write the ADI Kuiper Linux Image to SD Card.
@@ -133,12 +125,8 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
 
 .. container:: centeralign
 
-   \
-
-
-   |image4|
-
-   *Figure 4. Flashing Image to SD Card using Win32DiskImager*\
+   
+   |image4| *Figure 4. Flashing Image to SD Card using Win32DiskImager*\
 
 
 .. tip::
@@ -159,12 +147,8 @@ Ensure that the :doc:`ADI Kuiper Linux Image </wiki-migration/resources/tools-so
 
 .. container:: centeralign
 
-   \
-
-
-   |image5|
-
-   *Figure 5. Copying BOOT.BIN, devicetree.dtb, and uImage to Root Directory of SD Card*\
+   
+   |image5| *Figure 5. Copying BOOT.BIN, devicetree.dtb, and uImage to Root Directory of SD Card*\
 
 
 -  Now, the SD card is **ready**. Always ensure to **safely remove before ejecting** the SD Card.
@@ -188,7 +172,7 @@ This section will discuss on how to setup and configure the `ZedBoard (AES-Z7EV-
 
 .. container:: centeralign
 
-   \ |image7|\
+   |image7|\
 
 
 -  Insert the SD Card into ZedBoard SD Card Interface Connector **(J12)**.

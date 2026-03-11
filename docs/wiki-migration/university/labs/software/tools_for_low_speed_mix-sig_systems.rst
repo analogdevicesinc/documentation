@@ -28,25 +28,25 @@ Materials
 
    -  :adi:`Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT <pmd-rpi-intz>`
 
-::
 
-     *12x 15cm socket-to-socket jumpers such as **[[https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/|these from Schmartboard]]**
-   * 16GB (or larger) Class 10 (or faster) micro-SD card, with **[[/resources/tools-software/linux-software/kuiper-linux|Analog Devices Kuiper Linux]]** installed
+
+- 12x 15cm socket-to-socket jumpers such as **`these from Schmartboard <https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/>`_**
+   * 16GB (or larger) Class 10 (or faster) micro-SD card, with **\ :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`** installed
    * User interface setup (choose one):
      * HDMI monitor, keyboard, mouse plugged directly into Raspberry Pi
      * Host Windows/Linux/Mac computer on same network as Raspberry Pi
-   * [[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000`.html|ADALM2000]] (Not required for all experiments.)
+   * :adi:`ADALM2000 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html>` (Not required for all experiments.)
    * 2N3904 NPN Transistor
    * 47Ω resistor
    * 47kΩ resistor
    * Breadboard or prototyping board, hookup wire
    * Clone or download zip of the Python code for this tutorial
-   * Python files: **[[:git-pyadi-iio:`examples/ad5592r_examples|AD5592r` Pyadi-IIO examples]]**
+   * Python files: **\ :git-pyadi-iio:`AD5592r Pyadi-IIO examples <examples/ad5592r_examples>`**
      * (Note that these are included in the pyadi-iio repo, consider cloning the entire thing:
 
 ::
 
-   git clone https://github.com/analogdevicesinc/pyadi-iio.git
+   git clone :git-pyadi-iio:`pyadi-iio`
 
 -  AD5592R Device Tree Overlay for alternate configuration with GPIO pins
 
@@ -177,4 +177,4 @@ Wrapup
 Additional References
 ---------------------
 
-.. |youtube>tJtzUrt9_1U| image:: https://wiki.analog.com/_media/youtube>tJtzUrt9_1U
+.. |youtube>tJtzUrt9_1U| image:: https://wiki.analog.com/_media/university/labs/software/youtube>tJtzUrt9_1U

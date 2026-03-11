@@ -28,9 +28,9 @@ The Linux kernel uses a "compressed" image format, which creates a header file f
 -  The last step is to create the actual header file which is included into your application. ``rgetz@curly:~/logos$ **~/linux/scripts/pnmtologo -t clut224 Analog_Devices_Logo_clut224.ppm -o Analog_Devices_Logo_clut224.h -n Analog_Devices_logo**``
 -  Depending on what you are and how you want to use the file, you may need to remove some of the Linux kernel references to the file, and replace them with your own. ``rgetz@curly:~/logos$ **sed -i -e 's:%%__%%initdata::' -e 's:%%__%%initconst::' Analog_Devices_Logo_clut224.h**
    rgetz@curly:~/logos$ **sed -i '/^#include/d' Analog_Devices_Logo_clut224.h**
-   rgetz@curly:~/logos$ **sed -i  '/^[[/space|space]]*\.data/d' Analog_Devices_Logo_clut224.h**
-   rgetz@curly:~/logos$ **sed -i '/^[[/space|space]]*\.clut/d' Analog_Devices_Logo_clut224.h**
-   rgetz@curly:~/logos$ **sed -i '/^[[/space|space]]*\.type/d' Analog_Devices_Logo_clut224.h**
+   rgetz@curly:~/logos$ **sed -i  '/^`space <https://wiki.analog.com/space>`_*\.data/d' Analog_Devices_Logo_clut224.h**
+   rgetz@curly:~/logos$ **sed -i '/^`space <https://wiki.analog.com/space>`_*\.clut/d' Analog_Devices_Logo_clut224.h**
+   rgetz@curly:~/logos$ **sed -i '/^`space <https://wiki.analog.com/space>`_*\.type/d' Analog_Devices_Logo_clut224.h**
    rgetz@curly:~/logos$ **sed -i 's:linux_logo:logo:' Analog_Devices_Logo_clut224.h**``
 
 And that's it - it's just a matter of including the image data into your application.

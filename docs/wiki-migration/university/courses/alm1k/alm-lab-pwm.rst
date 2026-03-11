@@ -40,9 +40,8 @@ Directions:
 
 Construct the PWM test circuit as shown in figure 1 on your solder-less breadboard. Start with integrator capacitor C\ :sub:`I` equal to 100 nF ( 0.1 uF ). The oscillator should run at around 1 KHz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pwm_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -75,9 +74,8 @@ We can get slightly better attenuation of the carrier frequency by adding a seco
 
 Add the second filter stage to your breadboard as shown in figure 2 and compare the amount of the carrier frequency feeding through to the output now vs with just the single filter stage as in figure 1. Also note the amount of attenuation and phase shift of the input ( 100 Hz ) you observe now vs with the single filter stage. Explain the differences you see.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pwm_f2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -104,3 +102,8 @@ If you have time try some of the other filter files.
 **For Further Reading:**
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pwm_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pwm_f2.png
+   :width: 400px

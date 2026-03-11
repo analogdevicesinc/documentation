@@ -161,8 +161,12 @@ PHY Exchange Guide, AR8031/8033 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/12_forced_speeds_adin1300_table9.png
-         
+
+   
+      ..
+
+   |image5|
+
          **Hardware Configuration of Auto-MDIX**
 
          
@@ -304,3 +308,4 @@ The following list summarizes an RGMII auto negotiate, 10 Mbps, 100 Mbps, or 100
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/7_mii_mac_interface_mode_pin_comparison_table5.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/9_adin1300_hw_strapping_2_and_4_level_figure3.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/10_4_level_resistor_strapping_rations_table7.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/12_forced_speeds_adin1300_table9.png

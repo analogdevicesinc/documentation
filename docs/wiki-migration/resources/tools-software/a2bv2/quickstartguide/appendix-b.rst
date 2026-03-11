@@ -65,7 +65,8 @@ Data Tunnel Configuration tab in Stream Configuration allows user to add, edit a
    Only AD243x(excluding AD2430 and AD2438) nodes can be part of the data tunnel.
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/data_tunnel_configuration.png
+   :width: 500px
 
 **Figure 65:** Data Tunnel Configuration
 
@@ -174,6 +175,3 @@ Command list utility allows user to merge primary and secondary branch command l
 -  Select the secondary branch main node address from “Chip Address” drop down box.
 -  Click on the Export button to generate merged command list.
 -  Use the Sequence window to Discover and configure the Branching network with generated merged command list file.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/data_tunnel_configuration.png
-   :width: 500px

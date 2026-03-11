@@ -11,9 +11,8 @@ AWG Controls Window:
 
 The AWG controls window is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-window.png
-   :align: center
-   :width: 700px
+
+|image1|
 
 .. container:: centeralign
 
@@ -22,9 +21,9 @@ The AWG controls window is shown in figure 1.
 
 There are two identical sets of controls for configuring the Channel A and B outputs. First there is a drop down menu for selecting the Mode, figure 2. The SVMI option is for sourcing voltage / measure current. The SIMV option is for sourcing current / measure voltage. The Hi-Z option disables the generator output (High Impedance mode). The default at start-up is that both channels are in Hi-Z mode. The Split I/O option separates the generator output signal from the voltage measurement input. In the Rev D version of ALM1000 hardware only the source current function operates when the output and input are on separate pins so the Split I/O option automatically puts the hardware into the source current configuration. To turn the sourced current into a voltage the output termination options can be used. The hardware includes two 50 Ohm resistors that can be connected to the generator output pin. One resistor is tied to ground and the other is tied to the 2.5 V power supply. The drop down menu provides three options Open, To GND, and To 2.5V. If you are just looking at voltage in SVMI mode there should be no noticeable change in the voltage waveform. The current waveform should change to reflect the current now flowing into the resistor. If you are in SIMV then the resistors can act as current to voltage converters.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-modes.png
-   :align: center
-   :width: 250px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -43,9 +42,8 @@ With the Sync AWG check box in either version the outputs are produced in sync w
 
 The Shape drop down menu is used to select the shape of the output waveform. There are 6 built in waveform shapes, DC, Sine, Triangle, Sawtooth, Square, and a 10 level Stair Step. When DC is selected the constant value of the output voltage or current is set by the value in the Max entry window.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-shapes.png
-   :align: center
-   :width: 800px
+
+|image3|
 
 .. container:: centeralign
 
@@ -60,9 +58,8 @@ The Impulse, Trapezoid, U-D Ramp, UU Noise ( uncorrelated uniform distribution )
 
 The basic shape of the Impulse waveform is shown in figure 10. The Max, Min, Freq, Phase and Duty-Cycle values are used to construct the waveform. The Freq setting determines the Period ( 1/Freq ) or spacing between the pulses. The output starts and ends at a value midway between the Min and Max values. The impulse consists of a positive peak followed by a negative peak. The width of the peaks are equal to (Period \* DutyCycle)/ 2. The center of the pulse is delayed by the Phase setting. For example if the phase is set to 180 then the pulse is delayed by ½ the Period (Phase/360).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impulse-waveform.png
-   :align: center
-   :width: 700px
+
+|image4|
 
 .. container:: centeralign
 
@@ -94,9 +91,8 @@ AWGAwaveform[ start : stop ] where start and stop are integers.
 
 For example to copy the CH A captured data from the VBuffA array to the AWGBwaveform array you would simply click on the Math option under the AWG B Shape menu and type VBuffA as the formula, as in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-math-win-1.png
-   :align: center
-   :width: 300px
+
+|image5|
 
 .. container:: centeralign
 
@@ -109,9 +105,8 @@ AWGAwaveform + AWGBwaveform + 1.25
 
 The resulting output wave shapes are shown in figure 6. The CH A trace shows the shape as read in from the file. The CH B trace shows the calculated wave shape with the added noise and offset.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-math-example-1.png
-   :align: center
-   :width: 750px
+
+|image6|
 
 .. container:: centeralign
 
@@ -136,3 +131,16 @@ Or by setting the variable to something other than "Horz", such as "Vert", can b
 **For Further Reading:**
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-window.png
+   :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-modes.png
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-shapes.png
+   :width: 800px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/impulse-waveform.png
+   :width: 700px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-math-win-1.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/awg-math-example-1.png
+   :width: 750px

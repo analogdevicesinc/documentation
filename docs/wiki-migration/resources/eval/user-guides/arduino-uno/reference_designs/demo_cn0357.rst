@@ -42,10 +42,11 @@ Setting up the Hardware
 
    -  Note, the boards should only plug together one way, preventing reverse connections.
 
--  Connect your carbon monoxide(CO) sensor to the EVAL-CN0357-ARDZ via (**P1**).\
+-  Connect your carbon monoxide(CO) sensor to the EVAL-CN0357-ARDZ via (**P1**).
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154407.jpg
+   :align: center
+   :width: 500px
 
 -   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
 
@@ -150,6 +151,3 @@ For more information on how to use the tool basics, please check out the `Arduin
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/arduino-uno/reference_designs/img_20180118_154407.jpg
-   :width: 500px

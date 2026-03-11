@@ -88,8 +88,8 @@ Software Needed
 -  :doc:`Supported Use Cases / Bitstreams Available For Download </wiki-migration/resources/eval/user-guides/quadmxfe/quick-start>`
 -  :doc:`IIO Oscilloscope / LibIIO </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 
-   -  :git-iio-oscilloscope:`Latest IIO Oscilloscope release <releases/latest>`
-   -  :git-libiio:`Latest Libiio release - Look for the '...-Windows-setup.exe' <releases>`
+   -  `Latest IIO Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases/latest>`_
+   -  `Latest Libiio release - Look for the '...-Windows-setup.exe' <https://github.com/analogdevicesinc/libiio/releases>`_
 
 -  :doc:`PuTTY </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 -  :doc:`Xilinx Vivado Toolchain </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
@@ -176,9 +176,9 @@ MATLAB is used to exercise the board through LibIIO objects and provide higher l
 -  Curve Fitting Toolbox
 -  Instrument Control Toolbox
 -  Communications Toolbox Support Package for Xilinx Zynq-Based Radio. Installed through MATLAB Add-On Explorer.
--  Analog Devices High Speed Converter Toolbox. Can be installed through MATLAB Add-On Explorer or latest version here: :git-HighSpeedConverterToolbox>`__
+-  Analog Devices High Speed Converter Toolbox. Can be installed through MATLAB Add-On Explorer or latest version here: :git-HighSpeedConverterToolbox:`High Speed Converter Toolbox Download Page <HighSpeedConverterToolbox>`
 
-Customers can request a free trial via the `Communications Toolbox product page <https::`High Speed Converter Toolbox Download Page </urldefense.com/v3/__https://www.mathworks.com/products/communications.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUn_UlFhkQ$>`, or they can request a `Software-Defined Radio Design trial “package” <https://urldefense.com/v3/__https://www.mathworks.com/campaigns/products/trials/targeted/sdr.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUnqe87Ows$>`_, which includes MATLAB, Simulink, DSP System Toolbox, Signal Processing Toolbox, and Communications Toolbox.
+Customers can request a free trial via the `Communications Toolbox product page <https://urldefense.com/v3/__https://www.mathworks.com/products/communications.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUn_UlFhkQ$>`_, or they can request a `Software-Defined Radio Design trial “package” <https://urldefense.com/v3/__https://www.mathworks.com/campaigns/products/trials/targeted/sdr.html__;!!A3Ni8CS0y2Y!u2iVBukmDblhk9-FINa9SNIcuL_Ap61oG1IvWi0qWnxrwju6qXrNws1jybUnqe87Ows$>`_, which includes MATLAB, Simulink, DSP System Toolbox, Signal Processing Toolbox, and Communications Toolbox.
 
 | Example Quad-MxFE MATLAB scripts are provided:
 | \*\* :doc:`Example Quad-MxFE MATLAB Scripts </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>` \*\*
@@ -222,9 +222,11 @@ Once these are powered up, program the FPGA:
 -  Run the loading script for the particular build by typing the following (example) in XSCT:``source run.vcu118_quad_ad9081_204c_txmode_11_rxmode_4_revc.tcl``\ The statement above will launch the programming of the first build, but the others can be run by changing the name of the particular .tcl file to be loaded
 -  Wait for the programming to finish in XSCT. This should show that the tcfchan#1 was closed as the final step.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/running_fpgaload.png
+   :align: center
+   :width: 400px
 
--  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom. |image3| This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root
+-  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom. |image2| This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root
    PW: analog``
 -  At this point the FPGA has booted and all of the blue PLL lights should be illuminated. The FPGA is ready to be controlled from MATLAB or from IIO Oscilloscope.
 -  To work in IIO Oscilloscope, open IIO Oscilloscope and use the GUI
@@ -235,9 +237,9 @@ Once these are powered up, program the FPGA:
 MATLAB Control Overview
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The Quad-MxFE Platform can be controlled via MATLAB using example scripts which are available as part of the :git-HighSpeedConverterToolbox>`__ add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. *NOTE: it's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page* Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the Communications Toolbox Support Package for Xilinx Zynq-Based Radio as shown below (`Zynq-Based Radio Toolbox <https::`Analog Devices, Inc. High Speed Converter Toolbox </www.mathworks.com/matlabcentral/fileexchange/48491-communications-toolbox-support-package-for-xilinx-zynq-based-radio>`).
+The Quad-MxFE Platform can be controlled via MATLAB using example scripts which are available as part of the :git-HighSpeedConverterToolbox:`Analog Devices, Inc. High Speed Converter Toolbox <HighSpeedConverterToolbox>` add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. *NOTE: it's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page* Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the Communications Toolbox Support Package for Xilinx Zynq-Based Radio as shown below (`Zynq-Based Radio Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/48491-communications-toolbox-support-package-for-xilinx-zynq-based-radio>`_).
 
-|image4| |image5|
+|image3| |image4|
 
 --------------
 
@@ -515,10 +517,8 @@ If no blue lights are visible on the board, then the PLLs are not locked. The mo
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/putty_comport.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/running_fpgaload.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/putty_quad_mxfe.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/putty_quad_mxfe.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/github.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/github.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png
    :width: 800px

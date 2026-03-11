@@ -12,9 +12,8 @@ As a side note: The origin of the term transistor is a contraction of "transcond
 
 A simple and general form of such a device is shown in figure 8.1.1. It has three terminals; we will call them X, Y and Z for the moment. Let's also assume that the controlled current flows into terminal X and back out terminal Y. The third terminal, Z, is the control terminal. To describe the function of this block we first need to define the terminal currents *IX*<sub></sub>, //IY //and*IZ*:sub:`,` and the terminal voltages //VXY //and*VZY* as shown in the figure. Because current flows into terminal X, we generally assume the voltage seen at X is greater than terminal Y and voltage *VXY* is a positive number. The same can be said for the voltage seen at terminal Z with respect to terminal Y and voltage *VZY* is a positive number.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -27,9 +26,8 @@ For the voltage controlled device let's assume, as we did before, that the curre
 
 We can also describe complementary devices by reversing the direction of the currents such that the controlled current now flows out of terminal X and into terminal Y as shown in figure 8.1.2. Because direction of the current is now reversed, we generally assume the voltage seen at Y is greater than terminal X and voltage *VXY* is a negative number. The same can be said for the voltage seen at terminal Z with respect to terminal Y and voltage *VZY* is a negative number. For the current controlled case we also reverse the direction of the control current I\ :sub:`Z` which now flows out of terminal Z.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -43,9 +41,8 @@ To summarize we have described four types of active devices, a positive current 
 
 Now we will examine the transfer characteristics of these simple transistor models and how they may need to be modified or extended to make them more realistic. First we will examine the output current vs. output voltage characteristics of a simple (ideal) voltage controlled current source as the voltage on the control input is stepped. The results for a controlled source with a transconductance of 1 mA/V is shown in figure 8.1.3 as V\ :sub:`XY` is swept from 0 to 5V and the control voltage V\ :sub:`ZY` is stepped in 0.4 volt increments from 0.1 V to 2.1 V. An ideal current controlled current source would have essentially the same characteristics except that each horizontal line would represent a different control current (in terminal Z) rather than a different control voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -58,9 +55,8 @@ Curves like those in figure 8.1.4 make more physical sense but still have some p
 
 Another property of these simple curves is the perfectly horizontal nature of the current vs. voltage lines. A real device will show some change, usually an increase due to a finite real resistance, with the voltage across X and Y.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -69,9 +65,9 @@ Another property of these simple curves is the perfectly horizontal nature of th
 
 A more complete complex mathematical model of the real physical transistor is shown in figure 8.1.5. We will explore this more complete model in the coming sections of this chapter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f5.png
-   :align: center
-   :width: 600px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -83,9 +79,8 @@ A more complete complex mathematical model of the real physical transistor is sh
 
 There are four transistor types that correspond to these basic active device models. The schematic symbols for these are shown in figure 8.2.1. The n-type current controlled device is the NPN Bipolar Junction Transistor (BJT). The p-type current controlled device is the PNP BJT. The n-type voltage controlled device is the NMOS FET (metal oxide semiconductor field effect transistor). And finally, the p-type voltage controlled device is the PMOS FET. Rather than giving the device terminals generic names like X, Y and Z, the established convention for the BJT is Collector and Emitter for the current source terminals and Base for the current control terminal. Similarly, the convention for the MOS device is Drain and Source for the current source terminals and Gate for the voltage control terminal,
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -101,9 +96,8 @@ A bipolar junction transistor (BJT) is a three-terminal electronic device constr
 
 The typical cross section of a planar NPN transistor is shown in figure 8.3.1. An NPN transistor can be viewed as two PN junction diodes with a very thin shared anode, P layer. In typical operation, the base-emitter junction is forward biased and the base collector junction is reverse biased. In an NPN transistor, for example, when a positive voltage is applied to the base-emitter junction, the equilibrium between thermally generated carriers and the repelling electric field of the depletion region becomes unbalanced, allowing thermally excited electrons to inject into the base region. These electrons wander (or "diffuse") through the very thin base from the region of high concentration near the emitter towards the region of low concentration near the collector. The electrons in the base are called minority carriers because the base is doped p-type which would make holes the majority carrier in the base.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f7.png
-   :align: center
-   :width: 400px
+
+|image7|
 
 .. container:: centeralign
 
@@ -140,7 +134,7 @@ When this exponential is linearized such that the transistor can be modeled as a
 
 The proportion of electrons able to cross the base and reach the collector is a measure of the BJT efficiency. The asymmetric heavy doping of the emitter region and light doping of the base region cause many more electrons to be injected from the emitter into the base than holes to be injected from the base into the emitter. The common\ *-*emitter//*current* //gain is represented by ß\ :sub:`F` or h\ :sub:`fe` and is approximately the ratio of the DC collector current to the DC base current in the forward-active region. It is typically greater than 100 for small-signal transistors but can be smaller in transistors designed for high-power applications. Another important parameter is the common-base current gain, a\ :sub:`F`. The common-base current gain is approximately the gain of current from emitter to collector in the forward-active region. This ratio usually has a value close to unity; between 0.98 and 0.998. Alpha and beta are more precisely related by the following identities (NPN transistor):
 
-|image1| |image2| |image3|
+|image8| |image9| |image10|
 
 A BJT consists of three differently doped semiconductor regions, the emitter region, the base region and the collector region. These regions are, respectively, *p* type, *n* type and *p* type in a PNP, and *n* type, *p* type and *n* type in a NPN transistor. Each semiconductor region is connected to a terminal, appropriately labeled: emitter (E), base (B) and collector (C).
 
@@ -152,9 +146,8 @@ Because the transistor's internal structure is usually optimized for forward-mod
 
 The low-performance "lateral" bipolar transistors sometimes used in CMOS processes are sometimes designed symmetrically, that is, with no difference between forward and backward operation, figure 8.3.2. However, because the base width is often much larger than the vertical structure of figure 8.3.1 ß and a are not nearly as high. A layout technique to improve collection efficiency is to surround the emitter region completely on all four sides with a ring or doughnut shaped collector region. This structure is now no longer symmetrical of course.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f8.png
-   :align: center
-   :width: 400px
+
+|image11|
 
 .. container:: centeralign
 
@@ -236,9 +229,9 @@ A simple model for the operation of NPN and PNP BJT transistors in the active re
 
 The emitter is separated from the base by a diode. In order for this diode to conduct current, in the case of a Silicon based device, it must be forward biased with ~0.65V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f11.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -252,9 +245,8 @@ The Base-Emitter Diode: Always keep figure 8.4.1 in mind. The Ebers-Moll model o
 
 The Early Effect was first observed and explained by James Early while at Bell Labs. In our ideal device, the collector current should be equal to the base current multiplied by a constant gain β. But, as we have seen above, each p-n junction has two depletion layers. For the collector-base junction, one depletion layer extends into the collector, the other into the base. The base is almost always more heavily doped than the collector, so its depletion layer is fairly shallow. However, the base is also very thin, so even a shallow depletion layer takes up a significant portion of the base width. As the collector voltage increases, the depletion layers widen. In the collector region this has little effect (as long as it doesn't hit the other side of the collector), but in the base region it narrows the base-width. Since the gain of a bipolar transistor is very much dependent on the base-width, the gain simply increases as the effective base-width decreases. If you draw a straight line, extending the slope in the forward active region (from 0.4 to 15 Volts for example) into the negative quadrant and let it intersect with the zero-current line, you get the Early Voltage V\ :sub:`A`. In the exaggerated case shown in figure 8.4.2 the Early voltage would be -15 Volts (but is generally expressed as 15V). Depending on the base-width designed into the manufacturing process it can be more or less than that shown with the slope correspondingly shallower or steeper.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f12.jpg
-   :align: center
-   :width: 600px
+
+|image13|
 
 .. container:: centeralign
 
@@ -269,9 +261,8 @@ The Early Effect was first observed and explained by James Early while at Bell L
 
 The n-type Metal-Oxide-Semiconductor Field-Effect-Transistor (MOSFET) consists of a source and a drain, two highly conducting n-type semiconductor regions which are isolated from the p-type substrate by reversed-biased PN diodes. A poly-crystalline silicon gate covers the region between source and drain, but is separated from the semiconductor by an insulating layer of oxide. The basic structure of an n-type MOSFET and the corresponding circuit symbol are shown in figure 8.5.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f13.png
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
@@ -282,9 +273,8 @@ As can be seen in the figure the source and drain regions are identical. It is t
 
 A top view of the same MOSFET is shown in figure. 8.5.2, where the gate length, L, and gate width, W, are identified. Note that the gate length does not equal the physical dimension of the gate, but rather the distance between the source and drain regions underneath the gate. The overlap between the gate and the source and drain region is required to ensure that the inversion layer forms a continuous conducting path between the source and drain region. Typically this overlap is made as small as possible in order to minimize its parasitic capacitance.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f14.png
-   :align: center
-   :width: 500px
+
+|image15|
 
 .. container:: centeralign
 
@@ -409,9 +399,8 @@ The hybrid-pi model is a popular circuit model used for analyzing the small sign
 
 The hybrid-pi model is a linearized two-port network approximation to the BJT using the small-signal base-emitter voltage v\ :sub:`be` and collector-emitter voltage v\ :sub:`ce` as independent variables, and the small-signal base current i\ :sub:`b` and collector current i\ :sub:`c` as dependent variables. A basic, low-frequency hybrid-pi model for the bipolar transistor (NPN) is shown in figure 8.7.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f15.png
-   :align: center
-   :width: 600px
+
+|image16|
 
 .. container:: centeralign
 
@@ -428,13 +417,13 @@ The transconductance, g\ :sub:`m`, in siemens, is given by the following equatio
 
 where:
 
-//I\ :sub:`C` // is the quiescent collector current (also called the collector bias or DC collector current) |image4| is the thermal voltage, calculated from Boltzmann's constant *k*, the charge of an electron *q*, and the transistor temperature in kelvins, *T*. At 300 K (approximately room temperature) *V\ T* is about 26 mV.
+//I\ :sub:`C` // is the quiescent collector current (also called the collector bias or DC collector current) |image17| is the thermal voltage, calculated from Boltzmann's constant *k*, the charge of an electron *q*, and the transistor temperature in kelvins, *T*. At 300 K (approximately room temperature) *V\ T* is about 26 mV.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e16.png
    :align: center
    :width: 175px
 
-where: |image5| is the current gain at low frequencies (also referred to as *h\ FE*).
+where: |image18| is the current gain at low frequencies (also referred to as *h\ FE*).
 
 Here *I\ B* is the quiescent point base current. This is a parameter specific to each transistor, and can be found on a datasheet; ß is a function of the choice of collector current.
 
@@ -463,9 +452,8 @@ The reciprocal of g\ :sub:`m` is called the intrinsic resistance *r\ E*
 
 A basic, low-frequency hybrid-pi model for the MOSFET (n-type) is shown in figure 8.7.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f16.png
-   :align: center
-   :width: 600px
+
+|image19|
 
 .. container:: centeralign
 
@@ -482,7 +470,7 @@ gm is the transconductance in siemens, evaluated in terms of the drain current *
 
 *I\ D* is the quiescent drain current (also called the drain bias or DC drain current) *V\ th* = threshold voltage and *V\ GS* = gate-to-source voltage.
 
-The combination: |image6| often is called the overdrive voltage.
+The combination: |image20| often is called the overdrive voltage.
 
 .. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e23.png
    :align: center
@@ -511,9 +499,8 @@ The small-signal T models for PNP BJTs and PMOS are identically the same as thos
 
 A basic, low-frequency T model for the MOSFET and BJT is shown in figure 8.8.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f17.png
-   :align: center
-   :width: 600px
+
+|image21|
 
 .. container:: centeralign
 
@@ -553,15 +540,45 @@ Lab Activities
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e3.png
-   :width: 100px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e4.png
-   :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e5.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f7.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e15.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e3.png
    :width: 100px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e17.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e4.png
    :width: 100px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e22.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e5.png
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f8.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f11.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f12.jpg
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f13.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f14.png
+   :width: 500px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f15.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e15.png
+   :width: 100px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e17.png
+   :width: 100px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f16.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-e22.png
    :width: 200px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr8-f17.png
+   :width: 600px

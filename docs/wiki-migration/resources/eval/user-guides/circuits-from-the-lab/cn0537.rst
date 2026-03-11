@@ -23,13 +23,7 @@ Selecting the Communications Interface (JP1 to JP6)
 
 The :adi:`ADPD188BI` is capable of communicating using either I2C or SPI. Short jumpers JP1 to JP2 to connect the I2C lines to the device. Likewise, short jumpers JP3 to JP6 to connect the SPI lines to the device. Open jumpers corresponding to the unused lines.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_comms_interface_select_.png
-   :align: center
-   :width: 200px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_table.jpg
-   :align: center
-   :width: 250px
+|image1| |image2|
 
 .. note::
 
@@ -41,13 +35,7 @@ Selecting the I2C Address of the Temperature/Humidity Sensor
 
 The default on-board temperature/humidity sensor installed on the :adi:`EVAL-CN0537-ARDZ <CN0537>` uses I2C communication. Select the I2C address using JP7.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp7_sht30_i2c_address_.png
-   :align: center
-   :width: 200px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp7_table.png
-   :align: center
-   :width: 250px
+|image3| |image4|
 
 .. note::
 
@@ -153,3 +141,12 @@ Registration
 
 
 // End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_comms_interface_select_.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_table.jpg
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp7_sht30_i2c_address_.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp7_table.png
+   :width: 250px

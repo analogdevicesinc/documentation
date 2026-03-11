@@ -88,8 +88,8 @@ Step #4
 
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`EVAL-ADIS`) required for the :adi:`ADIS16209CCCZ <EVAL-ADIS16209>`.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
-   :width: 400px
+
+|image7|
 
 .. container:: center round box
 
@@ -112,11 +112,11 @@ USB Driver Installation
 
 The SDPDrivers.exe file contains USB drivers that are compatible with both 32-bit and 64-bit Windows systems. Double-click on the SDPDrivers.exe file and follow the prompts to install the USB driver files onto the PC. When the following window appears, click on **Next** and then click on **Install** to continue with the installation.
 
-|image7| |image8|
+|image8| |image9|
 
 The following pictures show the progress bar and the final confirmation window. Click on **Finish** to complete the installation.
 
-|image9| |image10|
+|image10| |image11|
 
 IMU EVALUATION SOFTWARE GUIDE
 -----------------------------
@@ -128,7 +128,7 @@ Main Window
 
 Once the IMU Evaluation software starts-up, the Main Window will appear and look like the following picture. The second picture provides color-coded boxes to support further discussion of each function in this screen.
 
-|image11| |image12|
+|image12| |image13|
 
 The orange box identifies the drop-down menus, which provide a number of useful features. The **Devices** option provides a list of products. For :adi:`ADIS16209` Evaluation, click on **Devices** and then select **ADIS16209**. The green box shows the current device selection, which in this case, identifies the :adi:`ADIS16209` as the current selection.
 
@@ -174,7 +174,7 @@ Data Capture Menu
 
 The Data Capture function supports synchronous data acquisition, based on the data-ready signal from the :adi:`ADIS16209`. The following picture represents the Data Capture window, right after opening it from the **Main Window** and the second picture provides color-coded boxes, in order to support further discussion of each function that is associated with this screen.
 
-|image13| |image14|
+|image14| |image15|
 
 The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected.
 
@@ -209,19 +209,21 @@ This section currently has no :adi:`ADIS16209`-specific content, but the :adi:`A
    :width: 400px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209pcbz-eval-adis.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load1.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load2.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load1.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load3.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load2.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load4.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load3.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-imu-eval.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load4.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-imu-eval.png
    :width: 800px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-imu-eval-defined.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-imu-eval-defined.png
    :width: 800px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-capture.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-capture.png
    :width: 440px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-capture-defined.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/209-data-capture-defined.png
    :width: 440px

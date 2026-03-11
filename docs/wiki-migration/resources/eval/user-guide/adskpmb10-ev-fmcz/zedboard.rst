@@ -117,7 +117,8 @@ Configuring the IP Address of the Zedboard™
 -  Open Putty, Tera Term, or other serial terminal program.
 -  Setup the terminal between the COM port the Zedboard™ by typing in the **Speed** or **Baud rate** to **115200**. The serial terminal connection will default to auto login and will automatically go the root directory of the SD card.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_02_putty.png
+   :align: center
 
 .. container:: centeralign
 
@@ -127,7 +128,8 @@ Configuring the IP Address of the Zedboard™
 -  From here, it is a good idea to check if the connected device can be found using the command ``iio_info`` into the terminal, and hitting **Enter**. This should provide a list of devices along with their channels and attributes.
 -  Type ``ifconfig`` into the terminal, then hit **Enter**. That should echo back some information where user can pull out the IP address of the Zedboard™. Take note of this information.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_03a_ip.png
+   :align: center
 
 .. container:: centeralign
 
@@ -138,14 +140,14 @@ Configuring the IP Address of the Zedboard™
 
 .. container:: centeralign
 
-   |image8| *Figure 9. Network Connections*
+   |image6| *Figure 9. Network Connections*
 
 
 -  Select the first driver and click **Configure**.
 
 .. container:: centeralign
 
-   |image9| *Figure 10. Ethernet Properties*
+   |image7| *Figure 10. Ethernet Properties*
 
 
 -  Click **Use the following IP Address** and type in the following details:
@@ -155,14 +157,14 @@ Configuring the IP Address of the Zedboard™
 
 .. container:: centeralign
 
-   |image10| *Figure 11. Configuring the Static IP Address*
+   |image8| *Figure 11. Configuring the Static IP Address*
 
 
 -  See if the configuration is successful by entering ``ipconfig`` in the **Command Prompt**. Verify also the connection by doing a ping test. You may enter ``ping <IP Address of the Zedboard™>`` or in this case, ``ping 192.168.1.109``.
 
 .. container:: centeralign
 
-   |image11| *Figure 12. Ping Test with Zedboard™*
+   |image9| *Figure 12. Ping Test with Zedboard™*
 
 
 ++++
@@ -174,7 +176,7 @@ The :adi:`ADSKPMB10-EV-FMCZ` connects to the ZedBoard™. The ZedBoard™ board 
 
 .. container:: centeralign
 
-   |image12| *Figure 13. Signal Chain Kit Connection using ZedBoard™*
+   |image10| *Figure 13. Signal Chain Kit Connection using ZedBoard™*
 
 
 -  Connect the :adi:`ADSKPMB10-EV-FMCZ` securely to the 160-way connector on the ZedBoard™. The :adi:`ADSKPMB10-EV-FMCZ` does not require an external power supply adapter.
@@ -198,7 +200,7 @@ After installing the **PowerhouseApp** (see the Software Installation Procedures
 
 .. container:: centeralign
 
-   |image13| *Figure 14. Launching the PowerhouseApp*
+   |image11| *Figure 14. Launching the PowerhouseApp*
 
 
 Establishing Hardware Connection
@@ -210,7 +212,7 @@ In case there is no hardware connected, a prompt will pop out display indicating
 
 .. container:: centeralign
 
-   |image14| *Figure 15. Connectivity Check*
+   |image12| *Figure 15. Connectivity Check*
 
 
 Navigating the PowerhouseApp
@@ -218,7 +220,7 @@ Navigating the PowerhouseApp
 
 .. container:: centeralign
 
-   |image15| *Figure 16. PowerhouseApp: ADSKPMB10-EV-FMCZ GUI Software Front Panel (Configure Tab View)*
+   |image13| *Figure 16. PowerhouseApp: ADSKPMB10-EV-FMCZ GUI Software Front Panel (Configure Tab View)*
 
 
 Front Panel Overview
@@ -294,7 +296,7 @@ Waveform Tab View
 
 .. container:: centeralign
 
-   |image16| *Figure 17. Waveform Tab View*
+   |image14| *Figure 17. Waveform Tab View*
 
 
 Figure 17 shows the **Waveform** tab view. The **Waveform** tab view shows the time domain representation of the conversion results from the connected device, as well as several analysis items. The **Waveform** tab view contains the following controls and indicators:
@@ -316,7 +318,7 @@ FFT Tab View
 
 .. container:: centeralign
 
-   |image17| *Figure 18. FFT Tab View*
+   |image15| *Figure 18. FFT Tab View*
 
 
 Figure 18 shows the **FFT** tab view. The **FFT** tab displays the calculated FFT representation of the conversions results from the connected device and common AC performance metrics. The **FFT** tab contains the following controls and indicators:
@@ -346,7 +348,7 @@ Histogram Tab View
 
 .. container:: centeralign
 
-   |image18| *Figure 19. Histogram Tab View*
+   |image16| *Figure 19. Histogram Tab View*
 
 
 Figure 19 shows the **Histogram** tab view. The **Histogram** tab is useful for performing statistical analysis of the device conversion results, especially when measuring DC signals. The histogram graph shows the distribution of the conversion results as well as various statistical analysis items. The **Histogram** tab contains the following controls and indicators:
@@ -370,7 +372,7 @@ Summary Tab View
 
 .. container:: centeralign
 
-   |image19| *Figure 20. Summary Tab View*
+   |image17| *Figure 20. Summary Tab View*
 
 
 Figure 20 shows the Summary tab view. The Summary tab simultaneously displays the waveform, histogram, and FFT graphs and analysis for the device conversion results on the screen. The Summary tab contains the following controls and indicators:
@@ -401,17 +403,15 @@ Figure 20 shows the Summary tab view. The Summary tab simultaneously displays th
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i1a_directory.png
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i2a_boot_images.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_01_com_port.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_02_putty.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/fz_03a_ip.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i3_ethernet_settings.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i4a_ethernet_driver.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i6a_ethernet_ip.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i7a_ethernet_ping.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z02b_setup.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z04_powerhouseappexe.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z05_connectivity_error.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z06a_configuration.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z07_waveform.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z09_fft.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z08_histogram.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z10_summary.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i3_ethernet_settings.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i4a_ethernet_driver.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i6a_ethernet_ip.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/i7a_ethernet_ping.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z02b_setup.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z04_powerhouseappexe.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z05_connectivity_error.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z06a_configuration.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z07_waveform.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z09_fft.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z08_histogram.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guide/adskpmb10-ev-fmcz/z10_summary.png

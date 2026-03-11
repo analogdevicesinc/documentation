@@ -73,7 +73,7 @@ The transport layer component presents on its output 128 bits at once on every c
 Building the HDL project
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository. Then go to the /projects/ad9695_fmc/zcu102 location and run the make command by typing in your command prompt:
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository. Then go to the /projects/ad9695_fmc/zcu102 location and run the make command by typing in your command prompt:
 
 **Linux/Cygwin**
 

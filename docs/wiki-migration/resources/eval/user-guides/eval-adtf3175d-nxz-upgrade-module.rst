@@ -89,9 +89,11 @@ What to do if your module does not stream
 -----------------------------------------
 
 -  If you are able to connect to the camera (Log reads back adsd3500 firmware version) but unable start stream please try the following steps
--  Unscrew back cover of evaluation kit and check if R57 is populated. If the resistor is on your 068977 board please unsolder it\
+-  Unscrew back cover of evaluation kit and check if R57 is populated. If the resistor is on your 068977 board please unsolder it
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/r57_remove.png
+   :align: center
+   :width: 400px
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/module-cover.jpg
    :width: 400px
@@ -104,6 +106,4 @@ What to do if your module does not stream
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/module-rescrewed-side1.jpg
    :width: 400px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/module-rescrewed-side2.jpg
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/r57_remove.png
    :width: 400px

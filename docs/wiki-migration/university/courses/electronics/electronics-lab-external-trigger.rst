@@ -23,9 +23,8 @@ Build the circuit shown in figure 1 on your solder-less breadboard. The AD8561 a
 
 The AD8561 has a very high bandwidth and will respond to any high frequency noise that might be present on the input signal. This will cause its output(s) to switch back and forth multiple times very quickly if the input signal is near the threshold voltage (V\ :sub:`TH`). This noise will cause the waveform displayed on the screen to jump or "jitter" back and forth and look unstable. Resistor R\ :sub:`5` and capacitor C\ :sub:`1` form a low pass filter and are inserted between the two inverter stages to reduce these very fast switching spikes. The time constant of this filter would be adjusted based on the nature of the signal being used as the external trigger.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/aet_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,8 +36,8 @@ Hardware Setup:
 
 Waveform generator AWG1 should be set up as a triangle wave with a 8 Volt amplitude peak-to-peak and 0 V offset and a frequency of 5 KHz. Set the horizontal and vertical scales of the scope to display at least one complete cycle of the input triangle waveform. Turn on the power supplies only after double checking your circuit connections.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/adjustableexternaltriggering_hardwaresetup1.png
-   :align: center
+
+|image2|
 
 .. container:: centeralign
 
@@ -51,7 +50,7 @@ Procedure:
 To start, set the scope trigger source to Channel 1, rising edge, with the level set to 0 V. You should see the rising edge of the triangle wave on channel 1 centered on the 0 time point along the horizontal axis. The rising edge of the digital output of the second inverter on channel 2 should occur at different times along the horizontal axis depending on the setting of the potentiometer, R\ :sub:`3`. Adjust R\ :sub:`3` up and down from one end of its range to the other and observe where the rising edge of the pulse on channel 2 occurs with respect to the voltage (vertical axis) of the triangle wave at that time point.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -62,7 +61,7 @@ Now switch the scope trigger source to external 1 (T1 input) and repeat the swee
 
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -92,9 +91,8 @@ Appendix: Making an inverter with the CD4007 transistor array
 
 Below is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/cd4007.png
-   :align: center
-   :width: 400px
+
+|image5|
 
 .. container:: centeralign
 
@@ -119,5 +117,10 @@ The second Inverter is made by connecting pin 2 to V\ :sub:`DD`, pin 4 to V\ :su
    
 
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/adjustableexternaltriggering_scopeshot1.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/adjustableexternaltriggering_scopeshot2.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/aet_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/adjustableexternaltriggering_hardwaresetup1.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/adjustableexternaltriggering_scopeshot1.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/adjustableexternaltriggering_scopeshot2.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/cd4007.png
+   :width: 400px

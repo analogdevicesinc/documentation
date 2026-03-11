@@ -184,7 +184,7 @@ Software
 ~~~~~~~~
 
 -  :doc:`ADI Kuiper Image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
--  :git-iio-oscilloscope:`IIO-Oscilloscope <releases>`
+-  `IIO-Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 Hardware Setup
 --------------
@@ -222,7 +222,7 @@ To prepare the SD card for the DE10-Nano board:
 Download and Install IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Download the latest :git-iio-oscilloscope:`IIO-Oscilloscope release <releases>` from GitHub and install it on your PC. (You may need to right-click the installer and run as "Elevated" in order to get it to install.)
+-  Download the latest `IIO-Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_ from GitHub and install it on your PC. (You may need to right-click the installer and run as "Elevated" in order to get it to install.)
 -  Once microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the DE10-Nano.
 
 --------------
@@ -249,7 +249,7 @@ Software
 ~~~~~~~~
 
 -  `ADI Kuiper Image for CN0579 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`_
--  :git-iio-oscilloscope:`IIO-Oscilloscope <releases>`
+-  `IIO-Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 Hardware Setup
 --------------
@@ -283,7 +283,7 @@ To prepare the SD card for the DE10-Nano board:
 Download and Install IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Down the latest :git-iio-oscilloscope:`IIO-Oscilloscope release <releases>` from Github, and install it on your PC. (You may need to right-click the installer, and run as "Elevated" in order to get it to install.)
+-  Down the latest `IIO-Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_ from Github, and install it on your PC. (You may need to right-click the installer, and run as "Elevated" in order to get it to install.)
 -  Once the microSD card has been imaged, safely remove the hardware from the SD card writer, and insert the card directly into the microSD card slot on the DE10-Nano.
 
 --------------
@@ -304,7 +304,7 @@ To be able to connect your device, the software must be able to create a context
 .. admonition:: Download
    :class: download
 
-   Install the :git-libiio:`Libiio package <releases>` on your machine.
+   Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
@@ -366,7 +366,7 @@ IIO Oscilloscope
    Make sure to download/update to the latest version of IIO Oscilloscope.
 
    
-   :git-iio-oscilloscope:`releases`
+   https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
@@ -421,9 +421,8 @@ Without input signal:
 
 With input from :adi:`ADALM2000` (1 Vp-p, 1 kHz) on Channel 0:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_ex_ch0_input.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. admonition:: Download
    :class: download
@@ -436,7 +435,7 @@ With input from :adi:`ADALM2000` (1 Vp-p, 1 kHz) on Channel 0:
 Reference Demos & Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -490,4 +489,6 @@ Registration
 .. |Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_debug0.png
    :width: 600px
 .. |DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_dmm.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0579/579_ex_ch0_input.png
    :width: 600px

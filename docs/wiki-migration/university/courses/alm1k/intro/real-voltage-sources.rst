@@ -19,9 +19,8 @@ Household Batteries:
 
 We have said that an ideal voltage source will produce a constant output voltage independent of the current supplied to the load, i.e. whatever current is needed to maintain the voltage at a constant value. However, real world voltage sources can only supply current up to some limit. The power supplies built into the ADALM1000 hardware, for example, use active circuitry to maintain the output voltage at a constant value but only for load currents of +/- 200 mA. This is a relatively small current because the board is powered from the computer USB port. Bench top laboratory supplies, powered from the wall socket, can supply much more, often many amps. Similarly, batteries store a finite amount of energy and have a limited current capability depending on the size of the battery. As the current increases the output voltage will begin to drop as the chemical reaction in the battery tries to maintain the current. In most cases this drop in output voltage with increasing load current can be accurately modeled by including a resistor, typically a few ohms at the most, in series with an ideal voltage source, as shown in figure 1. This is the “internal” resistance of the battery, R\ :sub:`int`. This simple model isn’t perfect, because as the battery discharges its voltage will drop even without significant loading. But the internal resistance model does capture the characteristics at a given state of battery charge. Since this simple model is the same as a :doc:`Thévenin equivalent </wiki-migration/university/courses/alm1k/circuits1/alm-cir-4>`, we can characterize it in the same way, by measuring the open-circuit voltage and "short-circuit" current (not actually shorted but using a known load resistance). We do not want to damage the battery, so a current limiting resistor is added in series with the battery as shown in figure 2. When the output is "short-circuited", this resistor limits the maximum current that will flow.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig1.png
-   :align: center
-   :width: 350px
+
+|image1|
 
 .. container:: centeralign
 
@@ -30,18 +29,16 @@ We have said that an ideal voltage source will produce a constant output voltage
 
 You will need one or more batteries (AA or AAA) and a holder for them. Insert the batteries in the holder and add an external 100 Ω resistance in series with the battery as shown in figure 2. Open the Meter – Source tool, figure 3. Turn on Source A with CA-V set for 1.5 nominal for the case of a single cell. For two cells in series adjust the Value such that it is nominally the total battery voltage. Measure the open-circuit voltage (when current through the 100 ohm resistor is zero as measured by CA mA) and the drop in voltage across the battery ( CA-V setting ) while measuring the current (CA mA ) and the voltage across the cell, CB V. Calculate the internal Thevenin equivalent resistance based on the change in the cell voltage and the current. Note that if the holder contains two cells in series, your answer will be twice the internal resistance of a single cell.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig2.png
-   :align: center
-   :width: 400px
+
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2, Characterizing the battery equivalent circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig3.png
-   :align: center
-   :width: 600px
+   |image3|
 
 .. container:: centeralign
 
@@ -61,9 +58,8 @@ A `lemon battery <https://en.wikipedia.org/wiki/Lemon_battery>`_ is a simple bat
 
 The lemon battery illustrates the type of chemical reaction (oxidation-reduction) that occurs in batteries. The zinc and copper are called the electrodes, and the acidic juice inside the lemon is called the electrolyte. There are many variations of the lemon cell that use different fruits (or liquids) as electrolytes and metals other than zinc and copper as electrodes. Zinc and copper electrodes are reasonably safe and easy to obtain.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig4.png
-   :align: center
-   :width: 200px
+
+|image4|
 
 .. container:: centeralign
 
@@ -93,3 +89,12 @@ For experimenters who finish early or want an extra challenge, obtain a photovol
 https://en.wikipedia.org/wiki/Lemon_battery
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig1.png
+   :width: 350px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-real-voltage-source-fig4.png
+   :width: 200px

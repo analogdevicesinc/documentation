@@ -453,11 +453,9 @@ Generally, both for µC/OS-III and FreeRTOS, it is considered best practice to k
 
       **Diagram**
 
-   
-   .. image:: https://wiki.analog.com/_media/resources/tools-software/freertos/migration-guide/completing_interrupt_processing_in_a_high_priority_task.jpg
-      :align: center
-      :width: 800px
-   
+
+      |image1|
+
    .. container:: Centeralign
 
       **Figure 1** Deferred Interrupt Processing
@@ -2731,3 +2729,7 @@ If you need further help with migrations, please get in touch via:
 -  ADI EngineerZone: :ez:`community/dsp/software-and-development-tools/freertos`
 -  Support Email: *processor.tools.support@analog.com*
 
+--------------
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/freertos/migration-guide/completing_interrupt_processing_in_a_high_priority_task.jpg
+   :width: 800px

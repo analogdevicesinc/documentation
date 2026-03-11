@@ -34,19 +34,23 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0189 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0189 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0189\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0189 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0189 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0189\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-destination_directory-1.jpg
+   :align: center
+
+-  Press **“Next”**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-destination_directory-2.jpg
+   :align: center
+
+-  Press **“Next”**.
+-  Upon completion of the installation of the **CN0189 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.\
 
 |image2|
 
--  Press **“Next”**.\
-
-|image3|
-
--  Press **“Next”**.
--  Upon completion of the installation of the **CN0189 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.\ |image4|\
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-sdpdrivers-destination_directory.jpg
+   :align: center
 
 -  Press **“Next”**.
 -  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
@@ -55,17 +59,13 @@ How to Install the Evaluation Software
 Step by Step Instruction for Connecting the Hardware
 ----------------------------------------------------
 
--  Connect the :adi:`EVAL-SDP-CS1Z <SDP-S>` and the :adi:`eval-cn0189-sdpz` PCB’s using the 120 pin male and female connectors found on the respective boards.\
+-  Connect the :adi:`EVAL-SDP-CS1Z <SDP-S>` and the :adi:`eval-cn0189-sdpz` PCB’s using the 120 pin male and female connectors found on the respective boards.
 
-
-|image6|
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-sdps-cn0189.jpg
-   :width: 200px
+|image3| |image4|
 
 -  Plug in the DC barrel jack to connector J3 of the :adi:`eval-cn0189-sdpz` and the mini end of the USB cable into connector J2 of the :adi:`EVAL-SDP-CS1Z <SDP-S>`. And connect the other end of the USB cable into the Laptop or PC.
 
-|image7| |image8|
+|image5| |image6|
 
 Opening and Enabling the Evaluation Software
 --------------------------------------------
@@ -115,35 +115,43 @@ Step by Step Instruction to Calibrate the Accelerometer
 
 -  Select **Single Sample** in the **Conversion Mode Controls**. Calibration can only be performed in the **Single Sample** mode.
 -  Navigate to the **Calibrate** tab.
--  To manually enter or change calibration coefficients, press the **Manual Coefficient Input** button and enter the appropriate offset and sensitivity values for each axis (in g's).\
+-  To manually enter or change calibration coefficients, press the **Manual Coefficient Input** button and enter the appropriate offset and sensitivity values for each axis (in g's).
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-calibrationtab.jpg
+   :align: center
 
 -  To perform a four point calibration, press the **Four Point Calibration** button.
 
-   -  Orient the PCB as displayed in the image below.\
+   -  Orient the PCB as displayed in the image below.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_1gx_.jpg
+   :align: center
+   :width: 200px
 
-   |image10|
+-  Press **Sample Data** while rotating the PCB to find the largest output voltage for the X-axis. This voltage corresponds to the +1g value for the X-axis.
+-  Orient the PCB as displayed in the image below.
 
-   -  Press **Sample Data** while rotating the PCB to find the largest output voltage for the X-axis. This voltage corresponds to the +1g value for the X-axis.
-   -  Orient the PCB as displayed in the image below.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_-1gx_.jpg
+   :align: center
+   :width: 200px
 
-   |image11|
+-  Press **Sample Data** while rotating the PCB to find the smallest output voltage for the X-axis. This voltage corresponds to the -1g value for the X-axis.
+-  Orient the PCB as displayed in the image below.
 
-   -  Press **Sample Data** while rotating the PCB to find the smallest output voltage for the X-axis. This voltage corresponds to the -1g value for the X-axis.
-   -  Orient the PCB as displayed in the image below.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_1gy_.jpg
+   :align: center
+   :width: 200px
 
-   |image12|
+-  Press **Sample Data** while rotating the PCB to find the largest output voltage for the Y-axis. This voltage corresponds to the +1g value for the Y-axis.
+-  Orient the PCB as displayed in the image below.
 
-   -  Press **Sample Data** while rotating the PCB to find the largest output voltage for the Y-axis. This voltage corresponds to the +1g value for the Y-axis.
-   -  Orient the PCB as displayed in the image below.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_-1gy_.jpg
+   :align: center
+   :width: 200px
 
-   |image13|
-
-   -  Press **Sample Data** while rotating the PCB to find the smallest output voltage for the Y-axis. This voltage corresponds to the -1g value for the Y-axis.
-   -  Press **Calibrate** to calculate the offset and sensitivity values for each axis.
-   -  Now any further calculations or conversions performed anywhere in the software (**Demonstration** tab or **Sampled Data** tab) will utilize the offset and sensitivity values calculated here.
+-  Press **Sample Data** while rotating the PCB to find the smallest output voltage for the Y-axis. This voltage corresponds to the -1g value for the Y-axis.
+-  Press **Calibrate** to calculate the offset and sensitivity values for each axis.
+-  Now any further calculations or conversions performed anywhere in the software (**Demonstration** tab or **Sampled Data** tab) will utilize the offset and sensitivity values calculated here.
 
 Registration
 ------------
@@ -156,22 +164,12 @@ Registration
 // End of document //
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189-setupdiagram.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-destination_directory-1.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-destination_directory-2.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-sdpdrivers-setup_wizard.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-sdpdrivers-destination_directory.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-displaying_connectors.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-sdpdrivers-setup_wizard.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-displaying_connectors.jpg
    :width: 200px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/CN0189-Hardware-Connected-SDPS-Power-CN0189.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-sdps-cn0189.jpg
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-usb-sdps-cn0189.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/CN0189-Hardware-Connected-SDPS-Power-CN0189.jpg
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-evaluation_software-calibrationtab.jpg
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_1gx_.jpg
-   :width: 200px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_-1gx_.jpg
-   :width: 200px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_1gy_.jpg
-   :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-calibrate-orientation_-1gy_.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0189/cn0189-hardware-connected-usb-sdps-cn0189.jpg
    :width: 200px

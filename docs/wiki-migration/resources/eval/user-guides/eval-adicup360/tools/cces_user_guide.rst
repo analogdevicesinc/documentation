@@ -163,7 +163,7 @@ How to Import Existing Projects from the GIT Repository
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
 -  Clone the Git repository which contains all the latest code and projects associated with the ADuCM360. Populate the URI field with the following address.
 
-   -   **URI:** - https://github.com/analogdevicesinc/EVAL-ADICUP360.git
+   -   **URI:** - :git-EVAL-ADICUP360:`EVAL-ADICUP360`
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
 
 -  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*
@@ -249,9 +249,10 @@ How to start and stop debugging an ADuCM360 application
 -  If you are already in the Debug Configurations dialog, then click *Debug*.
 -  If you are in the C Perspective, then you can launch the last Debug session by clicking the *Beetle* Debug button on the toolbar.
 -  You will be prompted to switch perspective to the Debug perspective. Click *Yes*. You can opt to not show this dialog again.
--  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.\
+-  If your binary (program) was built with semi-hosting enabled, then CCES will warn you that you need to re-build the program when you want to run the program without a debugger attached.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
+   :align: center
 
 -  If everything goes fine, in the Console window, you will see a report without errors.
 
@@ -284,10 +285,10 @@ How to start and stop debugging an ADuCM360 application
 Windows Firewall Access
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  If this is the first time you have launched OpenOCD, the Windows Firewall may pop-up a window asking for access. Click on "*Allow Access*".\
+-  If this is the first time you have launched OpenOCD, the Windows Firewall may pop-up a window asking for access. Click on "*Allow Access*".
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
+   :align: center
 
 Linux USB Access
 ~~~~~~~~~~~~~~~~
@@ -300,17 +301,17 @@ How to create a Binary (.bin) or Intel Hex (.hex) file for an ADuCM360 applicati
 Starting with CrossCore Embedded Studio (CCES) 2.8.0, the Artifact of your project build can now be a Binary or Intel Hex file.
 
 -  Ensure that your program is built with semi-hosting disabled by visiting *Tools Settings \| Linker \| Libraries* and change *Semihosting support* to *nosys.specs* or *None*, depending on your application set-up.
--  Rebuild your application.\
+-  Rebuild your application.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
 
 -  Convert your application into Binary (.bin) or Intel Hex (.hex) format by visiting Tools Settings once more.
 -  Select the Build Artifact tab.
 -  Select Binary (or Intel Hex) as the Artifact Type.
 -  Apply and Close
--  Rebuild your application.\
+-  Rebuild your application.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_bin.gif
 
 How to debug programs using ADuCM362 and ADuCM363 Evaluation Boards
 -------------------------------------------------------------------
@@ -362,14 +363,8 @@ The :adi:`ADuCM362/ADuCM363 evaluation board <en/design-center/evaluation-hardwa
    monitor reg pc = (0x00000004)
    break main
    continue``
--  Click Debug to start loading and running your program.\
+-  Click Debug to start loading and running your program.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/362_eval.gif
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-debug-semi-hosting.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/eval-aducm3029-openocd-firewall.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_no_sys.gif
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/360_bin.gif
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/tools/362_eval.gif

@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5421 Product Info <AD5421>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5421SDZ evaluation board user guide </static/imported-files/user_guides/UG-250.pdf>`
+-  :adi:`EVAL-AD5421SDZ evaluation board user guide <static/imported-files/user_guides/UG-250.pdf>`
 -  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 -  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`_
@@ -73,9 +73,9 @@ A list of required software tools is presented below:
 
 The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
 
-::
 
-   The **Micrium uC/Probe Trial** version 2.5 is available via download from the web at [[http://micrium.com/tools/ucprobe/trial/]].  After installation add to the “Path” system variable the entry "//%QUARTUS_ROOTDIR%\bin\//“ on the third position in the list.
+
+The **Micrium uC/Probe Trial** version 2.5 is available via download from the web at `http://micrium.com/tools/ucprobe/trial/ <http://micrium.com/tools/ucprobe/trial/>`_.  After installation add to the “Path” system variable the entry "//%QUARTUS_ROOTDIR%\bin\//“ on the third position in the list.
 
 Downloads
 ---------

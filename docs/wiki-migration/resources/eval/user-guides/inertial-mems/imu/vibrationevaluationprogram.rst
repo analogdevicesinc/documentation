@@ -83,11 +83,7 @@ Device Selection
 
 Click on **Device**, located on the left side of the Menu bar, at the top of the **Main Screen**, and select the model number corresponding to your sensor. The :adi:`adis16228` was used for the following examples.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-device.png
-   :width: 600px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-main-select.png
-   :width: 600px
+|image1| |image2|
 
 .. important::
 
@@ -157,8 +153,8 @@ Use the following two steps to write a value to the register. 1. Enter the data 
 
 2. Click on **Write**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_03.png
-   :width: 600px
+
+|image3|
 
 .. important::
 
@@ -403,3 +399,10 @@ REPORTED ISSUES, UPGRADE REQUESTS & SOLUTIONS
 
    </details>
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/227-main-device.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-main-select.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/vep_wiki_registeraccesswindow_regselect_03.png
+   :width: 600px

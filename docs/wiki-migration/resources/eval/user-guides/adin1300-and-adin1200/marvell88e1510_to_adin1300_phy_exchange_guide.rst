@@ -222,9 +222,12 @@ PHY Exchange Guide, Marvell Alaska 88E1510 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/13_-_88e1510_adin1300_auto_neg_speeds_-_table_9.png
-            :align: right
-         
+
+   
+      ..
+
+   |image1|
+
          .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/14_-_88e1510_adin1300_forced_speeds_-_table_10.png
             :align: right
          
@@ -394,3 +397,6 @@ The following list summarizes an RGMII auto negotiate, 10 Mbps, 100 Mbps, or 100
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/20_-_88e1510_adin1300_example_-_figure_6.png
    :align: right
 
+--------------
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/13_-_88e1510_adin1300_auto_neg_speeds_-_table_9.png

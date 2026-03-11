@@ -247,7 +247,9 @@ Executing the Code in CCES
    Some knowledge of CrossCore Embedded Studio(CCES) is assumed here. If unfamiliar with CCES, please go through the :doc:`CCES Getting Started Guide </wiki-migration/resources/tools-software/crosscore/cces/getting-started>` prior to working in CCES.
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_config.png
+   :align: right
+   :width: 500px
 
 -  Build all 3 core projects
 -  Create the debug configuration to load all 3 cores using the ICE-1000
@@ -269,7 +271,7 @@ By default the optimizer in CCES is not enabled for the new matlab code.
 
 .. container:: left
 
-   \ |image2|\
+   \ |image1|\
 
 
 | \* Right click on the matlab folder.
@@ -299,14 +301,12 @@ Serial Settings
 ============= =========
 Non-Optimized Optimized
 ============= =========
-|image3|      |image4|
+|image2|      |image3|
 ============= =========
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_config.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/optimize_folder.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/optimize_folder.png
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_not_optimized.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_not_optimized.png
    :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_optimized.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/debug_optimized.png
    :width: 700px

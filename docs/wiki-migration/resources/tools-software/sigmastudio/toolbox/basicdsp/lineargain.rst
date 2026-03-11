@@ -27,4 +27,4 @@ You can choose a slew or no-slew algorithm. Using slew RAM gradually ramps the s
 
 For more information on target/slew ram, see :doc:`Target Slew RAM </wiki-migration/resources/tools-software/sigmastudio/sigmadsparchitecture/ad1940/targetslewram>` in the :doc:`Basic Sigma DSP Architecture </wiki-migration/resources/tools-software/sigmastudio/sigmadsparchitecture>` book section of this wiki.
 
-.. |lineargainpic1.png| image:: https://wiki.analog.com/_media/lineargainpic1.png
+.. |lineargainpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/lineargainpic1.png

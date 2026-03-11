@@ -4,7 +4,7 @@ Navigation
 You can return to the ACE Application User Guide Homepage here:
 
 -  :doc:`Application User Guide </wiki-migration/resources/tools-software/ace/applicationuserguide>`
--  `Previous (Capture View) <https://wiki.analog.com/resources/tools/software/ace/understandingtheui/captureview.txt>`_
+-  `Previous (Capture View) <https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/captureview.txt>`_
 
 .. tip::
 

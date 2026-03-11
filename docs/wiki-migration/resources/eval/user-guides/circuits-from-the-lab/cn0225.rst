@@ -23,7 +23,7 @@ Required Equipment
 
 -  :adi:`EVAL-CN0225-SDPZ Evaluation Board <CN0225>`
 -  :adi:`EVAL-SDP-CB1Z Controller Board (SDP-B Board) <EVAL-SDP-CB1Z>`
--  `CN0225 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_
+-  `CN0225 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_
 -  ±25 V/1 A Triple Output DC Power Supply (**Agilent E3631A**)
 -  Low distortion single-ended or differential signal source (**Agilent 81150A or Audio Precision System Two 2322**)
 -  PC with USB interface
@@ -72,11 +72,11 @@ See the table in the image below for the jumper settings. Values in red are the 
 Installing the Evaluation Software
 ----------------------------------
 
--  Extract the file `CN0225 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_ and open **setup.exe**
+-  Extract the file `CN0225 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_ and open **setup.exe**
 
 .. tip::
 
-   \ **NOTE:** It is recommended that you install the `CN0203 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0203/cn0203%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+   \ **NOTE:** It is recommended that you install the `CN0203 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0203/cn0203%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
    |image1|
@@ -100,7 +100,11 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-|image5| |image6|
+   |image5|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
+   :width: 600px
+
 -  Press **“Next”** to set the installation location for the **SDP Drivers**
 
 .. tip::
@@ -110,19 +114,19 @@ Installing the Evaluation Software
    **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
 
 
-   |image7|
+   |image6|
 
 -  Press **“Next”** to install the **SDP Drivers**. When prompted by Windows Security, just press **Install**
 
-|image8|
+|image7|
 
 -  Press **Finish** to complete the installation
 
-|image9|
+|image8|
 
 -  **(Optional)** Restart the PC when prompted by the installer
 
-|image10|
+|image9|
 
 --------------
 
@@ -183,17 +187,21 @@ Main Window
 
          -  Plots the FFT of the the ADC samples with the amplitudse in dB of the full scale ADC value
 
-::
 
-             {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-08_pm_-_edited.png?nolink&600 |}}
+         |resources-eval-user-guides-circuits-from-the-lab-cn0225-11-3-2017_3-30-08_pm_-_edited.png|
+
    **Histogram**
      * Plots the number of occurrences of ADC sample values
-             {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-27_pm_-_edited.png?nolink&600 |}}
+
+             .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-30-27_pm_-_edited.png
+
    **S/W Version Info**
      * Shows the software and hardware versions, vendor and product IDs
        **Flash LED Button** tests the SDP communication to the **CN0225**
        **Read Firmware Button** reads the current SDP firmware for debugging
-             {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-38_pm_-_edited.png?nolink&600 |}}
+
+             .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-30-38_pm_-_edited.png
+
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -216,7 +224,7 @@ Running the System
 More Information and Useful Links
 ---------------------------------
 
--  `CN0225 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_
+-  `CN0225 Evaluation Software <https://wiki.analog.com/_media/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_
 -  :adi:`CN0225 Circuit Note Page <CN0225>`
 -  :adi:`CN0225 Design Support Package <CN0225 -DesignSupport>`
 -  :adi:`AD7687 Product Page <AD7687>`
@@ -260,13 +268,13 @@ Registration
    :width: 600px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-54-25_pm.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-54-25_pm.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-56-02_pm.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-56-02_pm.png
-   :width: 600px
+
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0225-11-3-2017_3-30-08_pm_-_edited.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-30-08_pm_-_edited.png

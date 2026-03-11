@@ -4,17 +4,17 @@ AD6676 : Design Tools and Startup Guide for the AD6676 evaluation board, a high 
 Summary
 -------
 
-This wiki site includes information about the :adi:`ad6676` and the associated evaluation board, the :adi:`AD6676EBZ </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD6676.html#eb-overview>`.
+This wiki site includes information about the :adi:`ad6676` and the associated evaluation board, the :adi:`AD6676EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD6676.html#eb-overview>`.
 
 The :adi:`ad6676` datasheet provides a significant amount of information to aid in understanding the :adi:`ad6676` capabilities and can assist in the evaluation process. The datasheet along with the user guide and other board files provided here should be consulted when using the evaluation board.
 
-The AD6676 is compatible with the :adi:`HSC-ADC-EVALEZ </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALEZ.html#eb-overview>`, the ADI FPGA-Based Data Capture Kit.
+The AD6676 is compatible with the :adi:`HSC-ADC-EVALEZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALEZ.html#eb-overview>`, the ADI FPGA-Based Data Capture Kit.
 
-The software required to use the AD6676EBZ with the :adi:`HSC-ADC-EVALEZ </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALEZ.html#eb-overview>` capture board can be downloaded at the following Analog Devices ftp site:
+The software required to use the AD6676EBZ with the :adi:`HSC-ADC-EVALEZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALEZ.html#eb-overview>` capture board can be downloaded at the following Analog Devices ftp site:
 
 `AD6676 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/hsc_adc_apps/ad6676_demo_package>`_
 
-For additional information or questions, send an email to highspeed.converters@analog.com. The user guide describes the AD6676 evaluation board, :adi:`AD6676EBZ </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD6676.html#eb-overview>`, which provides all of the support circuitry required to operate the part in various modes and configurations. The application software used to interface with the devices is also described.
+For additional information or questions, send an email to highspeed.converters@analog.com. The user guide describes the AD6676 evaluation board, :adi:`AD6676EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD6676.html#eb-overview>`, which provides all of the support circuitry required to operate the part in various modes and configurations. The application software used to interface with the devices is also described.
 
 Features
 --------
@@ -46,7 +46,7 @@ Helpful Links
 -------------
 
 -  :adi:`AD6676` data sheet
--  High Speed ADC Capture Evaluation Kit Rev E (:adi:`HSC-ADC-EVALEZ </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALEZ.html#eb-overview>`)
+-  High Speed ADC Capture Evaluation Kit Rev E (:adi:`HSC-ADC-EVALEZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-HSC-ADC-EVALEZ.html#eb-overview>`)
 -  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
 -  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*
 -  :adi:`VRMS / dBm / dBu / dBV Calculator <en/design-center/advanced-selection-and-design-tools/interactive-design-tools/dbconvert.html>`

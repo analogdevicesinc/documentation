@@ -85,7 +85,7 @@ Basically, this subsystem executes Step 2 through Step 7 of the algorithm in S.W
    You can download the Simulink model from below:
 
    
-   -  `iqcorrection.zip <https://wiki.analog.com/_media/iqcorrection.zip>`_
+   -  `iqcorrection.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/iqcorrection.zip>`_
    
    Pay attention to the output data type of each block. It should be defined according to the range of the data value of your system. Otherwise, you will not get the correct result.
 
@@ -150,9 +150,9 @@ After the I/Q correction, the amplitude of the I and Q signals is identical, and
 .. [4]
    `S.W. Ellingson's paper <https://www.faculty.ece.vt.edu/swe/argus/iqbal.pdf>`_
 
-.. |Block diagram| image:: https://wiki.analog.com/_media/before.png
+.. |Block diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/before.png
    :width: 800px
-.. |scatter1.png| image:: https://wiki.analog.com/_media/scatter1.png
-.. |image1| image:: https://wiki.analog.com/_media/after.png
+.. |scatter1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/scatter1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/after.png
    :width: 800px
-.. |scatter2.png| image:: https://wiki.analog.com/_media/scatter2.png
+.. |scatter2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/scatter2.png

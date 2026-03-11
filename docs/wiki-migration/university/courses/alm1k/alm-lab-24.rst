@@ -33,9 +33,8 @@ Directions:
 
 Construct the circuit as shown in figure 1 on your solder-less breadboard. Note: there is no input from the M1000 just the power supply. The first inverting amplifier stage consists of Q\ :sub:`1` with R\ :sub:`1` and the Red LED serving as the output load. The second inverting amplifier stage consists of Q\ :sub:`2` with R\ :sub:`2` and the Green LED serving as the load. C\ :sub:`1` couples the output of the first stage at the collector of Q\ :sub:`1` to the input of the second stage at the base of Q\ :sub:`2`. Similarly, C\ :sub:`2` couples the output of the second stage at the collector of Q\ :sub:`2` back to the input of the first stage at the base of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -74,9 +73,8 @@ Directions:
 
 Construct the circuit as shown in figure 2 on your solder-less breadboard. Starting with the circuit from experiment 1, remove one of the 20 KΩ resistors (old R\ :sub:`3`) and replace capacitor C\ :sub:`1` with a 47 KΩ resistor (new R\ :sub:`3`). Add diode D\ :sub:`1` and resistor R\ :sub:`5` as shown to the base of Q\ :sub:`2`. Be sure to replace C\ :sub:`2` with the original 47 uF capacitor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -113,9 +111,8 @@ Directions:
 
 Construct the bistable circuit as shown in figure 3 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f3.png
-   :align: center
-   :width: 650px
+
+|image3|
 
 .. container:: centeralign
 
@@ -156,9 +153,8 @@ To illustrate how the circuit operates we will assume the circuit is in one of i
 
 A negative going pulse on the Clock input, coupled through C\ :sub:`1` and C\ :sub:`2`, is steered to the base of Q\ :sub:`1` since D\ :sub:`1` is forward biased, but blocked from the base of Q\ :sub:`2` by reverse biased D\ :sub:`2`. Q\ :sub:`1` is turned off and Q\ :sub:`2` is turned on by the cross coupled connection through the parallel combination of C\ :sub:`3` and R\ :sub:`3`. This happens very quickly because of the positive feedback effect we saw earlier in the simple bistable multivibrator. The circuit is now in the other stable state with the Q output high and the QB output low. The circuit will remain in that state until the D input becomes high and after another negative going clock pulse arrives.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f4.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -212,9 +208,8 @@ An external negative going pulse, coupled through C\ :sub:`1` and C\ :sub:`2`, i
 
 Since the collector voltage of Q\ :sub:`2` , the Q output node, changes state for every clock pulse, there is one pulse appearing at the output for every two clock input pulses. It can therefore be used as a divide by two circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f5.png
-   :align: center
-   :width: 650px
+
+|image5|
 
 .. container:: centeralign
 
@@ -243,3 +238,14 @@ Reverse the polarity ( direction ) of the two steering diodes, D\ :sub:`1` and D
 http://en.wikipedia.org/wiki/Multivibrator http://www.wisc-online.com/objects/ViewObject.aspx?ID=DIG5303
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f3.png
+   :width: 650px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f4.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f5.png
+   :width: 650px

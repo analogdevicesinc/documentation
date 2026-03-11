@@ -28,7 +28,10 @@ When testing this system with lithium-ion (Li-Ion) batteries, take care not to o
 ADBT1000 Battery Testing and Formation Evaluation Board
 =======================================================
 
-|System Demo Board Photograph|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000scb1kitangle.jpg
+   :alt: System Demo Board Photograph
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -38,7 +41,8 @@ ADBT1000 Battery Testing and Formation Evaluation Board
 Simplified Block Diagram
 ========================
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_system_demo_simplified_block_diagram.svg
+   :align: center
 
 .. container:: centeralign
 
@@ -64,7 +68,10 @@ The following sequence is recommended for board operation. Refer to Figure 7 for
 -  Connect switching power modules(P6) to connectors J3 to J6 of the system control board (SCB).
 -  Connect the Device Under Test (electronic load or battery) to connector P5 on the switching power module.
 
-|2-wire Battery Connection|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_two_wire_load_connection.jpg
+   :alt: 2-wire Battery Connection
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -73,9 +80,10 @@ The following sequence is recommended for board operation. Refer to Figure 7 for
 
 -  Connect the SDP-S controller to the System Control Board.
 
-
-
-|SDP-S Connection|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_sdp_s_connection.jpg
+   :alt: SDP-S Connection
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -84,9 +92,9 @@ The following sequence is recommended for board operation. Refer to Figure 7 for
 
 -  Connect power supplies of +/-15V to P5 of the system control board for the Auxiliary Power Input.
 
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_auxiliary_power_supply_connection.jpg
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -95,9 +103,10 @@ The following sequence is recommended for board operation. Refer to Figure 7 for
 
 -  Connect power supplies for the DC bus voltage to P2 of the system control board. Connect an electronic load in parallel. Set the electronic load to CV mode at a level about 200mV above the DC bus voltage.
 
-
-
-|DC Bus Connection|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc_bus_connection.jpg
+   :alt: DC Bus Connection
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -108,7 +117,9 @@ The following sequence is recommended for board operation. Refer to Figure 7 for
 -  Connect the SDP-S board to the PC with the USB cable.
 -  Software can now be launched.//
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_test_setup.svg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -131,7 +142,10 @@ The System Control Board (SCB) serves as the main controller of the system and h
 -  +5V
 -  +3.3V
 
-|ADBT1000 System Control Board|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb.jpg
+   :alt: ADBT1000 System Control Board
+   :align: center
+   :width: 700px
 
 .. container:: centeralign
 
@@ -145,7 +159,9 @@ Table 1 below shows the onboard connectors on the SCB and their corresponding fu
    **Table 1. SCB Connections and Functions**\
 
 
-   |image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb_connections_and_functions.jpg
+   :align: center
+   :width: 600px
 
 DC Bus Monitor
 ~~~~~~~~~~~~~~
@@ -159,7 +175,9 @@ Ensure that these jumpers are set up correctly according to the nominal bus volt
    **Table 2. Jumper Settings for DC Bus Monitor**\
 
 
-   |image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt10000_jumper_setting_for_dc_bus_monitor.jpg
+   :align: center
+   :width: 400px
 
 ISense Filter and VSense Buffer Provisions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,7 +193,7 @@ Switching Power Module
 The Switching Power Module contains a bidirectional half bridge power FET configuration that enables charging and discharging of cells. Overvoltage, undervoltage and overcurrent protection is incorporated for the half-bridge FETs. A four (4) wire pluggable terminal block enables either a 4-wire or 2-wire connection to the battery. A two wire pluggable terminal block enables connecting to a thermistor. Each SPM is rated at 10A.
 
 
-|image6|
+|image1|
 
 .. container:: centeralign
 
@@ -187,7 +205,9 @@ The Switching Power Module contains a bidirectional half bridge power FET config
    **Table 3. SPM Jumper Functions and Configurations**\
 
 
-   |image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm_jumper_function_and_configuration.jpg
+   :align: center
+   :width: 400px
 
 Battery Voltage Detect
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -200,7 +220,7 @@ Thermistor Connection
 The board has a provision for connecting a thermistor to measure thermal effects on the board. This signal is routed to the SCB through connector P6 and is used as feedback to the ADBT1000. If a voltage is used to simulate a thermistor response, the correct polarity, shown in Figure 9 below must be observed.
 
 
-|image8|
+|image2|
 
 .. container:: centeralign
 
@@ -220,8 +240,8 @@ Installation Steps
 
 -  Download the file from the ADBT1000 Product Page and unzip the file.
 
-
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_folder.svg
+   :align: center
 
 .. container:: centeralign
 
@@ -231,7 +251,8 @@ Installation Steps
 -  Run the ADBT1000_Eval_Software_setup.exe in the unzipped folder.
 -  The Setup Wizard will come up as in Figure 12 below. Click Next.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_start.svg
+   :align: center
 
 .. container:: centeralign
 
@@ -240,9 +261,9 @@ Installation Steps
 
 -  Accept the license agreement, then select the destination location for the software.
 
-
-
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_location.svg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -252,7 +273,8 @@ Installation Steps
 -  Select all components to be installed then click Next
 -  Choose whether to add a Desktop shortcut and click Next. When the Installation summary as shown in Figure 14 below comes up, click **Install**.
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_summary_set.svg
+   :align: center
 
 .. container:: centeralign
 
@@ -261,9 +283,9 @@ Installation Steps
 
 -  Wait for installation to complete. The software can then be launched.
 
-
-
-|image13|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_finish.svg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -277,8 +299,9 @@ The SDP can operate with a baud rate up to a maximum of 8MHz. The default freque
 
 -  Find the device-config file in the path as shown in the Figure below.
 
-
-|image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_path_for_device_config_file.svg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -287,9 +310,9 @@ The SDP can operate with a baud rate up to a maximum of 8MHz. The default freque
 
 -  Change the value in the variable “sclkFrequency” to 8000000 in order to run at the maximum baud rate.
 
-
-
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_editing_sclk.svg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -303,8 +326,9 @@ Once KingWare is installed and the system is powered up, follow the proceeding s
 
 -  To launch the software, click **Windows** and run the ADBT1000_Eval_Software or double click the shortcut icon created on the desktop during installation. The home page below should come up.
 
-
-|image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_home_page.svg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -312,7 +336,11 @@ Once KingWare is installed and the system is powered up, follow the proceeding s
 
 
 -  Click **Connect** to get started. Once the board is connected, click **Start** to proceed to configuring the system.
--  Configure the settings for the application. Default values are also pre-loaded on the software. These can be found in Table 4 in the following section. |image17|\
+-  Configure the settings for the application. Default values are also pre-loaded on the software. These can be found in Table 4 in the following section.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_quick_setup.svg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -323,7 +351,9 @@ Once KingWare is installed and the system is powered up, follow the proceeding s
 -  When this is done, the user will be taken to the **Configure Channel** tab on KingWare. Input values for the Voltage limit, Current limit, Time limit, Current setpoint and Voltage setpoint.
 -  Click **Execute**. This will start system operation and the system will automatically start taking data. Switch to the **Live Data** tab to view battery current and voltage.
 
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_cc-cv_operation.svg
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -341,7 +371,7 @@ General Functions
 The KingWare platform comes with general functions that will be usable throughout the evaluation.
 
 
-|image19|
+|image3|
 
 .. container:: centeralign
 
@@ -359,7 +389,7 @@ Device Connection
 The LED on the ADBT1000 in Figure 22 indicates whether the device is connected or not. The green LED indicates that the device is connected. Clicking **Disconnect** will disconnect the device from the application. Conversely, clicking Connect will connect the device back to the application.
 
 
-|image20|
+|image4|
 
 .. container:: centeralign
 
@@ -377,7 +407,7 @@ Bell Icon
 Clicking on the Bell icon will show the Activity Monitor, which logs all data writes and reads done by the tool. When new interrupts occur, a red dot will appear on the bell icon. On the Activity Monitor drop-down, the user will be able to see all the events that have been done. This feature is useful for tracking procedures in the whole use of the system.
 
 
-|image21|
+|image5|
 
 .. container:: centeralign
 
@@ -397,7 +427,7 @@ Configuring the System
 As discussed in the KingWare quick start section, to start operating the board, the user must fill in the required parameters on the **Configure Systems tab**. These parameters come pre-filled with default values upon installation. The default values for these settings can be seen in Table 4. However, the software stores the last programmed configuration, so when the settings are changed, these will be the default once the software is re-opened. Clicking on the expand button on the right side of each parameter will show a dropdown menu that gives the user more options to customize the application.
 
 
-|image22|
+|image6|
 
 .. container:: centeralign
 
@@ -408,7 +438,7 @@ The user may also navigate through the configurations through the Up and Down ar
 
 
 
-|image23|
+|image7|
 
 .. container:: centeralign
 
@@ -422,7 +452,9 @@ Once the parameters have been set with the desired values, pressing **Continue**
    **Table 4. Default Configuration for System**\
 
 
-   |image24|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_default_values.jpg
+   :align: center
+   :width: 800px
 
 Configuring Channels
 --------------------
@@ -430,14 +462,14 @@ Configuring Channels
 The **Configure Channel tab** allows the user to visually configure and operate each channel of the system demo board. In this tab, the user can select charge, discharge, and rest modes, and set limits for the specific application. The battery, bus, and power stage buttons can be connected or isolated. On running the startup sequence, these buttons will be green, indicating that they are connected. The background of the container will be changed based on the instruction the user executes. Figure 27 depicts modes of Charge, Discharge, and Rest, respectively. The modes of operation can be set in this tab. The user can choose to do a charge, discharge, or rest cycle. Upon choosing the preferred cycle, the user can choose the mode in the following dropdown:
 
 
-|image25|
+|image8|
 
 .. container:: centeralign
 
    *Figure 26. Charge or Discharge Mode*\
 
 
-   |image26|
+   |image9|
 
 .. container:: centeralign
 
@@ -468,7 +500,9 @@ VMEAS determines where the measurement is being taken.
 -  BVP/BVN – actual battery voltage is being measured
 -  CVS/BVN – capacitor voltage is being measured
 
-|image27|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vmeas_options.svg
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -479,7 +513,7 @@ When the modes and the limits are set, clicking Execute will start the cycle. Du
 
 
 
-|image28|
+|image10|
 
 .. container:: centeralign
 
@@ -490,7 +524,7 @@ If the user wants to change any parameters, the changes can be made to the varia
 
 
 
-|image29|
+|image11|
 
 .. container:: centeralign
 
@@ -501,7 +535,7 @@ The channels are grouped based on the master slave configuration. By default, th
 
 
 
-|image30|
+|image12|
 
 .. container:: centeralign
 
@@ -518,7 +552,7 @@ Multiple channels can work in parallel. Inside a group of multiple channels work
    **Table 5. Parallel Configurations \**
 
 
-|image31| After setting the mode, under Master Slave Configurations, choose which channels are to be configured as master or slave as in the figure below: |image32|
+|image13| After setting the mode, under Master Slave Configurations, choose which channels are to be configured as master or slave as in the figure below: |image14|
 
 .. container:: centeralign
 
@@ -529,7 +563,7 @@ Take note that when operating channels in parallel, the master should be connect
 
 
 
-|image33|
+|image15|
 
 .. container:: centeralign
 
@@ -542,7 +576,7 @@ Getting Live Data
 The **Live Data** tab allows the user to monitor the currents and voltages on each channel of the system demo board. This provides an easy way to monitor the activity on each channel of the board.
 
 
-|image34|
+|image16|
 
 .. container:: centeralign
 
@@ -553,7 +587,7 @@ When the operation is executed from the channel configuration tab, the software 
 
 
 
-|image35|
+|image17|
 
 .. container:: centeralign
 
@@ -564,7 +598,7 @@ Data is not logged until the logging feature is enabled. To enable logging, clic
 
 
 
-|image36|
+|image18|
 
 .. container:: centeralign
 
@@ -575,7 +609,7 @@ Clicking on **show logs** hyperlink at the bottom of the options will open a fol
 
 
 
-|image37|
+|image19|
 
 .. container:: centeralign
 
@@ -585,7 +619,10 @@ Clicking on **show logs** hyperlink at the bottom of the options will open a fol
 Running Diagnostics
 -------------------
 
-The **Diagnostics** tab allows the user to monitor the control functions for the system. An EIS analysis can be performed through this tab. |image38|\
+The **Diagnostics** tab allows the user to monitor the control functions for the system. An EIS analysis can be performed through this tab.
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -603,7 +640,7 @@ Instructions
 The **Instruct** Tab allows executing instructions through scripts.
 
 
-|image39|
+|image21|
 
 .. container:: centeralign
 
@@ -616,7 +653,7 @@ Channel Card
 There are 4 channel cards (apart from the Register Settings card) vertically arranged on the left side of the Instructions tab. Each card pertains to one channel in the device and displays high-level information about the channel. Each card displays the execution state of the channel and has a drop-down to select the mode of execution. The card also displays whether the channel is a Master or a Slave. Clicking the channel card would open the channel editor, where the user can write instructions pertaining to that channel.
 
 
-|image40|
+|image22|
 
 .. container:: centeralign
 
@@ -627,7 +664,7 @@ The user can edit only in master channels. Any change in the master channel is a
 
 
 
-|image41|
+|image23|
 
 .. container:: centeralign
 
@@ -640,7 +677,7 @@ Channel Editor
 The instruction commands supported are **Charge**, **Discharge**, **Rest**, **Halt**, and **Loop**.
 
 
-|image42|
+|image24|
 
 .. container:: centeralign
 
@@ -651,7 +688,7 @@ Clicking on the mode would fill the payloads of the particular mode. The payload
 
 
 
-|image43|
+|image25|
 
 .. container:: centeralign
 
@@ -662,7 +699,7 @@ The register-field pop up would be displayed whenever the user clicks on payload
 
 
 
-|image44|
+|image26|
 
 .. container:: centeralign
 
@@ -673,7 +710,7 @@ Once the instructions are written in the editor, the user can click on the **Exe
 
 
 
-|image45|
+|image27|
 
 .. container:: centeralign
 
@@ -684,7 +721,7 @@ In the case of manual or semi-auto mode, the user needs to click on **Load Instr
 
 
 
-|image46|
+|image28|
 
 .. container:: centeralign
 
@@ -704,7 +741,7 @@ Manual Mode
 In manual sequencing mode, the user can write multiple instructions in the editor and load the first set of instructions by clicking **Load Instruction**. On loading, the instruction is written into the next instruction area of the channel register map and grayed out. User can start the instruction execution by clicking **Execute**. The instruction pointer in the editor points to the next set of instructions.
 
 
-|image47|
+|image29|
 
 .. container:: centeralign
 
@@ -719,7 +756,7 @@ Semi-Automatic Mode
 In semi-auto sequencing mode, the user needs to load the first set of instructions to the device by clicking the **Load Instruction** button. On loading, the first instruction set is grayed out and is written into the next instruction area of the channel register map. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of this instruction. The instruction pointer in the editor points to the next set of instructions to be loaded. It is expected that the user will write the next instruction and click the **Load instruction** button upon receiving **Instruction Done** or **Instruction Timeout** interrupt. On clicking the **Load Instruction** button, the next instruction is written to the next instruction register and the “NEXT_INSTR_READY” bit is set.
 
 
-|image48|
+|image30|
 
 .. container:: centeralign
 
@@ -732,7 +769,7 @@ Automatic Mode
 In auto sequencing mode, all instructions are programmed in instruction memory. On clicking **Execute**, the self-clearing bit “START” is set, thus initiating the execution of the instructions. The instructions are grayed out on execution. The memory address pointer is displayed at the top of the channel editor. **Sequence Completed interrupt** is generated when all instructions have been executed.
 
 
-|image49|
+|image31|
 
 .. container:: centeralign
 
@@ -747,7 +784,7 @@ Loop Instructions
 Loop instruction is supported only in automatic mode. The syntax of loop instruction:
 
 
-|image50|
+|image32|
 
 .. container:: centeralign
 
@@ -758,7 +795,7 @@ The user can write charge, discharge, or rest instructions inside the loop. On c
 
 
 
-|image51|
+|image33|
 
 .. container:: centeralign
 
@@ -769,7 +806,7 @@ An example loop instruction was run and results can be seen on the Live Data tab
 
 
 
-|image52|
+|image34|
 
 .. container:: centeralign
 
@@ -782,7 +819,7 @@ Editor Features
 The register and the channel editors comprise the below features:
 
 
-|image53|
+|image35|
 
 .. container:: centeralign
 
@@ -800,7 +837,7 @@ Activity Monitor
 This monitor allows viewing the results of executed scripts, interrupts and warnings. User can view the results of channels either collectively or individually from the toggle button to the top right of the activity monitor. The channel selected in the toggle button corresponds to the active channel card. The monitor has support to filter events like ‘All events’, ‘Interrupts’ and ‘Warnings’.
 
 
-|image54|
+|image36|
 
 .. container:: centeralign
 
@@ -813,7 +850,7 @@ Registers Tab
 This page allows communication with the device registers through scripts. This page comprises a script editor and status editor. The script editor allows to type the script which has to be executed and the status editor allows to view the result of the executed script. Multiple read and write operations are supported.
 
 
-|image55|
+|image37|
 
 .. container:: centeralign
 
@@ -824,7 +861,7 @@ While clicking on the register value, a window having the field details of the r
 
 
 
-|image56|
+|image38|
 
 .. container:: centeralign
 
@@ -839,7 +876,7 @@ Help Tab
 The Help tab provides the user with quick links to the user manual and quick start procedures for the system.
 
 
-|image57|
+|image39|
 
 .. container:: centeralign
 
@@ -852,105 +889,107 @@ Evaluation Board Schematics and Layout
 System Control Board
 --------------------
 
-|image58|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_adbt1000_connections.svg
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    *Figure 58. ADBT1000 Connections*\
 
 
-   |image59|
+   |image40|
 
 .. container:: centeralign
 
    *Figure 59. Onboard Battery Monitor*\
 
 
-   |image60|
+   |image41|
 
 .. container:: centeralign
 
    *Figure 60. SPI Connections*\
 
 
-   |image61|
+   |image42|
 
 .. container:: centeralign
 
    *Figure 61. DC Bus Monitor Connections*\
 
 
-   |image62|
+   |image43|
 
 .. container:: centeralign
 
    *Figure 62. Power Section*\
 
 
-   |image63|
+   |image44|
 
 .. container:: centeralign
 
    *Figure 63. Current Sense Filter*\
 
 
-   |image64|
+   |image45|
 
 .. container:: centeralign
 
    *Figure 64. Voltage Sense Buffer*\
 
 
-   |image65|
+   |image46|
 
 .. container:: centeralign
 
    *Figure 65. Connections for SPM Sockets*\
 
 
-   |image66|
+   |image47|
 
 .. container:: centeralign
 
    *Figure 66. System Control Board Top Layer*\
 
 
-   |image67|
+   |image48|
 
 .. container:: centeralign
 
    *Figure 67. System Control Board Layer 1 Primary*\
 
 
-   |image68|
+   |image49|
 
 .. container:: centeralign
 
    *Figure 68. System Control Board Layer 2 Ground*\
 
 
-   |image69|
+   |image50|
 
 .. container:: centeralign
 
    *Figure 69. System Control Board Layer 3 Signal*\
 
 
-   |image70|
+   |image51|
 
 .. container:: centeralign
 
    *Figure 70. System Control Board Layer 4 Signal*\
 
 
-   |image71|
+   |image52|
 
 .. container:: centeralign
 
    *Figure 71. System Control Board Layer 5 Ground*\
 
 
-   |image72|
+   |image53|
 
 .. container:: centeralign
 
@@ -960,49 +999,51 @@ System Control Board
 Switching Power Module
 ----------------------
 
-|image73|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_system_power_module.svg
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    *Figure 73. System Power Module*\
 
 
-   |image74|
+   |image54|
 
 .. container:: centeralign
 
    *Figure 74. Current Sense and Socket Connection*\
 
 
-   |image75|
+   |image55|
 
 .. container:: centeralign
 
    *Figure 75. Switching Power Module Silkscreen*\
 
 
-   |image76|
+   |image56|
 
 .. container:: centeralign
 
    *Figure 76. Switching Power Module Primary Layer*\
 
 
-   |image77|
+   |image57|
 
 .. container:: centeralign
 
    *Figure 77. Switching Power Module Ground Layer*\
 
 
-   |image78|
+   |image58|
 
 .. container:: centeralign
 
    *Figure 78. Switching Power Module Power Layer*\
 
 
-   |image79|
+   |image59|
 
 .. container:: centeralign
 
@@ -1017,197 +1058,151 @@ Bill of Materials
    **Table 5. System Control Board**\
 
 
-|image80| |image81| |image82| |image83| |image84| |image85|
+|image60| |image61| |image62| |image63| |image64| |image65|
 
 .. container:: centeralign
 
    **Table 6. Switching Power Module**\
 
 
-|image86| |image87| |image88|
+|image66| |image67| |image68|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_copyright1.svg
    :align: center
    :width: 800px
 
-.. |System Demo Board Photograph| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000scb1kitangle.jpg
-   :width: 800px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_system_demo_simplified_block_diagram.svg
-.. |2-wire Battery Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_two_wire_load_connection.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_thermistor_connection.jpg
    :width: 300px
-.. |SDP-S Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_sdp_s_connection.jpg
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_auxiliary_power_supply_connection.jpg
-   :width: 300px
-.. |DC Bus Connection| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc_bus_connection.jpg
-   :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_test_setup.svg
-   :width: 600px
-.. |ADBT1000 System Control Board| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb.jpg
-   :width: 700px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb_connections_and_functions.jpg
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt10000_jumper_setting_for_dc_bus_monitor.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_connection.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_general_functions.jpg
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm_jumper_function_and_configuration.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor.svg
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_thermistor_connection.jpg
-   :width: 300px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_folder.svg
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_start.svg
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_location.svg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_expand_button.svg
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_summary_set.svg
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_finish.svg
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_path_for_device_config_file.svg
-   :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_editing_sclk.svg
-   :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_home_page.svg
-   :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_quick_setup.svg
-   :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_cc-cv_operation.svg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_navigation_button.svg
    :width: 200px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_connection.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_charge_or_discharge_mode.svg
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_channel_modes.svg
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_measured_battery_voltage_and_current.svg
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_update_button.svg
+   :width: 300px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_header_channel_configuration.svg
+   :width: 300px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_configuration.jpg
+   :width: 800px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_master_and_slave_channel_configuration.svg
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_general_functions.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_channel_configuration_and_data.svg
+   :width: 800px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_configure_live_data.svg
+   :width: 800px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_actual_data_showing_cc-cv_operation.svg
    :width: 400px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor.svg
-   :width: 400px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_expand_button.svg
-   :width: 400px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_navigation_button.svg
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_start_of_datalogging.svg
    :width: 200px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_default_values.jpg
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_reset_data_button.svg
+   :width: 200px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_diagnostic_tab.svg
    :width: 800px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_charge_or_discharge_mode.svg
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instruct_tab.svg
+   :width: 800px
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_execution_mode.svg
    :width: 300px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_channel_modes.svg
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_card_with_instruction_interrupt.svg
+   :width: 300px
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_auto-suggestion_on_channel_editor.svg
    :width: 600px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vmeas_options.svg
-   :width: 300px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_measured_battery_voltage_and_current.svg
-   :width: 300px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_update_button.svg
-   :width: 300px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_header_channel_configuration.svg
-   :width: 300px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_configuration.jpg
-   :width: 800px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_master_and_slave_channel_configuration.svg
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_mode_with_payload.svg
    :width: 400px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_channel_configuration_and_data.svg
-   :width: 800px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_configure_live_data.svg
-   :width: 800px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_actual_data_showing_cc-cv_operation.svg
-   :width: 400px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_start_of_datalogging.svg
-   :width: 200px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_reset_data_button.svg
-   :width: 200px
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_diagnostic_tab.svg
-   :width: 800px
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instruct_tab.svg
-   :width: 800px
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_execution_mode.svg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vlimit_register_field.svg
    :width: 300px
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_card_with_instruction_interrupt.svg
-   :width: 300px
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_auto-suggestion_on_channel_editor.svg
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_execute_button.svg
+   :width: 200px
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_load_instruction_button.svg
+   :width: 200px
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_manaul_mode.svg
    :width: 600px
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_mode_with_payload.svg
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_semi-automatic-mode.svg
+   :width: 600px
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_automatic_mode.svg
+   :width: 600px
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_instruction.jpg
+   :width: 200px
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_example.svg
+   :width: 600px
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_live_data_for_loop_example.jpg
+   :width: 600px
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_editor_features.jpg
+   :width: 200px
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor_on_instruct_tab.jpg
+   :width: 600px
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_tab.svg
+   :width: 800px
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_window.svg
    :width: 400px
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vlimit_register_field.svg
-   :width: 300px
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_execute_button.svg
-   :width: 200px
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_load_instruction_button.svg
-   :width: 200px
-.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_manaul_mode.svg
-   :width: 600px
-.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_semi-automatic-mode.svg
-   :width: 600px
-.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_automatic_mode.svg
-   :width: 600px
-.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_instruction.jpg
-   :width: 200px
-.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_example.svg
-   :width: 600px
-.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_live_data_for_loop_example.jpg
-   :width: 600px
-.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_editor_features.jpg
-   :width: 200px
-.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor_on_instruct_tab.jpg
-   :width: 600px
-.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_tab.svg
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_help_tab.svg
    :width: 800px
-.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_window.svg
-   :width: 400px
-.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_help_tab.svg
-   :width: 800px
-.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_adbt1000_connections.svg
-   :width: 800px
-.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_on_board_battery_monitor.svg
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_on_board_battery_monitor.svg
    :width: 450px
-.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_spi_connections.svg
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_spi_connections.svg
    :width: 800px
-.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_dc_bus_monitor_connection.svg
-.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_power_sections.svg
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_dc_bus_monitor_connection.svg
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_power_sections.svg
    :width: 800px
-.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_filter.svg
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_filter.svg
    :width: 800px
-.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_voltage_sense_buffers.svg
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_voltage_sense_buffers.svg
    :width: 800px
-.. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_connections_for_spm_sockets.svg
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_connections_for_spm_sockets.svg
    :width: 800px
-.. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_top_layer.svg
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_top_layer.svg
    :width: 600px
-.. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_1_primary.svg
+.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_1_primary.svg
    :width: 600px
-.. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_2_ground.svg
+.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_2_ground.svg
    :width: 600px
-.. |image69| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_3_signal.svg
+.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_3_signal.svg
    :width: 600px
-.. |image70| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_4_signal.svg
+.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_4_signal.svg
    :width: 600px
-.. |image71| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_5_ground.svg
+.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_5_ground.svg
    :width: 600px
-.. |image72| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_6_secondary.svg
+.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_6_secondary.svg
    :width: 600px
-.. |image73| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_system_power_module.svg
-   :width: 800px
-.. |image74| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_and_socket_connections.svg
+.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_and_socket_connections.svg
    :width: 600px
-.. |image75| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_silkscreen1.svg
+.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_silkscreen1.svg
    :width: 600px
-.. |image76| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_primary_layer.svg
+.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_primary_layer.svg
    :width: 600px
-.. |image77| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_ground_layer.svg
+.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_ground_layer.svg
    :width: 600px
-.. |image78| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_power_layer.svg
+.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_power_layer.svg
    :width: 600px
-.. |image79| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_secondary_layer.svg
+.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_secondary_layer.svg
    :width: 600px
-.. |image80| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt100_bom_scb2.1.svg
+.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt100_bom_scb2.1.svg
    :width: 797px
-.. |image81| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb3.svg
+.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb3.svg
    :width: 795px
-.. |image82| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb4.svg
+.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb4.svg
    :width: 798px
-.. |image83| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb5.svg
+.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb5.svg
    :width: 800px
-.. |image84| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb6.svg
+.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb6.svg
    :width: 800px
-.. |image85| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb7.svg
+.. |image65| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb7.svg
    :width: 800px
-.. |image86| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm1.1.svg
+.. |image66| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm1.1.svg
    :width: 800px
-.. |image87| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm2.svg
+.. |image67| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm2.svg
    :width: 800px
-.. |image88| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm3.svg
+.. |image68| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm3.svg
    :width: 800px

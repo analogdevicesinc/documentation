@@ -16,4 +16,4 @@ The dc-blocking behavior is computed according to the following transfer functio
 
 Note: R = 0.9999 which is a cutoff frequency of 0.1Hz at 48kHz.
 
-.. |dcblockingpic1.png| image:: https://wiki.analog.com/_media/dcblockingpic1.png
+.. |dcblockingpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/dcblockingpic1.png

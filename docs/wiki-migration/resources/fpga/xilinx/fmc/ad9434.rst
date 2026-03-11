@@ -85,16 +85,16 @@ Below are the Programmable Logic interrupts used in this project.
 Building the HDL projects
 -------------------------
 
-The design is built upon ADI's generic HDL reference design framework. ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must clone the HDL repository, and then build the project as follows.
+The design is built upon ADI's generic HDL reference design framework. ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must clone the HDL repository, and then build the project as follows.
 
-On Linux:`here <Cygwin/WSL:
+On Linux/Cygwin/WSL:
 
 ::
 
    user@analog:~$ cd hdl/projects/ad9434_fmc/zc706
    user@analog:~/hdl/projects/ad9434_fmc/zc706$ make
 
-A more comprehensive build guide can be found in the `build_hdl <https://github.com/analogdevicesinc/hdl/blob/master/docs/user_guide/build_hdl.rst>` user guide.
+A more comprehensive build guide can be found in the :git-hdl:`build_hdl <docs/user_guide/build_hdl.rst>` user guide.
 
 AD9434_FMC Board files
 ----------------------

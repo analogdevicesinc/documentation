@@ -15,4 +15,4 @@ This block lets you control the following three parameters:
 
 After the default algorithm has been established, this block is able to have other algorithms :doc:`added </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>` to it. Right-click the block and select **Add Algorithm > IC N > Reverb**, which will add another pair of stereo inputs/outputs.
 
-.. |reverbpic1.png| image:: https://wiki.analog.com/_media/reverbpic1.png
+.. |reverbpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/reverbpic1.png

@@ -80,7 +80,9 @@ The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide
 -  Codec ADAU1701
 -  512K Self-Boot Memory (EEPROM)
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437b1mz_new.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -132,6 +134,3 @@ RJ45 Platform Jumper settings
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
 | X          | All Others                     | Open     |   |            |                                |           |           |
 +------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437b1mz_new.png
-   :width: 800px

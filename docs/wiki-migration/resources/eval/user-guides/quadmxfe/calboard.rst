@@ -105,7 +105,7 @@ Equipment Needed
 Control Interfaces
 ------------------
 
-The calibration board can be controlled in multiple ways including a DIP Switch and 2A PMOD Interface. The board can be controlled with 4 main signals: 5045 V1 and 5045 V2 which control an ADRF5045 which switches the transmit path between combined loopback, low frequency path, high frequency path, and power detection path, CTLR IND which turns off and on adjacent individual loopback for each Rx and Tx channel, and CTRL RX COMB which turns off and on the combined receive loopback path. The DIP Switch controls 4 signals: 5045 V1, 5045 V2, CTRL IND, and CTRL RX COMB. The PMOD Interface has 8 signals: 5045 V1, 5045 V2, CTRL IND, CTRL RX COMB, and 4 SPI Communications signals. The AD5592R is an 8 channel GPIO/ADC/DAC and it is connected the same control signals as the DIP switch as well as the three power detectors (:adi:`AD8318 </en/products/ad8318.html>`, :adi:`HMC948 </en/products/hmc948.html>`, :adi:`LTC5596 </en/products/ltc5596.html>`), plus a temperature sensor on the AD8318. Below is a tabular representation of these control signals.
+The calibration board can be controlled in multiple ways including a DIP Switch and 2A PMOD Interface. The board can be controlled with 4 main signals: 5045 V1 and 5045 V2 which control an ADRF5045 which switches the transmit path between combined loopback, low frequency path, high frequency path, and power detection path, CTLR IND which turns off and on adjacent individual loopback for each Rx and Tx channel, and CTRL RX COMB which turns off and on the combined receive loopback path. The DIP Switch controls 4 signals: 5045 V1, 5045 V2, CTRL IND, and CTRL RX COMB. The PMOD Interface has 8 signals: 5045 V1, 5045 V2, CTRL IND, CTRL RX COMB, and 4 SPI Communications signals. The AD5592R is an 8 channel GPIO/ADC/DAC and it is connected the same control signals as the DIP switch as well as the three power detectors (:adi:`AD8318 <en/products/ad8318.html>`, :adi:`HMC948 <en/products/hmc948.html>`, :adi:`LTC5596 <en/products/ltc5596.html>`), plus a temperature sensor on the AD8318. Below is a tabular representation of these control signals.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/quadmxfe/capture.png
    :width: 400px
@@ -113,7 +113,7 @@ The calibration board can be controlled in multiple ways including a DIP Switch 
 Software Needed
 ---------------
 
-The following link contains the MATLAB driver for controlling the 16 Tx / 16 Rx Calibration board via the VCU118 PMOD interface. The driver may be used to configure the Quad MxFE platform in a Combined Loopback, Individual Loopback, Combined Tx to SMA, Combined Rx from SMA, Combined Tx Power reading, and Power readings from the :adi:`AD5592R </en/products/ad5592r.html>` and subsequent (:adi:`AD8318 </en/products/ad8318.html>`, :adi:`HMC948 </en/products/hmc948.html>`, :adi:`LTC5596 </en/products/ltc5596.html>`).
+The following link contains the MATLAB driver for controlling the 16 Tx / 16 Rx Calibration board via the VCU118 PMOD interface. The driver may be used to configure the Quad MxFE platform in a Combined Loopback, Individual Loopback, Combined Tx to SMA, Combined Rx from SMA, Combined Tx Power reading, and Power readings from the :adi:`AD5592R <en/products/ad5592r.html>` and subsequent (:adi:`AD8318 <en/products/ad8318.html>`, :adi:`HMC948 <en/products/hmc948.html>`, :adi:`LTC5596 <en/products/ltc5596.html>`).
 
 -  :doc:`Cal Board VCU118 PMOD </wiki-migration/resources/eval/user-guides/quadmxfe/quickbringup>`
 

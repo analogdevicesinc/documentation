@@ -22,9 +22,8 @@ The three basic principles for this activity can be explained using electrons, o
 
 So, when we talk about these values, we're really describing the movement of charge, and thus, the behavior of electrons. A circuit is a closed loop that allows charge to move from one place to another. Components in the circuit allow us to control this charge and use it to do work.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/georg-ohm.png
-   :align: center
-   :width: 200px
+
+|image1|
 
 .. container:: centeralign
 
@@ -125,9 +124,8 @@ Dividing by zero results in infinite current! Not actually infinite in practice,
 
 The green rectangles in the schematic are used to indicate the connections to the pins on the ADALM1000. Our circuit connections should look like this:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-sch-1.png
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -154,9 +152,8 @@ So, the resistor value we need for R\ :sub:`1` is around 277 ohms to keep the cu
 
 277 Ohms is not a common value for off-the-shelf resistors, so for this experiment use a 470 ohm resistor (yellow purple brown) which is the next closest value greater than 277 in the ADALP2000 parts kit. Below is what your circuit should look like all put together.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-1.png
-   :align: center
-   :width: 300px
+
+|image3|
 
 .. container:: centeralign
 
@@ -189,9 +186,8 @@ Measuring the actual Voltage and Current
 
 The ADALM1000 also has two input channels that can be used as a voltmeter. We can connect them as shown in the next schematic to measure the actual voltages in the circuit, The Channel A voltmeter input is connected to measure the +5 V power supply and the Channel B voltmeter is connected to measure the voltage at the (+), positive, end of the diode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-sch-3.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -200,9 +196,9 @@ The ADALM1000 also has two input channels that can be used as a voltmeter. We ca
 
 Add two more jumper wires to connect the voltmeter inputs as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-2.png
-   :align: center
-   :width: 300px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -211,9 +207,9 @@ Add two more jumper wires to connect the voltmeter inputs as shown.
 
 Start the ALICE M1K voltmeter tool program. The interface looks like this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/voltmeter-screen-1.png
-   :align: center
-   :width: 200px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -236,18 +232,15 @@ Or:
 
 Either of the two ADALM1000 channels can be used as a voltage source as well. When used as a voltage source the current being supplied by the voltage source can be measured. We can use this function to measure the current over a range of supplied voltages. Remove the jumper wire connected to the +5 V supply as shown next.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-sch-4.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
    Schematic, Measure the actual current in the circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-3.png
-   :align: center
-   :width: 300px
+   |image8|
 
 .. container:: centeralign
 
@@ -256,9 +249,9 @@ Either of the two ADALM1000 channels can be used as a voltage source as well. Wh
 
 Close the Voltmeter tool and start the ALICE M1K Meter-Source tool. The screen with the CA source turned on and set to output 5.0 volts looks like this:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/smu-screen-1.png
-   :align: center
-   :width: 500px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -274,9 +267,8 @@ The Ohmmeter Tool
 
 The ADALM1000 can also function as an Ohmmeter. To measure a resistor simply connect it between CH A and CH B as shown here.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-4.png
-   :align: center
-   :width: 300px
+
+|image10|
 
 .. container:: centeralign
 
@@ -285,9 +277,9 @@ The ADALM1000 can also function as an Ohmmeter. To measure a resistor simply con
 
 Close the Meter-Source tool and start the ALICE M1K Ohm Meter tool. The screen is shown here. The software uses a known resistor to test the unknown resistor against. The ADALM1000 has a built in 50 Ohm resistor that can be used for this. Be sure that the Int option is selected. The voltage level that is used to measure the resistor can be set. Testing at the maximum 5.0V gives the best results for most resistor values. Click on Run and you should see something like this with the 470 Ohm resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohmmeter-screen-1.png
-   :align: center
-   :width: 200px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -304,3 +296,26 @@ These concepts are just the tip of the iceberg. If you're looking to study furth
 **For Further Reading:**
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/georg-ohm.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-sch-1.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-1.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-sch-3.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-2.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/voltmeter-screen-1.png
+   :width: 200px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-sch-4.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-3.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/smu-screen-1.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohm-law-bbrd-4.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/ohmmeter-screen-1.png
+   :width: 200px

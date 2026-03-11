@@ -145,11 +145,11 @@ The Help tool view contains license information, links to useful documentation a
    :alt: help_tool_view.png
    :align: center
 
-.. |classic_ace_theme.png| image:: https://wiki.analog.com/_media/classic_ace_theme.png
-.. |fluent_ace_theme.png| image:: https://wiki.analog.com/_media/fluent_ace_theme.png
-.. |settings_use_classic.png| image:: https://wiki.analog.com/_media/settings_use_classic.png
-.. |settings_use_fluent.png| image:: https://wiki.analog.com/_media/settings_use_fluent.png
-.. |more_options_highlighted.png| image:: https://wiki.analog.com/_media/more_options_highlighted.png
-.. |more_options_focused.png| image:: https://wiki.analog.com/_media/more_options_focused.png
-.. |detailed_list.png| image:: https://wiki.analog.com/_media/detailed_list.png
-.. |tiled_list.png| image:: https://wiki.analog.com/_media/tiled_list.png
+.. |classic_ace_theme.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/classic_ace_theme.png
+.. |fluent_ace_theme.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/fluent_ace_theme.png
+.. |settings_use_classic.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/settings_use_classic.png
+.. |settings_use_fluent.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/settings_use_fluent.png
+.. |more_options_highlighted.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/more_options_highlighted.png
+.. |more_options_focused.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/more_options_focused.png
+.. |detailed_list.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/detailed_list.png
+.. |tiled_list.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/tiled_list.png

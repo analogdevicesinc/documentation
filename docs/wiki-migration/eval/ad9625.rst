@@ -20,7 +20,9 @@ FEATURES
 -  On-board Power Supply options: Switcher only, Switcher + LC Filter, Switcher + LDO regulator
 -  VisualAnalog® and SPI controller software interfaces
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_board_with_capture_board.png
+   :align: center
+   :width: 900px
 
 .. container:: centeralign
 
@@ -72,7 +74,7 @@ HELPFUL DOCUMENTS
 -  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
 -  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*
 -  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
--  Power by Linear Journal: "Silent Switcher uModule Regulators Quietly Power GSPS Sampling ADC in Half the Space" :adi:`media/en/technical-documentation/lt-journal-article/PbLJournal-V1N3-2018-08-RevA`.pdf
+-  Power by Linear Journal: "Silent Switcher uModule Regulators Quietly Power GSPS Sampling ADC in Half the Space" :adi:`media/en/technical-documentation/lt-journal-article/PbLJournal-V1N3-2018-08-RevA.pdf`
 
 EASY START Steps
 ================
@@ -94,6 +96,3 @@ EASY START Steps
 7. Make sure the evaluation boards are powered on before connecting the analog input and clock. Connect the appropriate analog input (which should be filtered with a band-pass filter) and low jitter clock signal.
 
 8. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_board_with_capture_board.png
-   :width: 900px

@@ -50,7 +50,8 @@ Power Muxing Options
 
 For details of the power muxing scheme, refer to the figure below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/23062017-tile-revb-power-mux-scheme.png
+
+|image1|
 
 .. danger::
 
@@ -144,10 +145,10 @@ C1 & C2 from pins 29 to 60
 Expansion connectors pin out table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-\*\* Differences between EV-COG-AD4050WZ and EV-COG-AD4050LZ include the differently coloured entries in the pinout table*\* |image1| |image2| |image3|
+\*\* Differences between EV-COG-AD4050WZ and EV-COG-AD4050LZ include the differently coloured entries in the pinout table*\* |image2| |image3| |image4|
 
 
-|image4|
+|image5|
 
 Jumper Settings
 ---------------
@@ -220,8 +221,9 @@ For developers designing a Cog add-on board, the template schematic/board files 
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w>`
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/23062017-tile-revb-power-mux-scheme.png
 .. |direct| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-adp5300-gpio.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/1_30.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/1_60.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/2_30.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/2_60.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/1_30.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/1_60.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/2_30.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050wz/2_60.png

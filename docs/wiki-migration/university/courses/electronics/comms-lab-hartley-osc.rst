@@ -19,9 +19,8 @@ Where L = L\ :sub:`1` + L\ :sub:`2`
 
 Figure 1 shows a typical Hartley oscillator. The frequency determining parallel resonant tuned circuit is formed by L\ :sub:`1`, L\ :sub:`2` and C\ :sub:`1` and is used as the collector load impedance of the common base amplifier Q\ :sub:`1`. This gives the amplifier a high gain only at the resonant frequency. This configuration of the Hartley oscillator uses a common base amplifier, the base of Q\ :sub:`1`\ is biased to an appropriate DC level by resistor divider R\ :sub:`1` and R\ :sub:`2` but is connected directly to an AC ground by C\ :sub:`3`. In the common base mode the output voltage waveform at the collector, and the input signal at the emitter are in phase. This ensures that the fraction of the output signal from the node between L\ :sub:`1` and L\ :sub:`2`, fed back from the tuned collector load to the emitter via the coupling capacitor C\ :sub:`2` provides the required positive feedback.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ahosc_f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -45,9 +44,8 @@ Directions:
 
 Build The Hartley Oscillator shown in figure 2 using your solder-less breadboard. Pick standard values from your parts kit for bias resistors R\ :sub:`1` and R\ :sub:`2` such that with emitter resistor R\ :sub:`3`\ set to 1 KΩ, the collector current in NPN transistor Q\ :sub:`1` is approximately 1 mA. The frequency of the oscillator can be from around 500 KHz to 2 MHz depending on the values chosen for L\ :sub:`1`, L\ :sub:`2` and C\ :sub:`1`. Start with L\ :sub:`1` = 10 uH and L\ :sub:`2` = 100 uH. This oscillator circuit can produce a sine wave output in excess of 10 Vpp at an approximate frequency set by the value chosen for C\ :sub:`1`. After experimenting with various values for C\ :sub:`1` change L\ :sub:`1` = 1 uH and L\ :sub:`2` = 10 uH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/ahosc_f2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -61,7 +59,7 @@ The green squares indicate where to connect the ADALM2000 module AWG, scope chan
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image3|\
 
 
 .. container:: centeralign
@@ -78,7 +76,7 @@ A plot example using R\ :sub:`1` = 10KΩ, R\ :sub:`2` = 1KΩ, R\ :sub:`3` = 100�
 
 .. container:: centeralign
 
-   \ |image2|\
+   \ |image4|\
 
 
 .. container:: centeralign
@@ -124,5 +122,9 @@ http://en.wikipedia.org/wiki/Hartley_oscillator
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/hartley_osc-bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/hartley_osc-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/ahosc_f1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/ahosc_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/hartley_osc-bb.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/hartley_osc-wav.png

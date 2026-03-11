@@ -31,15 +31,17 @@ Make sure a valid license for the selected toolchain is installed before using E
 
    -  :doc:`EV-COG-AD4050WZ MCU Cog </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/cog_hw_userguide>`
 
-::
+      -  `Power Measurement on EV-COG-AD4050WZ MCU COG <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz/_powermeasurement>`_
 
-                *[[/resources/eval/user-guides/ev-cog-ad3029lz/_powermeasurement|Power Measurement on EV-COG-AD4050WZ MCU COG]]
-   * [[/resources/eval/user-guides/ev-cog-ad4050w/tools_driver|Development Tools & Driver]]
-     * [[/resources/eval/user-guides/ev-cog-ad4050w/tools/cces_download|CrossCore Embedded Studio Download & Install]]
-              *[[/resources/ev/user-guides/ev-cog-ad4050w/tools/cces_guide|CrossCore Embedded Studio Quickstart Userguide]]
-     * [[/resources/eval/user-guides/ev-cog-ad4050lz/tools/hardware_usb|Driver installation for on-board debugger (CMSIS-DAP)]]
-   * [[/resources/eval/user-guides/ev-cog-ad4050w/example_project|Example Project]]
-   * [[/resources/eval/user-guides/ev-cog-ad4050lz/help_support|Help & Support]]
+-  :doc:`Development Tools & Driver </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/tools_driver>`
+
+   -  :doc:`CrossCore Embedded Studio Download & Install </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/tools/cces_download>`
+
+      -  :doc:`CrossCore Embedded Studio Quickstart Userguide </wiki-migration/resources/ev/user-guides/ev-cog-ad4050w/tools/cces_guide>`
+      -  :doc:`Driver installation for on-board debugger (CMSIS-DAP) </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/tools/hardware_usb>`
+
+-  :doc:`Example Project </wiki-migration/resources/eval/user-guides/ev-cog-ad4050w/example_project>`
+-  :doc:`Help & Support </wiki-migration/resources/eval/user-guides/ev-cog-ad4050lz/help_support>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/front_image_new.png
    :width: 550px

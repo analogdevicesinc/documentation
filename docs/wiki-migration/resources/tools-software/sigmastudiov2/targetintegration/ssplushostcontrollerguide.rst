@@ -6,7 +6,12 @@ SigmaStudio+ Host Controller Guide
 1. Introduction
 ===============
 
-| SigmaStudio®+ is a development environment from Analog Devices for graphically programming ADI’s DSPs. Sigma Studio Plus includes an extensive library of algorithms to perform audio processing such as filtering, mixing, and dynamics processing, as well as basic low-level DSP functions and control blocks. The environment also extends parameter export and filter coefficient generation support for a host microcontroller. Automation scripting API support is provided to connect with many other tools in SigmaStudioPlus using APACHE thrift, which supports many languages such as Python, .NET application, Perl, Java script etc. An easy-to-use graphical interface allows users to create custom filters, compressors and other audio-shaping algorithms to improve or change the characteristics of the audio. SigmaStudio Plus Algorithm Designer is provided to convert existing Software Modules or other SHARC libraries into SigmaStudio Plus Plug-Ins. The environment is integrated with CrossCore® Embedded Studio. The production environment for a SigmaStudio Plus system is shown in below :doc:`figure </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/ssplushostcontrollerguide>`. |image1|
+SigmaStudio®+ is a development environment from Analog Devices for graphically programming ADI’s DSPs. Sigma Studio Plus includes an extensive library of algorithms to perform audio processing such as filtering, mixing, and dynamics processing, as well as basic low-level DSP functions and control blocks. The environment also extends parameter export and filter coefficient generation support for a host microcontroller. Automation scripting API support is provided to connect with many other tools in SigmaStudioPlus using APACHE thrift, which supports many languages such as Python, .NET application, Perl, Java script etc. An easy-to-use graphical interface allows users to create custom filters, compressors and other audio-shaping algorithms to improve or change the characteristics of the audio. SigmaStudio Plus Algorithm Designer is provided to convert existing Software Modules or other SHARC libraries into SigmaStudio Plus Plug-Ins. The environment is integrated with CrossCore® Embedded Studio. The production environment for a SigmaStudio Plus system is shown in below :doc:`figure </wiki-migration/resources/tools-software/sigmastudiov2/targetintegration/ssplushostcontrollerguide>`.
+
+
+|image1|
+
+
 
 .. container:: centeralign
 

@@ -57,11 +57,11 @@ Online Resources
 
 Required Software
 
--  :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9546`.html#eb-relatedsoftware
+-  :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9546.html#eb-relatedsoftware`
 
 Documents Needed
 
--   :adi:`AD9546 Data sheet </AD9546>`
+-   :adi:`AD9546 Data sheet <AD9546>`
 
 .. image:: https://wiki.analog.com/_media/resources/eval/ad9546_eval_board_top.jpg
    :width: 400px
@@ -270,7 +270,8 @@ Click on File menu at the top left of the front panel and the following entries 
 -  Configuration Files - Allows to save a configuration file or to load one. All the configuration registers are saved if Save Configuration entry is selected. If Save Configuration (non-default only) entry is selected, only the registers having non default values are saved.
 -  Select Hardware - Opens the Select Hardware dialog shown in Figure 3 below. The Select Hardware dialog lists the evaluation boards connected to the PC using the USB ports. If the board is connected to the PC after the evaluation software is launched and if the Windows® Device manager recognizes the board, then the evaluation board will appear in list. Select the board and click OK. The evaluation software automatically connects to the first board in the list when it starts up.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9546_select_hw_entry_in_file_menu.png
+   :align: center
 
 .. container:: centeralign
 
@@ -289,7 +290,7 @@ Click on File menu at the top left of the front panel and the following entries 
    | Do not unplug or power down one or more boards already selected in the Select Hardware dialog.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -302,8 +303,8 @@ Click on View menu on the top of the screen and the following entries are availa
 
 -  Register Map - Opens the window in Figure 4 below. The software visualizes all the registers of the AD9546 when the tab All is selected. The Updated tab lists the registers that the user changed in other parts of the program and has not yet downloaded into the AD9546. The NonDefault tab lists all the registers that have non default values.
 
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9546_register_map_window.png
+   :align: center
 
 .. container:: centeralign
 
@@ -314,7 +315,7 @@ Click on Register Details arrow on the bottom left of the window (Figure 5 below
 
 
 
-|image6|
+|image4|
 
 .. container:: centeralign
 
@@ -323,9 +324,8 @@ Click on Register Details arrow on the bottom left of the window (Figure 5 below
 
 -  Debug - Opens the debug window in Figure 6 below. Any register can be accessed by scrolling through the registers in the Register dropdown list or by starting to type the register address expressed in hexadecimal. The value of the register appears and it can be expressed in hex or decimal values. The accessed register can be written or read by clicking on the respective button. The Pin Groups section allows direct control of the AD9546 Reset, M0, M1, M2, M3, M4, M5, and M6/CS pins. The recommendation is to not manage these pins through this window and instead use the Front Panel tabs. For example, manage the M0 to M6 pins through the M_PINS tab in the Front Panel (Figure 2).
 
-
-
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9546_debug_window.png
+   :align: center
 
 .. container:: centeralign
 
@@ -340,32 +340,45 @@ Click on Help menu on the top of the front panel (Figure 1) and the following en
 The front panel has two tabs, (Figure 6b): Block Diagram and Pinout. The Block Diagram provides a user interface to configure all of the AD9546 registers. The Pinout provides the list of all the AD9546 pins, their position on the package and their description.
 
 
-|image8|
+|image5|
 
 .. container:: centeralign
 
-   // Figure 6b: Front Panel's Block Diagram and Pinout tabs\ *
+   // Figure 6b: Front Panel's Block Diagram and Pinout tabs//
 
 
 At the bottom of the front panel, the following buttons are available:
 
-.. container:: centeralign
-
-   * Figure 6c: Front Panel Buttons\ *
 
 
-- WIZARD - Allows the user to introduce the broad requirements that the AD9546 needs to fulfill (like the frequency of the reference clocks, of the outputs, the system clock source, etc). The recommendation is to use the Wizard to calculate the AD9546 register values whenever a new configuration is required. \* READ ALL - Reads the entire AD9546 register map and updates the software. \* LOAD ALL - Loads the register values from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download. \* CONTROL - Opens the window in Figure 7 below. Various tabs give access to serial port settings, calibration and synchronization commands, power down various AD9546 blocks and the Watchdog timer setting in Misc. Controls section.
+|image6|
 
 .. container:: centeralign
 
-   * Figure 7: Control Window\ *
+   // Figure 6c: Front Panel Buttons//
 
 
-- STATUS - Opens the window in Figure 8 below. Various tabs give access to status flags of the AD9546 blocks.
+-  WIZARD - Allows the user to introduce the broad requirements that the AD9546 needs to fulfill (like the frequency of the reference clocks, of the outputs, the system clock source, etc). The recommendation is to use the Wizard to calculate the AD9546 register values whenever a new configuration is required.
+-  READ ALL - Reads the entire AD9546 register map and updates the software.
+-  LOAD ALL - Loads the register values from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download.
+-  CONTROL - Opens the window in Figure 7 below. Various tabs give access to serial port settings, calibration and synchronization commands, power down various AD9546 blocks and the Watchdog timer setting in Misc. Controls section.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9546_controls_tab_window.png
+   :align: center
 
 .. container:: centeralign
 
-   * Figure 8: Status Window//
+   // Figure 7: Control Window//
+
+
+-  STATUS - Opens the window in Figure 8 below. Various tabs give access to status flags of the AD9546 blocks.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9546_status_window.png
+   :align: center
+
+.. container:: centeralign
+
+   // Figure 8: Status Window//
 
 
 -  REGMAP - Opens the register map window (Figure 4) that can be accessed from the front panel View, Register Map option.
@@ -379,58 +392,103 @@ Frequency Configuration Wizard
 By default, every time the AD9546 Evaluation Software is launched, the Frequency Configuration Wizard is opened. If an AD9546 configuration json file was already created, close the wizard by clicking on the x button on the top right corner of the window and load the file going into File, Configuration Files, Load Configuration File menu (Figure 2). While using the Evaluation Software, the wizard can be launched by clicking on the tab Wizard on the bottom of the front panel (Figure 6c).
 
 
-|image9|
+|image7|
 
 .. container:: centeralign
 
-   // Figure 9: Frequency Configuration Wizard Window\ *
+   // Figure 9: Frequency Configuration Wizard Window//
 
 
-The wizard contains several tabs: System Clock, Input Sources, Channel 0 and Channel 1. Short explanations of each tab: \* In System Clock, introduce the source of the system clock and the source(s) of the auxiliary DPLL. \* In Input Sources (Figure 10), introduce the reference clock details. Leave the Solving Set Point at 200 kHz as this is the maximum allowed Time to Digital Converter (TDC) input frequency. Make sure the Input Configuration settings match the hardware design. \* In Channel 0 (Figure 11) and in Channel 1 tabs, introduce the details of the output clocks in the Outputs section and set the desired DPLL functionality. Once all this data is introduced, click Load button on the bottom right of the window for the Wizard to calculate the registers values and load them into the AD9546. The Wizard then closes automatically.
+The wizard contains several tabs: System Clock, Input Sources, Channel 0 and Channel 1. Short explanations of each tab:
 
-.. container:: centeralign
+-  In System Clock, introduce the source of the system clock and the source(s) of the auxiliary DPLL.
+-  In Input Sources (Figure 10), introduce the reference clock details. Leave the Solving Set Point at 200 kHz as this is the maximum allowed Time to Digital Converter (TDC) input frequency. Make sure the Input Configuration settings match the hardware design.
+-  In Channel 0 (Figure 11) and in Channel 1 tabs, introduce the details of the output clocks in the Outputs section and set the desired DPLL functionality.
 
-   * Figure 10: Input Sources Tab of the Frequency Configuration Wizard\ *
-
-
-.. container:: centeralign
-
-   * Figure 11: Channel 0 Tab of the Frequency Configuration Wizard\ *
+Once all this data is introduced, click Load button on the bottom right of the window for the Wizard to calculate the registers values and load them into the AD9546. The Wizard then closes automatically.
 
 
-==== Input Source Settings ==== In the Front Panel (Figure 2), clicking on Input Settings tab launches the window in Figure 12:
+|image8|
 
 .. container:: centeralign
 
-   * Figure 12: Input Source Settings Window\ *
+   // Figure 10: Input Sources Tab of the Frequency Configuration Wizard//
 
 
-In this window, virtually all the functionality related to the reference clocks can be configured. Click Load to download the register values that have been changed from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download. Also, the window visualizes all the status flags related to the reference that is selected in the window. For example, in Figure 12, the REFA settings are selected. The status flags associated with REFA are also updated in the right side of the window. ==== Digitized Clocking Settings ==== In the Front Panel (Figure 2), clicking on Digitized Clocking tab launches the window in Figure 13.
-
-.. container:: centeralign
-
-   * Figure 13: Digitized Clocking Settings Window\ *
-
-
-In this window, the Digitized Clocking settings regarding the common clock, the user time stampers and the inverse user time stampers can be introduced. ==== Stability Compensation Settings ==== In the Front Panel (Figure 2), clicking on Stability Compensation tab launches the window in Figure 14.
+   |image9|
 
 .. container:: centeralign
 
-   * Figure 14: System Clock Stability Compensation Settings Window\ *
+   // Figure 11: Channel 0 Tab of the Frequency Configuration Wizard//
 
 
-In this window, the system clock stability compensation methods can be selected and configured. ==== Multi - Function Pins Settings ==== In the Front Panel (Figure 2), clicking on M-Pins tab launches the window in Figure 15.
+Input Source Settings
+~~~~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on Input Settings tab launches the window in Figure 12:
+
+
+|image10|
 
 .. container:: centeralign
 
-   * Figure 15: Multi-Function Pins Settings Window\ *
+   // Figure 12: Input Source Settings Window//
+
+
+In this window, virtually all the functionality related to the reference clocks can be configured. Click Load to download the register values that have been changed from the evaluation software into the AD9546 and if the Enable IO Update option is enabled in the Options entry in the File menu, an IO Update is executed automatically at the end of the registers download. Also, the window visualizes all the status flags related to the reference that is selected in the window. For example, in Figure 12, the REFA settings are selected. The status flags associated with REFA are also updated in the right side of the window.
+
+Digitized Clocking Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on Digitized Clocking tab launches the window in Figure 13.
+
+
+|image11|
+
+.. container:: centeralign
+
+   // Figure 13: Digitized Clocking Settings Window//
+
+
+In this window, the Digitized Clocking settings regarding the common clock, the user time stampers and the inverse user time stampers can be introduced.
+
+Stability Compensation Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on Stability Compensation tab launches the window in Figure 14.
+
+
+|image12|
+
+.. container:: centeralign
+
+   // Figure 14: System Clock Stability Compensation Settings Window//
+
+
+In this window, the system clock stability compensation methods can be selected and configured.
+
+Multi - Function Pins Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on M-Pins tab launches the window in Figure 15.
+
+
+|image13|
+
+.. container:: centeralign
+
+   // Figure 15: Multi-Function Pins Settings Window//
 
 
 In this window, the multi-function M0, M1,…, M6 pins are configured. The M-pins by Function tab provides a concise view of all M-pins control or status configuration (Figure 26).
 
+
+
+|image14|
+
 .. container:: centeralign
 
-   * Figure 16: M-pins by Function Tab Window//
+   // Figure 16: M-pins by Function Tab Window//
 
 
 Interrupt Requests (IRQ) Settings
@@ -439,59 +497,96 @@ Interrupt Requests (IRQ) Settings
 In the Front Panel (Figure 2), clicking on IRQ tab launches the window in Figure 17. In this window, every AD9546 interrupt can be enabled or cleared and their trigger status (set or cleared) is visualized. The Group Clear tab provides access to control bits that clear groups of interrupts, that is the bits 3:0 in register 0x2005 (Figure 18).
 
 
-|image10|
+|image15|
 
 .. container:: centeralign
 
-   // Figure 17: Interrupt Requests (IRQs) Settings Window\ *
+   // Figure 17: Interrupt Requests (IRQs) Settings Window//
 
 
-.. container:: centeralign
-
-   * Figure 18: Group Clear Window\ *
-
-
-==== Temperature Sensor Settings ==== In the Front Panel (Figure 2), clicking on Temp Sensor tab launches the window in Figure 19:
+   |image16|
 
 .. container:: centeralign
 
-   * Figure 19: Temperature Settings Window\ *
+   // Figure 18: Group Clear Window//
 
 
-Move the cursor over the white locations for their description. The Compensation section has three entries: \* Open Loop Stability Temp. Sensor Source refers to the open loop system clock compensation method 1. It selects the temperature sensor used in this method. See Open Loop section of the System Clock Stability Compensation Settings Window (Figure 14). \* Channel 0 Delay and Channel 1 Delay refer to the DPLL0 and DPLL1 delay compensation procedure. It selects the temperature sensor used by this procedure. See Propagation Delay Compensation Section of the DPLL0/DPLL1 Settings window. ==== EEPROM Control Settings ==== In the Front Panel (Figure 2), clicking on EEPROM tab launches the window in Figure 20:
+Temperature Sensor Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on Temp Sensor tab launches the window in Figure 19:
+
+
+|image17|
 
 .. container:: centeralign
 
-   * Figure 20: EEPROM Controls Window\ *
+   // Figure 19: Temperature Settings Window//
 
 
-This window cannot be used with the AD9546 evaluation board because the board does not contain a EEPROM usable to store the AD9546 configuration. ==== Channel 0 Settings ==== In the Front Panel (Figure 2), clicking on Channel 0 section launches the window in Figure 21:
+Move the cursor over the white locations for their description. The Compensation section has three entries:
+
+-  Open Loop Stability Temp. Sensor Source refers to the open loop system clock compensation method 1. It selects the temperature sensor used in this method. See Open Loop section of the System Clock Stability Compensation Settings Window (Figure 14).
+-  Channel 0 Delay and Channel 1 Delay refer to the DPLL0 and DPLL1 delay compensation procedure. It selects the temperature sensor used by this procedure. See Propagation Delay Compensation Section of the DPLL0/DPLL1 Settings window.
+
+EEPROM Control Settings
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on EEPROM tab launches the window in Figure 20:
+
+
+|image18|
 
 .. container:: centeralign
 
-   * Figure 21: Channel 0 Settings Window\ *
+   // Figure 20: EEPROM Controls Window//
+
+
+This window cannot be used with the AD9546 evaluation board because the board does not contain a EEPROM usable to store the AD9546 configuration.
+
+Channel 0 Settings
+~~~~~~~~~~~~~~~~~~
+
+In the Front Panel (Figure 2), clicking on Channel 0 section launches the window in Figure 21:
+
+
+|image19|
+
+.. container:: centeralign
+
+   // Figure 21: Channel 0 Settings Window//
 
 
 In this window, all DPLL0 settings can be managed. It is recommended to use the Wizard first to configure the DPLL0 and use this window for additional settings not already set by the Wizard. Click on the DPLL Settings, APLL Settings, DIST (Distribution) Settings tabs on the bottom of the window to access them. Click on Status tab to access the Channel 0 Status window (Figure 22) in which the status flags related to Channel 0 DPLL0+APLL0 are updated. DPLL Settings, APLL Settings and Distribution Settings windows are presented in Figure 23, Figure 24, Figure 25.
 
-.. container:: centeralign
-
-   * Figure 22: Channel 0 Status Window\ *
 
 
-.. container:: centeralign
-
-   * Figure 23: DPLL0 Settings Window\ *
-
+|image20|
 
 .. container:: centeralign
 
-   * Figure 24: APLL0 Settings Window\ *
+   // Figure 22: Channel 0 Status Window//
 
+
+   |image21|
 
 .. container:: centeralign
 
-   * Figure 25: Channel 0 Distribution Settings//
+   // Figure 23: DPLL0 Settings Window//
+
+
+   |image22|
+
+.. container:: centeralign
+
+   // Figure 24: APLL0 Settings Window//
+
+
+   |image23|
+
+.. container:: centeralign
+
+   // Figure 25: Channel 0 Distribution Settings//
 
 
 Channel 1 Settings
@@ -504,11 +599,24 @@ Channel x Settings
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9546_evb_connected_to_pc.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9546_eval_sw_front_panel.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9546_select_hw_entry_in_file_menu.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/select_hardware.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9546_register_map_window.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9546_registers_details_section.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9546_debug_window.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9546_block_diagram.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/frequency_configuration_wizard_window.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/interrupt_requests_settings.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/select_hardware.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9546_registers_details_section.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9546_block_diagram.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9546_front_panel_tabs.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/frequency_configuration_wizard_window.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/input_sources_tab.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/channel0_tab.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/input_source_settings_window.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/digitized_clocking_settings_window.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/system_clock_stability_compensation_settings.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/multi_function_pins_settings_window.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/m_pins_by_function_tab.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/interrupt_requests_settings.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/group_clear.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/temperature_settings.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/eeprom_controls.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/channel0_settings.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/channel0_status.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpll0_settings.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/apll0_settings.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/channel0_distribution_settings.png

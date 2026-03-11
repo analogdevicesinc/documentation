@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5668 Product Info <AD5668>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5668EBZ evaluation board user guide </static/imported-files/user_guides/UG-155.pdf>`
+-  :adi:`EVAL-AD5668EBZ evaluation board user guide <static/imported-files/user_guides/UG-155.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

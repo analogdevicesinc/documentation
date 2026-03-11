@@ -66,7 +66,7 @@ Hardware changes
 System setup
 ------------
 
--  Write the :git-gmsl#platforms-user-guides-sd-card-images-and-build-instructions>`__ on a 64GB SD card
+-  Write the :git-gmsl:`Nvidia Orin Nano latest SD card image <gmsl>` on a 64GB SD card
 -  Plug the SD card into the Nvidia Orin Nano Developer Kit SD card slot
 -  Connect a USB mouse and keyboard to the Nvidia Orin Nano Developer Kit
 -  Connect a Display Port (DP) cable from the monitor to the Nvidia Orin Nano Developer Kit DP connector
@@ -81,7 +81,7 @@ System setup
 -  Flip the power switch labeled S4 to the ON position on the GMSL Deserializer EVK
 -  Connect the power supply to the Nvidia Orin Nano Developer Kit
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/:`Nvidia Orin Nano latest SD card image <resources/eval/user-guides/ad-gmslcamrpi-adp/nvidia_jetson_orin_system.jpg
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/nvidia_jetson_orin_system.jpg
    :align: left
    :width: 350px
 
@@ -112,7 +112,7 @@ Power off sequence
 Getting the software
 --------------------
 
-The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL github repository <https://github.com/analogdevicesinc/gmsl>`.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL github repository <gmsl>`.
 
 --------------
 

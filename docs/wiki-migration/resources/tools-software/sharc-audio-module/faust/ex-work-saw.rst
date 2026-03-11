@@ -58,8 +58,8 @@ Creating Files for use with the Baremetal Framework
 
 -  Click the ``Export/compile to a specific platform`` button
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
+   :width: 50px
 
 -  In the first dropdown box, choose ``sam``
 -  In the second dropdown box, choose ``sam-source-poly-4`` and then ``Export``
@@ -94,5 +94,3 @@ Creating Files for use with the Baremetal Framework
 .. |/faust16.png| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module//faust16.png
    :width: 574px
    :height: 273px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/faust/export_button.png
-   :width: 50px

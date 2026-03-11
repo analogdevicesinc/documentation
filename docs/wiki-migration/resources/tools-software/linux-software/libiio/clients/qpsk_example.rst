@@ -3,9 +3,8 @@ QPSK Transmit and Receive Example
 
 In this section, we will show a QPSK transmit and receive example, which is based on `MathWorks QPSK Transmitter and Receiver Example <https://www.mathworks.com/help/comm/examples/qpsk-transmitter-and-receiver-1.html>`_. In this example, FMCOMMS3 is used as RF front-end, which captures the modulated QPSK signals over the air. These signals are then streamed from target to Simulink via the *ad9361* block. The Simulink model is shown in the figure below, where the blocks of Tx and Rx are grouped in two subsystems.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/model.png
-   :alt: Block diagram
-   :width: 600px
+
+|Block diagram|
 
 .. note::
 
@@ -61,3 +60,6 @@ With everything set up properly, we can run the model and get the results below.
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/results.png
    :alt: Block diagram
    :width: 800px
+
+.. |Block diagram| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/model.png
+   :width: 600px

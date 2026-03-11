@@ -26,11 +26,14 @@ The physical dimensions of the connectors, mounting holes and PCB is common betw
    The Footprint is common between the two parts:
 
    
-   ::
    
-        * [[https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/08_038702d_conn_dim.pdf|Mounting holes and physical dimensions]]
+   
+   -  `Mounting holes and physical dimensions <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/08_038702d_conn_dim.pdf>`_
       * Carrier Card Connector Dimensions:
-        * {{:resources:eval:user-guides:adrv936x_rfsom:carrier_connector_locations.jpg?400|Connector Dimensions}}
+   
+        .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/carrier_connector_locations.jpg
+           :alt: Connector Dimensions
+   
    
 
 

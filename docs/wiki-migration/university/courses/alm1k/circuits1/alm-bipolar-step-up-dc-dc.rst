@@ -25,9 +25,8 @@ Background:
 
 Forward mode DC-DC converters are used to provide galvanic isolation and voltage transformation. The Half-Bridge Forward configuration, shown in figure 1, converts a positive input voltage to a higher or lower, positive and negative output voltage. Energy from the input source is transferred to the output when the switch transistors are conducting. Note that in figure 1 the Input ground reference node need not be connected to the Output ground reference node providing galvanic isolation between the two sides of the transformer.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,9 +35,9 @@ Forward mode DC-DC converters are used to provide galvanic isolation and voltage
 
 The LT1054 (supplied in the ADALP2000 Analog Parts kit) can provide the needed components of the half-bridge driver. Figure 2 show the internal block diagram. It contains the oscillator, non-overlapping switch drive circuit and upper and lower switch transistors at the CAP+ pin. The rest of the circuit components can be ignored for now.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig2.png
-   :align: center
-   :width: 400px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -66,9 +65,8 @@ As shown in figure 3, the HPH1-1400L is wired as a 1:5 step-up transformer with 
 
 One end of the secondary is connected to ground. The other end is connected to D\ :sub:`1` and D\ :sub:`2` which half wave rectify the AC waveform to positive and negative DC output voltages. Caps C\ :sub:`1` and C\ :sub:`2` filter the half wave rectified outputs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -83,9 +81,8 @@ We can expect the LT1054 switches, while un-loaded, to supply a maximum p-p volt
 
 The measured Vout using a DMM is 10.4 V when loaded with 2.7 kΩ resistors on both positive and negative outputs. The total load current is slightly less than 8 mA. Taking in to account the 1:5 step-up ratio, the average current in the primary supplied by the LT1054 is 40 mA. Looking at the voltage loss characteristics from the LT1054 datasheet, shown in figure 4, we can estimate that the potential 5 V p-p voltage swing will likely be reduced by 0.6 V at 25° C. The voltage swing loss seen in the secondary will be 5 X larger or 3.0 V (+1.5 and -1.5). Adding this extra voltage loss to the un-loaded peak outputs of +11.8 V and -11.8 V we get an estimated output voltage of +10.3 V and -10.3 V. These estimated voltages are consistent with the measured values.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig4.png
-   :align: center
-   :width: 350px
+
+|image4|
 
 .. container:: centeralign
 
@@ -108,9 +105,8 @@ Construct the example circuit shown in figure 5 on the breadboard next to the DC
 
 In order to measure the higher voltage outputs, two 470 K / 100 K voltage dividers are used. After :doc:`calibrating </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>` the software gain and offset settings for these dividers (gain will be approx. 6.12) we can test the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -119,9 +115,9 @@ In order to measure the higher voltage outputs, two 470 K / 100 K voltage divide
 
 To test the maximum available output swing using the generated +/- 10 V supplies a 4 V p-p 500 Hz sine wave from the channel A AWG output was applied to AC input coupling cap C\ :sub:`1`. The amplitude of the sine wave can be adjusted until the output signals just begin to clip (saturate). According to the ADTL082 datasheet the outputs should be able to swing to within 1.5 V of the power supply rails. The screen shot shown in figure 6 shows the amplifier outputs swinging to within less than 1.5 V of the generated +/- 10 V power rails.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig6.png
-   :align: center
-   :width: 700px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -144,3 +140,16 @@ Other pin compatible parts such as ICL7660 switch at much lower frequencies and 
 `Forward Mode Converters <https://en.wikipedia.org/wiki/Forward_converter>`_ :adi:`ADM660 Datasheet <media/en/technical-documentation/data-sheets/ADM660_8660.pdf>` :adi:`LT1054 Datasheet <media/en/technical-documentation/data-sheets/1054lfh.pdf>`
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig4.png
+   :width: 350px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/bipolar-step-up-dc-dc-fig6.png
+   :width: 700px

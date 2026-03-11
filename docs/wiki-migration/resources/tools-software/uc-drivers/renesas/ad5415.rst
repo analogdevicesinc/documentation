@@ -41,7 +41,8 @@ There are three functions which are called by the AD5415 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -143,7 +144,7 @@ Reference Project Overview
 The reference project initializes the device, sets the DAC output to middle scale, writes a value to DAC register and then reads it back.
 
 
-|image2|
+|image1|
 
 Software Project Setup
 ----------------------
@@ -163,5 +164,4 @@ More information
    See `more-information <https://wiki.analog.com/more-information>`_
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5415_rl78g13_screen.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5415_rl78g13_screen.jpg

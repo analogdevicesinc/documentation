@@ -43,9 +43,8 @@ Main Window
 
 Upon starting the ezLINX Sample PC Application the Main System window is displayed:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig1MainWindow.jpg
-   :align: center
-   :width: 850px
+
+|image1|
 
 .. container:: centeralign
 
@@ -82,7 +81,7 @@ There are two possibilities to open the Board Configuration Window:
 1. By pressing the Configure button, the below window appears:
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -93,7 +92,7 @@ There are two possibilities to open the Board Configuration Window:
 
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -105,7 +104,7 @@ The Configuration Window is divided into three boxes:
 - Network Features Box: Modify the network features of the ezLINX hardware platform.
 
 
-|image3|
+|image4|
 
 .. container:: centeralign
 
@@ -130,7 +129,7 @@ Specify a new IP Gateway for the connected ezLINX hardware platform.
 - Firmware Upgrade Box: In order to facilitate the update of the embedded software flashed on the ezLINX hardware platform, the application gives this function to easily load newer firmware versions, by using the **Send** button to select the new embedded software version to be loaded to the ezLINX hardware platform.For information on how to perform a firmware update refer to the section on Updating Embedded Firmware later in this guide. The Firmware Upgrade Box also provides the functionality to check the current PC Application software and the embedded firmware versions on the ezLINX hardware platform.
 
 
-|image4|
+|image5|
 
 .. container:: centeralign
 
@@ -149,7 +148,7 @@ The current DLL version.
 - Enable/Disable Box:this box can be used to switch any of the transceivers on the ezLINX hardware platform on or off. To enable or disable an interface check the box next to the interface name.
 
 
-|image5|
+|image6|
 
 .. container:: centeralign
 
@@ -160,7 +159,7 @@ A notification message will be displayed above the checked transceiver indicatin
 
 
 
-|image6|
+|image7|
 
 .. container:: centeralign
 
@@ -178,7 +177,7 @@ RS-232 Configuration Window
 To open the RS-232 configuration menu select it from the button on the top right of the Application. This opens the RS-232 Configuration Window:
 
 
-|image7|
+|image8|
 
 .. container:: centeralign
 
@@ -192,7 +191,7 @@ The RS-232 Configuration Window is divided into three boxes:
 - Interface Settings Box: To select the appropriate communication interface for RS-232 transceiver.
 
 
-|image8|
+|image9|
 
 .. container:: centeralign
 
@@ -204,7 +203,7 @@ Select UART3 from the drop-down interface menu.
 - RS-232 Settings Box: To communicate with ezLINX hardware board through the RS-232 port, you need to configure the device using the following features:
 
 
-|image9|
+|image10|
 
 .. container:: centeralign
 
@@ -236,7 +235,7 @@ Select whether or not to use flow control. When connected to the ezLINX hardware
 - RS-232 Routing Box: The RS-232 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
 
 
-|image10|
+|image11|
 
 .. container:: centeralign
 
@@ -249,7 +248,7 @@ RS-232 Send/Receive Window
 Shown below is the send/receive window for the RS-232 protocol. The window consists of two main sections; a send window on the left and a receive window on the right. To send data from the RS-232 port, type the data to be sent into the left hand text box. Click **Send Data** button to transmit the contents of the text box. Data sent to the RS-232 port will automatically appear in the right hand receive window in real time.
 
 
-|image11|
+|image12|
 
 .. container:: centeralign
 
@@ -309,7 +308,7 @@ RS-485/ RS-422 Configuration Window
 In the ezLINX Sample PC Application both the RS-485 and the RS-422 protocols are implemented in the same section. To open this interface menu select it using the button on the top left of the Application. This opens the RS-485 / RS-422 configuration window:
 
 
-|image12|
+|image13|
 
 .. container:: centeralign
 
@@ -323,7 +322,7 @@ The RS-485/RS-422 Configuration Window is divided into three boxes:
 - Interface Settings Box: To select the appropriate interface for RS-485 transceiver.
 
 
-|image13|
+|image14|
 
 .. container:: centeralign
 
@@ -335,7 +334,7 @@ Select UART2 from the drop-down interface menu.
 - RS-485 Settings Box: to communicate with ezLINX hardware board through RS-485 port, you need to configure the device using the following features:
 
 
-|image14|
+|image15|
 
 .. container:: centeralign
 
@@ -369,7 +368,7 @@ Choose between half and full duplex operation. If using half duplex operation ju
 - RS-485 / RS-422 Routing Box: The RS-485 / RS-422 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the **Enable Routing** box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.
 
 
-|image15|
+|image16|
 
 .. container:: centeralign
 
@@ -382,7 +381,7 @@ RS-485 / RS-422 Send/Receive Window
 Shown below is the transmit/receive window for the RS-485/RS-422 protocol. The window is identical to the RS-232 send/receive window. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.
 
 
-|image16|
+|image17|
 
 .. container:: centeralign
 
@@ -442,7 +441,7 @@ I2C Configuration Window
 To open the I2C interface select it from the left hand sidebar. This will open the I2C configuration window:
 
 
-|image17|
+|image18|
 
 .. container:: centeralign
 
@@ -456,7 +455,7 @@ The I2C Configuration Window is divided into two boxes:
 - Interface Settings Box: to select the appropriate interface for I2C transceiver.
 
 
-|image18|
+|image19|
 
 .. container:: centeralign
 
@@ -468,7 +467,7 @@ Select TWI1 from the drop-down interface menu.
 - I2C Settings Box: to communicate with ezLINX hardware board through I2C protocol, you need to configure the device using the following features:
 
 
-|image19|
+|image20|
 
 .. container:: centeralign
 
@@ -499,7 +498,7 @@ I2C Send/Receive Window
 Shown below is the transmit/receive window for the I2C protocol. The left hand text box is used to transmit data via the **Send Data** button, and the right hand text box is used to receive real time data.
 
 
-|image20|
+|image21|
 
 .. container:: centeralign
 
@@ -555,7 +554,7 @@ SPI Configuration Window
 To open the SPI menu select it using the button on the right hand sidebar of the Application. This opens the SPI configuration window:
 
 
-|image21|
+|image22|
 
 .. container:: centeralign
 
@@ -569,7 +568,7 @@ The SPI Configuration interface is divided into three boxes:
 - Interface Settings Box: To select the appropriate interface for SPI transceiver.
 
 
-|image22|
+|image23|
 
 .. container:: centeralign
 
@@ -581,7 +580,7 @@ Select SPI0, SPI1 or SPI2 from the drop-down interface menu.
 - SPI Settings Box: to communicate with ezLINX hardware board through SPI protocol, you need to choose the following parameters:
 
 
-|image23|
+|image24|
 
 .. container:: centeralign
 
@@ -615,7 +614,7 @@ This is only available when the Operation Mode selected is Master. This selects 
 - SPI Routing Box: The SPI interfaces support hardware routing to the outputs of other interfaces. To enable hardware routing check the **Enable Routing** box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.
 
 
-|image24|
+|image25|
 
 .. container:: centeralign
 
@@ -630,7 +629,7 @@ SPI Send/Receive Window
 Shown below is the transmit/receive window for the SPI protocol. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.
 
 
-|image25|
+|image26|
 
 .. container:: centeralign
 
@@ -684,7 +683,7 @@ CAN Configuration Window
 To open the CAN menu select it from the sidebar on the left hand side of the Application. The CAN button on the right hand side of the application is unimplemented and can’t be selected. Selecting CAN from the left hand sidebar opens the CAN configuration window shown below:
 
 
-|image26|
+|image27|
 
 .. container:: centeralign
 
@@ -696,7 +695,7 @@ To configure the CAN for use, check the “Transceiver Enable” box (seen above
 - Interface Settings Box: to select the appropriate interface for CAN transceiver.
 
 
-|image27|
+|image28|
 
 .. container:: centeralign
 
@@ -708,7 +707,7 @@ Select CAN0 from the drop-down interface menu.
 - CAN Settings Box:to communicate with ezLINX hardware board through CAN protocol, you need to specify the following data:
 
 
-|image28|
+|image29|
 
 .. container:: centeralign
 
@@ -766,7 +765,7 @@ Mask for extended frame (29 bit identifier).
 - CAN Routing Box: The CAN interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
 
 
-|image29|
+|image30|
 
 .. container:: centeralign
 
@@ -781,7 +780,7 @@ CAN Send/Receive Window
 Shown below is the transmit/receive window for the CAN protocol. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.
 
 
-|image30|
+|image31|
 
 .. container:: centeralign
 
@@ -792,7 +791,7 @@ The CAN module can only send Hexadecimal data. The colon is used to separate the
 
 
 
-|image31|
+|image32|
 
 .. container:: centeralign
 
@@ -840,7 +839,7 @@ LVDS Configuration Window
 To open the Low Voltage Differential Signalling (LVDS) menu select it from the sidebar on the right hand side of the Application. This opens the LVDS configuration window shown below:
 
 
-|image32|
+|image33|
 
 .. container:: centeralign
 
@@ -854,7 +853,7 @@ The LVDS Configuration interface is divided into two boxes:
 - Interface Settings Box: To select the appropriate interface for LVDS transceiver.
 
 
-|image33|
+|image34|
 
 .. container:: centeralign
 
@@ -866,7 +865,7 @@ Select SPORT2 from the drop-down interface menu.
 - LVDS Settings Box: to configure the LVDS interface:
 
 
-|image34|
+|image35|
 
 .. container:: centeralign
 
@@ -906,7 +905,7 @@ Select whether to enable the second LVDS channel (Pins 17 – 32). Select 1 to e
 - LVDS Routing Box: The LVDS interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.
 
 
-|image35|
+|image36|
 
 .. container:: centeralign
 
@@ -921,7 +920,7 @@ LVDS Send/Receive Window
 Shown below is the transmit/receive window for the LVDS protocol. The window is identical to the RS -232 send/receive window. The left hand text box is used to transmit data via the **Send Data** button, and the right hand text box is used to receive real time data.
 
 
-|image36|
+|image37|
 
 .. container:: centeralign
 
@@ -970,7 +969,7 @@ GPIO (LEDs)
 The Sample PC Application also has GPIO functionality, through which you can control 6 LED’s on the ezLINX hardware platform. To access the GPIO interface, select the GPIO button from the left hand sidebar of the application. This opens the GPIO Interface Settings window.
 
 
-|image37|
+|image38|
 
 .. container:: centeralign
 
@@ -984,7 +983,7 @@ The GPIO Configuration Window is divided into two boxes:
 - Interface Settings Box: to select the appropriate interface for GPIO transceiver.
 
 
-|image38|
+|image39|
 
 .. container:: centeralign
 
@@ -996,7 +995,7 @@ Select GPIO from the drop-down interface menu.
 - GPIO Settings Box: to configure GPIO pins:
 
 
-|image39|
+|image40|
 
 .. container:: centeralign
 
@@ -1027,7 +1026,7 @@ To update the embedded software version on the evaluation board, there are a num
 **Windows 7:** Start → Control Panel (All items view) → Windows Firewall → Allow a program through Windows Firewall → Change settings → Allow another program And select FTPServer.exe from the distributed package.
 
 
-|image40|
+|image41|
 
 .. container:: centeralign
 
@@ -1038,7 +1037,7 @@ To use FTPServer.exe, you must configure the application to connect to the corre
 
 
 
-|image41|
+|image42|
 
 .. container:: centeralign
 
@@ -1052,7 +1051,7 @@ From the PC software enter the IP Address of the server that contains the needed
 The software application prompts you to restart the application.
 
 
-|image42|
+|image43|
 
 .. container:: centeralign
 
@@ -1067,7 +1066,7 @@ Transceiver Status Window
 The Transceivers Status window (shown below) allows the user to monitor the status of each interface as it transmits data. To access the Transceivers Status window click on the word STATUS on the bottom left hand side of the application. The enabled transceivers will show up with a checked box, and the amount of data sent and received through each interface during the current session is shown in the boxes in kilobytes. The Tx box displays the amount of kilobytes of data that has been sent through that transceiver, and the Rx box displays the amount of kilobytes of data has been received. To refresh the figures you must close and reopen the Transceivers Status window as the figures do not update in real-time.
 
 
-|image43|
+|image44|
 
 .. container:: centeralign
 
@@ -1080,7 +1079,7 @@ Transceivers Configuration Window
 To access the Transceiver Configuration window (shown below) select the View Configuration button at the bottom of the application. The Transceivers Configuration window allows the user to view the global configuration of all transceivers and GPIO on the ezLINX hardware platform. From here you can see which transceivers are enabled, what hardware routing is active and the settings of each individual interface. The configuration can not be modified from this window, however the application supports loading and saving configurations as an XML file. To save your current configuration simply click the Save button and choose a name. To load a previously saved configuration press Load and select the desired XML config file.
 
 
-|image44|
+|image45|
 
 .. container:: centeralign
 
@@ -1092,7 +1091,7 @@ The configuration window has three buttons at the left bottom enabling the follo
 1. Load an existing configuration from an XML file through the “Load” button. The Load Interface will appear:
 
 
-|image45|
+|image46|
 
 .. container:: centeralign
 
@@ -1108,7 +1107,7 @@ The configuration window has three buttons at the left bottom enabling the follo
 3. Close the configuration window using the Close button. A confirmation message will appear asking if the configuration changes should be kept or not.
 
 
-|image46|
+|image47|
 
 .. container:: centeralign
 
@@ -1117,95 +1116,97 @@ The configuration window has three buttons at the left bottom enabling the follo
 
 **Note:** When a configuration is loaded you must exit the Transceivers Configuration window via the Close button. Exiting the window via the X will not load the configuration.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig2ConfigurationwindowfromConfigurebutton.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig1MainWindow.jpg
    :width: 850px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig3ConfigurationWindowfromtheezLINXimage.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig2ConfigurationwindowfromConfigurebutton.jpg
    :width: 850px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig4Networkfeaturesbox.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig3ConfigurationWindowfromtheezLINXimage.jpg
+   :width: 850px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig4Networkfeaturesbox.jpg
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/update_firmware.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/update_firmware.jpg
    :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig6EnableDisablebox.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig6EnableDisablebox.jpg
    :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig7Notificationmessageforenabledtransceivers.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig7Notificationmessageforenabledtransceivers.jpg
    :width: 850px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig8RS232ConfigurationWindow.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig8RS232ConfigurationWindow.jpg
    :width: 850px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig9Interfacesettingsbox.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig9Interfacesettingsbox.jpg
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig10RS-232settingsbox.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig10RS-232settingsbox.jpg
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig11RS-232Routingbox.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig11RS-232Routingbox.jpg
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig12RS-232Send-ReceiveWindow.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig12RS-232Send-ReceiveWindow.jpg
    :width: 850px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig13RS-485ConfigurationWindow.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig13RS-485ConfigurationWindow.jpg
    :width: 850px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig14InterfaceSettingsBox.jpg
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig14InterfaceSettingsBox.jpg
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig15RS-485SettingsBox.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig15RS-485SettingsBox.jpg
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig16Routingbox.jpg
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig16Routingbox.jpg
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig17RS-485-RS-422Send-ReceiveWindow.jpg
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig17RS-485-RS-422Send-ReceiveWindow.jpg
    :width: 850px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig18I2CConfigurationWindow.jpg
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig18I2CConfigurationWindow.jpg
    :width: 850px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig19InterfaceSettingsBox.jpg
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig19InterfaceSettingsBox.jpg
    :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig20I2Csettingsbox.jpg
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig20I2Csettingsbox.jpg
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig21-I2CSend-ReceiveWindow.jpg
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig21-I2CSend-ReceiveWindow.jpg
    :width: 850px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig22-SPIConfigurationWindow.jpg
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig22-SPIConfigurationWindow.jpg
    :width: 850px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig23-InterfaceSettingsBox.jpg
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig23-InterfaceSettingsBox.jpg
    :width: 400px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig24-SPISettingsBox.jpg
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig24-SPISettingsBox.jpg
    :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig25-Routingbox.jpg
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig25-Routingbox.jpg
    :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig26-SPISend-ReceiveWindow.jpg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig26-SPISend-ReceiveWindow.jpg
    :width: 850px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig27-CANConfigurationWindow.jpg
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig27-CANConfigurationWindow.jpg
    :width: 850px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig28-InterfaceSettingsBox.jpg
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig28-InterfaceSettingsBox.jpg
    :width: 400px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig29-CANSettingsBox.jpg
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig29-CANSettingsBox.jpg
    :width: 400px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig30-RoutingBox.jpg
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig30-RoutingBox.jpg
    :width: 400px
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig31-CANSendReceiveWindow.jpg
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig31-CANSendReceiveWindow.jpg
    :width: 850px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig32-ExamplesofCANMessages.jpg
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig32-ExamplesofCANMessages.jpg
    :width: 400px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig33-LVDSConfigurationWindow.jpg
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig33-LVDSConfigurationWindow.jpg
    :width: 850px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig34-InterfaceSettingsBox.jpg
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig34-InterfaceSettingsBox.jpg
    :width: 400px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig35-LVDSSettingsBox.jpg
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig35-LVDSSettingsBox.jpg
    :width: 400px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig36-LVDSRoutingBox.jpg
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig36-LVDSRoutingBox.jpg
    :width: 400px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig37-LVDSSend-ReceiveWindow.jpg
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig37-LVDSSend-ReceiveWindow.jpg
    :width: 850px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig38-GPIOConfigurationWindow.jpg
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig38-GPIOConfigurationWindow.jpg
    :width: 850px
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig39-InterfaceSettingsBox.jpg
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig39-InterfaceSettingsBox.jpg
    :width: 400px
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig40-GPIOSettingsBox.jpg
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig40-GPIOSettingsBox.jpg
    :width: 400px
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig41_WindowsFirewall.jpg
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig41_WindowsFirewall.jpg
    :width: 400px
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig42_FTPServerWindow.jpg
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig42_FTPServerWindow.jpg
    :width: 400px
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig43_RestartApplicationWindow.jpg
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig43_RestartApplicationWindow.jpg
    :width: 400px
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/TRANSCEIVERSTATUS.jpg
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/TRANSCEIVERSTATUS.jpg
    :width: 500px
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/ConfigurationWindow.jpg
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/ConfigurationWindow.jpg
    :width: 800px
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/LoadInterface.jpg
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/LoadInterface.jpg
    :width: 300px
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Askforkeepingtheloadedconfiguration.jpg
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Askforkeepingtheloadedconfiguration.jpg
    :width: 300px

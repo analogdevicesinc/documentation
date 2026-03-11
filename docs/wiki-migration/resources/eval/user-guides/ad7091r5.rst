@@ -198,8 +198,6 @@ No-OS Downloads
    :class: download
 
    
-   -  |:git-no-OS:`drivers/adc/ad7091r5|`
+   -  :git-no-OS:`drivers/adc/ad7091r5`
    
 
-
-.. |:git-no-OS:`drivers/adc/ad7091r5|` image:: :git-no-OS:`drivers/adc/ad7091r5`

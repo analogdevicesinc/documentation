@@ -19,8 +19,10 @@ The :adi:`adar2001` has two integrated state machines, one for the Multiplier se
 
 -  SPI writes to the SEQUENCER_CTRL_SPI register (0x44)
 
-
-|ADAR2001-EVALZ Board|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/1_adar2001_board.png
+   :alt: ADAR2001-EVALZ Board
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
@@ -389,8 +391,6 @@ Once the ADC section has been enabled and configured, the on-chip temperature se
 -  Click “Apply Changes” at the top-left of the page to send the new settings to the chip.
 -  Click the “Measure ADC” button. A temperature reading will appear in the box below the button.
 
-.. |ADAR2001-EVALZ Board| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/1_adar2001_board.png
-   :width: 500px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/2_adar2001_connections.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/3_adar2001_setup.png
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/4_adar2001_access_ace_plugin.png

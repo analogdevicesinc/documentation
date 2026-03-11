@@ -182,4 +182,4 @@ Here is a example of loading an audio pass-through application located on the SD
 
 --------------
 
-`Running MicroPython on the Board#..micropython|MicroPython Overview#.bmsdk|Using MicroPython with Bare Metal Framework <https://wiki.analog.com/_media/navigation SHARC Audio Module#.running>`_
+`Running MicroPython on the Board#..micropython|MicroPython Overview#.bmsdk|Using MicroPython with Bare Metal Framework <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/navigation SHARC Audio Module#.running>`_

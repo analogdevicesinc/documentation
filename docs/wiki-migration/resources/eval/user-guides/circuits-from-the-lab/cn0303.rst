@@ -17,15 +17,15 @@ This circuit offers a high linearity, low noise, wide-bandwidth vibration sensin
 General Setup
 -------------
 
-::
 
-   *One EVAL-CN0303-SDPZ Evaluation Board
-   *One [[:adi:`en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb`.html|ADXL001]] Evaluation Board
-   *[[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
-   *CN0303 Evaluation Software
-   *One 6V wallwart.  (EVAL-CFTL-6V-PWRZ)
-   *One DC power supply with a 0-6V output.  (HP6236B)
-   *One USB Type-A plug to USB Mini-B plug cable.
+
+- One EVAL-CN0303-SDPZ Evaluation Board
+- One :adi:`ADXL001 <en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb.html>` Evaluation Board
+-  :adi:`EVAL-SDP-CB1Z` Evaluation board
+- CN0303 Evaluation Software
+- One 6V wallwart.  (EVAL-CFTL-6V-PWRZ)
+- One DC power supply with a 0-6V output.  (HP6236B)
+- One USB Type-A plug to USB Mini-B plug cable.
 
 Minimum PC/System Requirements
 ------------------------------
@@ -40,29 +40,31 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0303 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0303 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0303\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0303 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0303 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0303\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-installdirectory.jpg
+   :align: center
 
-|image1|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-starinstall.jpg
+   :align: center
 
-|image2|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-installcomplete.jpg
+   :align: center
 
 -  Press **“Next”**.
 -  Upon completion of the installation of the **CN0303 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 -
 
-|image4|
+|image1|
 
 -  Press **“Next”**.
 -
 
-|image5|
+|image2|
 
 -  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
 -  Press **“Next”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0303-SDPZ**
@@ -83,9 +85,10 @@ Instructions for connecting the ADXL001-70BEZ and EVAL-CN0303_SDPZ
 ------------------------------------------------------------------
 
 -  First, connect the discrete female colored cable to connector P1 of the :adi:`ADXL001-70BEZ <en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb.html>`.
--  Secondly, connect the discrete female colored cable to connector J6 of the EVAL-CN0303-SDPZ.\
+-  Secondly, connect the discrete female colored cable to connector J6 of the EVAL-CN0303-SDPZ.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/PCB.jpg
+   :align: center
 
 -  Connect the :adi:`EVAL-SDP-CB1Z` and the EVAL-CN0303-SDPZ PCB’s using the 120 pin male and female connectors found on the respective boards to **Connector A** of the the SDP-B board.
 -  Plug in the DC barrel jack to connector J5 of the EVAL-CN0303-SDPZ and the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z`. And connect the other end of the USB cable into the Laptop or PC.
@@ -129,9 +132,5 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0303-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-installdirectory.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-starinstall.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/software-installcomplete.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0303/PCB.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg

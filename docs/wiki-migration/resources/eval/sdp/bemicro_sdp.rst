@@ -52,7 +52,7 @@ The complete setup is shown below:
 As such, in order to properly use the BeMicro SDK/SDP Interposer, you will need both of:
 
 -  the `BeMicro SDK <https://www.arrow.com/en/datasheets/89166696/arrow-development-tools/bemicrosdk>`_
--  an :adi:`ADI SDP Daughter Board </sdp#exallist>`
+-  an :adi:`ADI SDP Daughter Board <sdp#exallist>`
 
 Sample Projects/Code
 --------------------

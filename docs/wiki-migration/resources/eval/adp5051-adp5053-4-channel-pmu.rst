@@ -32,7 +32,8 @@ Full details on the devices are provided in the :adi:`ADP5051`/:adi:`ADP5053` da
 ADP5051/ADP5053 EVALUATION BOARD
 --------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/adp5051_adp5053_eval_board.png
+   :align: center
 
 .. container:: centeralign
 
@@ -54,10 +55,10 @@ INSTALLING THE ADP5051 GUI SOFTWARE
 
 After installation, it may be necessary to reboot the PC to complete the operation.
 
-1. Launch the **Setup.exe file**. When the dialog box shown in `Figure 2 <https://wiki.analog.com/resources/eval/11718-002.png>`_ appears, click **Next** to continue.
+1. Launch the **Setup.exe file**. When the dialog box shown in `Figure 2 <https://wiki.analog.com/_media/resources/eval/11718-002.png>`_ appears, click **Next** to continue.
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -68,7 +69,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
@@ -79,7 +80,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -90,7 +91,7 @@ After installation, it may be necessary to reboot the PC to complete the operati
 
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -107,7 +108,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 2. Click **Next** to install the drivers (see Figure 6).
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -118,7 +119,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
 
 
-|image7|
+|image6|
 
 .. container:: centeralign
 
@@ -129,7 +130,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
 
 
-|image8|
+|image7|
 
 .. container:: centeralign
 
@@ -140,7 +141,7 @@ To install the Analog Devices SDP Drivers, complete the following steps:
 
 
 
-|image9|
+|image8|
 
 .. container:: centeralign
 
@@ -245,7 +246,7 @@ Ensure that the software and USB driver are installed as described in the Instal
 Figure 10 shows the :adi:`ADP5051` board connection diagram. The :adi:`ADP5053` works in a similar manner, but does not have a USB dongle connection.
 
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
@@ -267,13 +268,14 @@ ADP5051 GUI SOFTWARE
 
 To run the :adi:`ADP5051` GUI, click **Start** > **All Programs** > **Analog Devices ADP505x** > **ADP505x DEMO GUI-cg**. If the program starts correctly and the board is detected, the :adi:`ADP5051` GUI appears, as shown in Figure 11. The program default settings are as follows:
 
-::
 
-   *Choose the correct device I<sup>2</sup>C address. Select **WDI Ver 0x4A** for the [[:adi:`ADP5051|ADP5051]]/[[https://www`.analog.com/ADP5053|ADP5053]].
-   *All registers are initialized to default values.
-   *Check the I<sup>2</sup>C status.
 
-   |image11|
+- Choose the correct device I<sup>2</sup>C address. Select **WDI Ver 0x4A** for the :adi:`ADP5051`/:adi:`ADP5053`.
+- All registers are initialized to default values.
+- Check the I<sup>2</sup>C status.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/11718-011.png
+   :align: center
 
 .. container:: centeralign
 
@@ -289,7 +291,7 @@ Measuring Output Voltage Ripple of the Buck Regulator
 To observe the output voltage ripple of Buck 1, place an oscilloscope probe across the output capacitor (COUT_1) with the probe ground lead at the negative (−) capacitor terminal and the probe tip at the positive (+) capacitor terminal. Figure 12 shows the typical output ripple waveform.
 
 
-|image12|
+|image10|
 
 .. container:: centeralign
 
@@ -303,7 +305,7 @@ Set the oscilloscope to ac, 10 mV/division, and 2 µs/division time base, with t
 To effectively measure the output voltage ripple, solder a wire to the negative (−) capacitor terminal and wrap it around the barrel of the probe and connect the tip directly to the positive (+) capacitor terminal, as shown in Figure 13.
 
 
-|image13|
+|image11|
 
 .. container:: centeralign
 
@@ -320,14 +322,14 @@ When the SYNC/MODE pin is set to high, the buck regulators operate in forced PWM
 When the MODE pin is set to low, the buck regulators operate in power save mode (PSM), improving the light load efficiency.
 
 
-|image14|
+|image12|
 
 .. container:: centeralign
 
    \ *Figure 14. Typical PSM Mode Waveform, V\ IN = 12 V, V\ OUT = 3.3 V, I\ OUT = 3 A, f\ SW = 600 kHz, L = 4.7 μH, C\ OUT = 47 µF × 2, FPWM Mode*\
 
 
-   |image15|
+   |image13|
 
 .. container:: centeralign
 
@@ -349,7 +351,7 @@ Measuring Load Regulation of the Buck
 Test the load regulation by increasing the load at the output and looking at the change in output voltage. The input voltage must be held constant during this measurement. To minimize voltage drop, use short low resistance wires, especially for loads approaching maximum current. Typical buck load regulation is shown in Figure 16.
 
 
-|image16|
+|image14|
 
 .. container:: centeralign
 
@@ -362,7 +364,7 @@ Measuring Line Regulation
 To measure line regulation, vary the input voltage and examine the change in the output voltage. Typical buck line regulation is shown in Figure 17.
 
 
-|image17|
+|image15|
 
 .. container:: centeralign
 
@@ -379,7 +381,7 @@ Measure the efficiency, η, by comparing the input power with the output power.
 To reduce the effect of IR drops, measure the input and output voltages as near as possible to the input and output capacitors.
 
 
-|image18|
+|image16|
 
 .. container:: centeralign
 
@@ -405,9 +407,8 @@ The buck output voltage is set through external resistor dividers, shown in Figu
 
 The V\ :sub:`REF` voltage (FB1, FB2, FB3, FB4) for the buck regulators is 0.800 V in the adjustable version.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/11718-021.png
-   :align: center
-   :width: 300px
+
+|image17|
 
 .. container:: centeralign
 
@@ -426,7 +427,7 @@ The monitoring voltage can be set through external resistor dividers, as well (s
 The voltage of VTH is 0.500 V.
 
 
-|image19|
+|image18|
 
 .. container:: centeralign
 
@@ -464,7 +465,7 @@ Changing the Switching Frequency
 The switching frequency of the\ :adi:`ADP5051`/:adi:`ADP5053` on the evaluation board is programmed at 650 kHz. To change the switching frequency, replace the R3 resistor at the RT pin with a different value, as shown in Figure 21.
 
 
-|image20|
+|image19|
 
 .. container:: centeralign
 
@@ -606,35 +607,37 @@ Use the :adi:`ADP5051` GUI software to set DVSx-INTVAL and enable DVSx-ON in Reg
 EVALUATION BOARD SCHEMATICS AND ARTWORK
 =======================================
 
-|image21|
+.. image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure22.png
+   :align: center
+   :width: 900px
 
 .. container:: centeralign
 
    \ *Figure 22. Evaluation Board Schematic of the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
 
 
-   |image22|
+   |image20|
 
 .. container:: centeralign
 
    \ *Figure 23. Top Layer, Recommended Layout for the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
 
 
-   |image23|
+   |image21|
 
 .. container:: centeralign
 
    \ *Figure 24. Second Layer, Recommended Layout for the ADP5050/ADP5052 Evaluation Board*\
 
 
-   |image24|
+   |image22|
 
 .. container:: centeralign
 
    \ *Figure 25. Third Layer, Recommended Layout for the* :adi:`ADP5051`\ */*\ :adi:`ADP5053`\ *Evaluation Board*\
 
 
-   |image25|
+   |image23|
 
 .. container:: centeralign
 
@@ -728,38 +731,36 @@ RELATED LINKS
 | :adi:`ADP5053`                               | 4-channel integrated power solution with quad buck regulators and POR/WDI                                  |
 +----------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/adp5051_adp5053_eval_board.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/11718-002.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure2_found_new_hardware_wiz.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_4_software_select_folder.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_5_software_install_complete.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_6_software_sdp_driver_setup.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure_7_software_check_folder.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/figure_8_software_driver_installation_complete.jpg
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/figure_9_check_driver_insatllation.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure10.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/11718-002.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/figure2_found_new_hardware_wiz.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/figure_4_software_select_folder.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/figure_5_software_install_complete.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/figure_6_software_sdp_driver_setup.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/figure_7_software_check_folder.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/figure_8_software_driver_installation_complete.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/figure_9_check_driver_insatllation.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure10.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/11718-011.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure12.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure12.png
    :width: 350px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/figure_measuring_output_voltage_ripple.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/figure_measuring_output_voltage_ripple.png
    :width: 300px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure14.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure15.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure16.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure17.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure18.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/adp5051_figure_20_ug646.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure14.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure15.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure16.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure17.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure18.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/11718-021.png
+   :width: 300px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/adp5051_figure_20_ug646.png
    :width: 250px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure21.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure21.png
    :width: 300px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure22.png
-   :width: 900px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure23.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure23.png
    :width: 400px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure24.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure24.png
    :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure25.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure25.png
    :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure26.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/adp5051_ug646_figure26.png
    :width: 400px

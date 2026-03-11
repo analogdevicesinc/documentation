@@ -703,9 +703,8 @@ The numpy library contains a polynomial fitting function. The following exponent
 
 As an example use case the following simple resistor and diode circuit shown in figure 1 is offered.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -765,27 +764,22 @@ The voltage across a small signal diode is measured using scope channel B and th
 
 The following screenshots show the results:
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
    Figure 2, Time waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png
-   :align: center
-   :width: 400px
+   |image3|
 
 .. container:: centeralign
 
    Figure 3, V-I X,Y plot
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png
-   :align: center
-   :width: 400px
+   |image4|
 
 .. container:: centeralign
 
@@ -888,9 +882,8 @@ The following example shows how to use polyfit and poly1d to fit a 5\ :sup:`th` 
 
 First construct the simple resistor and diode circuit shown in the figure.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -901,9 +894,8 @@ Set Channel A AWG Min value to 0V and Max value to 5V. Set the Mode to SVMI and 
 
 Set the Horz Time scale to 0.5mSec/Div. Hit Run, wait for a few seconds to capture some data then hit Stop. This should display the rising half of the triangle wave on Channel A from 0 to 5 V ( green trace ). The width of the grid will be 500 sample points ( 5 mSec at 10 uSec/sample). Channel B should display the voltage across the diode going from 0 to about 0.8 V ( orange trace ). You may want to change the vertical scale to 0.1 V/div and position to 0.5 for CH-B to display the waveform from 0 to 1 V. You should now have something like this:
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -920,9 +912,8 @@ print Zpoly
 
 In the ALICE desktop console window you should see something like this.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -939,9 +930,8 @@ print ZBuff
 
 In the ALICE desktop console window you should now see something like this.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -954,9 +944,8 @@ ZBuff(VBuffA[t])-CHBOffset
 
 This plots the value of the polynomial evaluated at each point in VBuffA as the time index t goes from 0 to 499 ( 5 mSec ). Be sure to note that () are used for ZBuff and not [] because it is a function and not an array like VBuffA. You should now see something like this on the display. The magenta Math plot is the polynomial.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -981,3 +970,22 @@ TAFline = [] # Bode Freq Trace line channel A TBFline = [] # Bode Freq Trace lin
 http://docs.scipy.org/doc/numpy/reference/index.html
 
 **Return to ALICE 1.3 M1K** :doc:`User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png
+   :width: 600px

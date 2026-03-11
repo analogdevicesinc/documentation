@@ -257,8 +257,9 @@ Required setup
 
 -  SOM board plugged into a carrier board with the card and boot select switches set to boot from the carrier SD card slot (as seen in the image below).
 
-
-|pzsdr-ccfmc-bootselect.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccfmc-bootselect.jpg
+   :alt: pzsdr-ccfmc-bootselect.jpg
+   :align: center
 
 -  SD card with tests inserted into carrier slot.
 -  RaspberryPi microSD card inserted.
@@ -275,17 +276,17 @@ Required setup
    Before starting the test process, please make sure to place the sticker with the QR code and the serial number **on top of the board**, as pictured below.
 
 
-   |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1735_qr.jpg
 
 See the following image of a board set up to run the production tests.
 
 
-|image4|
+|image3|
 
 Make sure to connect to your WIFI Network before testing. You can exit the test window by pressing CTRL+C in order to access the connection. Reboot the system in order to return to the test window.
 
 
-|image5|
+|image4|
 
 Test process
 ------------
@@ -297,28 +298,32 @@ First make sure all the required setup explained above is ready. Once that is do
 -  Power on the ADRV1CRR-FMC board.
 -  The Pi should display the test interface once it booted, as presented in the image below
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/initial_screen.png
 
 -  Using option number 3 in the menu, the carrier test starts. In order to test the device, an ethernet cable must be connected between Pi and carrier. Connection is verified at the beginning of the test.
 -  After connection is verified, the QR code with the board's serial number must be scanned in order to continue. The serial number may also be entered from the keyboard.
 -  Tests should start automatically and begin with USB-gadget and UART testing. These tests run on the Raspberry.
 
-|adr1crr_test_begin.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adr1crr_test_begin.png
+   :alt: adr1crr_test_begin.png
 
 -  The following tests run directly on the carrier via SSH. When prompted, you should insert the password for the carrier, like in the image above. The default password is analog. If all the tests completed appropriately, a 'PASSED' message will be displayed on the screen.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass_adrv1crr.png
 
--  In case a test fails, a message is prompted asking whether the test should be repeated. A test can be re-run any number of times. If the test keeps failing, the user can opt to close the test, which leads to a 'FAILED' message in red being displayed on the screen. However, the test can be continued for the rest of the components. In this case, the number of failing tests will be displayed along with the 'FAILED' message at the end. |image8|
+-  In case a test fails, a message is prompted asking whether the test should be repeated. A test can be re-run any number of times. If the test keeps failing, the user can opt to close the test, which leads to a 'FAILED' message in red being displayed on the screen. However, the test can be continued for the rest of the components. In this case, the number of failing tests will be displayed along with the 'FAILED' message at the end.
 
-|image9|
+
+|image5|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adrv1crr_test_failed.png
 
 -  At completion, the menu of the testing interface appears again. Option 5 can be used to power off the ADRV. After that, it is safe to physically toggle the power switch on the board.
 
 The regular test process can be observed below.
 
 
-|image10|
+|image6|
 
 Breakout board
 ~~~~~~~~~~~~~~
@@ -371,17 +376,26 @@ First make sure all the required setup explained above is ready. Once that is do
 -  Insert the adrv9364_rfsom board with test suite SD card into the breakout board.
 -  Make sure the power, USB, and Ethernet cables are plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
 
-|pzsdr-som-poweron-leds.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
+   :alt: pzsdr-som-poweron-leds.jpg
+   :align: center
 
 -  The board will start U-Boot which will run the tests after initialization.
 -  Tests should start automatically and be shown on the serial terminal.
 -  When prompted on screen as seen in the following image, toggle the buttons (S7 through S9) on the board. Note that the DS3 LED should light up when the buttons are in the on state. In order to pass the test the buttons must be toggled on and off within a minute of starting the test, otherwise the test will timeout and fail.
 
-|rpi-button.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-button.jpg
+   :alt: rpi-button.jpg
+   :align: center
 
--  When the tests pass, a related message will be shown on screen in green. If any test fails, a message will shown in red instead. The following images show what the screen should look like in these cases. |rpi-pass.jpg|
+-  When the tests pass, a related message will be shown on screen in green. If any test fails, a message will shown in red instead. The following images show what the screen should look like in these cases.
 
-|rpi-fail.jpg|
+
+|rpi-pass.jpg|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-fail.jpg
+   :alt: rpi-fail.jpg
+   :align: center
 
 -  Once the tests are complete, keep the Raspberry Pi running and turn off the breakout board. Then unplug the power, USB, and Ethernet cables from the breakout board in addition to removing the adrv9364_rfsom. Plug all the cables back into the next breakout board and repeat the process from the beginning.
 
@@ -444,7 +458,9 @@ First make sure all the required setup explained above is ready. Once that is do
 -  Make sure all the switches (S1 through S4) are set to the off position (they should all be toggled towards the label side as seen in the image above).
 -  Make sure the power cable is plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
 
-|pzsdr-som-poweron-leds.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
+   :alt: pzsdr-som-poweron-leds.jpg
+   :align: center
 
 -  The board will boot into Linux to run the tests.
 -  Tests should start automatically and be shown on the serial terminal.
@@ -527,17 +543,17 @@ Required setup
 
 
 
-|image11|
+|image7|
 
 **2. USB** media drive into the **OTG** adapter.
 
 
-|image12|
+|image8|
 
 **3. Raspberry Pi powered on** configurated to run the breakout board test with a **USB cable attached**. After about a couple seconds the following message will be printed on the screen “POWER ON BRK”. At this point, the Raspberry Pi is ready to test the breakout board.
 
 
-|image13|
+|image9|
 
 Test process
 ------------
@@ -555,7 +571,7 @@ Test process
 **6.** Insert a jumper on the P9 header, between pin 1 & 2, to enable USB OTG mode.
 
 
-|image14|
+|image10|
 
 **7.** Make sure the power cable is plugged in and then power on the board. Confirm the green power LED and blue FPGA LED are both lit after a few seconds have passed (see the picture below). If two green LEDs are lit on the SOM without the blue FPGA LED being lit this means that the FPGA isn't getting configured properly which means there is an issue during early bring up such as the board's power sequence not running correctly.
 
@@ -564,29 +580,29 @@ Test process
 **9.** Tests should start automatically and be shown on the Raspberry Pi display.
 
 
-|image15|
+|image11|
 
 **10.** When prompted, toggle the switches (S1 through S4) and buttons (S6 through S9) on the board. Note that the related LEDs should light up when the switches or buttons are in the on the state (e.g. LED DS3 should light up when switch S1 or button S6 are enabled). In order to pass the test, all switches and buttons must be toggled on and off. If this is not done within a minute of starting the test, it will timeout and fail.
 
 
-|image16|
+|image12|
 
 **11.** Wait for the test result. The other tests will run without requiring user input once the switch and button tests are finished. When the tests pass, the DS3 through DS6 LEDs will be solid.
 
 ========= =========
-|image17| |image18|
+|image13| |image14|
 ========= =========
 
 If any test fails LEDs DS3 through DS6 will be blinking and the script output will note the failure.
 
 ========= ========= =========
-|image19| |image20| |image21| 
+|image15| |image16| |image17| 
 ========= ========= =========
 
 **12.** Finally wait for "TURN OFF BOARD! CONNECT NEXT BOARD TO BE TESTED!" to power down the system.
 
 ========= =========
-|image22| |image23| 
+|image18| |image19| 
 ========= =========
 
 **13.** Once the test is complete turn off the breakout board, unplug the power, USB cables and Ethernet loopback module from the breakout board in addition to removing the SDR2 SOM. Plug all the cables back into the next breakout board and repeat the process from the beginning. If you want to start the test again, for the same breakout board, power off and then power on the breakout board or reset the SDR2 SOM board to repeat the test automaticaly.
@@ -594,12 +610,12 @@ If any test fails LEDs DS3 through DS6 will be blinking and the script output wi
 **When done testing**, hit **button #27 on the Raspberry Pi display** to **power down** the system and give the system a few seconds before pulling the power cable.
 
 
-|image24|
+|image20|
 
 If necessary, hit **button #23 on the Raspberry Pi display to restart** or hit **button #22 to display the Raspberry Pi IP addresses**.
 
 ========= =========
-|image25| |image26|  
+|image21| |image22|  
 ========= =========
 
 Demo Test process
@@ -612,55 +628,46 @@ Demo Test process
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr1-rf-loopback.jpg
    :width: 400px
-.. |pzsdr-ccfmc-bootselect.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccfmc-bootselect.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1735_qr.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1736.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/wifi_connection.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/img_1736.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/wifi_connection.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/initial_screen.png
-.. |adr1crr_test_begin.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adr1crr_test_begin.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass_adrv1crr.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/camera_test_fail_adrv1crr.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/adrv1crr_test_failed.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/211213_gif_adrvtest_passed_1_5sec.gif
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/camera_test_fail_adrv1crr.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/211213_gif_adrvtest_passed_1_5sec.gif
 .. |brkout-setup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/brkout-setup.jpg
 .. |rpi-setup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-setup.jpg
-.. |pzsdr-som-poweron-leds.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
-.. |rpi-button.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-button.jpg
 .. |rpi-pass.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-pass.jpg
-.. |rpi-fail.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-fail.jpg
 .. |rpi-poweroff.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/rpi-poweroff.jpg
 .. |pzsdr-ccbrk-setup.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-setup.jpg
 .. |pzsdr-ccbrk-passed.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-passed.jpg
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/sdr2_som.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/sdr2_som.jpg
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/usb_drive_otg.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/usb_drive_otg.jpg
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/raspberry_pi_setup.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/raspberry_pi_setup.jpg
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/breakout_board_setup.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/breakout_board_setup.jpg
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-som-poweron-leds.jpg
    :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/start_toggle.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/start_toggle.png
    :width: 250px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass.png
    :width: 250px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-passed.jpg
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/pzsdr-ccbrk-passed.jpg
    :width: 370px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_toggle.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_toggle.png
    :width: 250px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_usb.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_usb.png
    :width: 250px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_ethernet.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_ethernet.png
    :width: 250px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass_end.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_pass_end.png
    :width: 250px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_end.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/test_fail_end.png
    :width: 250px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/power_off_pi.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/power_off_pi.png
    :width: 250px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/reboot_pi.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/reboot_pi.png
    :width: 250px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/get_all_ip.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/get_all_ip.png
    :width: 250px

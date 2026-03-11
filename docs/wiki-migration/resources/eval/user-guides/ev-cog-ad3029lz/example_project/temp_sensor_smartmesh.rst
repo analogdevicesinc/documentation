@@ -12,9 +12,7 @@ The EV-COG-SMARTMESH1Z interfaced EV-COG-AD3029LZ , software development kit con
 
 #. :adi:`BSP - Board Support Package for EV-COG-AD3029LZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-aducm3029-ezkit.html#eb-relatedsoftware>`- This pack along with the DFP is required to develop applications using the on-board drivers.
 
-::
-
-   -[[https://github.com/dustcloud/sm_clib|SmartMesh C library]]- This pack is required for the implementation of the serial APIs of the EV-COG-SMARTMESH1Z and nullifies  the need for  application software  to deal low level processes.
+-  `SmartMesh C library <https://github.com/dustcloud/sm_clib>`_- This pack is required for the implementation of the serial APIs of the EV-COG-SMARTMESH1Z and nullifies the need for application software to deal low level processes.
 
 For details on the C-Library, follow this\ `link <https://dustcloud.atlassian.net/wiki/spaces/CLIB>`_
 
@@ -70,20 +68,20 @@ This section covers the various steps involved in the interface of the EV-COG-SM
 
 Following are the steps involved :-
 
-::
 
-   *Connect the EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ  as shown in the Board Interface section.
-   *Download and Install the necessary soft wares for working with  the EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ as mentioned in the Software Details section.
-   *For setting up  the SmartMesh-IP-Manager  follow [[http://cds.linear.com/docs/en/application-note/SmartMesh_IP_Easy_Start_Guide_for_the_Embedded_Manager.pdf|this]]  link.
-   *Download the  [[https://bitbucket.analog.com/projects/IOTTGAPPS/repos/dust-ev-cog-ad3029lz/browse|Source code]].
-   *Place the contents of the SmartMesh C-Library in the your project folder.
-   *Here is a list of files of the SmartMesh C-Library you need to include in the project folder:-
-   * dn_endianness.c
-   *  dn_hdlc.c
-   * dn_ipmt.c
-   * dn_lock.c
-   * dn_serial_mt.c
-   *Import the source into IAR and run the application software.
+
+- Connect the EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ  as shown in the Board Interface section.
+- Download and Install the necessary soft wares for working with  the EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ as mentioned in the Software Details section.
+- For setting up  the SmartMesh-IP-Manager  follow `this <http://cds.linear.com/docs/en/application-note/SmartMesh_IP_Easy_Start_Guide_for_the_Embedded_Manager.pdf>`_  link.
+- Download the  `Source code <https://bitbucket.analog.com/projects/IOTTGAPPS/repos/dust-ev-cog-ad3029lz/browse>`_.
+- Place the contents of the SmartMesh C-Library in the your project folder.
+- Here is a list of files of the SmartMesh C-Library you need to include in the project folder:-
+-  dn_endianness.c
+-   dn_hdlc.c
+-  dn_ipmt.c
+-  dn_lock.c
+-  dn_serial_mt.c
+- Import the source into IAR and run the application software.
 
 Importing source file to IAR
 ----------------------------

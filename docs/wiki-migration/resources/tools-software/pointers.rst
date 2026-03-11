@@ -31,48 +31,48 @@ O'Reilly publishers offer several excellent books on Linux systems. Many of thei
 
 -  `Building Embedded Linux Systems, Second Edition <oreilly>9780596529680>`__
 
-
-|amazon>0596529686|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596529686
+   :alt: amazon>0596529686
 
 -  `Understanding the Linux Kernel, Third Edition <oreilly>understandlk>`__
 
-
-|amazon>0596005652|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596005652
+   :alt: amazon>0596005652
 
 -  `Linux Device Drivers - Third Edition <oreilly>linuxdrive3>`__ `Online <http://lwn.net/Kernel/LDD3/>`_
 
-
-|amazon>0596005903|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596005903
+   :alt: amazon>0596005903
 
 -  `Designing Embedded Hardware <oreilly>dbhardware2>`__
 
-
-|amazon>0596007558|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596007558
+   :alt: amazon>0596007558
 
 -  `Programming Embedded Systems <oreilly>embsys2>`__
 
-
-|amazon>0596009836|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596009836
+   :alt: amazon>0596009836
 
 -  `Managing Projects with GNU Make, Third Edition <oreilly>9780596006105>`__
 
-
-|amazon>0596006101|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596006101
+   :alt: amazon>0596006101
 
 -  `Linux Kernel in a Nutshell <oreilly>9780596100797>`__ `Online <http://www.kroah.com/lkn/>`_
 
-
-|amazon>0596100795|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596100795
+   :alt: amazon>0596100795
 
 -  `Understanding Linux Network Internals <oreilly>understandlni>`__
 
-
-|amazon>0596002556|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0596002556
+   :alt: amazon>0596002556
 
 -  `The Art of Debugging with GDB, DDD, and Eclipse <oreilly>9781593271749>`__ `Free Chapter <http://www.nostarch.com/download/debugging_samplechapter.pdf>`_
 
-
-|amazon>1593271743|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>1593271743
+   :alt: amazon>1593271743
 
 Free Software Foundation
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,18 +81,18 @@ The Free Software Foundation (GNU) has a large selection of documentation. Here 
 
 -  Debugging with GDB,
 
-
-|amazon>0595149197|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0595149197
+   :alt: amazon>0595149197
 
 -  Using GNU CC
 
-
-|amazon>1882114396|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>1882114396
+   :alt: amazon>1882114396
 
 -  GNU Make
 
-
-|amazon>1882114809|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>1882114809
+   :alt: amazon>1882114809
 
 Others
 ~~~~~~
@@ -101,23 +101,23 @@ There are many other publishers/authors who have some excellent books on Linux a
 
 -  `Essential Linux Device Drivers <http://elinuxdd.com/>`_
 
-
-|amazon>0132396556|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0132396556
+   :alt: amazon>0132396556
 
 -  `Embedded Linux Primer: A Practical Real-World Approach <http://www.embeddedlinuxprimer.com/>`_
 
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>0131679848
+   :alt: amazon>0131679848
 
-|amazon>0131679848|
+-  `Bruce Perens <http://perens.com/>`_ also has quite a `good series <http://www.informit.com/promotions/promotion.aspx?promo=135563&redir=1>`_ on Linux topics. The one I use is
 
--  `Bruce Perens <http://perens.com/>`_ also has quite a `good series <http://www.informit.com/promotions/promotion.aspx?promo=135563&redir=1>`_ on Linux topics. The one I use is\
-
-
-|amazon>013147751X|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>013147751X
+   :alt: amazon>013147751X
 
 -  `Linkers and Loader <http://linker.iecc.com/>`_ is good for people interested in low level ELF/ldso details. It's available for free, or you can buy it via Amazon.
 
-
-|amazon>1558604960|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/amazon>1558604960
+   :alt: amazon>1558604960
 
 Linux Guides
 ------------
@@ -171,20 +171,3 @@ Other Links/Websites
 -  http://kernelnewbies.org/ - answers to your basic questions
 -  http://www.linuxforums.org/forum/ - Linux forums - another places to try for basic help and understanding
 -  http://www.linuxhelp.net/ - Linux help - yet another place to try
-
-.. |amazon>0596529686| image:: https://wiki.analog.com/_media/amazon>0596529686
-.. |amazon>0596005652| image:: https://wiki.analog.com/_media/amazon>0596005652
-.. |amazon>0596005903| image:: https://wiki.analog.com/_media/amazon>0596005903
-.. |amazon>0596007558| image:: https://wiki.analog.com/_media/amazon>0596007558
-.. |amazon>0596009836| image:: https://wiki.analog.com/_media/amazon>0596009836
-.. |amazon>0596006101| image:: https://wiki.analog.com/_media/amazon>0596006101
-.. |amazon>0596100795| image:: https://wiki.analog.com/_media/amazon>0596100795
-.. |amazon>0596002556| image:: https://wiki.analog.com/_media/amazon>0596002556
-.. |amazon>1593271743| image:: https://wiki.analog.com/_media/amazon>1593271743
-.. |amazon>0595149197| image:: https://wiki.analog.com/_media/amazon>0595149197
-.. |amazon>1882114396| image:: https://wiki.analog.com/_media/amazon>1882114396
-.. |amazon>1882114809| image:: https://wiki.analog.com/_media/amazon>1882114809
-.. |amazon>0132396556| image:: https://wiki.analog.com/_media/amazon>0132396556
-.. |amazon>0131679848| image:: https://wiki.analog.com/_media/amazon>0131679848
-.. |amazon>013147751X| image:: https://wiki.analog.com/_media/amazon>013147751X
-.. |amazon>1558604960| image:: https://wiki.analog.com/_media/amazon>1558604960

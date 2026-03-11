@@ -27,9 +27,9 @@ For multichannel use you will need to :doc:`grow </wiki-migration/resources/tool
 | Show Graph    | |nchannelpic6.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +---------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |nchannelpic1.png| image:: https://wiki.analog.com/_media/nchannelpic1.png
-.. |nchannelpic2.png| image:: https://wiki.analog.com/_media/nchannelpic2.png
-.. |nchannelpic3.png| image:: https://wiki.analog.com/_media/nchannelpic3.png
-.. |nchannelpic4.png| image:: https://wiki.analog.com/_media/nchannelpic4.png
-.. |nchannelpic5.png| image:: https://wiki.analog.com/_media/nchannelpic5.png
-.. |nchannelpic6.png| image:: https://wiki.analog.com/_media/nchannelpic6.png
+.. |nchannelpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/nchannelpic1.png
+.. |nchannelpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/nchannelpic2.png
+.. |nchannelpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/nchannelpic3.png
+.. |nchannelpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/nchannelpic4.png
+.. |nchannelpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/nchannelpic5.png
+.. |nchannelpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/nchannelpic6.png

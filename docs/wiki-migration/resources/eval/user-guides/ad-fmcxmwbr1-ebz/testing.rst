@@ -57,7 +57,9 @@ Required setup
 -  Connect the USB OTG adapter and plug the USB Port Hub. In the Port hub will be connected the keyboard and the QR code scanner.
 -  Plug the AD-FMCXMWBR1-EBZ into the FMC connector of the ADRV2CRR-FMC.
 
-|TEST|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/picture2.png
+   :alt: TEST
+   :align: center
 
 .. container:: centeralign
 
@@ -82,9 +84,9 @@ Required setup
 
 -  Use the cables to connect the AD-FMCXMWBR1-EBZ to the TEST BOARD
 
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/fmcxmw_testsetup.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -115,7 +117,7 @@ After the connections are done as explained in the “Required setup for product
 
 -  The program will start, the tests are performed automatically and will show the message PASSED/FAILED at the end of the procedure.
 
-|image3| |image4|
+|image2| |image3|
 
 -  To test a another board, select option (2) to power off the setup, before using the physical switch and disconnecting AD-FMCXMWBR1-EBZ
 
@@ -130,18 +132,13 @@ Schematics and CAD files
    :class: download
 
    
-   ::
-   
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/fmc_bridge_testbrd_update.pdf|AD-FMCXMWBR1-EBZ test board Schematics]]
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/test_board_ad-fmcxmwbr1.7z|AD-FMCXMWBR1-EBZ test board CAD files]]
+   -  `AD-FMCXMWBR1-EBZ test board Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/fmc_bridge_testbrd_update.pdf>`_
+   -  `AD-FMCXMWBR1-EBZ test board CAD files <https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/test_board_ad-fmcxmwbr1.7z>`_
    
 
 
-.. |TEST| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/picture2.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/pot_adjustment.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/fmcxmw_testsetup.jpg
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/3_test_procedure.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/3_test_procedure.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/4_test_procedure.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/4_test_procedure.png
    :width: 300px

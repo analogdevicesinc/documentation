@@ -83,4 +83,4 @@ Now you are ready to :doc:`Debug </wiki-migration/resources/tools-software/cross
 
 --------------
 
-`LED Blink Application#.|LED Blink Application#sc573-blink|Multi-Core LED Blink Example Application <https://wiki.analog.com/_media/navigation CCES Getting Started#.>`_
+`LED Blink Application#.|LED Blink Application#sc573-blink|Multi-Core LED Blink Example Application <https://wiki.analog.com/_media/resources/tools-software/crosscore/cces/getting-started/led-blink-app/navigation CCES Getting Started#.>`_

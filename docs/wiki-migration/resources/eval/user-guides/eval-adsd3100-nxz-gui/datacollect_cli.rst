@@ -146,7 +146,5 @@ Since the ADTF3175D eval kit works via ethernet over usb, the user must specify 
    Version: for 4.3.0, data collect's default output is depth image. To get **raw frame** use **--ft** command line argument with **'RAW'** option. Refer data_collect --h for mode command line options. The get ccb flag is only required for the first capture. Once the ccb of your module is stored, it can be reused while running tofi_depth_compute.exe
 
 
-   
-   |image1|
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz-gui/data_collect_ip.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adsd3100-nxz-gui/data_collect_ip.png
+   :align: center

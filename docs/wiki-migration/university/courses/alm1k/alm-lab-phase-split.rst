@@ -26,9 +26,8 @@ Directions:
 
 The breadboard connections are shown in figure 1. The single transistor combines common-emitter and emitter follower configurations to provide two equal amplitude, opposite phase outputs. By choosing R\ :sub:`C` = R\ :sub:`E` (and both much less than r\ :sub:`E`), the absolute gain to each output is 1, but the collector and emitter voltages will vary out of phase with each other. Shown here using the single (+5 V) power supply, the voltage swing from either output can nearly reach one half of the power supply p-p as the transistor operating condition varies from cutoff to saturation. Of course, the base bias voltage ( DC offset of CH-A output ) must be chosen to set the base voltage swing to be between a little more than + V\ :sub:`BE` of Q\ :sub:`1` and one half of the power supply ( 2.5V ) + V\ :sub:`BE`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -46,9 +45,8 @@ To measure the input to output gain compare the p-p voltage measurements at the 
 
 Be sure to save a copy of the scope screen to be included in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f4.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -75,9 +73,8 @@ Directions:
 
 Add the two DC blocking capacitors and resistors tied to +2.5 V as shown in figure 2 to the circuit from figure 1. The capacitors remove or block the DC or average part of the signals and pass the AC part of the signals. The resistors tied to the +2.5 V supply set the new DC or average values for the signals seen at the outputs by charging the capacitors such that the outputs will be centered on +2.5 V. The value of the coupling capacitors set the circuit’s low-frequency cutoff point.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f2.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -86,9 +83,9 @@ Add the two DC blocking capacitors and resistors tied to +2.5 V as shown in figu
 
 Another technique to set the DC level after the capacitors is to replace the two 10 KΩ resistors with diodes as shown in figure 3. The diodes charge the capacitors to a value such that the negative peaks of the waveforms will be clamped to a voltage equal to the forward biased voltage drop of the diodes below the +2.5 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f3.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -102,3 +99,12 @@ Try revering the direction of diodes D\ :sub:`1` and D\ :sub:`2` to see what hap
 `Phase splitter <https://en.wikipedia.org/wiki/Phase_splitter>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f4.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f2.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-phase-split_f3.png
+   :width: 500px

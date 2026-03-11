@@ -24,7 +24,7 @@ Since the evaluation board can operate only with **VADJ set to 1.8V** and the FM
 Required Software
 -----------------
 
--  SD Card 16GB imaged using the instructions here: :doc:`SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. Use 2020_r1 or newer release. (Pre-released files, built using Vivado 2020.1 can be downloaded from `here <https://wiki.analog.com/https/swdownloads.analog.com/cse/prebuilt/zynq-zc706-adv7511-adrv9002-master-2021_05_13-08_13_21.zip>`_ )
+-  SD Card 16GB imaged using the instructions here: :doc:`SDCARD for Zynq & Altera SoC Quick Start Guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. Use 2020_r1 or newer release. (Pre-released files, built using Vivado 2020.1 can be downloaded from `here <https://swdownloads.analog.com/cse/prebuilt/zynq-zc706-adv7511-adrv9002-master-2021_05_13-08_13_21.zip>`_ )
 -  Copy next boot files from ``zynq-zc706-adv7511-adrv9002`` directory directly on sdcard ``BOOT`` partition :
 
    -  ``BOOT.bin``
@@ -154,8 +154,7 @@ Testing
    See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
 
 
-.. image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
-   :alt: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
+   |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
 .. warning::
 
@@ -181,7 +180,10 @@ Testing
 -  Insert SD card into socket.
 -  Configure ZC706 for SD BOOT (Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)).
 
-|zc706plusfmcjesdadc1.png|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
+   :alt: zc706plusfmcjesdadc1.png
+   :align: right
+   :width: 200px
 
 -  Turn on the power switch on the FPGA board.
 -  Observe kernel and serial console messages on your terminal.
@@ -643,7 +645,7 @@ For more on device modes, check :doc:`device modes. </wiki-migration/resources/t
 Pyadi-iio Example
 -----------------
 
-Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio>`__. An example of using adrv9002 can be checked `here <https::`Pyadi-iio </github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adrv9002_example.py>`
+Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio:`Pyadi-iio <pyadi-iio>`. An example of using adrv9002 can be checked :git-pyadi-iio:`here <examples/adrv9002_example.py>`
 
 IIO Oscilloscope Remote
 -----------------------
@@ -726,7 +728,8 @@ Software resources
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 
-.. |zc706plusfmcjesdadc1.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
-   :width: 200px
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px
+
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: https://wiki.analog.com/_media/http///www.xilinx.com/images/product-images/zc706-base-board.jpg

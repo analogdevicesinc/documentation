@@ -44,9 +44,8 @@ Directions:
 
 On your solder-less breadboard connect the four digital I/O pins from the ADALM1000 digital connector to read back the four switches as shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial2_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -82,3 +81,6 @@ Combine the LED and push button programs to turn on and off two LEDs based on wh
 `Novel Switch Interface Scheme Reduces Microprocessor Pin Count <https://www.radiolocman.com/review/article.html?di=653075>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial2_f1.png
+   :width: 500px

@@ -129,4 +129,4 @@ Algorithm Details
 | Parameter RAM              | 43                                                       |
 +----------------------------+----------------------------------------------------------+
 
-.. |standardpeakpic1.png| image:: https://wiki.analog.com/_media/standardpeakpic1.png
+.. |standardpeakpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/standardpeakpic1.png

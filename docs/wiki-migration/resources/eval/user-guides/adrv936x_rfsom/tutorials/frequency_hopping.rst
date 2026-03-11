@@ -19,7 +19,9 @@ In order to increase this LO transition rate, it is possible to save these calib
 Fastlock Controller IP
 ----------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/tutorials/hoppingdiagram.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -200,6 +202,3 @@ To build and run the demo:
 -  Place the generate BOOT.BIN, uImage, and provided :git-TransceiverToolbox:`trx_examples/targeting/frequency-hopping/devicetree.dtb` onto the BOOT partition of the SD card.
 
 Now the ADRV9361-Z7035 can be booted from the built SD card, the :git-TransceiverToolbox:`trx_examples/targeting/frequency-hopping/fastlock.m` example can be run from MATLAB. Note you may need to update the URI at the top of the example to reflect the IP address of your ADRV9361-Z7035.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/tutorials/hoppingdiagram.png
-   :width: 800px

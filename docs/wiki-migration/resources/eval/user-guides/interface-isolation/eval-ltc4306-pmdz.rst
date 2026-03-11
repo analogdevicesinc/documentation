@@ -156,7 +156,7 @@ The Figure below shows how the hardware should be set-up:
 
 There are two basic ways to program the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` with the software for the :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>`.
 
--  Dragging and Dropping the :git-EVAL-ADICUP360:`Bin B <releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>` or the `Hex B <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/hex_b.zip>`_ file to the DAPLINK drive
+-  Dragging and Dropping the `Bin B <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_ or the `Hex B <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/hex_b.zip>`_ file to the DAPLINK drive
 -  Building, Compiling, and Debugging using CCES
 
 Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
@@ -176,7 +176,7 @@ Software
    
    -  `Bin A <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/binary_file.zip>`_, Binary file to program SDP-K1 to configure LTC4306
    -  |image3|, Hex file to program EVAL-ADICUP3029 to configure LTC4306 Not linked yet
-   -  :git-EVAL-ADICUP360:`Bin B <releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`, Binary file to program EVAL-ADICUP3029 to read ADT7420
+   -  `Bin B <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_, Binary file to program EVAL-ADICUP3029 to read ADT7420
    -  `Hex B <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/hex_b.zip>`_, Hex file to program EVAL-ADICUP3029 to read ADT7420
    
    Complete ADT7420 Source Files
@@ -250,16 +250,14 @@ Resources
 Additional Information and Useful Links
 ---------------------------------------
 
-::
-
-   *[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4306`.html|EVAL-LTC4306-PMDZ]]
-   * [[:adi:`LTC4306|LTC4306` Product Page]]
-   * [[:adi:`en/technical-articles/multiplexer-provides-address-expansion-bus-buffering-and-fault-management`.html| Technical Article on bus buffering]]
-   * [[:adi:`en/products/interface-isolation/serial-bus-buffers-extenders-accelerators`.html| Serial bus buffers/externders/accelerators]]
-   * [[:adi:`en/analog-dialogue/articles/i2c-communication-protocol-understanding-i2c-primer-pmbus-and-smbus`.html| Understanding PMbus & SMbus]]
-   * [[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029`.html|EVAL-ADICUP3029 Product Page]]
-   * [[:adi:`en/products/adt7420`.html| ADT7420 Product Page]]
-   * [[/resources/eval/user-guides/eval-adicup3029/tools|Cross Core studio Tool and Driver details]]
+-  :adi:`EVAL-LTC4306-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4306.html>`
+-  :adi:`LTC4306 Product Page <LTC4306>`
+-  :adi:`Technical Article on bus buffering <en/technical-articles/multiplexer-provides-address-expansion-bus-buffering-and-fault-management.html>`
+-  :adi:`Serial bus buffers/externders/accelerators <en/products/interface-isolation/serial-bus-buffers-extenders-accelerators.html>`
+-  :adi:`Understanding PMbus & SMbus <en/analog-dialogue/articles/i2c-communication-protocol-understanding-i2c-primer-pmbus-and-smbus.html>`
+-  :adi:`EVAL-ADICUP3029 Product Page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>`
+-  :adi:`ADT7420 Product Page <en/products/adt7420.html>`
+-  :doc:`Cross Core studio Tool and Driver details </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/figure_1.png
 .. |Hex A| image:: https://wiki.analog.com/_media/resources/eval/user-guides/

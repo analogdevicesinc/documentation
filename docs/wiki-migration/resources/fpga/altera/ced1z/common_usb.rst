@@ -14,7 +14,7 @@ Since Windows cannot locate the driver for the device the automatic installation
 
 In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
 
-|image011.png|\ |image013.png|
+|image011.png| |image013.png|
 
 
 .. tip::

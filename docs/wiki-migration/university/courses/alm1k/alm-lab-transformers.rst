@@ -16,9 +16,8 @@ Transformers only work with alternating current, AC. For example transformers re
 
 The transformer core has high magnetic permeability, i.e. a material that forms a magnetic field much more easily than in free space, due to the orientation of atomic dipoles. In figure 1, the core is made of laminated soft iron but at higher frequencies ferrite is more common. The result is that the magnetic field is concentrated inside the core, and almost no field lines leave the core.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/atrans_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -109,9 +108,8 @@ The first step is to measure the winding inductance of the HPH1-1400L.
 
 Wire the HPH1-1400L 6 winding Inductor as shown in figure 1 with the 6 windings connected in series. To use the ALICE desktop Impedance Analyzer tool to measure the inductance an external reference resistor is used. Connect the CHA pin of the ALM1000 to one end of R\ :sub:`EXT` and the other end of R\ :sub:`EXT` to the CHB pin of the ALM1000 and to pin 1 of the HPH1-1400L.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transformers-fig1.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -126,9 +124,8 @@ The second step is to measure the frequency response of the HPH1-1400L configure
 
 Modify the circuit on your solder-less breadboard to look as shown in figure 3. You will be using this setup to measure the frequency response of in three different configurations with 1:1 primary to secondary turns ratios. The two red arrows indicate where to connect the source and load resistors for the configuration where one winding is used for the primary and secondary. The blue arrows are for the configuration where two coils in series are used for the primary and secondary. The green arrows are for the configuration where three coils in series are used for the primary and secondary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transformers-fig2.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -157,9 +154,8 @@ Step Up and Step Down Configurations
 
 Connect to the transformer for a 1:2 step up configuration (red arrows) and a 2:1 step down configuration as shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transformers-fig3.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -175,3 +171,12 @@ For additional credit calculate the correct R\ :sub:`L` for other possible step 
 :adi:`Transformers: They’re Not All Boat Anchors <en/analog-dialogue/raqs/raq-issue-82.html>` `Electromagnetic coil <https://en.wikipedia.org/wiki/Electromagnetic_coil>`_ `Signal Transformer Application and Specification <http://www.coilcraft.com/pdfs/doc157_SigXfrmApp.pdf>`_ `Simulating Non-linear Transformers in LTspice <https://www.allaboutcircuits.com/technical-articles/simulating-non-linear-transformers-in-ltspice/>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/atrans_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transformers-fig1.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transformers-fig2.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-transformers-fig3.png
+   :width: 500px

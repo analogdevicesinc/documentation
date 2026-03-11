@@ -16,9 +16,8 @@ Materials:
 
 ADALM2000 Active Learning Module Solder-less breadboard Jumper wires 1 - CD4007 CMOS transistor array 2 - NPN transistors (2N3904 or equivalent) 1 - 4.7 KΩ resistor
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -32,9 +31,8 @@ Construct the test circuit shown in figure 1. The green boxes indicate connectio
 
 In this first test only NMOS device M\ :sub:`1` is turned on and PMOS device M\ :sub:`2` is turned off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_f1.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -58,7 +56,7 @@ Procedure:
 Configure waveform generator 1 as a 100 Hz triangle wave with an amplitude of 9 volts peak-to-peak and an offset of +500 mV. This will swing the voltage on the NMOS switch transistor from +5 volts to -4 volts. We can not swing the voltage all the way to -5 volts because of the NPN current source Q\ :sub:`2`. Be sure to turn on the external user power supplies (Vp and Vn) before running the waveform generator. Configure the scope screen in XY mode with C1 on the X axis, and C2 (the voltage across the switch) on the Y axis. Use the math function to calculate the resistance (C2 / 1mA). Note: You can get a more precise estimate of the current source by measuring the voltage across R\ :sub:`1` and its actual resistance.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -79,9 +77,8 @@ PMOS Directions:
 
 Now modify your circuit to look like figure 2 by connecting the gates of both M\ :sub:`1` and M\ :sub:`2` to the negative power supply Vn. In this second test only PMOS device M\ :sub:`2` is turned on and NMOS device M\ :sub:`1` is turned off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_f2.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -105,7 +102,7 @@ Procedure:
 Repeat the sweep of the voltage from waveform generator W1 and plot the on-resistance of just the PMOS transistor.
 
 
-|image2|
+|image5|
 
 .. container:: centeralign
 
@@ -126,9 +123,8 @@ CMOS Directions:
 
 Now modify your circuit to look like figure 3 by connecting the gate of M\ :sub:`1` to the positive power supply Vp and the gate of M\ :sub:`2` to the negative power supply Vn. In this last test both NMOS device M\ :sub:`1` and PMOS device M\ :sub:`2` is turned on.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a18_f3.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -152,7 +148,7 @@ Procedure:
 Repeat the sweep of the voltage and plot the on resistance of the combined NMOS and PMOS transistors.
 
 
-|image3|
+|image7|
 
 .. container:: centeralign
 
@@ -193,9 +189,17 @@ Try measuring the Ron vs input voltage for other CMOS analog switches such as th
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_nmos_ss.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_f1.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_nmos_ss.png
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_pmos_ss.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_f2.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_pmos_ss.png
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_cmos_ss.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_f3.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a18_cmos_ss.png
    :width: 300px

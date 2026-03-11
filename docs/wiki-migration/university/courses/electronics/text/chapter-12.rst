@@ -8,9 +8,8 @@ The differential amplifier is probably the most widely used circuit building blo
 
 It is often easiest to start again with the very basic single transistor and build a workable differential amplifier as a logical progression from there. Consider the single transistor amplifier stage, figure 12.1.1, which is similar to what we explored in the section on the degenerated common emitter back in Chapter 9. This amplifier can actually be viewed as either an inverting common emitter amplifier when driven from V\ :sub:`neg` and with V\ :sub:`pos` considered an AC ground. Or as a non-inverting common base amplifier when driven from V\ :sub:`pos` and with V\ :sub:`neg` considered an AC ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f1.png
-   :align: center
-   :width: 650px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,8 @@ The inverting or negative input terminal of our simple difference amplifier has 
 
 It would be advantageous if our differential amplifier had more symmetric inputs where the input impedance for both the positive and negative inputs was as high as possible, ideally infinite. An additional step to get us in that direction is shown in figure 12.1.2. If we now include an emitter follower stage, Q\ :sub:`2`, to buffer the relatively low impedance of the common base amplifier path of the positive input we get a more symmetrical pair of inputs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f2.png
-   :align: center
-   :width: 650px
+
+|image2|
 
 .. container:: centeralign
 
@@ -117,7 +115,7 @@ Bias stability and independence from variations in device parameters can be impr
 
 The differential pair with a small differential input signal v\ :sub:`i`
 
-|image1| |image2|
+|image3| |image4|
 
 Small-Signal Operation
 
@@ -177,7 +175,11 @@ A difference amplifier can have input signals that are in phase with each other,
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_e1.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f1.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_f2.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_e1.png
    :width: 150px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_e2.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr12_e2.png
    :width: 150px

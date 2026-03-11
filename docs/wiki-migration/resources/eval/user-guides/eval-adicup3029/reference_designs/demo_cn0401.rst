@@ -55,12 +55,13 @@ Setting up the Hardware
 
 -  Connect **EVAL-ADM3055E-PMDZ** board to the **EVAL-ADICUP3029** as seen in the pictures below:
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_single_node.jpg
+   :align: center
 
 -  Connect the boards with each other with either a **WR-DSUB** cable or a pair of wires:
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_bus_connection.jpg
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of each of the the EVAL-ADICUP3029 boards and connect them to a computer.
 
@@ -207,7 +208,7 @@ The software for the **ADuCM3029_demo_cn0401** can be found here:
    Prebuilt CN0401 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0401.Hex <releases/download/Latest/ADuCM3029_demo_cn0401.hex>`
+   -  `AduCM3029_demo_cn0401.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0401.hex>`_
    
    Complete CN0401 Source Files
    
@@ -256,5 +257,3 @@ Project structure includes:
 
 .. |Main flow chart| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_main_flowchart.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_can_bus_connect.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_single_node.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0401_bus_connection.jpg

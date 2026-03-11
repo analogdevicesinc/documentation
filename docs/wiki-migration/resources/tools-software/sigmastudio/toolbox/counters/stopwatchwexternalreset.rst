@@ -42,5 +42,5 @@ The stopwatch can be used in many different situations. Below is a sample schema
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchwextpic4.png
    :alt: stopwatchwextpic4.png
 
-.. |stopwatchwextpic1.png| image:: https://wiki.analog.com/_media/stopwatchwextpic1.png
-.. |stopwatchwextpic2.png| image:: https://wiki.analog.com/_media/stopwatchwextpic2.png
+.. |stopwatchwextpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchwextpic1.png
+.. |stopwatchwextpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchwextpic2.png

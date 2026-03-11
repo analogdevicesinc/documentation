@@ -485,7 +485,9 @@ The ST-LINK JTAG programmer provides a robust solution for programming and debug
 -  Connect the ST-LINK programmer to the EVAL-ADIN2111EBZ using the ARM-20 JTAG connector P3
 -  Select the ST-LINK interface in previous STEP 1 and follow the same instructions to program the board with the provided firmware.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stm32cubeprogrammer.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -601,5 +603,3 @@ By using the evaluation board discussed herein (together with any tools, compone
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adin2111ebz_simplified_block_diagram.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stm32cubeprogrammer.png
-   :width: 800px

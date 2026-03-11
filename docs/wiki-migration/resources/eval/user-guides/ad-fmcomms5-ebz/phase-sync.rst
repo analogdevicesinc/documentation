@@ -44,9 +44,12 @@ To calibrate FMComms5, perform the following within IIO-Scope:
 -  From the FMComms5 panel, match all LOs to the same frequency for all four datapaths
 -  Disable all receiver trackings: Quadrature, RF DC, and BB DC
 -  Put all receivers into **manual** Gain Control Mode
--  Set manual hardware gains for all receivers to the same level within a reasonable range. With loopback cables connecting RX and TX and DDSs set to -18 dB RSSI should be ~37-43 dB. You should have something similar to the below figure.\
+-  Set manual hardware gains for all receivers to the same level within a reasonable range. With loopback cables connecting RX and TX and DDSs set to -18 dB RSSI should be ~37-43 dB. You should have something similar to the below figure.
 
-|Example Configuration|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/screenshot_20190530_143140.png
+   :alt: Example Configuration
+   :align: center
+   :width: 1000px
 
 -  From the FMComms2/3/4/5 Advanced (or AD936X Advanced) panel, select the FMComms5 tab. From here click the "Reset Calibration" button
 -  Click the "MCS Sync" button at the bottom
@@ -127,8 +130,6 @@ External LO Rev C with ADF5355
    :alt: Rev C External LO
    :align: center
 
-.. |Example Configuration| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/screenshot_20190530_143140.png
-   :width: 1000px
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/screenshot_20190530_141142.png
    :width: 1000px
 .. |Phase difference over frequency and distance| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/phasediff.png

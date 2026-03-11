@@ -23,9 +23,8 @@ Directions:
 
 The breadboard connections for the common base amplifier tests are shown in figure 1. The 2.5V mid supply voltage output is used as the fixed common voltage point for the base terminal. An input current is supplied to the emitter from channel A in source current mode. Channel B in Hi-Z mode measures the collector voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcb_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -60,3 +59,6 @@ What is the maximum peak to peak output voltage swing that can be produced with 
 http://en.wikipedia.org/wiki/Common_base
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labcb_f1.png
+   :width: 500px

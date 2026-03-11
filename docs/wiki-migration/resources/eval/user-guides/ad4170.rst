@@ -73,13 +73,16 @@ Getting started
 
    -  Using the Arduino Connectors
 
-
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170_sdpk1_connections.png
+   :align: center
+   :width: 650px
 
 -  If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
--  Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.\
+-  Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
+   :align: center
+   :width: 300px
 
 -  The :doc:`Noise Test Demo </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>` is a useful demo mode of the Ace Plugin software to ensure that the Evaluation board is communicating correctly with the Ace Plugin software.
 
@@ -131,8 +134,3 @@ Software Guide
 
 -  :doc:`Virtual Eval Guide </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
 -  :doc:`Firmware Install </wiki-migration/resources/eval/user-guides/ad4170/softwareprocedures>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170_sdpk1_connections.png
-   :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
-   :width: 300px

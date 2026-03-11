@@ -90,11 +90,9 @@ Table 2
 | 
 | The guide below provides the links to each set of test results:
 
-::
-
-   *[[/resources/technical-guides/esd|AD74115H ESD Test Results]] - Provides all the details of the ESD tests and results.
-   *[[/resources/technical-guides/eft|AD74115H EFT Test Results]] - Provides all the details of the ESD tests and results.
-   *[[/resources/technical-guides/surge|AD74115H Surge Test Results]] - Provides all the details of the ESD tests and results.
+-  :doc:`AD74115H ESD Test Results </wiki-migration/resources/technical-guides/esd>` - Provides all the details of the ESD tests and results.
+-  :doc:`AD74115H EFT Test Results </wiki-migration/resources/technical-guides/eft>` - Provides all the details of the ESD tests and results.
+-  :doc:`AD74115H Surge Test Results </wiki-migration/resources/technical-guides/surge>` - Provides all the details of the ESD tests and results.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/technical-guides/ad74115h_adp1034_circuit_diagram.png
    :width: 900px

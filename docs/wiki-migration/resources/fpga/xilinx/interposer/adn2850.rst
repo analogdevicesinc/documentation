@@ -41,7 +41,7 @@ More information
 ----------------
 
 -  :adi:`ADN2850 Product Info <ADN2850>` - pricing, samples, datasheet
--  :adi:`EVAL-ADN2850SDZ evaluation board user guide </static/imported-files/user_guides/UG-276.pdf>`
+-  :adi:`EVAL-ADN2850SDZ evaluation board user guide <static/imported-files/user_guides/UG-276.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started

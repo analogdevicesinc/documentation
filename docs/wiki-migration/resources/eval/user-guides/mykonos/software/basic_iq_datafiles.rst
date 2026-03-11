@@ -43,7 +43,7 @@ Example files
 
 .. important::
 
-   The modulated waveforms (QPSK, MSK, etc) are designed to go through a receiver design. (this would include root raised cosine decimator, equalization, frequency compenstation, retiming, etc. and is best looked at by a MathWorks example `here <https://www.mathworks.com//help/comm/examples/hdl-optimized-qpsk-receiver-with-captured-data.html>`_. Since there is no default receiver in the default HDL design that ADI provides - looking at things with the osc application - you will not see good results. This is expected, and normal.
+   The modulated waveforms (QPSK, MSK, etc) are designed to go through a receiver design. (this would include root raised cosine decimator, equalization, frequency compenstation, retiming, etc. and is best looked at by a MathWorks example `here <https://www.mathworks.com/help/comm/examples/hdl-optimized-qpsk-receiver-with-captured-data.html>`_. Since there is no default receiver in the default HDL design that ADI provides - looking at things with the osc application - you will not see good results. This is expected, and normal.
 
 
 MATLAB format

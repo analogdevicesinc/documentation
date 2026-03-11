@@ -32,15 +32,18 @@ The following is a list of items needed to replicate this demo.
 -  `Fluorescence Filter (SCHOTT GG-475, 12.5 mm Dia., Longpass Filter) <https://www.edmundoptics.com/p/gg-475-125mm-dia-longpass-filter/11320/>`_
 -  Fluorescence Photodiode Board
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg
+   :width: 100px
 
 -  Transmit Photodiode Board
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg
+   :width: 100px
 
 -  365 nm LED Board
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130028.jpg
+   :width: 100px
 
 -  Male-to-female jumper headers for connection
 -  (**Optional**) Prepared samples with known quinine concentration measurement
@@ -49,22 +52,22 @@ Setting up the EVAL-ADPD410X-ARDZ
 ---------------------------------
 
 | Configure the onboard jumper header and solder jumper connections, as shown below.
-| |image5|
+| |image2|
 
 ========== ======================= =========
 **Header** **Setting**             **Image**
 ========== ======================= =========
 P10        No connection
 
-|image6|
+|image3|
 
 JP1        Shorted Pin 2 and Pin 3
 
-|image7|
+|image4|
 
 IOSEL      Shorted Pin 1 and 2
 
-|image8|
+|image5|
 
 ========== ======================= =========
 
@@ -78,7 +81,7 @@ POWER (S5) WALL/USB
 ========== =====================
 
 | Connect the :adi:`EVAL-ADPD410x-ARDZ` to the :adi:`EVAL-ADICUP3029` using the headers, as shown below.
-| |image9|
+| |image6|
 
 Firmware Setup
 --------------
@@ -91,8 +94,8 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
    
    Pre-built hex files can be found here:
    
-   -  :git-EVAL-ADICUP3029:`EVAL-ADPD4100-ARDZ .Hex File (ADuCM3029_demo_adpd410x_spi_waterquality.hex) <releases/download/Latest/ADuCM3029_demo_adpd410x_spi_waterquality.hex>`
-   -  :git-EVAL-ADICUP3029:`EVAL-ADPD4101-ARDZ .Hex File (ADuCM3029_demo_adpd410x_i2c_waterquality.hex) <releases/download/Latest/ADuCM3029_demo_adpd410x_i2c_waterquality.hex>`
+   -  `EVAL-ADPD4100-ARDZ .Hex File (ADuCM3029_demo_adpd410x_spi_waterquality.hex) <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adpd410x_spi_waterquality.hex>`_
+   -  `EVAL-ADPD4101-ARDZ .Hex File (ADuCM3029_demo_adpd410x_i2c_waterquality.hex) <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adpd410x_i2c_waterquality.hex>`_
    
    The latest source code can be found here:
    
@@ -119,7 +122,7 @@ Hardware Connection
 -------------------
 
 | Connect the 365 nm LED Board, Transmit Photodiode Board, and Fluorescence Photodiode Board to the prototyping connectors of the :adi:`EVAL-ADPD410x-ARDZ`, as shown below.
-| |image10|
+| |image7|
 
 Software Setup
 --------------
@@ -132,15 +135,15 @@ This demo uses a PyADI-IIO example script. See :doc:`Software Setup </wiki-migra
 -  Run the example script using the command. ``...\pyadi-iio\examples>python adpd410x_demo.py``
 -  The script will ask for a serial port. Input the noted serial port and press Enter. In cases when the board is not found, press the reset button (S1) on the :adi:`EVAL-ADPD410x-ARDZ` and input the noted serial port again.
 
-|image11|
+|image8|
 
 -  When the board is detected, you will be asked to specify the demo application to use. Since this setup is only applicable for fluorescence measurements, enter 1.
 
-|image12|
+|image9|
 
 -  A plot will appear showing the measured and computed quinine concentration. You have the option to save a copy of the displayed waveform at any point in time using the matplotlib controls at the top. Remove the cuvette and replace the quinine sample with a different concentration to observe the measurement change.
 
-|image13|
+|image10|
 
 .. important::
 
@@ -154,27 +157,21 @@ Reference Links
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fluorescence_path.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg
-   :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg
-   :width: 100px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130028.jpg
-   :width: 100px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fl_adpd410x_jumperconn.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/fl_adpd410x_jumperconn.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p10_empty.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/p10_empty.png
    :width: 200px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/jp1_5v.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/jp1_5v.png
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iosel_shunt.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/iosel_shunt.png
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/arduinoconnection.jpg
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_connection.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_connection.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_comport.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/pyadiiio_example2_comport.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_selectapplication.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_selectapplication.png
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_fluorescenceresult.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adpd410x/demo_fluorescenceresult.png
    :width: 400px

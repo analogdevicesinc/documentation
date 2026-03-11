@@ -220,10 +220,8 @@ To run the software project on the Nios II processor:
 
 This will re-build the software project to create an up–to-date executable and then download the code into memory on the **BeMicroSDK** hardware. The debugger resets the Nios II processor, and it executes the downloaded code. Note that the code is verified in memory before it is executed.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image063.png
-   :alt: image063.png
-   :align: center
-   :width: 400px
+
+|image063.png|
 
 .. hint::
 
@@ -237,4 +235,6 @@ This will re-build the software project to create an up–to-date executable and
 .. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
    :width: 400px
 .. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
+   :width: 400px
+.. |image063.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image063.png
    :width: 400px

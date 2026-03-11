@@ -46,14 +46,14 @@ ADA4355 Evaluation System
 -  **LPF** drop down menu is used to set the Analog Low Pass Filter inside the ADA4355.
 -  **Current Driver On** radio button is used to enable or disable the laser driver from pulsing the laser.
 
-::
 
-   -** PD Voltage** drop down menu is used to set the Reverse Bias Voltage of the Photo Detector when using the on-board APD bias generator.
-   **DC Current** drop down menu is used to set the DC current through the laser diode. This biases the laser to a threshold level just below the current level where the laser would begin to emit light. The default and recommended level for the included laser diode is 10mA. See Figure 11 and Figure 12.
-   **Pulsed Current** drop down menu is used to set the pulsed current through the laser diode. See Figure 11 and Figure 12.
-   * Pulse Width is the width of the optical pulse launched into the fiber. This setting is in steps of 2nS and cannot exceed 20uS.\\{{ :resources:eval:figure12_ada4355.png?400 |}} //Figure 12. DC current and pulsed current definition//
-   **Samples** drop down menu specifies the number of samples to be collected for each pulse. The samples collected are referred to as a "Frame" {{ :resources:eval:ada4355_frame.jpg?600 |}}  //Figure 13.//
-   **Averages** drop down menu is used to set the number of data frames averaged for the measurement result.
+
+-** PD Voltage** drop down menu is used to set the Reverse Bias Voltage of the Photo Detector when using the on-board APD bias generator.
+-  **DC Current** drop down menu is used to set the DC current through the laser diode. This biases the laser to a threshold level just below the current level where the laser would begin to emit light. The default and recommended level for the included laser diode is 10mA. See Figure 11 and Figure 12.
+-  **Pulsed Current** drop down menu is used to set the pulsed current through the laser diode. See Figure 11 and Figure 12.
+-  Pulse Width is the width of the optical pulse launched into the fiber. This setting is in steps of 2nS and cannot exceed 20uS.\\|resources-eval-figure12_ada4355.png| //Figure 12. DC current and pulsed current definition//
+-  **Samples** drop down menu specifies the number of samples to be collected for each pulse. The samples collected are referred to as a "Frame" |resources-eval-ada4355_frame.jpg|  //Figure 13.//
+-  **Averages** drop down menu is used to set the number of data frames averaged for the measurement result.
 
 |image9|\ *Figure 14.*
 
@@ -140,3 +140,6 @@ Downloads
    :width: 600px
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/toolbar_ada4355.png
    :width: 400px
+
+.. |resources-eval-ada4355_frame.jpg| image:: https://wiki.analog.com/_media/resources/eval/ada4355_frame.jpg
+.. |resources-eval-figure12_ada4355.png| image:: https://wiki.analog.com/_media/resources/eval/figure12_ada4355.png

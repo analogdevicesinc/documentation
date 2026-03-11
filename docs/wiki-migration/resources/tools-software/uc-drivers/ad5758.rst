@@ -272,15 +272,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`HDL Reference Design. <projects/ad5758_sdz>`
+   -  :git-no-OS:`No-OS Reference Design. <drivers/dac/ad5758>`
    
-   |HDL Reference Design.|
 
-   -
-
-   |No-OS Reference Design.|
-
-.. |HDL Reference Design.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad5758_sdz`
-.. |No-OS Reference Design.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5758`

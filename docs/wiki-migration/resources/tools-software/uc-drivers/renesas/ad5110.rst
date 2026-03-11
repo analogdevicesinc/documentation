@@ -62,7 +62,8 @@ There are three functions which are called by the AD5110 driver:
 -  I2C_Write() – writes data to the device.
 -  I2C_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -155,5 +156,3 @@ More information
 
    See `more-information <https://wiki.analog.com/more-information>`_
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png

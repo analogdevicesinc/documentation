@@ -18,9 +18,8 @@ For the lowest offset and temperature drift performance, auto zeroing amplifiers
 
 A basic auto zero amplifier circuit is shown in figure 1. When the switches are in the "Z" (auto-zero) position, capacitors C\ :sub:`1` and C\ :sub:`2` are charged to the amplifier input and output offset voltage, respectively. When the switches are in the "S" (sample) position, VIN is connected to VOUT through the path comprised of C\ :sub:`1`, R\ :sub:`1`, the amplifier, R\ :sub:`2`, and C\ :sub:`2`. The switching frequency is usually between a few hundred Hz and several kHz, and it should be noted that because this is a sampling system, the input frequency must be much less than one-half the switching frequency in order to prevent errors due to aliasing. It is also assumed that after a steady state condition is reached, there is only a minimal amount of charge transferred during the switching cycles. The output capacitor, C\ :sub:`3`, and any load, RL, must be chosen such that there is minimal VOUT droop during the auto-zero cycle. The R\ :sub:`3`, C\ :sub:`3` low pass filter minimizes the high frequency clock ripple in the output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-fig1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,8 @@ In this lab activity, a simple un-buffered CMOS inverting stage (such as an inve
 
 Switches pins S3A and S4A perform the same function alternately connecting the AC coupled output of the amplifier stage to the output low pass filter (C3 and R3) and a common mode level (+2.5V) through pin Ca-. The output DC offset of the CMOS amplifier is stored on AC coupling capacitor C2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-fig2.png
-   :align: center
-   :width: 800px
+
+|image2|
 
 .. container:: centeralign
 
@@ -53,9 +51,8 @@ Making an inverter with the CD4007 transistor array
 
 Below in figure 3 is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -64,9 +61,9 @@ Below in figure 3 is the schematic and pinout for the CD4007:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one that can be configured is shown in figure 4, by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
-   :align: center
-   :width: 650px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -84,9 +81,8 @@ Making the Auto Zero Amplifier
 
 Connect the components on your breadboard as indicated in figure 5. Note that resistor R2 consists of a 100 KΩ in series with a 20 KΩ, capacitor C3 consists of two 1 nF in parallel and capacitor C4 consists of two 100 pF in parallel.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -124,9 +120,8 @@ Optionally a CMOS inverter could be constructed from the discrete NMOS and PMOS 
 
 As shown in figure A1, NMOS transistor M\ :sub:`1` is a VZN2110A and PMOS transistor M\ :sub:`2` is a VZP2110A. Because the NMOS transistor is much stronger (with V\ :sub:`DD`/2 as the gate source voltage) than the PMOS transistor, a 1.5 KΩ resistor, R\ :sub:`4`, is added in series with its source. Everything else is the same as in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-figa1.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -190,3 +185,16 @@ LTspice compatible model files for the ZVN2110A and ZVP2110A are include below:
 :adi:`Chopper Stabilized (Auto-Zero) Precision Op Amps (MT-055) <MT-055>`
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-fig1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-fig2.png
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab-az-amp-figa1.png
+   :width: 600px

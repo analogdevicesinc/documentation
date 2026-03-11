@@ -14,10 +14,7 @@ Required Software
 
 -  Microblaze GNU Tools included as part of the `Vivado/Vitis <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_ you will have the cross compiler tools for Microblaze under: <Vivado/vitis_install_dir>/Vitis/<version>/gnu/microblaze/linux_toolchain/lin64_le/bin/microblazeel-xilinx-linux-gnu-gcc.
 -  :git-linux:`Linux Kernel Source <tree/main>`
--
-
-|Root File-system (initramfs)|
-
+-  `Root File-system (initramfs) <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_
 -  `Xilinx ISE Design Suite <https://www.xilinx.com/ISE>`_
 
 .. tip::
@@ -45,7 +42,7 @@ Get Linux kernel source
    
    ::
    
-      Dave@HAL9000:~/fmcomms1$ git clone https://github.com/analogdevicesinc/linux.git
+      Dave@HAL9000:~/fmcomms1$ git clone :git-linux:`linux`
       Cloning into 'linux'...
       remote: Counting objects: 2757163, done.
       remote: Compressing objects: 100% (495484/495484), done.
@@ -119,7 +116,7 @@ Configure Kernel for KC705 XCOMM platform (aka FMCOMMS1)
 Get Root File-System
 ~~~~~~~~~~~~~~~~~~~~
 
-|image1| rootfs.cpio.gz must be placed in the root of your kernel tree.
+`Root File-system (initramfs) <https://swdownloads.analog.com/cse/microblaze/rootfs/latest_microblaze_rootfs.cpio.gz>`_ rootfs.cpio.gz must be placed in the root of your kernel tree.
 
 .. container:: box bgblue
 
@@ -214,6 +211,3 @@ More information
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-
-.. |Root File-system (initramfs)| image:: https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
-.. |image1| image:: https://swdownloads.analog.com/cse/microblaze/rootfs/latest_microblaze_rootfs.cpio.gz

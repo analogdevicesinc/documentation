@@ -45,12 +45,13 @@ Setting up the Hardware
 
 -  Connect **EVAL-AD5770R-PMDZ** board to the **EVAL-ADICUP3029** using connector **P8**.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5770r_connect.jpg
+   :align: center
 
 -  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5770r_pc.jpg
+   :align: center
 
 Outputting Data
 ---------------
@@ -114,7 +115,7 @@ The software for the **ADuCM3029_demo_ad5770** can be found here:
    Prebuilt AD5770 PMOD Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_ad5770rpmdz.Hex <releases/download/Latest/ADuCM3029_demo_ad5770rpmdz.hex>`
+   -  `AduCM3029_demo_ad5770rpmdz.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad5770rpmdz.hex>`_
    
    Complete AD5770 PMOD Source Files
    
@@ -155,6 +156,3 @@ The low level modules are the platform drivers and are included in the **platfor
    :align: center
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5770r_connect.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/ad5770r_pc.jpg

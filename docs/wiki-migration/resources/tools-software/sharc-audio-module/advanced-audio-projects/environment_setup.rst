@@ -87,7 +87,7 @@ Application Compilation
 
 --------------
 
-`Prerequisites#.|Advanced Audio Projects#.program-flash|Bootloader and Application Flash <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.prerequisites>`_
+`Prerequisites#.|Advanced Audio Projects#.program-flash|Bootloader and Application Flash <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.prerequisites>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/env1.png
    :width: 600px

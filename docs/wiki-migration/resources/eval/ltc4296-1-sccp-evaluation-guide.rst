@@ -32,8 +32,8 @@ At the PSE, the LTC4296-1 is set up for the classification state by the microcon
 
 On the PD side, the LTC9111 detects the SCCP logic states on the lines through SNS1 and SNS2 and uses external MOSFETs (M13/M14) to pull-down the port voltage during classification in order to transmit a logic low. The use of two external MOSFETs allows successful classification regardless of input connector polarity configuration.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/spoe_system.png
-   :align: center
+
+|image1|
 
 .. container:: centeralign
 
@@ -70,7 +70,7 @@ The PSE initiates the SCCP transaction by pulling down on the bus during the res
 Once the PSE releases the bus, the PD detects the rising edge cross the input logic high voltage V\ :sub:`TH` (3V) and waits the presence-detect high time, t\ :sub:`PDH` (0.7ms-1.3ms), before transmitting a presence pulse. The PSE samples for the PD presence pulse by t\ :sub:`MSP` (1.8ms-2.2ms). The PD holds the presence pulse for the presence-detect low time, t\ :sub:`PDL` (2.8ms-5.2ms).
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -83,7 +83,7 @@ Write Time Slot
 The duration of the write time slot for either a '0' or '1' should last for a maximum of t\ :sub:`WRITESLOT` (2.78ms). When the PSE writes a '0' to the PD, first the PSE pulls down the bus voltage below the V\ :sub:`TL`, then the PSE releases within the write 0 low time, t\ :sub:`W0L` (1.8ms-2.2ms), as seen in Figure 3. In the case where the PSE aims to write a '1', the PSE pulls down on the bus voltage, and then it releases the line within the write 1 low time, t\ :sub:`W1L` (0.09ms-0.61ms), as illustrated in Figure 3. See Figures 26-29 for example waveforms.
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -96,7 +96,7 @@ Read Time Slot
 The PSE initiates the read time slot by pulling low on the bus. Subsequently, the PSE releases the bus within t\ :sub:`W1L`, at which point the PD responds by pulling the bus low for the read 0 low time, t\ :sub:`R0L` (1.75ms-3.25ms), in order to transmit a '0' (Figure 4). Alternatively, if the intention is to transmit a '1', the PD refrains from pulling the bus low after the read 1 low time, t\ :sub:`W1L`. This read time slot is repeated for each PD bit, see Figure 30-34 for example waveforms. The PD sends data LSB first. Each of these read time slots has a maximum duration of t\ :sub:`READSLOT` (3.83ms).
 
 
-|image3|
+|image4|
 
 .. container:: centeralign
 
@@ -138,8 +138,8 @@ vi. Read PD CRC Byte
 
 -  In the final step, the PSE reads the cyclic redundancy check (CRC) value of the PD. This value is derived from the received scratchpad class info word.
 
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_basic_sccp_transaction.png
+   :align: center
 
 .. container:: centeralign
 
@@ -883,12 +883,15 @@ Refer to :doc:`EVAL-SPoE-KIT-AZ Evaluation Kit User Guide </wiki-migration/resou
 
 .. container:: centeralign
 
-   //Figure 15. SCCP Enable Configurations through evaluation GUI *
+   //Figure 15. SCCP Enable Configurations through evaluation GUI //
 
+
+   |image7|
 
 .. container:: centeralign
 
-   *Figure 16. Successful Port Turn On GUI Port Status*
+   //Figure 16. Successful Port Turn On GUI Port Status //
+
 
 SCCP Example Waveforms
 ----------------------
@@ -896,23 +899,31 @@ SCCP Example Waveforms
 Below are detailed descriptions of the SCCP transactions, parts i-vi. With waveforms captured using the setup in Figure 17.
 
 
-|image7|
+|image8|
 
 .. container:: centeralign
 
-   //Figure 17. Proceeding Waveform Probe Location *
+   //Figure 17. Proceeding Waveform Probe Location //
 
 
-==== (i) Initialization ====
+(i) Initialization
+~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_initialization_sequence3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 18. Initialization Sequence*
+   //Figure 18. Initialization Sequence //
+
 
 Reset Pulse
-~~~~~~~~~~~
+^^^^^^^^^^^
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_reset_pulse3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -920,9 +931,11 @@ Reset Pulse
 
 
 Presence-Detect High Time
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_presence_detect_high3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -930,9 +943,11 @@ Presence-Detect High Time
 
 
 Presence-Detect Low Time
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_presence_detect_low3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -940,9 +955,11 @@ Presence-Detect Low Time
 
 
 Recovery Time
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_recovery_time_initializtion3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -950,9 +967,11 @@ Recovery Time
 
 
 PD Reservoir Capacitor Recharge Time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image12|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_chrg_initialization.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -960,16 +979,18 @@ PD Reservoir Capacitor Recharge Time
 
 
 Rise/Fall Time
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
-|image13|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_rise_time2.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    //Figure 24. Initialization Sequence Rise Time //
 
 
-   |image14|
+   |image9|
 
 .. container:: centeralign
 
@@ -979,14 +1000,16 @@ Rise/Fall Time
 Write Time Slot
 ~~~~~~~~~~~~~~~
 
-|image15|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_write_time_slot_03.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    //Figure 26. PSE Writes 0 Time Slot //
 
 
-   |image16|
+   |image10|
 
 .. container:: centeralign
 
@@ -996,7 +1019,9 @@ Write Time Slot
 (ii) Broadcast Address
 ~~~~~~~~~~~~~~~~~~~~~~
 
-|image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_broadcast_address3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -1006,7 +1031,9 @@ Write Time Slot
 (iii) Read_Scratchpad Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_scratchpad3.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -1071,21 +1098,28 @@ Alternative Commands
 Read Time Slot
 ~~~~~~~~~~~~~~
 
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot_03.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   //Figure 30. PSE Read 0 Time Slot *
+   //Figure 30. PSE Read 0 Time Slot //
 
+
+   |image11|
 
 .. container:: centeralign
 
-   *Figure 31. PSE Read 1 Time Slot*
+   //Figure 31. PSE Read 1 Time Slot //
+
 
 (iv) Read CLASS_TYPE_INFO low byte
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image20|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_low_byte_updated.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -1095,7 +1129,9 @@ Read Time Slot
 (v) Read CLASS_TYPE_INFO high byte
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image21|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_high_byte_updated.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -1105,7 +1141,9 @@ Read Time Slot
 (vi) Read CRC byte
 ~~~~~~~~~~~~~~~~~~
 
-|image22|
+.. image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_pd_crc_updated.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -1192,42 +1230,20 @@ b[15:12] Description
    //Table 9. CLASS_TYPE_INFO b[15:12] to Corresponding PD Type //
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_ideal_initialization5.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_ideal_write_slot4.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot4.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/spoe_basic_sccp_transaction.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/spoe_system.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_ideal_initialization5.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_ideal_write_slot4.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot4.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_table.png
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_gui_part_1.png
    :width: 200px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_waveform_key4.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_reset_pulse3.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_gui_part_2.png
+   :width: 200px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_waveform_key4.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_fall_time2.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_presence_detect_high3.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_writeslot_1_2.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_presence_detect_low3.png
-   :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_recovery_time_initializtion3.png
-   :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_chrg_initialization.png
-   :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_rise_time2.png
-   :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_fall_time2.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_write_time_slot_03.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_writeslot_1_2.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_broadcast_address3.png
-   :width: 600px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_scratchpad3.png
-   :width: 600px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot_03.png
-   :width: 600px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_low_byte_updated.png
-   :width: 600px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_class_type_info_high_byte_updated.png
-   :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_pd_crc_updated.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/spoe_sccp_read_time_slot_13.png
    :width: 600px

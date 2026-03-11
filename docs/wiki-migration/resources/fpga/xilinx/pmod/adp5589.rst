@@ -168,7 +168,8 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |Connect PmodKYPD to PmodIOXP| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodkypd_pmodioxp.jpg
    :width: 200px
@@ -182,4 +183,3 @@ More information
    :width: 400px
 .. |Key Lock/Unlock| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu3.jpg
    :width: 400px
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

@@ -20,4 +20,4 @@ There are two versions of this algorithm.
 -  With Limit Protection: Checks if the index at the input is greater than the maximum index and, if so, indexes the last value in the table. Similarly, if the index is below zero, it will select the first value in the table.
 -  Without Limit Protection: It does not compare the index to max and min index values.
 
-.. |2dlookup1.png| image:: https://wiki.analog.com/_media/2dlookup1.png
+.. |2dlookup1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/leveldetectorslookuptables/2dlookup1.png

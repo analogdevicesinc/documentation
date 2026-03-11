@@ -23,10 +23,12 @@ To Change IC assignment for all selected blocks:
 
 It is possible to change the IC for all selected blocks and algorithms in a single operation. First, select multiple blocks that require IC re-assignment. Secondly, right-click in the Schematic tab window and select **Change IC** from the menu (all processor ICs will be listed).
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/changepic3.png
-   :alt: changepic3.png
+
+|changepic3.png|
 
 .. hint::
 
    Note: If you select an IC that does not support all of the selected blocks' algorithms, an error dialog will be displayed and only the supported algorithms will be re-assigned to the selected IC. Also note, it is not possible to perform the Change IC command for any Input or Output blocks.
 
+
+.. |changepic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/changepic3.png

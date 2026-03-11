@@ -415,7 +415,7 @@ More information
    
 
 
-.. |analogTV>1423927819001| image:: https://wiki.analog.com/_media/analogTV>1423927819001
+.. |analogTV>1423927819001| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/analogTV>1423927819001
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_1c_aclr.png
    :width: 200px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9739a_ebz/direct_clock_980_1c_spectrum.png

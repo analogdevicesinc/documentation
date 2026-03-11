@@ -176,9 +176,8 @@ EVAL-CN0352-EB1Z Demo System Setup
 
 See the picture below showing the whole CN0352 demo system.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_demo_system1.jpg
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. note::
 
@@ -217,7 +216,7 @@ Software Function Introduction
 Double click the CN0352.exe, then the interface of CN0352 evaluation software shows up.
 
 
-|image2|
+|image3|
 
 The evaluation board would send related command frame down to one or more EVAL-CN0352-EB1Z demos one the same RS485 bus regards to the button been clicked by customer. Then the EVAL-CN0352-EB1Z addressed will do related operations and may or may not send back feedback data.
 
@@ -237,11 +236,11 @@ Channel Switching Tab
 
 There are **Battery Status** and **Test Procedure** blocks are both refreshing to show the latest battery status that the software just received from EVAL-CN0352-EB1Z. The switching **Channel Switching** tab is used to switch to any of the available battery channel that customer want to look at.
 
--  |image3| : Click to switch to the **1st** Battery available.
--  |image4| : Click to switch to the **previous** Battery available.
--  |image5| : Switch to the expected battery channel by input the battery index.
--  |image6| : Click to switch to the **next** Battery available.
--  |image7| : Click to switch to the **last** Battery available.
+-  |image4| : Click to switch to the **1st** Battery available.
+-  |image5| : Click to switch to the **previous** Battery available.
+-  |image6| : Switch to the expected battery channel by input the battery index.
+-  |image7| : Click to switch to the **next** Battery available.
+-  |image8| : Click to switch to the **last** Battery available.
 
 Main Tab
 ^^^^^^^^
@@ -263,14 +262,14 @@ For easy to do the operation and see the result, the **Configuration** block and
 
       -  *Charging Configuration*
 
-         -  *Input Current Limitation*: The maximum current that going into the VIN pin of :adi:`ADP5065 <adp5065.html>`. See |ADP5065 Datasheet| for more details.
-         -  *Trickle Vlotage Threshold*: The charging voltage thershold of trickle charge mode. Trickle Charging is a charging mode of :adi:`ADP5065 <adp5065.html>` with small charging current to reset the battery pack protection circuit and lift the voltage to safe level for fast charging. See |ADP5065 Datasheet| for more details.
-         -  *Trickle Current Threshold*: The charging current of trickle charge mode. See |ADP5065 Datasheet| for more details.
-         -  *Fast Charge Current*: The configurable charing current during constant current charging stage of :adi:`ADP5065 <adp5065.html>`. See |ADP5065 Datasheet| for more details.
-         -  *Charge Termination Voltage*: The termination voltage of constant current fast charging mode of :adi:`ADP5065 <adp5065.html>`. See |ADP5065 Datasheet| for more details.
-         -  *Charge Termination Current*: The termination charging current of constant voltage charging mode of :adi:`ADP5065 <adp5065.html>`. See |ADP5065 Datasheet| for more details.
+         -  *Input Current Limitation*: The maximum current that going into the VIN pin of :adi:`ADP5065 <adp5065.html>`. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
+         -  *Trickle Vlotage Threshold*: The charging voltage thershold of trickle charge mode. Trickle Charging is a charging mode of :adi:`ADP5065 <adp5065.html>` with small charging current to reset the battery pack protection circuit and lift the voltage to safe level for fast charging. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
+         -  *Trickle Current Threshold*: The charging current of trickle charge mode. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
+         -  *Fast Charge Current*: The configurable charing current during constant current charging stage of :adi:`ADP5065 <adp5065.html>`. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
+         -  *Charge Termination Voltage*: The termination voltage of constant current fast charging mode of :adi:`ADP5065 <adp5065.html>`. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
+         -  *Charge Termination Current*: The termination charging current of constant voltage charging mode of :adi:`ADP5065 <adp5065.html>`. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
 
-      -  *Discharging Configuration*: The maximum current that going into the VIN pin of :adi:`ADP5065 <adp5065.html>`. See |ADP5065 Datasheet| for more details.
+      -  *Discharging Configuration*: The maximum current that going into the VIN pin of :adi:`ADP5065 <adp5065.html>`. See `ADP5065 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf>`_ for more details.
 
          -  *Step*: Discharging stage with configurable discharging current and termination voltage.
 
@@ -304,7 +303,7 @@ Battery Plots
 Battery Plots showns all the battery information since the testing started. All the information are shown on the plot.
 
 
-|image8|
+|image9|
 
 -  **Voltage & Current Plot**: This plot shows the Voltage and Current information of active battery channel.
 -  **Capacity & Temperature Plot**: This plot shows the Capacity and Temperature Informaiotn of active battery channel.
@@ -314,12 +313,12 @@ Battery Plots showns all the battery information since the testing started. All 
 Battery Summary
 """""""""""""""
 
-|image9| The **Battery Summary** tab listed all latest informations of each battery on one row. It is very convenient to see the any battery interested without switching the channel.
+|image10| The **Battery Summary** tab listed all latest informations of each battery on one row. It is very convenient to see the any battery interested without switching the channel.
 
 Module ID Programmer
 """"""""""""""""""""
 
-|image10| Before doing the test, each EVAL-CN0352-EB1Z sharing the same RS485 bus need to have a unique ID. This ID is a 8-bit ID. The Default ID for the EVAL-CN0352-EB1Z is 0xFF. If there are multiple modules sharing the same RS485, than each Module need to have a different ID. This **Module ID Programmer** is the tools for assigning the ID.
+|image11| Before doing the test, each EVAL-CN0352-EB1Z sharing the same RS485 bus need to have a unique ID. This ID is a 8-bit ID. The Default ID for the EVAL-CN0352-EB1Z is 0xFF. If there are multiple modules sharing the same RS485, than each Module need to have a different ID. This **Module ID Programmer** is the tools for assigning the ID.
 
 -  **Module ID**: Input a ID number that is different with all the ID that has been assigned to other modules. The Value of Module ID will increast 1 automatically after you click the **Program** button and program process is succeeded.
 -  **Program**: Click this button will program the module connected to RS485 bus. Only one module could be connected to RS485 bus during ID programming process.
@@ -407,17 +406,18 @@ Battery Testing
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_connector2.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_01_main_configuraion.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_demo_system1.jpg
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/leftest.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/left.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/digital_id.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/Right.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/Rightest.png
-.. |ADP5065 Datasheet| image:: http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5065.pdf
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batteryplot.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_01_main_configuraion.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batterysummary.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/leftest.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/left.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/digital_id.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/Right.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/Rightest.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batteryplot.png
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batteryidprog.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batterysummary.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0352/cn0352_esw_batteryidprog.png
    :width: 500px

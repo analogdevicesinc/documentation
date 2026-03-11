@@ -407,9 +407,8 @@ Start IMPACT, and double click "Boundary Scan". Right click and select Initializ
 
 Start the ChipScope Pro Analyzer provided with the Xilinx ISE Design Suite 13.2 and load the project **Nexys3_ChipScope_Demo.cpj** located in the "*chipscope*" folder (../ad7303_ad7476/chipscope/Nexys3_ChipScope_Demo.cpj). Click the **Open Cable/Search JTAG Chain** button and afterwards double click **Bus Plot** and select **Repetitive Trigger Run Mode**. Click the **Apply Settings and Arm Trigger** button. On the main screen you will se the waveforms change once every 25 seconds, between Sine, Square, Sawtooth and Triangle waveforms. Each waveform has a period of 25ms. You can compare the waveform displayed in ChipScope Pro with the waveform displayed on an oscilloscope from the DAC output.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/chipscope_open_project5.jpg
-   :alt: Viewing Waveforms in ChipScope Pro
-   :width: 300px
+
+|Viewing Waveforms in ChipScope Pro|
 
 .. important::
 
@@ -431,6 +430,9 @@ Downloads
    `Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/AD7303_AD7476.zip>`_
 
 
+.. |Viewing Waveforms in ChipScope Pro| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/chipscope_open_project5.jpg
+   :width: 300px
+
 
 
 More information
@@ -439,6 +441,5 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
-
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom

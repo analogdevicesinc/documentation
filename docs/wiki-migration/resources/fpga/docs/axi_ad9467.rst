@@ -8486,8 +8486,8 @@ References
 -  :adi:`AD9467 chip information <AD9467>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  :git-no-OS:`AD9467-FMC-EBZ No-OS software <projects/ad9467>`
--  :git-linux>`__
--  `7 Series IO <https::`ADI Linux repository </www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`
+-  :git-linux:`ADI Linux repository <linux>`
+-  `7 Series IO <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_
 -  `7 Series Clocking <https://www.xilinx.com/support/documentation/user_guides/ug472_7Series_Clocking.pdf>`_
 -  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
 

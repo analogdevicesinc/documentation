@@ -11,9 +11,8 @@ Oscilloscope / Main Window:
 
 Be sure that the ALM1000 board is plugged into a USB port before starting the program. Once the program is running the main Oscilloscope window, as shown in figure 1, should appear. This is also serves as the main ALICE desktop window as well as the Oscilloscope VI Window. There are also controls for opening the other virtual instrument windows and certain common control functions. The window is sub divided into 4 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/main-window-1.png
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. container:: centeralign
 
@@ -25,9 +24,8 @@ The Top Menu Section
 
 The menu section along the top, shown in figure 1T, contains various buttons and drop-down menus that control Oscilloscope Triggering, Horizontal time base, Horizontal position, how and what signals are displayed, and run acquisition looping / stop acquisition looping / exit program.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/top-buttons-0.png
-   :align: center
-   :width: 800px
+
+|image2|
 
 .. container:: centeralign
 
@@ -41,9 +39,8 @@ The ADALM1000 signal generation and measurement hardware is tightly integrated a
 
 The Trigger button is a drop down menu listing which signal to trigger on, CA-V, CA-I, CB-V, CB-I or none. The use of Triggering to display a stable trace is generally necessary when viewing externally generated signals. When viewings internally generated signals from one or the other of the AWG channels a stable trace happens automatically when the AWG Sync function is enabled i.e. the beginning of the AWG output waveform is restarted at the same point at the start of each time sweep.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/trigger-drop-down.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -89,9 +86,8 @@ It is also possible to select which of the possible stored reference time traces
 
 At the bottom are options to enable the vertical Time and horizontal Voltage (Current) cursors.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/curves-drop-down.png
-   :align: center
-   :width: 150px
+
+|image4|
 
 .. container:: centeralign
 
@@ -109,9 +105,8 @@ ALICE Scope/AWG only option
 
 By setting to 1 the EnableScopeOnly = 1; option in the alice_init.ini file, the Oscilloscope and AWG controls can be combined in one window as shown in figure 1S. The controls all work as they do in the default two window configuration (See :doc:`AWG guide page </wiki-migration/university/tools/m1k/alice/desk-top-awg-users-guide>` for details on AWG). Blue arrows point to AWG related controls, green arrows point to Scope related controls.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/main-window-scope-option.png
-   :align: center
-   :width: 800px
+
+|image5|
 
 .. container:: centeralign
 
@@ -120,9 +115,9 @@ By setting to 1 the EnableScopeOnly = 1; option in the alice_init.ini file, the 
 
 The other virtual instruments can still be accessed by clicking on the Open Instruments button in the Options drop down menu as shown in figure 1Vi.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/other-vi-controls.png
-   :align: center
-   :width: 150px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -146,9 +141,8 @@ It is also possible to save (with Save To CSV button) the captured channel A and
 
 The Options drop down menu, figure 2, lists a command for enabling smoothing where spline curves are used to connect the input sample points rather than the default straight lines. A second option for connecting the sample points is to use a zero order hold function where a horizontal line and a vertical line are used. This looks like a stair step waveform much like the output of the Digital-to-Analog converters used to generate the AWG output signals actually produce.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/options-drop-down.png
-   :align: center
-   :width: 550px
+
+|image7|
 
 .. container:: centeralign
 
@@ -163,9 +157,8 @@ The Graphics display area can be drawn with either a Black (default) or White ba
 
 The CA and CB measure drop down menus, figure 3, list which vertical measurements for the Channel A and B voltage and current signals are to be displayed along the bottom of the graphics display area.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/meas-drop-down.png
-   :align: center
-   :width: 450px
+
+|image8|
 
 .. container:: centeralign
 
@@ -196,9 +189,8 @@ The displayed horizontal measurements for the voltage traces can be the followin
 
 Figure 3g shows examples of many of the possible waveform measurements. Six of the vertical measurements are derived directly from the waveform data array. These are Avg, Min, Max, Top, Base and RMS. The rest are calculated from these six. P-P is obviously Max – Min. Mid is (Max + Min / 2). CA-CB is CA Avg – CB Avg.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/meas-examples.png
-   :align: center
-   :width: 900px
+
+|image9|
 
 .. container:: centeralign
 
@@ -247,9 +239,8 @@ CHAHW is the channel A High Pulse Width CHALW is the channel A Low Pulse Width C
 
 The Math menu button, figure 4, opens a control screen that lists which sample point by sample point calculated waveform combining the Channel A and B voltage and current signals is to be displayed vs time.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/math-controls.png
-   :align: center
-   :width: 300px
+
+|image10|
 
 .. container:: centeralign
 
@@ -298,9 +289,8 @@ Input Divider Calculator
 
 To make calculating an input resistor divider's Gain and Offset values based on the resistor values used and offset connections a simple calculator window has been included (since release 1.3.14). The button directly above the Gain and Offset entries will open the calculator.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-divider-calculator.png
-   :align: center
-   :width: 400px
+
+|image11|
 
 .. container:: centeralign
 
@@ -321,9 +311,9 @@ The input capacitance, C\ :sub:`INT`, of the analog inputs in the high Z mode is
 
 To give you a rough idea let's use 400 pF for C\ :sub:`INT` and 1 MΩ for the resistor divider. That would result in a low pass response with a 3 dB roll-off starting at around 400 Hz. A capacitor would generally be needed across the input resistor R\ :sub:`1` to frequency compensate the divider. Such a hardware solution generally requires the capacitor (or alternatively the divider resistors) to be adjustable.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-cir-figure-4a.png
-   :align: center
-   :width: 500px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -341,9 +331,9 @@ The software frequency compensation for each channel consists of a cascade of tw
 
 In figure In2 we show the new controls for the input compensation. To turn on and off the compensation for Channels A and B check boxes are added under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using new entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-comp-figure-in2.png
-   :align: center
-   :width: 500px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -361,18 +351,15 @@ The first step will be to determine the exact divider ratio and correct for any 
 
 Now as we said for this simple example we will add a 1 Meg Ω resistor in series with the CH-A and/or CH-B inputs. Connect one end of the resistor to the CH-A (or CH-B) pin. The other end will be the new analog measurement input. First we want to enter a first estimate for the gain under the Adjust Gain / Offset heading.In this case we know it will be about 2. Now connect the end of the 1 Meg resistor to a GND pin. Adjust the value under the Offset until the DC average value for that channel reads as close to zero as possible. Now connect the 1 Meg resistor to the +5 pin. Adjust the value under the Gain until the DC average value for that channel reads as close to the value you measured earlier for that pin as possible. The gain and offset adjustments interact with each other so you will want to iterate going back and forth between measuring the GND pin adjusting Offset and +5 pin adjusting Gain to get the closest reading for both cases. Once you are happy with the entered values you can also measure the +2.5 pin and check the reading against the value you measured earlier. It should be very close. You can Save and Load these adjustment values for later use by clicking on the Save and Load Adj under the Files drop down menu.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/file-drop-down-1.png
-   :align: center
-   :width: 140px
+
+|image14|
 
 .. container:: centeralign
 
    File Drop Down Menu
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-comp-figure-in3.png
-   :align: center
-   :width: 500px
+   |image15|
 
 .. container:: centeralign
 
@@ -390,9 +377,8 @@ The stage 1 filter Time Constant is adjusted to correct for the majority of the 
 
 A factor of 2X might not be enough of an increase in the maximum voltage to be measured. We might also like to measure negative voltages. For a second example we use two 470 KΩ resistors for R\ :sub:`2` and R\ :sub:`3` along with the 1 MΩ R\ :sub:`1`. R\ :sub:`2` is connected to the fixed +5V supply to introduce some positive offset.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-comp-figure-in4.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
@@ -413,16 +399,14 @@ The menu section along the bottom contains the range ( V/Div, mA/Div ) and posit
 The default arrangement of the entry widgets and the buttons that serve as labels for the entries is for the labels to be to the right as shown in figure Scale 1. In the alice_init.ini file an optional flag can be set to swap this arrangement with the labels to the left as shown in figure Scale 2.
 
 
-|image1|
+|image17|
 
 .. container:: centeralign
 
    Figure Scale 1, Default arrangement for Channel control buttons; ButtonOrder = 0
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bottom-buttons-1.png
-   :align: center
-   :width: 800px
+   |image18|
 
 .. container:: centeralign
 
@@ -440,9 +424,8 @@ Above the main grid area is a line of text showing the device ID and Sample rate
 
 The second and third lines of text are for displaying information related to Channel A and Channel B respectively. The selected V/Div is displayed along with any of the vertical measurements selected for that voltage channel. If a current waveform is being displayed the selected mA/Div is displayed along with any of the vertical measurements selected for that current channel.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/graphics-area.png
-   :align: center
-   :width: 700px
+
+|image19|
 
 .. container:: centeralign
 
@@ -481,9 +464,8 @@ A more advanced example calculates the time derivative of the channel B voltage 
 
 Again as the program iterates over the time index t, the channel B voltage value at t-1 is subtracted from the channel B voltage value at t and then multiplied by 100. The 100 scales the time from the 10 uSec per time sample to 1 mSec. The screen shot in figure 6, shows the result for a 4 V p-p triangle wave at 1 KHz. Since we are not displaying the channel B current we can use its settings as the vertical axis for the math trace by setting the Math Axis to I-B. The orange triangle wave changes 4 V in 500 uS for a slew rate of + and – 8 V/mSec shown with the magenta Math trace.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/slew-rate-example.png
-   :align: center
-   :width: 700px
+
+|image20|
 
 .. container:: centeralign
 
@@ -497,9 +479,8 @@ DC Example:
 
 To demonstrate how to use the Oscilloscope Tool as a DC voltmeter consider the resistor voltage divider network, shown in figure E1. We wish to measure the voltages at the 4 nodes and the voltages across the 6 resistors. In the figure the nodes are numbered from N0 to N4 with N0 being the ground or common node that all the voltage measurements will be made with respect to. With the Oscilloscope Tool we can measure two node voltages at a time and the voltage difference between those two nodes. Set both AWG channels to Hi-Z mode in the AWG control window and from the Meas CA menu select from the –CA-V- section the Avg and CA-CB check boxes. Likewise from the Meas CB menu select from the –CB-V- section the Avg and CB-CA check boxes.
 
-.. image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige1.png
-   :align: center
-   :width: 500px
+
+|image21|
 
 .. container:: centeralign
 
@@ -508,9 +489,9 @@ To demonstrate how to use the Oscilloscope Tool as a DC voltmeter consider the r
 
 We start with the network powered from the fixed +5 volt power supply at node N1 and the channel A input also connected to N1. The channel B input is connected to node N2. Click on the Run button and the N1, N2 node voltages will be displayed along with the difference between them as CA-CB and CB-CA. We can now proceed around the network measuring pairs of nodes until we can fill out table 1 below. Figure E2 shows the voltmeter inputs connected to nodes N3 and N4. Any combination of two nodes can be measured and the voltage difference between the two nodes will be displayed.
 
-.. image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige3.png
-   :align: center
-   :width: 500px
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -551,9 +532,8 @@ The X-Y Plotting Tool:
 
 When the X-Y Plot Window button is clicked in the Main Window the X-Y display Window should appear, as shown in figure 13. It is sub divided into 3 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/x-y-plot-window.png
-   :align: center
-   :width: 750px
+
+|image23|
 
 .. container:: centeralign
 
@@ -579,9 +559,8 @@ Oscilloscope and X-Y Plot Examples:
 
 To demonstrate some of the features of the ALICE Oscilloscope and X-Y Plot Tools the following example circuit is offered. In figure E3 we see a simple NPN transistor ( 2N3904 ) in the common emitter configuration with a 100 KΩ resistor used to bias the base and a 1 KΩ resistor as the collector load. The collector load is supplied from the fixed +5 V power supply. We will use the ALICE software to plot I\ :sub:`B` vs V\ :sub:`BE`. We will also determine the value of CA-V corresponding to I\ :sub:`C` = 2 mA and then measure the input to output voltage gain around that operating point.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png
-   :align: center
-   :width: 500px
+
+|image24|
 
 .. container:: centeralign
 
@@ -596,9 +575,8 @@ The time base should be set to 0.5 mSec/Div so that the rising half cycle from 0
 
 Press the green Run button. You should see something like figure E4.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-1.png
-   :align: center
-   :width: 750px
+
+|image25|
 
 .. container:: centeralign
 
@@ -611,9 +589,8 @@ Pause or Stop the program ( red Stop button )
 
 To make an XY plot of I\ :sub:`B` vs V\ :sub:`BE`\ open the X-Y Plot Window and check the X-Y Plot box. In the X-Y Display window press the CB-V button in the -X Axis- section and the Math button in the -Y Axis- section. In the X-Y Window set the CB V Pos entry to 0.5 and the CB V/Div to 0.1. Press the green Run button. You should see something like figure E5.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-2.png
-   :align: center
-   :width: 500px
+
+|image26|
 
 .. container:: centeralign
 
@@ -626,9 +603,8 @@ To plot the collector current move the Channel B input to the collector of the t
 
 Press the green Run button. You should see something like figure E6.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-3.png
-   :align: center
-   :width: 750px
+
+|image27|
 
 .. container:: centeralign
 
@@ -643,9 +619,8 @@ Where: Vdis is the "adjusted" ( scaled by some gain factor ) value to be display
 
 If we set the Offset equal to the actual value of the +5 V supply divided by the Gain adjustment (1.0) factor and change the sign of the Gain factor ( i.e. make it -1.0) we have the formula for I\ :sub:`C` from figure E3. After changing the channel B offset and gain factors press the green Run button and you should see something like figure E7.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-4.png
-   :align: center
-   :width: 750px
+
+|image28|
 
 .. container:: centeralign
 
@@ -658,9 +633,8 @@ Remember that the vertical voltage scale ( 0.5 V/Div ) is divided by the 1 KΩ 
 
 Now move the channel B input back to the base of the transistor. Under the Math menu select the CAV-CBV math trace. Reset the Channel B Offset and Gain calibration factors to their normal values. Press the green Run button. You should see something like figure E8.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-5.png
-   :align: center
-   :width: 750px
+
+|image29|
 
 .. container:: centeralign
 
@@ -671,9 +645,8 @@ Now we have plots of I\ :sub:`C` ( dark orange ), I\ :sub:`B` ( magenta ) and V\
 
 Under the Curves Menu select the V cursor. Right click on the dark orange I\ :sub:`C` curve where it crosses the 1200uSec time grid. The voltage value at that point will appear next to the horizontal cursor line. The Use the mouse wheel it adjust the cursor up or down so it lines up exactly where the I\ :sub:`C` curve cross the time grid line. It should look like figure E9.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-6.png
-   :align: center
-   :width: 750px
+
+|image30|
 
 .. container:: centeralign
 
@@ -688,9 +661,8 @@ Calculate new Min and Max values for Channel A by adding and subtracting 0.25 V 
 
 Press the green Run button. You should see something like figure E10.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-7.png
-   :align: center
-   :width: 750px
+
+|image31|
 
 .. container:: centeralign
 
@@ -706,9 +678,8 @@ With this interface, ALICE Desktop can apply digital filtering to the captured C
 
 The supplied list of coefficients is convolved with the captured data buffer. The list of filer coefficients for either Channel A or B is first loaded from a single column .csv file by using the “Load CH A Filter Coef” and “Load CH B Filter Coef” buttons. The length ( number of coefficients ) and file name will then be displayed. The digital filter(s) will be applied to the voltage waveform data buffers if the “Filter CH A” and/or “Filter CH B” checkboxes are checked.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png
-   :align: center
-   :width: 300px
+
+|image32|
 
 .. container:: centeralign
 
@@ -735,5 +706,67 @@ EnableDigitalFilter
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bottom-buttons-0.png
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/main-window-1.png
    :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/top-buttons-0.png
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/trigger-drop-down.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/curves-drop-down.png
+   :width: 150px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/main-window-scope-option.png
+   :width: 800px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/other-vi-controls.png
+   :width: 150px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/options-drop-down.png
+   :width: 550px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/meas-drop-down.png
+   :width: 450px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/meas-examples.png
+   :width: 900px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/math-controls.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-divider-calculator.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-cir-figure-4a.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-comp-figure-in2.png
+   :width: 500px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/file-drop-down-1.png
+   :width: 140px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-comp-figure-in3.png
+   :width: 500px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/input-comp-figure-in4.png
+   :width: 500px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bottom-buttons-0.png
+   :width: 800px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/bottom-buttons-1.png
+   :width: 800px
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/graphics-area.png
+   :width: 700px
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/slew-rate-example.png
+   :width: 700px
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige1.png
+   :width: 500px
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige3.png
+   :width: 500px
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/x-y-plot-window.png
+   :width: 750px
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png
+   :width: 500px
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-1.png
+   :width: 750px
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-2.png
+   :width: 500px
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-3.png
+   :width: 750px
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-4.png
+   :width: 750px
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-5.png
+   :width: 750px
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-6.png
+   :width: 750px
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ce-example-7.png
+   :width: 750px
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png
+   :width: 300px

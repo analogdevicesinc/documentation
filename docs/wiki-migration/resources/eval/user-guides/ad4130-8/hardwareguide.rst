@@ -11,8 +11,8 @@ After following the instructions in the :doc:`Software Procedures </wiki-migrati
 
    -  Using the Arduino Connectors
 
-
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/20220308_110921.jpg
+   :width: 400px
 
 Block Diagram
 =============
@@ -451,7 +451,7 @@ Silk Screen
 ======================================== ===========================
 Location of Reference related components Location of Reference Links
 ======================================== ===========================
-|image2|                                 |image3|
+|image1|                                 |image2|
 ======================================== ===========================
 
 Schematics
@@ -468,9 +468,7 @@ Bill of Materials
 
 :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad4130-8>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/20220308_110921.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refs.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refs.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refin_links.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/eval_ad4130_8wardz_refin_links.png
    :width: 400px

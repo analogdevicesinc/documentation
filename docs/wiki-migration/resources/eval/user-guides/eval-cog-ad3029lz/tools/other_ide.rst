@@ -13,13 +13,17 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
    -  https://developer.mbed.org/handbook/Windows-serial-configuration
 
 -  Open any example-workspace and project from the ADuCM3029 BSP(board support package). I used the SysTick example in the below images
--  In the Keil toolbar select **Project** → **Options** → **Debug**, and select the “CMSIS DAP” option\
+-  In the Keil toolbar select **Project** → **Options** → **Debug**, and select the “CMSIS DAP” option
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keildebug.png
+   :align: center
+   :width: 500px
 
--  Under the CMSIS DAP Settings, select the SW option\
+-  Under the CMSIS DAP Settings, select the SW option
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keilcmsisdap.png
+   :align: center
+   :width: 500px
 
 -  Push Crtl+F5 or in the Keil toolbar select **Debug** → **Start/Stop Debug Session**
 -  That’s it – You are ready to go.
@@ -34,17 +38,23 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
    -  https://developer.mbed.org/handbook/Windows-serial-configuration
 
 -  Open any example-workspace and project from the ADuCM3029 BSP(board support package). I used the Timer example in the below images
--  In the IAR toolbar select **Project** → **Options** → **Debugger**, and select the “CMSIS DAP” option\
+-  In the IAR toolbar select **Project** → **Options** → **Debugger**, and select the “CMSIS DAP” option
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/iar_options_cmsis-dap_debugger.png
+   :align: center
+   :width: 500px
 
--  Under the Debugger-CMSIS DAP tab, select the SWD option\
+-  Under the Debugger-CMSIS DAP tab, select the SWD option
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/iar_cmsis-dap_debugger_setup.png
+   :align: center
+   :width: 500px
 
--  Under the Debugger-CMSIS DAP tab, select Hardware for the reset type\
+-  Under the Debugger-CMSIS DAP tab, select Hardware for the reset type
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/reset.png
+   :align: center
+   :width: 500px
 
 -  Push the Green-Button – “Download and debug” – Another popup for C-SPY configuration opens up, just press “OK”
 -  That’s it – You are ready to go.
@@ -52,14 +62,3 @@ In order to use EV-COG-AD3029LZ board with IAR, you will need to replicate the f
 // End of Document //
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keildebug.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/keilcmsisdap.png
-   :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/iar_options_cmsis-dap_debugger.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/iar_cmsis-dap_debugger_setup.png
-   :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/tools/reset.png
-   :width: 500px

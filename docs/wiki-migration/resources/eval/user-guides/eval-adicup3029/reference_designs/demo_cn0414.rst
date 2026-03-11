@@ -43,13 +43,17 @@ Setting up the Hardware
 -----------------------
 
 -  Connect **EVAL-CN0414-ARDZ** board to the **EVAL-ADICUP3029**.
--  Set the jumpers into the position shown below. This is the standard position and only works for one board systems.\
+-  Set the jumpers into the position shown below. This is the standard position and only works for one board systems.
 
-|Standard jumper position|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_jumper_pos2.jpg
+   :alt: Standard jumper position
+   :align: center
 
--  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.\
+-  Connect a micro-USB cable to P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below.
 
-|Hardware setup example|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/eval_cn0414_ardz_hard_setup3.jpg
+   :alt: Hardware setup example
+   :align: center
 
 Configuring the Software
 ------------------------
@@ -182,7 +186,7 @@ The software for the **ADuCM3029_demo_cn0414** can be found here:
    Prebuilt CN0414 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0414.Hex <releases/download/Latest/ADuCM3029_demo_cn0414.hex>`
+   -  `AduCM3029_demo_cn0414.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0414.hex>`_
    
    Complete CN0414 Source Files
    
@@ -238,5 +242,3 @@ The flow chart below represents the way the channel registers are updated. Only 
 // End of Document //
 
 .. |Timer diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_timer_diagram.png
-.. |Standard jumper position| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0414_jumper_pos2.jpg
-.. |Hardware setup example| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/eval_cn0414_ardz_hard_setup3.jpg

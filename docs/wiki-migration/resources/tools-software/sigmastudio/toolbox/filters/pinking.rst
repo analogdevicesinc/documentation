@@ -26,4 +26,4 @@ The graph below (generated using simulation stimulus and probe) shows the two re
    :align: center
    :width: 600px
 
-.. |pinkpic1.png| image:: https://wiki.analog.com/_media/pinkpic1.png
+.. |pinkpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/pinkpic1.png

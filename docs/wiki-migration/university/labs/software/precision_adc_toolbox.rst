@@ -238,7 +238,7 @@ Note that the uri (Uniform Resource Identifier) depends on how you are connectin
 -  ip:www.xxx.yyy.zzz when connecting from a remote machine
 -  (in the near future) serial:[port] when connecting over the serial backend, as with tinyiiod running on an embedded target.
 
-The rest of the examples in this exercise are pretty self-explanatory, but it's not a bad idea to peruse the `pyadi-iio source <https://github.com/analogdevicesinc/pyadi-iio>`_, in particular, the adi directory (which contains the interfaces themselves) and the examples directory.
+The rest of the examples in this exercise are pretty self-explanatory, but it's not a bad idea to peruse the :git-pyadi-iio:`pyadi-iio source <pyadi-iio>`, in particular, the adi directory (which contains the interfaces themselves) and the examples directory.
 
 But the various functions and methods can also be listed out from the Python console, as noted below.
 
@@ -328,7 +328,7 @@ Which tells us that the noise level is about 565nVRMS, about right for 128 sampl
 
 .. note::
 
-   Double-plus verify exactly which filter mode we're in, based on :git-linux:`drivers/iio/adc/ad7124`.c#L266
+   Double-plus verify exactly which filter mode we're in, based on :git-linux:`drivers/iio/adc/ad7124.c#L266`
 
 
 At this point, we can be confident that at least things have a chance of going right, and we can start connecting sensors or additional signal conditioning circuitry.

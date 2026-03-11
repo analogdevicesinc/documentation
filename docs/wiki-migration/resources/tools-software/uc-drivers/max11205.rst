@@ -37,15 +37,10 @@ The source code for MAX11205 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX11205 Driver <drivers/adc/max11205/max11205.h>`
+   -   :git-no-OS:`Implementation of MAX11205 Driver <drivers/adc/max11205/max11205.c>`
    
-   |Header file of MAX11205 Driver|
 
-   -
-
-   |Implementation of MAX11205 Driver|
 
 he driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
 
@@ -53,15 +48,10 @@ he driver also uses the ADI util library, so make sure you also add the necessar
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 In order to be able to use this driver you will have to provide the specific implementation for the SPI communication APIs and the specific types they use. There are three functions which are called by the MAX11205 driver and have to be implemented:
 
@@ -80,11 +70,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
-   |Generic header file for SPI Communication APIs|
+
 
 You will also have to provide specific APIs for IRQ handling. There are five functions which are called by the MAX11205 driver and have to be implemented:
 
@@ -105,11 +93,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for IRQ APIs <include/no_os_irq.h>`
    
-   |Generic header file for IRQ APIs|
+
 
 Finally, you will also have to provide specific APIs for GPIO handling. There are three functions which are called by the MAX11205 driver and have to be implemented:
 
@@ -128,11 +114,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for GPIO APIs <include/no_os_gpio.h>`
    
-   |Generic header file for GPIO APIs|
+
 
 MAX11205 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,15 +238,10 @@ The source code for MAX11205 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of MAX11205 IIO Driver <drivers/adc/max11205/iio_max11205.h>`
+   -   :git-no-OS:`Implementation of MAX11205 IIO Driver <drivers/adc/max11205/iio_max11205.c>`
    
-   |Header file of MAX11205 IIO Driver|
 
-   -
-
-   |Implementation of MAX11205 IIO Driver|
 
 MAX11205 IIO Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -377,13 +356,3 @@ MAX11205 IIO Driver Application Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below you can find an Application Example Project for MAX11205 IIO driver: :doc:`Evaluating the MAX11205 </wiki-migration/resources/eval/user-guides/max11205pmb1/no-os-setup>`
-
-.. |Header file of MAX11205 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max11205/max11205`.h
-.. |Implementation of MAX11205 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max11205/max11205`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for IRQ APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_irq`.h
-.. |Generic header file for GPIO APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_gpio`.h
-.. |Header file of MAX11205 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max11205/iio_max11205`.h
-.. |Implementation of MAX11205 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/max11205/iio_max11205`.c

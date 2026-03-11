@@ -41,10 +41,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Set switch S2 to USB Arduino function in order to view data over UART also. The UART baud rate is **9600** baud.\
+-  Set switch S2 to USB Arduino function in order to view data over UART also. The UART baud rate is **9600** baud.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
+   :align: center
+   :width: 800px
 
 -  Place the **EVAL-ADXL372-ARDZ-INT** on top of the **EVAL-ADICUP3029**.
 -  Make sure the jumpers **P10, P11, P12** are configured exactly as the picture below.
@@ -137,7 +138,7 @@ The software for the **ADuCM3029_Asset_Health** can be found here:
    Prebuilt ADXL372 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_Asset_Health.Hex <releases/download/Latest/ADuCM3029_Asset_Health.hex>`
+   -  `ADuCM3029_Asset_Health.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_Asset_Health.hex>`_
    
    Complete ADXL372 Source Files
    
@@ -176,6 +177,3 @@ The project is structured in 3 layers:
 The ADXL372 transmits data to ADuCM3029 controller through the Communication layer. The data is processed and sent over BLE to a mobile device.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
-   :width: 800px

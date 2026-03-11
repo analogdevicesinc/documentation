@@ -18,9 +18,8 @@ Background:
 
 A phase-locked loop (PLL) is a feedback system that acts to adjust or lock the phase difference between the output of a voltage-controlled oscillator (VCO) and an input reference signal as shown in figure 1. A VCO is an oscillator whose output frequency is a function of some input control voltage. Generally when a VCO is used in a feedback loop like a PLL the voltage to frequency transfer function must at least be monotonic. A special case of a VCO is the voltage-to-frequency converter (VFC) where the voltage/frequency characteristic is linear. The divide factor N of the frequency divider in the feedback loop is generally an integer number including 1, which is the same as having no divider or a direct connection from the VCO output to the input of the phase detector.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a31_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -39,9 +38,8 @@ Step 1 Directions:
 
 On your solder-less breadboard first construct the VFC circuit based on the AD654 shown in figure 2. Build the circuit to one side of your breadboard to leave space for the other parts of the PLL we will be adding in later steps of this lab activity. The control voltage is applied through a single pole low pass filter R\ :sub:`1` and C\ :sub:`1`. This is equivalent to the low pass filter block which feeds the VCO block in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -70,18 +68,15 @@ Step 2 Directions:
 
 Next add the XOR gate phase detector circuit from an earlier Lab on you breadboard as shown in figure 3. After constructing the XOR gate connect it to the V to F circuit as shown in figure 4 to make the complete PLL. Be sure to turn off or disconnect the +5 V power supply before making any additions to your circuit. An XOR gate from a 74HC86 can be substituted if available. Or build an XOR gate using Inverters, AND, OR gates as in this :doc:`lab </wiki-migration/university/courses/alm1k/intro/basic-logic-gates-1>`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3, Adding XOR phase detector
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig4.png
-   :align: center
-   :width: 600px
+   |image4|
 
 .. container:: centeralign
 
@@ -107,9 +102,8 @@ Bonus Step 3 Directions:
 
 The simple PLL circuit of figure 4 is not very interesting in that the output signal is just a phase shifted version of the input signal. If we insert a digital divider block in the feedback path from the VFC output to the phase detector input as we saw back in figure 1 then the output signal will be at a higher multiplied frequency. Using any CMOS digital divider IC you might have available such as a CD4020, CD4040 or CD4060 (just about any divider chip will do) open the connection to XOR input A and insert the divider block as shown in figure 5. One of the D flip-flops of the 74HC273 octal register and an inverter from the 74HC04 can be wired up as a divide by 2 circuit (i.e. a toggle flop), see figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -118,9 +112,9 @@ The simple PLL circuit of figure 4 is not very interesting in that the output si
 
 Depending on the divide factor N of the particular divider you build you will need to change the F\ :sub:`REF` input frequency by that amount. For example with N = 8, if F\ :sub:`REF` was 24 KHz before the new F\ :sub:`REF` would be 24/8 or 3 KHz. The frequency of the pulses at the output of the XOR gate phase detector will also be 8 times lower and the RC low pass filter time constant will probably need to also increase by a factor of 8.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig6.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -134,3 +128,16 @@ The divide by two circuit from the :doc:`BJT Multivibrator Lab Activity </wiki-m
 :adi:`Fundamentals of Phase Locked Loops (PLLs) <static/imported-files/tutorials/MT-086.pdf>` `Phase-locked loop <https://en.wikipedia.org/wiki/Phase-locked_loop>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a31_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-pll-1-fig6.png
+   :width: 600px

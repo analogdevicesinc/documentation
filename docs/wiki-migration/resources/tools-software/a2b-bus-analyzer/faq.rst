@@ -476,10 +476,9 @@ Follow Below steps:
 -  In “Remote audio”, click “Settings…” to “Configure remote audio settings.”
 -  Then in the “Remote audio playback” section, select “Play on remote computer” (see image below)
 
-::
+|resources-tools-software-a2b-bus-analyzer-remote_desktop.png|
 
-   {{:resources:tools-software:a2b-bus-analyzer:remote_desktop.png?400|}}
-   * Click OK and connect to the remote desktop.
+-  Click OK and connect to the remote desktop.
 
 \*\* 24. Why is the A2B Bus Analyzer not being detected on the host PC? \*\* A: Ensure that standalone mode is disabled by having the Standalone switch down and reload the list of devices in the UI.
 
@@ -792,3 +791,5 @@ See below table for a description of the host APIs commonly available on Windows
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/start_button.png
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/asio4all.png
+
+.. |resources-tools-software-a2b-bus-analyzer-remote_desktop.png| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/remote_desktop.png

@@ -80,15 +80,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADF4377 Driver. <drivers/frequency/adf4377/adf4377.c>`
+   -  :git-no-OS:`Header file of ADF4377 Driver. <drivers/frequency/adf4377/adf4377.h>`
    
-   |Implementation of ADF4377 Driver.|
 
-   -
-
-   |Header file of ADF4377 Driver.|
-
-.. |Implementation of ADF4377 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4377/adf4377`.c
-.. |Header file of ADF4377 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4377/adf4377`.h

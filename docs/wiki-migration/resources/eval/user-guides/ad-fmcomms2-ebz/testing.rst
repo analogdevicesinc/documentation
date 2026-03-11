@@ -121,12 +121,14 @@ Required setup
    Before testing the board, please make sure to add a QR code sticker with the serial number as shown below.
 
 
-   |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/qr_code.png
+   :align: center
+   :width: 600px
 
 Make sure to connect to your WIFI Network before testing. You can exit the test window by pressing CTRL+C in order to access the connection. Reboot the system in order to return to the test window.
 
 
-|image4|
+|image3|
 
 Test process
 ------------
@@ -193,9 +195,7 @@ Firstly, make sure all the required steps from the setup explained above are com
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/picture2.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/frequency_counter.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/qr_code.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/wifi_connection.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/wifi_connection.png
    :width: 600px
 .. |fmcomms3-loopback.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/fmcomms3-loopback.jpg
 .. |fmcomms4-loopback.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/fmcomms4-loopback.jpg

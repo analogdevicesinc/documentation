@@ -16,9 +16,8 @@ Background:
 
 A frequency compensated voltage divider or attenuator is a simple two-port RC network providing a fixed voltage division ratio or attenuation over a wide frequency range and not just at DC. Such networks are used where the part of the circuit loading the voltage divider output is capacitive. This particularly important when the signal has a wide bandwidth, that is, it is not sinusoidal. The simplest voltage attenuator is a purely resistive voltage divider with transfer function: H(jω) = V\ :sub:`2`/V\ :sub:`S` = R\ :sub:`2`/(R\ :sub:`1`\ +R\ :sub:`2`) where the input is V\ :sub:`S` = V\ :sub:`1`\ +V\ :sub:`2`, and the output is V\ :sub:`2`, as in figure 1. The transfer function of a resistive voltage divider is independent of frequency only if the resistors are ideal and any parasitic capacitances associated with the circuit are negligibly small.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -29,9 +28,8 @@ A problem seen at high frequencies is that stray (parasitic) capacitance effects
 
 The divider ratio V\ :sub:`2`/V\ :sub:`S` = X\ :sub:`C2`/(X\ :sub:`C1`\ +X\ :sub:`C2`). The capacitive reactance X\ :sub:`C` is proportional to 1/C so V\ :sub:`2`/V\ :sub:`S` = C\ :sub:`1`/(C\ :sub:`1`\ +C\ :sub:`2`) is similar to the formula for the resistor divider. For the simple case where R\ :sub:`1` = R\ :sub:`2` we have a divider ratio of 1/2 for the resistors. To have the same 1/2 divider ratio for the capacitors C\ :sub:`1` = C\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,9 +40,8 @@ The compensated divider employs pole-zero cancellation to suppress undesired fre
 
 An instructive way to learn about the conditions for pole-zero cancellation is to write down the limiting, low and high frequency expressions for \|H(jω)\| and then to set them equal to each other. The result is a simple relationship between R\ :sub:`1`, R\ :sub:`2`, C\ :sub:`1`, and C\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -69,9 +66,8 @@ Directions:
 
 Referring back to figure 2 we can consider R\ :sub:`2` to represent the 1 MΩ input resistance of the ALM1000 channels when in Hi-Z mode. Likewise, C\ :sub:`2` can be considered to represent the stray parasitic capacitance of the inputs. The resistor and capacitor inside the green box shown in figure 4. Use another 1 MΩ as R\ :sub:`1` to make a 1/2 divider ratio. Start without including C\ :sub:`1` to measure the effect on the frequency response due to C\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -96,9 +92,8 @@ Capacitor Divider path response:
 
 Let's now take a look at just the capacitor divider path. Disconnect R\ :sub:`1` from the end of C\ :sub:`1` and connect it to the 2.5 V fixed supply as shown in figure 5. The path through just C\ :sub:`1` blocks the DC path from channel A. Connecting R\ :sub:`1` to the fixed 2.5 V supply restores the DC voltage level at the channel B input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -129,9 +124,8 @@ A 10X passive oscilloscope probe uses a series resistor (9 MΩ) to provide a 10:
 
 You can find more information on how to connect the scope probe BNC connector to your breadboard circuit or the inputs of the ALM1000: :ez:`Connect BNC Cables to Active Learning modules <adieducation/university-program/b/blogs/posts/simple-way-to-connect-bnc-cables-to-active-learning-modules>`
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -142,9 +136,8 @@ The input channels of the ALM1000 have a 1 MΩ input resistance but the input ca
 
 A unity gain buffer amplifier (AD8541 or AD8542) can be inserted between the probe circuit and the ALM1000 input as shown in figure 7. R\ :sub:`1` and C\ :sub:`1` complete the resistor / capacitor divider circuit of the 10 X probe.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -158,3 +151,18 @@ With resistor R\ :sub:`1` connected to ground only positive voltages can be meas
 `Capacitive voltage divider <https://en.wikipedia.org/wiki/Voltage_divider#Capacitive_divider>`_ `Oscilloscope Probes <http://www.radio-electronics.com/info/t_and_m/oscilloscope/oscilloscope-probes.php>`_ `Building Your Own Oscilloscope Probes <http://cromwell-intl.com/radio/probes.html>`_ :ez:`New Feature in ALICE Adds Input Divider Frequency Compensation <adieducation/university-program/b/blogs/posts/new-feature-in-alice-adds-input-divider-frequency-compensation>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-vdiv-f7.png
+   :width: 600px

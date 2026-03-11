@@ -125,4 +125,4 @@ If you have an FIR algorithm added to your SigmaStudio project, the exported sou
    // Read back the coefficients; they should now be identical to new_coefficients
    print_FIR_coeffs(MOD_FIR1_ALG0_FIRSIGMA300ALG1FIRCOEFF0_ADDR, MOD_FIR1_COUNT);
 
-.. |firpic1.png| image:: https://wiki.analog.com/_media/firpic1.png
+.. |firpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firpic1.png

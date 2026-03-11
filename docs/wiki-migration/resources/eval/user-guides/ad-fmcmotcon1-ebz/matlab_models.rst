@@ -43,7 +43,7 @@ The controller model is packaged into an IP core using the Simulink Workflow Adv
 | axi_electrical_pos_err  | 0x124   | Sigend fixed point 19.14 | R    | Error between actual electrical position and encoder position                      |
 +-------------------------+---------+--------------------------+------+------------------------------------------------------------------------------------+
 
-The operation of the IP core is controlled through the *foc_script.sh* script located under */usr/local/bin*. The script executes the following steps:
+The operation of the IP core is controlled through the :git-mathworks_tools:`motor_control/linux_utils/foc_script.sh` script located under */usr/local/bin*. The script executes the following steps:
 
 -  Set the FOC controller in open loop mode and wait for the user to start the motor by clicking the Run checkbox in IIO scope
 -  Calibrate the encoder readings to remove the offset between the motor's actual electrical position and the position read from the encoder

@@ -43,7 +43,7 @@ The Ia and Ib currents are sensed using 6mΩ shunt resistors. There are two poss
 Ia, Ib XADC Measurement Signal Chain
 ------------------------------------
 
-The Ia and Ib XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this |paper|.
+The Ia and Ib XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this `paper <http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/current_chain_xadc.png
    :width: 800px
@@ -83,7 +83,7 @@ The It current is sensed using a 5mΩ shunt resistor. There are two possible mea
 It XADC Measurement Signal Chain
 --------------------------------
 
-The It XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this |paper|.
+The It XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this `paper <http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/current_chain_it_xadc.png
    :width: 800px
@@ -109,7 +109,7 @@ Vbus sensing is done on the drive board using a resistive divider and an attenua
 Vbus XADC Measurement Signal Chain
 ----------------------------------
 
-The Vbus XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this |paper|.
+The Vbus XADC measurement chain utilizes the entire path of the regular measurement chain and adds on the controller board after the :adi:`AD7401` isolated ΣΔ modulator a Sallen Key analog reconstruction filter implemented using :adi:`AD8646` operational amplifiers. The combination between the isolated ΣΔ modulator and the analog reconstruction filter provides a convenient and cheap way to achieve analog isolation of the XADC input signals. This analog isolation technique is described in this `paper <http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf>`_.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/vbus_chain_xadc.png
    :width: 800px
@@ -120,10 +120,9 @@ The Vbus XADC measurement chain utilizes the entire path of the regular measurem
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/navigation AD-FMCMOTCON1-EBZ#lv_board
    :alt: Low Voltage Drive Board#..:\|Overview#dyno|Dynamometer Drive system
 
-.. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16
-.. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| image:: https://wiki.analog.com/_media/counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3} {ADCbits = 16} \frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8
-.. |paper| image:: http://www.analog.com/static/imported-files/newsletters/digital_isolation/Using_the_AD7400A_as_an_Isolated_Amplifier.pdf
-.. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16
-.. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| image:: https://wiki.analog.com/_media/counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3} {ADCbits = 16} \frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8
+.. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3 } {ADCbits = 16
+.. |counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts = ADC value } {RS = 6e-3} {ADCrange = 320e-3} {ADCbits = 16} \frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8
+.. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3 } {ADCbits = 16
+.. |counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3} {ADCbits = 16} \\frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/counts = ADC value } {RS = 5e-3} {ADCrange = 320e-3} {ADCbits = 16} \frac{CTRLgain = 1}{10}{DRVgain = 20}{PGAgain = 1, 2, 4 or 8
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcmotcon1-ebz/hardware/vbus_chain.png
    :width: 800px

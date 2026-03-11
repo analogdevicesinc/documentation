@@ -48,10 +48,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :align: center
+   :width: 600px
 
 -  Connect the **EVAL-CN0395-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
@@ -76,7 +77,7 @@ The software for the **ADuCM360_demo_cn0395** demo can be found here:
    Prebuilt CN0395 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0395.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0395.bin>`
+   -  `ADuCM360_demo_cn0395.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0395.bin>`_
    
    Complete CN0395 Source Files
    
@@ -126,7 +127,7 @@ Heater Mode (RH)
 The user can further choose the subroutine which determines the heater current (IH):
 
 
-|image2|
+|image1|
 
 **voltage** is the routine for setting heater voltage to constant voltage VH (the default value is VH = 1.8V). The relationship between heater resistance RH and heater current IH or heater voltage VH is nonlinear. Therefore the software runs in background several iterations in order to get VH to the desired accuracy with a 0.5% max error.
 
@@ -150,12 +151,12 @@ The user can further choose the subroutine which determines the heater current (
 After the completion of the routine, the application displays the measured values: RH_A (Ambient Heater Res ), VH (heater voltage), IH (heater current), RH (heater resistance), T_A (ambient temperature), HUM (ambient humidity), PH (heater power consumption), TH (heater temperature), ADC data (raw data read from ADC in hex), Ro ( sensor resistance measured in clean air).
 
 
-|image3|
+|image2|
 
 At power up, the application starts in constant current mode and sets the default current to 8mA. Furthermore, it is assumed that the measurement circuit is placed in clean air, therefore we measure and store the sensor resistance in clean air (Ro). After each heater measurement mode change, it is assumed that the board is placed in clean air, and the Ro value is updated. This is required, because Ro is a function of the heater temperature.
 
 
-|image4|
+|image3|
 
 Sensor Resistance mode (RS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,7 +166,7 @@ Sensor measurement is performed. The application can switch at any time to this 
 In background every time the application runs the gain-ranging algorithm and determines RS and the gas concentration (C) measured in PPM (parts per million):
 
 
-|image5|
+|image4|
 
 RS reading can also be performed by typing <operation RS>, but it does the same thing as pressing the <ENTER> key.
 
@@ -183,14 +184,14 @@ RS reading can also be performed by typing <operation RS>, but it does the same 
 From this point on, K1 is stored in permanent memory and applied to currents that are input. To read the gain correction factor from memory, type <calibrate r>.
 
 
-|image6|
+|image5|
 
 **Help**
 
 Type <help> to see the available commands:
 
 
-|image7|
+|image6|
 
 How to use the Tools
 --------------------
@@ -227,17 +228,15 @@ The **RTE** folder contains device and system related files:
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rh_mode.jpg
    :width: 850px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/constant_voltage.jpg
    :width: 850px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/power_up.jpg
    :width: 850px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/rs_mode_new.png
    :width: 850px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/calibrate_read.jpg
    :width: 850px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/help.jpg
    :width: 850px

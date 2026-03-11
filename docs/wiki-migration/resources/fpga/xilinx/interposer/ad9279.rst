@@ -28,12 +28,11 @@ Required Hardware
 -  ML605 board
 -  AD9279-EBZ board & Power supply
 
-::
+   -  `ad9279-ebz.pdf <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9279-ebz.pdf>`_- evaluation board schematic
 
-     *[[https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9279-ebz.pdf|ad9279-ebz.pdf]]- evaluation board schematic
-   * ADC FMC interposer board
-   * Signal generator (clock, optional)
-   * Signal generator (analog input, for data capture)
+-  ADC FMC interposer board
+-  Signal generator (clock, optional)
+-  Signal generator (analog input, for data capture)
 
 Required Software
 ~~~~~~~~~~~~~~~~~
@@ -160,7 +159,5 @@ More information
 
    -  Example questions:
 
-
-   |//ez.analog.com/community/feeds/allcontent/atom|
-
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom

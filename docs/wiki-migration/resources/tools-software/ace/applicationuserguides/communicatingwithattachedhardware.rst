@@ -26,9 +26,9 @@ The view toolbars in each of the Board, Chip and Memory Map views provide contro
 
 Each view toolbar contains a selection of the following communication options:
 
-::
 
-   *  {{:resources:tools-software:ace:applicationuserguides:ResetChip.PNG?80|}} **Reset Device –** Reverts all components to their default state.***
+
+-   |resources-tools-software-ace-applicationuserguides-ResetChip.PNG| **Reset Device –** Reverts all components to their default state.***
 
 -  |image1| **Poll Device –** If enabled causes the continuous polling of the device for state changes.**\*
 
@@ -42,9 +42,9 @@ device.
 
 -   |image5| **Read All –** Reads the register values from the hardware and updates the software to these values.
 
-::
 
-   *`{{:resources:tools-software:ace:applicationuserguides:Readselected.PNG?80|}} **Read Selected –** Reads the selected registers value from the hardware and updates the software to this value.
+
+- `|resources-tools-software-ace-applicationuserguides-Readselected.PNG| **Read Selected –** Reads the selected registers value from the hardware and updates the software to this value.
 
 -  |image6| **Reset Device –** Resets hardware to its default state.
 
@@ -71,3 +71,6 @@ The Register Debugger is a Tool View which allows the performance of raw registe
    :width: 80px
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/resetchip.PNG
    :width: 80px
+
+.. |resources-tools-software-ace-applicationuserguides-Readselected.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/Readselected.PNG
+.. |resources-tools-software-ace-applicationuserguides-ResetChip.PNG| image:: https://wiki.analog.com/_media/resources/tools-software/ace/applicationuserguides/ResetChip.PNG

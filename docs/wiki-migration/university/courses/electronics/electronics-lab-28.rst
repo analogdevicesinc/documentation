@@ -11,9 +11,8 @@ Making inverters with the CD4007 transistor array
 
 Below in figure 1 is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -22,9 +21,9 @@ Below in figure 1 is the schematic and pinout for the CD4007:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown below is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f2.png
-   :align: center
-   :width: 550px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -48,9 +47,8 @@ Directions:
 
 On your solder-less breadboard build the first inverter shown in figure 2 to test the input to output switching characteristics of the CMOS inverter. The green boxes in figure 3 indicate the required connections to the connector on ADALM2000. Connect Vp (+5V) power to V\ :sub:`DD` (pin 14) through a 100Ω resistor to measure the supply current and ground to V\ :sub:`SS` (pin 7). Connect the output of the waveform generator to the inverter input (pin 6) along with scope input 1+ and connect the inverter output (pins 8,13) to scope input 2+. It is also generally good to ground the unused negative scope inputs (1- , 2-).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3.png
-   :align: center
-   :width: 450px
+
+|image3|
 
 .. container:: centeralign
 
@@ -63,7 +61,7 @@ Hardware Setup:
 Configure the waveform generator for a 100 Hz triangle wave with 5V amplitude peak-to-peak and 2.5V offset. Both scope channels should be set to 1V/Div. Configure the scope in XY mode with channel 1 on the horizontal axis and channel 2 on the vertical axis.
 
 
-|image1|
+|image4|
 
 .. container:: centeralign
 
@@ -77,16 +75,15 @@ First using scope channel 2 to measure the inverter output voltage vs. the input
 
 Next move the channel 2 scope inputs 2+ and 2- to measure the voltage across the 100Ω resistor, R\ :sub:`1`, in figure 3. You may need to adjust the vertical scale of channel 2 for an optimal view of the current waveform. Now obtain a plot of I\ :sub:`D` vs. the input as the input is swept from 0 to 5V. This should give you a plot much like the bottom curve in figure 5. Export the data to a .csv file and extract the peak current ( measured voltage divided by the 100Ω resistor value) and the input and output voltages where the peak occurred.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4.png
-   :align: center
-   :width: 450px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5 Inverter output voltage and supply current curves vs. input voltage
 
 
-   |image2|
+   |image6|
 
 .. container:: centeralign
 
@@ -104,18 +101,15 @@ In this section we will investigate the dynamic properties of the CMOS inverter,
 
 We now consider a CMOS inverter driven by a voltage pulse. Typical input/output waveforms are shown in figure 5. Delay characterization of the dynamic behavior of an inverter is given by two propagation delay times, T\ :sub:`HL` and T\ :sub:`LH` as illustrated in figure 7. Note that these propagation times are specified with respect to the mid supply voltage V\ :sub:`DD`/2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f5.png
-   :align: center
-   :width: 450px
+
+|image7|
 
 .. container:: centeralign
 
    Figure 7 CMOS Inverter propagation delay
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f6.png
-   :align: center
-   :width: 600px
+   |image8|
 
 .. container:: centeralign
 
@@ -128,16 +122,14 @@ Hardware Setup:
 Now configure the waveform generator for a 500 KHz square wave with 5V amplitude peak-to-peak and 2.5V offset. Be sure to reconnect scope channel 2 to measure the output voltage waveform. Both scope channels should be set to 1V/Div. Adjust the horizontal scale so that you can view both the rising and falling edges of the input and output waveforms similar to what is shown in figures 7 and 8.
 
 
-|image3|
+|image9|
 
 .. container:: centeralign
 
    Figure 9 CMOS inverter Breadboard connections
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10a.JPG
-   :align: center
-   :width: 500px
+   |image10|
 
 .. container:: centeralign
 
@@ -154,9 +146,8 @@ Making a CMOS Schmitt Trigger with the CD4007 transistor array
 
 The input of the Schmitt trigger, as shown in figure 11, is tied to the gates of four stacked devices. The upper two are PMOS and the lower two are NMOS. Transistors M\ :sub:`5` and M\ :sub:`6` operate as source followers and introduce hysteresis by feeding back the output voltage, V\ :sub:`OUT`, to the two points in the stack midway between the two NMOS and two PMOS devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f7.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -176,7 +167,7 @@ Hardware Setup:
 Configure the waveform generator for a 1 KHz triangle wave with 5V amplitude peak-to-peak and 2.5V offset. Both scope channels should be set to 1V/Div. Configure the scope in XY mode with channel 1 on the horizontal axis and channel 2 on the vertical axis.
 
 
-|image4|
+|image12|
 
 .. container:: centeralign
 
@@ -189,7 +180,7 @@ Procedure:
 Use scope channel 2 to measure the output voltage vs. the input as the input is swept from 0 to 5V obtain a plot like you did for the simple inverter. Export the data to a .csv file and extract the upper and lower threshold voltages and the width of the hysteresis region. Is the hysteresis region centered around 1/2 V\ :sub:`DD`?
 
 
-|image5|
+|image13|
 
 .. container:: centeralign
 
@@ -201,23 +192,22 @@ Making a NAND / AND gate with the CD4007 transistor array
 
 As shown in figure 14, one 2 input NAND gate and one inverter can be built from one CD4007 package. Configure the NAND gate as shown below by connecting pins 12 and 13 together as the NAND output. Pin 14 and pin 11 is connected to V\ :sub:`DD` for power and pin 7 V\ :sub:`SS` to ground. Pin 9 should be tied to pin 8 to complete N side of the NAND gate. Pin 6 will be the A input and pin 10 will be the B input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f8.png
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
    Figure 14 2 input NAND and Inverter
 
 
-   |image6|
+   |image15|
 
 .. container:: centeralign
 
    Figure 14.1 2 input NAND breadboard connections
 
 
-   |image7|
+   |image16|
 
 .. container:: centeralign
 
@@ -233,16 +223,15 @@ Directions:
 
 Build both the 2 input and 3 input NAND gates and confirm their logic function by filling out a truth table for each. You can also measure the input threshold voltage for each input as you did for the simple inverter by connecting the unused input(s) to V\ :sub:`DD`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f9.png
-   :align: center
-   :width: 600px
+
+|image17|
 
 .. container:: centeralign
 
    Figure 15 3 input NAND gate
 
 
-   |image8|
+   |image18|
 
 .. container:: centeralign
 
@@ -254,23 +243,22 @@ Making a NOR / OR gate with the CD4007 transistor array
 
 As shown in figure 16, one 2 input NOR gate and one inverter can be built from one CD4007 package. Configure the NAND gate as shown below by connecting pins
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10.png
-   :align: center
-   :width: 600px
+
+|image19|
 
 .. container:: centeralign
 
    Figure 16 2 input NOR and Inverter
 
 
-   |image9|
+   |image20|
 
 .. container:: centeralign
 
    Figure 16.1 2 input NOR breadboard connections
 
 
-   |image10|
+   |image21|
 
 .. container:: centeralign
 
@@ -284,16 +272,15 @@ Directions:
 
 Build both the 2 input and 3 input NOR gates and confirm their logic function by filling out a truth table for each. You can also measure the input threshold voltage for each input as you did for the simple inverter by connecting the unused input(s) to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f11.png
-   :align: center
-   :width: 600px
+
+|image22|
 
 .. container:: centeralign
 
    Figure 17 3 input NOR gate
 
 
-   |image11|
+   |image23|
 
 .. container:: centeralign
 
@@ -302,9 +289,9 @@ Build both the 2 input and 3 input NOR gates and confirm their logic function by
 
 By combining the two input NOR gate and the inverter along with an RC delay element a monostable multivibrator or one-shot can be constructed as shown in figure 18.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13.png
-   :align: center
-   :width: 600px
+
+
+|image24|
 
 .. container:: centeralign
 
@@ -327,9 +314,8 @@ Making a SPDT Analog Switch with the CD4007 transistor array
 
 In addition to an analog SPDT switch this configuration is often called a pass gate or 2 into 1 MUX (multiplexer). The configuration is shown in figure 19.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f12.png
-   :align: center
-   :width: 600px
+
+|image25|
 
 .. container:: centeralign
 
@@ -356,16 +342,44 @@ For Further reading:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3bb.JPG
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4a.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3.png
+   :width: 450px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f3bb.JPG
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4.png
+   :width: 450px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f4a.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_nf9a.PNG
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f12a.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13a.JPG
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f5.png
+   :width: 450px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f6.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_nf9a.PNG
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10a.JPG
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f7.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f12a.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13a.JPG
    :width: 350px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f141.JPG
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f142.JPG
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f151.JPG
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f161.JPG
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f162.JPG
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f171.JPG
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f8.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f141.JPG
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f142.JPG
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f9.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f151.JPG
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f10.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f161.JPG
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f162.JPG
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f11.png
+   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f171.JPG
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f13.png
+   :width: 600px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/a28_f12.png
+   :width: 600px

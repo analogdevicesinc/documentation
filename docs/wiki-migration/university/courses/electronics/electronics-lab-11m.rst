@@ -16,9 +16,8 @@ Directions:
 
 The breadboard connections are shown in the diagram below. The output of the waveform generator, W1, is connected to the gate terminal of M\ :sub:`1`. Scope input 1+ (Single Ended) is also connected to W1 output. The drain terminal is connected to the positive (Vp) supply. The source terminal is connected to both the 2.2KΩ load resistor and Scope input 2+ (Single Ended). The other end of the load resistor is connected to the negative (Vn) supply. To measure the input to output error, channel 2 of the scope can be used differentially by connecting 2+ to the gate of M\ :sub:`1` and 2- to the source.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -70,9 +69,8 @@ Additional Materials:
 
 1 - 3.2KΩ Resistor (use a 1KΩ in series with a 2.2KΩ) 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A) 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -117,9 +115,8 @@ Directions:
 
 The circuit configuration below adds a resistor R\ :sub:`2` to inject a test signal from AWG1 into the emitter (output) of M\ :sub:`1`. The input, base of M\ :sub:`1`, is grounded.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -156,9 +153,16 @@ Plot the measured voltage amplitude seen at the source. The nominal source curre
    **Resources:**
 
    
-   -  Fritzing files: `mos_source_follower_bb <https://wiki.analog.com/https/minhaskamal.github.io/downgit/>`_
-   -  LTSpice files: `mos_source_follower_ltspice <https://wiki.analog.com/https/minhaskamal.github.io/downgit/>`_
+   -  Fritzing files: `mos_source_follower_bb <https://minhaskamal.github.io/DownGit/#/home?url=:git-education_tools:`m2k/fritzing/mos_source_follower_bb>`_`
+   -  LTSpice files: `mos_source_follower_ltspice <https://minhaskamal.github.io/DownGit/#/home?url=:git-education_tools:`m2k/ltspice/mos_source_follower_ltspice>`_`
    
 
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a11m_f3.png
+   :width: 500px

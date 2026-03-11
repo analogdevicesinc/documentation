@@ -68,14 +68,15 @@ Documentation Needed
 Overview
 ~~~~~~~~
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig2_t1l_adin1110.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 2. EVAL-ADIN1110EBZ Quick Start Info*\
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
@@ -453,7 +454,8 @@ The ST-LINK JTAG programmer provides a robust solution for programming and debug
 -  Connect the ST-LINK programmer to the EVAL-ADIN1110EBZ using the ARM-20 JTAG connector P410 "uC JTAG"
 -  Select the ST-LINK interface in previous STEP 1 and follow the same instructions to program the board with the provided firmware.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig4_t1l_adin1110.png
+   :align: center
 
 .. container:: centeralign
 
@@ -570,6 +572,4 @@ By using the evaluation board discussed herein (together with any tools, compone
 ©2021 Analog Devices, Inc. All rights reserved. Trademarks and registered trademarks are the property of their respective owners.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig1_t1l_adin1110.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig2_t1l_adin1110.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig3_t1l_adin1110.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig4_t1l_adin1110.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fig3_t1l_adin1110.jpg

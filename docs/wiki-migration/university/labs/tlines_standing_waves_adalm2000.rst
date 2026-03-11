@@ -25,9 +25,8 @@ A transmission line is defined as a system of conductors (wires, waveguides, coa
 
 To send an electrical signal to a distant load, two wires are required. (The wires need not be symmetrical - in fact one wire can be the Earth itself.) Since two conductors are, by definition, a capacitor, this implies that each section of a transmission line has some capacitance. On the other hand, as an inductor is defined essentially as a loop of wire, each section of the line also has an inductance. In reality, each "section" of the line can be thoght of as an infinitesimally small unit capacitance and inductance. A "lumped" model of a transmission line can also be constructed with discrete inductors and capacitors as shown in Figure 1. (Naturally, the model is more accurate when a large number of smaller capacitors and inductors are used - at the expense of complexity and size.) Suppose a constant DC voltage is suddenly applied to one end of the transmission line. The capacitance and inductance prevent the signal from travelling down the line instantaneously.
 
-.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
-   :align: center
-   :width: 1000px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,14 +56,14 @@ Where: v is the instantaneous voltage across the inductor; L is the inductance i
 The physical construction of a transmission line varies widely depending on the application. There are several different types of electrical transmission lines such as coaxial line (figure 2), two-wire line (figure 3), parallel-plate line, strip line, microstrip line, coplanar waveguide.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
    **Figure 2.** Coaxial line
 
 
-   |image2|
+   |image3|
 
 .. container:: centeralign
 
@@ -76,7 +75,9 @@ A common example of a 2-wire transmission line is unshielded twisted pair (UTP) 
 -  Conductors are contained within in a copper braid shield, which isolates from external noise and prevents radiating and interfering with other systems.
 -  Near-end crosstalk between pairs in a multi-pair cable is reduced.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/utp_cable.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -131,9 +132,8 @@ A signal which travels from the source-end of the transmission line to the load-
 
 Reflections may be avoided, if the load’s impedance matches the characteristic impedance of the transmission line, making the line seem infinitely long, as far as the source is concerned. This is due to a resistor’s ability to continuously dissipate energy, just as an infinitely long transmission line would eternally absorb energy. Should the source’s impedance be exactly equal to the line’s, a reflected wave, which reaches the source, would be dissipated entirely. However, if these two quantities do not match, the wave is partially re-reflected to the load end of the line, as another incident wave.
 
-.. image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/reflections.png
-   :align: center
-   :width: 400px
+
+|image5|
 
 .. container:: centeralign
 
@@ -168,7 +168,7 @@ Standing Waves and Resonance
 Let there be a transmission line with a mismatch in impedance between the line and the load. Reflections which occur will add or subtract with the oncoming incident waveform, producing standing (stationary) waves. A standing wave is obtained by adding the reflected wave to the incident wave, as shown in figure 7. Though it oscillates in instantaneous magnitude, a standing wave does not propagate along the wire’s length. When analyzing standing waves, two categories of points arise: a node – a point on a standing wave where the amplitude is minimum, and an antinode – a point on a standing wave where the amplitude is maximum. Nodes remain fixed, while the position of the antinodes may vary. The standing wave pattern is given by alternating the nodal and anti-nodal positions. A method of expressing the magnitude of the effect that standing waves have on our transmission line is a as a ratio of maximum amplitude (antinode) to minimum amplitude(node), for either voltage or current. This is known as the standing wave ratio (SWR). A perfectly terminated transmission line implies SWR=1. Certain frequency values will determine a correlation between the nodes and antinodes, which results in resonance. Should the maximum values of amplitude of the standing waves be exceedingly high, the transmission line may be subject to deterioration. Voltage antinodes may degrade the insulation between conductors, while current antinodes may cause excess heat in the conductors.
 
 
-|image5|
+|image6|
 
 .. container:: centeralign
 
@@ -192,7 +192,7 @@ Figure 8 shows an overview of the simulation schematic. Note that two sources ar
 
 
 
-|image6|
+|image7|
 
 .. container:: centeralign
 
@@ -203,7 +203,7 @@ Figure 9 shows the step response at the far end of the transmission line and lum
 
 
 
-|image7|
+|image8|
 
 .. container:: centeralign
 
@@ -214,7 +214,7 @@ Figure 10 shows the frequency-domain response at the near (driven) end of the li
 
 
 
-|image8|
+|image9|
 
 .. container:: centeralign
 
@@ -254,7 +254,7 @@ Directions
 The breadboard connections are as shown in figure 11 below. The waveform generator W1 drives the speaker. The 100Ω resistor, R1, limits the speaker’s output, so that it is not too loud. The capacitor, C1, is meant to ensure that the active learning module input is 0 on average, as a large offset can result in out of range data. The input wire 1+ is connected to the negative terminal of the capacitor C1, while 1- and the negative terminal of the speaker connect to ground. The microphone is powered by the positive power supply pin, applied voltage passing through a 20kΩ resistor, R2. A second capacitor, C2, with the same purpose is added in parallel with R2 and the positive terminal of C2 leads to 2+ analog input on the active learning module. The negative terminals of both the microphone and the analog input (2-) connect to ground.
 
 
-|image9|
+|image10|
 
 .. container:: centeralign
 
@@ -265,7 +265,7 @@ Hardware set-up:
 
 
 
-|image10|
+|image11|
 
 .. container:: centeralign
 
@@ -277,7 +277,7 @@ Procedure:
 Build the circuit as indicated. Place the speaker facing the ceiling and try to set the microphone above it, as indicated in figure 13 below.
 
 
-|image11|
+|image12|
 
 .. container:: centeralign
 
@@ -288,7 +288,7 @@ Afterwards, power the circuit by setting the positive power supply pin to 5 Volt
 
 
 
-|image12|
+|image13|
 
 .. container:: centeralign
 
@@ -300,7 +300,7 @@ Next, go to the Network Analyzer and set the parameters to the following values:
 Set channel 1 to be the reference and run the Network Analyzer, to obtain the speaker’s response in free air, without any constraints imposed by our improvised acoustical transmission lines. The output should be comparable to the plot shown in figure 15.
 
 
-|image13|
+|image14|
 
 .. container:: centeralign
 
@@ -311,7 +311,7 @@ Then, place the chip can metal side up over the speaker-mic ensemble, covering i
 
 
 
-|image14|
+|image15|
 
 .. container:: centeralign
 
@@ -323,7 +323,7 @@ Then, place the chip can metal side up over the speaker-mic ensemble, covering i
    Add in some diagrams showing the resonances in the Pringles can. Could even be LTspice sinewaves superimposed!
 
 
-   |image15|
+   |image16|
 
 .. container:: centeralign
 
@@ -334,7 +334,7 @@ As indicated on the plot, the first null is at about 390 Hz. Keep in mind that o
 
 
 
-|image16|
+|image17|
 
 .. container:: centeralign
 
@@ -345,14 +345,14 @@ For the next step, get a can opener and remove the metallic bottom side of the c
 
 
 
-|image17|
+|image18|
 
 .. container:: centeralign
 
    **Figure 19.** Speaker’s response with open Pringles tube
 
 
-   |image18|
+   |image19|
 
 .. container:: centeralign
 
@@ -375,40 +375,42 @@ The :doc:`Artificial Transmission Lines - ADALM1000 </wiki-migration/university/
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |youtube>QzigJ1URWlI| image:: https://wiki.analog.com/_media/youtube>QzigJ1URWlI
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
+.. |youtube>QzigJ1URWlI| image:: https://wiki.analog.com/_media/university/labs/youtube>QzigJ1URWlI
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/simple_lumped_tline.png
+   :width: 1000px
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/coax_figure.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/parallel_tline_figure.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/utp_cable.png
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/parallel_tline_figure.png
    :width: 400px
 .. |image4| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/near_end_crosstalk.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/standing_wave_generation.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/reflections.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/tline_playground_schematic.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/standing_wave_generation.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/tline_playground_schematic.png
    :width: 800px
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/step_function_time_domain.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/step_function_time_domain.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/freq_domain.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/freq_domain.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_schematic.png
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_schematic.png
    :width: 200px
-.. |image10| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/breadboard_circuit.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/breadboard_circuit.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_photo.png
+.. |image12| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/speaker_mic_photo.png
    :width: 200px
-.. |image12| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_signs_of_life.png
+.. |image13| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_signs_of_life.png
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_free_air_response.png
+.. |image14| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_speaker_mic_free_air_response.png
    :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/Pringles_closed_Scopy.png
+.. |image15| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/Pringles_closed_Scopy.png
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_closed_tube.png
+.. |image16| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_closed_tube.png
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/can_measurement.png
+.. |image17| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/can_measurement.png
    :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_open_tube.png
+.. |image18| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/scopy_open_tube.png
    :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_open_tube.png
+.. |image19| image:: https://wiki.analog.com/_media/university/labs/tlines_standing_waves_adalm2000/ltspice_open_tube.png
    :width: 400px

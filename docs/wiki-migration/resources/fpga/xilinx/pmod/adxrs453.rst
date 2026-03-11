@@ -112,9 +112,9 @@ Run the **download.bat** script from the "../bin" folder downloaded from the git
 
 If programming was successful, you should be seeing messages appear on the terminal window as shown in the figure below. After programming the ADXRS453 device, the program will automatically send the recommended initialization sequence. Once complete, it will start to print current angles/second rotation on Z-Axis on the UART.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453uart.jpg
-   :alt: UART messeges
-   :width: 300px
+
+
+|UART messeges|
 
 .. important::
 
@@ -343,6 +343,8 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+.. |UART messeges| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adxrs453uart.jpg
+   :width: 300px

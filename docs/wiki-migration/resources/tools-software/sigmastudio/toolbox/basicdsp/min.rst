@@ -74,5 +74,5 @@ Supported IC's
 
 +----------+
 
-.. |min1.png| image:: https://wiki.analog.com/_media/min1.png
+.. |min1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/min1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/minandhold.png

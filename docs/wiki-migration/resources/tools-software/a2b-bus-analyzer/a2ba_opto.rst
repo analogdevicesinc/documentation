@@ -85,16 +85,21 @@ Procedure to run a Branch Network (Opto A2B) from ADI A\ :sup:`2`\ B Analyzer:
 
    -  Drag an analyzer platform from the toolbox and change into main node.
 
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/analyzer_platform.png
+   :align: center
 
-   |image1|
 
-   -  Drag a OptoA2B platform from Toolbox.
 
-::
+-  Drag a OptoA2B platform from Toolbox.
+-
 
-     *{{:resources:tools-software:a2b-bus-analyzer:optoa2b_treetoolbox_.png|}}
-   * Drag a A2B sub node as DUT & connect to branching chain and save the project.
-     *{{:resources:tools-software:a2b-bus-analyzer:a2b_platform.png  |}}
+|resources-tools-software-a2b-bus-analyzer-optoa2b_treetoolbox_.png|
+
+-  Drag a A2B sub node as DUT & connect to branching chain and save the project.
+-
+
+|resources-tools-software-a2b-bus-analyzer-a2b_platform.png|
+
    * One-click procedure: Press Link-Compile-Download button in SigmaStudio+. SigmaStudio+ will launch the A2B Bus Analyzer automatically and discover the primary chain via .Dat file and secondary chain via command list.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b_schematic_lcd.png
@@ -173,4 +178,5 @@ A2B Sub node DUT (in the current example – AD2428WD1BZ is used as Sub node DUT
 | JP19 (1961 BCLK)   | 2-3       | ADAU1761 MCLK from AD2428_BCLK                                                                  |
 +--------------------+-----------+-------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/analyzer_platform.png
+.. |resources-tools-software-a2b-bus-analyzer-a2b_platform.png| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2b_platform.png
+.. |resources-tools-software-a2b-bus-analyzer-optoa2b_treetoolbox_.png| image:: https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/optoa2b_treetoolbox_.png

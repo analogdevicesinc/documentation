@@ -107,10 +107,11 @@ Video
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
+   :align: center
+   :width: 650px
 
 -  Connect the **EVAL-CN0398-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect the pH sensor to the **J1** connector of the EVAL-CN0398-ARDZ.
@@ -145,7 +146,7 @@ The software for the **ADuCM360_demo_cn0398** demo can be found here:
    Prebuilt CN0398 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0398.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0398.bin>`
+   -  `ADuCM360_demo_cn0398.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0398.bin>`_
    
    Complete CN0398 Source Files
    
@@ -231,6 +232,4 @@ The **RTE** folder contains device and system related files:
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/398andaicup.png
    :width: 650px
-.. |youtube>43GfiE8uAa4| image:: https://wiki.analog.com/_media/youtube>43GfiE8uAa4
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
-   :width: 650px
+.. |youtube>43GfiE8uAa4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/youtube>43GfiE8uAa4

@@ -263,8 +263,10 @@ You will need to:
 
 -  Get the `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_.
 
-
-|zedboard.png|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
+   :alt: zedboard.png
+   :align: center
+   :width: 600px
 
 -  Insert the SD CARD into the SD Card Interface Connector (J12).
 -  Connect the :adi:`EVAL-CN0585-FMCZ <CN0585>` board into the ZedBoard FMC connector.
@@ -293,7 +295,7 @@ Libiio is a library used for interfacing with IIO devices and must be installed 
 .. admonition:: Download
    :class: download
 
-   Download and Install the latest :git-libiio:`Libiio package <releases>` on your machine.
+   Download and Install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 To connect to your device, the IIO Osciloscope software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the :adi:`EVAL-CN0585-FMCZ <CN0585>` is attached. The ZedBoard running ADI Kuiper Linux is currently the only platform supported for the CN0585.
@@ -330,7 +332,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 1. Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope. If there's only one platform is connected, the IIO Oscilloscope will find URI automatically; If more than one platforms are connected, the user needs to supply the specific URI. The instructions to obtain the URI can be found in the previous section. Note: the "Serial Context" connection method is not enabled.
@@ -441,10 +443,10 @@ Running the example
    Github link for the Python sample script: `CN0585 Python Example <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/cn0585_fmcz_example.py>`_
 
 
-1. Download or git clone :git-pyadi-iio.git>`__ to your local drive.
+1. Download or git clone :git-pyadi-iio:`pyadi-iio repository <pyadi-iio>` to your local drive.
 
 -  If direct downloading ZIP folder, make sure to download from cn0585_v1 branch.
--  If cloning the repository using `Git <https::`pyadi-iio repository </git-scm.com/downloads>`, type ``git checkout cn0585_v1`` to switch to the correct branch.
+-  If cloning the repository using `Git <https://git-scm.com/downloads>`_, type ``git checkout cn0585_v1`` to switch to the correct branch.
 
 2. Install additional Packages.
 
@@ -542,7 +544,7 @@ Remote data streaming to and from hardware is made available through system obje
 
 ::
 
-   git clone https://github.com/analogdevicesinc/HighSpeedConverterToolbox.git
+   git clone :git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox`
    cd HighSpeedConverterToolbox
    git submodule update --init --recursive
    git checkout cn0585_v1
@@ -623,7 +625,7 @@ Reference Demos & Software
 --------------------------
 
 -  :doc:`High Speed Converter Toolbox for MATLAB and Simulink </wiki-migration/resources/tools-software/hsx-toolbox>`
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -635,8 +637,6 @@ Reference Demos & Software
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/eval-cn0585-fmcz_kit_top.jpg
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/eval-cn0585-fmcz_angle-web.jpg
    :width: 400px
-.. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
-   :width: 600px
 .. |zed_jumpers.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/adaq8092/zed_jumpers.jpg
    :width: 400px
 .. |cn0584_loopback_connection.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/cn0584_loopback_connection.png

@@ -11,21 +11,23 @@ The :adi:`ad9683` and :adi:`ad6677` data sheets provide additional information a
 Typical Measurement Setup
 -------------------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_hadv62-ww.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 1a. FMC Evaluation Board Connection (6V DC Wall Power)—*\ :adi:`AD9683-170EBZ <ad9683>`\ *,* :adi:`AD9683-250EBZ <AD9683>`\ *, or* :adi:`AD6677EBZ <AD6677>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*\
 
 
-|image2|\
+   |image1|
 
 .. container:: centeralign
 
    \ *Figure 1b. FMC Evaluation Board Connection (DC Power Via FMC)—*\ :adi:`AD9683-170EBZ <ad9683>`\ *,* :adi:`AD9683-250EBZ <AD9683>`\ *, or* :adi:`AD6677EBZ <AD6677>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*\
 
 
-|image3|\
+   |image2|
 
 .. container:: centeralign
 
@@ -165,14 +167,16 @@ Table 1. Jumper Settings Common to Both the FMC and Tyco Evaluation Boards
 | P503   | This jumper connects the :adi:`ad9683` and :adi:`AD6677` external reference clock input to the reference clock of the FPGA (for the JESD204B link) on the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>`.                                                                                                                                                                                                                                     |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-|image4|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_jumpers.jpg
+   :align: center
+   :width: 850px
 
 .. container:: centeralign
 
    \ *Figure 3. Default Jumper Connections for* :adi:`AD9683-170EBZ <AD9683>`\ */*\ :adi:`AD9683-250EBZ <AD9683>`\ */*\ :adi:`AD6677EBZ <AD6677>`\ *FMC Board*\
 
 
-|image5|\
+   |image3|
 
 .. container:: centeralign
 
@@ -236,7 +240,11 @@ Setting up the ADC Data Capture
 
 After configuring the board, set up the ADC data capture using the following steps:
 
--  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 5, where the :adi:`AD9683` is shown as an example).\ |image6|\
+-  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 5, where the :adi:`AD9683` is shown as an example).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_new_canvas.png
+   :align: center
+   :width: 450px
 
 .. container:: centeralign
 
@@ -244,7 +252,10 @@ After configuring the board, set up the ADC data capture using the following ste
 
 
 -  After the template is selected, a message appears asking if the default configuration can be used to program the FPGA (see Figure 6). Click **Yes**, and the window closes.
-   |image7|\
+
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -253,9 +264,9 @@ After configuring the board, set up the ADC data capture using the following ste
 
 -  Click the **Settings** button on the **ADC Data Capture** block. In the pop-up window select the **Capture Board** tab. Select the checkbox **Poll Full Flag**. This must be checked in order to get data capture from the :adi:`AD9683` and :adi:`AD6677` (see Figure 7).
 
-
-
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_poll_full_flag.png
+   :align: center
+   :width: 850px
 
 .. container:: centeralign
 
@@ -265,7 +276,9 @@ After configuring the board, set up the ADC data capture using the following ste
 -  To change features to settings other than the default settings, click the **Expand Display** button, located in the bottom right corner of the window (see Figure 8), to see what is shown in Figure 7.
 -  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog\ TM Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_expand_display.jpg
+   :align: center
+   :width: 650px
 
 .. container:: centeralign
 
@@ -274,7 +287,7 @@ After configuring the board, set up the ADC data capture using the following ste
 
 .. container:: centeralign
 
-   \ |image10|\
+   |image5|\
 
 
 .. container:: centeralign
@@ -290,47 +303,67 @@ Setting up the SPI Controller Software
 
 After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
 
--  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 10). |image11|\
+-  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 10).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_global.png
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
    \ *Figure 10a. SPI Controller, CHIP ID(1) Box*\
 
 
-Note: If using the FMC version of the evaluation board and data capture board make sure to change the SDO Active setting in SPIController by clicking Config -> Controller Dialog from within SPIController and unchecking the box under PORT CONFIG labeled "SDO Active." See Figure 10b below. |image12|\
+Note: If using the FMC version of the evaluation board and data capture board make sure to change the SDO Active setting in SPIController by clicking Config -> Controller Dialog from within SPIController and unchecking the box under PORT CONFIG labeled "SDO Active." See Figure 10b below.
+
+
+
+|image6|
 
 .. container:: centeralign
 
    \ *Figure 10b. SPI Controller, SDO Active Setting Box*\
 
 
--  Click the **New DUT** button in the **SPIController** window (see Figure 11).\ |image13|\
+-  Click the **New DUT** button in the **SPIController** window (see Figure 11).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcglobal_newdut.jpg
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
-   \ *Figure 11. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 12). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. The Nyquist Clock is selected by default. If using the RF Clock, make sure to configure the device in this tab. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\
+   \ *Figure 11. SPI Controller, New DUT Button*-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 12). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. The Nyquist Clock is selected by default. If using the RF Clock, make sure to configure the device in this tab. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.
 
-
-
-|image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase0.png
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
-   \ *Figure 12. SPI Controller, ADCBase0*-  Note that other settings can be changed on the **ADCBase0** tab (see Figure 12) and the **ADCBase1**\ and **ADCBase2** tabs (see Figures 13 and 14) to set up the part in the desired mode. The **ADCBase0** tab settings affect ADC settings, whereas the settings on the **ADCBase1** and **ADCBase2** tabs affect the JESD204B link settings. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings. |image15|\
+   \ *Figure 12. SPI Controller, ADCBase0*-  Note that other settings can be changed on the **ADCBase0** tab (see Figure 12) and the **ADCBase1**\ and **ADCBase2** tabs (see Figures 13 and 14) to set up the part in the desired mode. The **ADCBase0** tab settings affect ADC settings, whereas the settings on the **ADCBase1** and **ADCBase2** tabs affect the JESD204B link settings. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`,*High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase1.png
+   :align: center
+   :width: 750px
 
 .. container:: centeralign
 
    \ *Figure 13. SPI Controller, Example ADCBase1 Page*\
 
 
-|image16|\
+   |image7|
 
 .. container:: centeralign
 
    \ *Figure 14. SPI Controller, Example ADCBase1 Page*\
 
 
--  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 15). |image17|\
+-  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 15).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_va_run_button.jpg
+   :align: center
+   :width: 650px
 
 .. container:: centeralign
 
@@ -342,18 +375,22 @@ Adjusting the Amplitude of the Input Signal
 
 The next step is to adjust the amplitude of the input signal for each channel as follows:
 
--  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9683 FFT** window (see Figure 16).\ |image18|\
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9683 FFT** window (see Figure 16).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/10235-013.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 16. Graph Window of VisualAnalog*
 
 
--  Click the disk icon within the **VisualAnalog Graph - AD9683 FFT** window to save the performance plot data as a .csv formatted file. See Figure 17 for an example.\
+-  Click the disk icon within the **VisualAnalog Graph - AD9683 FFT** window to save the performance plot data as a .csv formatted file. See Figure 17 for an example.
 
-
-
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9683_fft_185mhz.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -387,40 +424,16 @@ If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
 -  Make sure that all power and USB connections are secure.
 -  Make sure that the **Poll Full Flag** checkbox is checked under **ADC Capture Settings** in **Visual Analog**.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9683_hadv62-ww.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9683_hadv62_fmc_power.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9683_hadv62_fmc_power.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9683_connections.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9683_connections.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9683_jumpers.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9683_jumpers_v2.jpg
    :width: 850px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9683_jumpers_v2.jpg
-   :width: 850px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9683_new_canvas.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9683_program_fpga.png
    :width: 450px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9683_program_fpga.png
-   :width: 450px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9683_poll_full_flag.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9683_va_fft.png
    :width: 850px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9683_expand_display.jpg
-   :width: 650px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9683_va_fft.png
-   :width: 850px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_global.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9683_fmc_sdo.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase2.png
    :width: 750px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9683_fmc_sdo.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcglobal_newdut.jpg
-   :width: 750px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase0.png
-   :width: 750px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase1.png
-   :width: 750px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase2.png
-   :width: 750px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ad9683_va_run_button.jpg
-   :width: 650px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/10235-013.png
-   :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ad9683_fft_185mhz.png
-   :width: 400px

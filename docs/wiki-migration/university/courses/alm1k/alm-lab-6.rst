@@ -26,9 +26,8 @@ Directions:
 
 The good way to measure the characteristics of the current mirror is to reuse the same basic configuration that was used in the common emitter BJT curve tracer experiments. Diode connected transistor Q\ :sub:`1` is connected across the base and emitter terminals of Q\ :sub:`2`. I\ :sub:`in` will be equal to the Channel A output current. Iout will be the current measured by channel B.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -63,9 +62,8 @@ Current Mirror with Base Current Compensation
 
 Modify the simple mirror circuit by adding the base current compensation transistor Q\ :sub:`3` as shown below. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -81,9 +79,8 @@ Wilson Current Mirror
 
 Modify the simple mirror into a Wilson Mirror as shown below. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f3.png
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
@@ -102,9 +99,8 @@ Widlar current mirror
 
 Modify the simple mirror into a Widlar Mirror as shown below. Repeat the same procedure you followed for the simple mirror circuit. In addition to the same quantities and graphs, does your data indicate any advantage to this circuit? Any disadvantages?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f4.png
-   :align: center
-   :width: 550px
+
+|image4|
 
 .. container:: centeralign
 
@@ -144,9 +140,8 @@ Directions:
 
 The diode configuration with nearly zero turn on voltage from activity 2 is used here to make a current mirror. The current input node at the collector of Q\ :sub:`1` (base of PNP Q\ :sub:`3`) is now much closer to ground compared to the conventional current mirror. What advantages would this have over the conventional mirror?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f6.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -160,3 +155,14 @@ Ideally the collector of PNP Q\ :sub:`3` would be connected to some negative vol
 `The Current Mirror <https://en.wikipedia.org/wiki/Current_mirror>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f3.png
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f4.png
+   :width: 550px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6_f6.png
+   :width: 500px

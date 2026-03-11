@@ -160,9 +160,8 @@ Gesture Sensing Reference Demo and Software
 
 A basic gesture sensing example application for the :adi:`EVAL-CN0569-PMDZ` was developed using the :adi:`EVAL-ADICUP3029` platform.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569-gesture-directions.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. note::
 
@@ -194,3 +193,6 @@ Registration
 
 
 // End of document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569-gesture-directions.png
+   :width: 600px

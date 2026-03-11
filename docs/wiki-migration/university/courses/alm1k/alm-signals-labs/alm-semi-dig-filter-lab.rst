@@ -22,9 +22,8 @@ When the raw unfiltered analog output of a digital to analog converter is fed to
 
 The Semi-digital FIR filter principle is shown in figure 1, where the single-bit digital signal to be filtered is fed into a shift register. An analog summing node is coupled to the contents of the shift register though a weighting network. In the simple form we are looking at in this activity, the unit delay (Z\ :sup:`-1`) taps have associated resistances which are the coefficients of the filter (B\ :sub:`0` – B\ :sub:`N`). The analog sum at the output produces a filtered analog version of the digital input signal that was fed to the input of the shift register delay line.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-sdf-fig_1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -45,9 +44,8 @@ Build the semi-digital FIR low pass filter using a 74HC273 Octal D-type register
 
 The analog output representation of the digital input signal is created as a weighted summation of the digital input and all 8 Q outputs. In this first example, using resistor values from the ADALP2000 parts kit, all the coefficients are similar in weight with the first two and last two of equal value (10 KΩ) an the middle 5 slightly higher weight equal to 6.8 KΩ.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-sdf-fig_2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -69,9 +67,8 @@ Directions:
 
 Alongside the shift register construct the AD645 based digital clock source generator shown in figure 3. Refer to the AD654 datasheet for more details on the operation of the circuit. The output frequency is determined by the values of C\ :sub:`2` and R\ :sub:`5` and the voltage applied to pin 4 (V\ :sub:`REF`). A variable voltage divider consisting of R\ :sub:`1`, R\ :sub:`3` and potentiometer R\ :sub:`2`, across the 2.5 V supply creates V\ :sub:`REF`. The square wave output at pin 1 of the AD654 drives the clock input of the 74HC273 at pin 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -96,9 +93,8 @@ The ALICE software can also generate Pulse Width Modulated sine waves. From the 
 
 Try generating a few different PWM sinewaves and observe the filter response.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-sdf-fig_4.png
-   :align: center
-   :width: 300px
+
+|image4|
 
 .. container:: centeralign
 
@@ -112,9 +108,8 @@ Appendix:
 
 **74HC273 functional block diagram**
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
-   :align: center
-   :width: 250px
+
+|image5|
 
 .. container:: centeralign
 
@@ -135,3 +130,14 @@ The Moving Average filter performs three important functions: 1) It takes M inpu
 :adi:`AD654 datasheet <media/en/technical-documentation/data-sheets/AD654.pdf>` `Finite impulse response <https://en.wikipedia.org/wiki/Finite_impulse_response>`_ `Frequency Response of the Running Average Filter <https://ptolemy.berkeley.edu/eecs20/week12/freqResponseRA.html>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-sdf-fig_1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-sdf-fig_2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-delta-sigma-fig_3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-sdf-fig_4.png
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-ss-lab-lfsr-fig_6.png
+   :width: 250px

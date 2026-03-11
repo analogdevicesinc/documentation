@@ -29,7 +29,7 @@ Windows:
 Linux:
 ~~~~~~
 
-`libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+:git-libsmu:`libpysmu.so <libsmu>`
 
 Directions:
 -----------
@@ -47,9 +47,8 @@ Screen Setup:
 
 Once the program is running the main screen, as shown in figure 1, should appear. Be sure that the ALM1000 is plugged into the USB port before starting the program.
 
-.. image:: https://wiki.analog.com/_media/university/tools/meter-source-screen-0.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -72,9 +71,8 @@ Use Examples:
 
 To demonstrate using the ALM1000 to measure current while sourcing voltage consider the resistor current divider circuit shown in figure E1. We would like to measure the currents flowing in resistors R\ :sub:`S` and R\ :sub:`2` while supplying 5V to R\ :sub:`S`. We will be using R\ :sub:`S` = R\ :sub:`1` = R\ :sub:`2` = 100Ω for this example.
 
-.. image:: https://wiki.analog.com/_media/university/tools/meter-source-fig1.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -83,9 +81,9 @@ To demonstrate using the ALM1000 to measure current while sourcing voltage consi
 
 With CA source turned on set to source 5.0V and CB source turned on set to source 0.0V ( same as if R\ :sub:`2` were connected to GND ) we measure the currents in CA and CB as shown in figure E2. CA current is positive because it is sourcing current and CB is negative because it is sinking current.
 
-.. image:: https://wiki.analog.com/_media/university/tools/meter-source-screen-1.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -95,3 +93,10 @@ With CA source turned on set to source 5.0V and CB source turned on set to sourc
 **For Further Reading:**
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/meter-source-screen-0.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/meter-source-fig1.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/meter-source-screen-1.png
+   :width: 600px

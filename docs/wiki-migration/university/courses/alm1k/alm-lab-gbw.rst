@@ -24,9 +24,8 @@ G\ :sub:`f` is defined as the gain-bandwidth product, GBW, and for all input fre
 
 Figure 1, from the OP97 datasheet, graphically illustrates this relationship. When feedback is provided, as in an inverting amplifier, the gain is given by G = –R\ :sub:`2`/R\ :sub:`1`; however, it must be recognized that the magnitude of this gain can never exceed the gain as given by the gain-bandwidth product.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -35,9 +34,9 @@ Figure 1, from the OP97 datasheet, graphically illustrates this relationship. Wh
 
 The OP97 amplifier has a pin ( pin 5 ) which allows the user to connect an external frequency compensation capacitor to effectively lower the gain-bandwidth product. Figure 2 shows the change in bandwidth for different external capacitors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -54,9 +53,8 @@ Directions:
 
 Build the circuit shown in figure 3 on your solderless breadboard to measure the frequency response of a inverting amplifier configured with a closed loop gain of 1000. Because the circuit’s gain is so high, the circuit needs to be driven with a very small input signal. Since the AWG generator cannot accurately produce small signals with low noise, a 1/1000 voltage divider, R\ :sub:`3`, R\ :sub:`4`\ \||R\ :sub:`1`, is used to reduce the 2V p-p sine signal to 2 mV p-p at the inverting amplifier input. R\ :sub:`4` and R\ :sub:`1` are effectively in parallel due to the "virtual ground" at pin 2. The parallel combination of R\ :sub:`4` and R\ :sub:`1` will be 50 Ω which with the 47 KΩ R\ :sub:`3` results in a divider ratio close to 1/1000.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -74,9 +72,8 @@ Use the ALICE Bode plotter tool to measure the gain ( and optionally the phase )
 
 Find the -3dB frequency or F\ :sub:`cf` on the Bode plot ( magenta curve in figure 4). Calculate the GBW by multiplying this by the absolute value of the gain, R\ :sub:`2`/R\ :sub:`1` or 1000 in this case.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -101,3 +98,12 @@ Here is a good technical paper on how to make :adi:`Simple Op Amp Measurements <
 :adi:`OP97 datasheet <media/en/technical-documentation/data-sheets/OP97.pdf>` :adi:`OP27 datasheet <media/en/technical-documentation/data-sheets/OP27.pdf>` :adi:`OP37 datasheet <media/en/technical-documentation/data-sheets/OP37.pdf>` :adi:`OP484 datasheet <media/en/technical-documentation/data-sheets/OP184_284_484.pdf>` :adi:`OP482 datasheet <media/en/technical-documentation/data-sheets/OP282_482.pdf>` :adi:`AD8541 datasheet <media/en/technical-documentation/data-sheets/AD8541_8542_8544.pdf>` :adi:`ADTL082 datasheet <media/en/technical-documentation/data-sheets/ADTL082_084.pdf>` :adi:`MT-033 <media/en/training-seminars/tutorials/MT-033.pdf>` :adi:`MT-045 <media/en/training-seminars/tutorials/MT-045.pdf>` `Gain-Bandwidth Product <https://en.wikipedia.org/wiki/Gain%E2%80%93bandwidth_product>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-gbw-f4.png
+   :width: 600px

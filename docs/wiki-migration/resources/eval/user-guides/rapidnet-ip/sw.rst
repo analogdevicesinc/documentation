@@ -27,11 +27,15 @@ Software Packs and Driver - Installation
 -  Start IAR Embedded Workbench for ARM.
 -  Go to Project-> CMSIS-Pack-> Pack Installer.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png
+   :align: center
+   :width: 750px
 
 -  In **'CMSIS Pack Manager'** window, click 'Search for updates'.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/2.png
+   :align: center
+   :width: 600px
 
 -  After search is complete, expand 'ARM' and 'CMSIS' under ARM. Right click on the latest version and select install from drop down options.
 -  After successful installation of ARM CMSIS pack, expand 'AnalaogDevices', then expand 'ADuCM302x_DFP'. Right click on **'3.2.0'** and click install drop down options.
@@ -61,14 +65,18 @@ Import RapidNet IP Example Project
 -  Select 'esl_lib.eww' and click open.
 -  Once the workspace is open, make sure 'esl_app' is select in the 'Workspace' tab (left side). If not, select it from the bottom of the 'Workspace' tab.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/3.png
+   :align: center
+   :width: 200px
 
 -  Right click on 'esl_app - Debug' on Workspace Tab and select 'Options...'.
--  Go to Debugger->Setup and under 'Driver' drop down menu select 'CMSIS DAP'.\
+-  Go to Debugger->Setup and under 'Driver' drop down menu select 'CMSIS DAP'.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/4.png
+   :align: center
+   :width: 600px
 
--  Click on 'Debug and Download' icon |image5|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
+-  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
 
 mBed windows serial driver - Installation
 -----------------------------------------
@@ -79,12 +87,4 @@ You are all set!
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/rapidnet-ip>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/cmsis_pack_install_1.png
-   :width: 750px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/2.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/3.png
-   :width: 200px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/4.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/debug_debug_button.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/quickstart_guide/iar/debug_debug_button.png

@@ -33,9 +33,8 @@ Electrical model of a battery.
 
 We know that an ideal voltage source will produce a constant output voltage independent of the current supplied to the load, i.e. whatever current is needed to maintain the voltage at a constant value. However, real world voltage sources can only supply current up to some limit. The power supplies built into the M1k lab hardware, for example, use active circuitry to maintain the output voltage at a constant value but only for load currents less than 200 mA. A relatively modest current because the board is powered from the computer USB port. Bench top laboratory supplies, powered from the wall outlet, can supply much more, often many amps. Similarly, batteries store a finite amount of energy and have a limited current capability depending on the size of the battery. As the current increases the output voltage will begin to drop as the chemical reaction in the battery tries to maintain the current. In most cases this drop in output voltage with increasing load current can be accurately modeled by including a resistor, typically a few ohms at the most, in series with an ideal voltage source, as shown in figure 1. This is the “internal” resistance or impedance of the battery, Z\ :sub:`int`. This simple model isn’t perfect, because as the battery discharges its voltage will drop even without significant loading. But the internal impedance model does capture the characteristics at a given state of battery charge. Since this simple model is the same as a Thevenin equivalent, we can characterize it in the same way, by measuring the open-circuit voltage and short-circuit current. We do not want to damage the battery, so a current limiting resistor (which also allows us to measure the current) is added in series with the battery as shown in figure 2. When the output is “short-circuited”, this resistor limits the maximum current that will flow.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -55,9 +54,8 @@ Directions:
 
 In the kit supplied for this Lab you should have a rechargeable battery (typically a Li-ion 18350 cell). Battery packs like the one shown in figure 1 generally are supplied with wires and a two pin connector already attached. Add an external 10 Ω resistance in series with the battery as shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -84,9 +82,8 @@ Measuring AC Impedance vs. Frequency:
 
 We can use the same hardware measurement configuration from figure 2 to measure the AC complex impedance vs frequency. Set AWG A to a sine shape. The time domain screen shot shown in figure 3 shows the time response for CHA voltage, green trace, CHA current, cyan trace, and the battery voltage (BIN) orange trace. The current is negative indicating that the battery is being discharged. Also note that the voltage and current waveforms are nearly exactly in phase with each other.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -101,9 +98,8 @@ Open the ALICE impedance analyzer tool. Set the number of FFT samples to the max
 
 We need to enter 10 as the Ext reference resistor value. We already know that the impedance will be very small based on the time waveform data so the Ohms/div is set to 0.02. With the same AWG A settings we get the Impedance analyzer results at 100 Hz shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -121,18 +117,15 @@ We can use the ALICE Bode plotting tool in conjunction with the Impedance Analyz
 
 Open the Bode Plot tool. Click on Lin-F for a linear frequency sweep. Set the Start frequency to 1 Hz and the Stop frequency to 5000 Hz. Under the Curves drop down menu select CB-dBV, Series R and Series X. Select CHA as the Sweep Gen source. Set number of sweep steps to 400 and single sweep. Click on the green Run button on the Impedance Analyzer screen to start the frequency sweep. Figures 5 and 6 show the Impedance Analyzer and Bode Plot results respectively.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5, Impedance Analyzer sweep 1 to 5000 Hz.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig6.png
-   :align: center
-   :width: 600px
+   |image6|
 
 .. container:: centeralign
 
@@ -145,9 +138,8 @@ ALICE does not provide a graphing configuration to display X vs R. The simplest 
 
 The CSV file consists of five columns of data, Frequency, Series R, Series X, Series Z, Series Angle. Open the file in Excel and select the Series R and Series X columns (B and C) and insert a Scatter plot of these two columns as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -156,9 +148,9 @@ The CSV file consists of five columns of data, Frequency, Series R, Series X, Se
 
 If we compare this graph to Figure 2 in CN0510 we see that we need to multiply the Series X column of values by -1. Make a new column in Excel multiplying the Series X column by -1, and make a new scatter plot of Series R and the negated Series X data.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig8.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -186,9 +178,8 @@ A second graphing method is to use the pyplot general purpose graphing library t
 
 Copy the script into a text file and run the script by clicking on Run Script under the File drop down menu on the Impedance Analyzer screen. You should get a graph something like figure 9.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -200,3 +191,22 @@ Copy the script into a text file and run the script by clicking on Run Script un
 `Rechargeable Battery <http://en.wikipedia.org/wiki/Rechargeable_battery>`_ `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_ `Considerations In Designing Single Supply, Low-Power Systems Part II: Battery Powered Systems <http://www.analog.com/en/analog-dialogue/articles/designing-single-supply-low-power-battery.html>`_ `CN0510 User Guide <:doc:`/wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0510`>`_ :adi:`CN0510 Reference Design <media/en/reference-design-documentation/reference-designs/CN0510.pdf>`
 
 **Return to ALM Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-eis-lab-fig9.png
+   :width: 600px

@@ -21,7 +21,7 @@ Windows: `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevi
 
 Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/install>` is highly recommended.
 
-Linux: `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+Linux: :git-libsmu:`libpysmu.so <libsmu>`
 
 Required Python version: Python version 2.7.8 or higher
 
@@ -39,9 +39,8 @@ Screen Setup:
 
 Be sure that the ALM1000 is plugged into the USB port before starting the program. Once the program is running, the main screen should appear, as shown in figure 1. It is sub divided into 4 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice_sa_window_shot.png
-   :align: center
-   :width: 700px
+
+|image1|
 
 .. container:: centeralign
 
@@ -163,9 +162,8 @@ An FFT windowing function weights the samples from the beginning of the array to
 
 The reason why we need an FFT window can be seen figures 2-7 in the various spectrums using different FFT window functions. No FFT window (also called a Rectangular window), generates many side bands in the spectrum of the FFT calculation. That is very visible in the first spectrum plot of the Rectangular ( dark orange ) and Cosine ( light orange ) window functions. Very low amplitude signals close to the main signal cannot be measured. So the dynamic range around the large main signal is low. By using an FFT window, the side bands are much more attenuated, how much depends on the type of FFT window. The increased side band suppression is at the expense of the selectivity. FFT windows with a very high side band suppression and therefore a very high dynamic range, have much less selectivity.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -174,36 +172,30 @@ The reason why we need an FFT window can be seen figures 2-7 in the various spec
 
 A Cosine window is a good compromise between a good selectivity and a good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
-   :align: center
-   :width: 550px
+
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3 Rectangular vs Triangle window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
-   :align: center
-   :width: 550px
+   |image4|
 
 .. container:: centeralign
 
    Figure 4 Rectangular vs Hann window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
-   :align: center
-   :width: 550px
+   |image5|
 
 .. container:: centeralign
 
    Figure 5 Rectangular vs Blackman window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
-   :align: center
-   :width: 550px
+   |image6|
 
 .. container:: centeralign
 
@@ -212,9 +204,9 @@ A Cosine window is a good compromise between a good selectivity and a good dynam
 
 At the expense of a little wider bandwidth the Nuttall window function provides the best side band reduction and may be the optimal compromise between good selectivity and good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
-   :align: center
-   :width: 550px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -232,9 +224,8 @@ Zero Stuffing
 
 With the menu button "Setup" you can set the factor for the Zero stuffing. What problem are trying to solve by Zero stuffing? The bandwidth of the FFT depends on the choice of the FFT window function. For a narrow FFT filter, the bandwidth is slightly larger than the difference between 2 FFT frequency bins. When the signal frequency is exactly between the 2 FFT frequency bins, the signal will be displayed lower than its actual value because half of the signal appears in each of the two bins. Figure 8 shows good example of this. The signal is slightly more than 1 KHz and lies exactly between the two FFT frequency bins. The actual peak value should be equal to 0 dB, but the displayed value of the two adjacent samples is lower. The signal level is not displayed correctly by either of the FFT frequency bins. This is called Scalloping loss.
 
-.. image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
-   :align: center
-   :width: 550px
+
+|image8|
 
 .. container:: centeralign
 
@@ -243,9 +234,9 @@ With the menu button "Setup" you can set the factor for the Zero stuffing. What 
 
 Zero stuffing provides a simple solution to this problem. For 1x Zero Stuffing, we double the size of the time sample array. The original array was say 2048 samples. We add 2048 samples with the value zero and we get a new array with 4096 samples. This may seem counterintuitive, when we add zero's we do not add extra measurement data. However, something happens in the FFT calculation with twice as many samples. The effect can be seen in figure 9. Extra FFT frequency bins have been added. Coincidentally, here the extra frequency bin coincides with the frequency of the signal and the level of the signal is displayed correctly. Also even if the signal frequency does not coincide with the frequency of the extra FFT bin, the measured error will be smaller. As we add samples with the value zero, the bandwidth of the FFT filter remains the same.
 
-.. image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
-   :align: center
-   :width: 550px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -259,9 +250,8 @@ Examples:
 
 The following example shows a technique where ALICE-SA can be used to measure the amplitude vs frequency response of two simple RLC configurations. Shown in figure E1, first on the left is a parallel LC bandpass configuration and second on the right is a series LC bandstop configuration. Indicated by the green boxes are the connections to the ALM1000. Channel B is setup to output the driving function of the network. Channel A is setup as an input to measure the response seen across the LC network. For this example R\ :sub:`1` is 1 KΩ, L\ :sub:`1` is 15 mH and C\ :sub:`1` is either 0.2 uF or 0.5 uF.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-sa-fig-e1.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -286,9 +276,8 @@ Other Settings: FFT Window – Flat top ( has a wide FFT bandwidth which is wide
 
 Below in figure E2 is a screen shot for the bandpass RLC configuration of figure E1. The orange trace for channel B is the narrow pulse forcing function response. The light and dark green traces are the output responses seen by channel A for C\ :sub:`1` = 0.5 uf and 0.2uF respectively. The light and dark magenta traces are the subtraction of the Channel A trace ( in dBV ) and the Channel B trace ( in dBV ). As we know subtraction in dB ( logs ) is the same as division in magnitude. The magenta traces are the actual input to output transfer function of the RLC network.
 
-.. image:: https://wiki.analog.com/_media/university/tools/bandpass-freq-resp.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -297,9 +286,9 @@ Below in figure E2 is a screen shot for the bandpass RLC configuration of figure
 
 Similarly in figure E3 is a screen shot for the bandstop RLC configuration of figure E1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/bandstop-freq-resp.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -311,3 +300,28 @@ Similarly in figure E3 is a screen shot for the bandstop RLC configuration of fi
 https://en.wikipedia.org/wiki/Fast_Fourier_transform http://www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf https://en.wikipedia.org/wiki/Window_function https://en.wikipedia.org/wiki/Spectral_leakage http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
 
 **Return to the** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/alice_sa_window_shot.png
+   :width: 700px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
+   :width: 550px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
+   :width: 550px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
+   :width: 550px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
+   :width: 550px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
+   :width: 550px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/alice-sa-fig-e1.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/bandpass-freq-resp.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/bandstop-freq-resp.png
+   :width: 600px

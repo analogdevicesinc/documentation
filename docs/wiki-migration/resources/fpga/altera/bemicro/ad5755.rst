@@ -44,7 +44,7 @@ More information
 ----------------
 
 -  :adi:`AD5755 Product Info <AD5755>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5755SDZ evaluation board user guide </static/imported-files/user_guides/UG-244.pdf>`
+-  :adi:`EVAL-AD5755SDZ evaluation board user guide <static/imported-files/user_guides/UG-244.pdf>`
 -  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 
@@ -235,6 +235,5 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
-
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom

@@ -44,23 +44,34 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following electromagnet circuit on the solderless breadboard\
+-  Construct the following electromagnet circuit on the solderless breadboard
 
-
-|lab_6_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_1.png
+   :alt: lab_6_image_1.png
+   :align: center
+   :width: 400px
 
 -  **Note that the 100 Ω resistors get very hot due to Joule heating, so avoid coming in contact with them** Using 1mH or 10mH inductor will draw less current and make stronger magnetic field.
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
-|lab_6_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_1.png
+   :alt: lab_6_assembly_image_1.png
+   :align: center
+   :width: 900px
 
--  Add the following Hall effect sensor circuit to the solderless breadboard\
+-  Add the following Hall effect sensor circuit to the solderless breadboard
 
-|lab_6_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_2.png
+   :alt: lab_6_image_2.png
+   :align: center
+   :width: 800px
 
--  Refer to the illustration below for one way to install the Hall effect sensor components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the Hall effect sensor components in the solderless breadboard
 
-|lab_6_assembly_image_2b.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_2b.png
+   :alt: lab_6_assembly_image_2b.png
+   :align: center
+   :width: 1100px
 
 -  Run PixelPulse on the computer and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -68,9 +79,12 @@ Procedure
 -  Set up PixelPulse to measure voltage on Channel A
 -  Observe and record the DC voltage on Channel A with the electromagnet far from the sensor chip and define this as V\ :sub:`OUT,Z`
 -  This voltage is ideally mid-supply, which is 2.5V on a 5.0 V supply, but it will differ from mid-supply due to DC offsets in the sensor and op-amp that get multiplied by the op-amp closed-loop gain; the output offset voltage may be changed by adding a resistor R4 between the 5.0 V supply and the op-amp summing node on Pin 6.
--  Refer to the following schematic for the placement of R4, but do not install any resistor here at this time\
+-  Refer to the following schematic for the placement of R4, but do not install any resistor here at this time
 
-|lab_6_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_3.png
+   :alt: lab_6_image_3.png
+   :align: center
+   :width: 800px
 
 -  Calculate the op-amp closed-loop gain
 -  Our objective is to place the sensor output voltage with no applied magnetic field as close as possible to the lower end of its linear range, which is 0.5 V. We calculate the value of R4 in the next few steps. It's important to note that the 5.0 V supply will actually be at about 4.8 V to 4.9 V due to the IR drop (internal to the M1K) that is produced by the 150 mA current that drives the electromagnet and that the resistor values are limited and have +/-5% tolerances, so the final voltage will not be perfect. We will designate V\ :sub:`SUPPLY` as the supply voltage and V\ :sub:`MID` as the mid-supply voltage.
@@ -88,9 +102,12 @@ Procedure
 -  Calculate the value of R4 by noting that the voltage across R4 is the difference between V\ :sub:`SUPPLY` and V\ :sub:`CM`, as R4 = (V\ :sub:`SUPPLY` - V\ :sub:`CM`)/I\ :sub:`R4`
 -  Select a resistor from the kit that is closest to this value for R4; unless the calculated value is very close to a value available in the kit, round up in order to make any error result in a higher output voltage
 -  Place R4 in the circuit as shown in the schematic above
--  Refer to the illustration below for one way to install R4 in the solderless breadboard\
+-  Refer to the illustration below for one way to install R4 in the solderless breadboard
 
-|lab_6_assembly_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_3.png
+   :alt: lab_6_assembly_image_3.png
+   :align: center
+   :width: 500px
 
 -  Verify that V\ :sub:`OUT,Z` has shifted down to approximately 0.5 V, and that there is some error in this due to supply voltage uncertainties, imperfect R4 value, and resistor tolerances
 -  Remove the 0.1 μF capacitor and observe the increase in noise on V\ :sub:`OUT,Z`; can you explain why this happens?
@@ -100,13 +117,19 @@ Procedure
 -  Change the orientation of current flow in the inductor if necessary in order to cause the sensor output voltage to *increase* as the electromagnet moves closer to the sensor (Explain what is happening here.)
 -  Move the electromagnet again such that the top side of the inductor is touching the top if the AD22151 chip and maneuver it to obtain the highest output voltage reading and record this as V\ :sub:`OUT,MAX`
 -  Take the average of the V\ :sub:`OUT,Z` and V\ :sub:`OUT,MAX` readings and record this as V\ :sub:`OUT,AVG`
--  Add the following comparator circuit to the solderless breadboard\
+-  Add the following comparator circuit to the solderless breadboard
 
-|lab_6_image_4.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_4.png
+   :alt: lab_6_image_4.png
+   :align: center
+   :width: 800px
 
--  Refer to the illustration below for one way to install the comparator circuit\
+-  Refer to the illustration below for one way to install the comparator circuit
 
-|lab_6_assembly_image_4a.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_4a.png
+   :alt: lab_6_assembly_image_4a.png
+   :align: center
+   :width: 1800px
 
 -  Slowly move the electromagnet toward the top of AD22151 sensor and observe position where the LED turns on
 -  Slowly move the electromagnet away from the AD22151 sensor and observe the position where the LED turns off
@@ -166,20 +189,3 @@ Observations and Conclusions
 -  Hysteresis can be added to a comparator to prevent chattering that occurs with noisy slow-moving input signals
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_6_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_1.png
-   :width: 400px
-.. |lab_6_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_1.png
-   :width: 900px
-.. |lab_6_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_2.png
-   :width: 800px
-.. |lab_6_assembly_image_2b.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_2b.png
-   :width: 1100px
-.. |lab_6_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_3.png
-   :width: 800px
-.. |lab_6_assembly_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_3.png
-   :width: 500px
-.. |lab_6_image_4.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_image_4.png
-   :width: 800px
-.. |lab_6_assembly_image_4a.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_6_assembly_image_4a.png
-   :width: 1800px

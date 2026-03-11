@@ -50,7 +50,8 @@ The driver itself is generic and can be used with any controller, but the contro
 -  gpio_remove() - free memory allocated by gpio_get_optional().
 -  gpio_direction_output() - set GPIO as digital output and set the output level.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7134_platform_drv.png
+   :align: center
 
 .. container:: centeralign
 
@@ -153,7 +154,7 @@ Downloads
 Using the API
 -------------
 
-The following link shows an example of using the driver with two devices working in tandem with a Xilinx platform: :git-no-OS:`projects/ad713x_fmcz/src/ad713x_fmc`.c
+The following link shows an example of using the driver with two devices working in tandem with a Xilinx platform: :git-no-OS:`projects/ad713x_fmcz/src/ad713x_fmc.c`
 
 More information
 ================
@@ -163,5 +164,3 @@ More information
 
    See `more-information <https://wiki.analog.com/more-information>`_
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7134_platform_drv.png

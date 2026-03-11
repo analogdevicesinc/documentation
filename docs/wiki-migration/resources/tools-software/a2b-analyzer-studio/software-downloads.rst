@@ -14,33 +14,33 @@ A2B Analyzer Studio - Current Release (Rev. 1.1.0)
 
 Released: December 2025
 
-|image1| ``a2b_analyzer_studio-1.1.222-latest-win-x64.exe``
+|image1| `a2b_analyzer_studio-1.1.222-latest-win-x64.exe <https://download.analog.com/A2BSW-11/1.1.0/a2b_analyzer_studio-1.1.222-latest-win-x64.exe>`_
 
-|image2| ``a2b_analyzer_studio-1.1.222-latest-linux-x86_64.AppImage``
+|image2| `a2b_analyzer_studio-1.1.222-latest-linux-x86_64.AppImage <https://download.analog.com/A2BSW-11/1.1.0/a2b_analyzer_studio-1.1.222-latest-linux-x86_64.AppImage>`_
 
-|image3| ``a2b_analyzer_studio-1.1.222-latest-macos-arm64.pkg``
+|image3| `a2b_analyzer_studio-1.1.222-latest-macos-arm64.pkg <https://download.analog.com/A2BSW-11/1.1.0/a2b_analyzer_studio-1.1.222-latest-macos-arm64.pkg>`_
 
 A2B Analyzer Studio - Current Release (Rev. 1.0.1)
 --------------------------------------------------
 
 Released: July 2025
 
-|image4| ``a2b_analyzer_studio-1.0.259-latest-win-x64.exe``
+|image4| `a2b_analyzer_studio-1.0.259-latest-win-x64.exe <https://download.analog.com/A2BSW-11/1.0.1/a2b_analyzer_studio-1.0.259-latest-win-x64.exe>`_
 
-|image5| ``a2b_analyzer_studio-1.0.259-latest-linux-x86_64.AppImage``
+|image5| `a2b_analyzer_studio-1.0.259-latest-linux-x86_64.AppImage <https://download.analog.com/A2BSW-11/1.0.1/a2b_analyzer_studio-1.0.259-latest-linux-x86_64.AppImage>`_
 
-|image6| ``a2b_analyzer_studio-1.0.259-latest-macos-x64.pkg``
+|image6| `a2b_analyzer_studio-1.0.259-latest-macos-x64.pkg <https://download.analog.com/A2BSW-11/1.0.1/a2b_analyzer_studio-1.0.259-latest-macos-arm64.pkg>`_
 
 A2B Analyzer Studio - Previous Release (Rev. 1.0.0)
 ---------------------------------------------------
 
 Released: July 2025
 
-|image7| ``a2b_analyzer_studio-1.0.253-latest-win-x64.exe``
+|image7| `a2b_analyzer_studio-1.0.253-latest-win-x64.exe <https://download.analog.com/A2BSW-11/1.0.0/a2b_analyzer_studio-1.0.253-latest-win-x64.exe>`_
 
-|image8| ``a2b_analyzer_studio-1.0.253-latest-linux-x86_64.AppImage``
+|image8| `a2b_analyzer_studio-1.0.253-latest-linux-x86_64.AppImage <https://download.analog.com/A2BSW-11/1.0.0/a2b_analyzer_studio-1.0.253-latest-linux-x86_64.AppImage>`_
 
-|image9| ``a2b_analyzer_studio-1.0.253-latest-macos-x64.pkg``
+|image9| `a2b_analyzer_studio-1.0.253-latest-macos-x64.pkg <https://download.analog.com/A2BSW-11/1.0.0/a2b_analyzer_studio-1.0.253-latest-macos-arm64.pkg>`_
 
 For A\ :sup:`2`\ B Bus Analyzer downloads see :doc:`A2B Bus Analyzer Software Downloads </wiki-migration/resources/tools-software/a2b-bus-analyzer/software-downloads>`
 

@@ -116,19 +116,19 @@ The standard features - Rx1, Rx2, USB OTG work as previously. See how to add the
 
 With a few more holes in the case, and a few dollars of cables, this should give you something like (this connects the additional Rx and Tx, and CLK input):
 
-.. image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_with_wires.png
-   :width: 400px
+
+|image7|
 
 .. admonition:: Download
    :class: download
 
    
-   -  `Rev D Schematics <https://wiki.analog.com/_media/./plutosdr_schematic_revd_0.1.pdf>`_
-   -  `Rev D Gerbers <https://wiki.analog.com/_media/./plutosdr_gerber_revd.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
-   -  `Rev D Bill of materials <https://wiki.analog.com/_media/./plutosdr_bom_revd.xlsx>`_
-   -  `Rev D Allegro Board File <https://wiki.analog.com/_media/./plutosdr_brd_revd.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
-   -  `Rev D Cadence Project <https://wiki.analog.com/_media/./plutosdr_cadence_revd.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
-   -  `Rev B 3D model (Case, bare PCB, connectors) <https://wiki.analog.com/_media/./pluto_revb_3d.zip>`_ are the same as previous versions.
+   -  `Rev D Schematics <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_revd_0.1.pdf>`_
+   -  `Rev D Gerbers <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_revd.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
+   -  `Rev D Bill of materials <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_revd.xlsx>`_
+   -  `Rev D Allegro Board File <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_revd.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
+   -  `Rev D Cadence Project <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_cadence_revd.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
+   -  `Rev B 3D model (Case, bare PCB, connectors) <https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_revb_3d.zip>`_ are the same as previous versions.
    -  There are few pictures of rev D in the `Marketing <https://wiki.analog.com/../marketing>`_ section as well.
    
 
@@ -152,12 +152,12 @@ Revision B
       Although the below files indicates the Xilinx ``XC7Z010-1CLG225C`` is used in the PlutoSDR, it is actually the Xilinx ``XC7Z010-1CLG225C4334`` (a single core version before the 7007 was released). We keep using the "special" version. If you are starting a new design - use the ``XC7Z007S-1CLG225C``.
 
    
-   -  `Rev B Schematics <https://wiki.analog.com/_media/./plutosdr_schematic_revb.pdf>`_
-   -  `Rev B Gerbers <https://wiki.analog.com/_media/./plutosdr_gerber_revb.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
-   -  `Rev B Bill of materials <https://wiki.analog.com/_media/./plutosdr_bom_revb.xls>`_
-   -  `Rev B Allegro Board File <https://wiki.analog.com/_media/./plutosdr_brd_revb.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
-   -  `Rev B Cadence Project <https://wiki.analog.com/_media/./plutosdr_cadence_project_revb.zip>`_
-   -  `Rev B 3D model (Case, bare PCB, connectors) <https://wiki.analog.com/_media/./pluto_revb_3d.zip>`_
+   -  `Rev B Schematics <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_revb.pdf>`_
+   -  `Rev B Gerbers <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_revb.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_)
+   -  `Rev B Bill of materials <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_revb.xls>`_
+   -  `Rev B Allegro Board File <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_revb.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ to view.
+   -  `Rev B Cadence Project <https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_cadence_project_revb.zip>`_
+   -  `Rev B 3D model (Case, bare PCB, connectors) <https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_revb_3d.zip>`_
    -  There are few pictures of rev B in the `Marketing <https://wiki.analog.com/../marketing>`_ section as well.
    
 
@@ -168,7 +168,7 @@ Why do a Rev C?
 -  our "low-risk" OTG changes, caused problems, since we put the VBUS monitoring (R88) on the wrong side of the fuse, and the inclusion of the DC choke. While the DC choke reduces noise, and there is no DC difference between PGDN, and GND, on certain hosts, with certain operating systems, there can be a 250mV AC difference between PGND and GND. Since the analog comparators inside the Microchip USB3320 will be referenced to GND (quiet), it appears to toggle between host mode and device mode. A temp workaround was to change this resistor (R88) from the recommended USB spec of 1k to 24.9k. R88 can be found on the back side, underneath the USB connector.
 
 
-|image7|
+|image8|
 
 -  We also had issue on ESD testing, and will be adding an ESD protection to the RF connector.
 -  As a cost optimization (and feature enhancement), we may redo some of the power section (replacing the NCP339AFCT2G, ADM1177, with the `LTC4413 <http://cds.linear.com/docs/en/datasheet/441312ff.pdf>`_) - this is still TBD based on lab work to be done. One of the usability issues - is that the 2 NCP339AFCT2G devices are designed to be break before make - which causes the power supply to reset if you plug the ADALM-PLUTO into a PC (which causes it to boot), and then eventually a power supply (which causes the supply to disappear for a small time, and then re-appear). We don't think this is a huge issue, but it would be enhance the usability. It would mean however, that we loose the ability to read USB voltage/current (which we currently do in the :adi:`ADM1177`.
@@ -221,7 +221,7 @@ Like all things, PlutoSDR is a integration/copy/paste of previous known working 
 .. [2]
    Power Supply Rejection Ratio
 
-.. |./back.png| image:: https://wiki.analog.com/_media/back.png
+.. |./back.png| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/back.png
    :width: 200px
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_info_version.png
    :width: 600px
@@ -235,5 +235,7 @@ Like all things, PlutoSDR is a integration/copy/paste of previous known working 
    :width: 200px
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_c_zoom.png
    :width: 195px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_r88.png
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_with_wires.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_r88.png
    :width: 500px

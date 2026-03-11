@@ -84,9 +84,9 @@ Echo Clock mode yes                yes                yes
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
--  Pick the required interface configuration (:git-hdl:`projects/ad4630_fmc/zed/README`.md)
+-  Pick the required interface configuration (:git-hdl:`projects/ad4630_fmc/zed/README.md`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
 HDL Downloads

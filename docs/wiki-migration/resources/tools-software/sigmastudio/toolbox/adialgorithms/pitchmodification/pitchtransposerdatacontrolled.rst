@@ -93,7 +93,7 @@ Data RAM                   1019
 Parameter RAM              4
 ========================== =================================
 
-.. |pitchtranposedata.jpg| image:: https://wiki.analog.com/_media/pitchtranposedata.jpg
+.. |pitchtranposedata.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitchtranposedata.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/pitchtransposerexample.png
-.. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/Before_Pitch_Shift.png
-.. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/After_Pitch_Shift.png
+.. |Before_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/Before_Pitch_Shift.png
+.. |After_Pitch_Shift.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/pitchmodification/After_Pitch_Shift.png

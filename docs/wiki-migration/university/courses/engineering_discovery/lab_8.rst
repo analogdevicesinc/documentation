@@ -40,13 +40,19 @@ Procedure
 -  Disable "Repeated Mode" Operation and change the "Sample Time" to 1 second
 -  Set up Channel A source waveform for a 10 Hz “Triangle” output that swings between 0 V and of 2.0 V
 -  Enable X-Y plots
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
-|lab_8_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_image_1.png
+   :alt: lab_8_image_1.png
+   :align: center
+   :width: 400px
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
-|lab_8_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_assembly_image_1.png
+   :alt: lab_8_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Scale the Y-axis of the X-Y plot using the mouse and right mouse button such that the measured current ranges between 0.00 A and 0.09 A (90 mA)
 -  Observe the LED flashing, the shape of the measured current waveform, and the shape of the X-Y plot, which is a plot of the diode current vs. diode voltage
@@ -60,20 +66,29 @@ Procedure
 -  Repeat the above procedure for the green and red LEDs
 -  Observe and describe any differences seen in the behavior of the three different LEDs
 -  Change the amplitude of the triangular voltage waveform to 0.6 V and adjust the X-Y vertical axis scale to range from 0.00 V to 0.09 V
--  Replace the LED with a 1N914 signal diode as shown in the following schematic\
+-  Replace the LED with a 1N914 signal diode as shown in the following schematic
 
-|lab_8_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_image_2.png
+   :alt: lab_8_image_2.png
+   :align: center
+   :width: 350px
 
 -  Increase the peak level of the applied triangular voltage waveform to 0.9 V in 0.1 V increments and observe the change in the measured current waveform and X-Y plot as each step is made
 -  Observe the exponential shape of the diode current versus voltage characteristic and that the knee of the curve -- commonly referred to as the "cut in" voltage -- is nominally between 0.70 V and 0.75 V
 -  Set up Channel A to source 5 V DC and Channel B to measure voltage
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
-|lab_8_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_image_3.png
+   :alt: lab_8_image_3.png
+   :align: center
+   :width: 600px
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
-|lab_8_assembly_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_assembly_image_2.png
+   :alt: lab_8_assembly_image_2.png
+   :align: center
+   :width: 1000px
 
 -  Record the DC voltage on Channel A
 -  Repeat the above for the green and red LEDs
@@ -101,14 +116,3 @@ Observations and Conclusions
 -  Diode I/V characteristics are affected by self heating
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_8_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_image_1.png
-   :width: 400px
-.. |lab_8_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_assembly_image_1.png
-   :width: 1000px
-.. |lab_8_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_image_2.png
-   :width: 350px
-.. |lab_8_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_image_3.png
-   :width: 600px
-.. |lab_8_assembly_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_8_assembly_image_2.png
-   :width: 1000px

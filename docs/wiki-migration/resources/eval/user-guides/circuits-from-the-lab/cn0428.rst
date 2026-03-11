@@ -268,7 +268,7 @@ Before setting up the Water Quality Measurement System, it is important to progr
    If you are not sure whether you downloaded the correct file or not, check if the downloaded file size matches the size of the .hex file shown to the left of the "Raw" button.
 
 
-Alternately, the entire archive including the .hex file and the CrossCore Project source code can be downloaded from git or as a zip file from the `main EVAL-ADICUP3029 github repository folder <https://github.com/analogdevicesinc/EVAL-ADICUP3029>`_.
+Alternately, the entire archive including the .hex file and the CrossCore Project source code can be downloaded from git or as a zip file from the :git-EVAL-ADICUP3029:`main EVAL-ADICUP3029 github repository folder <EVAL-ADICUP3029>`.
 
 Following are the steps then required to be completed to set up the :adi:`EVAL-ADICUP3029 board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` for Water Quality Measurements:
 

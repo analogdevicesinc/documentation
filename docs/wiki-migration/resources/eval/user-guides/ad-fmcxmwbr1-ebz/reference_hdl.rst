@@ -22,7 +22,7 @@ For more details regarding the digital interface, check the main :doc:`ADRV9009Z
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
@@ -37,7 +37,8 @@ AD-FMCXMWBR1-EBZ Specific Boot Files
 .. admonition:: Download
    :class: download
 
-   |FMCXMWBR1 HDL project|
+   :git-hdl:`FMCXMWBR1 HDL project <projects/adrv9009zu11eg/adrv2crr_fmcxmwbr1>`
+
 
 Projects list and dependencies for main
 ---------------------------------------
@@ -2314,5 +2315,3 @@ Help & Support
 
 .. image:: https://wiki.analog.com/_media/navigation AD-FMCXMWBR1-EBZ#./
    :alt: Hardware#.:\|Reference HDL Design#.:\|Software
-
-.. |FMCXMWBR1 HDL project| image:: https://wiki.analog.com/_media/:git-hdl:`projects/adrv9009zu11eg/adrv2crr_fmcxmwbr1`

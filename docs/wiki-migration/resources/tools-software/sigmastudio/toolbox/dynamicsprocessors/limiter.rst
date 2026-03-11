@@ -166,7 +166,7 @@ Algorithm Details
 | Parameter RAM (ADAU144x and ADAU176x) | 15                                  |
 +---------------------------------------+-------------------------------------+
 
-.. |limiterpic1.png| image:: https://wiki.analog.com/_media/limiterpic1.png
+.. |limiterpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/limiterpic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/screenhunter_711_dec._01_09.18.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/screenhunter_712_dec._01_09.19.jpg
    :width: 200px

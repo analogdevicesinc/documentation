@@ -11,14 +11,16 @@ This guide shows how AD9146-M5375-EBZ works with :adi:`SDP-H1 <en/design-center/
 Typical Setup
 -------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_sdp-h1.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 1a. EVAL-AD9146 Setup with SDP-H1*\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -35,7 +37,7 @@ Helpful Files:
 
 -  `UG-1630 <https://wiki.analog.com/_media/resources/eval/dpg/ad9146-m5375_evaluation_board_user_guide.pdf>`_ for DPG3 users
 -  Data Sheet: :adi:`AD9146 <static/imported-files/data_sheets/AD9146.pdf>`
--  IBIS Model: :adi:`AD9146 </Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9146.ibs>`
+-  IBIS Model: :adi:`AD9146 <Analog_Root/static/techSupport/designTools/ibisModels/license/ibis_general.html?ibs=AD9146.ibs>`
 -  Schematic: `AD9146-M5375-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9146-m5375-ebz_revb_schematic.pdf>`_
 -  Bill of Materials: `AD9146-M5375-EBZ RevB <https://wiki.analog.com/_media/resources/eval/dpg/ad9146-m5375-ebz_revb_bom_customer.xls>`_
 -  PCB Gerber files: `AD9146-M5375-EBZ RevA <https://wiki.analog.com/_media/resources/eval/dpg/ad9146-m5375-ebz_reva_gerber_files.zip>`_
@@ -94,33 +96,30 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |ad9146_ace_ads7-v2.png|\ *Figure 2b. ACE Initial Configuration Wizard when using ADS7-V2*\
+   |ad9146_ace_ads7-v2.png|\ *Figure 2b. ACE Initial Configuration Wizard when using ADS7-V2*\
 
 
--  If using **SDP-H1**, set **DAC frequency** to 100 MHz, **Interpolation** to 2x and **Data Format** to binary format.
-   -  If using **ADS7-V2**, set **DAC frequency** to 500 MHz, **Interpolation** to 2x and **Data Format** to binary format.
+::
 
--  In ACE, AD9146 on-chip PLL can be enabled or not. To enable the on-chip PLL check the **Enable PLL Clock** in the wizard under **AD9146 PLL Setup**. Select **Auto Mode** for PLL Mode option. The **PLL Locked** LED on the ACE Board View should light up green. If the LED doesn't light up, try reapplying the wizard configuration and make sure that the VCO frequency is within the valid range of 1 - 2.1 GHz.
--  Start DPG Lite or DPG Downloader.
-
-   -  At the SDP-H1 part of the software, the device part number and **DCO frequency** of around **100 MHz** should be displayed.
-   -  At the ADS7-V2 part of the software, the device part number and **DCO frequency** of around **500 MHz** should be displayed.
-
--  In DPG Lite or DPG Downloader, from the **Add Generator Waveforms** pulldown menu, select **Single Tone** and apply the settings as shown in Figures 3a and 3b. The data rate in DPG software should be equal to the data rate in ACE.
-
-   -  When using SDP-H1, set **Data Rate** to 50 MHz and **Desired Frequency** to 10 MHz.
-   -  When using ADS7-V2, set **Data Rate** to 250 MHz and **Desired Frequency** to 21 MHz.
-
--  Continuing on setting up DPG Lite or DPG Downloader, set **DAC resolution** to 16 bits. Check off the **Generate Complex Data (I & Q)** box.
+     * If using **SDP-H1**, set **DAC frequency** to 100 MHz, **Interpolation** to 2x and **Data Format** to binary format.
+     * If using **ADS7-V2**, set **DAC frequency** to 500 MHz, **Interpolation** to 2x and **Data Format** to binary format.
+   * In ACE, AD9146 on-chip PLL can be enabled or not. To enable the on-chip PLL check the **Enable PLL Clock** in the wizard under **AD9146 PLL Setup**. Select **Auto Mode** for PLL Mode option. The **PLL Locked** LED on the ACE Board View should light up green. If the LED doesn't light up, try reapplying the wizard configuration and make sure that the VCO frequency is within the valid range of 1 - 2.1 GHz.
+   * Start DPG Lite or DPG Downloader.
+     * At the SDP-H1 part of the software, the device part number and **DCO frequency** of around **100 MHz** should be displayed.
+     * At the ADS7-V2 part of the software, the device part number and **DCO frequency** of around **500 MHz** should be displayed.
+   * In DPG Lite or DPG Downloader, from the **Add Generator Waveforms** pulldown menu, select **Single Tone** and apply the settings as shown in Figures 3a and 3b. The data rate in DPG software should be equal to the data rate in ACE.
+     * When using SDP-H1, set **Data Rate** to 50 MHz and **Desired Frequency** to 10 MHz.
+     * When using ADS7-V2, set **Data Rate** to 250 MHz and **Desired Frequency** to 21 MHz.
+   * Continuing on setting up DPG Lite or DPG Downloader, set **DAC resolution** to 16 bits. Check off the **Generate Complex Data (I & Q)** box.\\
 
 .. container:: centeralign
 
-   \ |image3|\ *Figure 3a. DPG Lite session for SDP-H1*\
+   |resources-eval-dpg-ad9146_dpg-lite_sdp-h1.png|//Figure 3a. DPG Lite session for SDP-H1//
 
 
 .. container:: centeralign
 
-   \ |image4|\ *Figure 3b. DPG Lite session for ADS7-V2*\
+   |image2|\ *Figure 3b. DPG Lite session for ADS7-V2*\
 
 
 -  Select the in-phase tone from the **I Data Vector** pulldown menu and the quadrature tone from the **Q Data Vector** pulldown menu.
@@ -128,12 +127,12 @@ Quick Start Guide
 
 .. container:: centeralign
 
-   \ |image5|\ *Figure 4a. EVAL-AD9146 FFT for Data Rate = 50 MHz, Fout = 10 MHz*\
+   \ |image3|\ *Figure 4a. EVAL-AD9146 FFT for Data Rate = 50 MHz, Fout = 10 MHz*\
 
 
 .. container:: centeralign
 
-   \ |image6|\ *Figure 4b. EVAL-AD9146 FFT for Data Rate = 250 MHz, Fout = 21 MHz*\
+   |image4|\ *Figure 4b. EVAL-AD9146 FFT for Data Rate = 250 MHz, Fout = 21 MHz*\
 
 
 Reconfiguring the Evaluation Board
@@ -146,7 +145,7 @@ The AD9146 has an on-chip phase-locked loop (PLL) that uses the REFCLKP and REFC
 
 .. container:: centeralign
 
-   \ |image7|\ *Figure 5. DAC clock input is connected to AD9516 clock divider/buffer (default)*\
+   \ |image5|\ *Figure 5. DAC clock input is connected to AD9516 clock divider/buffer (default)*\
 
 
 Jumpers for Selecting DAC Output Configuration
@@ -155,13 +154,13 @@ Jumpers for Selecting DAC Output Configuration
 The AD9146-M5375-EBZ evaluates both the DAC I/Q outputs as well as the modulator RF outputs. Table 1 lists the jumper configurations and the SMA connections needed to view either the DAC IF outputs or the RF outputs on the spectrum analyzer.
 
 
-|image8|
+|image6|
 
 The evaluation board has four three pad solder jumpers, two for each DAC (IOUT1N and IOUT1P, and IOUT2 N and IOUT2P). Use these solder jumpers, JP4 through JP7, to choose between viewing the DAC output or the modulator output. By default, the jumpers are configured to view the DAC output. For the modulator, solder the inner pads.
 
 .. container:: centeralign
 
-   \ |image9|\ *Figure 6. DAC I/Q Outputs to Baluns (default)*\
+   \ |image7|\ *Figure 6. DAC I/Q Outputs to Baluns (default)*\
 
 
 Hardware Provisions for Power Supplies
@@ -170,7 +169,7 @@ Hardware Provisions for Power Supplies
 The AD9146-M5375-EBZ has five, two pin jumpers for each of the different power supplies on the board (see Table 2). By default, all of these jumpers must be populated.
 
 
-|image10|
+|image8|
 
 Jumper for Transmit Enable pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,32 +178,30 @@ The AD9146 has a transmit enable feature (active low) that allows the user to co
 
 .. container:: centeralign
 
-   \ |image11|\ *Figure 7. TXENABLE Pin is connected to the controller (default)*\
+   \ |image9|\ *Figure 7. TXENABLE Pin is connected to the controller (default)*\
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_sdp-h1.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_ads7-v2ebz.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_ads7-v2ebz.jpg
    :width: 600px
 .. |ad9146_ace_sdp-h1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_ace_sdp-h1.png
    :width: 600px
 .. |ad9146_ace_ads7-v2.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_ace_ads7-v2.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_dpg-lite_sdp-h1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_dpg-lite_ads7-v2.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_dpg-lite_ads7-v2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_-_sdp-h1.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_-_sdp-h1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_-_ads7-v2.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_-_ads7-v2.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_clock_source_jumpers.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_clock_source_jumpers.jpg
    :width: 200px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_jumpers_table.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_jumpers_table.jpg
    :width: 800px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_jumpers.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_output_jumpers.jpg
    :width: 200px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_power_supply_jumpers_table.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_power_supply_jumpers_table.jpg
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_tx_enable_jumper.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_tx_enable_jumper.jpg
    :width: 200px
+
+.. |resources-eval-dpg-ad9146_dpg-lite_sdp-h1.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9146_dpg-lite_sdp-h1.png

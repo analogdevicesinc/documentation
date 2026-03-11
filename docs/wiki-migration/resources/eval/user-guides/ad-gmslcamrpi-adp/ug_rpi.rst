@@ -170,7 +170,7 @@ Raspberry Pi 4 Configuration
 
 -  Connect the USB-C power supply to the Raspberry Pi 4 connector.
 -  Connect the HDMI cable from the monitor to the Raspberry Pi micro HDMI connector.
--  Write the :git-gmsl#platforms-user-guides-sd-card-images-and-build-instructions>`__ on a 8GB (or more) SD card.
+-  Write the :git-gmsl:`Raspberry Pi latest SD card image <gmsl>` on a 8GB (or more) SD card.
 -  Plug the SD card into the Raspberry Pi 4 SD card slot.
 -  Connect a USB mouse and keyboard to the Raspberry Pi 4. It's possible to use either a mouse & keyboard combo or a separate mouse and keyboard.
 
@@ -181,7 +181,7 @@ Running the evaluation application
 
 Once Linux boots you'll see on the HDMI monitor the Linux desktop and on the top left corner a shortcut to the script named **video_cfg.sh**. Double-clicking on the icon will start the media-ctl configuration script to connect to the V4L2 media pipeline. It may not appear that anything happens but the script runs in background without any pop ups.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/:`Raspberry Pi latest SD card image <resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_video_cfg.png
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/rpi_video_cfg.png
    :align: center
    :width: 600px
 
@@ -207,7 +207,7 @@ Power off sequence
 Getting the software
 --------------------
 
-The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the `Analog Devices GMSL github repository <https://github.com/analogdevicesinc/gmsl>`.
+The GMSL Linux kernel drivers, the complete Linux distributions for the supported processing platforms, and software user guides can be found on the :git-gmsl:`Analog Devices GMSL github repository <gmsl>`.
 
 --------------
 

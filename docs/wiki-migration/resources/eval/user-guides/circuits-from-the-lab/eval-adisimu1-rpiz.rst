@@ -108,9 +108,8 @@ The following video is a walkthrough for the unboxing experience and a guide for
 
 Any IMU can use the indirect method of connecting to the P3 header using the ribbon cable and it's corresponding breakout board. So the following sections are going to describe how to directly mount the compatible IMUs to the EVAL-ADISIMU1-RPIZ. Please see the pictures for device mounting hole locations.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. tip::
 
@@ -157,7 +156,7 @@ Mounting Materials
 
 The image below shows the proper mounting of IMU's on Mounting Slot B.
 
-|image1|\ |image2|
+|image2|\ |image3|
 
 Mounting Slot C
 ~~~~~~~~~~~~~~~
@@ -180,7 +179,7 @@ Mounting Materials
 
 Below is an example of proper mounting of IMU's on mounting hole C
 
-|image3|\ |image4|
+|image4|\ |image5|
 
 Mounting Slot F
 ~~~~~~~~~~~~~~~
@@ -210,7 +209,7 @@ Mounting Materials
 
 Below is an image that show proper mounting of IMU's on mounting slot F.
 
-|image5|\ |image6|
+|image6|\ |image7|
 
 P7 Connection
 -------------
@@ -232,7 +231,7 @@ Mounting Materials
 
 Below is an image that show proper mounting of IMU's on mounting slot I. Ensure that the machine screws are tightened on the bottom side of the board using the hex nuts as shown below:
 
-|image7|\ |image8|
+|image8|\ |image9|
 
 Raspberry Pi Connector
 ----------------------
@@ -240,7 +239,7 @@ Raspberry Pi Connector
 The 40 pin Raspberry Pi connector of the EVAL-ADISIMU1-RPIZ mounts directly on top of the Raspberry Pi 4, or equivalents, 40 pin male headers.
 
 
-|image9|
+|image10|
 
 Headers and Jumpers
 -------------------
@@ -332,21 +331,23 @@ Schematic, PCB Layout Files, Bill of Materials
 
 *End of Document*
 
-.. |youtube>G-k81W2yJRY| image:: https://wiki.analog.com/_media/youtube>G-k81W2yJRY
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_b.jpg
+.. |youtube>G-k81W2yJRY| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>G-k81W2yJRY
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_b.jpg
    :width: 450px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202707.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202707.jpg
    :width: 332px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/adis_mounting_c.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/adis_mounting_c.jpg
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202543.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201216_202543.jpg
    :width: 420px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_f.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_f.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/hole_f.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/hole_f.jpg
    :width: 460px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_i.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/mounting_i.jpg
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201211_212825.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/20201211_212825.jpg
    :width: 425px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/dsc09075.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adismu1/dsc09075.png

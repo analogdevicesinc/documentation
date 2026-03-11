@@ -188,9 +188,8 @@ Even though there are more than a dozen or so popular capacitor types- including
 
 Unlike an “ideal” capacitor, a “real” capacitor is typified by additional “parasitic” or “non-ideal” components or behavior, in the form of resistive and inductive elements, nonlinearity, and dielectric memory. The resulting characteristics due to these components are generally specified on the capacitor manufacturer’ s data sheet . Understanding the effects of these parasitics in each application will help you select the right capacitor type.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f15.gif
-   :align: center
-   :width: 400px
+
+|image6|
 
 .. container:: centeralign
 
@@ -201,9 +200,8 @@ The four most common effects are leakage (parallel resistance), equivalent serie
 
 **Capacitor Leakage, RP:** Leakage is an important parameter in ac coupling applications, in storage applications, such as analog integrators and sample-holds, and when capacitors are used in high-impedance circuits.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f16.gif
-   :align: center
-   :width: 400px
+
+|image7|
 
 .. container:: centeralign
 
@@ -236,9 +234,8 @@ Dissipation factor also turns out to be the equivalent to the reciprocal of the 
 
 **Dielectric Absorption, RDA, CDA:** Monolithic ceramic capacitors are excellent for HF decoupling, but they have considerable dielectric absorption, which makes them unsuitable for use as the hold capacitor of a sample-hold amplifier (SHA). Dielectric absorption is a hysteresis-like internal charge distribution that causes a capacitor which is quickly discharged and then open-circuited to appear to recover some of its charge. Since the amount of charge recovered is a function of its previous charge, this is, in effect, a charge memory and will cause errors in any SHA where such a capacitor is used as the hold capacitor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f17.gif
-   :align: center
-   :width: 400px
+
+|image8|
 
 .. container:: centeralign
 
@@ -255,9 +252,8 @@ Another thing to remember about high frequency decoupling is the actual physical
 
 Ideally, HF decoupling capacitors should be surface-mount parts to eliminate lead inductance, but wire-ended capacitors are ok, providing the device leads are no longer than 1.5 mm.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f18.gif
-   :align: center
-   :width: 400px
+
+|image9|
 
 .. container:: centeralign
 
@@ -271,9 +267,8 @@ Now that we have talked about the parasitic effects of capacitors as components,
 
 As in a parallel-plate capacitor, stray capacitors are formed whenever two conductors are in close proximity to each other (especially if they are running in parallel), and are not shorted together or screened by a conductor serving as a Faraday shield.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f19.gif
-   :align: center
-   :width: 400px
+
+|image10|
 
 .. container:: centeralign
 
@@ -282,9 +277,9 @@ As in a parallel-plate capacitor, stray capacitors are formed whenever two condu
 
 Stray or “parasitic” capacitance commonly occurs between parallel traces on a PC board or between traces/planes on opposite sides of a PC board. The occurrence and effects of stray capacitance- especially at very high frequencies - are unfortunately often overlooked during circuit modeling and can lead to serious performance problems when the system circuit board is constructed and assembled; examples include greater noise, reduced frequency response, even instability.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f20.gif
-   :align: center
-   :width: 400px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -299,9 +294,8 @@ One way to minimize the effects of stray coupling is to use a Faraday shield, wh
 
 Look at Figure 8; it is an equivalent circuit showing how a high-frequency noise source, V\ :sub:`N`, is coupled into a system impedance, Z, through a stray capacitance, C. If we have little or no control over V\ :sub:`n` or the location of Z\ :sub:`1`, the next best solution is to interpose a Faraday shield:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f21.gif
-   :align: center
-   :width: 400px
+
+|image12|
 
 .. container:: centeralign
 
@@ -310,9 +304,9 @@ Look at Figure 8; it is an equivalent circuit showing how a high-frequency noise
 
 As shown, below in Figure 9, the Faraday shield interrupts the coupling electric field. Notice how the shield causes the noise and coupling currents to return to their source without flowing through Z\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f22.gif
-   :align: center
-   :width: 400px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -321,9 +315,9 @@ As shown, below in Figure 9, the Faraday shield interrupts the coupling electric
 
 Another example of capacitive coupling is in side-brazed ceramic IC packages. These DIP packages have a small, square, conducting Kovar lid soldered onto a metallized rim on the ceramic package top. Package manufacturers offer only two options: the metallized rim may be connected to one of the corner pins of the package, or it may be left unconnected. Most logic circuits have a ground pin at one of the package corners, and therefore the lid is grounded. But many analog circuits do not have a ground pin at a package corner, and the lid is left floating. Such circuits turn out to be far more vulnerable to electric field noise than the same chip in a plastic DIP package, where the chip is unshielded.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f23.gif
-   :align: center
-   :width: 400px
+
+
+|image14|
 
 .. container:: centeralign
 
@@ -334,9 +328,8 @@ Whatever the environmental noise level, it is good practice for the user to grou
 
 One case where a Faraday shield is impracticable is between the bond wires of an integrated circuit chip. This has important consequences. The stray capacitance between two chip bond wires and their associated leadframes is of the order of 0.2 pF; observed values generally lie between 0.05 and 0.6 pF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f24.gif
-   :align: center
-   :width: 400px
+
+|image15|
 
 .. container:: centeralign
 
@@ -345,9 +338,9 @@ One case where a Faraday shield is impracticable is between the bond wires of an
 
 Consider a high-resolution converter (ADC or DAC), which is connected to a high-speed data bus. Each line of the data bus, (which will be switching at around 2 to 5 V/ns),will be able to influence the converter’ s analog port via this stray capacitance; the consequent coupling of digital edges will degrade the performance of the converter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f25.gif
-   :align: center
-   :width: 400px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -356,9 +349,9 @@ Consider a high-resolution converter (ADC or DAC), which is connected to a high-
 
 This problem may be avoided by isolating the data bus, interposing a latched buffer as an interface. Although this solution involves an additional component that occupies board area, consumes power, and adds cost, it can significantly improve the converter’ s signal-to-noise.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f26.gif
-   :align: center
-   :width: 400px
+
+
+|image17|
 
 .. container:: centeralign
 
@@ -415,3 +408,27 @@ For more info on passive components see:
    :width: 100px
 .. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f11.png
    :width: 60px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f15.gif
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f16.gif
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f17.gif
+   :width: 400px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f18.gif
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f19.gif
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f20.gif
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f21.gif
+   :width: 400px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f22.gif
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f23.gif
+   :width: 400px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f24.gif
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f25.gif
+   :width: 400px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/acap_f26.gif
+   :width: 400px

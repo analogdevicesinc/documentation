@@ -20,9 +20,8 @@ A resonant circuit, also called a tuned circuit, consists of an inductor and a c
 
 A network is in resonance when the voltage and current at the network input terminals are in phase and the input impedance of the network is purely resistive.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ OR
 
 Frequency Response: It is a plot of the magnitude of the output Voltage of a resonance circuit as a function of frequency. The response, of course, starts at zero, reaches a maximum value in the vicinity of the natural resonant frequency, and then drops again to zero as ω becomes infinite. The frequency response is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -60,9 +58,8 @@ The two additional frequencies, ω\ :sub:`1` and ω\ :sub:`2`, are also indicate
 
 :math:`ß = omega_2 - omega_1` (3)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -79,18 +76,15 @@ Procedure:
 
 1. Set up the RLC circuit as shown in figure 4 on your solderless breadboard, with the component values R\ :sub:`S` = 100 Ω, R\ :sub:`1` = 1 KΩ, C\ :sub:`1` = 1 µF and L\ :sub:`1`\ = 20 mH.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4: Parallel Resonance Circuit with a series resistance connected to a source
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/parallel_res_cir_bb.png
-   :align: center
-   :width: 500px
+   |image5|
 
 .. container:: centeralign
 
@@ -129,9 +123,8 @@ Use the Start Frequency button to set the frequency sweep to start at 10 Hz and 
 
 You should now be able to press the green Run button and run the frequency sweep. After the sweep is completed you should see something like the screen shot in figure A1. You may want to use the LVL and dB/div buttons to optimize the plots to best fit the screen grid.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-screen1.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -148,3 +141,16 @@ You should now be able to press the green Run button and run the frequency sweep
 :doc:`ALICE Desk-top User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/parallel_res_cir_bb.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-screen1.png
+   :width: 600px

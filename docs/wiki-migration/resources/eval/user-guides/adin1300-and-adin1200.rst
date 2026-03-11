@@ -1,7 +1,7 @@
 ADIN1300 and ADIN1200 Product Wiki Page and Evaluation Documentation
 ====================================================================
 
-The product pages for the ADIN1300 and ADIN1200 Ethernet PHYs can be found on the link below: :adi:`en/products/adin1300`.html :adi:`en/products/adin1200`.html
+The product pages for the ADIN1300 and ADIN1200 Ethernet PHYs can be found on the link below: :adi:`en/products/adin1300.html` :adi:`en/products/adin1200.html`
 
 **Content**
 

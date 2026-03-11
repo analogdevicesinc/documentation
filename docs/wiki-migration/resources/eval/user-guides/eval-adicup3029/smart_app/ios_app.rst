@@ -37,17 +37,20 @@ Follow below instructions to run the App.
 -  Turn on device Bluetooth by navigating to Settings -> Bluetooth -> Turn Slider **ON**.
 -  On the iOS homescreen navigate to **IoTNode** and tap to open.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/smart_app/smart_app_logo.png
+   :align: center
+   :width: 200px
 
 -  Once open, the app should automatically find Bluetooth devices within range, so you'll want to find and open the project you are working on.
 -  Once connected, the app will provide you an option for which sensor(s) you are connected to that Bluetooth device.
 
    -  It's usually only a single sensor, so make sure it's "Checked on" and hit "View Data".
 
--  You are now connected, and data should start to display on the app.\
+-  You are now connected, and data should start to display on the app.
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/smart_app/smart_app_ios_all_screens.png
+   :align: center
+   :width: 800px
 
 Interfacing Data to IoTNode
 ---------------------------
@@ -55,8 +58,3 @@ Interfacing Data to IoTNode
 The **IoTNode** app supports an easy to interface registration, configuration, and data packet system. For complete details on writing embedded code to interface to the IoTNode smart app, please check out the link below.
 
 -  :doc:`Interfacing Data with IoTNode </wiki-migration/resources/eval/user-guides/eval-adicup3029/smart_app/ble_connect>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/smart_app/smart_app_logo.png
-   :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/smart_app/smart_app_ios_all_screens.png
-   :width: 800px

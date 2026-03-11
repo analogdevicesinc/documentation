@@ -103,10 +103,8 @@ Hardware Setup
 
 At this point everything is set up and it is possible to start the evaluation of the ADI hardware. To capture data from the ADC run the *data_capture.bat* script located in the *DataCapture* folder from the reference design .zip file. Every time the script is run a new batch of 8192 samples are read from the ADC at the ADC's maximum sampling rate and saved into the *Acquisition.csv* file located in the same folder as the data capture script. On the UART terminal messages will be displayed to show the status of the program running on the FPGA as shown in the picture below.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
-   :alt: teraterm_adc.png
-   :align: center
-   :width: 400px
+
+|teraterm_adc.png|
 
 .. tip::
 
@@ -121,3 +119,6 @@ More information
 
    See `ez_common <https://wiki.analog.com/ez_common>`_
 
+
+.. |teraterm_adc.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
+   :width: 400px

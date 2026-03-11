@@ -24,9 +24,8 @@ Sub-sampled waveform capture
 
 If you display a buffer of raw data captured from a signal with a higher frequency than even one tenth the sample rate (10 samples per cycle), you will still see a waveform; just not much detail. The following screen shot, in figure1, is taken with the ALM1000 sampling a 20.10 KHz square wave. As we can see there are only five sample points per cycle and the waveform does not look much like a square wave. The sampled data is drawn two different ways. The light green trace is drawn with lines connecting the sampled values. The dark green trace is drawn with horizontal and vertical lines or stair-steps connecting the sampled values. This is sometimes a better way to visualize the sampling process.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -35,9 +34,9 @@ If you display a buffer of raw data captured from a signal with a higher frequen
 
 The 2.17 version of the ALM1000 board firmware allows it to be reconfigured from sampling the four measurement channels (2 voltage and 2 current) at 100 KSPS to sampling two measurement channels (2 voltage, 2 current or 1 voltage / 1 current) at 200 KSPS. This mode offers better time resolution but still often not enough. The following screen shot, figure 2, is taken with the ALM1000 sampling the same square wave at 200 KSPS.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,9 +49,8 @@ If there are less than 2 samples per cycle you will see an "alias", or frequency
 
 If certain conditions are met where the samples fall at different points in each cycle of the input signal, the alias is unique, meaning you can "unwrap" or re-sequence the raw data to reveal the true waveform. This process is known as sub-sampling or equivalent time sampling and is a technique used by many digital oscilloscopes to display high frequency signals. It is similar to a radio receiver where two frequencies are "mixed" to produce the "sum and difference" frequencies to shift from a high frequency to a lower one. Indeed, many ADCs (and DACs) in the Analog Devices catalog are often used to perform this frequency translation function in systems like cell phone towers and WiFi networks. The next screen shot, figure 3, is taken again with a 20.10 KHz as the input but now using ETS techniques. The approximately 20.1 KHz input frequency is now down converted or shifted to a much lower frequency around 333 Hz or a factor of 60:1. This multiplies the 100 KSPS to an effective sample rate of about 6 MSPS. So there are now 60 X 5 or 300 samples per cycle (or you can think of it as the new lower frequency signal has been sampled at 100 KSPS). The software scales the horizontal time scale based on the new effective sample rate. The time per Div is the same 20 uSec/Div as in the previous two screens but now we can see much more detail in the waveform including the single pole response of the analog inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -92,9 +90,8 @@ Sub-sampled waveform capture
 
 If you display a buffer of raw data captured from a signal with a higher frequency than even one tenth the sample rate (10 samples per cycle), you will still see a waveform; just not much detail. If the sampling frequency is not exactly an integer fraction (or multiple) of the input frequency each sample represents a unique point somewhere along the repeating waveform. For example if we look at figure 4 we see a case where the sample frequency is slightly slower than the input frequency, by a factor of 19/20. So from the top graph we see that 20 unique points are obtained from 20 different cycles of the input signal. If these sample points are then assembled in the proper order we get the graph on the bottom.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -148,9 +145,8 @@ global EnableETSScreen; EnableETSScreen = 1 global EnableHSsampling; EnableHSsam
 
 Three new control widgets will now appear in the main ALICE scope window, figure 5. Two will appear along the top next to the Time per division entry. The one on the right is where the User will enter the target minimum input frequency that is to be displayed. More later in this guide on how to determine this frequency. Next to that is where the time (horizontal X) multiplication factor will appear. The program will attempt to calculate this vale based on the target minimum input frequency entered and the chosen sample rate. This “guess” can be very off from the actual multiplication factor based on how accurate the User guessed at the entered target minimum input frequency. Either the Fmin or MulX values can be adjusted to more accurately “calibrate” the horizontal time scale. More on doing that adjustment later in the guide as well. The third button added will appear along the right hand column of buttons below the other instrument enable buttons. Where in the list it appears will depend on what other optional feature controls are enabled in the alice_init.ini file.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -159,9 +155,9 @@ Three new control widgets will now appear in the main ALICE scope window, figure
 
 To control all this ALICE 1.3 has the ETS Controls window, figure 6. The current real time sample rate (starting default is 100000) is shown at the top as a reminder. The calculated equivalent time sample rate is displayed based on the time multiplier factor. Next there is a check box to turn on and off ETS. Next is an entry space to enter the Divide factor, in the case below 5 was used. From the divide factor entered ALICE picks an offset and record length to best display the input signal (values are only displayed when in Debug mode). The base or minimum frequency is shown, 1/5 of the sample rate or 20,000 Hz. This is the frequency that will be shifted to DC. The user can enter a frequency multiplier. Multiply factors from 1 to 75 are allowed in the program. The multiplied value is displayed. This does not really change anything in how ALICE displays the signal. It is handy to use this value when setting or selecting the sample rate with respect to frequency of the input signal.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f6.png
-   :align: center
-   :width: 450px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -178,9 +174,8 @@ There is a place to manually enter a shift factor for channel B but the software
 
 This time shift is only required when the ALM1000 is set to sample all four measurement channels simultaneously. If the Double Sample Rate button in the Set Sample Rate controls is checked, see figure 7, the channel B time shift factor will always be 0.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f7.png
-   :align: center
-   :width: 300px
+
+|image7|
 
 .. container:: centeralign
 
@@ -199,9 +194,8 @@ This functionality is generally used to compensate for a low pass response that 
 
 In figure 8 we show the controls for the input compensation when the ETS feature is enabled. To turn on and off the compensation for Channels A and B there are check boxes under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f8.png
-   :align: center
-   :width: 450px
+
+|image8|
 
 .. container:: centeralign
 
@@ -210,9 +204,9 @@ In figure 8 we show the controls for the input compensation when the ETS feature
 
 The software also includes the option to process the waveform buffers with digital filters. For completeness the digital filter controls are shown in figure 9.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png
-   :align: center
-   :width: 300px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -224,9 +218,8 @@ Example Use Case
 
 As an example of how to apply the ETS functionality to measure high frequency signals we will use the ADALM-BUCK-ARDZ switch mode buck regulator experiment Arduino shield board plugged into an Arduino running the script from the lab exercise. The photo of the board in figure 10 shows the connection points we will be using.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -235,9 +228,9 @@ As an example of how to apply the ETS functionality to measure high frequency si
 
 The first signal that will be measured will be the Arduino PWM output signal. Both channels will be connected to the same node. Any of the ground connection points will serve as the common ground reference for the ADALM1000. The PWM output signal will be a 0 to 5 V digital square wave signal. We will be using a resistor input divider to attenuate the signals before applying them to the AIN and BIN pins on the ALM1000 as shown in figure 11. The nominal gain factor for the resistors shown is 19.5/1.5 or 13. This is done to reduce the 5 V PWM signal to an amplitude that is low enough such that the limited large signal slew rate of the ADA4661 buffer does not affect the high speed digital edges as much. The wide dynamic range of the 16 bit ADC allows us to do this and still have at least 12 bits of resolution. Higher value resistors could be used but eventually the R2, C1 time constant becomes an issue that limits the frequency response. In this case the 19.5 K ohm total resistance does not present too large of a load on the Arduino digital output.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -246,9 +239,9 @@ The first signal that will be measured will be the Arduino PWM output signal. Bo
 
 The first thing to do in the ALICE software is to “calibrate” the A and B channel DC gain and offset adjustment values. Connect the input end of the 18 K resistors (R1) for channels A and B both to ground (GND). It is best to enter the approximate Gain value, 13 in this example, first. Now adjust the CA-V and CB-V Offset Adjust values, as shown in figure 12, so that the CHA AvgV and CHB AvgV measure as close to 0 volts as possible (+/- a few mV is good enough). Now connect the divider inputs to the fixed +5.0V output pin. Adjust the Gain values so that the CHA AvgV and CHB AvgV measure as close to 5 volts as possible. (For better accuracy you can measure the fixed 5 V output directly without the voltage divider first and use that value as your target measurement when using the dividers).
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f12.png
-   :align: center
-   :width: 450px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -257,9 +250,9 @@ The first thing to do in the ALICE software is to “calibrate” the A and B ch
 
 Now go back and connect the input dividers to ground and recheck the Offset values. Changes to the Gain values can have small effects on the Offset so it is a good idea to iterate back and forth a couple of times between measuring +5 and GND until you have the values dialed in. Notice that the actual values for the gain in this example were slightly different than the calculated value due to the tolerance in the actual resistor values. Now we are ready to measure the Arduino PWM output signal. With both the channel A and B input dividers connected to the ADALM-BUCK-ARDZ test board PWM signal, jumper in upper left corner of the board and the ADALM1000 ground connected to the ADALM-BUCK-ARDZ ground, set the channel input ranges and positons along with the Time/Div such that you get a display something like shown in figure 13. The Fmin and Mul X entries could be anything at this point. Select the CA Freq value to be displayed. To get the best measurement of the input frequency the Real Time sample rate should be 200000. This should happen automatically when the time scale is set to 0.1 mS/Div.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f13.png
-   :align: center
-   :width: 600px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -268,9 +261,9 @@ Now go back and connect the input dividers to ground and recheck the Offset valu
 
 The Arduino PWM frequency should be 31.250 KHz. The measured value (to one decimal place) is 31.3 KHz. This is very close to the expected value and any small difference is likely due to the frequency tolerance of the crystal oscillator on the Arduino board and the master crystal oscillator on the ALM1000 board. This value for the PWM input frequency will be the target Fmin value. You can transfer the CA Freq reading (to 3 decimal places) to the Fmin entry spot by clicking on Fmin (raised button), Figure 14. You can of course always manually enter the Fmin value. This may be needed in cases where the input signal is not a nice neat square wave and the software can’t get a correct reading of its frequency.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f14.png
-   :align: center
-   :width: 300px
+
+
+|image14|
 
 .. container:: centeralign
 
@@ -281,9 +274,8 @@ The frequency that Fmin was set to is 31.338 KHz, which is just a 0.2784 % diffe
 
 Now that we know the target input frequency we can choose a real time sample rate and divider factor that is close but just below this frequency. If we select the allowed RT sample rate value of 93385 and divide by 3 we get 31128.33 Hz. So the Frequency Offset will be 31338 – 31128 or 210 Hz. Which is a good frequency range to convert down to. Another way to pick a RT sample rate is to manually enter a value in the Base Sample Rate spin box that you calculate by multiplying Fmin by some integer factor that is less than the 100000 max limit. When you hit return on the entered value the software will automatically pick the closest allowed rate.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f15.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -292,9 +284,9 @@ Now that we know the target input frequency we can choose a real time sample rat
 
 Now we can Enable the ETS and after adjusting the horizontal time scale you should see something like what is shown in figure 16. To check that the proper MulX value is being used you can enable the Gated Measurement cursors. Clicking the left mouse button on the first rising edge and a second left click on the next rising edge will display the delta time (period) and frequency of the waveform. Note that the ET Sample rate is calculated and displayed in the EST controls. In this example the ET sample rate is 4.575865 MSPS, or 50 times (Mul X) the 93.385 KSPS RT sample rate.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f16.png
-   :align: center
-   :width: 600px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -305,9 +297,8 @@ Since both input channels are connected to the same signal, both channels should
 
 Now we can set up the software input frequency compensation to correct for the 100 KHz low pass anti-alias filter. Open the Change Settings controls, figure 17. Make sure the Auto Set ETS Comp box is checked. The built in default Time constant and gain values should be correct for the 100 KHz filter in most boards but can be tweaked as necessary. The CHA and CHB values are automatically scaled by the ETS multiplication factor as it changes so the correct compensation should be applied for whatever the real time sample rate, Fmin and Mul X are set to.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f17.png
-   :align: center
-   :width: 600px
+
+|image17|
 
 .. container:: centeralign
 
@@ -316,9 +307,9 @@ Now we can set up the software input frequency compensation to correct for the 1
 
 From the Curves Drop down Menu we turn on the Frequency compensation. Now as we see in this next screen shot, figure 18, the RC setting of the 100 KHz anti-alias filter is compensated.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f18.png
-   :align: center
-   :width: 600px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -327,9 +318,9 @@ From the Curves Drop down Menu we turn on the Frequency compensation. Now as we 
 
 We can now move channel B to look at other nodes on the ADALM-BUCK-ARDZ test board. In the next screen shot, figure 19, we show the waveforms for the PWM signal on channel A and the Inductor Switch node on channel B.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f19.png
-   :align: center
-   :width: 600px
+
+
+|image19|
 
 .. container:: centeralign
 
@@ -341,9 +332,8 @@ Another Example
 
 Signal sources generated from crystal oscillators are prime candidates for using ETS. Direct Digital Synthesizers (DDS) such as the AD983x class function generators are good examples. Below in figure 20 are two examples of AD983x DDS boards. The one on the left is the SparkFun MiniGen, and the one on the right is one of the commonly available variants from multiple sources in China.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f20.png
-   :align: center
-   :width: 600px
+
+|image20|
 
 .. container:: centeralign
 
@@ -356,9 +346,8 @@ global EnableMinigenMode; EnableMinigenMode = 1
 
 The board on the right was used in this example. There is no output buffer amplifier so the analog output signal for sine and triangle waveforms is only about 600 mV p-p. For this small signal amplitude no input resistor dividers are needed. The serial interface pins on the board need to be mapped to the appropriate digital I/O pins on the ALM1000.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png
-   :align: center
-   :width: 450px
+
+|image21|
 
 .. container:: centeralign
 
@@ -367,9 +356,9 @@ The board on the right was used in this example. There is no output buffer ampli
 
 As in the first example we need to select a RT sample rate that along with the Divide factor results in a base frequency just below the frequency we set the DDS function generator to.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f22.png
-   :align: center
-   :width: 600px
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -378,9 +367,9 @@ As in the first example we need to select a RT sample rate that along with the D
 
 For the 97959 RT sample rate, with Fmin set to 32.768 KHz, Mul X is 94, the ET Sample rate will be 9.208146 MSPS. The screen shot below in figure 23 shows the output of the DDS function generator with the software frequency compensation turned on connected directly to both the AIN and BIN input pins.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f23.png
-   :align: center
-   :width: 600px
+
+
+|image23|
 
 .. container:: centeralign
 
@@ -388,3 +377,50 @@ For the 97959 RT sample rate, with Fmin set to 32.768 KHz, Mul X is 94, the ET S
 
 
 As the ETS part of the ALICE project progresses, the controls may become more automatic.
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f6.png
+   :width: 450px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f7.png
+   :width: 300px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f8.png
+   :width: 450px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f12.png
+   :width: 450px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f13.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f14.png
+   :width: 300px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f15.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f16.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f17.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f18.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f19.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f20.png
+   :width: 600px
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png
+   :width: 450px
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f22.png
+   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f23.png
+   :width: 600px

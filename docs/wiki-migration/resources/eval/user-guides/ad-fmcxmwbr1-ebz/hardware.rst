@@ -22,9 +22,8 @@ Kit Contents
 
 The FMC Xmicrowave bridge Kit contains both the FMC Xmicrowave Bridge Board and the FMC Xmicrowave Protoplate Board.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/ad-fmcxmwbr1-ebz_kit_set.jpg
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. container:: centeralign
 
@@ -38,7 +37,8 @@ The boards are connected using a ribbon cable for the signal rails and another c
 Specifications
 --------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/block_diagram.png
+   :width: 900px
 
 .. container:: centeralign
 
@@ -105,7 +105,9 @@ By default the AD-FMCXMWBR1-EBZ is supplied by the 12P0V pin the FMC connector. 
 -  Output: 12V 5.0A (minimum)
 -  Rectangular 6 position output connector compatible with `Molex 0039301060 connector <https://www.digikey.com/en/products/detail/molex/0039301060/561080>`_
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p2_pinout.png
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -116,7 +118,7 @@ The power path selection is achieved using the :adi:`LTC4418` dual channel prior
 
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -165,7 +167,9 @@ The AD-FMCXMWBR1-EBZ gives user access to the power supply pins of the FMC conne
       -  2x (1.2 -12V) Pot adjustable
       -  1x ( -6V- 0V) Pot adjustable
 
-      |image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p11_pinout.png
+   :align: center
+   :width: 200px
 
 .. container:: centeralign
 
@@ -176,7 +180,7 @@ The user will have access on the FMC bridge to the power rails coming directly f
 
 
 
-|image7|
+|image5|
 
 .. container:: centeralign
 
@@ -195,7 +199,7 @@ The X-MW blocks communicate with the controller through digital communication pr
 All the above signals can be accessed on the P9 pin header. Using a ribbon cable, the signals are connected to the Protoplate interface board, where all the corresponding pads are labelled.
 
 
-|image8|
+|image6|
 
 .. container:: centeralign
 
@@ -237,25 +241,19 @@ Schematics and CAD files
    :class: download
 
    
-   ::
-   
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/02_066232b_top.pdf|AD-FMCBRIDGE1A BR-066232 Rev B Schematics]]
+   -  `AD-FMCBRIDGE1A BR-066232 Rev B Schematics <https://wiki.analog.com/_media/resources/eval/user-guides/02_066232b_top.pdf>`_
    
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/block_diagram.png
-   :width: 900px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/ad-fmcxmwbr1-ebz_kit_set.jpg
+   :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/fmc_pinout.png
    :width: 900px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/rpi_conn_pinout.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p2_pinout.png
-   :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/input_power_priority.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/input_power_priority.png
    :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p11_pinout.png
-   :width: 200px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_map_revb.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/power_map_revb.png
    :width: 800px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p9_pinout.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcxmwbr1-ebz/p9_pinout.png
    :width: 300px

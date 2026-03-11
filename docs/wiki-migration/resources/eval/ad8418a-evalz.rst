@@ -61,7 +61,9 @@ By default, the output of the evaluation board is biased at midsupply.
 Evaluation Board Schematic
 --------------------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_evaluation_board_schematic.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -71,14 +73,16 @@ Evaluation Board Schematic
 Evaluation Board Layout
 -----------------------
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_component_side_layout.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 4. Component Side Layout*\
 
 
-   |image5|
+   |image3|
 
 .. container:: centeralign
 
@@ -109,9 +113,5 @@ Bill of Materials
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_circuit_side_of_evaluation_board.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_evaluation_board_schematic.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_component_side_layout.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_circuit_side_layout.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/AD8418AR-EVAL_circuit_side_layout.png
    :width: 400px

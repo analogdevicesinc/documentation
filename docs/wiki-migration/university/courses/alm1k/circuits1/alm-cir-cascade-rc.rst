@@ -22,9 +22,8 @@ As a pre-lab exercise enter the schematic shown in figure 1 into the :adi:`ADIsi
 
 Run the simulation sweeping the input frequency from 100 Hz to 20 KHz. You should get a frequency response plot the looks something like figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sch.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -33,9 +32,9 @@ Run the simulation sweeping the input frequency from 100 Hz to 20 KHz. You shoul
 
 A simulation was run sweeping the frequency from 100 Hz to 20 KHz. As we can see in figure 2 the completely unloaded 1st order filter (dB-0 green line) and the lightly loaded 1st order point (dB-3 slightly darker green line) are nearly on top of each other. The loaded 1st order point (dB-1 blue line) is significantly lower than the other two lines at the frequency of the RC time constant. However, all three converge to the same point at high frequencies, 20 KHz. The two 2nd order output points at dB-2 (red line, loaded) and dB-4 (pink line, lightly loaded) also show significant differences at the RC time constant frequency but also converge to the same point at 20 KHz. At 20 KHz the response of the 2nd order filters is 20 dB lower than the 1st order filters as one would expect.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sim.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,9 +51,8 @@ Directions:
 
 Build the first order passive RC low pass filter shown in figure 3 on your solderless breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cascade-rc-f3.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -73,9 +71,8 @@ With Single sweep mode selected click on the green Run button. After a few secon
 
 Now add a second RC low pass section to the filter as shown in figure 4. The Channel B input will be alternately connected to the top of C\ :sub:`1`, the output of the first RC section and the top of C\ :sub:`2`, the output of the second RC section.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cascade-rc-f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -104,18 +101,15 @@ As a further extension of this cascade of RC low pass filter sections add a thir
 
 Explain any differences you observe in the frequency responses and be sure to save screen shots along the way to include in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cascade-rc-f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5. 3rd order passive RC low pass filter
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascaded_rc_bb.png
-   :align: center
-   :width: 400px
+   |image6|
 
 .. container:: centeralign
 
@@ -135,3 +129,16 @@ One final question, how do your measured results compare to your simulation resu
 :adi:`LTSpice <en/design-center/design-tools-and-calculators/ltspice-simulator.html>` :adi:`ADIsimPE <en/design-center/interactive-design-tools/adisimpe.html>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sch.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascade_rc_sim.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cascade-rc-f3.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cascade-rc-f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cascade-rc-f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/cascaded_rc_bb.png
+   :width: 400px

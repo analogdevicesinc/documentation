@@ -131,5 +131,5 @@ Algorithm Growth Information
 | Parameter RAM Repetition             | none                                                                                                                                                                                                                                                                                                |                   |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 
-.. |pushvolpic1.png| image:: https://wiki.analog.com/_media/pushvolpic1.png
-.. |pushvolpic3.png| image:: https://wiki.analog.com/_media/pushvolpic3.png
+.. |pushvolpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushvolpic1.png
+.. |pushvolpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/pushvolpic3.png

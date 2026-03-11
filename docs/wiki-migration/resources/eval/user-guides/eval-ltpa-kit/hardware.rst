@@ -78,9 +78,8 @@ Determine which connection type is appropriate for your circuit as described in 
 
 This DC1516A-B Demo Board already has a 10 Ω injection resistor in series with the feedback network as shown below:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/dc1516a-b_connection.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: center
 
@@ -103,7 +102,7 @@ It is recommended to connect the OUT+ and T+ wires to the terminal connected dir
 
    
    ============================ =========================
-   |image3|                     |image4|
+   |image4|                     |image5|
    OUT+, T+, IN+, T- Connection GND, OUT-, IN- Connection
    ============================ =========================
    
@@ -139,9 +138,8 @@ Method 1: LT8642S DUT
 
 The out-of-the box DUT, LT8642S, comes with a readily installed female socket connector. This allows convenient changing of current probes, with no soldering required
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lt8642s_dut_connectors.png
-   :align: center
-   :width: 1000px
+
+|image6|
 
 .. container:: center
 
@@ -163,7 +161,7 @@ This method improves electrical connection by reducing parasitics from affecting
 
    
    =================================== ===============================
-   |image5| Scrape off the Solder Mask |image6| 90-degree Solder Braid
+   |image7| Scrape off the Solder Mask |image8| 90-degree Solder Braid
    =================================== ===============================
    
 
@@ -174,7 +172,7 @@ This method improves electrical connection by reducing parasitics from affecting
 
    
    ======================== =======================
-   |image7|                 |image8|
+   |image9|                 |image10|
    Current Probe Front View Current Probe Back View
    ======================== =======================
    
@@ -182,9 +180,10 @@ This method improves electrical connection by reducing parasitics from affecting
 
 3. Connect the Vout+ and Vout- wires to the terminal block and plug in the 14-pin ribbon cable.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobewithconnection.jpg
-   :align: center
-   :width: 400px
+   
+
+
+|image11|
 
 .. container:: center
 
@@ -201,7 +200,7 @@ Method 3: Socket Installation Method
 In this method, a 60-position female connector or edge rate card socket will be used for installing current probes to your DUT.
 
 
-|image9|
+|image12|
 
 .. container:: center
 
@@ -213,14 +212,14 @@ This method is similar to the soldering-braid method, requiring to scrape off th
 1. Scrape off the solder mask on the GND and Vout Planes to expose the copper for connection. Ensure that the scrapped regions will be able to accommodate the length and required soldering space for the female socket connector.
 
 
-|image10|
+|image13|
 
 .. container:: center
 
    **Before: Unscrapped solder mask at the VOUT and GND planes of a DUT (LTC3899EUF)**
 
 
-   |image11|
+   |image14|
 
 .. container:: center
 
@@ -231,7 +230,7 @@ This method is similar to the soldering-braid method, requiring to scrape off th
 
 
 
-|image12|
+|image15|
 
 .. container:: center
 
@@ -242,7 +241,7 @@ This method is similar to the soldering-braid method, requiring to scrape off th
 
 
 
-|image13|
+|image16|
 
 .. container:: center
 
@@ -253,7 +252,7 @@ This method is similar to the soldering-braid method, requiring to scrape off th
 
 
 
-|image14|
+|image17|
 
 .. container:: center
 
@@ -302,27 +301,33 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/dut_board.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_injection_connection.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/dc1516a-b_connection.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_injection_connection.jpg
    :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_gnd_connection.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_gnd_connection.jpg
    :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/soldermask.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lt8642s_dut_connectors.png
+   :width: 1000px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/soldermask.jpg
    :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/solderbraid.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/solderbraid.jpg
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobeback.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobeback.jpg
    :width: 300px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobefront.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobefront.jpg
    :width: 300px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/60_position_female_connector.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/currentprobewithconnection.jpg
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/60_position_female_connector.png
    :width: 200px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/unscrapped_solder_mask_at_the_vout_and_gnd_planes_of_a_dut.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/unscrapped_solder_mask_at_the_vout_and_gnd_planes_of_a_dut.png
    :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scrapped_solder_mask_at_the_vout_and_gnd_planes.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scrapped_solder_mask_at_the_vout_and_gnd_planes.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/tinned_scrapped_region.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/tinned_scrapped_region.png
    :width: 500px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/soldered_female_socket_connector.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/soldered_female_socket_connector.png
    :width: 500px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/complete_installed_female_socket_connector.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/complete_installed_female_socket_connector.png
    :width: 500px

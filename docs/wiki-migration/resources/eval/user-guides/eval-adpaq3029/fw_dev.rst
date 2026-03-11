@@ -88,7 +88,10 @@ Building
 -  In order to build the project, click ``Project`` -> ``Build Project`` or press F7.
 -  In order to generate executable binary file (\*.bin) for :adi:`ADuCM3029`, Right click on ``Dev Module`` project -> ``properties``.
 -  In the properties tab go to ``C/C++ Build`` -> ``Settings`` -> ``Cross Core GCC ARM Embedded C Linker``-> ``Libraries``.
--  Select build steps. Type ``arm-none-eabi-objcopy -O binary ${ProjName} ${ProjName}.bin`` in the command of post build steps. Click on OK. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw14.png>`_
+-  Select build steps. Type ``arm-none-eabi-objcopy -O binary ${ProjName} ${ProjName}.bin`` in the command of post build steps. Click on OK.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw14.png>`_
+
 -  Now, building the project again should generate the binary (\*.bin) file in the same directory as makefile
 
 .. important::
@@ -100,14 +103,31 @@ Debugging
 ~~~~~~~~~
 
 -  As shown in :doc:`hardware setup </wiki-migration/resources/eval/user-guides/eval-adpaq3029/hw_setup>` section, connect the debugger between PC and Dev Module.
--  The debugger should show up as ``DAPLINK``. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/deb3.png>`_
--  Go to Run -> Debug Configurations. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/deb4.png>`_
--  In the Debug Configurations window, select Application with GDB and OpenOCD(Emulator) on the left. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/deb5.png>`_
+-  The debugger should show up as ``DAPLINK``.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb3.png>`_
+
+-  Go to Run -> Debug Configurations.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb4.png>`_
+
+-  In the Debug Configurations window, select Application with GDB and OpenOCD(Emulator) on the left.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb5.png>`_
+
 -  In the Target tab, set the Target (Processor) to Analog Devices ADuCM3029 and the Interface to ARM CMSIS-DAP complaint adapter and click ``Apply`` and then on ``Debug``.
 -  The debug perspective is opened. By default, the breakpoint will be inserted at the main function.
--  To change the default breakpoint settings, goto ``Startup`` tab in the same window as target tab, change “Set breakpoint at” option. (Example, reset_handler). `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/deb6.png>`_
--  The execution halts when it hits the breakpoint. The execution can be resumed by clicking on the resume button as shown in the image. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/deb7.png>`_
--  The breakpoints can be inserted (or removed) to (or from) any line of the code by double clicking on the beginning of the line. The “step into” function can be used to execute the code step by step. By clicking on the window->show view, the values associated with different expressions, registers, memory etc can be observed. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/deb8.png>`_
+-  To change the default breakpoint settings, goto ``Startup`` tab in the same window as target tab, change “Set breakpoint at” option. (Example, reset_handler).
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb6.png>`_
+
+-  The execution halts when it hits the breakpoint. The execution can be resumed by clicking on the resume button as shown in the image.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb7.png>`_
+
+-  The breakpoints can be inserted (or removed) to (or from) any line of the code by double clicking on the beginning of the line. The “step into” function can be used to execute the code step by step. By clicking on the window->show view, the values associated with different expressions, registers, memory etc can be observed.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/deb8.png>`_
 
 Firmware deployment/flashing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

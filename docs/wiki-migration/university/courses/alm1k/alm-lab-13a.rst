@@ -28,9 +28,8 @@ Directions:
 
 Before starting make sure the power supplies from the ALM1000 hardware are disconnected from the breadboard. The circuit and the connections to the Lab hardware are as indicated in figure 1. The channel B Hi-Z mode input CB-H should to be connected to the junction of Q\ :sub:`1` and Q\ :sub:`2` emitters.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -72,9 +71,8 @@ Directions:
 
 With the power disconnected, assemble the circuit of figure 2, keeping leads as short and neat as possible. NPN transistors Q\ :sub:`1` and Q\ :sub:`2`, PNP transistor Q\ :sub:`3`\ and Q\ :sub:`4` should be selected from the available devices with the best matching of V\ :sub:`BE`. Transistors fabricated in the same package such as the SSM2212 or the CA3046 tend to match much better than individual devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -111,9 +109,8 @@ Another Configuration:
 
 Remembering the loop formed by the base emitter voltages of Q\ :sub:`1`, Q\ :sub:`2`, Q\ :sub:`3` and Q\ :sub:`4` we also know that the order of the voltage drops around the loop can be interchanged. So if we interchange the V\ :sub:`BE`'s of NPN Q\ :sub:`1` and PNP Q\ :sub:`3` we get the configuration shown in figure 3. This arrangement is sometime referred to as a "diamond buffer" because of the shape formed by the four emitter / base connections. Some of you may recognize the combination of Q\ :sub:`3` and Q\ :sub:`2` as the low offset follower we discussed earlier in the lab section on emitter followers. The circuit uses the V\ :sub:`BE` shift up of a PNP emitter follower to partially cancel the V\ :sub:`BE` shift down of an NPN emitter follower. Transistors Q\ :sub:`1` and Q\ :sub:`4` are simply the complement of Q\ :sub:`3` and Q\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -146,9 +143,8 @@ Yet another configuration:
 
 In figure 4 we see another slight variation on the circuit in figure 3. Since the aim of these output stages id to provide an output voltage that is ideally identical to the input, transistors Q\ :sub:`1` and Q\ :sub:`2` can be thought of as being "diode" connected similar to the arrangement in figure 2 but with the NPN and PNP interchanged. This will not be exactly the case in real life so there will be a small error current flowing back into the emitters of Q\ :sub:`2` and Q\ :sub:`4` based on any mismatches between the devices.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -162,3 +158,12 @@ Repeat the same test you performed on the figure 2 and figure 3 circuits on the 
 `Push-Pull Output <https://en.wikipedia.org/wiki/Push-pull_output>`_ :adi:`Increase amplifier output drive using a push-pull stage <en/technical-articles/increase-amplifier-output-drive-using-a-push-pull-amplifier-stage.html>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13a_f4.png
+   :width: 500px

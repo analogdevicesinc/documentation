@@ -31,9 +31,8 @@ Build the linear feedback shift register circuit shown in figure 1, preferably o
 
 Connect the D0-D3 digital inputs and the D5 digital output on the ADALM2000 connector and the positive 5 volt power and ground to the circuit as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/alfsr_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -79,3 +78,6 @@ Try using a second (and third) CD4035 to make a longer shift register to make a 
 http://en.wikipedia.org/wiki/XOR_gate http://en.wikipedia.org/wiki/Shift_register http://en.wikipedia.org/wiki/Linear_feedback_shift_register
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/alfsr_f1.png
+   :width: 500px

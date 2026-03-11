@@ -17,12 +17,12 @@ Getting Started
 -  The ADE1202 example application can be found `here <https://os.mbed.com/teams/AnalogDevices/code/EVAL-ADE120x/>`_
 -  To get started click on the Import Into Compiler button
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ade120x/tools/ade120x_mbed.png
+   :align: center
+   :width: 400px
 
--  Once imported into the compiler the screen should look like the following: |image2| On the left hand side is the Program Workspace and will display any programs you have imported into the workspace.
+-  Once imported into the compiler the screen should look like the following: |image1| On the left hand side is the Program Workspace and will display any programs you have imported into the workspace.
 -  Double click on the main.cpp file to open the main program code.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ade120x/tools/ade120x_mbed.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ade120x/tools/mbed_workspace.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ade120x/tools/mbed_workspace.png
    :width: 400px

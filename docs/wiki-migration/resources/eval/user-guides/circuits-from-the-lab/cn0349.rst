@@ -168,47 +168,47 @@ Software Control and Indicator Descriptions
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_4.png
    :align: center
 
-::
 
-   -**Measure Button**
-   * When this button is pressed, the SDP-B Board will perform a measurement procedure and present the data in the measurement data indicators (3,4,5,6).
-   -**Control Tabs**
-   * __Main__ - Clicking this tab brings the data collection graph to the front.
-   * __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
-   * __Register Value__ - Clicking this tab brings the AD5934 and ADG715 register value panel to the front.
-   * __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
-   -**Impedance Indicator**
-   * This indicator displays the measured input impedance in Ω).
-   -**Conductivity Indicator**
-   * This indicator displays the measured input conductivity in mS/cm. The measurement result is dependent on the applied probe corrections (7)  and (9).
-   -**Conductivity Temperature Compensated Indicator**
-   * This indicator displays the temperature compensated input conductivity in mS/cm according to the chosen Temperature coefficient (8)
-   -**Temperature of the Solution Indicator**
-   * This indicator displays the measured temperature in °C, using external Pt100 RTD sensor
-   -**Cell Constant Control (Probe Corrections)**
-   * This control is used to apply the constant of the cell used for the measurement. The value of this control affects the measurement result presented in the Conductivity Indicator (4).
-   -**Temperature Coefficient Control (Probe Corrections)**
-   * This control is used to apply the temperature coefficient of the measured solution.
-   -**Offset Control (Probe Corrections)**
-   * This control is used to apply offset correction to the measured Conductivity (4). If offset correction is not needed, leave this control at 0mS/cm.
-   -**Measurement Range Radio Buttons**
-   * This control determines the input measurement range. The two measurement ranges are.
-   -**Measurement Range Indicator**
-   * This indicator shows the limits of the chosen input measurement range.
-   -**System Status String Indicator**
-   * This indicator displays a message to the user detailing the current state of the software.
-   -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12inactive.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12error.png?nolink|}}Error\\  {{:resources:eval:user-guides:circuits-from-the-lab:cn0349:cn0349_using_sw_12waiting.png?nolink|}}Waiting for user action
-   -**Calibrate Button**
-   * Pressing this button initiates a calibration of the board.
-   -**Calibration Resistances Controls**
-     * This control is used to apply the values for the three on board calibration resistances **R3, R4, R7**. The values for this controls has to be changed only if different calibration resistances are populated on the board.
-   **ADG715 register value**
-     * This read only panel showing the ADG715 register value.
-   **AD5934 register address and value**
-     * This read only panel showing the AD5934 register address and value.
-   -**SDP Firmware Revision**
-   * Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+
+-**Measure Button**
+-  When this button is pressed, the SDP-B Board will perform a measurement procedure and present the data in the measurement data indicators (3,4,5,6).
+-**Control Tabs**
+-  __Main__ - Clicking this tab brings the data collection graph to the front.
+-  __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
+-  __Register Value__ - Clicking this tab brings the AD5934 and ADG715 register value panel to the front.
+-  __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
+-**Impedance Indicator**
+-  This indicator displays the measured input impedance in Ω).
+-**Conductivity Indicator**
+-  This indicator displays the measured input conductivity in mS/cm. The measurement result is dependent on the applied probe corrections (7)  and (9).
+-**Conductivity Temperature Compensated Indicator**
+-  This indicator displays the temperature compensated input conductivity in mS/cm according to the chosen Temperature coefficient (8)
+-**Temperature of the Solution Indicator**
+-  This indicator displays the measured temperature in °C, using external Pt100 RTD sensor
+-**Cell Constant Control (Probe Corrections)**
+-  This control is used to apply the constant of the cell used for the measurement. The value of this control affects the measurement result presented in the Conductivity Indicator (4).
+-**Temperature Coefficient Control (Probe Corrections)**
+-  This control is used to apply the temperature coefficient of the measured solution.
+-**Offset Control (Probe Corrections)**
+-  This control is used to apply offset correction to the measured Conductivity (4). If offset correction is not needed, leave this control at 0mS/cm.
+-**Measurement Range Radio Buttons**
+-  This control determines the input measurement range. The two measurement ranges are.
+-**Measurement Range Indicator**
+-  This indicator shows the limits of the chosen input measurement range.
+-**System Status String Indicator**
+-  This indicator displays a message to the user detailing the current state of the software.
+-**System Status LED Indicator**
+-  This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12inactive.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12error.png|Error\\  |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12waiting.png|Waiting for user action
+-**Calibrate Button**
+-  Pressing this button initiates a calibration of the board.
+-**Calibration Resistances Controls**
+  * This control is used to apply the values for the three on board calibration resistances **R3, R4, R7**. The values for this controls has to be changed only if different calibration resistances are populated on the board.
+-  **ADG715 register value**
+  * This read only panel showing the ADG715 register value.
+-  **AD5934 register address and value**
+  * This read only panel showing the AD5934 register address and value.
+-**SDP Firmware Revision**
+-  Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
 
 --------------
 
@@ -416,3 +416,8 @@ Registration
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_establishing_connection_3a.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5.png
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/CN0349_Cal_Procedure_steps 5a.png
+
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_12busy.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12error.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_12error.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12inactive.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_12inactive.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0349-cn0349_using_sw_12waiting.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0349/cn0349_using_sw_12waiting.png

@@ -42,7 +42,7 @@ You will need to:
    -
 
 
-   |http://www.xilinx.com/images/product-images/zc706-base-board.jpg|
+   |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
 -  Insert the SD-CARD into the SD Card Interface Connector (J30)
 -  Plug the AD-FMCDAQ3-EBZ into the HPC Connector
@@ -51,7 +51,10 @@ You will need to:
 -  Plug the Power Supply into 12V Power input connector (J22) (DO NOT turn the device on).
 -  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)
 
-|zc706plusfmcjesdadc1.png|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
+   :alt: zc706plusfmcjesdadc1.png
+   :align: right
+   :width: 200px
 
 -  Turn it on.
 -  Wait ~30 seconds for the "DONE" LED to turn green. This is above the power switch.
@@ -65,11 +68,18 @@ Booting the SD Card
 -  You should see two screens:
 
    -  IIO Scope tool:
-      |image1|\ |image2|
 
-      -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
--  You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
+   |image1|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/daq3_plugin.png
+   :align: center
+   :width: 300px
+
+
+
+-  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
+   * You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
 
 .. important::
 
@@ -80,14 +90,12 @@ Booting the SD Card
 
 
    
-   |image3|
+   |image2|
 
-.. |http://www.xilinx.com/images/product-images/zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
-.. |zc706plusfmcjesdadc1.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
-   :width: 200px
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/plot_window.png
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/daq3_plugin.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
-   :width: 300px
+
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: https://wiki.analog.com/_media/http///www.xilinx.com/images/product-images/zc706-base-board.jpg

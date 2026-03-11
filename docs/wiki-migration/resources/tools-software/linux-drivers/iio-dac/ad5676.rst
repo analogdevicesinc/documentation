@@ -70,13 +70,13 @@ Files
 +----------+------------------------------------------------------------------------------------+
 | Function | File                                                                               |
 +==========+====================================================================================+
-| driver   | :git-linux:`drivers/iio/dac/ad5686`.c                                              |
+| driver   | :git-linux:`drivers/iio/dac/ad5686.c`                                              |
 +----------+------------------------------------------------------------------------------------+
-| driver   | :git-linux:`drivers/iio/dac/ad5686`.h                                              |
+| driver   | :git-linux:`drivers/iio/dac/ad5686.h`                                              |
 +----------+------------------------------------------------------------------------------------+
-| driver   | :git-linux:`drivers/iio/dac/ad5686-spi`.c                                          |
+| driver   | :git-linux:`drivers/iio/dac/ad5686-spi.c`                                          |
 +----------+------------------------------------------------------------------------------------+
-| driver   | :git-linux:`drivers/iio/dac/ad5696-i2c`.c                                          |
+| driver   | :git-linux:`drivers/iio/dac/ad5696-i2c.c`                                          |
 +----------+------------------------------------------------------------------------------------+
 
 Devicetree
@@ -455,5 +455,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-dac/youtube>p_VntEwUe24
 

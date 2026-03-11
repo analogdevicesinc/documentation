@@ -98,7 +98,7 @@ To install the sources:
    $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ./bin/repo
    $ chmod a+x ./bin/repo
    $ ./bin/repo init \
-      -u https://github.com/analogdevicesinc/lnxdsp-repo-manifest.git \
+      -u :git-lnxdsp-repo-manifest:`lnxdsp-repo-manifest` \
       -b release/yocto-3.0.0 \
       -m release-yocto-3.0.0.xml
    $ ./bin/repo sync

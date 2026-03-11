@@ -37,7 +37,9 @@ Features
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_simplified_block_diagram.png
+   :width: 600px
+
 
 --------------
 
@@ -165,19 +167,21 @@ Buck Mode Setup          Boost Mode Setup
 
 -  Connect the EVAL-CN0554-RPIZ to the Raspberry Pi 4 using the P20 connector as shown below.
 
-
-|rpi_554.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/rpi_554.png
+   :alt: rpi_554.png
 
 -  Insert the MicroSD card into the Raspberry Pi's SD card slot. **See** `#software_setup <https://wiki.analog.com/>`_ **section for instructions on how to configure the SD Card for CN0556.**
 -  Connect the EVAL-CN0556-EBZ on top of the EVAL-CN0554-RPIZ & Raspberry Pi 4 combination based on the connections indicated below.
 
-|cn0554_cn0556_rev_c.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0554_cn0556_rev_c.png
+   :alt: cn0554_cn0556_rev_c.png
 
 -  Ensure that the jumper configuration at P1 and P5 is correct before powering on the device. See `#jumper_settings <https://wiki.analog.com/>`_ to verify the configuration.
 -  Ensure that the **P3** is not shorted by any wire.
--  Set up the connections to the Raspberry Pi 4.\
+-  Set up the connections to the Raspberry Pi 4.
 
-|cn0556_figures.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_figures.png
+   :alt: cn0556_figures.png
 
 -   Connect the MicroHDMI cable to the Raspberry Pi 4 and the other end to the display monitor.
 -   Connect the USB keyboard and a USB mouse to any of the USB ports in the Raspberry Pi 4.
@@ -197,7 +201,8 @@ Hardware Setup (continuation):
 -  Prepare a bench top power supply, electronic load, and two digital multimeters.
 -  Ensure that the power supply is completely turned off during the setup.
 
-|cn0556_buck_boost_setup.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_buck_boost_setup.png
+   :alt: cn0556_buck_boost_setup.png
 
 -  Connect the power supply to V1 terminals (BSTOUT and BSTGND).
 -  Connect the first DMM to the V1 input terminals (BSTOUT and BSTGND).
@@ -227,14 +232,16 @@ Running the Buck Mode Example Script
 -  Run the example script using the command:``~/pyadi-iio/examples/cn0556_examples $ python cn0556_example_buck.py``
 -  The details of the current and voltage set at the output will be displayed.
 
-|pyadi-iio_buck_1.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_buck_1.png
+   :alt: pyadi-iio_buck_1.png
 
 -  Enable the output of the power supply into the V1 terminals.
 -  Check the DMM at the output V2 side. It should read approximately 14 V.
 -  If the reading is not 14 V (or almost 0 V), try to slowly increase the input DC voltage at V1 to up to 58 V. Once the output is 14 V, decrease the input voltage at V1 to 56 V again.
--  Once the power supply is enabled, and the DMM reads approx. 14 V, press the **ENTER** key.\
+-  Once the power supply is enabled, and the DMM reads approx. 14 V, press the **ENTER** key.
 
-|pyadi-iio_buck_2.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_buck_2.png
+   :alt: pyadi-iio_buck_2.png
 
 -  The input and output voltage and current at the V1 and V2 side will be printed in the command window.
 -  The board will continuously regulate the output voltage to 14 V unless CN0556 is turned off.
@@ -286,7 +293,8 @@ Hardware Setup (continuation):
 -  Prepare a bench top power supply, electronic load, and two digital multimeters.
 -  Ensure that the power supply is completely turned off during the setup.
 
-|boost_setup_rpi_556_554.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/boost_setup_rpi_556_554.png
+   :alt: boost_setup_rpi_556_554.png
 
 -  Connect the power supply to V2 terminals (BCKOUT and BCKGND).
 -  Connect the second DMM to the V2 input terminals (BCKOUT and BCKGND).
@@ -316,13 +324,15 @@ Running the Boost Mode Example Script
 -  Run the example script using the command:``~/pyadi-iio/examples/cn0556_examples $ python cn0556_example_boost.py``
 -  The details of the current and voltage set at the output will be displayed.
 
-|pyadi-iio_boost_1.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_boost_1.png
+   :alt: pyadi-iio_boost_1.png
 
 -  Enable the output of the power supply into the V2 terminals.
 -  Check the DMM at the output V1 side. It should read approximately 56 V.
 -  Once the power supply is enabled, and the DMM at the left side reads approx. 56 V, press the **ENTER** key.
 
-|pyadi-iio_boost_2.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_boost_2.png
+   :alt: pyadi-iio_boost_2.png
 
 -  The input and output voltage and current at the V1 and V2 side will be printed in the command window.
 -  The board will continuously regulate the output voltage to 56 V unless CN0556 is turned off.
@@ -400,8 +410,6 @@ Registration
 
 *End of Document*
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_simplified_block_diagram.png
-   :width: 600px
 .. |p1_1.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/p1_1.jpg
    :width: 400px
 .. |p5_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/p5_2.jpg
@@ -414,12 +422,3 @@ Registration
    :width: 9000px
 .. |CN0556 Boost Mode Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/556_554_boost_range.png
    :width: 9000px
-.. |rpi_554.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/rpi_554.png
-.. |cn0554_cn0556_rev_c.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0554_cn0556_rev_c.png
-.. |cn0556_figures.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_figures.png
-.. |cn0556_buck_boost_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_buck_boost_setup.png
-.. |pyadi-iio_buck_1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_buck_1.png
-.. |pyadi-iio_buck_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_buck_2.png
-.. |boost_setup_rpi_556_554.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/boost_setup_rpi_556_554.png
-.. |pyadi-iio_boost_1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_boost_1.png
-.. |pyadi-iio_boost_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_boost_2.png

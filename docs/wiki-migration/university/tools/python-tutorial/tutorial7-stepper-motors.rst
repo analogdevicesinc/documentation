@@ -47,9 +47,8 @@ Procedure:
 
 The pulse waveform sequence for "forward" rotation is shown in figure 2. A pulse on D0 will energize coil A with a positive polarity and a pulse on D2 will energize coil A with an opposite negative polarity. Similarly, a pulse on D1 will energize coil B with a positive polarity and a pulse on D3 will energize coil B with an opposite negative polarity.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial7_f2.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -58,9 +57,9 @@ The pulse waveform sequence for "forward" rotation is shown in figure 2. A pulse
 
 As we can see from the timing diagram the coils are energized in a +A, +B, -A, -B sequence. One cycle is four steps. For "reverse" rotation we need to swap the pulse sequence as shown in figure 3. As we can see this is essentially the sequence in reverse order.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial7_f3.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -69,9 +68,9 @@ As we can see from the timing diagram the coils are energized in a +A, +B, -A, -
 
 Open the Stepper_1.py or Stepper_2.py Python program in your favorite editor. The IDLE that comes with Python is handy because you can run the program directly from there. Stepper_test_1.py produces full step pulses. Stepper_test_2.py produces half step pulses. Run the program. You should see something like figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial7_f4.png
-   :align: center
-   :width: 170px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -131,3 +130,10 @@ Questions:
 https://en.wikipedia.org/?title=Stepper_motor
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial7_f2.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial7_f3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial7_f4.png
+   :width: 170px

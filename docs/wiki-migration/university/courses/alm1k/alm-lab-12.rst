@@ -22,9 +22,8 @@ First a few notes on hardware limitation issues. While the waveform generator in
 
 1 - 47Ω resistor 1 - 1KΩ resistor 1 - 0.1uF capacitors (marked 104)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,9 +42,8 @@ Directions:
 
 Build the NPN differential pair test circuit shown in figure 2. The connections to the ALM1000 are as indicated in the green boxes. Q\ :sub:`1` and Q\ :sub:`2` should be selected from your available transistors with the best matching of V\ :sub:`BE`. The emitters of Q\ :sub:`1` and Q\ :sub:`2` share a common connection with one end of R\ :sub:`3`. The other end of R\ :sub:`3` is connected to ground (0V) and supplies the tail current. The base of Q\ :sub:`1` is connected to the output of the first arbitrary waveform generator, CH A, and the base of Q\ :sub:`2` is connected to the output of the second arbitrary waveform generator, CH B, through the 20:1 attenuator network. The two collector load resistors R\ :sub:`1` and R\ :sub:`3` connect between the collectors respectively of Q\ :sub:`1` and Q\ :sub:`2` and the positive supply +5V. The two Split I/O inputs AIN and BIN are used to measure the differential output as seen across the two 10K load resistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -74,9 +72,8 @@ Additional Materials:
 
 2 - small signal NPN transistors ( Q\ :sub:`3`, Q\ :sub:`4` 2N3904 or SSM2212)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -88,9 +85,8 @@ Measuring Common Mode gain
 
 Common mode rejection is a key aspect of the differential amplifier. CMR can be measured by connecting the base of both transistors Q\ :sub:`1` and Q\ :sub:`2` to the same input source. You should generate plots showing the differential output for both the resistively biased and current source biased differential pair as the common mode voltage is swept + and - 500mV around 2.5V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -115,3 +111,12 @@ Repeat the common mode gain measurements on the circuit shown in figure 3 with t
 `Differential amplifier <https://en.wikipedia.org/wiki/Differential_amplifier>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-12_f4.png
+   :width: 600px

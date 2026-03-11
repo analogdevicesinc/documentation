@@ -70,5 +70,5 @@ Configurable Parameters
 
 | 
 
-.. |beamforming.jpg| image:: https://wiki.analog.com/_media/beamforming.jpg
-.. |beamforminggraph.jpg| image:: https://wiki.analog.com/_media/beamforminggraph.jpg
+.. |beamforming.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/beamforming.jpg
+.. |beamforminggraph.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/beamforminggraph.jpg

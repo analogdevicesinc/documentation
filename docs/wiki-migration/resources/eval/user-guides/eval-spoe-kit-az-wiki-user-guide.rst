@@ -38,7 +38,9 @@ Kit Contents
 -  (1) 12”, Single Twisted Pair, 18AWG, Cable
 -  (1) Micro-B USB Cable (not shown)
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-spoe-kit-az_angle.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -53,14 +55,14 @@ EVAL-LTC4296-1-KIT-AZ Setup
 The EVAL-LTC4296-1-KIT-AZ is comprised of the EVAL-LTC4296-1-AZ PSE motherboard, EVAL-LTC4296-1-RC-AZ microcontroller rider card, and a micro-B USB cable. The LTC4296-1 GUI communicates with the EVAL-LTC4296-1-KIT-AZ for user interaction.
 
 
-|image3|
+|image2|
 
 .. container:: centeralign
 
    \ *Figure 3. EVAL-LTC4296-1-AZ PSE motherboard.*\
 
 
-   |image4|
+   |image3|
 
 .. container:: centeralign
 
@@ -73,7 +75,7 @@ Rider Card Installation
 Align the EVAL-LTC4296-1-RC-AZ rider card male headers with the female headers on the EVAL-LTC4296-1-AZ motherboard labeled for the µC RIDER CARD. Insert the card to where the headers are flush. Before proceeding, verify no pins are sticking out indicating a misalignment. Powering the motherboard with a misaligned card can cause damage to the system.
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -104,7 +106,9 @@ PORT PORT CONFIGURED MAX CLASS   MAX CLASS   SHIELD
 4    0.775A          12          14          EVAL-10BT1L-MCS-AZ
 ==== =============== =========== =========== ==================
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-kit-az_top_shield_placement.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -121,7 +125,7 @@ Connect a bench power supply across the VIN (+) and GND (-) banana terminals on 
 The EVAL-LTC4296-1-AZ motherboard has an onboard stepdown DC/DC converter that generates 3.3V to power the rider card and the shield cards.
 
 
-|image7|
+|image5|
 
 .. container:: centeralign
 
@@ -136,7 +140,7 @@ The LTC4296-1 Graphical User Interface (GUI) provides the user with basic status
 On the condensed GUI, click on Expand Details in each column for the full GUI display. In the Global Column, select in the Demo Board drop down menu EVAL-LTC4296-1-AZ to automatically configure each port maximum Class and Type, R_hsns and R_lsns sense resistor values, and MFVS Threshold to match the default settings on the EVAL-LTC4296-1-AZ motherboard. The ports will start in a Disabled state. To enable a port, select Power Up in the port’s Classification (SCCP) section.
 
 
-|image8|
+|image6|
 
 .. container:: centeralign
 
@@ -151,7 +155,7 @@ EVAL-LTC9111-AZ Setup
 The EVAL-LTC9111-AZ is an 802.3cg PD motherboard use for evaluating the LTC9111.
 
 
-|image9|
+|image7|
 
 .. container:: centeralign
 
@@ -166,7 +170,7 @@ The EVAL-LTC9111-AZ PD motherboard can accept one media converter shield. For Cl
 When inserting a shield on to the motherboard, align the shield’s two short male headers with the two short female headers at a port on the motherboard. The longer header will naturally align. Note, the last two pins of the longer header on the mother board are reserved for future use and will not have pins inserted in them. Insert the shield until the headers are flush with each other. Before proceeding, verify no pins are sticking out indicating a misalignment. Powering the motherboard with a misaligned shield can cause damage to the system.
 
 
-|image10|
+|image8|
 
 .. container:: centeralign
 
@@ -179,7 +183,7 @@ Jumper Settings
 Set the CLASSC and CLASSV jumpers to the class for evaluation according to the table shown on the silkscreen.
 
 
-|image11|
+|image9|
 
 .. container:: centeralign
 
@@ -190,7 +194,7 @@ The EVAL-LTC9111-AZ rev. 1 will have a P4 jumper; set this jumper to CONNECT for
 
 
 
-|image12|
+|image10|
 
 .. container:: centeralign
 
@@ -203,7 +207,7 @@ SPoE Load Connection
 In a typical application a DC/DC converter is connected across OUT+ and GND and enabled by the LTC9111.
 
 
-|image13|
+|image11|
 
 .. container:: centeralign
 
@@ -214,7 +218,7 @@ For bench test purposes, connect passive loads such as a resistor across OUT+ an
 
 
 
-|image14|
+|image12|
 
 .. container:: centeralign
 
@@ -227,7 +231,7 @@ Onboard 3.3V
 The EVAL-LTC9111-AZ PD motherboard has an onboard buck converter that steps the SPoE voltage down to 3.3V. This 3.3V is used to power up the media converter shield. Additional load may be connected to the 3.3V output.
 
 
-|image15|
+|image13|
 
 .. container:: centeralign
 
@@ -246,26 +250,22 @@ By using the evaluation board discussed herein (together with any tools, compone
 ©2022 Analog Devices, Inc. All rights reserved. Trademarks and registered trademarks are the property of their respective owners.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-spoe-kit-az_top-data_and_power_setup.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-spoe-kit-az_angle.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-az_angle.jpg
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-az_angle.jpg
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-rc-az_angle.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-rc-az_angle.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-kit-az_angle2.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-kit-az_angle2.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-kit-az_top_shield_placement.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-kit-az_top_power_supply_connect_and_setting.jpg
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4296-1-kit-az_top_power_supply_connect_and_setting.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ltc4296-1_gui.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_angle.jpg
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ltc4296-1_gui.jpg
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_angle.jpg
-   :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_top_shield_placement.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_classc_classv_jumpers.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_top_shield_placement.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_classc_classv_jumpers.jpg
    :width: 300px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_rc_snubber_jumper.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_rc_snubber_jumper.jpg
    :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_dc_dc_connect.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_resistive_load.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_buck.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_dc_dc_connect.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_resistive_load.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc9111-az_buck.jpg

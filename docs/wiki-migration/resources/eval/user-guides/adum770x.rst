@@ -38,7 +38,7 @@ The provided HDL reference design support's both the ADuM7701 and AD7405 devices
 
 User can configure the corresponding interface type, by setting the **adc_port_type** Tcl variable in the system_project.tcl file. Note that this variable should be set before generating any bit file.
 
-The output of the device is a continuous digital bit stream, to reconstruct the original input signal information, this output bit stream needs to be digitally filtered and decimated. A simple |sinc filter| is recommended to reconstruct the original input signal information received from the ADuM7701. The following equation describes the transfer function of the sinc filter:
+The output of the device is a continuous digital bit stream, to reconstruct the original input signal information, this output bit stream needs to be digitally filtered and decimated. A simple :git-hdl:`sinc filter <library/common/util_dec256sinc24b.v>` is recommended to reconstruct the original input signal information received from the ADuM7701. The following equation describes the transfer function of the sinc filter:
 
 :math:`\displaystyle H(z) = (1/DR \frac{1-Z^-DR}{1 - Z^-1})^N`
 
@@ -95,8 +95,10 @@ Create the project with SDK
 
 -  The new **Empty Application project** should look like:
 
-
-|Empty application project|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
+   :alt: Empty application project
+   :align: center
+   :width: 650px
 
 .. important::
 
@@ -162,8 +164,6 @@ Create the project with SDK
 
 -  Your new bare metal application should run
 
-.. |Empty application project| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
-   :width: 650px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ad9361_no_os_microblaze_heap_size.png
 
 
@@ -210,28 +210,11 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADuM7701 Driver. <adum7701_fmc/adum7701.c>`
+   -  :git-no-OS:`Header file of ADuM7701 Driver. <adum7701_fmc/adum7701.h>`
+   -  :git-no-OS:`No-OS Reference Design. <adum7701_fmc>`
+   -  :git-hdl:`HDL Reference Design <tree/adum7701>`
    
-   |Implementation of ADuM7701 Driver.|
 
-   -
-
-   |Header file of ADuM7701 Driver.|
-
-   -
-
-   |No-OS Reference Design.|
-
-   -
-
-   |HDL Reference Design|
 
 bbbbbbbb
-
-.. |sinc filter| image:: https://wiki.analog.com/_media/:git-hdl:`library/common/util_dec256sinc24b`.v
-.. |Implementation of ADuM7701 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`adum7701_fmc/adum7701`.c
-.. |Header file of ADuM7701 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`adum7701_fmc/adum7701`.h
-.. |No-OS Reference Design.| image:: https://wiki.analog.com/_media/:git-no-OS:`adum7701_fmc`
-.. |HDL Reference Design| image:: https://wiki.analog.com/_media/:git-hdl:`tree/adum7701`

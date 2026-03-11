@@ -74,8 +74,9 @@ Video Stream/Data Transfer Test
 
 -  Set the display settings of your PC to 1920x1080/60Hz.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/pc_display_settings.png
+   :align: center
+   :width: 600px
 
 -  Power the HDMI board by means of the power source and the USB Type C cable. The **LED D51** will light up.
 -  Connect the :adi:`EVAL-CN0571-EBZ <CN0571>` HDMI input (P2) to your PC or laptop using a HDMI cable.
@@ -124,6 +125,4 @@ Registration
 .. |Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/full_block_diagram_final_copy.svg.png
    :width: 3000px
 .. |Figure 2. Isolated HDMI Signal Flow Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/simplified_block_diagram_final_copy.svg.png
-   :width: 600px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/pc_display_settings.png
    :width: 600px

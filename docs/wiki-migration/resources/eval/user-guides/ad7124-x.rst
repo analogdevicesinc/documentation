@@ -45,26 +45,34 @@ To begin using the evaluation board, please do the following
 
    -  Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/quick_start.jpg
+   :align: center
+   :width: 600px
 
-   |image1|
+-  If using the Arduino connector on the SDP-K1, connect as shown in the image below: (**Currently not supported by EVAL+, use SDP-B**)
 
--  If using the Arduino connector on the SDP-K1, connect as shown in the image below: (**Currently not supported by EVAL+, use SDP-B**)\
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_baord_sdp-k1.jpg
+   :align: center
+   :width: 400px
 
 -  Connect the controller board to the PC using the supplied USB cable. If you are using Windows® XP, you may need to search for the EVAL-SDP drivers. Choose to automatically search for the drivers for the EVAL-SDP board if prompted by the operating system.
--  Launch the EVAL-AD7124-xASDZ software from the **Analog Devices** subfolder in the **Programs** menu.\
+-  Launch the EVAL-AD7124-xASDZ software from the **Analog Devices** subfolder in the **Programs** menu.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/program_menu.png
+   :align: center
+   :width: 600px
 
 -  If the AD7124 evaluation system is not connected to the USB port via the SDP-B when the software is launched, a connectivity error displays (see below). Connect the evaluation board to the USB port of the PC, wait a few seconds, click **Refresh**, and then follow the on-screen instructions.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_2.png
+   :align: center
+   :width: 250px
 
 -  Once the evaluation system has been connected to the PC and **Refresh** has been clicked, the dialog box will update as shown.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_3.png
+   :align: center
+   :width: 250px
 
 -  Click select on the dialog box and you will then be at the Eval+ homescreen.
 
@@ -109,14 +117,3 @@ Software Guide
             -  :doc:`6 Wire Bridge Demo </wiki-migration/resources/eval/user-guides/ad7124-x/software/demo_modes>`
 
    -  :doc:`Virtual Eval </wiki-migration/resources/eval/user-guides/ad7124-x/software>`
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/quick_start.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval_baord_sdp-k1.jpg
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/program_menu.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_2.png
-   :width: 250px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/software/install_3.png
-   :width: 250px

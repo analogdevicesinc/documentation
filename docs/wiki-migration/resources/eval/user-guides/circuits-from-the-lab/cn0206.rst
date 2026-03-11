@@ -43,49 +43,60 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0206 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0206 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0206\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0206 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0206 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0206\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
-
-|image1|
-
--  Press **“Next”**.\
-
-|image2|
-
--  Press **“Next”**.\
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-destination_directory-1.jpg
+   :align: center
 
 -  Press **“Next”**.
--  Upon completion of the installation of the **CN0206 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer. It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**\
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-destination_directory-2.jpg
+   :align: center
 
--  Press **“Next”**.\
+-  Press **“Next”**.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-installation_complete.jpg
+   :align: center
+
+-  Press **“Next”**.
+-  Upon completion of the installation of the **CN0206 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer. It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-sdpdrivers-setup_wizard.jpg
+   :align: center
+
+-  Press **“Next”**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-sdpdrivers-installation_complete.jpg
+   :align: center
 
 -  Press **“Finish”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0206-SDPZ**
 
 Step by Step Instruction for Connecting the Hardware
 ----------------------------------------------------
 
--  Connect the :adi:`EVAL-SDP-CS1Z <SDP-S>` and the :adi:`eval-cn0206-sdpz` PCB’s using the 120 pin male and female connectors found on the respective boards.\
+-  Connect the :adi:`EVAL-SDP-CS1Z <SDP-S>` and the :adi:`eval-cn0206-sdpz` PCB’s using the 120 pin male and female connectors found on the respective boards.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-hardware-connected-sdps-cn0206.jpg
+   :align: center
+   :width: 300px
 
-|image6|
+-  Plug the mini end of the USB cable into connector J2 of the :adi:`EVAL-SDP-CS1Z <SDP-S>` and connect the other end of the USB cable into the Laptop or PC.
 
--  Plug the mini end of the USB cable into connector J2 of the :adi:`EVAL-SDP-CS1Z <SDP-S>` and connect the other end of the USB cable into the Laptop or PC.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-hardware-connected-usb-sdps-cn0206.jpg
+   :align: center
+   :width: 300px
 
-|image7|
+-  Plug in the wall wart and connect it to connector J2 of the :adi:`eval-cn0206-sdpz`.
 
--  Plug in the wall wart and connect it to connector J2 of the :adi:`eval-cn0206-sdpz`.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-powerpluggedin-hardware-connected-sdps-cn0206.jpg
+   :align: center
+   :width: 300px
 
-|image8|
+-  Plug one end of the t-type thermocouple wire into the thermocouple source.
 
--  Plug one end of the t-type thermocouple wire into the thermocouple source.\
-
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-tcouplepluggedin-powerpluggedin-hardware-connected-sdps-cn0206.jpg
+   :align: center
+   :width: 300px
 
 -  Plug the second end of the t-type thermocouple wire into connector J1 on the :adi:`eval-cn0206-sdpz`.
 
@@ -96,8 +107,8 @@ Opening and Enabling the Evaluation Software
 
 -  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0206** and press the **“Connect"** button.
 
-
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-front_panel.jpg
+   :align: center
 
 -  After pressing the **“Connect”** button, a prompt will appear informing the user if the ADC was properly configured. Press **“Ok”** and the software is ready to use. If the ADC is not configured properly, disconnect the entire setup and start over.
 
@@ -172,18 +183,3 @@ Registration
 
 
 // End of document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-destination_directory-1.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-destination_directory-2.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-installation_complete.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-sdpdrivers-setup_wizard.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-sdpdrivers-installation_complete.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-hardware-connected-sdps-cn0206.jpg
-   :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-hardware-connected-usb-sdps-cn0206.jpg
-   :width: 300px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-powerpluggedin-hardware-connected-sdps-cn0206.jpg
-   :width: 300px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-tcouplepluggedin-powerpluggedin-hardware-connected-sdps-cn0206.jpg
-   :width: 300px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0206/cn0206-evaluation_software-front_panel.jpg

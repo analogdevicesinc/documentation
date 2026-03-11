@@ -35,7 +35,7 @@ Instructions to build the toolbox from terminal
 
 ::
 
-   >git clone https://github.com/analogdevicesinc/HighSpeedConverterToolbox.git
+   >git clone :git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox`
    > cd HighSpeedConverterToolbox
    ../HighSpeedConverterToolbox> git submodule update --init --recursive
    ../HighSpeedConverterToolbox > git checkout cn0585_v1
@@ -212,7 +212,7 @@ Get the PyADI-IIO repo, and switch to the compatible branch.
 
 ::
 
-   git clone https://github.com/analogdevicesinc/pyadi-iio.git
+   git clone :git-pyadi-iio:`pyadi-iio`
    cd pyadi-iio
    git checkout cn0585_v1
 

@@ -27,5 +27,5 @@ You will see the following in the \*.params file:
 
 |exportprogrampic3.png|
 
-.. |exportprogrampic2.png| image:: https://wiki.analog.com/_media/exportprogrampic2.png
-.. |exportprogrampic3.png| image:: https://wiki.analog.com/_media/exportprogrampic3.png
+.. |exportprogrampic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/exportprogrampic2.png
+.. |exportprogrampic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/exportprogrampic3.png

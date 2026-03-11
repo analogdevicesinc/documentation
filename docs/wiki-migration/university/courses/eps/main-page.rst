@@ -103,18 +103,15 @@ It models power generation, and distribution in a simulated real-life setting. A
 
 Figure 1 is the schematic of the system board. Figure 2 shows a completed board connected to the Discovery module, a 9V 6 cell AA battery holder (to power the DC motor), a small solar array and a rechargeable NiCd battery pack. A Hall effect sensor and magnet mounted on the motor-generator shaft measures the RPM.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/energy_power_adg.png
-   :align: center
-   :width: 650px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1, Energy and Power Systems (EPS) Hardware Module schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_12.jpg
-   :align: center
-   :width: 650px
+   |image2|
 
 .. container:: centeralign
 
@@ -236,3 +233,8 @@ To assemble the Power and Energy Systems PC board, you need certain hand tools s
 **Energy Expenditure**
 
 The power provided by the mechanical and solar energy sources is combined and used to power up to six LEDs, representing any kind of load that might be used in a real-life power system (lights, air conditioners, etc.). The power must reach a certain threshold before the LEDs will turn on. LEDs-The LEDs provide the function of simulating a load. Lighting the LEDs is the ultimate purpose of the power system, and so it is essential that the proper power is applied to them. The LEDs operate at around 1.67 V, and will usually turn on when about 4.5 V is applied to the generator (may vary depending on efficiency of the motors, battery life, etc.). In the case of real-life loads powered by plants, there exists a variable demand for power. Since electrical energy cannot be stored, it must be continually generated to meet the demand, requiring some sort of control system.
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/energy_power_adg.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_12.jpg
+   :width: 650px

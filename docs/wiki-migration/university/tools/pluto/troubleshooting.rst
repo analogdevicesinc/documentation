@@ -15,9 +15,9 @@ Pluto Cannot be found
 
 **Solution**: Usually the issue related to not having the necessary drivers or tools installed. Follow these steps to check connectivity:
 
--  Install :git-libiio:`libIIO <releases>`
+-  Install `libIIO <https://github.com/analogdevicesinc/libiio/releases>`_
 -  **Linux only if libIIO installed from package manager:** Install `libiio-utils <https://packages.ubuntu.com/xenial/libs/libiio-utils>`_
--  **Windows Only:** :git-plutosdr-m2k-drivers-win:`Install Pluto driver <releases>`
+-  **Windows Only:** `Install Pluto driver <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`_
 -  Unplug Pluto
 -  Reboot machine
 -  Plugin Pluto

@@ -251,9 +251,10 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 
    |image34|
 
-   -  In the Main tab, select the ARM core DXE file.
+-  In the Main tab, select the ARM core DXE file.
 
-   |image35|
+
+|image35|
 
    -  Click "Apply" to save the configuration and then "Close" to exit the debug configuration window.
 
@@ -266,10 +267,10 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 
    |image36|
 
-   -  Click "Next" to proceed.
-   -  The option to use the Debug Agent will be visible.
+-  Click "Next" to proceed.
+-  The option to use the Debug Agent will be visible.
 
-   |image37|
+|image37|
 
    -  Click "Finish" to finalize the SHARC configuration.
 
@@ -286,16 +287,17 @@ Using SC598 SOM + SOM-CRR On-Board Debug Agent
 
    |image38|
 
-   -  The previously selected Debug Configuration for both ARM and SHARC cores will appear under ‘Use an existing debug configuration’.
+-  The previously selected Debug Configuration for both ARM and SHARC cores will appear under ‘Use an existing debug configuration’.
 
-   |image39|
 
-   -  Click "Finish" to apply the settings.
-   -  The final window will display the selected debug configurations for both the ARM and SHARC cores.
+|image39|
 
-   |image40|
+-  Click "Finish" to apply the settings.
+-  The final window will display the selected debug configurations for both the ARM and SHARC cores.
 
-   -  Click "Debug" to start the debugging session.
+|image40|
+
+-  Click "Debug" to start the debugging session.
 
 Downloading Schematic from SigmaStudioPlus UI to Target
 -------------------------------------------------------

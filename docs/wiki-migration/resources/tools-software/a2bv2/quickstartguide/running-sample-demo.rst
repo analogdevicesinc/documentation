@@ -12,8 +12,9 @@ Using SigmaStudio+ the A2B system can be directly controlled from a connected co
 
 A block diagram of a 3 node A2B system with PC as Host is shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/a2b_system_with_pc_as_host.jpg
-   :align: center
+
+
+|image1|
 
 .. container:: centeralign
 
@@ -22,8 +23,9 @@ A block diagram of a 3 node A2B system with PC as Host is shown in :doc:`Figure 
 
 The sample demo configuration is as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`. The audio source connected to sub-node 1 will be played out at main node. The microphone audio from sub node 0 will be played out at sub node 1.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_3.png
-   :align: center
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -304,8 +306,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 
 -  Open an A2B schematic from (<A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC).
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png
+   :align: center
 
 .. container:: centeralign
 
@@ -316,8 +318,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 
    -  Open the platform view either by double clicking on the platform or by clicking on “Canvas” option under the platform in the Project tree as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
 
-
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/platform_view_in_sigmastudio_.png
+   :align: center
 
 .. container:: centeralign
 
@@ -326,21 +328,22 @@ The following steps describe the procedure to run a sample demo in PC mode
 
 -  The peripheral settings can be opened by double clicking on the peripheral or by clicking on the “Settings” option under the peripheral in project tree and select the xml as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`
 
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/peripheral_window_new.png
+   :align: center
 
 .. container:: centeralign
 
    \ **Figure:** Peripheral Settings window
 
 
--  **Note:** The adi_a2b_main_ADAU1452.xml, adi_a2b_main_ADAU1761.xml, adi_a2b_sub_ADAU1961.xml files are available in <A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC\\xml folder
+::
 
--  Make sure that USBi cable is connected to eval board as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` and the board is powered on.
--  Click on “LinkCompileDownload” icon in SigmaStudio+ as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
+     **Note:** The adi_a2b_main_ADAU1452.xml, adi_a2b_main_ADAU1761.xml, adi_a2b_sub_ADAU1961.xml files are available in <A2B plugin for SigmaStudio+ installation path>>\Schematics\PC\xml folder
+   * Make sure that USBi cable is connected to eval board as shown in `Figure <:doc:`/wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power`>`_ and the board is powered on.
+   * Click on “LinkCompileDownload” icon in SigmaStudio+ as shown in `Figure <:doc:`/wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo`>`_ This will start the discovery and configuration of A2B nodes and peripheral devices as per the schematic.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/link_compile_download.png
+   :align: center
 
 .. container:: centeralign
 
@@ -454,7 +457,7 @@ Running sample Demo BF as Host
 The sample demo can be run using BF527 as the host processor. In this case the host processor controls the discovery and programming of A2B nodes in the system. The block diagram of a 3 node A2B system with BF527 as Host is shown :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>` below.
 
 
-|image5|
+|image3|
 
 .. container:: centeralign
 
@@ -487,7 +490,8 @@ After completing all the connections, the A2B system should look as shown in :do
 -  Mount ‘Connector A’ of SDP-B on J5 of EVAL-AD2435WA3LZ
 -  Connect a JTAG Emulator from PC to SDP-B board
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bf527_host.png
+   :align: center
 
 .. container:: centeralign
 
@@ -515,7 +519,8 @@ Flash SDP-B with A2B target software
 -  The batch utility will start flashing the board as shown in below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo>`.
 -  After the flashing is complete disconnect from Target, remove JTAG and Reset the SDP-B board.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bf527_host_cmd.png
+   :align: center
 
 .. container:: centeralign
 
@@ -531,7 +536,8 @@ Download A2B target software from CCES
 -  Ensure Custom board support file BF527-SDP-HW-CCES.XML (C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\examples\\demo\\a2b-bf\\system\\BF527-SDP-HW-CCES.XML) is applied as shown below
 -  Run the project by selecting a debug configuration. Ensure that JTAG is connected to the SDP-B board on the Master node.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/customboardinfocces.png
+   :align: center
 
 .. container:: centeralign
 
@@ -553,11 +559,6 @@ The sample demo can be run using ADSP-SC594 as the host. In this case the ARM co
 -  **Note:** If Emulator is used the first time: Create a new debug configuration using Run- >Debug Configurations, create new session, select ADSP-SC594 and click NEXT, select Emulator and click NEXT, choose In-Circuit Emulator platform (typically: ADSP-SC594 via ICE1000) and click NEXT, then click FINISH.
 -  Select a debug configuration and press F5 to run the project.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pc_mode.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/platform_view_in_sigmastudio_.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/peripheral_window_new.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/link_compile_download.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/blank_diagram.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bf527_host.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/bf527_host_cmd.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/customboardinfocces.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/a2b_system_with_pc_as_host.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_3.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/blank_diagram.png

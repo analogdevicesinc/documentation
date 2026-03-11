@@ -13,7 +13,9 @@ The RapidNet module is used as primary MCU for application purposes and also use
    Even though the module software is open to customers, the RapidNet IP protocol stack is still a black box.
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/master_mode_block_diagram.png
+   :align: center
+   :width: 400px
 
 Slave mode
 ----------
@@ -21,7 +23,7 @@ Slave mode
 The RapidNet module is used as a comms pipe by a different MCU which is primarily uised for application purposes. The application's MCU (apps MCU) is expected to use certain APIs over UART in order to communicate over RapidNet IP.
 
 
-|image2|
+|image1|
 
 UART interface
 ~~~~~~~~~~~~~~
@@ -73,7 +75,8 @@ These APIs allow the RapidNet module to be used as a comms pipe by the Apps MCU.
 Packet format
 ^^^^^^^^^^^^^
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/sm_packet_format.png
+   :align: center
 
 .. note::
 
@@ -98,7 +101,7 @@ Example - SENDING DATA REQUEST COMMAND
 The format and parameters to send data request command to the RF Module to start device as RapidNet IP node is shown below.
 
 
-|image4|
+|image2|
 
 Sample Slave mode application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,9 +122,6 @@ Application summary
 -  It transmits a packet of data (1KB) to the gateway and waits to receive an acknowledgement. If acknowledgement is not received within a set interval, the packet is retransmitted.
 -  Steps 2 and 3 repeat indefinetly
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/master_mode_block_diagram.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/slave_mode_block_diagram.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/slave_mode_block_diagram.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/sm_packet_format.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/sm_example_2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rapidnet-ip/sm_example_2.png

@@ -35,10 +35,10 @@ Connection Diagram
 Board Interface
 ~~~~~~~~~~~~~~~
 
--  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.\
+-  Connect the AD-GEAR-DISPLAY1Z via it’s Cog connectors to the EV-COG-AD3029LZ’s expansion connectors.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
+   :width: 600px
 
 Pin Connection
 ~~~~~~~~~~~~~~
@@ -107,6 +107,3 @@ References and Links
 -  :doc:`EV-COG-AD3029LZ User guide with the BSP </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 -  `MCP23s17 Datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf>`_
 -  Schematics of EV-COG-AD3029LZ and AD-GEAR-DISPLAY1Z are found in the Docs folder of the joystick_example project.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_gear_connection.png
-   :width: 600px

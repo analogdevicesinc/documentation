@@ -30,4 +30,4 @@ If more precise control over the fractional delay amount is required, the fracti
 
 To update the delay percentage via an external micro-controller (MCU), the valid delay percentage value is a fixed point number between 0.0 and 1.0 (0% to 100%).
 
-.. |fracdelay.png| image:: https://wiki.analog.com/_media/fracdelay.png
+.. |fracdelay.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/fracdelay.png

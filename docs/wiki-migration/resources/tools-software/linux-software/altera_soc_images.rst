@@ -28,12 +28,9 @@ ADRV9371 + Arria 10 SoC Development Kit
 Download Links
 ~~~~~~~~~~~~~~
 
-HDL Project: |:git-hdl:`projects/adrv9371x/a10soc|`
+HDL Project: :git-hdl:`projects/adrv9371x/a10soc`
 
-Linux Kernel:
-
-
-|https://github.com/analogdevicesinc/linux|
+Linux Kernel: :git-linux:`linux`
 
 Building the Linux Kernel image and the Devicetree
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,7 +56,7 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 
 ::
 
-   $ git clone https://github.com/analogdevicesinc/hdl.git //
+   $ git clone :git-hdl:`hdl` //
    $ cd ~/Workspace/hdl/projects/adrv9371x/a10soc
 
 -  Build the project
@@ -229,12 +226,9 @@ ARRADIO + Terasic SoCkit Development Kit
 Download Links
 ~~~~~~~~~~~~~~
 
-HDL Project: |:git-hdl:`projects/arradio/c5soc|`
+HDL Project: :git-hdl:`projects/arradio/c5soc`
 
-Linux Kernel:
-
-
-|https://github.com/analogdevicesinc/linux|
+Linux Kernel: :git-linux:`linux`
 
 `ad9361.tar.gz <https://wiki.analog.com/_media/resources/tools-software/linux-software/altera_soc/ad9361.tar.gz>`_
 
@@ -262,7 +256,7 @@ If you skipped the instruction on "Building the Linux Kernel image and the Devic
 
 ::
 
-   $ git clone https://github.com/analogdevicesinc/hdl.git //
+   $ git clone :git-hdl:`hdl` //
    $ cd ~/Workspace/hdl/projects/arradio/c5soc
 
 -  Build the project
@@ -470,22 +464,13 @@ CN0540 + DE10Nano Development Kit
 Download Links
 ~~~~~~~~~~~~~~
 
-HDL Project: |:git-hdl:`projects/cn0540/de10nano|`
+HDL Project: :git-hdl:`projects/cn0540/de10nano`
 
-Linux Kernel:
+Linux Kernel: :git-linux:`linux`
 
+Cross_compiler: `gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz <https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz>`_
 
-|https://github.com/analogdevicesinc/linux|
-
-Cross_compiler:
-
-
-|https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz|
-
-SD Card Image:
-
-
-|https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images/release_notes|
+SD Card Image: `release_notes <:doc:`/wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes`>`_
 
 Building the Linux Kernel image and the Devicetree
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -688,7 +673,9 @@ You will need to:
 -  Plug the Power Supply into 5V Power input connector (J14) (DO NOT turn the device on).
 -  Set the jumpers as seen in the below picture:
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
+   :align: center
+   :width: 800px
 
 -  Turn it on.
 -  Wait ~30 seconds for the “DONE” LED to turn blue.
@@ -704,13 +691,5 @@ IIO Oscilloscope
 
 .. image:: https://wiki.analog.com/_media/playground/cn0540_de10nano_waveforms_.png
 
-.. |:git-hdl:`projects/adrv9371x/a10soc|` image:: :git-hdl:`projects/adrv9371x/a10soc`
-.. |https://github.com/analogdevicesinc/linux| image:: https://github.com/analogdevicesinc/linux
-.. |:git-hdl:`projects/arradio/c5soc|` image:: :git-hdl:`projects/arradio/c5soc`
-.. |:git-hdl:`projects/cn0540/de10nano|` image:: :git-hdl:`projects/cn0540/de10nano`
-.. |https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz| image:: https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz
-.. |https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images/release_notes| image:: https://wiki.analog.com/_media/:doc:`/wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes`
 .. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
    :width: 600px
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
-   :width: 800px

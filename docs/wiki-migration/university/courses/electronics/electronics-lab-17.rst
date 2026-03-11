@@ -11,9 +11,8 @@ Background:
 
 The delta sigma modulator is the central part of delta sigma analog to digital converters which are also often referred to as over-sampling converters. In its simplest form, which features a single bit quantizer, it produces a bit stream. The digital average of this bit stream represents the input signal level. A simple continuous time first order delta sigma modulator block diagram is shown here:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a17_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -34,9 +33,8 @@ Directions:
 
 The breadboard connections are as shown in figure 2. The scope inputs should be connected to measure the digital and analog output waveforms at D out (1+) and A out (2+). The circuit will operate from the positive Vp supply provided from the ADALM2000 board but better performance will be observed if a +5V bench power supply is used. The digital pulse source output drives the clock input of the flip flop at pin 3. The waveform generator output is connected to resistor R\ :sub:`4` to provide the analog input test signals. Resistors R\ :sub:`1` and R\ :sub:`2` serve to split the supply voltage in half which provides a common mode bias point at the positive input of the opamp. Ground and Vp can now be considered as -Vref and +Vref respectively.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a17_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -71,3 +69,8 @@ What is the effect of changing the DC value of the analog input? What is the eff
 :adi:`ADC Architectures IV: Sigma-Del ta ADC Advanced Concepts and Applications <static/imported-files/tutorials/MT-023.pdf>` `Delta Sigma Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/19-delta-sigma-toolbox>`_ http://en.wikipedia.org/wiki/Delta-sigma_modulation
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a17_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a17_f2.png
+   :width: 600px

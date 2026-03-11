@@ -93,23 +93,21 @@ You will need to:
 -  Plug the Power Supply into the 12V Power input connector (J20) (DO NOT turn the device on).
 -  Set the jumpers as seen in the below picture:
 
-|jumpers_boot_sd_zedboard.jpg|
-
-
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/jumpers_boot_sd_zedboard.jpg
+   :alt: jumpers_boot_sd_zedboard.jpg
+   :align: center
+   :width: 400px
 
 .. tip::
 
    Before executing the below steps, make sure that VADJ jumper is set to 1.8V.
 
 
-* Connect the oscilloscope probes to the SMB connectors.
-   * Turn it on.
-   * Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
+-  Connect the oscilloscope probes to the SMB connectors.
+-  Turn it on.
+-  Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
-::
-
-   {{  resources:eval:user-guides:dac:ad3552r_eval_zed:setup_diagram_eval_ad3552r.jpg?800 }}
-
+|resources-eval-user-guides-dac-ad3552r_eval_zed-setup_diagram_eval_ad3552r.jpg|
 
 .. note::
 
@@ -127,7 +125,7 @@ The Libiio is a library used for interfacing with IIO devices and is required to
 .. admonition:: Download
    :class: download
 
-   Download and Install the latest :git-libiio:`Libiio package <releases>` on your machine.
+   Download and Install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the :adi:`EVAL-AD3552R` is attached. The Zedboard running ADI Kuiper Linux is currently the only platform supported for the :adi:`EVAL-AD3552R`. The user needs to supply a **URI** which will be used in the context creation.
@@ -164,7 +162,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
@@ -254,7 +252,7 @@ Reference Demos & Software
 -  `PyADI-IIO sources for the EVAL-AD3552R board. <https://github.com/analogdevicesinc/pyadi-iio/blob/cn0585_v1/examples/ad3552r_example.py>`_
 -  :doc:`Dual Channel, 16-Bit, 33 MUPS, Multispan, Multi-IO SPI DAC Linux device driver. </wiki-migration/resources/tools-software/linux-drivers/iio-dac/axi-ad3552r>`
 -  :doc:`AXI-AD3552R HDL IP. </wiki-migration/resources/fpga/docs/axi_ad3552r>`
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -263,5 +261,5 @@ Reference Demos & Software
    :width: 400px
 .. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
    :width: 600px
-.. |jumpers_boot_sd_zedboard.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/jumpers_boot_sd_zedboard.jpg
-   :width: 400px
+
+.. |resources-eval-user-guides-dac-ad3552r_eval_zed-setup_diagram_eval_ad3552r.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/setup_diagram_eval_ad3552r.jpg

@@ -65,10 +65,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Place the **(S5)** switch position to read "Wall/USB", and the **(S2)** switch position to read "USB".\
+-  Place the **(S5)** switch position to read "Wall/USB", and the **(S2)** switch position to read "USB".
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
+   :align: center
+   :width: 200px
 
 -  Connect a jumper on **P1** between position **1-2** on EVAL-CN0397-ARDZ.
 -  Plug the **EVAL-CN0397-ARDZ** shield into the **EVAL-ADICUP3029** board, using (P3), (P4), (P5), (P6), and (P7).
@@ -108,7 +109,7 @@ There are **three** different ways to visualize the data:
 Depending on how you want to operate the board and visualize the data, there are two different options that must be selected from. Below is a table outlining the general operation, and you need to click on which **launch** file you need to program onto the EVAL-ADICUP3029, and hit the **<F5>** key on your keyboard.
 
 
-|image2|
+|image1|
 
 +---------------------------+-----------------------+---------------------------+
 | Data Output Destination   | Connected to Debugger | Configuration File        |
@@ -145,7 +146,7 @@ Figure shows when ADI_APP_USE_BLUETOOTH is set to 1, sensor data is sent to the 
    
 
 
-|image3| |image4|
+|image2| |image3|
 
 Figure shows when ADI_APP_USE_BLUETOOTH is set to 0.
 
@@ -182,7 +183,7 @@ If *ADI_APP_USE_BLUETOOTH* is set to 1, BLE will advertise and UART terminal wil
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/release_mode_ble.png
    :align: center
 
-|image5| |image6|
+|image4| |image5|
 
 .. important::
 
@@ -209,7 +210,7 @@ The software for the **ADuCM3029_demo_cn0397** can be found here:
    Prebuilt CN0414 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0397.Hex <releases/download/Latest/ADuCM3029_demo_cn0397.hex>`
+   -  `AduCM3029_demo_cn0397.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0397.hex>`_
    
    Complete CN0414 Source Files
    
@@ -232,7 +233,7 @@ Debugging
 
 For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our :doc:`How to configure the debug session </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` section.
 
--  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image7| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
+-  Make sure the target board is connected to workstation (via **USB** at P10) and using the tool bar, navigate to the small Debug icon\ |image6| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
 -  Use step-by-step execution or directly run the program.
 
 After completion of the steps above the program will be loaded onto the system FLASH and it will run by default every time the board is powered up.
@@ -253,17 +254,15 @@ cn0397_app.cpp and cn0397.h are the main source and header files related to **AD
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_uart_switch_usb_revc.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
    :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/adt7420_demo_launch_configurations.png
-   :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
    :width: 450px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-134458.png
    :width: 450px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0397/screenshot_20170526-140134.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png
    :width: 30px

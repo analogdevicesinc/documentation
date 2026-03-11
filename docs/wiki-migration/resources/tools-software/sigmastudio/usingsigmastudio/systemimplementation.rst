@@ -552,9 +552,9 @@ Following is an example of how you can integrate the parameters into microcontro
 
 ~~~~
 
-.. |codepic1.png| image:: https://wiki.analog.com/_media/codepic1.png
-.. |codepic2.png| image:: https://wiki.analog.com/_media/codepic2.png
-.. |codepic3.png| image:: https://wiki.analog.com/_media/codepic3.png
-.. |codepic4.png| image:: https://wiki.analog.com/_media/codepic4.png
-.. |codepic5.png| image:: https://wiki.analog.com/_media/codepic5.png
-.. |codepic6.png| image:: https://wiki.analog.com/_media/codepic6.png
+.. |codepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/codepic1.png
+.. |codepic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/codepic2.png
+.. |codepic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/codepic3.png
+.. |codepic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/codepic4.png
+.. |codepic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/codepic5.png
+.. |codepic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/codepic6.png

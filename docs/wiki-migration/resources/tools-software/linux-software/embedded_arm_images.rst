@@ -946,7 +946,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    remote: Compressing objects: 100% (16/16), done.
    remote: Total 32 (delta 16), reused 30 (delta 16), pack-reused 0
    Unpacking objects: 100% (32/32), 7.80 KiB | 133.00 KiB/s, done.
-   From https://github.com/analogdevicesinc/linux_image_ADI-scripts
+   From :git-linux_image_ADI-scripts:`linux_image_ADI-scripts`
      * [new branch]      add_2021_R1_release -> origin/add_2021_R1_release
       47416bc..425510e  master              -> origin/master
     + c989e52...4bf27ce rpi_boot_files      -> origin/rpi_boot_files  (forced update)
@@ -1201,7 +1201,7 @@ In order to update all ADI tools - simply call the update script as shown below:
    remote: Counting objects: 100% (3/3), done.
    remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
    Unpacking objects: 100% (3/3), 601 bytes | 120.00 KiB/s, done.
-   From https://github.com/analogdevicesinc/libad9361-iio
+   From :git-libad9361-iio:`libad9361-iio`
      * [new branch]      2021_R1           -> origin/2021_R1
      * [new branch]      staging/ci-update -> origin/staging/ci-update
     ** Building libad9361-iio **

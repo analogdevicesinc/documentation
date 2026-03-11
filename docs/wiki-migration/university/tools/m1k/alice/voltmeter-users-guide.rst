@@ -40,9 +40,8 @@ Screen Setup:
 
 Once the program is running the main screen, as shown in figure 1, should appear. Be sure that the ALM1000 is plugged into the USB port before starting the program.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-1.png
-   :align: center
-   :width: 200px
+
+|image1|
 
 .. container:: centeralign
 
@@ -56,9 +55,8 @@ Calibrating the Voltmeter
 
 The program starts with the gain calibration factors set to 1.0 and the offset calibration factors set to 0.0. The first step in the calibration procedure is to connect both input channels to ground. Press the Run button. The screen should look something like figure 2 with some small (of the order of 1mV) non-zero values for CA Volts and CB Volts. You can pause (stop button) the program after a few seconds and it looks like you are getting a steady reading.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-2.png
-   :align: center
-   :width: 200px
+
+|image2|
 
 .. container:: centeralign
 
@@ -67,9 +65,9 @@ The program starts with the gain calibration factors set to 1.0 and the offset c
 
 The second calibration step is to enter the CA Volts reading into the CA offset entry window ( should have 0.0 in it ) and enter the CB Volts reading into the CB offset entry window. Press the Run button. The screen should look something like figure 3 with some small nearly zero values for CA Volts and CB Volts. You can pause (stop button) the program after a few seconds and it looks like you are getting a steady reading.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-3.png
-   :align: center
-   :width: 200px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -78,9 +76,9 @@ The second calibration step is to enter the CA Volts reading into the CA offset 
 
 The third calibration step is to measure a known voltage. The AD584 voltage reference from the ADALP2000 Analog Parts Kit is a good choice. Plug it into your solderless breadboard and connect as shown in figure 4. The AD584 is configured as a 2.5V reference by connecting pins 1 and 3 together. Connect both voltmeter input channels to the 2.5V output of the AD584. Note: the internal 2.5V and 5V sources of the ALM1000 are not accurate enough for this step ( unless you can accurately measure them with a good bench DMM ).
 
-.. image:: https://wiki.analog.com/_media/university/tools/volt-meter-fig4.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -89,9 +87,9 @@ The third calibration step is to measure a known voltage. The AD584 voltage refe
 
 After double checking your connections press the Run button. The screen should look something like figure 5 with values for CA Volts and CB Volts close to 2.5 Volts.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-4.png
-   :align: center
-   :width: 200px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -100,9 +98,9 @@ After double checking your connections press the Run button. The screen should l
 
 We want to calculate values for the channel A and B gain such that the measurements displayed are equal to the actual 2.500 volts of the reference. The Gain correction factor is simply 2.500 V divided by the unadjusted measured value. In the case for channel A in figure 5 we get 2.500/2.4383 or 1.0253; typical Gain correction factors are a few percent. We do that for both channels and enter the results in the gain entry windows as shown in figure 6. Press the Run button. The screen should look something like figure 6 with values for CA Volts and CB Volts almost exactly equal to 2.5 Volts. If not try making small adjustments to the gain factors.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-5.png
-   :align: center
-   :width: 200px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -125,9 +123,8 @@ Use Example:
 
 To demonstrate how to use the Voltmeter Tool consider the resistor network, shown in figure E1, as a voltage divider and we wish to measure the voltages at the 4 nodes and the voltages across the 6 resistors. In the figure the nodes are numbered from N0 to N4 with N0 being the ground or common node that all the voltage measurements will be made with respect to. With the Voltmeter Tool we can measure two node voltages at a time and the voltage difference between those two nodes.
 
-.. image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige1.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -136,9 +133,9 @@ To demonstrate how to use the Voltmeter Tool consider the resistor network, show
 
 We start with the network powered from the fixed +5 volt power supply at node N1 and the channel A input also connected to N1. The channel B input is connected to node N2. Figure E2 shows the results.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-e2.png
-   :align: center
-   :width: 200px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -147,18 +144,16 @@ We start with the network powered from the fixed +5 volt power supply at node N1
 
 We can now proceed around the network measuring pairs of nodes until we can fill out the table below. Figure E3 shows the voltmeter inputs connected to nodes N3 and N4. Any combination of two nodes can be measured and the voltage difference between the two nodes will be displayed.
 
-.. image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige3.png
-   :align: center
-   :width: 500px
+
+
+|image9|
 
 .. container:: centeralign
 
    Figure E3, Test resistor network, measuring nodes N3 and N4
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-e4.png
-   :align: center
-   :width: 200px
+   |image10|
 
 .. container:: centeralign
 
@@ -197,3 +192,24 @@ From these voltages and the values of the resistors the currents through the res
 **For Further Reading:**
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-1.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-2.png
+   :width: 200px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-3.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/volt-meter-fig4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-4.png
+   :width: 200px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-5.png
+   :width: 200px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige1.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-e2.png
+   :width: 200px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/volt-meter-fige3.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/volt-meter-screen-e4.png
+   :width: 200px

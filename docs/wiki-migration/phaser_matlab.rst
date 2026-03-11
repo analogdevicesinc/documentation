@@ -102,7 +102,7 @@ Either of these options should open the configuration tool. It contains further 
 LibIIO package installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The LibIIO package may be needed for MATLAB to communicate and work with the Phaser. If absence of LibIIO is causing problems with MATLAB/Phaser, it can be installed from :git-libiio>`__.
+The LibIIO package may be needed for MATLAB to communicate and work with the Phaser. If absence of LibIIO is causing problems with MATLAB/Phaser, it can be installed from :git-libiio:`here <libiio>`.
 
 Running the labs
 ----------------
@@ -144,7 +144,7 @@ Like the Phaser system object this operation should not generate any errors. The
 
 If there are errors while attempting to verify connectivity, please try the following options:
 
--  Check all the packages:`here <toolboxes listed above are installed properly
+-  Check all the packages/toolboxes listed above are installed properly
 -  Restart MATLAB and run the code again
 -  Disconnect and re-connect the cable to the device in question
 -  Ensure the Raspberry Pi's SD card has ADI Kuiper Linux installed (and that it works)
@@ -152,7 +152,7 @@ If there are errors while attempting to verify connectivity, please try the foll
 Running scripts
 ~~~~~~~~~~~~~~~
 
-Once both the Phaser and Pluto are able to communicate with MATLAB, download and extract `phasersteeringangle.zip <https://wiki.analog.com/_media/phasersteeringangle.zip>`
+Once both the Phaser and Pluto are able to communicate with MATLAB, download and extract `phasersteeringangle.zip <https://wiki.analog.com/_media/phasersteeringangle.zip>`_
 
 Then open the file **Phaser_steeringAngle_rev1.m**
 

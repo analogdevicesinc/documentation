@@ -4,7 +4,7 @@
    Download Windows and OS X binaries here:
 
    
-   -  :git-Pixelpulse2:`Latest release <releases/latest>`
+   -  `Latest release <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_
    
 
 
@@ -92,7 +92,7 @@ The log files are stored in a corresponding folder, depending on the OS:
 Download
 ========
 
-The latest release of Pixelpulse is available for download on :git-Pixelpulse2:`Github <releases/latest>`.
+The latest release of Pixelpulse is available for download on `Github <https://github.com/analogdevicesinc/Pixelpulse2/releases/latest>`_.
 
 A release contains multiple binaries that allow Pixelpulse2 to be deployed on systems that run Windows and OS X. Linux users will currently have to build their own version from source.
 

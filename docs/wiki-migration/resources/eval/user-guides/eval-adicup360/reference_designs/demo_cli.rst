@@ -83,8 +83,8 @@ A bank of jumpers provided near the PMOD ports of the EVAL-ADICUP360, makes this
 
 **Using UART via DEBUG USB (P0.1, P0.2)**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_debug.png
-   :width: 500px
+
+|image1|
 
 .. note::
 
@@ -116,7 +116,7 @@ The software for the **ADuCM360_demo_cli** demo can be found here:
    Prebuilt CLI Demo Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cli.Bin <releases/download/Release-1.0/ADuCM360_demo_cli.bin>`
+   -  `ADuCM360_demo_cli.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cli.bin>`_
    
    Complete CLI Demo Source Files
    
@@ -224,3 +224,6 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 // End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/reference_designs/cli_hw_p01_2_debug.png
+   :width: 500px

@@ -36,7 +36,7 @@ When the ADICUP360 is connected to your computer via the **DEBUG USB** port (P14
 
 The PC will still use the same drivers that were installed initially:|image4|
 
-Then go to the **My Computer** view and search for the Bootloader drive, if you see this then the drivers are complete and correct.\
+Then go to the **My Computer** view and search for the Bootloader drive, if you see this then the drivers are complete and correct.
 
 
 |image5|

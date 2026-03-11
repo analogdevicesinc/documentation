@@ -61,7 +61,7 @@ And reads the status information of all devices from SYSFS, aggregates and proce
 Source
 ------
 
-`jesd-eye-scan-gtk application <https://github.com/analogdevicesinc/jesd-eye-scan-gtk>`_
+:git-jesd-eye-scan-gtk:`jesd-eye-scan-gtk application <jesd-eye-scan-gtk>`
 
 Related device drivers
 ~~~~~~~~~~~~~~~~~~~~~~

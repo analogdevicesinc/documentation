@@ -11,4 +11,4 @@ The value in the field sets the time constant (in samples) for the debouncer; th
 
 The :doc:`Example </wiki-migration/resources/tools-software/sigmastudio/tutorials/gpioconditioningexample>` illustrates use of the block.
 
-.. |rotaryencoderpic1.png| image:: https://wiki.analog.com/_media/rotaryencoderpic1.png
+.. |rotaryencoderpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/gpioconditioning/rotaryencoderpic1.png

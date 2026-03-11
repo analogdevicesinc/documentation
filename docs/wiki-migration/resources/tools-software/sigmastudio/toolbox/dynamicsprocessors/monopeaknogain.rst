@@ -91,4 +91,4 @@ Algorithm Details
 | Parameter RAM              | 35                                                                                                                        |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
-.. |monopeakpic1.png| image:: https://wiki.analog.com/_media/monopeakpic1.png
+.. |monopeakpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/monopeakpic1.png

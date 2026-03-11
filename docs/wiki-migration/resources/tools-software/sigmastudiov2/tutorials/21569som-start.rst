@@ -24,9 +24,7 @@ Outline of Steps for Getting Started
    -  for example: Processor System On Module (SOM) plus a base board to plug the SOM onto (carrier board). The carrier board (like the EV-SOMCRR-EZKIT) - this pair of boards is shown below
    -  the EVAL-ADUSB2EBZ USB-to-I2C/SPI commincations adapter (also referred to as the USBi) - SPI communications is used for the SigmaStudio+ to SHARC programming and tuning
 
-::
-
-         {{:resources:tools-software:sigmastudiov2:tutorials:usbi.jpg?600|}}
+   |resources-tools-software-sigmastudiov2-tutorials-usbi.jpg|
 
 Hardware for this Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,3 +195,5 @@ At this point we are ready to run and audio project from SigmaStudio+
    :width: 600px
 .. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/ss_usbi.jpg
    :width: 600px
+
+.. |resources-tools-software-sigmastudiov2-tutorials-usbi.jpg| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/tutorials/usbi.jpg

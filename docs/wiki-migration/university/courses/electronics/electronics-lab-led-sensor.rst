@@ -27,9 +27,8 @@ Directions:
 
 On your solder-less breadboard construct the LED light sensor circuit as shown in figure 1. Notice that the LED diode, D\ :sub:`1`, is reverse biased i.e. opposite to how it would be connected as a light emitter. The photo generated current will flow into Q\ :sub:`1` as base current and will appear in the collector multiplied by the current gain, ß of the transistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/aleds_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -53,21 +52,22 @@ Procedure:
 
 Insert a red, yellow or green LED into the circuit as shown one at a time. Try exposing the three different color LEDs from your ADALP2000 Analog Parts Kit to different light sources such as standard incandescent, florescent and LED lights held at differing distances from the LED sensor. Observe the voltage waveform seen at the collector of Q\ :sub:`1`. Try inserting the infrared LED from your kit and observing how it responds to the light from the different sources. Try increasing the sensitivity or gain by increasing the value of R\ :sub:`L` to 200KΩ or 470KΩ.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_single_emitter_wav1.png
+
+|image2|
 
 .. container:: centeralign
 
    Figure 3 Red LED and single common emitter NPN light sensor - Led light max distance
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_single_emitter_wav2.png
+   |image3|
 
 .. container:: centeralign
 
    Figure 4 Red LED and single common emitter NPN light sensor - Led light medium distance
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_single_emitter_wav3.png
+   |image4|
 
 .. container:: centeralign
 
@@ -79,9 +79,8 @@ Step 2 Directions:
 
 Change the circuit on your breadboard to the Darlington configuration shown in figure 6. Be sure to turn off the power supply before making any changes to the circuit. With the Darlington connected transistors the emitter current of Q\ :sub:`2` becomes the base current of Q\ :sub:`1` such that the photo generated current from the LED D\ :sub:`1` is now multiplied by ß\ :sup:`2` and will appear in the load resistor R\ :sub:`L` from the collectors of Q\ :sub:`1` and Q\ :sub:`2`. Because of this much higher current gain we can use a much lower value load resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/aleds_f2.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -103,21 +102,22 @@ Step 2 Procedure:
 
 Repeat the same procedure of inserting the various LEDs into the circuit for D\ :sub:`1` and measuring the response to the various light sources and record them in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_darlington_wav1.png
+
+|image6|
 
 .. container:: centeralign
 
    Figure 8 Red LED and Darlington connected light sensor - Led light max distance
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_darlington_wav2.png
+   |image7|
 
 .. container:: centeralign
 
    Figure 9 Red LED and Darlington connected light sensor - Led light medium distance
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_darlington_wav3.png
+   |image8|
 
 .. container:: centeralign
 
@@ -147,3 +147,14 @@ How does the sensitivity of the Darlington connected configuration compare to th
 https://en.wikipedia.org/wiki/LED https://en.wikipedia.org/wiki/LED_circuit https://en.wikipedia.org/wiki/Photodiode
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/aleds_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/led_single_emitter_wav1.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/led_single_emitter_wav2.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/led_single_emitter_wav3.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/aleds_f2.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/led_darlington_wav1.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/led_darlington_wav2.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/led_darlington_wav3.png

@@ -76,9 +76,9 @@ Debugging the ADuCM30_ISM43340_CN0357 project
 
 -  A debug configuration must be set up for this project in order to have the possibility to program and to debug the ADuCM360_demo_cn0357 project. To do this, follow the instructions from `Setting Up a Debug Configuration for the Project <https://wiki.analog.com/resources/eval/user-guides/eval-adicup360/quickstart/eclipse_user_guide>`_ page.
 
-::
 
-     * Make sure the target board is connected to the computer (via **DEBUG USB**) and using the tool bar, navigate to the small Debug icon{{:resources:eval:user-guides:eval-aducm360-ardz:quickstart:bug.png?30|}} and select the debugging session you created. The application will be programmed and the program execution will stop at the beginning of the main() function.
+
+-  Make sure the target board is connected to the computer (via **DEBUG USB**) and using the tool bar, navigate to the small Debug icon|resources-eval-user-guides-eval-aducm360-ardz-quickstart-bug.png| and select the debugging session you created. The application will be programmed and the program execution will stop at the beginning of the main() function.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_4.png
    :align: center
@@ -151,3 +151,5 @@ The **system** folder contains system related files (try not to change these fil
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/navigation EVAL-ADICUP360#demo_cn0336
    :alt: Data Acquisition for Input Current Demo#.:\|Reference Designs#none
+
+.. |resources-eval-user-guides-eval-aducm360-ardz-quickstart-bug.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-ardz/quickstart/bug.png

@@ -23,9 +23,8 @@ The relation between pulse width and frequency for the square wave is given by:
 
 :math:`f=1/(2t_p)` (2)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ The expression for the current in the Inductor is given by:
 
 where, V is the applied source voltage to the circuit for t = 0. The response curve is increasing and is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -63,9 +61,8 @@ L/R = t is time constant.
 
 The response curve is a decaying exponential and is shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -89,14 +86,14 @@ Hardware setup:
 Set up the circuit shown in Figure 4 on your solderless breadboard with the component values R1 = 100Ω and L1 = 1 mH.
 
 
-|image1|
+|image4|
 
 .. container:: centeralign
 
    Figure 4. Series RL circuit schematic
 
 
-   |image2|
+   |image5|
 
 .. container:: centeralign
 
@@ -109,7 +106,7 @@ Procedure:
 On Channel 1 of the oscilloscope you will visualize the input voltage, and on channel 2 the voltage on the resistor(it has the same shape as the current through the inductor). Generate a square wave on the channel 1 of the signal generator with 4V amplitude peak-to-peak. The frequency will be set according to t. Calculate the applied frequency using equation (2) for tp = 5t.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -140,9 +137,15 @@ Questions:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/rl_series.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab6-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/rl_series.png
    :width: 350px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/transient_response_rl_series_bb.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/transient_response_rl_series_bb.png
    :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/rl_5t.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/rl_5t.png
    :width: 900px

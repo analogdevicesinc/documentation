@@ -18,9 +18,8 @@ Background:
 
 The variable analog outputs supplied by the ALM1000 hardware are voltages but can also measure current at same time. The Bipolar Junction Transistor can be modeled as a current controlled current source. The BJT collector current, I\ :sub:`C`, is controlled by the much smaller base current, I\ :sub:`B`. The generator output voltage must be converted into a suitable small current to drive the base terminal of the device under investigation. A simple high value resistor can be used to convert this voltage into a current, as shown in figure 1. However, only if the voltage across the resistor is known or controlled in some way. In this simple circuit, the base current I\ :sub:`B` = (CB-V - V\ :sub:`BE`)/10KΩ. We can set CB-V to known values but we don't know the exact value of V\ :sub:`BE`. We can of course remove an estimate of the V\ :sub:`BE` mathematically. This is still only an estimate but close enough for our purposes here.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -49,9 +48,8 @@ Procedure:
 
 The 0.4 V steps in the voltage driving the 10 KΩ base resistor will produce approximately 0.4 V/10 KΩ or 40 uA steps in the base current. Using the scope in XY mode plot channel CA-V on the horizontal axis (V\ :sub:`CE`) and channel CA-I (I\ :sub:`C`) on the vertical axis. You should see a set of 10 curves of I\ :sub:`C` vs. V\ :sub:`CE`, one for each of the 10 different base current levels. These base current levels should be approximately 0, 40uA, 80uA, 120uA ... 360uA. It may be necessary to slightly adjust the 0.6V offset level of the first step of channel B up or down slightly to insure it is right at the initial turn on value ( I\ :sub:`B`\ =0 and I\ :sub:`C`\ =0) of the transistor you are testing.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f5.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -70,9 +68,8 @@ To measure the PNP device, alter the characteristic curve measurement circuit as
 
 You can use the same step staircase waveform you used for the NPN device to drive the base current for the PNP device. However, you will need to set the Max to +5 V - V\ :sub:`BE` or 4.4 V and set the Min to 0.4 V. The waveform in the display should now start at 4.4 V and decrease in 0.4 V increments to 0.4 V. The channel A triangle wave can have the same 5.0 V Max and 0 V Min. Check to make sure that the triangle wave in channel A goes through one cycle from 5 V to 0 and back to 5 V during the time of one step in the waveform in channel 2. Change the phase of channel A and/or B as necessary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f2.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -86,9 +83,8 @@ Beta (β) is defined as the ratio of the collector current, I\ :sub:`C`, to the 
 
 Change the 10 KΩ resistor in figure 1 to 1 KΩ. Change the shape of Channel B to DC. Change the Channel B Max to 1.5 V, the Min and Freq setting are ignored for the DC shape. Change the Channel A Max to 2 volts. Under the curves drop down select all four traces to be displayed. The current in channel B, the base current, will be small and will be rather noisy so turning on trace averaging is a good idea. You should see something like the time display in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f3.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -107,9 +103,8 @@ IBuffA[t]/IBuffB[t]
 
 Set the Math X axis to V-A. Set the Math Y axis to I-B. Adjust the range and position controls for CA-V to 0.2 V/Div and 1.0 V. Adjust the range and position controls for CB-I to 10.0 mA/Div and 50.0 mA. You should now see something like the X-Y plot shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f4.png
-   :align: center
-   :width: 400px
+
+|image5|
 
 .. container:: centeralign
 
@@ -133,3 +128,14 @@ Again, from the measured data calculate the current gain Beta ( ß=I\ :sub:`C`/I
 `Bipolar junction transistor <https://en.wikipedia.org/wiki/Bipolar_junction_transistor>`_ http://www.physics.csbsju.edu/trace/NPN.CC.html
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f5.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f3.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab4_f4.png
+   :width: 400px

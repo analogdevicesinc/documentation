@@ -40,10 +40,10 @@ Pin Configurations
 
 .. container:: column
 
-   \
 
+   ..
 
-   |image3|
+|image3|
 
 .. container:: column
 

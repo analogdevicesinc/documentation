@@ -60,8 +60,8 @@ Example
 
 More examples can be found in no-OS program and capture scripts
 
--  :git-no-OS:`scripts/xsdb`.tcl
--  :git-no-OS:`scripts/xilinx_capture`.tcl
+-  :git-no-OS:`scripts/xsdb.tcl`
+-  :git-no-OS:`scripts/xilinx_capture.tcl`
 
 References
 ~~~~~~~~~~

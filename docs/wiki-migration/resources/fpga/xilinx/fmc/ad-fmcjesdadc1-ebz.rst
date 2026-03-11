@@ -125,9 +125,8 @@ The quick start bit file also configures the AD9517 to generate a 2.5GHz clock t
 
 The DAC spectrum for a 333MHz tone is shown below.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_fmc27x_spectrum.jpg
-   :alt: DAC Spectrum
-   :width: 200px
+
+|DAC Spectrum|
 
 .. important::
 
@@ -178,3 +177,6 @@ More information
 
 -  `VITA's FMC info <http://www.vita.com/fmc>`_
 -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+
+.. |DAC Spectrum| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/cf_fmc27x_spectrum.jpg
+   :width: 200px

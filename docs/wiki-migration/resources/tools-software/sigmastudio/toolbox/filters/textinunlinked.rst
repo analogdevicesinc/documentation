@@ -41,4 +41,4 @@ As with other blocks, there's the option to either :doc:`Grow </wiki-migration/r
 
 The behavior of this block in terms of growing and adding algorithms is like the other filter blocks. A special version of this filter, the `Text-In (linked) <https://wiki.analog.com/resources/tools-software/sigmastudio/toolbox/textinlinked>`_ (which see), forces added algorithms to share the same parameters, and grown algorithms must add a corresponding parallel algorithm. In other words, it allows simultaneous control of added algorithms, and when you grow upon an added algorithm, a corresponding parallel filter will be added to match any previously added algorithm.
 
-.. |textinpic1.png| image:: https://wiki.analog.com/_media/textinpic1.png
+.. |textinpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/textinpic1.png

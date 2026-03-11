@@ -98,16 +98,19 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :align: center
+   :width: 600px
 
 -  Connect the **EVAL-CN0391-ARDZ** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect your thermocouples to the EVAL-CN0391-ARDZ via (**P1**-**P4**).
--  Set the jumper **JP1** of **EVAL-CN0391-ARDZ** board as shown in the picture\
+-  Set the jumper **JP1** of **EVAL-CN0391-ARDZ** board as shown in the picture
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0391//cn0391_demo_9.png
+   :align: center
+   :width: 600px
 
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
 
@@ -131,7 +134,7 @@ The software for the **ADuCM360_demo_cn0391** demo can be found here:
    Prebuilt CN0391 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0391.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0391.bin>`
+   -  `ADuCM360_demo_cn0391.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0391.bin>`_
    
    Complete CN0391 Source Files
    
@@ -212,8 +215,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0391//cn0391_demo_9.png
-   :width: 600px

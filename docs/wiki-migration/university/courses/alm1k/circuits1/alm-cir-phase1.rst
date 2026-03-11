@@ -28,9 +28,8 @@ Now let t vary with time like it normally does. When the value of the ωt change
 
 The value of θ is 0 in the function plotted in figure1. Since the sin(0) = 0 the plot starts at 0. This is a simple sine wave with no offset in time which means no phase offset. Note that if we are using degrees ωt, goes from 0 to 2π or 0 to 360° to yield the sine wave shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,9 +42,8 @@ What happens when we plot a second sine wave function in figure 1 with ω the sa
 
 Now change θ to π/2 radians or 90° for the second waveform. We see the original sine wave and a sine wave shifted to the left in time. Figure 2 shows the original sin wave (green) and the second sin (orange) with an offset in time. Since the offset is a constant we see the original sin wave shifted in time by the value θ which in this example is 1/4 of the wave period.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -86,9 +84,8 @@ One subtle thing about equation 4 is the imaginary operator j. When we looked at
 
 The time difference can be expressed as a phase angle between the two waveforms as defined in Equation 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -175,18 +172,15 @@ Note you cannot measure the frequency of a signal that does not have at least on
 
 3. Measuring Magnitude using a real circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-5.png
-   :align: center
-   :width: 420px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4: R-R circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rail_to_rail_bb.png
-   :align: center
-   :width: 420px
+   |image5|
 
 .. container:: centeralign
 
@@ -211,18 +205,15 @@ Probably not. There should be no observable time offset and thus no phase shift.
 
 • Replace R\ :sub:`2` with a 1 uF capacitor C\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-6.png
-   :align: center
-   :width: 420px
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6: RC circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rc_cir_bb.png
-   :align: center
-   :width: 420px
+   |image7|
 
 .. container:: centeralign
 
@@ -334,3 +325,18 @@ ALICE includes a Phase Analyzer Virtual Instrument that can assist in understand
 :doc:`ALICE Desktop User's Guide </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` `Wikipedia page on Phase and waves <https://en.wikipedia.org/wiki/Phase_(waves)>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-5.png
+   :width: 420px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rail_to_rail_bb.png
+   :width: 420px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-phase-6.png
+   :width: 420px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/rc_cir_bb.png
+   :width: 420px

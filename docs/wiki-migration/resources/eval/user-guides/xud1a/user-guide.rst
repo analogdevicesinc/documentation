@@ -102,7 +102,8 @@ SDP Control
 
 -  `SDP Drivers <http://swdownloads.analog.com/ACE/SDP/SDPDrivers.exe>`_
 -  `Basic SDP-S Test Program Rev A <https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/sdp_xud1a.zip>`_
--  `Basic SDP-S Test Program Rev B <https://wiki.analog.com/_media/{{ /resources/eval/user-guides/xud1a/sdps_xud1a_r1.zip>`_
+-  `Basic SDP-S Test Program Rev B <https://wiki.analog.com/_media/
+   {{ /resources/eval/user-guides/xud1a/sdps_xud1a_r1.zip>`_
 
 .. note::
 
@@ -114,14 +115,12 @@ SDP Control
 Software
 ~~~~~~~~
 
--  :git-pyadi-iio>`__ interface for LibIIO
+-  :git-pyadi-iio:`PyADI-IIO <pyadi-iio>` interface for LibIIO
 
-   -  `ADF4371 wrapper <https::`PyADI-IIO </github.com/pyadi-iio?master/adi/adf4371.py>`
+   -  `ADF4371 wrapper <https://github.com/pyadi-iio?master/adi/adf4371.py>`_
    -  `ADF4371 Documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.adf4371.html>`_
 
-::
-
-    *[[https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud_ctrl.zip|Standalone Python Application using SDP-S Controller]]
+-  `Standalone Python Application using SDP-S Controller <https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud_ctrl.zip>`_
 
 --------------
 
@@ -144,8 +143,8 @@ RF/IF Signal Chain
 
 The ADXUD1AEBZ has 4 RF input/output SMA connectors and 4 TX IF inputs and 4 RX IF outputs via SMPM connectors. Each RF channel is bandpass filtered and tied to two :adi:`ADRF5020` switches with independent :adi:`HMC903 <hmc903lp3e>` amplifiers for TX and RX. Up/down conversion is accomplished using the :adi:`HMC773A <hmc773alc3b>` with the option to drive the LO either externally via the J4 SMA connector or internally with the :adi:`adf4371`. The RX IF channel is amplified by the :adi:`ADL8111` and :adi:`hmc8411` whereas the TX IF channel is internally bypassed by the :adi:`ADL8111`.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_revd_blockdiagram.png
+   :align: center
 
 .. container:: centeralign
 
@@ -173,7 +172,7 @@ PMOD Pinout
 The digital input signals are intended to be 1.8V logic while the :adi:`ADRF5020`, :adi:`ADL8111`, and :adi:`ADF4371` digital control inputs require logic levels of 3.3V. Level translators and digital logic circuitry have been included between the PMOD connector and aforementioned components.
 
 
-|image4|
+|image3|
 
 .. container:: centeralign
 
@@ -186,7 +185,7 @@ Interposer Board
 The Interposer board allows the option to control the ADXUD1AEBZ via :adi:`System Demonstration Platform (SDP-S) <SDP-S>` and FPGA via FMC Mezzanine connector. Note the Interposer board PMOD connector is pin compatible with the ADXUD1AEBZ PMOD connector and can be connected directly to XUD1A.
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -199,7 +198,7 @@ Control Logic
 The PMOD inputs are fed to a buffer and logic network for simplified board control and quick switching time.
 
 
-|image6|
+|image5|
 
 .. container:: centeralign
 
@@ -266,9 +265,8 @@ For additional questions or support, please visit the Engineering Zone forum at 
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/eval-adxud1aebz_bottom.jpg
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_revd_blockdiagram.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_pmod.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_pmod.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_sdps.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_controlblockdiagram.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_sdps.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/xud1a_controlblockdiagram.png
    :width: 600px

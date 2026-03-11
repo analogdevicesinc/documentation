@@ -53,7 +53,7 @@ The :doc:`HDL user guide </wiki-migration/resources/fpga/docs/hdl>` contains the
 
 Once the bit file is ready, follow these instructions to build the elf file. This assumes you are following our directory structures. If you are not, just get the idea from here and port it to your environment. However, you have to figure out things on your own.
 
--  Clone `No-OS <https://github.com/analogdevicesinc/no-OS>`_ repository
+-  Clone :git-no-OS:`No-OS <no-OS>` repository
 -  **Checkout the latest release branch (git checkout 2018_R1)**
 -  Change the directory to \`ad-fmcadc5-ebz/vc707\`.
 -  Make the elf file by running \`make HDF-FILE=<HDL-REPO>/projects/fmcadc5/vc707/fmcadc5_vc707.sdk/system_top.hdf\`

@@ -13,7 +13,9 @@ This guide shows how AD9748-FMC-EBZ, AD9740-FMC-EBZ, AD9742-FMC-EBZ, and AD9744-
 Typical Setup
 -------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_sdp_h1.jpg
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -28,7 +30,7 @@ Typical Setup
 Helpful Files
 -------------
 
--  `User Guide <https://wiki.analog.com/_media/ad974xacp-pcbz_ug-1650.pdf>`_ for the previous evaluation board
+-  `User Guide <https://wiki.analog.com/_media/resources/eval/dpg/ad974xacp-pcbz_ug-1650.pdf>`_ for the previous evaluation board
 -  Data Sheet: :adi:`AD9740 <media/en/technical-documentation/data-sheets/AD9740.pdf>`, :adi:`AD9742 <media/en/technical-documentation/data-sheets/AD9742.pdf>`, :adi:`AD9744 <media/en/technical-documentation/data-sheets/AD9744.pdf>`, :adi:`AD9748 <media/en/technical-documentation/data-sheets/AD9748.pdf>`
 -  IBIS Models: :adi:`AD9740 <media/en/simulation-models/ibis-models/ad9740ar.ibs>`, :adi:`AD9742 <media/en/simulation-models/ibis-models/ad9742ar.ibs>`, :adi:`AD9744 <media/en/simulation-models/ibis-models/ad9744ar.ibs>`, :adi:`AD9748 <media/en/simulation-models/ibis-models/ad9748cp.ibs>`
 -  Schematic: `AD9744-FMC-EBZ Rev B <https://wiki.analog.com/_media/resources/eval/dpg/02-064131-01-b.pdf>`_
@@ -69,7 +71,7 @@ The evaluation board has a provision for on-board or external clocking configura
 
 .. container:: centeralign
 
-   |image2|\
+   |image1|\
 
 
 .. container:: centeralign
@@ -87,7 +89,7 @@ The evaluation board has a provision for single-ended or differential output. Th
 
 .. container:: centeralign
 
-   |image3|\
+   |image2|\
 
 
 .. container:: centeralign
@@ -102,7 +104,7 @@ A 0402, 0-ohm resistor are installed on the jumpers. Move these 0-ohm resistors 
 
 .. container:: centeralign
 
-   |image4|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -116,7 +118,7 @@ Software Installation
 The ACE software and DPGDownloader Lite are needed to configure the device. ACE is the software that is used to load the registers in the ADF4351 while DPGDownloader Lite is used to load the vector into the evaluation board. Install ACE from this link :doc:`Analysis \| Control \| Evaluation (ACE) Software </wiki-migration/resources/tools-software/ace>`. During installation, expand the High-Speed DAC Components list and select the **DPG Lite** and **HSDAC eval boards support through SDP drivers** checkboxes. The plugins for this board can be downloaded from the plugin manager in the ACE software.
 
 
-|image5|
+|image4|
 
 .. container:: centeralign
 
@@ -134,7 +136,9 @@ Follow the steps to set-up and configure the clocking of the eval board.
 -  On the Clocking Setup Tab, select Onboard clock (ADF4351) on the clock source drop-down menu, and enter 210MHz on the DAC clock field. Refer to the Figure 3.
 -  Click Apply and a summary window will pop up. Confirm if the entered details are correct.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_ace1.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -157,7 +161,7 @@ Follow the steps to generate and download a vector into the eval board.
 
 .. container:: centeralign
 
-   \ |image7|\
+   |image5|\
 
 
 .. container:: centeralign
@@ -171,7 +175,8 @@ Follow the steps to generate and download a vector into the eval board.
 -  Click the Play button, located to the left of the Download button, to begin vector playback.
 -  The signal frequency output then appears on the spectrum analyzer.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_dpg.png
+   :align: center
 
 .. container:: centeralign
 
@@ -208,7 +213,7 @@ On-Board LEDs
 There are two LEDs on the evaluation board, which are the 3.3V power supply LED, and the ADF4351 lock detect LED. These LEDs are shown in Figure 6. These two LEDs will light up when 3.3V is supplied to the board, and when the ADF4351 clock chip is working properly.
 
 
-|image9|
+|image6|
 
 .. container:: centeralign
 
@@ -226,7 +231,7 @@ ACE Does Not Recognize the Evaluation Board
 There may be cases where the AD9744 icon does not appear on the Attached Hardware tab of ACE, or the icon is there but once clicked, will indicate an Unavailable status on the bottom as shown in Figure 7. These errors can occur if the ACE software is started before powering up and connecting the evaluation board to the PC, or if the evaluation board is power cycled and ACE is not restarted. The most basic remedy for this issue is to close ACE and reopen it (restart). As long as the evaluation board is powered up and connected to the PC, ACE recognizes the evaluation board and will work again.
 
 
-|image10|
+|image7|
 
 .. container:: centeralign
 
@@ -243,22 +248,17 @@ DAC Output Frequency is not correct
 
 Check if the DCO Frequency detected on the DPG Panel matches the Data Rate field. These two should match for proper vector generation and playing to the DAC.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_sdp_h1.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_table1.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_table1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_table2.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_table2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_table3.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_table3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_ace_install.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_ace_install.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad974x_databits.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_ace1.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_led.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad974x_databits.jpg
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_dpg.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_led.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_ace_error1.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9744_ace_error1.png
    :width: 600px

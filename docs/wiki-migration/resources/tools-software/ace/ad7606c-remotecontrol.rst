@@ -38,9 +38,7 @@ Setting up communication with ACE
 -  Open ACE, then go to Settings.
 -  Go to IPC Server Tab and ensure that it is enabled. Also ensure that a port is allocated.
 
-::
-
-                {{ :resources:tools-software:ace:ipcserver.png?400 |}}
+|resources-tools-software-ace-ipcserver.png|
 
 Recording macros
 ----------------
@@ -175,9 +173,8 @@ In order to validate the offset calibration:
 
 The script displays the data gathered before and after gain calibration. The example below shows the same signal on two channels, CH1 has no resistors in front of the AD7606C-16 while CH8 has a 10kΩ in front of both V8+ and V8-. The two subplots show the CH8 attenuated because of the external resistor, on the left, and the ADC output when the gain errors is calibrated. CH1 is shown for reference.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/ad7606c_gaincalcal_waveform.png
-   :align: center
-   :width: 1400px
+
+|image4|
 
 .. warning::
 
@@ -230,9 +227,8 @@ In order to verify the **Manual Mode**, follow the same steps as above, but run 
 
 However, if the analog input signal amplitude is lowered below the threshold, the script will still trigger. Then the PGA common mode will be changed, but the ADC output will be unaltered. In that case, the script will effectively decide that the analog input was not disconnected and therefore will keep working until the inputs are indeed disconnected.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/ad7606c_od_manualmode_connected.png
-   :align: center
-   :width: 400px
+
+|image5|
 
 .. important::
 
@@ -250,3 +246,9 @@ However, if the analog input signal amplitude is lowered below the threshold, th
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ace/ad7606c_offsetcal_histo.png
    :width: 800px
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ace/ad7606c_gaincalcal_waveform.png
+   :width: 1400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ace/ad7606c_od_manualmode_connected.png
+   :width: 400px
+
+.. |resources-tools-software-ace-ipcserver.png| image:: https://wiki.analog.com/_media/resources/tools-software/ace/ipcserver.png

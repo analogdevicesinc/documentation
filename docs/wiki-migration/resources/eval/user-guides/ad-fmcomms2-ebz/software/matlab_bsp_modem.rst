@@ -128,7 +128,7 @@ All Demos
 
 The codebase is designed to reuse code as much as possible. Therefore, the recommended process for getting started with the modem project is to perform the following:
 
-Clone the repository: <code> git clone https://github.com/analogdevicesinc/TransceiverToolbox.git\ </code>
+Clone the repository: <code> git clone :git-TransceiverToolbox:`TransceiverToolbox`.git\ </code>
 
 Launch MATLAB and navigate to the *TransceiverToolbox\\target_models\\modem-qpsk* folder. Now add the necessary files to your path by running the startup script: <code> startup_adi_qpsk </code>
 
@@ -295,4 +295,4 @@ Additional resources
    :width: 400px
 .. |TUN/TAP flow| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/tun_tap.png
    :width: 400px
-.. |Radio Deployment on SoC Platforms| image:: https://wiki.analog.com/_media/youtube>kL_SyVODxgw
+.. |Radio Deployment on SoC Platforms| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/youtube>kL_SyVODxgw

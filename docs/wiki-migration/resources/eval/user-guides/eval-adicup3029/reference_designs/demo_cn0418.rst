@@ -47,12 +47,14 @@ Setting up the Hardware
 -  Connect **EVAL-CN0418-ARDZ** to the **EVAL-ADICUP3029**.
 -  Set the jumpers into the position shown below. This is the standard position and only works for one board systems.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0418_jumper_position.jpg
+   :align: center
 
 -  Connect a micro-USB cable to **P10** connector of the **EVAL-ADICUP3029** and connect it to a computer.
 -  Connect the 24V power source to the **P1** connector with the ground wire to pin 2 and 24V wire to pin 3. The final setup should look similar to the picture below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0418_final_hw_setup.jpg
+   :align: center
 
 Configuring the Software
 ------------------------
@@ -115,6 +117,3 @@ Typing help or h after initial calibration sequence will display the list of com
 |                  | Available channel options are: cha, chb, chc, chd.                                       |
 |                  | <code> = 16-bit output code for the channel.                                             |
 +------------------+------------------------------------------------------------------------------------------+
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0418_jumper_position.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0418_final_hw_setup.jpg

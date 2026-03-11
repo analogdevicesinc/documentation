@@ -125,4 +125,4 @@ Algorithm Details
 | Parameter RAM              | 39                                                                         |
 +----------------------------+----------------------------------------------------------------------------+
 
-.. |peakrmsnopic1.png| image:: https://wiki.analog.com/_media/peakrmsnopic1.png
+.. |peakrmsnopic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakrmsnopic1.png

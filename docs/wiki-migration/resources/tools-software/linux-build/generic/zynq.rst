@@ -45,7 +45,7 @@ Then
 
 ::
 
-   git clone https://github.com/analogdevicesinc/linux.git
+   git clone :git-linux:`linux`
 
 or do a git pull in the existing repository.
 
@@ -410,7 +410,7 @@ Usage
    export PATH=$PATH:/cygdrive/c/Xilinx/Vivado/202x.x/bin
    export PATH=$PATH:/cygdrive/c/Xilinx/Vitis/202x.x/bin
 
-There is also a version of script that works in Windows Powershell: `build_boot_bin.ps1 <https://wiki.analog.com/https/raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynq_boot_bin/build_boot_bin.ps1>`_
+There is also a version of script that works in Windows Powershell: `build_boot_bin.ps1 <https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynq_boot_bin/build_boot_bin.ps1>`_
 
 .. tip::
 

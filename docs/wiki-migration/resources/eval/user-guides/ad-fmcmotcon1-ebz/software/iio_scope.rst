@@ -103,7 +103,7 @@ This controller allows the control of the motor in manual mode by directly speci
 Matlab Controller
 ^^^^^^^^^^^^^^^^^
 
-This selects the :doc:`MathWorks FOC IP </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/matlab_models>`. From the IIO Scope the only available is to Start/Stop the motor, while the operation of the IP core is controlled through the *foc_script.sh* script located under */usr/local/bin*. The script executes the following steps:
+This selects the :doc:`MathWorks FOC IP </wiki-migration/resources/eval/user-guides/ad-fmcmotcon1-ebz/matlab_models>`. From the IIO Scope the only available is to Start/Stop the motor, while the operation of the IP core is controlled through the :git-mathworks_tools:`motor_control/linux_utils/foc_script.sh` script located under */usr/local/bin*. The script executes the following steps:
 
 -  Set the FOC controller in open loop mode and wait for the user to start the motor by clicking the Run checkbox in IIO scope
 -  Calibrate the encoder readings to remove the offset between the motor's actual electrical position and the position read from the encoder

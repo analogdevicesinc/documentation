@@ -41,7 +41,7 @@ More information
 ----------------
 
 -  :adi:`AD5757 Product Info <AD5757>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5757SDZ evaluation board user guide </static/imported-files/user_guides/UG-244.pdf>`
+-  :adi:`EVAL-AD5757SDZ evaluation board user guide <static/imported-files/user_guides/UG-244.pdf>`
 -  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
 
 Getting Started
@@ -91,7 +91,7 @@ Hardware setup
 .. important::
 
    
-   To power on the EVAL-AD5757 evaluation board, you need to provide an external +15V AVdd and -15V AVss analog supply voltage and a +5V AVcc DC-to-DC supply voltage, which will supplies all four on-board dc-to-dc blocks and may draw as much as 0.8 A peak current per channel (for more information see: :adi:`EVAL-AD5757SDZ evaluation board user guide </static/imported-files/user_guides/UG-244.pdf>`).
+   To power on the EVAL-AD5757 evaluation board, you need to provide an external +15V AVdd and -15V AVss analog supply voltage and a +5V AVcc DC-to-DC supply voltage, which will supplies all four on-board dc-to-dc blocks and may draw as much as 0.8 A peak current per channel (for more information see: :adi:`EVAL-AD5757SDZ evaluation board user guide <static/imported-files/user_guides/UG-244.pdf>`).
 
 
 Reference Project Overview

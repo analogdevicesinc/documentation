@@ -17,12 +17,15 @@ Follow the below 2 steps to configure the Evaluation and SDP Boards:
 
 -   Connect the SDP-B board to Connector A or Connector B on the EVAL-AD7124-xASDZ evaluation board. Screw the two boards together using the plastic screw and washer set included in the evaluation board kit to connect the boards firmly together.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/quick_start.jpg
+   :align: center
+   :width: 600px
 
 -   Connect the SDP-B board to the PC using the supplied USB cable.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/img_0569_rot.jpeg
+   :align: center
+   :width: 300px
 
 Block Diagram
 -------------
@@ -254,10 +257,6 @@ Bill of Materials
 
 :doc:`Continue to Software Guide </wiki-migration/resources/eval/user-guides/ad7124-x/software>` :doc:`Return to Homepage </wiki-migration/resources/eval/user-guides/ad7124-x>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/quick_start.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/img_0569_rot.jpeg
-   :width: 300px
 .. |Figure 1: Reference Menu from Eval+ Software| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/ref_source_pop_ups.png
    :width: 600px
 .. |Figure 2: Enabling the 2.5V Reference through pop-ups.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7124/eval-ad7124/hardware_guide/int_red.png

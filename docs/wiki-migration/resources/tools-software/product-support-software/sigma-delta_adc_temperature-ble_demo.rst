@@ -65,13 +65,7 @@ Other Jumper Setting:
 
 The ADuCM3029 COG board is connected to Sigma Delta ADC Eval board using a :doc:`Gear Expander board </wiki-migration/resources/eval/user-guides/ev-gear-expander1z>`. Depending upon the digital interface used on Sigma Delta ADCs, the connection could be either 4 line SPI or 3 line I2C. The connection can be done either using :adi:`SDP breakout board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-breakout-board.html>` or by directly soldering fly wires from the ADC Evaluation board to ADuCM3029 Expander Gear board. The sample connection for the AD7124 Eval board with COG board is shown below using a fly wires. The wires are directly soldered on the Eval board, but for better connection, use the SDP breakout board:
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/aducm3029-ad7124_eval.jpg
-   :align: center
-   :width: 400px
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sdp_breakout_board.jpg
-   :align: center
-   :width: 400px
+|image1| |image2|
 
 .. important::
 
@@ -114,7 +108,7 @@ Downloads
    Latest firmware (Use below link):
 
    
-   -  `Sigma Delta ADC Temperature-BLE Demo Firmware Example <https://wiki.analog.com/https/github.com/analogdevicesinc/ev-cog-ad3029lz/tree/master/sd-adc_cces_temperature-to-ble%20example>`_
+   -  :git-EV-COG-AD3029LZ:`Sigma Delta ADC Temperature-BLE Demo Firmware Example <sd-adc_cces_temperature-to-ble%20Example>`
    
 
 
@@ -280,3 +274,8 @@ For observing data using UART link using serial terminal (e.g. `Tera Term <https
 
    This page might not cover the all minute details of hardware/software configuration and operation. All the necessary links for the associated documents are provided above. Feel free to consult Analog Devices :adi:`Engineer-Zone <engineerzone>` for feature requests, feedback, bug-reports etc.
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/aducm3029-ad7124_eval.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/sdp_breakout_board.jpg
+   :width: 400px

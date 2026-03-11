@@ -58,15 +58,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADMV1013 Driver. <drivers/frequency/admv1013/admv1013.c>`
+   -  :git-no-OS:`Header file of ADMV1013 Driver. <drivers/frequency/admv1013/admv1013.h>`
    
-   |Implementation of ADMV1013 Driver.|
 
-   -
-
-   |Header file of ADMV1013 Driver.|
-
-.. |Implementation of ADMV1013 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/admv1013/admv1013`.c
-.. |Header file of ADMV1013 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/admv1013/admv1013`.h

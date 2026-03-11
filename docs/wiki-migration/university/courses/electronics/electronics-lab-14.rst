@@ -14,9 +14,8 @@ Background:
 
 We will exploit the simple CMOS inverter logic gate as a pair of switches. The digital I/O signals of the ADALM2000 module can be configured as standard CMOS dividers with a +3.3 Volt supply (push-pull mode). In the simplest form, a CMOS output consists of one PMOS device, M\ :sub:`1` and one NMOS device M\ :sub:`2`. Generally the CMOS fabrication process is designed such that the threshold voltage, V\ :sub:`TH`, of the NMOS and PMOS devices are roughly equal i.e. complementary. The designer of the inverter then adjusts the width to length ratio, W/L, of the NMOS and PMOS devices such that their respective transconductance and thus their R\ :sub:`ON`, is also equal. Only one of the two transistors is ever on at the same time connecting the Output to either V\ :sub:`DD` or V\ :sub:`SS`. We can consider these two voltages to be the reference for out DAC.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a14_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -35,7 +34,8 @@ Directions:
 
 Build the 8 bit resister ladder circuit shown in figure 2, preferably on your solder-less breadboard. The number of resistors normally supplied in the Analog Parts Kit is not sufficient to build the full 8 bit ladder. It is best to use 1% resistors for this project if you have access to them.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/r_2r_ladder_dac.png
+
+|image2|
 
 .. container:: centeralign
 
@@ -60,8 +60,8 @@ Procedure:
 
 With both R\ :sub:`1` and R\ :sub:`2` installed, set AWG1 to a DC voltage equal to the V\ :sub:`REF`\ + of the DAC which will be the +3.3 Volt supply voltage of the CMOS digital outputs. This will produce a bipolar output voltage which will swing from -3.3V to +3.3V. Disconnect AWG1 and remove resistor R\ :sub:`1` for a unipolar output voltage which will swing from 0 to +3.3V. Start the Scopy software. Open up the Pattern Generator screen. Select and group DIO 0 - 7. Now edit the parameters. Set pattern to Binary counter. The output should be PP (for push-pull) and set the frequency for 256 KHz. You should see something that looks like the screen below shown in figure 4. Lastly, hit the Run button.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/dac_pg_setup.png
-   :align: right
+
+|image3|
 
 .. container:: centeralign
 
@@ -70,9 +70,9 @@ With both R\ :sub:`1` and R\ :sub:`2` installed, set AWG1 to a DC voltage equal 
 
 Open the Scope screen, turn channel 2 on, and set the time base for 200us/div. Be sure to hit the green Run button. You may also need to adjust the vertical range for the channel 1 V/div is probably good to start with. You should see (figure 4) the voltage ramp up from 0 volts to 3.3 volts. The period of the ramp should be 1mSec.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a14_f4.jpg
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -92,7 +92,7 @@ Background
 AD5626 is a vltage output digital-to-analog converter that can operate from a single 5V supply. It contains the DAC, input shift register and latches, reference, and a rail to-rail output amplifier which can swing to either rail and is set to a range of 0 V to 4.095 V for a one-millivolt-per-bit resolution. This part features a serial interface that is high speed, threewire, DSP compatible with data in (SDIN), clock (SCLK), and load strobe (LDAC). There is also a chip-select pin for connecting multiple DACs. The CLR input sets the output to zero scale at power on or upon user demand.
 
 
-|image1|
+|image5|
 
 .. container:: centeralign
 
@@ -107,7 +107,7 @@ Unipolar output operation
 This mode of operation is the basic mode for AD5626. You can verify the god functionality AD5626 according to the unipolar code table of the digital to analog convertor.
 
 
-|image2|
+|image6|
 
 .. container:: centeralign
 
@@ -125,14 +125,14 @@ Hardware setup
 Connect the pins of AD5626 as shown in figure 8.
 
 
-|image3|
+|image7|
 
 .. container:: centeralign
 
    Figure 8. Connections for Unipolar operation AD5626
 
 
-   |image4|
+   |image8|
 
 .. container:: centeralign
 
@@ -147,7 +147,7 @@ Open Scopy and enable the positive power supply to 5V. in Pattern generator you 
 As the AD5626 is a 12-bit DAC, the data sent through SPI should be aleast 12 bits long. Set the number of Bytes per frame to 2 and it will send 16 bits when the conversion is initiated. In the Data text box you can enter the value to be sent to the ADC. The signals of the SPI group channel should resemble the timing diagram of the AD5626 digital to analog converter.
 
 
-|image5|
+|image9|
 
 .. container:: centeralign
 
@@ -156,9 +156,9 @@ As the AD5626 is a 12-bit DAC, the data sent through SPI should be aleast 12 bit
 
 Now you should configure /LDAC and /CLR signals. From the datasheet we know that the shift register contents are updated on the rising edge of /LDAC if /CLR is high. Set the pattern of DIO4 (/CLR) as "Number" and enter the value 1. /LDAC signal(DIO3) should have a rising edge before /CS falling egde and should be high as long as bits are transmitted serially. In order to fulfill tre previoulsy stated conditions, DIO3 signal can be set at 13kHz frequency and 160 degrees phase. In figure 10 are presented all the input signals needed for AD5626 digital to analog conversion.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/07ff.png
-   :align: center
-   :width: 900px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -169,7 +169,7 @@ The last step is to open oscilloscope and connect channel 1 to the output of AD5
 
 
 
-|image6|
+|image11|
 
 .. container:: centeralign
 
@@ -182,7 +182,7 @@ Bipolar output operation
 Although the AD5626 has been designed for single-supply operation, bipolar operation is achievable using the circuit illustrated in Figure 13.
 
 
-|image7|
+|image12|
 
 .. container:: centeralign
 
@@ -214,7 +214,7 @@ Hardware setup
 Build the circuit presented in figure 13 on your solderless breadboard.
 
 
-|image8|
+|image13|
 
 .. container:: centeralign
 
@@ -227,21 +227,21 @@ Procedure
 You can configure the DAC for unipolar output operation as described above. For the voltage reference use the channel 1 of the Signal generator set for constant 2.5V . On the second channel of the oscilloscope visualize the voltage at the output of the opamp. You can visualize both the voltages for unipolar operation and bipolar operation at the same time on the oscilloscope.
 
 
-|image9|
+|image14|
 
 .. container:: centeralign
 
    Figure 15. Unipolar and Bipolar output voltage for 000 input
 
 
-   |image10|
+   |image15|
 
 .. container:: centeralign
 
    Figure 16. Unipolar and Bipolar output voltage for 800 input
 
 
-   |image11|
+   |image16|
 
 .. container:: centeralign
 
@@ -283,25 +283,33 @@ http://en.wikipedia.org/wiki/Resistor_ladder
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/functional_block_diagram_ad5626.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a14_f1.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/unipolar_code_table.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/r_2r_ladder_dac.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/dac_pg_setup.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a14_f4.jpg
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/functional_block_diagram_ad5626.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/unipolar_code_table.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/connections_ad5626.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/connections_ad5626.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/ad5626_bb_bb.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/ad5626_bb_bb.png
    :width: 6900px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/timing_diagram.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/timing_diagram.png
    :width: 900px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/vout_ad5626.png
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/07ff.png
    :width: 900px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/bipolar_output_circuit.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/vout_ad5626.png
+   :width: 900px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/bipolar_output_circuit.png
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/ad5626_bipolar_bb.png
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/ad5626_bipolar_bb.png
    :width: 900px
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/output_for_000.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/output_for_000.png
    :width: 900px
-.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/output_for_800.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/output_for_800.png
    :width: 900px
-.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/output_for_fff.png
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/output_for_fff.png
    :width: 900px

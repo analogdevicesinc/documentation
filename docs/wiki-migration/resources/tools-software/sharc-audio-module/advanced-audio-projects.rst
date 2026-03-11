@@ -53,4 +53,4 @@ The goal of this tutorial is to help users with the following:
 
 --------------
 
-`Sharc Audio Module#.advanced-audio-projects|Advanced Audio Projects#.advanced-audio-projects:prerequisites|Prerequisites <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.>`_
+`Sharc Audio Module#.advanced-audio-projects|Advanced Audio Projects#.advanced-audio-projects:prerequisites|Prerequisites <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/navigation Advanced Audio Projects#.>`_

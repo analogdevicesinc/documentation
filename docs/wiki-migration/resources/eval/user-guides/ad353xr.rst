@@ -67,7 +67,7 @@ ldac_n  T14            AE17             J18/FMC_LA05_P
 Building the HDL project
 ------------------------
 
-ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository.
 
 Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad353xr/coraz7s or projects/ad353xr/de10nano)**\ \* location and run the make command by typing in your command prompt:
 
@@ -87,23 +87,28 @@ Connections
 
    -  Coraz7s: Place a jumper on JP2, shorting the two pins together. Select JP3 connection depending on power supply source (USB or external).
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_hw_config.jpg
+   :align: center
+   :width: 600px
 
-   |image1|
+-  • DE10 nano: Adjust switch to FPGA configuration Mode.
 
-   -  • DE10 nano: Adjust switch to FPGA configuration Mode.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
+   :align: center
+   :width: 800px
 
-   |image2|
+-  Zedboard: Set the Jumpers MIO[6:2] as 01100.
 
-   -  Zedboard: Set the Jumpers MIO[6:2] as 01100.
-
-   |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/zedboard_jumpers.svg
+   :align: center
+   :width: 600px
 
 -  The Zedboard FMC is low pin count.
 
 Resources
 ---------
 
--  Link to the project source code (See projects/ad353xr: `HDL Repository <https://github.com/analogdevicesinc/hdl>`_
+-  Link to the project source code (See projects/ad353xr: :git-hdl:`HDL Repository <hdl>`
 -  Links to the Linux driver and devicetree source code and wiki documentation : TBD
 -  Links to the datasheets/schematics of the boards used in this wiki page : :adi:`Datasheet <media/en/technical-documentation/data-sheets/ad3530_ad530r.pdf>`
 
@@ -121,10 +126,3 @@ Support
 Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
 
 It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_hw_config.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/de10-nano_fpga_switch_matrix.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/zedboard_jumpers.svg
-   :width: 600px

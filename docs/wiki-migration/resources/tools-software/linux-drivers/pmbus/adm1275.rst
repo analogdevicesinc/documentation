@@ -16,16 +16,14 @@ Supported Devices
 Evaluation Boards
 -----------------
 
-::
-
-   *[[:adi:`EVAL-ADM1075|EVAL-ADM1075]]`
-   *[[:adi:`EVAL-ADM1272|EVAL-ADM1272]]`
-   *[[:adi:`EVAL-ADM1275|EVAL-ADM1275]]`
-   *[[:adi:`EVAL-ADM1276|EVAL-ADM1276]]`
-   *[[:adi:`EVAL-ADM1278|EVAL-ADM1278]]`
-   *[[:adi:`EVAL-ADM1281|EVAL-ADM1281]]`
-   *[[:adi:`EVAL-ADM1293|EVAL-ADM1293]]`
-   *[[:adi:`EVAL-ADM1294|EVAL-ADM1294]]`
+-  :adi:`EVAL-ADM1075`
+-  :adi:`EVAL-ADM1272`
+-  :adi:`EVAL-ADM1275`
+-  :adi:`EVAL-ADM1276`
+-  :adi:`EVAL-ADM1278`
+-  :adi:`EVAL-ADM1281`
+-  :adi:`EVAL-ADM1293`
+-  :adi:`EVAL-ADM1294`
 
 Description
 -----------

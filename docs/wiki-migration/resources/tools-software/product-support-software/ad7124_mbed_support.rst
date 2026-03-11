@@ -70,7 +70,7 @@ AIN2/AIN3 go to the A2 thermocouple connector on the evaluation board, and are c
    :align: center
    :width: 200px
 
-Temperature sensing application using AD7124: :adi:`media/en/reference-design-documentation/reference-designs/CN0383`.pdf
+Temperature sensing application using AD7124: :adi:`media/en/reference-design-documentation/reference-designs/CN0383.pdf`
 
 AD7124 Mbed Firmware
 --------------------
@@ -83,7 +83,7 @@ This section briefs on the usage of MBED firmware. This also explains the steps 
    Source code is hosted here:
 
    
-   -  `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
+   -  :git-precision-converters-firmware:`precision-converters-firmware`
    
    Build Guide for Precision Converters MBED firmware (Use below link):
    

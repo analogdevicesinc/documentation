@@ -6,9 +6,8 @@ Chapter 20: Analog to Digital Conversion
 
 Analog-to-Digital converters (ADC) translate analog signals, real world signals like temperature, pressure, voltage, current, distance, or light intensity, into a digital representation of that signal. This digital representation can then be processed, manipulated, computed, transmitted or stored.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f1.gif
-   :align: center
-   :width: 650px
+
+|image1|
 
 .. container:: centeralign
 
@@ -17,9 +16,9 @@ Analog-to-Digital converters (ADC) translate analog signals, real world signals 
 
 In many cases, the analog to digital conversion process is just one step within a larger measurement and control loop where digitized data is processed and then reconverted back to analog signals to drive external transducers. These transducers can include things like motors, heaters and acoustic divers like loudspeakers. The performance required of the ADC will reflect the performance goals of the measurement and control loop. ADC performance needs will also reflect the capabilities and requirements of the other signal processing elements in the loop.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f2.gif
-   :align: center
-   :width: 650px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -31,9 +30,8 @@ In many cases, the analog to digital conversion process is just one step within 
 
 An ADC samples an analog waveform at uniform time intervals and assigns a digital value to each sample. The digital value appears on the converter’s output in a binary coded format. The value is obtained by dividing the sampled analog input voltage by the reference voltage and them multiplying by the number of digital codes. The resolution of converter is set by the number of binary bits in the output code.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f3.gif
-   :align: center
-   :width: 650px
+
+|image3|
 
 .. container:: centeralign
 
@@ -42,9 +40,9 @@ An ADC samples an analog waveform at uniform time intervals and assigns a digita
 
 An ADC carries out two processes, sampling and quantization. The ADC represents an analog signal, which has infinite resolution, as a digital code that has finite resolution. The ADC produces 2N digital values where N represents the number of binary output bits. The analog input signal will fall between the quantization levels because the converter has finite resolution resulting in an inherent uncertainty or quantization error. That error determines the maximum dynamic range of the converter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f4.gif
-   :align: center
-   :width: 650px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -53,9 +51,9 @@ An ADC carries out two processes, sampling and quantization. The ADC represents 
 
 The sampling process represents a continuous time domain signal with values measured at discrete and uniform time intervals. This process determines the maximum bandwidth of the sampled signal in accordance with the Nyquist Theory. This theory states that the signal frequency must be less than or equal to one half the sampling frequency to prevent aliasing. Aliasing is a condition in which frequency signals outside the desired signal band will, through the sampling process, appear within the bandwidth of interest. However, this aliasing process can be exploited in communications systems design to down-convert a high frequency signal to a lower frequency. This technique is known as under-sampling. A criterion for under-sampling is that the ADC has sufficient input bandwidth and dynamic range to acquire the highest frequency signal of interest.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f5.gif
-   :align: center
-   :width: 650px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -64,9 +62,9 @@ The sampling process represents a continuous time domain signal with values meas
 
 Sampling and quantization are important concepts because they establish the performance limits of an ideal ADC. In an ideal ADC, the code transitions are exactly 1 least significant bit (LSB) apart. So, for an N-bit ADC, there are 2N codes and 1 LSB = FS/2N, where FS is the full-scale analog input voltage. However, ADC operation in the real world is also affected by non-ideal effects, which produce errors beyond those dictated by converter resolution and sample rate. These errors are reflected in a number of AC and DC performance specifications associated with ADCs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f6.gif
-   :align: center
-   :width: 650px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -121,9 +119,7 @@ Any analog input in this range gives the same digital output code.
    Figure 20.7 ADC Transfer Function with DNL Error
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f8.gif
-   :align: center
-   :width: 650px
+   |image7|
 
 .. container:: centeralign
 
@@ -191,9 +187,8 @@ In the flash or parallel ADC architecture, an array of 2N-1 comparators converts
 
 The comparators with reference voltages less than the analog input will output a digital one. The comparators with reference voltages greater than the analog input will output a digital zero. When read together, the outputs present a "thermometer code," which the output logic converts to standard binary code.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f10.gif
-   :align: center
-   :width: 650px
+
+|image8|
 
 .. container:: centeralign
 
@@ -223,9 +218,8 @@ Cons:
 
 - Pipeline delay. Total throughput can be equal to that of a flash converter (one conversion per cycle), but with a latency or pipeline delay equal to the number of stages. - Accuracy of conversion depends on the DAC linearity. - Ill-suited to applications where conversion results must be available immediately after the sample clock.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f11.gif
-   :align: center
-   :width: 650px
+
+|image9|
 
 .. container:: centeralign
 
@@ -247,9 +241,8 @@ Cons:
 
 - Requires N comparisons to achieve N-bit resolution, which is more than both flash and pipelined. - Accuracy of conversion depends on the DAC linearity and comparator noise.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f12.gif
-   :align: center
-   :width: 650px
+
+|image10|
 
 .. container:: centeralign
 
@@ -271,9 +264,8 @@ Cons:
 
 - Latency is much greater than with other architectures. - Oversampling and latency discourage the use of sigma-delta ADCs when digitizing multiplexed input signals.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f13.gif
-   :align: center
-   :width: 650px
+
+|image11|
 
 .. container:: centeralign
 
@@ -285,3 +277,26 @@ Cons:
 **Go to Next Chapter**
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f1.gif
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f2.gif
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f3.gif
+   :width: 650px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f4.gif
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f5.gif
+   :width: 650px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f6.gif
+   :width: 650px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f8.gif
+   :width: 650px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f10.gif
+   :width: 650px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f11.gif
+   :width: 650px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f12.gif
+   :width: 650px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr20-f13.gif
+   :width: 650px

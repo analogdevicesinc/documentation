@@ -135,7 +135,9 @@ Equipment Needed
 -  Turn on the vibration shaker by plugging in the 19 V power supply.
 -  Ready the shaker by clicking the tune button. Two (2) green LEDs must light up.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_hw_2.png
+   :align: center
+   :width: 800px
 
 -  Download and install the `CN0582 Evaluation Software <http://swdownloads.analog.com/cse/cftl/CN0582/CN0582%20EVALUATION%20SOFTWARE%20INSTALLER.EXE>`_.
 
@@ -147,14 +149,16 @@ Equipment Needed
 
 -  Follow the installation prompts until the main window of the GUI appears.
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_setup4.png
+   :align: center
+   :width: 1000px
 
 -  On the GUI dashboard, navigate to the left and click **'Vibration Testing'** to launch the window.
 -  Toggle ON the current source in the Reference & DUT Sensor Setup Section (5).
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/vs_interface.png
+   :align: center
+   :width: 1200px
 
 -  Set the acceleration sensitivity and the sensor DC bias (mV) using the following values:
 
@@ -182,7 +186,9 @@ Equipment Needed
 -  Connect the other end of the BNC cable to the EVAL-CN0582-USBZ (J6).
 -  Click Start to launch the test. Then wait for it to finish.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_freq.png
+   :align: center
+   :width: 1000px
 
 .. tip::
 
@@ -245,11 +251,3 @@ For questions and more information about this product, connect with us through t
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_top.jpg
    :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_hw_2.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_setup4.png
-   :width: 1000px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/multi-channel-vibration-test-platform/vs_interface.png
-   :width: 1200px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-cn0588-ebz_freq.png
-   :width: 1000px

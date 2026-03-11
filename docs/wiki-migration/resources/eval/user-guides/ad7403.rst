@@ -76,4 +76,4 @@ It is possible to change the FCLKIN frequency of the model. It is a global varia
    :width: 300px
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7403_fbs_1_.png
-   :target: :adi:`AD7403?doc=AD7403`.pdf
+   :target: :adi:`AD7403?doc=AD7403.pdf`

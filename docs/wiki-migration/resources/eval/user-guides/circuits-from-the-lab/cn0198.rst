@@ -36,29 +36,31 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0198 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0198 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0198\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0198 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0198 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0198\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-evaluation_software-destination_directory-1.jpg
+   :align: center
 
-|image1|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-evaluation_software-destination_directory-2.jpg
+   :align: center
 
-|image2|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-evaluation_software-installation_complete.jpg
+   :align: center
 
 -  Press **“Next”**.
 -  Upon completion of the installation of the **CN0198 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 -
 
-|image4|
+|image1|
 
 -  Press **“Next”**.
 -
 
-|image5|
+|image2|
 
 -  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
 -  Press **“Next”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0198-SDPZ**
@@ -72,7 +74,7 @@ Step by Step Instruction for Connecting the Hardware
 -  Solder one end of a red wire to J3 of the ADP2300 and connect the other end to J6 - pin 1(AVCC) of the AD5755 Evaluation Board.
 -
 
-|image6|
+|image3|
 
 -  Using a blue wire, connect J5 pin 1 of the :adi:`AD5755 Evaluation Board <AD5755>` to -15V connection of a DC power supply.
 -  Using a black wire, connect J5 pin 2 of the :adi:`AD5755 Evaluation Board <AD5755>` to the GND connection of a DC power supply.
@@ -81,7 +83,7 @@ Step by Step Instruction for Connecting the Hardware
 -  Plug the mini end of the USB cable into connector J1 of the :adi:`EVAL-SDP-CB1Z` Evaluation board.
 -
 
-|image7|
+|image4|
 
 AD5755 Evaluation Board Jumper Configuration
 --------------------------------------------
@@ -216,12 +218,9 @@ Registration
 
 // End of document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-evaluation_software-destination_directory-1.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-evaluation_software-destination_directory-2.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-evaluation_software-installation_complete.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/this_wiki_has_problems_with_file_loading.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-setup_wizard.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-sdpdrivers-destination_directory.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/this_wiki_has_problems_with_file_loading.jpg
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-hardware-connected-usb-sdpb-ad5755-2.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0198/cn0198-hardware-connected-usb-sdpb-ad5755-2.jpg
    :width: 300px

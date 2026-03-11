@@ -13,9 +13,8 @@ A resonant circuit, also called a tuned circuit consists of an inductor and a ca
 
 A network is in resonance when the voltage and current at the network input terminals are in phase and the input impedance of the network is purely resistive.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -40,9 +39,8 @@ OR
 
 Frequency Response: It is a plot of the magnitude of the output Voltage of a resonance circuit as function of frequency. The response of course starts at zero, reaches a maximum value in the vicinity of the natural resonant frequency, and then drops again to zero as ω becomes infinite. The frequency response is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -53,9 +51,8 @@ The two additional frequencies ω\ :sub:`1` and ω\ :sub:`2` are also indicated 
 
 :math:`ß = omega_2 - omega_1` (3)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -73,14 +70,14 @@ Hardware setup:
 Set up the circuit shown in Figure 4 on your solderless breadboard.
 
 
-|image1|
+|image4|
 
 .. container:: centeralign
 
    Figure 4: Parallel Resonance Circuit
 
 
-   |image2|
+   |image5|
 
 .. container:: centeralign
 
@@ -93,7 +90,7 @@ Procedure:
 Using the Network analyzer tool you can plot the frequency response of a resonant circuit. Start by computing the resonance frequency using equation (1). According to this, set the logarithmic sweep parameters. In this case, the resonance frequency is 1.1kHz so the sweep can start from 100Hz to 10 kHz. Set the minimum phase at -90 the maximum phase at 90. Magnitude axis can be set from -15 dB to 0dB. In Figure 6 is presented the transfer function of the RLC circuit obtained by running the network analyzer.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -104,7 +101,7 @@ The circuit response in time domain can be analyzed using Signal generator and O
 
 
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
@@ -115,14 +112,14 @@ Choose another two values of frequency, for example the values at the ends of th
 
 
 
-|image5|
+|image8|
 
 .. container:: centeralign
 
    Figure 8: Input and output signals of RLC circuit for frequency equal to 100 Hz
 
 
-   |image6|
+   |image9|
 
 .. container:: centeralign
 
@@ -149,15 +146,21 @@ Questions:
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/parallel_rlc_20m.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab7-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/parallel_rlc_20m.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/paralel_rlc_bb.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/paralel_rlc_bb.png
    :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_paralel.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_paralel.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_1.1khz.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_1.1khz.png
    :width: 900px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_100hz.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_100hz.png
    :width: 900px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_10k.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/rlc_10k.png
    :width: 900px

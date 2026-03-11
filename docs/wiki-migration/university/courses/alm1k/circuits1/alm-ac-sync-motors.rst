@@ -46,9 +46,8 @@ Run Capacitors
 
 A run capacitor is used to smooth the motor's torque during each revolution, increasing efficiency and performance. They usually have lower values than a start capacitor and are of the non-polarized oil-filled type to reduce energy losses.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -88,9 +87,8 @@ Directions: 5 V motors
 
 Stepper motors specified for 5 Volt operation can be driven directly from the M1k SMU channels as shown in figure 3. For simple first pass testing purposes we can dispense with the Run Capacitor by driving Coil A from one SMU channel (CH A) with 0° phase shift and driving Coil B from the other SMU channel (CH B) with either a 90° or 270° phase shift (quadrature phase).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-3.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -101,9 +99,8 @@ Connect the two motor windings to the M1k SMU channels as shown in figure 3. Set
 
 In the Time screen, select the voltage and current traces for both channels. Because the motor coils are connected to (referenced to) the +2.5V rail to simplify the time trace display and show the actual coil voltage waveforms, set the voltage channel offsets to 2.5 as shown. This will remove the 2.5 V offset.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-co.png
-   :align: center
-   :width: 200px
+
+|image3|
 
 .. container:: centeralign
 
@@ -112,9 +109,9 @@ In the Time screen, select the voltage and current traces for both channels. Bec
 
 To center the waveforms around 0, the Channel Range and Position settings are shown here.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-rg.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -123,18 +120,16 @@ To center the waveforms around 0, the Channel Range and Position settings are sh
 
 In addition to the Coil voltage and current waveforms there are two “calculated” signals of interest. The current and voltage waveforms are out of phase with each other so we are also interested with the sum of the two coil currents and the difference between the two voltage waveforms (we will be using the voltage difference later when calculating the value for a Run capacitor). We can use the Math traces to display these two signals. There already is a Built-In expression for CAV – CBV so select that. We can use the Y Math Trace to enter a formula to calculate the sum of the two channel currents. Enter IBuffA[t]+IBuffB[t] for the Y Formula and set Y Units to mA and Set Y Axis to I-A to use the same axis as the channel A current trace. Be sure to click on Check and Apply to make sure there are no typos and apply the formula to the Y Math Trace. Also remember to select (display) the Y Math Trace from the Curves Drop down Menu.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-mt.png
-   :align: center
-   :width: 300px
+
+
+|image5|
 
 .. container:: centeralign
 
    Math Traces settings.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-4.png
-   :align: center
-   :width: 650px
+   |image6|
 
 .. container:: centeralign
 
@@ -143,9 +138,9 @@ In addition to the Coil voltage and current waveforms there are two “calculate
 
 Viewing the waveforms in the time domain can be informative but using the Phase Analyzer Tool to display the waveforms as Phasors is even more instructive. Open the Phase Plot screen. Because the frequency is only 60 Hz we need to increase the number of FFT samples to 8192. The same six waveforms can be displayed as phase vectors (as of release version 1.3.13). Turn on voltages CA-V, CB-V and CA - B V and currents CA-I, CB-I and CA + B I.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-5.png
-   :align: center
-   :width: 650px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -188,9 +183,8 @@ Now that we have an approximate value for the Run Capacitor we can drive the mot
 
 Connect the Run Cap C1 between the Coil B winding and the CH B pin on M1k. Connect the BIN pin on M1k to the Coil B winding. Change the AWG channel B mode to Split I/O (still in SVMI) so that voltage Trace B will be the coil voltage. The AWG B output waveform will be identical to the AWG A output waveform so we don’t really need to display it. The current trace for channel B will still be the coil B current waveform. The AWG channel A and channel B voltage waveforms need to be set to the same frequency, amplitude and phase now, as if they are the same signal. Set the channel B phase back to 0 to match channel A.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-6.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -199,18 +193,16 @@ Connect the Run Cap C1 between the Coil B winding and the CH B pin on M1k. Conne
 
 The following time and phase screens in figures 7 and 8 were taken using the same stepper motor using two electrolytic capacitors in parallel, a 47 uF and a 33 uF, as Run capacitor C1. The results are very similar to the measurements seen in figures 4 and 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-7.png
-   :align: center
-   :width: 650px
+
+
+|image9|
 
 .. container:: centeralign
 
    Figure 7, Run capacitor Coil voltage and current time waveforms.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-8.png
-   :align: center
-   :width: 650px
+   |image10|
 
 .. container:: centeralign
 
@@ -239,9 +231,8 @@ For this 12 V example setup a MITSUMI M35SP-5 stepping motors is used (just the 
 
 Stepper motors specified for 12 Volt or higher operation cannot be driven directly from the M1k SMU channels. An AC to AC step-down transformer can be used as shown in figure 9 to provide a suitable 60 Hz voltage level to drive the motor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-9.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -257,9 +248,8 @@ Appendix: Other Common Motors
 
 These lowest cost "hobbyist" small 5V gear reduction stepper motors are the most commonly available from electronic distributors on the web:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/gear-reduction-stepper.png
-   :align: center
-   :width: 300px
+
+|image12|
 
 .. container:: centeralign
 
@@ -268,9 +258,9 @@ These lowest cost "hobbyist" small 5V gear reduction stepper motors are the most
 
 They can have either 16:1 or 64:1 gear reduction so the output shaft will rotate very slowly when driven by moderate frequency sine sources like 60 Hz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/gear-stepper-inside.png
-   :align: center
-   :width: 300px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -284,3 +274,30 @@ The gear reduction should not change the voltage and current waveforms so these 
 `AC Motors <https://en.wikipedia.org/wiki/AC_motor>`_ `Synchronous Motors <https://en.wikipedia.org/wiki/Synchronous_motor>`_ ` <https://www.allaboutcircuits.com/textbook/alternating-current/chpt-13/synchronous-motors/>`__
 
 **Return to Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-co.png
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-rg.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-mt.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-4.png
+   :width: 650px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-5.png
+   :width: 650px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-6.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-7.png
+   :width: 650px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-8.png
+   :width: 650px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-ac-sync-motor-fig-9.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/gear-reduction-stepper.png
+   :width: 300px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/gear-stepper-inside.png
+   :width: 300px

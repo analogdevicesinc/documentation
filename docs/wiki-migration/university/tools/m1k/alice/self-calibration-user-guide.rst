@@ -16,18 +16,15 @@ Steps performed by ALICE Desktop Self Calibration:
 
 ALICE Desktop can perform a self-calibration sequence. An accurate 2.5 V reference source such as the AD584 precision reverence from the ADALP2000 analog parts kit is used. Plug it into a solderless breadboard and connect as shown in figure 1. The AD584 is configured as a 2.5V reference by connecting pins 1 and 3 together. A more permanent suggestion is soldering the circuit onto a small piece of circuit board rather than using a solderless breadboard as shown in figure 2. Connect both input channels to the 2.5V output of the AD584 when directed to do so.
 
-.. image:: https://wiki.analog.com/_media/university/tools/volt-meter-fig4.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1, AD584 2.5 V reference connections
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ad584-calibrator.png
-   :align: center
-   :width: 500px
+   |image2|
 
 .. container:: centeralign
 
@@ -97,3 +94,8 @@ Run the Self Calibration as usual. When asked to connect the AD584 reference, co
 **For Further Reading:**
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/volt-meter-fig4.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/ad584-calibrator.png
+   :width: 500px

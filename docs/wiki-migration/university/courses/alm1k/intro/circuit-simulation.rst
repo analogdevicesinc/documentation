@@ -28,9 +28,8 @@ Equipment:
 
 What formerly would require the use of an entire benchtop of instruments can now be accomplished using the ADALM1000 (see figure 1) and a laptop computer. This hardware module, coupled with the ALICE Desktop software, can produce the same functionality as each of the following pieces of equipment (and more): a two channel oscilloscope (scope), a digital voltmeter (DVM), two DC power supplies and a two channel waveform generator. The digital voltmeter (DVM) has 2 channels. The oscilloscope is a measuring device that lets you view a graph of a voltage or current signal vs time. The DC power supplies generate constant DC voltage signals (like a battery). The waveform generator creates a voltage signal that varies with time. The computer is an integral part of the equipment setup. You use it to simulate many of the circuits you will build (using the LTspice program), as well as to control the ADALM1000 hardware.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -46,9 +45,8 @@ Everyone should have studied the sine and cosine trigonometric functions in math
 
 The frequency f of a sine wave can be understood like this. The sine wave reaches its peak value of +A at regular intervals in time. The time between peaks is called the period of the sine wave. The letter T is used to denote the period and it is measured in seconds (Sec). The frequency is defined as the number of times that the sine wave reaches the peak value per second. Since adjacent peaks are separated by T sec, the wave has 1/T peaks per second. The frequency f is then equal to 1/T. The units of frequency are sec\ :sup:`-1`. Another name for the unit sec\ :sup:`-1` is Hertz, or abbreviated as Hz. Another way to denote the frequency of a wave is the product 2πf or ω, where ω is called the angular frequency in electronics. (In physics, ω is the rate of change of the angle in a rotating system, called angular velocity.) Note that one of the most common mistakes made is confusing frequency f and angular frequency ω.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -86,9 +84,8 @@ For the first step, we need to set up a sinusoidal voltage. Set up the ALM1000 t
 
 After correctly installing the ALICE Desktop software and connecting the ALM1000 to a USB port, open the software. You should see the windows similar to that shown in Figure 4 for the waveform generator controls and the oscilloscope. The values for various parameter settings shown in both windows will likely be different. You will adjust those now.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-3.png
-   :align: center
-   :width: 800px
+
+|image3|
 
 .. container:: centeralign
 
@@ -108,9 +105,8 @@ Set the Max Ch A entry to 2.7. Set the Min voltage Ch A entry to 2.3. This will 
 
 Your AWG window should look like Figure 5. Only the Min, Max, and Freq settings for AWG CH A matter at this point. The settings under AWG B can be anything at this point.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-5.png
-   :align: center
-   :width: 200px
+
+|image4|
 
 .. container:: centeralign
 
@@ -139,18 +135,15 @@ We now wish to connect the waveform generator, scope and earphones to perform so
 
 The ADALP2000 Analog Parts Kit includes a 3.5 mm audio connector break-out-board, figure 6, that can be inserted in a solderless breadboard. The board pins are numbered 1-5. Pin 4 is the sleeve (ground), Pin 2 is the tip (left audio) and Pin 3 is the ring (right audio).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-6.png
-   :align: center
-   :width: 300px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 6, stereo audio connector break-out-board
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-7.png
-   :align: center
-   :width: 600px
+   |image6|
 
 .. container:: centeralign
 
@@ -163,9 +156,8 @@ Start by measuring the resistance of each channel for your ear buds or earphones
 
 To use the ALICE ohmmeter, open the Ohmmeter tool on the right side of the Scope main screen.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-8.png
-   :align: center
-   :width: 200px
+
+|image7|
 
 .. container:: centeralign
 
@@ -219,18 +211,15 @@ Background
 
 The software we will be using to simulate the operation of circuits in this lab activity is called LTspice which uses information on a circuit in the form of a schematic and analyzes how it will behave. When placing parts in the circuit, resistors, capacitors, inductors, diodes and wires all have their own symbols in the menu. All other parts are accessed through the “Place Components” button. See figure 9. Once the parts are placed, their values must be specified. This is usually done by right clicking your mouse on the circuit element or one of its parameters. Once the circuit is complete, the simulation must be setup. This is done through the 'Simulate' drop down menu. The example below shows a transient simulation that runs from 0 to 5ms with a maximum step size of 1µs. Once the simulation is run, it displays an output similar to what you would see if you hooked the circuit to an oscilloscope. Figure 10 contains a sample waveform diagram.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-9.png
-   :align: center
-   :width: 700px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 9. Example Schematic main page
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-10.png
-   :align: center
-   :width: 700px
+   |image9|
 
 .. container:: centeralign
 
@@ -254,9 +243,8 @@ Figure 11 is the LTspice main screen with the circuit we will be drawing. Note t
 
 In the circuit shown in figure 11, we have some resistors, a sinusoidal voltage source, a ground and some wires. To create this diagram, we will use the command buttons. For the resistors we will click on the button that looks like a resistor. You can also do this by using the Edit menu or by hitting the R key. You should see a resistor symbol that you are free to place anywhere in the schematic. The Edit menu also shows you what name goes with every symbol. For the ground, select the ground button, use the Edit menu or hit the G key. For the voltage source and most other components, you have to use the component button (which can also be selected from the Edit menu) and then pick Voltage from the many options offered.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-11.png
-   :align: center
-   :width: 700px
+
+|image10|
 
 .. container:: centeralign
 
@@ -269,9 +257,8 @@ When you have placed all resistors, the voltage source and the ground, connect e
 
 To complete the schematic, we have to change the component values. Each resistor was given a name in the order it was placed on the diagram. Thus, your resistors may not have the same names as shown in the figure. For simplicity, they will be referred to by the name shown here and you can change the names if you wish the same way their parameter values are changed.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-12.png
-   :align: center
-   :width: 400px
+
+|image11|
 
 .. container:: centeralign
 
@@ -282,9 +269,8 @@ To change R3 to 1Meg Ohm, right click on the bottom R and you should get the win
 
 After you have changed all the resistor values and moved them to neat and readable positions, you must set up the voltage source. In LTspice, voltage sources are DC by default. To specify the source as sinusoidal, right click on the voltage source symbol and select the Advanced button. The window in figure 13 will appear. Select SINE and then set the values shown for offset, amplitude and frequency. Once the symbol is labeled as SINE, these parameters can be changed by right clicking on the symbol. The values are used to label the voltage source as shown in figure 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-13.png
-   :align: center
-   :width: 500px
+
+|image12|
 
 .. container:: centeralign
 
@@ -297,9 +283,8 @@ After all the components are defined, wired up and their values are set appropri
 
 Find the Simulation drop-down menu and click and select Edit Simulation Cmd. You will get the window shown in Figure 14. Select the tab for the type of analysis you wish to perform. In this case it is Transient since we are interested in output that is vs time like a scope. The simulation will begin at time t = 0, but we can choose to start saving data after that. Thus, we specify the Stop Time (the end time of the simulation), the Time to Start Saving Data, and the Maximum Timestep (the resolution of our simulation). Here we choose, 5ms, 0 and 1µs, respectively. Note that there is no µ so we have to use the letter u.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-14.png
-   :align: center
-   :width: 400px
+
+|image13|
 
 .. container:: centeralign
 
@@ -316,9 +301,8 @@ You are now ready to run the simulation.
 
 Click on the Run button. A set of axes with no signals shown will appear. You can now add voltages where ever you wish by left-clicking with your mouse. You will see that whenever you hover over a wire in the schematic with your mouse, a symbol like a voltage probe will appear. Click on the wire you want to know the voltage. If you want to plot current, hover over a device symbol and your mouse symbol will change to a current probe. If you click on a device, the current through it will appear on the plot. In the plot shown in Figure 15, the input and output voltages for the voltage divider are displayed. Note that the ratio between the two is what you should expect for this simple circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-15.png
-   :align: center
-   :width: 700px
+
+|image14|
 
 .. container:: centeralign
 
@@ -329,9 +313,8 @@ You should get something like (but maybe not identical to) the window shown in f
 
 It is also useful to know how to copy plots and paste them into a word processor. Under the Tools menu, click on “Write image to .emf file”. Now there is a .emf file saved that you can insert into a word processor. Open your word processor and paste the image somewhere. Save this file or print the output plot for the 1k voltage divider directly. You should see a plot like the one shown in figure 16. If you get the schematic instead, click your mouse on the voltage plot window to select it and try again.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-16.png
-   :align: center
-   :width: 700px
+
+|image15|
 
 .. container:: centeralign
 
@@ -352,3 +335,34 @@ Summary
 LTspice is a very powerful simulation tool meant to address the circuit simulation needs of all engineers who must do circuit design and analysis. Thus, there are many, many opportunities to make what seem like silly mistakes that prevent the analysis from working properly. In your first attempt at using these tools, it is likely that you have already made some of these mistakes. You should also have heard about some of them in class. What mistakes did you make?
 
 **For Further Reading:***Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-3.png
+   :width: 800px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-5.png
+   :width: 200px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-6.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-7.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-8.png
+   :width: 200px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-9.png
+   :width: 700px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-10.png
+   :width: 700px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-11.png
+   :width: 700px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-12.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-13.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-14.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-15.png
+   :width: 700px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-16.png
+   :width: 700px

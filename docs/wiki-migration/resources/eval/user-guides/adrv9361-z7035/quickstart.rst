@@ -1,8 +1,8 @@
 ADRV9361-Z7035 Quick Start Guide
 ================================
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/:adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web`.gif
-   :alt: :adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web`.gif
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/:adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web.gif`
+   :alt: :adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web.gif`
    :align: right
    :width: 250px
 
@@ -16,7 +16,7 @@ The ADRV9361-Z7035 supports all features on the :adi:`ADRV1CRR-FMC <en/design-ce
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 | ADRV1CRR-FMC                                                                                         | ADRV1CRR-BOB                                                                                       |
 +======================================================================================================+====================================================================================================+
-| |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web`.gif|                 | |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web`.gif|                 |
+| |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif|`                 | |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif|`                 |
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 
 Required Software
@@ -798,9 +798,9 @@ Shut down
 
    |image1|
 
-.. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web`.gif| image:: https://wiki.analog.com/_media/:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web`.gif
+.. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif|` image:: :adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif`
    :width: 250px
-.. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web`.gif| image:: https://wiki.analog.com/_media/:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web`.gif
+.. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif|` image:: :adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif`
 .. |osc_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/user-guide/osc_config.png
    :width: 600px
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png

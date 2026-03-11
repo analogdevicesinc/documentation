@@ -23,9 +23,9 @@ FPGA Reference Designs on GitHub :
    :class: download
 
    
-   -  :git-fpgahdl_xilinx:`archive/ad_fmcomms1_ebz_edk_14_1_2012_12_14`.zip
-   -  :git-fpgahdl_xilinx:`archive/ad_fmcomms1_ebz_edk_14_1_2012_12_14`.tar.gz
-   -  https://github.com/analogdevicesinc/fpgahdl_xilinx.git
+   -  https://github.com/analogdevicesinc/fpgahdl_xilinx/archive/ad_fmcomms1_ebz_edk_14_1_2012_12_14.zip
+   -  https://github.com/analogdevicesinc/fpgahdl_xilinx/archive/ad_fmcomms1_ebz_edk_14_1_2012_12_14.tar.gz
+   -  :git-fpgahdl_xilinx:`fpgahdl_xilinx`
    
 
 

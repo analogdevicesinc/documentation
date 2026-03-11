@@ -10,7 +10,7 @@ Scopy DMG Installers for OSX are available for each release. The oldest supporte
    :class: download
 
    
-   -  Download: :git-scopy:`OSX installer <releases/latest>`
+   -  Download: `OSX installer <https://github.com/analogdevicesinc/scopy/releases/latest>`_
    
 
 
@@ -42,7 +42,7 @@ You can also build Scopy from source, instead of using the provided installer. B
         brew pip mako
         brew pip cheetah**
 
-**Get the latest release of libiio from** :git-libiio:`here <releases>`
+**Get the latest release of libiio from** `here <https://github.com/analogdevicesinc/libiio/releases>`_
 
 **Build and install Boost**
 
@@ -97,7 +97,7 @@ You can also build Scopy from source, instead of using the provided installer. B
 ::
 
        **cd ~
-       git clone https://github.com/analogdevicesinc/gnuradio
+       git clone :git-gnuradio:`gnuradio`
        cd gnuradio
        git checkout scopy
        mkdir build && cd build
@@ -180,7 +180,7 @@ After that, change QWT_POLAR_INSTALL_PREFIX to /usr/local and QWT_POLAR_INSTALL_
 ::
 
        **cd ~
-       git clone https://github.com/analogdevicesinc/libad9361-iio
+       git clone :git-libad9361-iio:`libad9361-iio`
        cd libad9361-iio
        mkdir build && cd build
        cmake ..
@@ -192,7 +192,7 @@ After that, change QWT_POLAR_INSTALL_PREFIX to /usr/local and QWT_POLAR_INSTALL_
 ::
 
        **cd ~
-       git clone https://github.com/analogdevicesinc/gr-iio
+       git clone :git-gr-iio:`gr-iio`
        cd gr-iio
        mkdir build && cd build
        cmake ..
@@ -204,7 +204,7 @@ Building Scopy
 
 ::
 
-       **git clone https://github.com/analogdevicesinc/scopy.git**
+       **git clone :git-scopy:`scopy`.git**
 
 This will fetch the latest sources from GitHub to a "scopy" directory.
 

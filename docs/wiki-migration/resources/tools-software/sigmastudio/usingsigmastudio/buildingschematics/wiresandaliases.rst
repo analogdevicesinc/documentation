@@ -57,9 +57,8 @@ To create an alias, **Right-Click** on a block's output pin (blue pin) and selec
 
 When you click **Alias**, two blocks appear, input and output. The alias input is automatically connected to source block's output pin. Next, create a wire from the alias output block (Alias 2 in the example below) to the signal destination.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wirespic7.png
-   :alt: wirespic7.png
-   :align: center
+
+|wirespic7.png|
 
 .. hint::
 
@@ -70,4 +69,5 @@ When you click **Alias**, two blocks appear, input and output. The alias input i
    :alt: wirespic8.png
    :align: center
 
-.. |icon.png| image:: https://wiki.analog.com/_media/icon.png
+.. |icon.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/icon.png
+.. |wirespic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/wirespic7.png

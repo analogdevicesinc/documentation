@@ -22,7 +22,7 @@ Download and build gr-m2k
 
 ::
 
-   git clone https://github.com/analogdevicesinc/gr-m2k.git
+   git clone :git-gr-m2k:`gr-m2k`
    cd gr-m2k
    mkdir build
    cd build

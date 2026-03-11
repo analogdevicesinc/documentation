@@ -18,4 +18,4 @@ Click the blue icon in the block to select what condition you want to execute:
 
 When the condition is met, your output sample is C; otherwise it's D.
 
-.. |abincdpic1.png| image:: https://wiki.analog.com/_media/abincdpic1.png
+.. |abincdpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/abincdpic1.png

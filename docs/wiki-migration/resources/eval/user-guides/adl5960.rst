@@ -32,16 +32,12 @@ Documents
 User Guide
 ----------
 
-::
-
-   -[[https://wiki.analog.com/_media/resources/eval/user-guides/ug-adl5960_20220415_draft.pdf|ug-adl5960_20220415_draft.pdf]]
+-  `ug-adl5960_20220415_draft.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/ug-adl5960_20220415_draft.pdf>`_
 
 PCB Gerber Files
 ----------------
 
-::
-
-   -[[https://wiki.analog.com/_media/resources/eval/065841-01D_fab.zip|065841-01D_fab.zip]]
+-  `065841-01D_fab.zip <https://wiki.analog.com/_media/resources/eval/065841-01D_fab.zip>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5960-evalz_top_1_.jpg
    :width: 400px

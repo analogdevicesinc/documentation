@@ -75,15 +75,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD7799 Driver. <drivers/adc/ad7799/ad7799.c>`
+   -  :git-no-OS:`Header file of AD7799 Driver. <drivers/adc/ad7799/ad7799.h>`
    
-   |Implementation of AD7799 Driver.|
 
-   -
-
-   |Header file of AD7799 Driver.|
-
-.. |Implementation of AD7799 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7799/ad7799`.c
-.. |Header file of AD7799 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7799/ad7799`.h

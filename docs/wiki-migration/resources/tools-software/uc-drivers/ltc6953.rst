@@ -46,15 +46,10 @@ The source code for the LTC6953 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of LTC6953 Driver <drivers/frequency/ltc6953/ltc6953.h>`
+   -  :git-no-OS:`Implementation of LTC6953 Driver <drivers/frequency/ltc6953/ltc6953.c>`
    
-   |Header file of LTC6953 Driver|
 
-   -
-
-   |Implementation of LTC6953 Driver|
 
 The LTC6953 driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
 
@@ -62,15 +57,10 @@ The LTC6953 driver also uses the ADI utility library, so make sure you add the n
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 To use the LTC6953 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
 
@@ -112,11 +102,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
-   |Generic header file for SPI Communication APIs|
+
 
 Code Documentation
 ------------------
@@ -336,8 +324,3 @@ Example Initialization Using Maxim SDK as Platform
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ltc6953top-web.png
    :width: 400px
-.. |Header file of LTC6953 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/ltc6953/ltc6953`.h
-.. |Implementation of LTC6953 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/ltc6953/ltc6953`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h

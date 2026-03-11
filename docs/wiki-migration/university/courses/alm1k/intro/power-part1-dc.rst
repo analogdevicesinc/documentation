@@ -34,9 +34,8 @@ Procedure:
 
 To better understand power, analyze the familiar voltage divider circuit as shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-power-part1-dc-fig1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -56,9 +55,8 @@ Two Source Experiment
 
 In a previous activity on superposition, we investigated the circuit in figure 2 for circuits with multiple voltage sources. For V\ :sub:`CA` = V\ :sub:`CB` = 2V, find the voltage across each resistor and the current through each resistor. Calculate the power consumed by the resistors in the circuit. With channel B in Split I/O mode you can use the BIN input to measure the voltage at the junction of the three resistors (or use AIN with channel A in Split I/O mode).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-power-part1-dc-fig2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -72,3 +70,8 @@ Again, if you use the ALICE DC Meter-Source Tool it will also measure the curren
 **For Further Reading:**
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-power-part1-dc-fig1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-power-part1-dc-fig2.png
+   :width: 400px

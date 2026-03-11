@@ -31,18 +31,26 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the circuit shown in the schematic below on the solderless breadboard; note that the +5 V power is to be supplied by the M1K\
+-  Construct the circuit shown in the schematic below on the solderless breadboard; note that the +5 V power is to be supplied by the M1K
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_image_1.png
+   :alt: lab_3_image_1.png
+   :align: center
+   :width: 600px
 
-|lab_3_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_assembly_image_1e.png
+   :alt: lab_3_assembly_image_1e.png
+   :align: center
+   :width: 800px
 
-|lab_3_assembly_image_1e.png|
+-  Refer to the illustration below that shows how to connect the components
 
--  Refer to the illustration below that shows how to connect the components\
-
-|lab_3_assembly_image_2a.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_assembly_image_2a.png
+   :alt: lab_3_assembly_image_2a.png
+   :align: center
+   :width: 800px
 
 -  Run PixelPulse on the computer and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -77,10 +85,3 @@ Observations and Conclusions
 -  The two voltage-feedback op-amp input voltage levels track each other closely when negative feedback is applied around the op-amp
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_3_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_image_1.png
-   :width: 600px
-.. |lab_3_assembly_image_1e.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_assembly_image_1e.png
-   :width: 800px
-.. |lab_3_assembly_image_2a.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_3_assembly_image_2a.png
-   :width: 800px

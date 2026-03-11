@@ -103,9 +103,10 @@ The Bare Metal Project Wizard for the SHARC Audio Module Bare Metal SDK version 
 
    |image4|
 
-   -  Next, under core0 -> src -> audio_frameworks, navigate to “audio_framework_8ch_sam_and_audioproj_fin_arm.c”. Add the new A2B configuration, as shown below. Include the previously created header file “adi_a2b_i2c_commandlist_SAM_WBZ_Amp.h”
+-  Next, under core0 -> src -> audio_frameworks, navigate to “audio_framework_8ch_sam_and_audioproj_fin_arm.c”. Add the new A2B configuration, as shown below. Include the previously created header file “adi_a2b_i2c_commandlist_SAM_WBZ_Amp.h”
 
-   |image5|
+
+|image5|
 
 -  At this stage, the newly created A2B topology should be properly configured and ready to be compiled and downloaded to the SHARC Audio Module board.
 
@@ -122,7 +123,9 @@ Executing the Code in CCES
    Some knowledge of CrossCore Embedded Studio(CCES) is assumed here. If unfamiliar with CCES, please go through the :doc:`CCES Getting Started Guide </wiki-migration/resources/tools-software/crosscore/cces/getting-started>` prior to working in CCES.
 
 
-   |image6|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/a2b_debug_configuration.png
+   :align: right
+   :width: 500px
 
 -  Build all 3 core projects
 -  Create the debug configuration to load all 3 cores using the ICE-1000
@@ -148,5 +151,3 @@ Executing the Code in CCES
    :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/a2b_topology_include.png
    :width: 700px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/baremetal/a2b_debug_configuration.png
-   :width: 500px

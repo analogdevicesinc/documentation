@@ -50,7 +50,7 @@ Obtaining Technical Support
 
 You can reach Analog Devices software and tools technical support in the following ways:
 
--  Post your questions in the software and development tools support community at [[/\|\ :ez:`dsp/software-and-development-tools/linux-for-adsp-sc5xx-processors/f/q-a%7CAnalog` Devices Engineer Zone]] ®
+-  Post your questions in the software and development tools support community at `\ :ez:`dsp/software-and-development-tools/linux-for-adsp-sc5xx-processors/f/q-a%7CAnalog` Devices Engineer Zone <https://wiki.analog.com/\>`_ ®
 -  E-mail your questions about processors and processor applications to processor.support@analog.com
 -  Submit your questions to technical support directly via http://www.analog.com/support
 -  Contact your Analog Devices sales office or authorized distributor

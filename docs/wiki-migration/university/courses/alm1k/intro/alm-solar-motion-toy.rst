@@ -11,9 +11,8 @@ Background:
 
 Solar powered novelty items such as the dancing hula girl and other solar ornaments have become very inexpensive and common place. Looking from the outside, it consists of a small solar panel to harvest power from ambient light and some sort of electro-mechanical “motor” or pusher that makes her wiggle back and forth. A typical example, is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig1.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -24,9 +23,8 @@ Inside the toy are mechanical levers connecting the upper and middle body parts 
 
 The complete circuit is shown in figure 2. There are a total of four electrical components. A small solar panel, a 470 uF 10 V electrolytic capacitor, an air core (300 Ω internal series resistance) inductor / pulse coil and a small circuit board with a black blob on it (see video listed below under **Going Further** for more details).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig2.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -37,9 +35,8 @@ Under the epoxy blob is the integrated circuit chip. It sends correctly timed pu
 
 The small solar panel is made by Putian Weite Electronics Co. ,Ltd. From the company web site the device used is a low light, amorphous silicon type solar cell, shown in figure 3. VIMUN SC-3012-2A, 29.44mm×11.6mm×1.1mm, 4 cells. The following specifications were listed, 2.0 V open circuit, 9.0 uA short circuit, 1.5 V output, at 200Lux.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig3.png
-   :align: center
-   :width: 250px
+
+|image3|
 
 .. container:: centeralign
 
@@ -48,9 +45,9 @@ The small solar panel is made by Putian Weite Electronics Co. ,Ltd. From the com
 
 To better test the components the toy will need to be de-constructed into its constituent parts. Soldering cut up male pin jumper wires to the solar panel and circuit board, as shown in figure 4, makes connecting them to a solderless breadboard easier. It is recommended that you color code the jumper wires, especially on the small PC board, as shown. Green is used for the negative (ground), orange for the positive and white for the coil connection (output). The very fine wires from the coil of course are very difficult to solder to. To provide a solid surface to solder the fine wires of the coil to, a small scrap of copper clad circuit board can be glued to the plastic base. Solder the coil wires to that before adding the jumper wires. The polarity of the coil connections is important. If they get swapped the current pulses will push the swinging magnet in the wrong direction. The coil is glued to the plastic base and is not easily removed without damaging it, so it is left as is.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-toy-de-con.png
-   :align: center
-   :width: 400px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -69,9 +66,8 @@ Measuring Circuit Operation:
 
 The first thing to do is take some measurements of the overall circuit under different conditions without the swinging magnet. Below is a table of the results powering the circuit in figure 2 from the DC output of AWG channel A of the M1k and the solar panel illuminated by a 60 W incandescent bulb.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig5.png
-   :align: center
-   :width: 350px
+
+|image5|
 
 .. container:: centeralign
 
@@ -88,9 +84,8 @@ It seems that the magnitude of the power supply voltage has a minimal effect on 
 
 To further investigate the oscillator, reassemble the mechanical parts with the permanent magnet suspended over the coil but the electronics outside the case to observe the switching waveform across the coil as shown in figure 6. Power the circuit with AWG CHA set to DC 1.4V. Set AWG channel B to Hi-Z / Split I/O mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solor-toy-external.png
-   :align: center
-   :width: 400px
+
+|image6|
 
 .. container:: centeralign
 
@@ -99,9 +94,9 @@ To further investigate the oscillator, reassemble the mechanical parts with the 
 
 Below in figure 7 is a screen capture of scope channel CHA, green trace, capturing the supply voltage at pin 1 (figure 5) and channel CHB, orange trace, capturing the voltage on the coil at pin 3 (figure 5).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig7.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -112,9 +107,8 @@ We first notice that the frequency is now more like 2.3 Hz. So clearly the swing
 
 In figure 8 we have a long persistence screen shot. Now we can see that the on period of the oscillator, when the coil is energized, remains constant but the off period changes over time due to possible noise on the signal when crossing the supply voltage and to stay in sync with the magnet as it swings.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -133,9 +127,8 @@ Materials:
 
 The IC on the circuit board makes a good LED flasher as well. Connect the LED and a series current limit resistor in place of the coil as shown in figure 9.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig9.png
-   :align: center
-   :width: 300px
+
+|image9|
 
 .. container:: centeralign
 
@@ -146,9 +139,8 @@ Measure the oscillator frequency and pulse width. You would think that the oscil
 
 Further testing as shown in figure 10, using a just a 1 KΩ resistor as the load and AWG channels B (CHB) a variable power supply for the top of the resistor shows that the oscillator runs at this faster frequency until the variable supply (and thus the peak swing) was just a few 10s of mV less than the voltage on pin 1 (CHA voltage). The frequency and wave shape quickly transitions to the slower mode as the voltage reaches the supply value and beyond. Clearly the internal circuitry is sensing the output swing on pin 3 and does not fully reset unless the voltage reaches the supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig10.png
-   :align: center
-   :width: 300px
+
+|image10|
 
 .. container:: centeralign
 
@@ -157,9 +149,9 @@ Further testing as shown in figure 10, using a just a 1 KΩ resistor as the loa
 
 To further test this external frequency locking, the test setup is reconfigured as shown in figure 11 to allow the injection of an external sinewave. The test is done with the magnet and mechanical parts removed. The injected signal is a 1.0 V p-p sine wave at 2.5 Hz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig11.png
-   :align: center
-   :width: 400px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -168,9 +160,9 @@ To further test this external frequency locking, the test setup is reconfigured 
 
 Figure 12 is a screen shot of the output waveform (orange trace) frequency and phase locked to the external injected 2.5 Hz sinewave (green trace). The period of the output pulse is 400 mSec or 2.5 Hz.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig12.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -179,9 +171,9 @@ Figure 12 is a screen shot of the output waveform (orange trace) frequency and p
 
 Getting back to alternate uses, another resistor can be added to the LED flasher to make the voltage swing all the way up to the battery voltage as shown in figure 13. This will make the circuit flash at the slower 0.8 Hz rate. The added 10 KΩ resistor across the LED insures that the voltage at pin 3 goes to the battery voltage when off. Using a high value resistor will not add any significant extra current when on.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig13.png
-   :align: center
-   :width: 400px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -202,7 +194,7 @@ Measuring Inductor Characteristics:
 
 Use the ALICE Impedance Analyzer to measure the characteristics of the coil. AWG A Mode set to SVMI, set to Sine shape, Min to 1.0, Max 4.0, Freq to 1000. External resistor is 470 Ω. AWG B set to Hi-Z Split I/O mode.
 
-|image1| |image2|
+|image14| |image15|
 
 .. container:: centeralign
 
@@ -223,7 +215,33 @@ Transformer action can be investigated by driving a 1 mH or 10 mH inductor, like
 
 **Return to Lab Activity table of contents**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig14a.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig1.png
    :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig14.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig2.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig3.png
+   :width: 250px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-toy-de-con.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig5.png
+   :width: 350px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solor-toy-external.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig9.png
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig10.png
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig11.png
+   :width: 400px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig13.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig14a.png
+   :width: 300px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/alm-solar-motion-toy-fig14.png
    :width: 600px

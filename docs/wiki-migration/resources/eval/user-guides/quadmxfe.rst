@@ -4,7 +4,7 @@ Quad-MxFE Prototyping Platform User Guide
 Product Details
 ---------------
 
-The :adi:`Quad-MxFE System Development Platform </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html>` contains four :adi:`MxFE™ </en/products/digital-to-analog-converters/high-speed-da-converters/mixed-signal-frontends.html>` software defined, direct RF sampling transceivers, as well as associated RF front-ends, clocking, and power circuitry. The target application is phased array radars, electronic warfare, and ground-based SATCOM, specifically a **16 transmit/16 receive channel** direct sampling phased array at L/S/C band (0.1 GHz to ~5GHz). The Rx & Tx RF front-end has drop-in configurations that allow for customized frequency ranges, depending on the user’s application.
+The :adi:`Quad-MxFE System Development Platform <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html>` contains four :adi:`MxFE™ <en/products/digital-to-analog-converters/high-speed-da-converters/mixed-signal-frontends.html>` software defined, direct RF sampling transceivers, as well as associated RF front-ends, clocking, and power circuitry. The target application is phased array radars, electronic warfare, and ground-based SATCOM, specifically a **16 transmit/16 receive channel** direct sampling phased array at L/S/C band (0.1 GHz to ~5GHz). The Rx & Tx RF front-end has drop-in configurations that allow for customized frequency ranges, depending on the user’s application.
 
 The Quad-MxFE System Development Platform highlights a complete system solution. It is intended as a testbed for demonstrating multi-chip synchronization as well as the implementation of system level calibrations, beamforming algorithms, and other signal processing algorithms. The system is designed to mate with a `VCU118 <https://www.xilinx.com/VCU118>`_ Evaluation Board from Xilinx®, which features the Virtex® UltraScale+™ XCVU9P FPGA, with provided reference software, HDL code, and MATLAB system-level interfacing.
 
@@ -75,7 +75,7 @@ User Resources
 Features
 --------
 
--  Multi-channel, wideband system development platform for the :adi:`AD9081` :adi:`MxFE™ </en/products/digital-to-analog-converters/high-speed-da-converters/mixed-signal-frontends.html>`
+-  Multi-channel, wideband system development platform for the :adi:`AD9081` :adi:`MxFE™ <en/products/digital-to-analog-converters/high-speed-da-converters/mixed-signal-frontends.html>`
 -  Mates with Xilinx `VCU118 <https://www.xilinx.com/VCU118>`_ Evaluation Board (Not Included)
 -  16x RF Receive (Rx) Channels (32x Digital Rx Channels)
 
@@ -162,7 +162,7 @@ Related Documents
 Publications
 ~~~~~~~~~~~~
 
--  :adi:`Multichannel RF to Bits Development Platform </en/design-notes/multichannel-rf-to-bits-development-platform.html>`
+-  :adi:`Multichannel RF to Bits Development Platform <en/design-notes/multichannel-rf-to-bits-development-platform.html>`
 -  :adi:`Power-Up Phase Determinism Using Multichip Synchronization Features in Integrated Wideband DACs and ADCs <en/technical-articles/power-up-phase-determinism-using-multichip-synchronization.html>`
 -  :adi:`Integrated Hardened DSP on DAC/ADC ICs Improves Wideband Multichannel Systems <en/technical-articles/integrated-hardened-dsp-on-dac-adc-ics-improves-wideband-multichannel-systems.html>`
 -  :adi:`Multi-Channel System Improvements Using Hardened DSP in Digitizer ICs <en/education/education-library/webcasts/multi-channel-system-improvements-using-hardened-dsp-digitizer-ics.html>`
@@ -174,42 +174,42 @@ Related Part Pages
 MxFE
 ^^^^
 
--  :adi:`AD9081 </en/products/ad9081.html>`
--  :adi:`AD9082 </en/products/ad9082.html>`
+-  :adi:`AD9081 <en/products/ad9081.html>`
+-  :adi:`AD9082 <en/products/ad9082.html>`
 -  :doc:`AD9081/AD9082 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
--  :adi:`UG-1578 User Guide </media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+-  :adi:`UG-1578 User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
 
 ADF4371
 ^^^^^^^
 
--  :adi:`ADF4371 </en/products/adf4371.html>`
+-  :adi:`ADF4371 <en/products/adf4371.html>`
 -  :doc:`ADF4371 IIO Wideband Synthesizer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/adf4371>`
 
 HMC7043
 ^^^^^^^
 
--  :adi:`HMC7043 </en/products/hmc7043.html>`
+-  :adi:`HMC7043 <en/products/hmc7043.html>`
 -  :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
 
 LTM4633
 ^^^^^^^
 
--  :adi:`LTM4633 </en/products/ltm4633.html>`
+-  :adi:`LTM4633 <en/products/ltm4633.html>`
 
 LTM8063
 ^^^^^^^
 
--  :adi:`LTM8063 </en/products/ltm8063.html>`
+-  :adi:`LTM8063 <en/products/ltm8063.html>`
 
 LTM8053
 ^^^^^^^
 
--  :adi:`LTM8053 </en/products/ltm8053.html>`
+-  :adi:`LTM8053 <en/products/ltm8053.html>`
 
 FPGA Evaluation Board Hardware
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Xilinx Virtex UltraScale+ FPGA VCU118 <https://www.xilinx.com//products/boards-and-kits/vcu118.html>`_
+-  `Xilinx Virtex UltraScale+ FPGA VCU118 <https://www.xilinx.com/products/boards-and-kits/vcu118.html>`_
 
 --------------
 

@@ -65,4 +65,4 @@ From ADI's 2013 Design Conference
 
 |youtube>-7CscB5sUIw|
 
-.. |youtube>-7CscB5sUIw| image:: https://wiki.analog.com/_media/youtube>-7CscB5sUIw
+.. |youtube>-7CscB5sUIw| image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-7CscB5sUIw

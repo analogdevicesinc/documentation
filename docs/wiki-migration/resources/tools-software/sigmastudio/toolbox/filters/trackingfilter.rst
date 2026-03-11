@@ -140,4 +140,4 @@ Keep in mind though that F1 and F2 are the numbers in the DC block, but the rang
    :alt: trackingpic3.png
    :align: center
 
-.. |trackingpic1.png| image:: https://wiki.analog.com/_media/trackingpic1.png
+.. |trackingpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/trackingpic1.png

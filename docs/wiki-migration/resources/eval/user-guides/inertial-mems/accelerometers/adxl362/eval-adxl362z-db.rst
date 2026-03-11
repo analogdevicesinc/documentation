@@ -136,8 +136,9 @@ To use the MultiDemo firmware:
 
 -  On power-up, the board behaves as a motion switch: the entire display lights up when the board is moved. When the board is still for a few seconds, most icons turn off and only the logos, power and battery icons remain on. Initial power up state: |image2| After movement, all of the logos, digits, power and battery icons will light:
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/poweractive.jpg
+   :align: center
+   :width: 300px
 
 -  To log data, at any time, insert the microSD card into the slot and press the SW3 button in the top right-hand corner of the board. The word "LOg" will be shown on the display. The hand icon, if present, indicates a logging error. Generally this appears when the microSD card is not inserted fully into the slot. If no hand icon lights up, data logging begins when the word "LOg" is shown, and continues until power is removed from the board.
 -  To download logged data onto a computer, use the GUI provided here. Installation of the GUI is straightforward:
@@ -218,6 +219,4 @@ Data is transmitted 16-bits for each direction, 2's compliment, little-endian, i
 .. |Front of board showing switch settings| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/adxl362z-db_rev_2.jpg
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/poweridle.jpg
-   :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl362/poweractive.jpg
    :width: 300px

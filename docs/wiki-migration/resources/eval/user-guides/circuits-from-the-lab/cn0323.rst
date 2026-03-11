@@ -11,16 +11,16 @@ The circuit is ideal for applications where high speed, accurate, non-contact an
 General Setup
 -------------
 
-::
 
-   *One EVAL-CN0323-SDPZ Evaluation Board
-   *[[:adi:`EVAL-SDP-CB1Z|EVAL-SDP-CB1Z]]` Evaluation board
-   *CN0323 Evaluation Software
-   *One USB Type-A plug to USB Mini-B plug cable.
-   *One diametrically magnetized Neodymium magnet
-   *One of the following:
-     *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-     *DC power supply with a 0-6V output.  (HP6236B)
+
+- One EVAL-CN0323-SDPZ Evaluation Board
+-  :adi:`EVAL-SDP-CB1Z` Evaluation board
+- CN0323 Evaluation Software
+- One USB Type-A plug to USB Mini-B plug cable.
+- One diametrically magnetized Neodymium magnet
+- One of the following:
+  *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
+  *DC power supply with a 0-6V output.  (HP6236B)
 
 Minimum PC/System Requirements
 ------------------------------
@@ -35,29 +35,34 @@ Minimum PC/System Requirements
 How to Install the Evaluation Software
 --------------------------------------
 
--  Extract the files within the file **CN0323 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0323 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0323\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+-  Extract the files within the file **CN0323 SDP Eval Software.zip** and open the file **setup.exe**. It is recommended that you install the CN0323 SDP Evaluation Software to the default directory path **C:\\Program Files\\Analog Devices\\CN0323\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_2.png
+   :align: center
+   :width: 600px
 
-|image1|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_3.png
+   :align: center
+   :width: 600px
 
-|image2|
+-  Press **“Next”**.
 
--  Press **“Next”**.\
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_5.png
+   :align: center
+   :width: 600px
 
 -  Press **“Next”**.
 -  Upon completion of the installation of the **CN0323 SDP Eval Software**, the installer for the **ADI SDP Drivers** will execute. Follow the on-screen prompts to install the drivers. It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
 -
 
-|image4|
+|image1|
 
 -  Press **“Next”**.
 -
 
-|image5|
+|image2|
 
 -  It is recommended that you install the drivers to the default directory path **C:\\Program Files\\Analog Devices\\SDP\\Drivers\\**
 -  Press **“Install”** to install the Drivers and complete the installation of all software necessary to evaluate the **EVAL-CN0323-SDPZ**
@@ -68,7 +73,7 @@ Opening and Enabling the Evaluation Software
 -  Launch the executable found at **C:\\Program Files\\Analog Devices\\CN0323** and press the **“Connect"** button.
 -
 
-|image6|
+|image3|
 
 Step by Step Instruction for Calibrating the System
 ---------------------------------------------------
@@ -79,7 +84,7 @@ Step by Step Instruction for Calibrating the System
    -  An automatic calibration allows the software to identify the maximum and minimum ADC code for each channel of the ADC. This method is easier to use than the manual method, however, it may introduce errors if the magnet is spinning with an un-smooth or non-periodic nature.
    -
 
-   |image7|
+   |image4|
 
 -  Step 1: Begin by selecting manual or automatic calibration.
 -  Step 2: Press the 'Click to Sample' button to begin data conversion.
@@ -97,17 +102,11 @@ Registration
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0323-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_2.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_6.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_3.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_7.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_5.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_front_panel_2.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_6.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_install_7.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_front_panel_2.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_front_panel_1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0323/software_front_panel_1.png
    :width: 600px

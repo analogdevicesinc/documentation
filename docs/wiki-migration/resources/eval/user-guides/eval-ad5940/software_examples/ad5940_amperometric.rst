@@ -31,9 +31,11 @@ Setting up the Hardware
 -----------------------
 
 -  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
--  Set S5 to Wall/USB to power the board from the USB cable\
+-  Set S5 to Wall/USB to power the board from the USB cable
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
+   :align: center
+   :width: 800px
 
 -  Place the **EVAL-AD5940ELCZ** on top of the **EVAL-ADICUP3029**.
 -  Ensure jumper on JP10 and JP11 is on PIN2 and PIN4
@@ -53,7 +55,7 @@ The source code and include files for the project can be found on Git
    :class: download
 
    
-   `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
+   :git-ad5940-examples:`AD5940 Source Code <ad5940-examples>`
    
 
 
@@ -85,14 +87,12 @@ Following is the UART configuration.
 The data on the terminal consists of the Frequency of the excitation signal, the magnitude of the impedance and the phase of the impedance in degrees as in below screenshot.
 
 
-|image2|
+|image1|
 
 Gas Sensor
 ----------
 
 The EVAL-AD5940ELCZ contains a footprint to connect an electrochemical gas sensor. To carry out amperometric measurements on a gas sensor connect the gas sensor to M1 as shown in image below. Move the jumpers on JP10 and JP11 to PIN1 and PIN2. Note the specified bias voltage for the sensor in the sensor datasheet. Modify the SensorBias variable in the AD5940_Amperometric firmware to correspond.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/realterm_amperometric.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/realterm_amperometric.png
    :width: 600px

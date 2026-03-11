@@ -82,9 +82,9 @@ The :adi:`LTC6953` clock distributor is used to ensure proper clock synchronizat
 
 The `ADI Frequency Planning Utility tool <http://www.analog.com/en/design-center/interactive-design-tools/frequency-folding-tool.html>`_ was used to determine the optimal :adi:`AD9082` ADC sample rate, IF sampling frequency, and IF bandwidth. A 6GSPS ADC rate allows for maximum instantaneous bandwidth (IBW) and complete avoidance of HD2 aliasing in-band for a 1GHz signal bandwidth centered at 4.5GHz (2nd Nyquist). The figure below illustrates this.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png
-   :align: center
-   :width: 800px
+
+
+|image2|
 
 .. important::
 
@@ -144,14 +144,14 @@ Noise Power Spectral Simulation
 
 The noise power spectral simulation shown below uses 76 individual carrier tones with a total combined input power of -11 dBm spanning from 30GHz to 31GHz for a total bandwidth of 1000MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored. After passing through the necessary system path, the IF frequency, shown on the second plot, becomes 4500MHz which can be directly sampled by the :adi:`AD9082`.
 
-|image2| |image3|
+|image3| |image4|
 
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The two tone spectral simulation shown below uses 2 individual carrier tones with a total combined input power of -11 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored.
 
-|image4| |image5|
+|image5| |image6|
 
 System Cascade
 ^^^^^^^^^^^^^^
@@ -190,14 +190,14 @@ Noise Power Spectral Simulation
 
 The noise power spectral simulation shown below uses 76 individual carrier tones with a total combined input power of -40 dBm spanning from 30GHz to 31GHz for a total bandwidth of 1000MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored. After passing through the analog beamforming front end, the signal is ready for further conditioning by the wideband receiver section.
 
-|image6| |image7|
+|image7| |image8|
 
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The two tone spectral simulation shown below uses 2 individual carrier tones each with an input power of -40 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored.
 
-|image8| |image9|
+|image9| |image10|
 
 System Cascade
 ^^^^^^^^^^^^^^
@@ -236,14 +236,14 @@ Noise Power Spectral Simulation
 
 The noise power spectral simulation shown below uses 76 individual carrier tones with a total combined input power of -40 dBm spanning from 30GHz to 31GHz for a total bandwidth of 1000MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored. After passing through the necessary system path, the IF frequency, shown on the second plot, becomes 4500MHz which can be directly sampled by the :adi:`AD9082`.
 
-|image10| |image11|
+|image11| |image12|
 
 Two-Tone Test Spectral Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The two tone spectral simulation shown below uses 2 individual carrier tones with a total combined input power of -11 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored.
 
-|image12| |image13|
+|image13| |image14|
 
 System Cascade
 ^^^^^^^^^^^^^^
@@ -251,36 +251,38 @@ System Cascade
 As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on "Node 10" which comes directly after the digital equalizer.
 
 
-|image14|
+|image15|
 
 :doc:`Home </wiki-migration/resources/eval/developer-kits/satcom-ref-design>`
 
 --------------
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_freq_plan.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/input_signal_no_bf_v2.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/input_signal_no_bf_v2.jpg
    :width: 425px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/output_signal_no_bf_v2.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/output_signal_no_bf_v2.jpg
    :width: 425px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_input_no_bf_v2.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_input_no_bf_v2.jpg
    :width: 425px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_output_no_bf_v2.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_output_no_bf_v2.jpg
    :width: 425px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_bf_only_v1.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_bf_only_v1.jpg
    :width: 425px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_bf_only_v1.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_bf_only_v1.jpg
    :width: 425px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_bf_only_v1.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_bf_only_v1.jpg
    :width: 425px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_bf_only_v1.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_bf_only_v1.jpg
    :width: 425px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_combined_v1.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_combined_v1.jpg
    :width: 425px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_combined_v1.jpg
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_combined_v1.jpg
    :width: 425px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_combined_v1.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_combined_v1.jpg
    :width: 425px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_combined_v1.jpg
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_combined_v1.jpg
    :width: 425px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_combined_v1.jpg
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_combined_v1.jpg
    :width: 600px

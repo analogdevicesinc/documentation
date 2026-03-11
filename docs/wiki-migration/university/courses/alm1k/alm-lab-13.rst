@@ -26,9 +26,8 @@ Directions:
 
 The object here is to construct the circuits shown in figures 1 and 2 using only the various transistors available in the ADALP2000 Analog Parts Kit. You should build the circuit on your solder-less breadboard. The values of the input and feedback resistors are shown as 4.7kΩ but can be changed to produce other gains. The amplifier is shown connected as a non-inverting amplifier but inverting configurations are also possible.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f1.png
-   :align: center
-   :width: 650px
+
+|image1|
 
 .. container:: centeralign
 
@@ -54,9 +53,8 @@ Increasing open loop gain
 
 The amplifier in figure 1 uses a simple resistive load for the NPN differential input stage. The gain of the amplifier can be increased by using a PNP current mirror as the load for the input stage as shown in figure 2. With the addition of the resistively degenerated current mirror the ability to null out or adjust the input offset is possible. Add the current mirror to your circuit and repeat the test you just did.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f4.png
-   :align: center
-   :width: 650px
+
+|image2|
 
 .. container:: centeralign
 
@@ -109,9 +107,8 @@ Output emitter resistors R7 and R8 can be any small value in the range of 2.7 to
 
 `Experiment board design files <https://github.com/analogdevicesinc/education_tools/tree/m1k-accessory-boards/experiment-boards>`_
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f2.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -120,18 +117,16 @@ Output emitter resistors R7 and R8 can be any small value in the range of 2.7 to
 
 The PC Board version with the standard 8 pin DIP single op-amp footprint is shown in figure 4. A version with all the pins in a single row (SIP) footprint is shown in figure 5. Either version can be inserted into a solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/trabsistor-op-amp-pcb.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4, Example constructed Operational Amplifier PC Board, DIP version.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-pcb2.png
-   :align: center
-   :width: 500px
+   |image5|
 
 .. container:: centeralign
 
@@ -140,18 +135,16 @@ The PC Board version with the standard 8 pin DIP single op-amp footprint is show
 
 To make it somewhat easier to install the components, figure 6 for the DIP version and figure 7 for the SIP version are provided.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-placement.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6, DIP PC Board component placement.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-placement2.png
-   :align: center
-   :width: 600px
+   |image7|
 
 .. container:: centeralign
 
@@ -164,3 +157,18 @@ For Further Reading:
 :adi:`Increase amplifier output drive using a push-pull stage <en/technical-articles/increase-amplifier-output-drive-using-a-push-pull-amplifier-stage.html>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/electronics>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f1.png
+   :width: 650px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f4.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-13-f2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/trabsistor-op-amp-pcb.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-pcb2.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-placement.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/transistor-op-amp-placement2.png
+   :width: 600px

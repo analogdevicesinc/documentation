@@ -4,7 +4,7 @@ Navigation
 You can return to the ACE Application User Guide Homepage here: :doc:`Application User Guide </wiki-migration/resources/tools-software/ace/applicationuserguide>`
 
 -  :doc:`Previous (Chip View) </wiki-migration/resources/tools/software/ace/understandingtheui/chipview>`
--  `Next (Capture View) <https://wiki.analog.com/resources/tools/software/ace/understandingtheui/captureview.txt>`_
+-  `Next (Capture View) <https://wiki.analog.com/_media/resources/tools/software/ace/understandingtheui/captureview.txt>`_
 
 Memory Map View
 ---------------

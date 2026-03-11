@@ -47,7 +47,7 @@ Download
 .. admonition:: Download
    :class: download
 
-   Go to the :git-libm2k:`latest release page <releases/latest>` and download the package that fits your system.
+   Go to the `latest release page <https://github.com/analogdevicesinc/libm2k/releases/latest>`_ and download the package that fits your system.
 
 
 Installation
@@ -207,7 +207,7 @@ Build and install libm2k:
 
 ::
 
-   ~$ **git clone https://github.com/analogdevicesinc/libm2k.git**
+   ~$ **git clone :git-libm2k:`libm2k`.git**
    ~$ **cd libm2k**
    ~/libm2k$ **mkdir build**
    ~/libm2k$ **cd build**
@@ -229,7 +229,7 @@ Install git, cmake, swig and python:
 
    ~$ **brew install git cmake <nowiki>g+</nowiki>+ swig python3 libusb**
 
-Download and install :git-libiio:`libiio <releases>`.
+Download and install `libiio <https://github.com/analogdevicesinc/libiio/releases>`_.
 
 Install libm2k
 ~~~~~~~~~~~~~~
@@ -238,7 +238,7 @@ Build and install libm2k:
 
 ::
 
-   ~$ **git clone https://github.com/analogdevicesinc/libm2k.git**
+   ~$ **git clone :git-libm2k:`libm2k`.git**
    ~$ **cd libm2k**
    ~/libm2k$ **mkdir build**
    ~/libm2k$ **cd build**
@@ -268,7 +268,7 @@ Dependencies
 
 -  libiio
 
-   -  Download the libiio zip from :git-libiio:`this page <releases>`.
+   -  Download the libiio zip from `this page <https://github.com/analogdevicesinc/libiio/releases>`_.
 
       -  Choose a location and extract libiio.
 
@@ -307,7 +307,8 @@ Install libm2k
 -  Clone libm2k or download zip and extract it.
 -  Use the CMake-gui and open ``libm2k/CMakeLists.txt``. At startup, select platform x64.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/libm2k_windows_cmake.png
+   :width: 400px
 
 -  Press the Configure button. Some of the parameters will be set to their correct value.
 -  Browse the location where you extracted libiio and set ``IIO_LIBRARIES`` to ``libiio/MS64/libiio.lib`` and ``IIO_INCLUDE_DIRS`` ``libiio/include``.
@@ -356,6 +357,3 @@ digital communication
 ---------------------
 
 See the dedicated :doc:`page </wiki-migration/university/tools/m2k/libm2k/digital_communication>`.
-
-.. |image1| image:: https://wiki.analog.com/_media/libm2k_windows_cmake.png
-   :width: 400px

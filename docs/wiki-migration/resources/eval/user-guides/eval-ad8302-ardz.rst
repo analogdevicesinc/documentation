@@ -91,7 +91,10 @@ Connection Window
 
 -  Mount EVAL-AD8302-ARDZ to the EVAL-ADICUP3029 and connect EVAL-ADICUP3029 to computer as in `Typical Hardware Setup for Measurement <https://wiki.analog.com/>`_
 -  Click the **refresh button** on Port Name to Identify the **port** where an EVAL-ADICUP3029 is installed
-   |APP_window| 
+
+|APP_window|
+
+
 
 .. note::
 
@@ -217,10 +220,8 @@ Calibration Methodology
 
 Calibration can be implemented using 2, 3, or 4-point calibration techniques which can be used to approximate nearly linear response characteristics such as in AD8302. A typical characteristic of the AD8302 for magnitude difference of 1.9GHz input signals is shown in Figure 1. This is TPC4 from the AD8302 datasheet.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-ad8302_datasheet_TPC4.png
-   :alt: fig50
-   :align: center
-   :width: 600px
+
+|fig50|
 
 .. container:: centeralign
 
@@ -355,7 +356,7 @@ Installations
 
 Assumes a fresh installation of all required software
 
--  Download `python 3.7.0 <https://wiki.analog.com/http/www.python.org/downloads/release/python-370>`_ version. Choose the right version depending on operating system. For windows, choose `Windows x86-64 executable installer <http://www.python.org/downloads/release/python-370/>`_. (Do not run installer yet)
+-  Download `python 3.7.0 <http://www.python.org/downloads/release/python-370/>`_ version. Choose the right version depending on operating system. For windows, choose `Windows x86-64 executable installer <http://www.python.org/downloads/release/python-370/>`_. (Do not run installer yet)
 -  Run installer as Administrator. During installation, \**check **\ Add Python 3.7 to PATH** before clicking **Install Now**\**
 
 |rfdet-py-path|
@@ -415,6 +416,8 @@ For any queries regarding the hardware and evaluation software, contact as at :e
 .. |\|DAPLINK_screencap| image:: /resources/eval/user-guides/rfdet-daplink.png
 .. |APP_window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-connection-refresh.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-measurement.png
+.. |fig50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad8302-ardz-ad8302_datasheet_TPC4.png
+   :width: 600px
 .. |c-dev-window| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-dev-window.png
 .. |rfdet-c-unzip| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-unzip.png
 .. |rfdet-c-folder-ad8302| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rfdet-c-folder-ad8302.png

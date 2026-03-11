@@ -29,8 +29,8 @@ Hardware Setup:
 
 The waveform generator should be configured for a 100 Hz triangle wave with 6 volt amplitude peak-to-peak and 0 volt offset. The differential input of scope channel 2 (2+,2-) is used to measure the current in the resistor (and diode). The Single ended input of scope channel 1 (1+) is used to measure the voltage across the diode (1- input can be grounded). The Scope should be setup with channel 1 at 500mV per division and channel 2 set also at 500mV per division. The current flowing through the diode, I\ :sub:`D`, is the voltage measured by channel 2 divided by the resistor value (1KΩ in this example). Use the XY display mode to plot the voltage across the diode (scope channel 1) on the X axis vs. the current in the diode (scope channel 2) on the Y axis.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/c_vs_v_diode-bb.png
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,7 +42,7 @@ Procedure:
 
 .. container:: centeralign
 
-   |image2|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -50,8 +50,7 @@ Procedure:
    Figure 3. Current vs. Voltage, linear scales Scopy plot
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_p1.png
-   :align: center
+   |image4|
 
 .. container:: centeralign
 
@@ -60,8 +59,9 @@ Procedure:
 
 Load the captured data into spreadsheet program like Excel and calculate the diode current I\ :sub:`D`. Plot the current vs. the voltage across the diode. The diode voltage, current relationship is logarithmic. If plotted on log scale the line should be straight as seen in the second plot.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_p2.png
-   :align: center
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -98,9 +98,8 @@ Directions:
 
 Set up the breadboard with waveform generator output W1 attached to one end of the diode. The other end of the diode is connected to one end of the load resistor as shown in figure 6. The other end of the resistor is connected to ground. Single ended input of scope channel 2 (2+) is also connected to the end of the resistor not connected to ground (2- input can be grounded).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f2.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -112,8 +111,8 @@ Hardware Setup:
 
 The waveform generator should be configured for a 100 Hz Sine wave with 6 volt amplitude peak-to-peak and 0 volt offset. The scope channel 2 (2+) is used to measure the voltage across the load resistor, R\ :sub:`L`. Both scope channels should be set to 500mV per division.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/half_wave-bb.png
-   :align: center
+
+|image7|
 
 .. container:: centeralign
 
@@ -125,8 +124,8 @@ Procedure:
 
 Plot the two waveforms using Oscilloscope feature from the Scopy tool.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/half_wave-waveform.png
-   :align: center
+
+|image8|
 
 .. container:: centeralign
 
@@ -161,9 +160,8 @@ Directions:
 
 Set up the breadboard with W1 attached to one end of the first diode, D\ :sub:`1`, and W2 to one end of the second diode, D\ :sub:`2`. Both diodes should face in the same direction. The other end of each diode is connected to one end of the load resistor as shown figure 9. The other end of the resistor is connected to ground. Single ended input of scope channel 2 (2+) is connected to the junction of the resistor and the two diodes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f3.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -175,8 +173,8 @@ Hardware Setup:
 
 The first waveform generator, W1, should be configured for a 100 Hz Sine wave with 6 volt amplitude peak-to-peak and 0 volt offset. The second AWG generator, W2, should be configured also for a 100 Hz Sine wave with 6 volt peak-to-peak amplitude and 0 volt offset but with the phase set to 180 degrees. The Single ended input of scope channel 2 (2+) is used to measure the voltage across the load resistor. Both scope channels should be set to 500mV per division.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/full_wave-bb.png
-   :align: center
+
+|image10|
 
 .. container:: centeralign
 
@@ -188,8 +186,8 @@ Procedure:
 
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool. If both 0 degree and 180 degree phases of the AC input are available, then a second diode can fill in the missing half-wave of the input and produce the full-wave rectified signal shown in this plot. Again the forward voltage of the diodes is apparent and the output waveform does not come to a sharp point at the zero crossing due to the non-zero turn on voltage of the diodes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/full_wave-waveform.png
-   :align: center
+
+|image11|
 
 .. container:: centeralign
 
@@ -226,9 +224,8 @@ Directions:
 
 Four diodes can be arranged in a bridge configuration to provide a full-wave rectification from a single AC phase as shown here. However, it can also be seen that only the AC input or the load can be referenced to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f4_r2.png
-   :align: center
-   :width: 700px
+
+|image12|
 
 .. container:: centeralign
 
@@ -240,8 +237,8 @@ Hardware Setup:
 
 The waveform generator should be configured for a 100 Hz Sine wave with 6 volt peak-to-peak amplitude and 0 volt offset. The scope channel 2 (2+. 2-) is used to measure the voltage across the load resistor, R\ :sub:`L`. Both scope channels should be set to 500mV per division.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/bridge-bb.png
-   :align: center
+
+|image13|
 
 .. container:: centeralign
 
@@ -253,8 +250,8 @@ Procedure:
 
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool. The disadvantage of this circuit is that now two diode drops are in series with the load and the peak value of the rectified output is less than the AC input by 1.2 Volts rather than the 0.6 V in the previous circuits.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/bridge-waveform.png
-   :align: center
+
+|image14|
 
 .. container:: centeralign
 
@@ -289,9 +286,8 @@ Directions:
 
 Set up the breadboard with waveform generator output (W1) attached to one end of the 10K resistor as shown in figure 15. One diode (D\ :sub:`1`) is connected between the other end of the 10K resistor and the output of the second function generator. The second diode D\ :sub:`2` is connected between ground and the top of D\ :sub:`1` as shown. Scope channel 2 (2+) is connected to the common connection of the resistor and the two diodes.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f5.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -303,8 +299,8 @@ Hardware Setup:
 
 The first waveform generator should be configured for a 100 Hz Sine wave with 6 volt peak-to-peak amplitude and 0 volt offset. The second waveform generator should be configured with 0 amplitude and 0 offset to start. The offset of the second generator will be varied and the effect on the output signal observed. Scope channel 2 (2+) is used to measure the clamped / limited voltage and should be set to 500mV/div.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/clamp-bb.png
-   :align: center
+
+|image16|
 
 .. container:: centeralign
 
@@ -316,8 +312,8 @@ Procedure:
 
 With the DC offset value of waveform generator 2 set to zero observe the minimum and maximum values of the voltage seen on scope channel 2 (2+). Adjust the DC offset of generator 2 between -2V and +2V and observe the minimum and maximum voltage seen on the scope. Reverse the direction of both diodes, D\ :sub:`1` and D\ :sub:`2`. Repeat the sweep of the DC offset and observe the minimum and maximum voltages seen on the scope. How do the two sets of measurements compare?
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/clamp-waveform.png
-   :align: center
+
+|image17|
 
 .. container:: centeralign
 
@@ -347,9 +343,8 @@ Directions:
 
 Set up the breadboard with W1 attached to one end of the 1.0uF capacitor as shown in figure 18. The Diode (D\ :sub:`1`) is connected between the other end of the 1.0uF capacitor and the output of the second waveform generator, W2. Single ended input of scope channel 2 (2+) is connected to the common connection of the capacitor and the diode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f6.png
-   :align: center
-   :width: 600px
+
+|image18|
 
 .. container:: centeralign
 
@@ -361,8 +356,8 @@ Hardware Setup:
 
 The first waveform generator should be configured for a 1KHz Sine wave with 2 volt amplitude peak-to-peak and 0 volt offset to start. The offset will be varied and the effect on the output observed. The second waveform generator should be configured with 0 amplitude and 0 offset to start. The offset will be varied and the effect on the output observed. Scope channel 2 (2+) is used to measure the voltage and should be set to 500mV/div.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/DC_rest-bb.png
-   :align: center
+
+|image19|
 
 .. container:: centeralign
 
@@ -374,8 +369,8 @@ Procedure:
 
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/DC_rest-waveform.png
-   :align: center
+
+|image20|
 
 .. container:: centeralign
 
@@ -407,9 +402,8 @@ Directions:
 
 Set up the breadboard with the first waveform generator attached to one end of the 0.1uF capacitor as shown in figure 21. Resistor R\ :sub:`1` is connected between the second end of C\ :sub:`1` and junction of D\ :sub:`1`, R\ :sub:`2` and C\ :sub:`2`. The other end of D\ :sub:`1` is connected to ground. The second end of resistor R\ :sub:`2` is connected to the wiper of the potentiometer R\ :sub:`3`. The ends of R\ :sub:`3` are connected to ground and Vp (5V) respectively. Scope channel 2 (2+) is connected to the common connection of capacitor C\ :sub:`2` and load resistor R\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f7.png
-   :align: center
-   :width: 600px
+
+|image21|
 
 .. container:: centeralign
 
@@ -421,8 +415,8 @@ Hardware Setup:
 
 Waveform generator W1 should be configured for a 10KHz Sine wave with 200 mV peak-to-peak amplitude (or less) and offset set to 0. The set scope channel 1+ at 100mV per division and scope channel 2+ connected R4 at 100mV per division. Set the measurements tab to display Ch1 peak-peak and Ch2 peak-peak.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/var_atten-bb.png
-   :align: center
+
+|image22|
 
 .. container:: centeralign
 
@@ -434,15 +428,15 @@ Procedure:
 
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/var_atten-waveform.png
-   :align: center
+
+|image23|
 
 .. container:: centeralign
 
    Figure 23. Variable Attenuator waveforms
 
 
-The purpose of C\ :sub:`1` (and C\ :sub:`2`) is to block DC current from the input and output circuits so the operating point of the diode is not affected. The attenuator uses the fact that that "small signal" resistance of the diode r\ :sub:`D` is a function the DC current flowing in the diode I\ :sub:`D`. See Equations below: |image3| |image4| Where: n is the diode area ( size ) scale factor V\ :sub:`T` is the Thermal Voltage I\ :sub:`D` is the diode current k is Boltzmann's constant q is the electron charge T is the absolute temperature
+The purpose of C\ :sub:`1` (and C\ :sub:`2`) is to block DC current from the input and output circuits so the operating point of the diode is not affected. The attenuator uses the fact that that "small signal" resistance of the diode r\ :sub:`D` is a function the DC current flowing in the diode I\ :sub:`D`. See Equations below: |image24| |image25| Where: n is the diode area ( size ) scale factor V\ :sub:`T` is the Thermal Voltage I\ :sub:`D` is the diode current k is Boltzmann's constant q is the electron charge T is the absolute temperature
 
 In the circuit a voltage divider is set up between R\ :sub:`1` and the resistance of D\ :sub:`1`. The current in D\ :sub:`1`\ is varied by changing the current in R\ :sub:`2`. When the current in D\ :sub:`1` is small r\ :sub:`D`\ is large and the fraction of the input signal seen at the output is large. As the current in D\ :sub:`1` increases, its resistance decreases and the fraction of the input seen at the output decreases.
 
@@ -469,9 +463,8 @@ Directions:
 
 The inverting op-amp circuit can be converted into an "ideal" (linear precision) half-wave rectifier by adding two diodes as shown in figure 24. For the negative half of the input diode D\ :sub:`1` is reverse biased and diode D\ :sub:`2` is forward biased and the circuit operates as a conventional inverter with a gain of -1. For the positive half of the input, diode D\ :sub:`1` is forward biased, closing the feedback around the amplifier. Diode D\ :sub:`2` is reverse biased disconnecting the output from the amplifier. The output will be at the virtual ground potential ( - input terminal ) through the 10K ohm resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f8.png
-   :align: center
-   :width: 600px
+
+|image26|
 
 .. container:: centeralign
 
@@ -494,8 +487,8 @@ Procedure:
 
 The peak of the rectified output, as seen in the plot here, is now equal to the peak value of the input. There is also a sharp transition as the input crosses zero. The experimenter should investigate the waveforms at different points in the circuit to explain why this circuit works better than the simple diode half wave rectifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abs_val1-waveform.png
-   :align: center
+
+|image27|
 
 .. container:: centeralign
 
@@ -507,9 +500,8 @@ Directions:
 
 The circuit shown in figure 27 is an absolute value circuit, often called a precision full-wave rectifier. It should operate like a full wave rectifier circuit constructed with ideal diodes ( the voltage across the diode, in forward conduction, equals 0 volts). The actual diodes used in the circuit will have a forward voltage of around 0.6 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f9.png
-   :align: center
-   :width: 600px
+
+|image28|
 
 .. container:: centeralign
 
@@ -532,8 +524,8 @@ Procedure:
 
 For this laboratory exercise you should: a) Study the circuit and determine how it works. There is very fundamental concept that should help in understanding how this circuit operates. Given an op-amp configured with negative feedback, the inverting and non-inverting input terminals will try to reach the same voltage level, often referred to as a virtual short. b) Plan some tests to see if this circuit indeed is an absolute value circuit. Perform these tests, fully documenting all tests and results. c) Make the input voltage a 6 Volt amplitude sinusoid, at 1KHz. Carefully measure and record voltages at all nodes in the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/abs_val2-waveform.png
-   :align: center
+
+|image29|
 
 .. container:: centeralign
 
@@ -550,9 +542,8 @@ Activity 2h. A Voltage Doubler circuit
 
 Voltage doublers are very useful in situations where the load current is relatively light, and the required DC voltage is higher than what is available from the system power supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f10.png
-   :align: center
-   :width: 600px
+
+|image30|
 
 .. container:: centeralign
 
@@ -589,8 +580,8 @@ Procedure:
 
 Plot the two waveforms using the Oscilloscope provided by the Scopy tool.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/doubler-waveform.png
-   :align: center
+
+|image31|
 
 .. container:: centeralign
 
@@ -609,18 +600,15 @@ A limitation of the voltage doubler circuit is that it only uses one half (posit
 
 What happens to the output voltage across R\ :sub:`L` if the direction of the four diodes are reversed?
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f11.png
-   :align: center
-   :width: 600px
+
+|image32|
 
 .. container:: centeralign
 
    Figure 33. push-pull voltage doubler
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f12.png
-   :align: center
-   :width: 600px
+   |image33|
 
 .. container:: centeralign
 
@@ -642,8 +630,49 @@ What happens to the output voltage across R\ :sub:`L` if the direction of the fo
 
 .. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f1.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/i_vs_v_diode-wav.png
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_e1.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/c_vs_v_diode-bb.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/i_vs_v_diode-wav.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_p1.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_p2.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f2.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/half_wave-bb.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/half_wave-waveform.png
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f3.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/full_wave-bb.png
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/full_wave-waveform.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f4_r2.png
+   :width: 700px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/bridge-bb.png
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/bridge-waveform.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f5.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/clamp-bb.png
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/clamp-waveform.png
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f6.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/DC_rest-bb.png
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/DC_rest-waveform.png
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f7.png
+   :width: 600px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/electronics/var_atten-bb.png
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/electronics/var_atten-waveform.png
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_e1.png
    :width: 100px
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_e2.png
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_e2.png
    :width: 100px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f8.png
+   :width: 600px
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/electronics/abs_val1-waveform.png
+.. |image28| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f9.png
+   :width: 600px
+.. |image29| image:: https://wiki.analog.com/_media/university/courses/electronics/abs_val2-waveform.png
+.. |image30| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f10.png
+   :width: 600px
+.. |image31| image:: https://wiki.analog.com/_media/university/courses/electronics/doubler-waveform.png
+.. |image32| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f11.png
+   :width: 600px
+.. |image33| image:: https://wiki.analog.com/_media/university/courses/electronics/a2_f12.png
+   :width: 600px

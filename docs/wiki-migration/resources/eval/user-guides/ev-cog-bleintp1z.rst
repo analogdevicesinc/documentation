@@ -11,12 +11,10 @@ EV-COG-BLEINTP1Z board is a connectivity Cog board for MCU Cogs (EV-COG-AD3029LZ
    -  :adi:`ADF7023 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7023.html>`
    -  :adi:`ADF7024 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7024.html>`
    -  :adi:`ADF7030-1 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7030-1.html>`
+   -  :adi:`ADF7242 <en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7242.html>`
 
-::
-
-      *[[:adi:`en/products/rf-microwave/integrated-transceivers-transmitters-receivers/low-power-rf-transceivers/adf7242`.html|ADF7242]]
-   * BTLE - available on board and can be communicated via SPI interface
-   * WIFI - provision to support [[http://espressif.com/en/products/hardware/esp8266ex/overview|ESP8266]] via UART (not available in the kit)
+-  BTLE - available on board and can be communicated via SPI interface
+-  WIFI - provision to support `ESP8266 <http://espressif.com/en/products/hardware/esp8266ex/overview>`_ via UART (not available in the kit)
 
 This user guide describes the connector pin out, power options and jumper settings available on board.
 

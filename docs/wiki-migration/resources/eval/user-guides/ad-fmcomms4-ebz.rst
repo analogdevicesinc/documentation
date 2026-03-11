@@ -7,7 +7,7 @@ The purpose of the AD-FMComms4-EBZ is to provide an RF platform to software deve
 
 The AD-FMComms4-EBZ board is very similar to the `ad-fmcomms2-ebz <https://wiki.analog.com/ad-fmcomms2-ebz>`_ and `ad-fmcomms3-ebz <https://wiki.analog.com/ad-fmcomms3-ebz>`_ boards with only one exception, rather than the :adi:`AD9361` (which is 2 Rx, 2 Tx), it uses the :adi:`AD9364`, a lower cost 1 Rx, 1 Tx device. The AD-FMComms4-EBZ includes both types of external baluns, one targeted for wider tuning range applications (Minicircuits `TCM1-63AX+ <http://www.minicircuits.com/pdfs/TCM1-63AX+.pdf>`_), and ones which provide optimized performance for 2.4 GHz.
 
-`ad-fmcomms4.ashx <https://wiki.analog.com/_media/http///www.analog.com/-/media/analog/en/evaluation-board-images/images/ad-fmcomms4.ashx>`_
+`ad-fmcomms4.ashx <http://www.analog.com/-/media/analog/en/evaluation-board-images/images/ad-fmcomms4.ashx>`_
 
 Since much of the FMCOMMS2/3/4 share a common device/infrastructure, much of the documentation is the same.
 

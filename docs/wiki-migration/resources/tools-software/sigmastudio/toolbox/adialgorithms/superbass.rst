@@ -27,4 +27,4 @@ Supported ICs
 -  ADSP213xx
 -  ADSPSC58x
 
-.. |superbass1.png| image:: https://wiki.analog.com/_media/superbass1.png
+.. |superbass1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/superbass1.png

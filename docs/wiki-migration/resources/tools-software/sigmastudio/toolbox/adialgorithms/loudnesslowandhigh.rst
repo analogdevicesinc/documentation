@@ -32,5 +32,5 @@ This block's parameters include the level slider, LPF and HPF knobs, and Level.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudness_gui.png
 
-.. |loudnesspic2.png| image:: https://wiki.analog.com/_media/loudnesspic2.png
-.. |loudnesspic4.png| image:: https://wiki.analog.com/_media/loudnesspic4.png
+.. |loudnesspic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudnesspic2.png
+.. |loudnesspic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudnesspic4.png

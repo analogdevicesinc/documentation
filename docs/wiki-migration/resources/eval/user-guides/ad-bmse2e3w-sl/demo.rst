@@ -38,23 +38,24 @@ In this demo, two 48V battery packs will be combined to create a 92V battery pac
       -  In this example, 13 cells are required to build a 48V battery pack. Each cell consists of 3 batteries connected in parallel, resulting in a total of 39 batteries for the entire pack.
       -  Arrange the batteries according to the picture below.
 
-      |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_arrangement.png
+   :align: center
+   :width: 2000px
 
 -  **Connecting the Batteries**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/series-parallel_connection.png
+   :align: center
+   :width: 2000px
 
-|image2|
+::
 
-   -  Make a **Parallel Connection**. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Repeat this process to form 13 cells.
-
-      -  After completing the 13 cells, make a **Series Connection** by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
-
--  **Insulation and Final Assembly**
-
-   -  Ensure all connections are secure and properly insulated to prevent short circuits.
-
-      -  Use heat shrink tubing or electrical tape to cover exposed connections.
-      -  Place the battery pack in a suitable enclosure for protection and ease of handling.
+     * Make a **Parallel Connection**. Connect 3 batteries in parallel by linking all positive terminals and all negative terminals using the lithium-ion battery nickel strip. Repeat this process to form 13 cells.
+       * After completing the 13 cells, make a **Series Connection** by connecting the positive terminal of one cell to the negative terminal of the next cell. Continue this process until all 13 cells are connected in series.
+   **Insulation and Final Assembly**
+     * Ensure all connections are secure and properly insulated to prevent short circuits.
+       * Use heat shrink tubing or electrical tape to cover exposed connections.
+       * Place the battery pack in a suitable enclosure for protection and ease of handling.
 
 .. note::
 
@@ -76,28 +77,35 @@ Hardware Setup
 
 -  Using the single wire cables connect each battery cell to the cell connector block. Refer to the diagram to short any unused ports in the block.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery-cell_connector_block-connection.png
+   :align: center
+   :width: 2000px
 
 -  Attach the two cell connector blocks to the AD-BMSE2E3W-SL through P1 and P4 ports.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/cell_connector_block-to-adbmse2e3w.png
+   :align: center
+   :width: 2000px
 
 -  (Using the red stackable banana plug to alligator clip) Connect the VBAT+ terminal of the battery pack to the V+ input.
 -  (Using the black stackable banana plug to alligator clip) Connect the VBAT- terminal of the battery pack to the V- input on the AD-BMSE2E3W-SL.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat_vbat-.png
+   :align: center
+   :width: 2000px
 
 -  Attach the MAX32625PICO programmer to the AD-BMSE2E3W-SL board using the 10-pin SWD ribbon cable. Then, power the MAX32625PICO by connecting it to the Host PC using a micro-USB to USB cable.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/pico_connection.png
+   :align: center
+   :width: 2000px
 
 .. container:: center round box
 
-   
    **By default (upon purchase), the AD-BMSE2E3W-SL board comes with a MAX32625PICO programmer adapter that is loaded with firmware image.
+
    
-   Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the :git-max32625pico-firmware-images:`correct firmware image <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>` before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:\*\*
+   Otherwise, if you are using a new MAX32625PICO programmer (that is not part of the original kit), make sure to flash it first with the `correct firmware image <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_ before connecting it to the AD-BMSE2E3W-SL board. If you do not know how to load the image, follow the instructions below:\*\*
    
    
 
@@ -105,13 +113,15 @@ Hardware Setup
 
    <details><summary>**Click here to learn how to flash the firmware image in the MAX32625PICO**
 
--   Download the firmware image: :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32690 <raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`
+-   Download the firmware image: `MAX32625PICO Firmware Image for MAX32690 <https://github.com/analogdevicesinc/max32625pico-firmware-images/raw/master/bin/max32625_max32690evkit_if_crc_swd_v1.0.7.bin>`_
    -   Do not connect the MAX32625PICO to the AD-BMSE2E3W-SL Board yet.
    -   Connect the MAX32625PICO to the Host PC using the micro USB to USB cable.
-   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.\
-
-   |image7|
-
+   -   Press the button on the MAX32625PICO. **(Do not release the button until the MAINTENANCE drive is mounted)**.
+   
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
+      :align: center
+      :width: 400px
+   
    -   Release the button once the MAINTENANCE drive is mounted.
    -   Drag and drop (to the MAINTENANCE drive) the firmware image.
    -   After a few seconds, the MAINTENANCE drive will disappear and be replaced by a drive named DAPLINK. This indicates that the process is complete, and the MAX32625PICO can now be used to flash the firmware of the AD-BMSE2E3W-SL Board.
@@ -125,26 +135,29 @@ Hardware Setup
 
 -  (Using the red stackable banana plug to alligator clip cable) Connect the alligator clip to V+ and insert the other end of the cable (banana plug) to TP16 (VBAT+ terminal) of the AD-BMSE2E3W-SL board.
 
-
-   
-
-
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat_.png
+   :align: center
+   :width: 2000px
 
 -  (Using the black stackable banana plug to alligator clip cable) Connect the alligator clip to V- and connect the other end of the cable to the **VBAT-** (Rsense - top side) of the AD-BMSE2E3W-SL.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat-.png
+   :align: center
+   :width: 2000px
 
 -  Connect a load to the **Link+_Out** pin and connect the other end of the load to **Shunt-**.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/load_connection.png
+   :align: center
+   :width: 2000px
 
 -  Once all steps are completed, you are now ready to use this reference design and run GUI.
 
 Software Setup
 ~~~~~~~~~~~~~~
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/update_overview_page.png
+   :align: center
 
 .. tip::
 
@@ -189,27 +202,27 @@ Running the Demo
 +-------------------------------------------+------------------------------+-------------------------------------------------------------------------------------------------+
 
 | 
-| 4.Set the jumper configuration based on the communication mode being used: UART or CAN. |image12|
+| 4.Set the jumper configuration based on the communication mode being used: UART or CAN. |image1|
 
 5. On the GUI landing page, hover to the Communication Mode dropdown menu. Select **UART COM** followed by the specific **port number** if using UART, or CAN if using CAN.
 
 
-|image13|
+|image2|
 
 6. Press the **RESET** button (S1) every time the hardware set up is changed.
 
 
-|image14|
+|image3|
 
 7. Click the **Load Defaults** button to set the initial entry values for the different parameters needed for the State of Charge (SoC) and State of Health (SoH) calculations.
 
 
-|image15|
+|image4|
 
 8. Click the **Start** button to begin the measurements.
 
 
-|image16|
+|image5|
 
 Viewing Results in the Light BMS GUI Tabs
 -----------------------------------------
@@ -261,31 +274,10 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 .. image:: https://wiki.analog.com/_media/navigation #/resources/eval/user-guides/ad-bmse2e3w-sl
    :alt: Overview #:resources:eval:user-guides:ad-bmse2e3w-sl:software|AD-BMSE2E3W-SL Software User Guide#none
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery_arrangement.png
-   :width: 2000px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/series-parallel_connection.png
-   :width: 2000px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/battery-cell_connector_block-connection.png
-   :width: 2000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/cell_connector_block-to-adbmse2e3w.png
-   :width: 2000px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat_vbat-.png
-   :width: 2000px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/pico_connection.png
-   :width: 2000px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-paarray3552r-sl/max32625pico_maxdap.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat_.png
-   :width: 2000px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/vbat-.png
-   :width: 2000px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/load_connection.png
-   :width: 2000px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/update_overview_page.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_jumper_selection.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_jumper_selection.png
    :width: 300px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_mode.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/reset_button_hardware.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/communication_mode.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/reset_button_hardware.png
    :width: 500px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/setting_defaults.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/start_button.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/setting_defaults.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-bmse2e3w-sl/start_button.png

@@ -219,9 +219,8 @@ The table below lists the default Raspberry Pi GPIO pin assignments for the P5 p
 
 QuikEval™ demonstration boards will use either the SPI or the I²C interface, depending on the model. Change the setting of the slide switch SW1 accordingly.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-sw1.jpg
-   :align: center
-   :width: 150px
+
+|image5|
 
 .. note::
 
@@ -376,7 +375,7 @@ Refer to below pictures and tables for the signal names available on each test p
 +-------------------+-----------------------+------------+---------------------------+-------------------+
 
 | 
-| |image5|
+| |image6|
 
 +--------------------+-----------------------+------------+-------------------------------------------+--------------------+
 | **P10 Pin Number** | **Raspberry Pi GPIO** | **Jumper** | **PMD-RPI-INTZ Signal**                   | **P11 Pin Number** |
@@ -442,5 +441,7 @@ Registration
    :width: 250px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-i2c-pmod-2x4.png
    :width: 250px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-gpio-jumpers-2.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-sw1.jpg
+   :width: 150px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/pmd-rpi-intz/pmd-rpi-intz-gpio-jumpers-2.jpg
    :width: 400px

@@ -141,5 +141,5 @@ This can be used to multiply two signals' FFT results as shown below.
 
 |image1|
 
-.. |multiplypic1.png| image:: https://wiki.analog.com/_media/multiplypic1.png
+.. |multiplypic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/multiplypic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cmul2.jpg

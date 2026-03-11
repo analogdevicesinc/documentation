@@ -20,7 +20,11 @@ The :adi:`adar2004` has two integrated state machines, one for the LO Multiplier
 
 -  SPI writes to the SEQUENCER_CTRL_SPI register (0x2A)
 
-| |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/1_adar2004_board.png
+   :align: center
+   :width: 500px
+
+
 
 .. container:: centeralign
 
@@ -127,7 +131,7 @@ The ADAR2004-EVALZ board has 21 edge-mounted and 2 vertical RF connectors which 
 | J23, J24     | IF THRU-CAL      | Edge-launch | SMA        | Thru-cal                         |
 +--------------+------------------+-------------+------------+----------------------------------+
 
-|image2| **
+|image1| **
 
 .. container:: centeralign
 
@@ -163,7 +167,7 @@ EVALUATION AND TEST PROCEDURES
 Hardware Setup
 --------------
 
-|image3| **
+|image2| **
 
 .. container:: centeralign
 
@@ -193,7 +197,7 @@ Any extra external components (balun, combiner, RF cabling, attenuator pads, etc
 Software Initialization
 -----------------------
 
-|image4| **
+|image3| **
 
 .. container:: centeralign
 
@@ -205,7 +209,7 @@ Software Initialization
 -  Connect the :adi:`sdp` controller board to both the PC and the ADAR2004-EVALZ.
 -  Open :adi:`ace` and connect to the board by double-clicking on the ":adi:`adar2004` Board" plugin in the "Attached Hardware" section of the Start page. See `Figure 4 <https://wiki.analog.com/>`_.
 
-|image5| **
+|image4| **
 
 .. container:: centeralign
 
@@ -276,7 +280,7 @@ To view the current Mode or State settings, first go to a sequencer programming 
 Multiplier/Filter Mode Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image6| **
+|image5| **
 
 .. container:: centeralign
 
@@ -304,7 +308,7 @@ To change the order and/or depth of the state machine, follow the below steps:
 
 |num_mult_states.png|
 
-   |image7|
+   |image6|
 
 
 .. container:: centeralign
@@ -320,7 +324,7 @@ To change the order and/or depth of the state machine, follow the below steps:
 Receiver Mode Settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-|image8| **
+|image7| **
 
 .. container:: centeralign
 
@@ -348,7 +352,7 @@ To change the order and/or depth of the state machine, follow the below steps:
 
 |num_Rx_states.png|
 
-   |image9|
+   |image8|
 
 
 .. container:: centeralign
@@ -392,19 +396,17 @@ Temperature Sensor
 
 Once the ADC section has been enabled and configured, the on-chip temperature sensor can be used to determine the junction temperature of the :adi:`adar2004`. Clicking the "Measure ADC" button will request a reading from the :adi:`adar2004`. A temperature value will appear in the box below the button.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/1_adar2004_board.png
-   :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADAR2004/2_adar2004_connections.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADAR2004/3_adar2004_setup.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/4_adar2004_access_ace_plugin.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/5_adar2004_main_gui_overview.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/6_multiplier_sequencer_configuration.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADAR2004/2_adar2004_connections.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ADAR2004/3_adar2004_setup.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/4_adar2004_access_ace_plugin.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/5_adar2004_main_gui_overview.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/6_multiplier_sequencer_configuration.png
 .. |num_mult_states.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/num_mult_states.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/8_receiver_sequencer_configuration.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/8_receiver_sequencer_configuration.png
 .. |num_Rx_states.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/num_Rx_states.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adar2004/7_state_machine_loop.png
    :width: 400px

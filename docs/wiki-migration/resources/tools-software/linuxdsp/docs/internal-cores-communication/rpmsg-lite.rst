@@ -8,7 +8,7 @@ RPMsg is used to transfer messages between cores on ADSP devices. An implementat
 
 This page describes how to use RPMsg-Lite for bare metal applications.
 
-Additional information can be found here: https://github.com/analogdevicesinc/rpmsg-lite
+Additional information can be found here: :git-rpmsg-lite:`rpmsg-lite`
 
 Resources used
 ~~~~~~~~~~~~~~
@@ -63,7 +63,7 @@ For the sake of compatibility the resource table used in the `examples <https://
 
 .. note::
 
-   Additional detail can be found at https://github.com/analogdevicesinc/rpmsg-lite/blob/adi/release/yocto-2.1.0/lib/include/remoteproc.h\
+   Additional detail can be found at https://github.com/analogdevicesinc/rpmsg-lite/blob/adi/release/yocto-2.1.0/lib/include/remoteproc.h
 
 
 Using RPMsg-Lite on SC5xx
@@ -330,14 +330,14 @@ In order to send a message the recipient endpoint address must be known.
 Additional information
 ----------------------
 
-https://github.com/analogdevicesinc/rpmsg-lite
+:git-rpmsg-lite:`rpmsg-lite`
 
 Downloads
 ~~~~~~~~~
 
-RPMsg-Lite for ADSP devices is available for Bare-Metal applications running on SHARC+, ARM A5 and ARM A55 here: https://github.com/analogdevicesinc/rpmsg-lite. To guarantee compatibility use the same version of RPMsg-Lite on all cores. If running Linux on the ARM use the RPMsg-Lite version matching the Yocto Linux release version running on the ARM.
+RPMsg-Lite for ADSP devices is available for Bare-Metal applications running on SHARC+, ARM A5 and ARM A55 here: :git-rpmsg-lite:`rpmsg-lite`. To guarantee compatibility use the same version of RPMsg-Lite on all cores. If running Linux on the ARM use the RPMsg-Lite version matching the Yocto Linux release version running on the ARM.
 
 Examples
 ~~~~~~~~
 
-https://github.com/analogdevicesinc/lnxdsp-examples
+:git-lnxdsp-examples:`lnxdsp-examples`

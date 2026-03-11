@@ -29,7 +29,10 @@ To use the software GUI, the firmware must first be loaded onto the EVAL-ADICUP3
 -  If running an operating system older than Windows 10, install serial driver as in :doc:`1. Install mBed windows serial driver... </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/keil_iar_support>`
 -  You should see DAPLINK in your list of drives.
 
-|daplink.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/daplink.png
+   :alt: daplink.png
+   :align: center
+   :width: 500px
 
 -  Copy the hex file to the DAPLINK drive to load the firmware to the EVAL-ADICUP3029. Note that the DAPLINK drive will disappear for a moment, then reappear after loading the firmware.
 
@@ -40,7 +43,10 @@ GUI
 -  Extract the zip file to your PC.
 -  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\* executable.
 
-|exe.png|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/exe.png
+   :alt: exe.png
+   :align: center
+   :width: 500px
 
 --------------
 
@@ -163,10 +169,6 @@ Registration
 *End of Document*
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0507-topview.jpg
-.. |daplink.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/daplink.png
-   :width: 500px
-.. |exe.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/sw_setup/exe.png
-   :width: 500px
 .. |palantir_gui_overview.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/palantir_gui_overview.png
 .. |connection_screen.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/cn0507-network-analyzer/connection_screen.png
    :width: 500px

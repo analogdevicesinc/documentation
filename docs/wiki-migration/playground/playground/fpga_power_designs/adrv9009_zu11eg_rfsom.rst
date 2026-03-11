@@ -4,7 +4,7 @@ Type   |image1| Application Board
 Status ✔ Fully Validated
 ====== ==========================
 
-|image2| The :adi:`ADRV9009-ZU11EG` is a highly integrated RF System-On-Module(RF-SOM) based on the Analog Devices ADRV9009 and `Xilinx Zynq UltraScale+ MPSoC <https://www.xilinx.com//products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`_. For more information on the RF-SOM, please see the :doc:`ADRV9009-ZU11EG Documentation </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg>`.
+|image2| The :adi:`ADRV9009-ZU11EG` is a highly integrated RF System-On-Module(RF-SOM) based on the Analog Devices ADRV9009 and `Xilinx Zynq UltraScale+ MPSoC <https://www.xilinx.com/products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`_. For more information on the RF-SOM, please see the :doc:`ADRV9009-ZU11EG Documentation </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg>`.
 
 The power tree consists of... Power rails are sequenced by the :adi:`ADM1266` sequencer/supervisor.
 

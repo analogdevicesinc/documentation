@@ -113,9 +113,9 @@ Related Part Pages
 MxFE
 ~~~~
 
--  :adi:`AD9081 </en/products/ad9081.html>`
+-  :adi:`AD9081 <en/products/ad9081.html>`
 -  :doc:`AD9081/AD9082 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
--  :adi:`UG-1578 User Guide </media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+-  :adi:`UG-1578 User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
 
 ADXUD1AEBZ
 ~~~~~~~~~~

@@ -42,7 +42,7 @@ More information
 ----------------
 
 -  :adi:`AD5252 Product Info <AD5252>` - pricing, samples, datasheet
--  :adi:`EVAL-AD5252SDZ evaluation board user guide </static/imported-files/user_guides/UG-274.pdf>`
+-  :adi:`EVAL-AD5252SDZ evaluation board user guide <static/imported-files/user_guides/UG-274.pdf>`
 -  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
 -  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
 -  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`_

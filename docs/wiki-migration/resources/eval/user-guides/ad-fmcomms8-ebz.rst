@@ -63,47 +63,47 @@ Getting Started
 
 The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
 
-::
 
-     * Quick Start Guides
-       * [[/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide|FMCOMMS8 Quick Start Guide]]
-       * [[/resources/eval/user-guides/adrv9009-zu11eg/quick-start-guide|ADRV9009-ZU11EG Quick Start Guide]]
-       * [[/resources/tools-software/linux-software/kuiper-linux|Configure a pre-existing SD-Card]]
-     * Linux Applications
-       * [[/resources/tools-software/linux-software/iio_oscilloscope|IIO Scope]]
-         * [[/resources/tools-software/linux-software/adrv9009_osc_main|ADRV9009/ADRV9008 IIO Scope View]]
-         * [[/resources/tools-software/linux-software/adrv9009_plugin|ADRV9009/ADRV9008 Control IIO Scope Plugin]]
-         * [[/resources/tools-software/linux-software/adrv9009_advanced_plugin|Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin]]
-       * [[/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump|FRU EEPROM Utility]]
-     * Push custom data into/out of the ADRV9009
-       * [[/resources/eval/user-guides/adrv9009/software/basic_iq_datafiles|Basic Data files and formats]]
-       * [[/resources/tools-software/linux-software/libiio/clients/matlab_simulink|Stream data into/out of MATLAB]]
+
+-  Quick Start Guides
+  * :doc:`FMCOMMS8 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide>`
+  * :doc:`ADRV9009-ZU11EG Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/quick-start-guide>`
+  * :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  Linux Applications
+  * :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+    * :doc:`ADRV9009/ADRV9008 IIO Scope View </wiki-migration/resources/tools-software/linux-software/adrv9009_osc_main>`
+    * :doc:`ADRV9009/ADRV9008 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_plugin>`
+    * :doc:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
+  * :doc:`FRU EEPROM Utility </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
+-  Push custom data into/out of the ADRV9009
+  * :doc:`Basic Data files and formats </wiki-migration/resources/eval/user-guides/adrv9009/software/basic_iq_datafiles>`
+  * :doc:`Stream data into/out of MATLAB </wiki-migration/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
    * Design with the ADRV9009
-     * [[/resources/eval/user-guides/adrv9009/adrv9009|Understanding the ADRV9009]]
-       * [[:adi:`ADRV9009|ADRV9009` Product page]]
-       * [[:adi:`en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources`.html|Full Datasheet and chip design package]]
-       * [[:adi:`media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2`.4.zip|MATLAB Filter Wizard / Profile Generator for ADRV9009]]
+     * :doc:`Understanding the ADRV9009 </wiki-migration/resources/eval/user-guides/adrv9009/adrv9009>`
+       * :adi:`ADRV9009 Product page <ADRV9009>`
+       * :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+       * :adi:`MATLAB Filter Wizard / Profile Generator for ADRV9009 <media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`
      * Hardware in the Loop / How to design your own custom BaseBand
-       * [[/resources/tools-software/linux-software/gnuradio|GNU Radio]]
-       * [[/resources/eval/user-guides/matlab_bsp|Board Support Package for MathWorks Tools]]
+       * :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
+       * :doc:`Board Support Package for MathWorks Tools </wiki-migration/resources/eval/user-guides/matlab_bsp>`
      * Design with the ADRV9009-ZU11EG based platform
        * Linux software
-         * [[/resources/tools-software/linux-drivers/iio-transceiver/adrv9009|ADRV9009/ADRV9008 Linux Device Driver]]
-           *  [[/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization|ADRV9009/ADRV9008 Device Driver Customization]]
-           *  [[/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks|Customizing the devicetree on the target]]
-         * [[/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         * [[/resources/tools-software/linux-drivers/iio-pll/hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         * [[/resources/tools-software/linux-drivers/axi-dmac|AXI-DMAC DMA Controller Linux Driver]]
-         * [[/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           * [[/resources/tools-software/linux-software/jesd_status|JESD204B Status Utility]]
-         * [[/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           * [[/resources/tools-software/linux-software/jesd_status|JESD204B Status Utility]]
-         * [[/resources/tools-software/linux-drivers/jesd204/axi_adxcvr|ADI JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           * [[/resources/tools-software/linux-software/jesd_eye_scan|JESD204 Eye Scan]]
-         * [[/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         * [[/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-       * [[/resources/eval/user-guides/adrv9009/no-os-setup|ADRV9009/ADRV9008 No-OS System Level Design Setup]]
-       * [[/resources/eval/user-guides/adrv9009-zu11eg/hdl|HDL Reference Design]]
+         * :doc:`ADRV9009/ADRV9008 Linux Device Driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+           *  :doc:`ADRV9009/ADRV9008 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
+           *  :doc:`Customizing the devicetree on the target </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+         * :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         * :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+         * :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         * :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           * :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
+         * :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           * :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
+         * :doc:`ADI JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           * :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+         * :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         * :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+       * :doc:`ADRV9009/ADRV9008 No-OS System Level Design Setup </wiki-migration/resources/eval/user-guides/adrv9009/no-os-setup>`
+       * :doc:`HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/hdl>`
 
 Functional Test
 ~~~~~~~~~~~~~~~

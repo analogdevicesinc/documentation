@@ -165,9 +165,9 @@ Software
 
    -  :doc:`Driver Documentation </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adar1000>`
 
--  :git-pyadi-iio>`__ interface for LibIIO
+-  :git-pyadi-iio:`PyADI-IIO <pyadi-iio>` interface for LibIIO
 
-   -  `ADAR1000 wrapper <https::`PyADI-IIO </github.com/pyadi-iio?master/adi/adar1000.py>`
+   -  `ADAR1000 wrapper <https://github.com/pyadi-iio?master/adi/adar1000.py>`_
    -  `ADAR1000 Documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.adar1000.html>`_
    -  `Example for single ADAR1000 <https://github.com/pyadi-iio?master/examples/adar1000_single_example.py>`_
    -  `Example for array of ADAR1000s <https://github.com/pyadi-iio?master/examples/adar1000_array_example.py>`_
@@ -575,7 +575,9 @@ Stingray Board Cell & Channel Maps
 Cell Map
 --------
 
-|ADAR1000-EVAL1Z Cell Mapping|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/cell_mapping.png
+   :alt: ADAR1000-EVAL1Z Cell Mapping
+   :align: center
 
 .. container:: centeralign
 
@@ -585,7 +587,9 @@ Cell Map
 Channel Map
 -----------
 
-|ADAR1000-EVAL1Z Channel Mapping|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/channel_mapping.png
+   :alt: ADAR1000-EVAL1Z Channel Mapping
+   :align: center
 
 .. container:: centeralign
 
@@ -595,7 +599,9 @@ Channel Map
 Channel Map (Back of Board)
 ---------------------------
 
-|ADAR1000-EVAL1Z Channel Mapping (Back of Board)|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/channel_mapping_reverse.png
+   :alt: ADAR1000-EVAL1Z Channel Mapping (Back of Board)
+   :align: center
 
 .. container:: centeralign
 
@@ -626,6 +632,3 @@ For additional questions or support, please visit the Engineering Zone forum at 
 .. |PMOD Pinout| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/pmod_pinout.png
    :width: 600px
 .. |CSB Selector Switches| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/csb_selectors.jpg
-.. |ADAR1000-EVAL1Z Cell Mapping| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/cell_mapping.png
-.. |ADAR1000-EVAL1Z Channel Mapping| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/channel_mapping.png
-.. |ADAR1000-EVAL1Z Channel Mapping (Back of Board)| image:: https://wiki.analog.com/_media/resources/eval/user-guides/stingray/channel_mapping_reverse.png

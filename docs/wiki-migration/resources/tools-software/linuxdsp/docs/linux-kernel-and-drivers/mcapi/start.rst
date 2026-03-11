@@ -7,20 +7,20 @@ Communication is performed using the Multi-core Communications API (MCAPI) speci
 
 ADSP-SC5xx is a series of products with multiple processor cores (two SHARC+ cores and an ARM® Cortex-A5 processor), this page provides some approaches to support the multi-core communication/control termed as the Internal Cores Communications (ICC) which contains the sections:
 
-::
 
-   ; **''Core Control''**
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/control_sharc_cores|Enable and Disable SHARC Cores]]
-     ; **''RemoteProc''**
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/remoteproc/remoteproc|Remoteproc]]
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/sec_driver_and_multicore_development|SEC driver and multicore development]]
 
-::
+; **''Core Control''**
+: :doc:`Enable and Disable SHARC Cores </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/control_sharc_cores>`
+  ; **''RemoteProc''**
+: :doc:`Remoteproc </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/remoteproc/remoteproc>`
+: `SEC driver and multicore development <https://wiki.analog.com/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/sec_driver_and_multicore_development>`_
 
-   ; **''MCAPI''**
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_introduction|Introduction of MCAPI examples]]
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_example|Run Linux on ARM and bare-metal application on SHARC]]
-   : [[/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_api|MCAPI Supported Functions]]
+
+
+; **''MCAPI''**
+: :doc:`Introduction of MCAPI examples </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_introduction>`
+: :doc:`Run Linux on ARM and bare-metal application on SHARC </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_example>`
+: :doc:`MCAPI Supported Functions </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_api>`
 
 --------------
 

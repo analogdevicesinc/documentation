@@ -33,9 +33,8 @@ The AND Gate
 
 Our first multiple-input gates is the AND gate, so-called because the output of this gate will be “high” (1) if and only if all inputs (first input and the second input and . . .) are “high” (1). If any of the inputs are “low” (0), the output will be in a “low” (0) state. The two-input AND gate truth table is as shown:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-1.png
-   :align: center
-   :width: 350px
+
+|image1|
 
 .. container:: centeralign
 
@@ -58,9 +57,8 @@ The NAND Gate
 
 A variation of the AND gate is called the NAND gate or NOT AND. The word “NAND” is the contraction of NOT and AND. The NAND gate behaves the same as an AND gate with a NOT (inverter) gate connected to the output terminal. To symbolize this output signal inversion, the NAND gate symbol has a bubble on the output line. The truth table for a NAND gate is as one might expect, exactly inverted that of the AND gate.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-2.png
-   :align: center
-   :width: 350px
+
+|image2|
 
 .. container:: centeralign
 
@@ -83,9 +81,8 @@ The OR Gate
 
 The next gate to investigate is the OR gate. The output of this gate will be “high” (1) if any of the inputs (first input or the second input or . . .) are “high” (1). The output of an OR gate goes “low” (0) if and only if all inputs are “low” (0).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-3.png
-   :align: center
-   :width: 350px
+
+|image3|
 
 .. container:: centeralign
 
@@ -108,9 +105,8 @@ The NOR Gate
 
 As might be suspected, the NOR gate is an OR gate with its output inverted, just like the NAND gate is an AND gate with an inverted output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-4.png
-   :align: center
-   :width: 350px
+
+|image4|
 
 .. container:: centeralign
 
@@ -144,9 +140,8 @@ Configuring the software
 
 The ALM1000 has two waveform generator outputs (CH A and CH B) that can be used to provide the two inputs, A and B, to the logic gates you will be testing. Configure the AWG channels as shown in figure 5. The Mode for both channels is set to SVMI Split I/O which produces the voltage waveforms on the CH A and CH B pins while splitting the inputs for the two channels on to the AIN and BIN pins which will be used to measure the logic gate outputs. The Min and Max voltages are set to 0 and 5 to produce the logic low and logic high levels. Be sure that the Sync AWG box is checked.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-5.png
-   :align: center
-   :width: 220px
+
+|image5|
 
 .. container:: centeralign
 
@@ -155,9 +150,9 @@ The ALM1000 has two waveform generator outputs (CH A and CH B) that can be used 
 
 If we set the frequency of channel A to 100 Hz and the frequency of channel B to 200 Hz, the four input combinations shown in the above Truth Tables will be produced over one cycle of channel A. On the Shape drop down menu for both channels check Trapezoid and Burst as shown if figure 6. A Trapezoid waveform with a 0 Rise Time and 50% duty cycle is simply a square wave. When you click on burst (when not already checked) the software will first prompt you for the number of cycles in the burst. Enter 10 for channel A and 20 for channel B. Second it will prompt you for a delay (when to start the burst). Enter 10 for channel A and 2.5 for channel B.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-6.png
-   :align: center
-   :width: 110px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -166,9 +161,9 @@ If we set the frequency of channel A to 100 Hz and the frequency of channel B to
 
 We would like to display both the inputs and outputs of the logic gates on the oscilloscope screen at the same time. The scope inputs, AIN and BIN, can be connected to the gate outputs but we would need two more scope input channels to simultaneously display the two gate inputs (AWG outputs). The software provides a couple of "Math" traces that can be used to display the waveform data being sent to the AWG channels. This will be the same as if the actual output voltage was measured. From the Curves drop down menus select CA-V, CB-V, Math-X and Math-Y.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-7.png
-   :align: center
-   :width: 120px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -177,9 +172,9 @@ We would like to display both the inputs and outputs of the logic gates on the o
 
 We now need to tell the software what data we want to appear in the Math traces. The AWG A and AWG B waveform data points are contained in two arrays, AWGAwaveform[] and AWGBwaveform[]. Click on the Math button to open the Math formula control window as shown in figure 8.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-8.png
-   :align: center
-   :width: 300px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -190,9 +185,8 @@ Enter AWGAwaveform[t] and AWGBwaveform[t] into the X and Y Math Trace Formula en
 
 To better display the four traces on the scope grid so they are not all on top of each other we can use the vertical range and position settings to arrange then at different locations on the grid. Set the V/Div for all four traces to 5 (the traces will be one vertical division tall). Set the Pos controls as shown in figure 9 to stagger the traces vertically.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-9.png
-   :align: center
-   :width: 720px
+
+|image9|
 
 .. container:: centeralign
 
@@ -208,9 +202,8 @@ One chip at a time
 
 Plug in the 74HC08 and 74HC32 chip and connect one of the four gates at a time as shown the following figures. Connect the A and B inputs of one of the gates to the CH A and CH B pin, and the output to the AIN or BIN pins. Record your observations (scope traces and resulting Truth Table) in your lab report.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -219,9 +212,9 @@ Plug in the 74HC08 and 74HC32 chip and connect one of the four gates at a time a
 
 Inverting the output of the AND gate provides the NOT AND function or NAND gate. Similarly, inverting the output of the OR gate provides the NOT OR function or NOR gate. Add the 74HC94 Hex inverter to your breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -230,9 +223,9 @@ Inverting the output of the AND gate provides the NOT AND function or NAND gate.
 
 Inverting the inputs of the AND gate provides the Negative AND function. Similarly, inverting the inputs of the OR gate provides the Negative OR function. Contrary to your first instinct, the logical behavior of a Negative-AND gate is not the same as a NAND gate. Its truth table, actually, is identical to a NOR gate. The behavior and truth table of a Negative-OR gate is the same as for a NAND gate.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-12.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -265,9 +258,8 @@ The previous gates are all fairly direct variations on the three basic logic fun
 
 Exclusive-OR gates output a “high” (1) logic level if the inputs are at different logic levels, either 0 and 1 or 1 and 0. Conversely, they output a “low” (0) logic level if the inputs are at the same logic levels. The Exclusive-OR (sometimes called XOR) gate has both a symbol and a truth table pattern that is unique:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-13.png
-   :align: center
-   :width: 400px
+
+|image13|
 
 .. container:: centeralign
 
@@ -289,9 +281,8 @@ There are equivalent circuits for an Exclusive-OR gate made up of AND, OR, and N
 
 In this circuit, the final AND gate act as a buffer for the output of the OR gate whenever the NAND gate’s output is high, which it is for the first three input state combinations (00, 01, and 10). However, when both inputs are “high” (1), the NAND gate outputs a “low” (0) logic level, which forces the final AND gate to produce a “low” (0) output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-14.png
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
@@ -335,3 +326,32 @@ REVIEW:
 `Logic Gates <https://en.wikipedia.org/wiki/Logic_gate>`_ `The Inverter, NOT gate <https://en.wikipedia.org/wiki/Inverter_(logic_gate)>`_ `The AND gate <https://en.wikipedia.org/wiki/AND_gate>`_ `The NAND gate <https://en.wikipedia.org/wiki/NAND_gate>`_ `The OR gate <https://en.wikipedia.org/wiki/OR_gate>`_ `The NOR gate <https://en.wikipedia.org/wiki/NOR_gate>`_ `The XOR gate <https://en.wikipedia.org/wiki/XOR_gate>`_ `De Morgan duality <https://en.wikipedia.org/wiki/De_Morgan%27s_laws>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-1.png
+   :width: 350px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-2.png
+   :width: 350px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-3.png
+   :width: 350px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-4.png
+   :width: 350px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-5.png
+   :width: 220px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-6.png
+   :width: 110px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-7.png
+   :width: 120px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-8.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-9.png
+   :width: 720px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-13.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-basic-logic-gates-fig-14.png
+   :width: 600px

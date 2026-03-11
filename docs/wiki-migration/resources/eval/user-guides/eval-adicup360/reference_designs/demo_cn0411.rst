@@ -119,10 +119,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
+   :align: center
+   :width: 650px
 
 -  Connect the **EVAL-CN0411-ARDZ Shield** to the Arduino connectors **P2, P5, P6, P7, P8** of the **EVAL-ADICUP360** board.
 -  Connect the conductivity cell to the **J1** connector of the EVAL-CN0411-ARDZ.
@@ -150,7 +151,7 @@ The software for the **ADuCM360_demo_cn0411** demo can be found here:
    Prebuilt CN0411 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0411.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0411.bin>`
+   -  `ADuCM360_demo_cn0411.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0411.bin>`_
    
    Complete CN0411 Source Files
    
@@ -307,6 +308,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0398/adicup360_hardware.jpg
-   :width: 650px

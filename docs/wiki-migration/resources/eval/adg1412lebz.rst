@@ -53,7 +53,9 @@ Revision History
 ADG1412L Evaluation Board Layout
 --------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/adg1412l_eval_board.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -119,42 +121,44 @@ The parallel interface of the :adi:`adg1412L` is controlled manually using the l
 Evaluation Board Schematics and Artwork
 ---------------------------------------
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/adg1412l_schematic.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    *Figure 2. EVAL-ADG1412LEBZ Schematic 1*
 
 
-   |image3|
+   |image1|
 
 .. container:: centeralign
 
    *Figure 3. EVAL-ADG1412LEBZ Silkscreen*
 
 
-   |image4|
+   |image2|
 
 .. container:: centeralign
 
    *Figure 4. EVAL-ADG1412LEBZ Top Layer*
 
 
-   |image5|
+   |image3|
 
 .. container:: centeralign
 
    *Figure 5. EVAL-ADG1412LEBZ Layer 2*
 
 
-   |image6|
+   |image4|
 
 .. container:: centeralign
 
    *Figure 6. EVAL-ADG1412LEBZ Layer 3*
 
 
-   |image7|
+   |image5|
 
 .. container:: centeralign
 
@@ -204,17 +208,13 @@ Bill of Materials
    
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_eval_board.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_silkscreen.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_schematic.png
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_silkscreen.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l1.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l2.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l3.png
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l3.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/adg1412l_l4.png
    :width: 600px

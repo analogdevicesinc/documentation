@@ -58,15 +58,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADRF6780 Driver. <drivers/frequency/adrf6780/adrf6780.c>`
+   -  :git-no-OS:`Header file of ADRF6780 Driver. <drivers/frequency/adrf6780/adrf6780.h>`
    
-   |Implementation of ADRF6780 Driver.|
 
-   -
-
-   |Header file of ADRF6780 Driver.|
-
-.. |Implementation of ADRF6780 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adrf6780/adrf6780`.c
-.. |Header file of ADRF6780 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adrf6780/adrf6780`.h

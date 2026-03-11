@@ -96,4 +96,4 @@ Miscellaneous (but still interesting!) Concepts
 
 --------------
 
-`Appendix C - Common Problems#.|Advanced Audio Projects#.|Advanced Audio Projects <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.appendix-c>`_
+`Appendix C - Common Problems#.|Advanced Audio Projects#.|Advanced Audio Projects <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.appendix-c>`_

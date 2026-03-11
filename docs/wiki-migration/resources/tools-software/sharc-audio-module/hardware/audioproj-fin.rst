@@ -107,4 +107,4 @@ A small expansion header is provided to connect to external LEDs, POTs, push but
 
 --------------
 
-`Main Board#..hardware|Hardware Reference#.class-d|Class-D Amplifier Module <https://wiki.analog.com/_media/navigation SHARC Audio Module#.main-board>`_
+`Main Board#..hardware|Hardware Reference#.class-d|Class-D Amplifier Module <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/hardware/navigation SHARC Audio Module#.main-board>`_

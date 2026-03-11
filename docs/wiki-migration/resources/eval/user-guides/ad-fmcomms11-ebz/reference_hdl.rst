@@ -436,7 +436,7 @@ When building the project, you should always use the recommended version of the 
 
    mkdir adi
    cd adi
-   git clone https://github.com/analogdevicesinc/hdl.git
+   git clone :git-hdl:`hdl`
    cd hdl/
    git status ## check for everything, including branch name
    git checkout hdl_2019_r1 ## change to the hdl_2019_r1 branch
@@ -449,11 +449,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`FMCOMMS11 HDL project <projects/fmcomms11>`
    
-   |FMCOMMS11 HDL project|
+
 
 Support
 -------
@@ -479,5 +477,3 @@ References
    -  :doc:`Generic JESD204 block design </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
    
 
-
-.. |FMCOMMS11 HDL project| image:: https://wiki.analog.com/_media/:git-hdl:`projects/fmcomms11`

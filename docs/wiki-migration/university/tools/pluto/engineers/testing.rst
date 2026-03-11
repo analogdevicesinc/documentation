@@ -8,7 +8,7 @@ Doing this one board at a time is possible with a JTAG and USB cables, invoking 
 Before automation begins on anything, it's good to look at the cost/reward. On a low volume system, it can take as much time as you want to spend testing something, and it doesn't matter. Examining the excellent chart put together by `xkcd <https://xkcd.com/>`_, we can see that spending time on automation can be worth it since we are repeating the task many times.
 
 
-|https://imgs.xkcd.com/comics/is_it_worth_the_time.png|
+|https---imgs.xkcd.com-comics-is_it_worth_the_time.png|
 
 Since we are trying to test ~500 a day, we need the test time to be under 1 minute per board. We would like the folks in the manufacturing factory only to be working on test a few days a month, so we can afford to spend some time on automation.
 
@@ -123,7 +123,7 @@ Since a picture is worth 1000 words, ... :)
 .. image:: https://wiki.analog.com/_media/university/tools/pluto/engineers/youtube>xSO-cFeyDFs
    :alt: youtube>xSO-cFeyDFs
 
-.. |https://imgs.xkcd.com/comics/is_it_worth_the_time.png| image:: https://imgs.xkcd.com/comics/is_it_worth_the_time.png
+.. |https---imgs.xkcd.com-comics-is_it_worth_the_time.png| image:: https://imgs.xkcd.com/comics/is_it_worth_the_time.png
 .. |image1| image:: https://wiki.analog.com/_media/university/tools/pluto/engineers/hinge.png
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/pluto/engineers/close_in.png
@@ -134,3 +134,5 @@ Since a picture is worth 1000 words, ... :)
    :width: 300px
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/pluto/engineers/hand.png
    :width: 300px
+
+.. |https---imgs.xkcd.com-comics-is_it_worth_the_time.png| image:: https://wiki.analog.com/_media/https///imgs.xkcd.com/comics/is_it_worth_the_time.png

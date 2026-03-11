@@ -130,5 +130,5 @@ Pointers
 .. image:: https://wiki.analog.com/_media/software/linux/docs/iio/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_VntEwUe24
 

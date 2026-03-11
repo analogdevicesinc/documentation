@@ -124,11 +124,9 @@ Schematics and CAD Files
    :class: download
 
    
-   ::
-   
-      *[[https://wiki.analog.com/_media/university/tools/m2k/accessories/02-065173-01-b.pdf|Rev B Schematics]]
-      *[[https://wiki.analog.com/_media/university/tools/m2k/accessories/09-065173-01b.zip|Rev B Gerbers]]
-      *[[https://wiki.analog.com/_media/university/tools/m2k/accessories/20-065173-01b.zip|Rev B Cadence Project]]
+   -  `Rev B Schematics <https://wiki.analog.com/_media/university/tools/m2k/accessories/02-065173-01-b.pdf>`_
+   -  `Rev B Gerbers <https://wiki.analog.com/_media/university/tools/m2k/accessories/09-065173-01b.zip>`_
+   -  `Rev B Cadence Project <https://wiki.analog.com/_media/university/tools/m2k/accessories/20-065173-01b.zip>`_
    
 
 

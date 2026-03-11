@@ -11,9 +11,8 @@ A rectifier is an electrical device that converts alternating current (AC) to di
 
 In half wave rectification, either the positive or negative half of the AC wave is passed, while the other half is blocked. Because only one half of the input waveform reaches the output, it is only 50% efficient if used for power transfer. Half-wave rectification can be achieved with a single diode in a single phase supply as shown in figure 6.1, or with three diodes in a three-phase supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -33,9 +32,8 @@ A full-wave rectifier converts both the positive and negative halves of the inpu
 
 When a simple transformer with out a center tapped secondary is used, four diodes are required instead of the one needed for half-wave rectification. Four diodes arranged this way are called a diode bridge or bridge rectifier as shown in figure 6.2. The bridge rectifier can also be used for translating a DC input of unknown or arbitrary polarity into an output of known polarity. This is generally required in electronic telephones or other telephony devices where the DC polarity on the two phone wires is unknown. There are also applications for protecting against accidental battery reversal in battery-powered circuits.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f3.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -44,9 +42,9 @@ When a simple transformer with out a center tapped secondary is used, four diode
 
 For single-phase AC, if the transformer is center-tapped, then two diodes back-to-back (i.e. anode-to-anode or cathode-to-cathode) can form a full-wave rectifier. Twice as many windings are required on the transformer secondary to obtain the same output voltage compared to the bridge rectifier above. This is not as efficient from the transformer perspective because current flows in only one half of the secondary during each positive and negative half cycle of the AC input.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f5.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -55,9 +53,9 @@ For single-phase AC, if the transformer is center-tapped, then two diodes back-t
 
 If a second pair of diodes is included as in figure 6.4 then both positive and negative polarity voltages with respect to the transformer center tap can be generated. One can also view this arrangement to be the same as adding a center tap to the secondary winding in the full-wave bridge rectifier from figure 6.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f8.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -71,18 +69,15 @@ If a second pair of diodes is included as in figure 6.4 then both positive and n
 
 Half-wave or full-wave rectification does not produce a constant-voltage DC as we have seen in the previous figures. In order to produce a steady DC voltage from a rectified AC source, a filter or smoothing circuit is needed. In the simplest form this can be just a capacitor placed across the DC output of the rectifier. There will still remain an amount of AC ripple voltage where the voltage is not completely smoothed. The amplitude of the remaining ripple depends on how much the load discharges the capacitor between the peaks of the waveform.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f10.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
    Figure 6.5(a) Half-wave Rectifier RC-Filter
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f12.png
-   :align: center
-   :width: 600px
+   |image6|
 
 .. container:: centeralign
 
@@ -103,9 +98,8 @@ A half-wave rectifier, figure 6.5(a) will only give one peak per cycle and for t
 
 To further reduce this ripple, an LC π-filter (pi-filter) such as shown in figure 6.6 can be used. This complements the reservoir capacitor, C\ :sub:`1`, with a series inductor, L\ :sub:`1`, and a second filter capacitor, C\ :sub:`2` so that a steadier DC output can be obtained across the terminals of the final filter capacitor. The series inductor presents a high impedance at the ripple current frequency.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f13.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -119,9 +113,8 @@ A more usual alternative to a filter, and essential if the DC load requires a ve
 
 The simple half wave rectifier can be built in two versions with the diode pointing in opposite directions, one version connects the negative terminal of the output direct to the AC supply and the other connects the positive terminal of the output direct to the AC supply. By combining both of these with separate output smoothing capacitors it is possible to get an output voltage of nearly double the peak AC input voltage, figure 6.7. This also provides a tap in the middle, which allows use of such a circuit as a split rail (positive and negative) supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f14.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -143,9 +136,8 @@ Section Review:
 
 Zener diodes are widely used as voltage references and as shunt regulators to regulate the voltage across small circuits. When connected in parallel with a varying voltage source, such as the diode rectifier we just discussed, so that it is reverse biased, the zener diode conducts when the voltage reaches the diode's reverse breakdown voltage. From that point on, the relatively low impedance of the diode keeps the voltage across the diode at that value.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f15.png
-   :align: center
-   :width: 400px
+
+|image9|
 
 .. container:: centeralign
 
@@ -238,3 +230,22 @@ For the circuit shown, if the power supply voltage V\ :sub:`IN` increases, the c
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-7>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f3.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f5.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f8.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f10.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f12.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f13.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f14.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr6-f15.png
+   :width: 400px

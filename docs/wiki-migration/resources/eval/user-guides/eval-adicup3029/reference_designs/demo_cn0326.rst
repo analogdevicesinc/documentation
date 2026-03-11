@@ -109,10 +109,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Make sure the switches are in the position indicated in the picture(**S2** in position **1(USB)**)\
+-  Make sure the switches are in the position indicated in the picture(**S2** in position **1(USB)**)
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
+   :align: center
+   :width: 800px
 
 -  Connect the EVAL-CN0326-PMDZ to the SPI PMOD connector **P8** of the **EVAL-ADICUP3029** board.
 -  Plug in the USB cable from the PC to the **EVAL-ADICUP3029** base board via the USB connector.(**P10**)
@@ -137,7 +138,7 @@ The software for the **ADuCM3029_demo_cn0326** can be found here:
    Pre-built CN0326 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0326.Hex <releases/download/Latest/ADuCM3029_demo_cn0326.hex>`
+   -  `AduCM3029_demo_cn0326.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0326.hex>`_
    
    Complete CN0326 Source Files
    
@@ -234,5 +235,3 @@ For more detailed instructions on importing this application/demo example into t
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0326_demo_2_3.png
    :width: 361px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029_front_refrence_s2_position_for_usb.jpg
-   :width: 800px

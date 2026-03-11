@@ -10,9 +10,8 @@ First a few notes on hardware limitation issues. The waveform generator in the A
 
 2 - 100Ω resistors 2 - 1KΩ resistors 2 - 0.1uF capacitors (marked 104)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12_f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,8 @@ Directions:
 
 The connections to the Lab hardware are as indicated in figure 2. M\ :sub:`1` and M\ :sub:`2` should be selected from the available devices with the best matching of V\ :sub:`th`. The sources of M\ :sub:`1` and M\ :sub:`2` share a common connection with one end of R\ :sub:`3`. The other end of R\ :sub:`3`\ is connected to the Vn (-5V) and supplies the tail current. The base of M\ :sub:`1` is connected to the output of the first arbitrary waveform generator and the base of M\ :sub:`2` is connected to the output of the second arbitrary waveform generator. The two collector load resistors R\ :sub:`1` and R\ :sub:`2` connect between the collectors respectively of M\ :sub:`1` and M\ :sub:`2` and the positive supply Vp ( +5V ). The differential scope input 2 +/- is used to measure the differential output as seen across the two 10KΩ load resistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -58,18 +56,15 @@ Procedure:
 
 The following data should be taken: The X axis is the output of the arbitrary waveform generator and the Y axis is scope channel 2 using both the 2+ and 2- inputs. By changing the value of R\ :sub:`3`, the student can explore the effects of the level of the tail current on the gain of the circuit (as seen in the slope of the line as it passed through the origin) and the linear input range and the shape of the nonlinear fall off in the gain as the circuit saturates. With minor additions to the basic circuit, such as source degeneration resistors, the student can explore techniques to extend and linearize the range of the input swing and the effects on circuit gain.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/diff_pair_tail_res_mos-wav.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 4 NMOS Differential pair XY plot
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f3.png
-   :align: center
-   :width: 400px
+   |image4|
 
 .. container:: centeralign
 
@@ -86,9 +81,8 @@ Additional Materials:
 
 2 - small signal NMOS transistors ( M\ :sub:`3`, M\ :sub:`4` CD4007 or ZVN2110A)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f4.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -123,9 +117,8 @@ Measuring Common Mode gain
 
 Common mode rejection is a key aspect of the differential amplifier. CMR can be measured by connecting the base of both transistors M\ :sub:`1` and M\ :sub:`2` to the same input source. The plot below shows the differential output for both the resistively biased and current source biased differential pair as the common mode voltage from W1 is swept from +4.5V to -4.5V around ground. The gain will be effected the most as the transistors go from the saturation region to the triode (resistive) region as the positive voltage on the gates approaches the drain voltage. This can be monitored by observing the drain voltage single ended with respect to ground (i.e. with the 2- input grounded). The amplitude of the generator should be adjusted until the signal seen at the output just starts to clip/fold over(as you see in your waveform plot).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f5.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -177,3 +170,16 @@ What is common-mode voltage, and how should a differential amplifier (ideally) r
 
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a12_f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/diff_pair_tail_res_mos-wav.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f3.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f4.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a12m_f5.png
+   :width: 500px

@@ -32,9 +32,8 @@ Circuit simulators like LTspice, and others, are useful tools for testing out el
 
 The first thing to do is enter the following simple RC circuit, shown in figure 1, into LTspice. The resistor, R1, we are using is 10K ohms and the capacitor, C1, is 0.22 uF. A PULSE source is used to simulate the CHA output of the ADALM1000 and a 2.5 V DC source is used to simulate the fixed 2.5 V rail. We will name the output of the pulse as CHA and the voltage on the capacitor as CHB to match the ADALM1000 connections.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-schematic-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ We use the .wave directive to output the two node voltages of interest. The samp
 
 After running the simulation the results should look like the following plot.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -62,9 +60,8 @@ Now we can open ALICE and measure the actual circuit. With a 10 KΩ resistor and
 
 With the Horz time scale set to 2 mSec/Div we can run ALICE and see the measure results of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -73,9 +70,9 @@ With the Horz time scale set to 2 mSec/Div we can run ALICE and see the measure 
 
 This plot looks a lot like the simulation but just how close are the two? To compare the two we next save snap-shots of the live waveforms and turn them on. The saved reference traces are drawn in a darker color so the plots will look like this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -86,9 +83,8 @@ We can load in the output.wav file from the LTspice simulation and play the data
 
 If we now set the CH B mode to SVMI and temporarily disconnect it from the capacitor and hit Run we should see something like this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -116,9 +112,8 @@ Now we are all set to enter the example circuit in LTspice. We have one PWL sour
 
 Now we can run the simulation for 20 mSec and we should get a plot much like we got in ALICE of the actual circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-6.png
-   :align: center
-   :width: 700px
+
+|image6|
 
 .. container:: centeralign
 
@@ -132,9 +127,8 @@ Curve Fitting
 
 As an example use case the following simple resistor and diode circuit shown in figure 1 is offered. First construct the simple resistor and diode circuit as shown.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -223,27 +217,22 @@ In the following ALICE script, the measured diode voltage and current data is an
 
 The following screenshots show the results:
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 2, Time waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png
-   :align: center
-   :width: 400px
+   |image9|
 
 .. container:: centeralign
 
    Figure 3, V-I X,Y plot
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png
-   :align: center
-   :width: 400px
+   |image10|
 
 .. container:: centeralign
 
@@ -255,9 +244,8 @@ Polynomial Fit Example
 
 The numpy library contains a polynomial fitting function. The following example shows how to use the polyfit and poly1d function in numpy to fit a 5\ :sup:`th` order polynomial to the voltage characteristics of the same diode circuit and plot the polynomial over the plot of the measured data points.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -274,9 +262,8 @@ To check the terms of the polynomial, type the following line into the entry spa
 
 In the ALICE desktop console window you should see something like this.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -293,9 +280,8 @@ Again to check the results type the following line into the entry space and hit 
 
 In the ALICE desktop console window you should now see something like this.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png
-   :align: center
-   :width: 600px
+
+|image13|
 
 .. container:: centeralign
 
@@ -308,9 +294,8 @@ To plot the polynomial on the screen we will use the Math waveform feature. From
 
 This plots the value of the polynomial evaluated at each point in VBuffA as the time index t goes from 0 to 499 ( 5 mSec ). Be sure to note that () are used for ZBuff and not [] because it is a function and not an array like VBuffA. You should now see something like figure 3 on the display. The magenta Math plot is the polynomial.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png
-   :align: center
-   :width: 600px
+
+|image14|
 
 .. container:: centeralign
 
@@ -326,9 +311,8 @@ Hit the run button and wait a few seconds for the trace averaging to smooth out 
 
 Using the X-Y plotter you should see something like the following when plotting CB-V (diode voltage) on the X axis and CA-I (diode current) on the Y axis.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-9.png
-   :align: center
-   :width: 400px
+
+|image15|
 
 .. container:: centeralign
 
@@ -398,9 +382,8 @@ After each iteration step, detailed information about the current state of the f
 
 Be sure to include your "guess" values for I\ :sub:`s` and n as well as the gnuplot fit results.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-10.png
-   :align: center
-   :width: 500px
+
+|image16|
 
 .. container:: centeralign
 
@@ -436,3 +419,36 @@ These concepts are just the tip of the iceberg. If you're looking to study furth
 `Diode modelling <https://en.wikipedia.org/wiki/Diode_modelling>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-schematic-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-6.png
+   :width: 700px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-9.png
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/data-anal-fig-10.png
+   :width: 500px

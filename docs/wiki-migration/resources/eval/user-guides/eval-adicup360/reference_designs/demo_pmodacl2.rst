@@ -48,10 +48,10 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.\
+-  To program the base board, set the jumpers as shown in the next figure. The important jumpers are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
+   :width: 500px
 
 -  Plug the PmodACL2 PMOD in the EVAL-ADICUP360 base board, via the PMOD_SPI port (P4).
 -  Power EVAL-ADICUP360 base board via the DEBUG USB port (P14).
@@ -76,7 +76,7 @@ The software for the **ADuCM360_demo_pmodacl2** demo can be found here:
    Prebuilt PMODACL2 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_pmodacl2.Bin <releases/download/Release-1.0/ADuCM360_demo_pmodacl2.bin>`
+   -  `ADuCM360_demo_pmodacl2.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_pmodacl2.bin>`_
    
    Complete PMODACL2 Source Files
    
@@ -210,6 +210,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0216_hw_config.png
-   :width: 500px

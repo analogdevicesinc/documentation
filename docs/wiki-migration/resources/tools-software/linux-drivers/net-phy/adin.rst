@@ -350,7 +350,7 @@ adintool.sh - convenience phytool wrapper
    This tool requires sudo/root access and will do changes to the system. Use it with caution on a development system. Also, this tool can leave the PHY into a undetermined state of functioning, which may require a reset of the chip, or a reboot of the system to put the PHY back into a working state together with the attached MAC.
 
 
-Link: :git-wiki-scripts:`linux/adintool`.sh
+Link: :git-wiki-scripts:`linux/adintool.sh`
 
 When downloading, make sure the script is made executable.
 

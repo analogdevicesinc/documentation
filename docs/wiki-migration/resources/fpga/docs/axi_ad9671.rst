@@ -8485,7 +8485,7 @@ References
 -  :git-hdl:`AD9671 IP source code <library/axi_ad9671>`
 -  :adi:`AD9671 chip information <AD9671>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
--  `ADI Linux repository <https://github.com/analogdevicesinc/linux>`_
+-  :git-linux:`ADI Linux repository <linux>`
 -  :adi:`Analog Device's JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`
 -  `Altera Quartus JESD IP documentation <https://www.altera.com/en_US/pdfs/literature/ug/ug_jesd204b.pdf>`_
 -  `Xilinx Vivado JESD IP documentation <https://www.xilinx.com/support/documentation/ip_documentation/jesd204/v6_0/pg066-jesd204.pdf>`_

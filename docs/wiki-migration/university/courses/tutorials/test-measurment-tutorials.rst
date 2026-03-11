@@ -35,7 +35,5 @@ These tutorial pages are centered around testing and measurement techniques that
 
 **M2k Other**
 
-::
-
-   *[[/university/tools/m2k/tutorials/buildingaradiowithm2k|How to build a radio with the M2k]]
-   *[[/university/tools/m2k/tutorials/sync-multiple-m2ks|Using Multiple ADALM2000s Synchronised]]
+-  :doc:`How to build a radio with the M2k </wiki-migration/university/tools/m2k/tutorials/buildingaradiowithm2k>`
+-  :doc:`Using Multiple ADALM2000s Synchronised </wiki-migration/university/tools/m2k/tutorials/sync-multiple-m2ks>`

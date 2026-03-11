@@ -58,8 +58,12 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_isolation_using_discrete_magnetics_figure_2.png
-         
+
+   
+      ..
+
+   |image1|
+
          **MDIO/Management Interface**
 
          
@@ -116,8 +120,12 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_mii_mac_interface_mode_pin_comparison_table5.png
-         
+
+   
+      ..
+
+   |image2|
+
          **RMII Interface**
 
          
@@ -165,8 +173,8 @@ PHY Exchange Guide, DP83869 to ADIN1300 Gb
    
    .. container:: half column
 
-         
-         |image1| |image2|
+      |image3| |image4|
+
          
          **Hardware Configuration of Auto-MDIX**
 
@@ -305,5 +313,7 @@ The following list summarizes an RGMII auto negotiate, 10 Mbps, 100 Mbps, or 100
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_rgmii_auto_negotiate_10mbps_100mbps_with_half_duple_or_full_deplex_figure6.png
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_auto_negotiated_speeds_adin1300_table_9.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_forced_speeds_adin1300_table_10.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_isolation_using_discrete_magnetics_figure_2.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_mii_mac_interface_mode_pin_comparison_table5.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_auto_negotiated_speeds_adin1300_table_9.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/dp83869_forced_speeds_adin1300_table_10.png

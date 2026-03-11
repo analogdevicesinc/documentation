@@ -21,9 +21,8 @@ Directions:
 
 Build the circuit shown in figure 1 on your solder-less breadboard using the 1N5230 4.7 volt zener diode. Use AWG1 and the -5V Vn user supply to establish the DC supply V\ :sub:`IN`. Use various fixed and variable resistors for R\ :sub:`L`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_zener-reg-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ Driving larger load currents:
 
 As we saw in the simple zener diode regulator in figure 1, the maximum load current is determined by resistor R\ :sub:`S`. Also the circuit is very inefficient for smaller load currents with respect to the maximum in that the excess current flows in the zener when not flowing in the load. The inclusion of an emitter follower or Darlington emitter follower current amplifier can greatly improve the efficiency of this regulator circuit as shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/eps/eps_zener-reg-f2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
  Figure 2, Adding a current amplifier stage 
 
@@ -63,3 +61,8 @@ Build either of the circuits shown in figure 2 on your solder-less breadboard us
 http://en.wikipedia.org/wiki/Zener_diode http://www.mathworks.com/help/physmod/powersys/examples/zener-diode-regulator.html http://www.analog.com/static/imported-files/tutorials/MT-087.pdf
 
 **Return to EPS Activity** :doc:`Table of Contents. </wiki-migration/university/courses/eps/main-page>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/eps/eps_zener-reg-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/eps/eps_zener-reg-f2.png
+   :width: 550px

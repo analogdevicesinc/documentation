@@ -481,7 +481,7 @@ Voicemeter detects no incoming stream from SAM
 
 --------------
 
-`Appendix A - Compatibility Matrix#.|Advanced Audio Projects#.appendix-c|Appendix C - System and Audio Configuration <https://wiki.analog.com/_media/navigation Advanced Audio Projects#.appendix-a>`_
+`Appendix A - Compatibility Matrix#.|Advanced Audio Projects#.appendix-c|Appendix C - System and Audio Configuration <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/navigation Advanced Audio Projects#.appendix-a>`_
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/issues3.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/cld5.png

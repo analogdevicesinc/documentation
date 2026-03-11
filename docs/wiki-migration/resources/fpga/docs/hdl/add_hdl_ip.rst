@@ -48,7 +48,7 @@ Source ADI processes for IP creation.
 
 .. important::
 
-   In this script is defined the required tool version, according to ADI release. Do not ignore the warnings regarding the used tool version. For more info see: :git-hdl:`Releases <releases>`\
+   In this script is defined the required tool version, according to ADI release. Do not ignore the warnings regarding the used tool version. For more info see: `Releases <https://github.com/analogdevicesinc/hdl/releases>`_\
 
 
 Define the IP

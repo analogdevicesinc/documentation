@@ -251,4 +251,4 @@ Menu Bar
 
 The menu on the Automatic Speaker EQ has some advanced functions associated with it. Under File, there are controls to load/save configurations. The Design menu has functions to import/export the target of the currently viewed tab, as well as to initiate the design process or reset the control.
 
-.. |AutoEQ1.png| image:: https://wiki.analog.com/_media/AutoEQ1.png
+.. |AutoEQ1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/AutoEQ1.png

@@ -135,7 +135,7 @@ Libiio Installation
 
 ::
 
-   -Download and install the latest release of libIIO that can be found in this link: :git-libiio:`releases`
+   -Download and install the latest release of libIIO that can be found in this link: https://github.com/analogdevicesinc/libiio/releases
 
 .. container:: center round box
 
@@ -168,9 +168,20 @@ Running the System
    cd <pyadi-iio directory>
    cd examples/phaser
    python phaser_gui.py </code>
-   * After running the Phaser GUI, select **''Tracking''** in mode selection and select ''Lab 8. Monopulse Tracking'' on the middle lower part of the GUI. {{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:gui.png |}}
-   * Click the check boxes for ''Show Delta'' and ''Show Error'' in the ''Digital'' tab. Turning the phaser would result to a response to the sum and delta plot, tracking the direction of the HB100.{{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:monopulse.png |}}
-   * Select ''Tracking'' from the ''Mode Selection'' in the ''Config'' tab, this will create a new window named ''Signal Tracking''. {{ :resources:eval:user-guides:circuits-from-the-lab:cn0566:steering_angle.png |}}
+   * After running the Phaser GUI, select **''Tracking''** in mode selection and select ''Lab 8. Monopulse Tracking'' on the middle lower part of the GUI.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/gui.png
+   :align: center
+
+-  Click the check boxes for ``Show Delta`` and ``Show Error`` in the ``Digital`` tab. Turning the phaser would result to a response to the sum and delta plot, tracking the direction of the HB100.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/monopulse.png
+   :align: center
+
+-  Select ``Tracking`` from the ``Mode Selection`` in the ``Config`` tab, this will create a new window named ``Signal Tracking``.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/steering_angle.png
+   :align: center
 
 Help and Support
 ----------------
@@ -189,8 +200,6 @@ For questions and more information, please visit the Analog Devices Engineer Zon
 Related Documents
 ~~~~~~~~~~~~~~~~~
 
-::
-
-   *[[/resources/eval/user-guides/circuits-from-the-lab/cn0566|EVAL-CN0566-RPIZ User Guide]]
-   *[[/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup|EVAL-CN0566-RPIZ Hardware User Guide]]
-   *[[/resources/eval/user-guides/circuits-from-the-lab/cn0566/software|EVAL-CN0566-RPIZ Software User Guide]]
+-  :doc:`EVAL-CN0566-RPIZ User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566>`
+-  :doc:`EVAL-CN0566-RPIZ Hardware User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/overview_setup>`
+-  :doc:`EVAL-CN0566-RPIZ Software User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0566/software>`

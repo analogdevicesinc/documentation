@@ -29,5 +29,5 @@ Click the icon button:.\
 
 **Slew:** The transition between two curves (selected by the red control input pin) is smooth, without any clicking sounds or instabilities because the hardware/software Slew is used to transition between one filter response and another. Essentially one filter is cross-faded into the next. Note: Using Slew requires double the memory space of non-slew filters.
 
-.. |firstorderwparampic1.png| image:: https://wiki.analog.com/_media/firstorderwparampic1.png
-.. |firstorderwparampic2.png| image:: https://wiki.analog.com/_media/firstorderwparampic2.png
+.. |firstorderwparampic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firstorderwparampic1.png
+.. |firstorderwparampic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/firstorderwparampic2.png

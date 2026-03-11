@@ -107,9 +107,8 @@ Example Schematic
 
 The following schematic based on the Teensy 4.0 microcontroller allows programming of SigmaDSP processors through the USBi programming header and was used for development of the example code. Please click the image to see a full-resolution version.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/microcontroller_example_schematic.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. important::
 
@@ -213,3 +212,6 @@ Example Code Change Log
 -----
 
 Initial Release
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/tutorials/microcontroller_example_schematic.png
+   :width: 600px

@@ -945,7 +945,8 @@ Note that offset correction can be performed by calibrating the AIFRMS and AVFRM
 Energy Measurements Overview
 ----------------------------
 
-|image16|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/per_phase_power_and_energy_calculations_from_xi_pcf_and_xv_pcf_waveforms.svg
+   :align: center
 
 .. container:: centeralign
 
@@ -1007,7 +1008,8 @@ ONE-CYCLE measurements update every line cycle (20 ms at 50 Hz).
 Energy Accumulation
 -------------------
 
-|image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/awatt_accumulation_into_energy_and_power_using_no-load_threshold_and_signed_accumulation_mode.svg
+   :align: center
 
 .. container:: centeralign
 
@@ -1100,7 +1102,7 @@ There is also an option to indicate the no-load status on the EVENT pin; :doc:`s
 shows what happens when the xWATT, low-pass filtered watt, value goes above the user configured no-load threshold and then back down below it again. The same concept applies to all of the energy values (total and fundamental VAR, total VA) with the corresponding REACT_NL_LNL and APP_NL_LVL no-load thresholds.
 
 
-|image18|
+|image16|
 
 .. container:: centeralign
 
@@ -1147,7 +1149,7 @@ Internal Energy Accumulation Time (sec) = :math:`\displaystyle \frac{8191 + 1}{ 
 Note that the internal energy register overflows in 13.3 sec with full-scale inputs; therefore, EGY_TIME must be set lower than 1329 (decimal) to prevent overflow when EGY_TMR_MODE is 1.
 
 
-|image19|
+|image17|
 
 .. container:: centeralign
 
@@ -1178,7 +1180,7 @@ Accessing the User Energy Registers
 Each 45-bit user accessible signed energy accumulator is divided into two registers: a register containing the 32 most significant bits, xHR_HI, and a register containing the 13 least significant bits, xHR_LO, as shown in Figure 21.
 
 
-|image20|
+|image18|
 
 .. container:: centeralign
 
@@ -1341,7 +1343,7 @@ PWRRDY is set after PWR_TIME + 1 samples at 8 ksps have been accumulated. The po
 
 The PWR_TIME[12:0] register allows up to (8191 + 1) = 8192 samples to be accumulated, which corresponds to 8192/8000 = 1.024 sec:
 
-:math:`\displaystyle Internal Power AccumulationTime(sec) = \frac{8191 + 1}{{8000}} = 1.024` sec:
+:math:`\displaystyle Internal Power AccumulationTime(sec) = \frac{8191 + 1}|8000| = 1.024` sec:
 
 The internal power accumulator overflows at the same rate as the internal energy accumulator (see the :doc:`Internal Energy Register Overflow Rate </wiki-migration/resources/eval/user-guides/ade9430>` section).
 
@@ -1351,7 +1353,7 @@ Accessing the User Power Registers
 Each 42-bit user accessible signed power accumulator is divided into a register containing the 32 most significant bits, x_ACC, as shown in Figure 21.
 
 
-|image21|
+|image19|
 
 .. container:: centeralign
 
@@ -1390,7 +1392,7 @@ The power signs are updated at the same time as the xWATT_ACC, xFWATT_ACC, xVAR_
 The ADE9430 allows the user to accumulate total watt and VAR powers into separate positive and negative registers: PWATT_ACC and NWATT_ACC, PVAR_ACC and NVAR_ACC. This is done by evaluating the AWATT, low-pass filtered active power every 8 ksps. If the AWATT is positive, it is added to the PWATT_ACC accumulation. If the AWATT is negative, the absolute value is added to the NWATT_ACC accumulation. A new accumulation from zero begins when the power update interval set in PWR_TIMER has elapsed. The positive and negative total watt and total VAR from all three phases are added into the positive/negative watt and VAR accumulations.
 
 
-|image22|
+|image20|
 
 .. container:: centeralign
 
@@ -1416,7 +1418,7 @@ The low-pass filter settling time is 71 samples, 71/8 ksps, which equals 8.875 m
 shows the delay between the detected zero-crossing signal and the input. Note that there is a 4.3 ms delay between the input signal zero-crossing and the ZX zero-crossing indication, with a 50Hz input signal. Zero-crossings are generated on both negative to positive and positive to negative transitions.
 
 
-|image23|
+|image21|
 
 .. container:: centeralign
 
@@ -1447,7 +1449,7 @@ The input to the zero-crossing detection is (VA + VB − VC)/2 with the signal c
 The same precautions are used to prevent noise from generating zero-crossing interrupts on this output. As described in the :doc:`Zero-Crossing Detection section </wiki-migration/resources/eval/user-guides/ade9430>`, signals below the ZXTHRSH threshold do not generate ZXCOMB outputs, and a minimum of 1 ms is required between ZXCOMB generation.
 
 
-|image24|
+|image22|
 
 .. container:: centeralign
 
@@ -1464,7 +1466,7 @@ Table 17 indicates which zero-crossing edges (negative to positive and positive 
 The CF3/ZX output pin goes from low to high when a negative to positive transition is detected and from high to low when a positive to negative transition occurs. The ZX_SEL[1:0] bits in the ZX_LP_SEL register select the zero-crossing output used for line cycle energy accumulation and the ZX output pin.
 
 
-|image25|
+|image23|
 
 .. container:: centeralign
 
@@ -1507,7 +1509,7 @@ Line Period Calculation
 The ADE9430 line period measurement is done by taking the values low-pass filtered by LPF1, as described in the :doc:`Zero-Crossing Detection section </wiki-migration/resources/eval/user-guides/ade9430>`, and then using the two values near the positive to negative zero-crossing to calculate the exact zero-crossing point using linear interpolation. This information is used to precisely calculate the line period, which is stored in the xPERIOD register.
 
 
-|image26|
+|image24|
 
 .. container:: centeralign
 
@@ -1544,7 +1546,7 @@ The resolution of the ANGLx_x2x register is (1/(1024 × 1000))/20 ms × 360° = 
 The time between the zero-crossing on Phase B and C is stored in the ANGL_VB_VC register, and the time in between the zero-crossings on Phase A and C is stored in the ANGL_VA_VC register, as shown in Figure 28.
 
 
-|image27|
+|image25|
 
 .. container:: centeralign
 
@@ -1562,7 +1564,7 @@ The current to current zero-crossings are also measured. This measurement is don
 The voltage to current phase angles are measured as well. These angles can be used to determine the power factor at the fundamental. ANGL_VA_IA reflects the phase angle between the Phase A voltage and current, as shown in Figure 2. ANGL_VB_IB holds the Phase B voltage to current phase angle, and ANGL_VC_IC holds the Phase C voltage to current phase angle.
 
 
-|image28|
+|image26|
 
 .. container:: centeralign
 
@@ -1580,7 +1582,7 @@ Phase Sequence Error Detection
 For 4-wire wye and 4-wire delta meters, the normal phase sequence is shown in Figure 30.
 
 
-|image29|
+|image27|
 
 .. container:: centeralign
 
@@ -1591,7 +1593,7 @@ For a 4-wire wye or 4-wire delta system, VCONSEL[2:0] is 000, 010, or 011, as de
 
 
 
-|image30|
+|image28|
 
 .. container:: centeralign
 
@@ -1602,7 +1604,7 @@ Figure 32 shows that in an installation with the normal phase sequence, a phase 
 
 
 
-|image31|
+|image29|
 
 .. container:: centeralign
 
@@ -1615,7 +1617,7 @@ Figure 32 shows that in an installation with the normal phase sequence, a phase 
 For a 3-wire delta system, VCONSEL[2:0] is 001 or 100, as described in the :doc:`Applying the ADE9430 to Different Metering Configurations section </wiki-migration/resources/eval/user-guides/ade9430>`. In a 3-wire delta system, the ZXVC and ZXVA positive to negative and negative to positive transitions are monitored to detect a phase sequence error. Figure 33 shows the normal phase sequence for a 3-wire delta with VCONSEL[2:0] = 001.
 
 
-|image32|
+|image30|
 
 .. container:: centeralign
 
@@ -1626,7 +1628,7 @@ Write SEQ_CYC to indicate how many consecutive incorrect transitions must be obs
 
 
 
-|image33|
+|image31|
 
 .. container:: centeralign
 
@@ -1637,7 +1639,7 @@ Figure 35 shows that in an installation with the normal phase sequence, a phase 
 
 
 
-|image34|
+|image32|
 
 .. container:: centeralign
 
@@ -1743,7 +1745,7 @@ The sign of the APF calculation follows the sign of AWATT.
 To figure out what quadrant the energy is in, look at the sign of the total or fundamental reactive energy in that phase along with the sign of the xPF or xWATT value, as indicated in the data sheet. Quadrant I and Quadrant III have capacitive power factors, and Quadrant II and Quadrant IV have inductive power factors. Note that for most applications, the watts are received (imported) from the grid, and therefore the watt and VAR stay within Quadrant I and Quadrant IV.
 
 
-|image35|
+|image33|
 
 .. container:: centeralign
 
@@ -1760,7 +1762,7 @@ Temperature
 The ADE9430 includes a temperature measurement unit that uses a temperature sensor in conjunction with a 12-bit successive approximation register (SAR) ADC.
 
 
-|image36|
+|image34|
 
 .. container:: centeralign
 
@@ -1784,7 +1786,7 @@ The ADE9430 has a SPI-compatible interface, consisting of four pins: SCLK, MOSI,
 Figure 38. shows the connection between the ADE9430 SPI and a main device that contains a SPI interface.
 
 
-|image37|
+|image35|
 
 .. container:: centeralign
 
@@ -1804,7 +1806,7 @@ MISO has an internal weak pull-up of 100 kΩ, making the default state of the M
 The ADE9430 is compatible with the following microcontroller SPI port clock polarity and phase settings: CPOL = 0 and CPHA = 0 (typically Mode 0), or CPOL = 1 and CPHA = 1 (typically Mode 3).
 
 
-|image38|
+|image36|
 
 .. container:: centeralign
 
@@ -1815,7 +1817,7 @@ The default state of the MOSI pin depends on the main SPI device. Here, it is as
 
 
 
-|image39|
+|image37|
 
 .. container:: centeralign
 
@@ -1829,7 +1831,7 @@ The SPI read/write operation starts with a 16-bit command (CMD_HDR), which conta
 CMD_HDR[15:4], the 12 most significant bits of the command header, contains the address of the register (ADDR[11:0]) to be read or written. CMD_HDR[3] is the bit that specifies if the current operation is read/write. Set this bit to 1 for read and 0 for write. CMD_HDR[2:0] are bits that are required for internal chip timing and can be 1s or 0s. Note that these bits are read back as 000 in the LAST_CMD register. shows the information contained in the command header.
 
 
-|image40|
+|image38|
 
 .. container:: centeralign
 
@@ -1880,7 +1882,7 @@ After the last bit of data, or CRC, has been clocked out, the main device must b
 An example of what happens when reading the AVGAIN register, Address 0x00B, when BURST_EN = 0 and 1 is shown in Figure 42.
 
 
-|image41|
+|image39|
 
 .. container:: centeralign
 
@@ -1919,21 +1921,21 @@ ADE9430 CRC Algorithm
 The CRC algorithm implemented within the ADE9430 is based on the CRC-16-CCITT algorithm. The data output on MISO is introduced into a linear feedback shift register (LFSR)-based generator one byte at a time, most significant byte first without bit reversal, as shown in Figure 43 and Figure 44. The 16-bit result is written in the CRC_SPI register.
 
 
-|image42|
+|image40|
 
 .. container:: centeralign
 
    \ **Figure 43. CRC Calculation of 32-Bit SPI Data**\
 
 
-   |image43|
+   |image41|
 
 .. container:: centeralign
 
    \ **Figure 44. CRC Calculation of 16-Bit SPI Data**\
 
 
-   |image44|
+   |image42|
 
 .. container:: centeralign
 
@@ -2077,7 +2079,7 @@ SE          ADC_DATA[23:0] 0000
 shows how the fixed data rate samples are stored into the buffer. Every sample set is separated in the memory from the adjacent one by the use of spare cells, which do not contain any sample data, as shown in Figure 49. In this way, every eighth 32-bit memory location in the buffer is reserved as a spare cell. If the seventh channel is disabled, with the WF_IN_EN bit in the WFB_CFG register equal to 0, the IN sample locations are treated as spare cells as well.
 
 
-|image45|
+|image43|
 
 .. container:: centeralign
 
@@ -2089,7 +2091,7 @@ There are 256 (2048/8) sample sets that can be stored in the buffer. In the ADE9
 When used with fixed data rate samples, the waveform buffer is divided into 16 pages, Page 0 to Page 15. Each page contains 128, 32-bit memory locations. Figure 47 illustrates this arrangement.
 
 
-|image46|
+|image44|
 
 .. container:: centeralign
 
@@ -2120,7 +2122,7 @@ When resampling is enabled, the data from all seven channels is calculated and s
 shows how the resampled waveforms are stored into the buffer. Every sample set is separated in memory from the adjacent one by the use of spare cells, as shown in Figure 48. These spare cells do not contain any sample data. There is one 16-bit spare cell at the end of every fourth consecutive 32-bit memory location. If the neutral current channel is disabled, the 16-bit location that stores IN samples also act as spare cells.
 
 
-|image47|
+|image45|
 
 .. container:: centeralign
 
@@ -2214,28 +2216,28 @@ Example 4: Resampled Data, Single Address Read Mode
 WFB_CAP_SEL = 0 and BURST_CHAN = 1111 in the WFB_CFG register indicates that there is resampled data in the waveform buffer and the user wants to read out one single address. A command is sent to read Address 0x801, which is interpreted as a read to Address 0x801. The first 16 SPI clocks return the VA waveform from Address 0x801, followed by the IA waveform from Address 0x801, and finally the CRC if BURST_EN = 0. If BURST_EN = 1, the VA and IA waveform data from Address 0x801 is repeated again see Figure 52.
 
 
-|image48|
+|image46|
 
 .. container:: centeralign
 
    \ **Figure 49. Waveform Buffer SPI Burst Read of Fixed Data Rate Samples, with BURST_CHAN = 0, to Read Out All Channels**\
 
 
-   |image49|
+   |image47|
 
 .. container:: centeralign
 
    \ **Figure 50. Waveform Buffer SPI Burst Read of Resampled Data, with BURST_CHAN = 0011, to Read out IC and VC Data**\
 
 
-   |image50|
+   |image48|
 
 .. container:: centeralign
 
    \ **Figure 51. Waveform Buffer SPI Single Address Read of Fixed Rate Data with BURST_CHAN = 1111**\
 
 
-   |image51|
+   |image49|
 
 .. container:: centeralign
 
@@ -2330,7 +2332,7 @@ The voltage and current waveforms of a polyphase system are defined in the follo
 To understand how these signals relate to each other, create a phasor diagram following a convention using lagging phase angles. Figure 53 shows a common polyphase metering configuration, the 4-wire wye, with v\ :sub:`a`, v\ :sub:`b`, and v\ :sub:`c` defined in the previous equations. Phase B lags Phase A by 120°, and Phase C lags Phase A by 240°. Currents are shown at a power factor of 1, PF = 1, where θ = 0 in the i\ :sub:`a`, i\ :sub:`b`, and i\ :sub:`c` expressions (shown previously), and the current is in phase with the voltage.
 
 
-|image52|
+|image50|
 
 .. container:: centeralign
 
@@ -2341,28 +2343,28 @@ The following figures show common metering configurations: 3-wire delta, 4-wire 
 
 
 
-|image53|
+|image51|
 
 .. container:: centeralign
 
    \ **Figure 54. 3-Wire Delta Service Vector Diagram**\
 
 
-   |image54|
+   |image52|
 
 .. container:: centeralign
 
    \ **Figure 55. 4-Wire Delta Service Vector Diagram**\
 
 
-   |image55|
+   |image53|
 
 .. container:: centeralign
 
    \ **Figure 56. 3-Wire Residential 1PH Service Vector Diagram**\
 
 
-   |image56|
+   |image54|
 
 .. container:: centeralign
 
@@ -2373,7 +2375,7 @@ The phasor diagrams help to understand how the voltages and currents are related
 
 
 
-|image57|
+|image55|
 
 .. container:: centeralign
 
@@ -2411,7 +2413,7 @@ Applying the ADE9430 to a 4-Wire Wye Service
 For the highest level of performance when measuring a 4-wire wye service, connect the neutral to ground, as shown in Figure 59. For this configuration, VCONSEL[2:0] = 000.
 
 
-|image58|
+|image56|
 
 .. container:: centeralign
 
@@ -2422,7 +2424,7 @@ Alternatively, a series impedance can be used on the neutral, as shown in Figure
 
 
 
-|image59|
+|image57|
 
 .. container:: centeralign
 
@@ -2439,7 +2441,7 @@ Applying the ADE9430 to a 3-Wire Delta Service
 For the highest level of performance when measuring a 3-wire delta service, connect Phase B to ground, as shown in Figure 1. For this configuration, write VCONSEL[2:0] = 001. Then VB = VA − VC, and the ADE9430 calculates the VAC potential in the BVRMS register. To calculate the current flowing through IB from the IA and IC measurements, set ICONSEL = 1 so that IB = −IA − IC.
 
 
-|image60|
+|image58|
 
 .. container:: centeralign
 
@@ -2450,7 +2452,7 @@ Note that for this 3-wire delta, Phase B connected to ground configuration, the 
 
 
 
-|image61|
+|image59|
 
 .. container:: centeralign
 
@@ -2462,7 +2464,7 @@ To use the same PCB for both 4-wire wye and 3-wire delta circuits, another optio
 Alternatively, a series impedance can be used on Phase B, as shown in Figure 3. This configuration can be advantageous if an isolated power supply is used; however, the readings are inaccurate in this configuration if the phase voltages are not balanced. Use VCONSEL[2:0] = 100 with this configuration so that VA = VA − VB, VB = VA − VC, and VC = VC − VB. To calculate the current flowing through IB from the IA and IC measurements, set ICONSEL = 1 so that IB = −IA − IC.
 
 
-|image62|
+|image60|
 
 .. container:: centeralign
 
@@ -2481,7 +2483,7 @@ Applying the ADE9430 to a Non-Blondel Compliant 4-Wire Wye Service
 To use the ADE9430 in a non-Blondel compliant 4-wire wye service (such as for ANSI meter forms 6S, 7S, 14S, 29S, 36S, 46S, and 76S), the Phase A and Phase C voltages are measured and the Phase B voltage is calculated, VB = −VA − VC. All three phase currents are measured. For this configuration, write VCONSEL[2:0] = 010 and connect as shown in Figure 64.
 
 
-|image63|
+|image61|
 
 .. container:: centeralign
 
@@ -2498,7 +2500,7 @@ Applying the ADE9430 to a Non-Blondel Compliant 4-Wire Delta Service
 To use the ADE9430 in a non-Blondel compliant 4-wire delta service (such as for ANSI meter forms 8S, 15S, and 24S), the Phase A and Phase C voltages are measured and the Phase B voltage is calculated, VB = −VA. All three phase currents are measured. For this configuration, write VCONSEL[2:0] = 011 and connect as shown in Figure 65.
 
 
-|image64|
+|image62|
 
 .. container:: centeralign
 
@@ -4602,52 +4604,52 @@ Register Details
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/fundamental_watt_afwatt_calculation.svg
 .. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/fundamental_reactive_power_afvar.svg
 .. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/fundamental_apparent_power_afva.svg
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/per_phase_power_and_energy_calculations_from_xi_pcf_and_xv_pcf_waveforms.svg
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/awatt_accumulation_into_energy_and_power_using_no-load_threshold_and_signed_accumulation_mode.svg
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/no-load_detection_and_indication.svg
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/egyrdy_and_pwrrdy_update_rate.svg
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/internal_energy_register_to_awatthr_hi_and_awatthr_lo.svg
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/internal_power_register_to_awatt_acc.svg
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/power_accumulation_and_power_sign.svg
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/zero_crossing_detection_on_voltage_and_current_channels.svg
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/combined_zero_crossing_detection.svg
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/zero-crossing_output_rates.svg
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/line_period_calculation_using_zero_crossing_detection_and_linear_interpolation.svg
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/voltage_to_voltage_phase_angle.svg
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/voltage_to_current_phase_angles.svg
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_and_4-wire_delta_normal_phase_sequence.svg
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_and_4-wire_delta_phase_sequence_error_wiring_error_.svg
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_4-wire_delta_phase_sequence_error_from_a_phase_voltage_dropping_below_zxthrsh_with_seq_cyc_1.svg
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_normal_phase_sequence.svg
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_phase_sequence_error_wiring_error.svg
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_phase_sequence_error_from_a_phase_voltage_dropping_below_zxthrsh_with_seq_cyc_1.svg
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/watt_and_var_sign_for_capacitive_and_inductive_loads.svg
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/temperature_measurement_block_diagram.svg
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_the_ade9430_sub_spi_port_to_a_main_spi_device1.svg
-.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/spi_read_protocol_example_crc_or_next_data_can_follow.svg
-.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/spi_write_protocol_example.svg
-.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/command_header_cmd_hdr.svg
-.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/spi_read_protocol_example_where_the_following_data_is_the_crc_or_the_initial_data_is_repeated.svg
-.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/crc_calculation_of_32-bit_spi_data.svg
-.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/crc_calculation_of_16-bit_spi_data.svg
-.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/lfsr_generator_used_for_crc_spi_calculation.svg
-.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/fixed_data_rate_waveform_sample_storage.svg
-.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/waveform_buffer_page_arrangement_for_fixed_data_rate_samples_only.svg
-.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/resampled_waveform_sample_storage.svg
-.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_burst_read_of_fixed_data_rate_samples_with_burst_chan_0_to_read_out_all_channels.svg
-.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_burst_read_of_resampled_data_with_burst_chan_0011.svg
-.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_single_address_read_of_fixed_rate_data_with_burst_chan_1111.svg
-.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_single_address_read_of_resampled_data_with_burst_chan_1111.svg
-.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_service_vector_diagram.svg
-.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_service_vector_diagram.svg
-.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/4-wire_delta_service_vector_diagram.svg
-.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_residential_1ph_service_vector_diagram.svg
-.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_network_meter_vector_diagram.svg
-.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_voltage_phase_sequence_in_time.svg
-.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_neutral_connected_to_ground.svg
-.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_series_impedance_on_the_neutral.svg
-.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_phase_b_connected_to_ground.svg
-.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/phasor_diagram_of_xv_pcf_and_xi_pcf_waveforms_inside_the_ic_with_3-wire_delta_with_phase_b_as_ground_and_vconsel_001.svg
-.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_series_impedance_on_phase_b_and_vconsel_100_-_copy.svg
-.. |image63| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/non-blondel_compliant_4-wire_wye.svg
-.. |image64| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/non-blondel_compliant_3-wire_delta.svg
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/no-load_detection_and_indication.svg
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/egyrdy_and_pwrrdy_update_rate.svg
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/internal_energy_register_to_awatthr_hi_and_awatthr_lo.svg
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/internal_power_register_to_awatt_acc.svg
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/power_accumulation_and_power_sign.svg
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/zero_crossing_detection_on_voltage_and_current_channels.svg
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/combined_zero_crossing_detection.svg
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/zero-crossing_output_rates.svg
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/line_period_calculation_using_zero_crossing_detection_and_linear_interpolation.svg
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/voltage_to_voltage_phase_angle.svg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/voltage_to_current_phase_angles.svg
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_and_4-wire_delta_normal_phase_sequence.svg
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_and_4-wire_delta_phase_sequence_error_wiring_error_.svg
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_4-wire_delta_phase_sequence_error_from_a_phase_voltage_dropping_below_zxthrsh_with_seq_cyc_1.svg
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_normal_phase_sequence.svg
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_phase_sequence_error_wiring_error.svg
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_phase_sequence_error_from_a_phase_voltage_dropping_below_zxthrsh_with_seq_cyc_1.svg
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/watt_and_var_sign_for_capacitive_and_inductive_loads.svg
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/temperature_measurement_block_diagram.svg
+.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/connecting_the_ade9430_sub_spi_port_to_a_main_spi_device1.svg
+.. |image36| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/spi_read_protocol_example_crc_or_next_data_can_follow.svg
+.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/spi_write_protocol_example.svg
+.. |image38| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/command_header_cmd_hdr.svg
+.. |image39| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/spi_read_protocol_example_where_the_following_data_is_the_crc_or_the_initial_data_is_repeated.svg
+.. |image40| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/crc_calculation_of_32-bit_spi_data.svg
+.. |image41| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/crc_calculation_of_16-bit_spi_data.svg
+.. |image42| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/lfsr_generator_used_for_crc_spi_calculation.svg
+.. |image43| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/fixed_data_rate_waveform_sample_storage.svg
+.. |image44| image:: https://wiki.analog.com/_media/resources/eval/user-guides/waveform_buffer_page_arrangement_for_fixed_data_rate_samples_only.svg
+.. |image45| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/resampled_waveform_sample_storage.svg
+.. |image46| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_burst_read_of_fixed_data_rate_samples_with_burst_chan_0_to_read_out_all_channels.svg
+.. |image47| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_burst_read_of_resampled_data_with_burst_chan_0011.svg
+.. |image48| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_single_address_read_of_fixed_rate_data_with_burst_chan_1111.svg
+.. |image49| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/waveform_buffer_spi_single_address_read_of_resampled_data_with_burst_chan_1111.svg
+.. |image50| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_service_vector_diagram.svg
+.. |image51| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_service_vector_diagram.svg
+.. |image52| image:: https://wiki.analog.com/_media/resources/eval/user-guides/4-wire_delta_service_vector_diagram.svg
+.. |image53| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_residential_1ph_service_vector_diagram.svg
+.. |image54| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_network_meter_vector_diagram.svg
+.. |image55| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_voltage_phase_sequence_in_time.svg
+.. |image56| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_neutral_connected_to_ground.svg
+.. |image57| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/4-wire_wye_series_impedance_on_the_neutral.svg
+.. |image58| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_phase_b_connected_to_ground.svg
+.. |image59| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/phasor_diagram_of_xv_pcf_and_xi_pcf_waveforms_inside_the_ic_with_3-wire_delta_with_phase_b_as_ground_and_vconsel_001.svg
+.. |image60| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/3-wire_delta_series_impedance_on_phase_b_and_vconsel_100_-_copy.svg
+.. |image61| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/non-blondel_compliant_4-wire_wye.svg
+.. |image62| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9430_trm/non-blondel_compliant_3-wire_delta.svg
+
+.. |8000| image:: https://wiki.analog.com/_media/8000

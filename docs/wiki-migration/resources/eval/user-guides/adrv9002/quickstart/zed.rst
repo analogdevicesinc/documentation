@@ -566,7 +566,7 @@ For more on device modes, check :doc:`device modes. </wiki-migration/resources/t
 Pyadi-iio Example
 -----------------
 
-Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio>`__. An example of using adrv9002 can be checked `here <https::`Pyadi-iio </github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adrv9002_example.py>`
+Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio:`Pyadi-iio <pyadi-iio>`. An example of using adrv9002 can be checked :git-pyadi-iio:`here <examples/adrv9002_example.py>`
 
 IIO Oscilloscope Remote
 -----------------------
@@ -752,8 +752,9 @@ Testing
 
 -  Connect the UART port of ZedBoard (J14) to a PC via MicroUSB.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/zed_sw.png
+   :align: right
+   :width: 300px
 
 -  Insert the SD card into the slot (J12), located on the underside of ZedBoard.
 -  Configure ZedBoard for SD BOOT: boot (JP7-JP11) and MIO0 (JP6) jumpers set to SD card mode, in accordance with the picture shown on the right. (Click on the picture to enlarge)
@@ -1260,7 +1261,7 @@ For more on device modes, check :doc:`device modes. </wiki-migration/resources/t
 Pyadi-iio Example
 -----------------
 
-Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio>`__. An example of using adrv9002 can be checked `here <https::`Pyadi-iio </github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adrv9002_example.py>`
+Pyadi-iio is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. For more check :git-pyadi-iio:`Pyadi-iio <pyadi-iio>`. An example of using adrv9002 can be checked :git-pyadi-iio:`here <examples/adrv9002_example.py>`
 
 IIO Oscilloscope Remote
 -----------------------
@@ -1278,7 +1279,7 @@ Once the application is launched goto Settings -> Connect and enter the IP addre
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
 
-   |image2|
+   |image1|
 
 More Information
 ----------------
@@ -1340,7 +1341,5 @@ Software resources
 -  :doc:`ADRV9002 Integrated Dual RF Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9002/quickstart/zed_sw.png
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px

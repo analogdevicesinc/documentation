@@ -19,7 +19,8 @@ An alias can be created in two ways:
 
 It is possible to have multiple output alias pins created from the same Alias Input pin.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/alias_4.png
+
+|image1|
 
 .. note::
 
@@ -55,3 +56,5 @@ Go to Alias Input
 At any time, user can navigate back to Input Alias from any Output Alias using this option. '**Go to Alias Input**' option will be shown in every output alias. After clicking that option, Input Alias block will come into center part of schematic even if it is not in visible area of schematic. This helps user to easily navigate between and evaluate the schematic design.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/alias_5.png
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/alias_4.png

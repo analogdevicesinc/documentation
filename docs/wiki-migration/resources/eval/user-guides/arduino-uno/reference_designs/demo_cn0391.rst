@@ -46,8 +46,8 @@ The PT1000 RTD is ideally 1000Ω at 0°C. There are two separate equations that
 
 **2. RTD resistance ≤ 1000Ω**
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0391/cn0391_demo_4.png
-   :width: 800px
+
+|image1|
 
 .. note::
 
@@ -101,9 +101,11 @@ Setting up the Hardware
    -  Note, the boards should only plug together one way, preventing reverse connections.
 
 -  Connect your thermocouple sensor to the EVAL-CN0391-ARDZ via (**P1**-**P4**).
--  Set the jumper **JP1** of **EVAL-CN0391-ARDZ** board as shown in the picture\
+-  Set the jumper **JP1** of **EVAL-CN0391-ARDZ** board as shown in the picture
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0391//cn0391_demo_9.png
+   :align: center
+   :width: 600px
 
 -   Plug in the Type B USB cable into the USB port on the Arduino Uno, and the other end into the PC or laptop.
 
@@ -216,5 +218,5 @@ For more information on how to use the tool basics, please check out the `Arduin
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0391//cn0391_demo_9.png
-   :width: 600px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0391/cn0391_demo_4.png
+   :width: 800px

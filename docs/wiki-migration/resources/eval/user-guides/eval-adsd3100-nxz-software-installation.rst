@@ -14,11 +14,11 @@ Download Installer
 
 -  If you are evaluating the ; EVAL-ADSD3100-NXZ or EVAL-ADTF3175-NXZ modules:
 
-   -  Download v2.1.1 installer from here : :git-ToF:`Link <releases/tag/v2.1.1>` (Copy the link and run it on another tab if clicking directly does not work)
+   -  Download v2.1.1 installer from here : `Link <https://github.com/analogdevicesinc/ToF/releases/tag/v2.1.1>`_ (Copy the link and run it on another tab if clicking directly does not work)
 
 -  If you are evaluating the ; EVAL-ADTF3175D-NXZ
 
-   -  Download latest 5.x.x installer from here : :git-ToF:`Link <releases>`
+   -  Download latest 5.x.x installer from here : `Link <https://github.com/analogdevicesinc/ToF/releases>`_
 
 Minimum Software Requirements
 -----------------------------

@@ -54,30 +54,30 @@ Useful links
 
 ::
 
-         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
-         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
-        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
-   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
-        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
-        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+         - :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         - :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+         - :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         - :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           - :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+         - :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         - :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   * :doc:`MATLAB Support </wiki-migration/resources/tools-software/hsx-toolbox>`
+        * MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`
+   * :doc:`Python Support </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+        * PYTHON support is provided through the :doc:`Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` 
+        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
+        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
    * Product Datasheet
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
+       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
+       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
+   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
 
 Support
 -------
@@ -111,30 +111,30 @@ Useful links
 
 ::
 
-         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
-         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
-        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
-   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
-        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
-        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+         - :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         - :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+         - :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         - :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           - :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+         - :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         - :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   * :doc:`MATLAB Support </wiki-migration/resources/tools-software/hsx-toolbox>`
+        * MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`
+   * :doc:`Python Support </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+        * PYTHON support is provided through the :doc:`Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` 
+        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
+        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
    * Product Datasheet
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
+       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
+       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
+   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
 
 Support
 -------

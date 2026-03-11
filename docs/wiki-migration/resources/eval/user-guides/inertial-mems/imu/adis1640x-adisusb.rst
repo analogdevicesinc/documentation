@@ -12,7 +12,7 @@ The :adi:`ADIS16400/5/7 <ADIS16400>` iSensor® product family provides a simple,
 ADIS1640x/PCB BREAKOUT BOARD
 ----------------------------
 
-For those who are on a tight timeline, connecting the :adi:`ADIS16400` to an embedded controller will provide the most flexibility in developing application firmware and will more closely reflect the final system design. The :adi:`ADIS1636x40x/PCBZ </en/mems-sensors/mems-inertial-measurement-units/adis16400/products/EVAL-ADIS16400/eb.html>` is the breakout board for the :adi:`ADIS16400` product family and may provide assistance in the process of hooking it up to an existing embedded processor system.
+For those who are on a tight timeline, connecting the :adi:`ADIS16400` to an embedded controller will provide the most flexibility in developing application firmware and will more closely reflect the final system design. The :adi:`ADIS1636x40x/PCBZ <en/mems-sensors/mems-inertial-measurement-units/adis16400/products/EVAL-ADIS16400/eb.html>` is the breakout board for the :adi:`ADIS16400` product family and may provide assistance in the process of hooking it up to an existing embedded processor system.
 
 ADISUSB: PC EVALUATION
 ----------------------
@@ -24,11 +24,11 @@ EQUIPMENT LIST
 
 :adi:`ADISUSB`
 
-:adi:`ADIS16400/PCBZ </en/mems-sensors/mems-inertial-measurement-units/adis16400/products/EVAL-ADIS16400/eb.html>`
+:adi:`ADIS16400/PCBZ <en/mems-sensors/mems-inertial-measurement-units/adis16400/products/EVAL-ADIS16400/eb.html>`
 
-:adi:`ADIS16405/PCBZ </en/mems-sensors/mems-inertial-measurement-units/adis16405/products/EVAL-ADIS16405/eb.html>`
+:adi:`ADIS16405/PCBZ <en/mems-sensors/mems-inertial-measurement-units/adis16405/products/EVAL-ADIS16405/eb.html>`
 
-:adi:`ADIS16407/PCBZ </en/mems-sensors/mems-inertial-measurement-units/adis16407/products/EVAL-ADIS16407/eb.html>`
+:adi:`ADIS16407/PCBZ <en/mems-sensors/mems-inertial-measurement-units/adis16407/products/EVAL-ADIS16407/eb.html>`
 
 SYSTEM REQUIREMENTS
 -------------------
@@ -40,7 +40,7 @@ NOTE: All the required files are contained in the .Cab file and deployed during 
 PHYSICAL SETUP
 --------------
 
-The :adi:`ADIS1636x40x/PCBZ <//en/mems-sensors/mems-inertial-measurement-units/adis16400/products/EVAL-ADIS16400/eb.html>` includes one interface PCB, which requires two M2 or 2-56 machine screws to secure the baseplate to the system printed circuit board. The :adi:`ADIS16400` product family is packaged in a module approximately 23 mm × 23 mm × 23 mm and provides a flexible connector interface that enables multiple mounting orientation options. Set the interface PCB aside, as it is not used for connecting the :adi:`ADIS16400` to the :adi:`ADISUSB`.
+The :adi:`ADIS1636x40x/PCBZ <en/mems-sensors/mems-inertial-measurement-units/adis16400/products/EVAL-ADIS16400/eb.html>` includes one interface PCB, which requires two M2 or 2-56 machine screws to secure the baseplate to the system printed circuit board. The :adi:`ADIS16400` product family is packaged in a module approximately 23 mm × 23 mm × 23 mm and provides a flexible connector interface that enables multiple mounting orientation options. Set the interface PCB aside, as it is not used for connecting the :adi:`ADIS16400` to the :adi:`ADISUSB`.
 
 |image1| |image2|
 

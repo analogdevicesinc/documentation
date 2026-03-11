@@ -71,7 +71,7 @@ There are two device driver solutions that are provided for controlling the **EV
 
       -  The :doc:`ADXL355 no-OS Example Project </wiki-migration/resources/eval/user-guides/eval-adxl355-pmdz/no-os-setup>` uses the ADXL355 no-OS driver and has several configuration options.
 
-         -  The tinyiiod configuration emulates the Linux IIO framework through the `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`_. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.
+         -  The tinyiiod configuration emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.
 
 -  **ADXL355 Linux Driver**
 
@@ -98,7 +98,7 @@ The following is the list of items needed in order to replicate this demo.
 
 -  \*\* Software \*\*
 
-   -  :git-no-OS:`ADuCM3029_demo_ADXL355.hex <releases/download/Latest/eval-adxl355-pmdz.zip>`
+   -  `ADuCM3029_demo_ADXL355.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`_
 
 .. note::
 
@@ -123,7 +123,7 @@ The following is the list of items needed in order to replicate this demo.
    
    Prebuilt ADXL355 Hex File
    
-   -  :git-no-OS:`ADuCM3029_demo_ADXL355.hex <releases/download/Latest/eval-adxl355-pmdz.zip>`
+   -  `ADuCM3029_demo_ADXL355.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`_
    
    Complete ADXL355 Source Files
    
@@ -171,13 +171,13 @@ The following is the list of items needed in order to replicate this demo.
 
    -  For MAX32655FTHR,
 
-      -  Pre-built hex file: :git-no-OS:`MAX32655FTHR_demo_ADXL355.hex <releases/download/Latest/eval-adxl355-pmdz.zip>`
+      -  Pre-built hex file: `MAX32655FTHR_demo_ADXL355.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`_
       -  PuTTY or other similar software
 
    -  For MAX32650FTHR,
 
       -  Maxim Micros SDK `swpart=SFW0010820A <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_
-      -  Pre-built hex file: :git-no-OS:`MAX32650FTHR_demo_ADXL355.hex <releases/download/Latest/eval-adxl355-pmdz.zip>`
+      -  Pre-built hex file: `MAX32650FTHR_demo_ADXL355.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`_
       -  PuTTY or other similar software
 
 MAX32655FTHR
@@ -237,7 +237,7 @@ The final setup should look similar as shown below.
 
 6. Open PuTTY or other similar software. Check the Device Manager to set the correct COM port for the **MAX32650FTHR**.
 
-7. Set baud rate according to the hex file used available in :git-no-OS:`MAX32650FTHR_demo_ADXL355.hex <releases/download/Latest/eval-adxl355-pmdz.zip>`:
+7. Set baud rate according to the hex file used available in `MAX32650FTHR_demo_ADXL355.hex <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/eval-adxl355-pmdz.zip>`_:
 
 ====================================================== =========
 Hex file                                               Baud rate
@@ -298,19 +298,24 @@ To set up the circuit for evaluation, consider the following steps:
 
 -  Connect the **P9** of the **PMOD to Raspberry Pi Interposer** board at the male header GPIO pin connector of the **Raspberry Pi** as shown below.
 
-
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
+   :align: center
+   :width: 500px
 
 -  Connect the \*\* :adi:`EVAL-ADXL355-PMDZ` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P1 or P2.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_rpi_connections.jpg
+   :align: center
+   :width: 600px
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card on the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
 -  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/eval-adxl355-pmdz_overall_setup.png
+   :align: center
+   :width: 600px
 
 System Setup Using EVAL-ADICUP360 (DEPRECATED)
 ----------------------------------------------
@@ -338,7 +343,7 @@ The Libiio is a library used for interfacing with IIO devices and is required to
 .. admonition:: Download
    :class: download
 
-   Download and install the latest :git-libiio:`Libiio package <releases>` on your machine.
+   Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADXL355-PMDZ is attached. Two platforms are currently supported for the EVAL-ADXL355-PMDZ: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS ADXL355 demo project. The user needs to supply a **URI** which will be used in the context creation.
@@ -418,7 +423,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -434,7 +439,7 @@ Debug Panel
 Below is the Debug panel of ADXL355 wherein you can directly access the attributes of the device.
 
 
-|image8|
+|image5|
 
 DMM Panel
 ^^^^^^^^^
@@ -442,7 +447,7 @@ DMM Panel
 Access the DMM panel to see the instantaneous reading of the x, y and z axis acceleration readings and the device temperature.
 
 
-|image9|
+|image6|
 
 PyADI-IIO
 ~~~~~~~~~
@@ -464,7 +469,7 @@ For RPi
 Press enter and you will get these readings.
 
 
-|image10|
+|image7|
 
 .. admonition:: Download
    :class: download
@@ -483,9 +488,8 @@ In a Windows machine, you can check the port of your MAX32655FTHR and MAX32650FT
 
 Press enter and you will get these readings.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/no_os_adxl355_pyadi.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. admonition:: Download
    :class: download
@@ -522,7 +526,7 @@ Schematic, PCB Layout, Bill of Materials
 Additional Information
 ----------------------
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -551,15 +555,11 @@ Hardware Registration
    :width: 450px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/basic_putty_adxl355.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
-   :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_rpi_connections.jpg
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/eval-adxl355-pmdz_overall_setup.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_iio_debug.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_iio_debug.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_iio_dmm_panel.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_iio_dmm_panel.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_python_example_rpi.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxl355-pmdz/adxl355_python_example_rpi.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/fthr/no_os_adxl355_pyadi.png
    :width: 600px

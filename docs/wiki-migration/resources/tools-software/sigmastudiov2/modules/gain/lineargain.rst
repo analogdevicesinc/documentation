@@ -68,9 +68,7 @@ Configurable Parameters
 +----------------+-----------------------------------------------+------------------------+
 
 | 
-| Following graphs represent how the module behaves when Gain and Slew are set in certain conditions and when Sine wave is given as input to this module:
-
-|image1|
+| Following graphs represent how the module behaves when Gain and Slew are set in certain conditions and when Sine wave is given as input to this module: |image1|
 
 .. container:: centeralign
 

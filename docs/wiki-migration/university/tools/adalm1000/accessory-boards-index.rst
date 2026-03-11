@@ -46,9 +46,8 @@ Input Resistor Voltage Divider
 
 The Input Voltage Divider accessory board is used when :doc:`Measuring voltages beyond 0 to 5V with the ADALM1000 (M1K) </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>`. There are two resistor dividers, R1,2 on the BIN pin and R3,4 on the AIN pin. Referring to the schematic figure, the 8 pin right angle male header named ALM1000 mates with the 8 pin female connector on M1K. The 8 pin right angle female header named ANALOG2 replicates the 8 pin female connector on M1K as a pass through port. The input side of the dividers R2 and R4 are connected to the equivalent “BIN” and “AIN” pins on the ANALOG2 connector. There are solder jumpers to connect the “low” side of the dividers R1, R3 to either of GND, +2.5V or +5V to introduce positive offset for measuring negative input voltages.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-divider-bw-sch.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -57,18 +56,16 @@ The Input Voltage Divider accessory board is used when :doc:`Measuring voltages 
 
 The values for the resistors are arbitrary and depend on the desired input voltage span and offset as well as the input impedance. Capacitors (C1,2 and C3,4) across the input resistors R2 and R4 are included to provide course frequency compensation. Fine tuning of the divider frequency response can be done using the software frequency compensation filters in the ALICE software.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-input-divider-top.png
-   :align: center
-   :width: 300px
+
+
+|image2|
 
 .. container:: centeralign
 
    Input Resistor Voltage Divider PCB Top artwork
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-divider-2.png
-   :align: center
-   :width: 300px
+   |image3|
 
 .. container:: centeralign
 
@@ -92,18 +89,15 @@ Potentiometer Input Voltage Divider
 
 The an adjustable voltage divider can be substituted for the fixed resistor voltage divider by using a potentiometer as we see in this board. All the same design procedures apply.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/pot-input-divider-sch.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
    Potentiometer Input Voltage Divider Schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-pot-divider-top.png
-   :align: center
-   :width: 300px
+   |image5|
 
 .. container:: centeralign
 
@@ -112,9 +106,9 @@ The an adjustable voltage divider can be substituted for the fixed resistor volt
 
 The PCB has multiple holes to accommodate multiple potentiometer styles.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/pot-input-divider-3.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -128,9 +122,8 @@ The board layout provides both 8 DIP and 8 pin SOIC footprints (connected in par
 
 Each amplifier is connected as a unity gain follower. With the + input connect to the input pins on the ANALOG2 connector. Provision is made to AC couple the inputs through capacitors C1 and C2. Resistors R1 and R2 provide a DC bias level referenced to the +2.5 V (mid-rail) supply. Solder jumpers SJ1 and SJ2 short the AC coupling capacitors for DC inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-buffer-d1-bw-sch.png
-   :align: center
-   :width: 550px
+
+|image7|
 
 .. container:: centeralign
 
@@ -139,18 +132,16 @@ Each amplifier is connected as a unity gain follower. With the + input connect t
 
 The amplifier negative supply pin is connected to the GND2 node which will be connected to GND if the board is connected directly to the M1K. If the board is plugged in to the minus 5 volt supply generator board (see section on that board) the GND2 node will be connected to -5 V.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-buffermod-d1-top.png
-   :align: center
-   :width: 300px
+
+
+|image8|
 
 .. container:: centeralign
 
    Dual Op-amp Input Buffer Circuit PCB Top artwork
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-buffer-d1-dip.png
-   :align: center
-   :width: 400px
+   |image9|
 
 .. container:: centeralign
 
@@ -166,9 +157,8 @@ Each amplifier is connected as a follower with gain setting resistors. Provision
 
 Solder jumpers SJ4 and SJ6 are used to bias the feedback netork resistors to either he +2.5 V (mid-rail) supply or GND.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-buffer-s2-bw-sch.png
-   :align: center
-   :width: 400px
+
+|image10|
 
 .. container:: centeralign
 
@@ -177,18 +167,16 @@ Solder jumpers SJ4 and SJ6 are used to bias the feedback netork resistors to eit
 
 The amplifier negative supply pins are connected to the GND2 node which will be connected to GND if the board is connected directly to the M1K. If the board is plugged in to the minus 5 volt supply generator board (see section on that board) the GND2 node will be connected to -5 V.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-buffermod-s2-top.png
-   :align: center
-   :width: 320px
+
+
+|image11|
 
 .. container:: centeralign
 
    Single Op-amp Input Buffer Circuit PCB Top artwork
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/buffer-board-s2.png
-   :align: center
-   :width: 375px
+   |image12|
 
 .. container:: centeralign
 
@@ -206,27 +194,22 @@ The board layout provides both 8 DIP and 8 pin SOIC footprints (connected in par
 
 The negative output supply voltage is available on pin 4 of the ANALOG2 8 pin female connector. Jumper SJ2 should be left open if the board (ALM1000 8 pin male connector) is to be connected directly to the ALM1000. Provision is made to have the circuit optionally produce a “doubled” +8.8 V output by installing diodes (preferably Schottky diodes) D1 and D2 and capacitor C3. Solder jumper SJ5 is used to connect the input side of diode D2 to either the +5 V supply rail to produce approximately 2 X +5V minus the two diode drops or to connect D2 to the +2.5 V supply to produce approximately 2.5V + 5V minus the two diode drops. When using the boost option solder jumper SJ4 should be left open. Otherwise to pass the +5 V input supply to the ANALOG2 connector SJ4 can be shorted.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-minus-5-generator-bw-sch.png
-   :align: center
-   :width: 550px
+
+|image13|
 
 .. container:: centeralign
 
    Negative 5 Volt supply generator Circuit Schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-minus-5-generator-top.png
-   :align: center
-   :width: 300px
+   |image14|
 
 .. container:: centeralign
 
    Negative 5 Volt supply generator Circuit PCB Top artwork
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/minus-5-generator-2.png
-   :align: center
-   :width: 300px
+   |image15|
 
 .. container:: centeralign
 
@@ -238,18 +221,15 @@ Quad op-amp AWG Buffer board
 
 The AWG buffer board uses a quad op-amp (OP484) in a DIP package to produce larger output swings from the m1k AWG output channels. Output range is determined by the power supply voltages and the resistor values chosen. Two of the amplifiers buffer the AWG outputs. The other two amplifiers can be used to buffer the analog input channels and can be configured as difference amplifiers. Input range is also determined by the power supply voltages and the resistor values chosen.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/awg_buffer-schematic-1.png
-   :align: center
-   :width: 800px
+
+|image16|
 
 .. container:: centeralign
 
    Quad op-amp AWG Buffer board schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/awg_buffer-1.png
-   :align: center
-   :width: 300px
+   |image17|
 
 .. container:: centeralign
 
@@ -258,9 +238,9 @@ The AWG buffer board uses a quad op-amp (OP484) in a DIP package to produce larg
 
 The AWG buffer board, for example, can be soldered to the -5V generator board to provide nearly +/ 5V output swings from the board.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/awg-buffer-5v.png
-   :align: center
-   :width: 300px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -279,9 +259,7 @@ BNC / Scope Adapter Board
    BNC / Scope Adapter Board Schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-scope-probe-top.png
-   :align: center
-   :width: 300px
+   |image19|
 
 .. container:: centeralign
 
@@ -290,9 +268,9 @@ BNC / Scope Adapter Board
 
 The following photo shows the BNC Scope Probe adapter soldered to a dual op-amp input buffer board to connect a pair of 10X passive probes to the m1k. With this combination the input range is extended to greater than +/- 20 V. Input impedance is 10 Meg ohms in parallel with the probe capacitance which is about 25 pF.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/scope-probe-adapter-1.png
-   :align: center
-   :width: 600px
+
+
+|image20|
 
 .. container:: centeralign
 
@@ -304,9 +282,8 @@ Extender Boards
 
 There are three extender boards. The first is a simple test point / break-out board that provides a second header connector to be added on the input and output side of the board. There are solder jumpers that allow any of the output side pins to be disconnected / separated from the input side pins. The second board is like the first but the solder jumper are replaced by a 8 position DIP switch.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/test-points_dip-switch.png
-   :align: center
-   :width: 200px
+
+|image21|
 
 .. container:: centeralign
 
@@ -315,9 +292,9 @@ There are three extender boards. The first is a simple test point / break-out bo
 
 The third board is a right angle extender that has two output ports one on the right and left sides of the board. There are solder jumpers that allow each of the 8 input side pins to be optionally connected to the right and left output port pins. This allows, for example, the channel inputs (AIN,BIN) to be routed to the right port while the outputs (CHA,CHB) are routed to the left port. This can improve the input to output isolation.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/right-angle-1.png
-   :align: center
-   :width: 200px
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -333,27 +310,22 @@ This analog multiplexer input board is centered around a CD4052 (or 74HC4052) du
 
 Referring to the schematic figure, the 8 pin right angle male header named ALM1000 mates with the 8 pin female connector on M1K. The three pin header named CTRL (can be either male or female) is generally connected to three of the digital I/O connector pins on M1K (such as PIO 0-2). The 8 pin right angle female header named ANALOG2 replicates the 8 pin female connector on M1K as a pass through port. The AIN and BIN pins have optional series solder jumpers (SJ1,2) to interrupt those lines. The 8 pin right angle female header named MUXIN provides connection point for the 8 multiplexer inputs. When :doc:`Using Analog Mux in ALICE </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>` BIN will be hard wired to the Y half of the Mux and solder jumper SJ1 left open. The X half will not be used and the X output of the Mux is not connected to AIN, solder jumper SJ3 left open and SJ2 shorted.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/analog-mux-bw-sch.png
-   :align: center
-   :width: 550px
+
+|image23|
 
 .. container:: centeralign
 
    CD4952 Analog Mux Circuit Schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-analog-mux-4052-top.png
-   :align: center
-   :width: 350px
+   |image24|
 
 .. container:: centeralign
 
    CD4052 Analog Mux Circuit PCB Top artwork
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/analog-mux-2.png
-   :align: center
-   :width: 300px
+   |image25|
 
 .. container:: centeralign
 
@@ -367,9 +339,8 @@ LTC1043 Analog Input Multiplexer Board
 
 The wiring connections to the LTC1043 quad switch block are relatively simple and can be often built on the Solder-less breadboard along with the rest of the experiment circuitry. However, this might not always be a workable solution so a small PCB adapter has been designed.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice-ltc1043-analog-mux-fig8.png
-   :align: center
-   :width: 275px
+
+|image26|
 
 .. container:: centeralign
 
@@ -380,9 +351,8 @@ On the right there are 8 pins where a right angle male header is installed to co
 
 There is a solder jumper, SJ1, in series with the CH-A AWG output pin between the right angle connector to the M1k and the female header. Leave this jumper open and connect the second from the top pin on the female header to digital I/O pin 0 when using the board in the Alternate Sweep configurations. To use the board in the Chop Sweep configuration, short the jumper.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice-ltc1043-analog-mux-fig10.png
-   :align: center
-   :width: 375px
+
+|image27|
 
 .. container:: centeralign
 
@@ -398,18 +368,15 @@ Jumper JP3 connects the FORCE- pin to either GND or the +2.5V fixed rail. A 10 O
 
 More information on measuring very small resistances :ez:`Part I <adieducation/university-program/b/blogs/posts/measure-very-small-resistances-by-building-your-own-milliohm-meter>` and :ez:`Part II <adieducation/university-program/b/blogs/posts/measuring-very-small-resistances-with-adalm1000-part-2>` can further explain how this board can be used.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/miliohmmeter-bw-sch.png
-   :align: center
-   :width: 550px
+
+|image28|
 
 .. container:: centeralign
 
    Milli Ohm / Amp Meter Circuit Schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/miliohmmeter-top.png
-   :align: center
-   :width: 300px
+   |image29|
 
 .. container:: centeralign
 
@@ -418,18 +385,16 @@ More information on measuring very small resistances :ez:`Part I <adieducation/u
 
 The board in the top of the photo below the board can be used as a four wire milli ohm meter or as an amp meter with an external shunt. The board on the bottom of the photo has had a low value (0.5 ohm in this case) surface mount shunt resistor soldered on the board across the S+ and S- pins.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/mili-ohm-amp-meter-2.png
-   :align: center
-   :width: 300px
+
+
+|image30|
 
 .. container:: centeralign
 
    Board Configurations
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/external-shunt-1.png
-   :align: center
-   :width: 300px
+   |image31|
 
 .. container:: centeralign
 
@@ -445,9 +410,8 @@ On the input port side the dual op-amp input buffer board (using an SMD AD8542) 
 
 On the output port side the -5V supply generator with an LT1054 is soldered to the quad op-amp AWG buffer board using a OP484. The outputs are scaled and offset to produce +/- 5V signal swings on the outputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm1000/chain-exp-1.png
-   :align: center
-   :width: 600px
+
+|image32|
 
 .. container:: centeralign
 
@@ -474,3 +438,67 @@ On the output port side the -5V supply generator with an LT1054 is soldered to t
    :width: 120px
 .. |right-angle-1.png| image:: https://wiki.analog.com/_media/university/tools/adalm1000/right-angle-1.png
    :width: 120px
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-divider-bw-sch.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-input-divider-top.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-divider-2.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/adalm1000/pot-input-divider-sch.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-pot-divider-top.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/adalm1000/pot-input-divider-3.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-buffer-d1-bw-sch.png
+   :width: 550px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-buffermod-d1-top.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-buffer-d1-dip.png
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/adalm1000/input-buffer-s2-bw-sch.png
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-buffermod-s2-top.png
+   :width: 320px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/adalm1000/buffer-board-s2.png
+   :width: 375px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-minus-5-generator-bw-sch.png
+   :width: 550px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-minus-5-generator-top.png
+   :width: 300px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/adalm1000/minus-5-generator-2.png
+   :width: 300px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/adalm1000/awg_buffer-schematic-1.png
+   :width: 800px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/adalm1000/awg_buffer-1.png
+   :width: 300px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/adalm1000/awg-buffer-5v.png
+   :width: 300px
+.. |image19| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-scope-probe-top.png
+   :width: 300px
+.. |image20| image:: https://wiki.analog.com/_media/university/tools/adalm1000/scope-probe-adapter-1.png
+   :width: 600px
+.. |image21| image:: https://wiki.analog.com/_media/university/tools/adalm1000/test-points_dip-switch.png
+   :width: 200px
+.. |image22| image:: https://wiki.analog.com/_media/university/tools/adalm1000/right-angle-1.png
+   :width: 200px
+.. |image23| image:: https://wiki.analog.com/_media/university/tools/adalm1000/analog-mux-bw-sch.png
+   :width: 550px
+.. |image24| image:: https://wiki.analog.com/_media/university/tools/adalm1000/m1k-analog-mux-4052-top.png
+   :width: 350px
+.. |image25| image:: https://wiki.analog.com/_media/university/tools/adalm1000/analog-mux-2.png
+   :width: 300px
+.. |image26| image:: https://wiki.analog.com/_media/university/tools/m1k/alice-ltc1043-analog-mux-fig8.png
+   :width: 275px
+.. |image27| image:: https://wiki.analog.com/_media/university/tools/m1k/alice-ltc1043-analog-mux-fig10.png
+   :width: 375px
+.. |image28| image:: https://wiki.analog.com/_media/university/tools/adalm1000/miliohmmeter-bw-sch.png
+   :width: 550px
+.. |image29| image:: https://wiki.analog.com/_media/university/tools/adalm1000/miliohmmeter-top.png
+   :width: 300px
+.. |image30| image:: https://wiki.analog.com/_media/university/tools/adalm1000/mili-ohm-amp-meter-2.png
+   :width: 300px
+.. |image31| image:: https://wiki.analog.com/_media/university/tools/adalm1000/external-shunt-1.png
+   :width: 300px
+.. |image32| image:: https://wiki.analog.com/_media/university/tools/adalm1000/chain-exp-1.png
+   :width: 600px

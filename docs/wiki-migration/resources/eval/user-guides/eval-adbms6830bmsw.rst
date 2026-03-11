@@ -125,8 +125,9 @@ Resistors Connection
 
 -  Carefully connect 16 100 Ω resistors into the screw-terminal block between each CPIN input clamping contact from position 1 to position 17, EVAL-ADBMS6830BMSW J1 pinout, and the resistor divider string.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/figure_3.png
+   :align: center
+   :width: 150px
 
 -  Provide a stack equivalent power supply connection to position 17 (positive) and position 1 (negative).
 -  Adjust power supply to provide the desired nominal cell voltage (for example, 52.8 V will be 3.3 V per cell).
@@ -325,5 +326,3 @@ For questions and more information, please visit the Analog Devices Engineer Zon
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/picture_1.png
    :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adbms6830bmsw/figure_3.png
-   :width: 150px

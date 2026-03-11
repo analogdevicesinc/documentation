@@ -25,9 +25,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1. The channel A generator CA-V output drives one end of resistor R\ :sub:`1`. Resistor R\ :sub:`2` is connected between the base and collector of transistor Q\ :sub:`1` with the other end of resistor R\ :sub:`1` connected to the base as well. The emitter of Q\ :sub:`1`\ is grounded.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -69,9 +68,8 @@ Directions:
 
 The breadboard connections are as shown in figure 2. The output of the channel A generator drives one end of resistor R\ :sub:`1`. The emitter of Q\ :sub:`1` is connected to ground. The base and collector of Q\ :sub:`1` are connected to the emitter of Q\ :sub:`2`. The base and collector of Q\ :sub:`2`\ are connected to the other end of R\ :sub:`1` and to the scope channel B, CB-H.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -103,9 +101,8 @@ Directions:
 
 The breadboard connections are as shown in figure 3. The output of the channel A generator drives one end of resistor R\ :sub:`1`. The emitter of Q\ :sub:`1` is connected to ground. Resistor R\ :sub:`3` is connected between the base of Q\ :sub:`1` and ground. One end of resistor R\ :sub:`2` connected to the other end of R\ :sub:`1` and to the 2- input of scope channel 2 and one end and the wiper of potentiometer R\ :sub:`4`. The opposite end of R\ :sub:`2` is connected to the base of Q\ :sub:`1`. The collector of Q\ :sub:`2` is connected to the remaining end of R\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -139,9 +136,8 @@ Directions:
 
 The breadboard connections are as shown in figure 4. Version 3 is made from version 2 by removing 10 KΩ resistor R\ :sub:`2` and replacing it with diode connected NPN Q\ :sub:`2` as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -168,3 +164,12 @@ How would you modify the values of R\ :sub:`2` and R\ :sub:`4` in version 2 ( fi
 **For Further Reading:**
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab7_f4.png
+   :width: 600px

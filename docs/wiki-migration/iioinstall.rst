@@ -7,17 +7,17 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
 **Windows Installation**
 
--  **Install the** :git-plutosdr-m2k-drivers-win:`PlutoSDR driver <releases>`. Download the latest PlutoSDR-M2k-USB-Drivers.exe file.
--  **Install the** :git-libiio:`libiio <releases/latest>` **Library**. Download the latest libiio-xxxxx-windows-setup.exe file.
--  **Install** :git-iio-oscilloscope:`IIO-Scope <releases>`. Download the latest adi-osc-setup.exe file.
+-  **Install the** `PlutoSDR driver <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`_. Download the latest PlutoSDR-M2k-USB-Drivers.exe file.
+-  **Install the** `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`_ **Library**. Download the latest libiio-xxxxx-windows-setup.exe file.
+-  **Install** `IIO-Scope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_. Download the latest adi-osc-setup.exe file.
 -  \*\* GNU Radio Installation (optional) \*\*
 
    -  Download the most recent "radioconda-Windows-x86_64.exe" Radioconda install package here: https://github.com/ryanvolz/radioconda
    -  Update Radioconda to the latest version of PYADI-IIO
 
       -  Delete Radioconda's "adi" folder in radioconda/lib/site-packages
-      -  Git clone :git-pyadi-iio>`__ (using a program like "Tortoise GIT")
-      -  Copy the "adi" folder in that cloned PYADI-IIO repo to radioconda:`pyadi-iio <lib/site-packages
+      -  Git clone :git-pyadi-iio:`pyadi-iio` (using a program like "Tortoise GIT")
+      -  Copy the "adi" folder in that cloned PYADI-IIO repo to radioconda/lib/site-packages
 
    -  Test the GNU Radio Installation
 
@@ -33,15 +33,15 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
 **Linux (Ubuntu 24 was used)**
 
--  \*\* Install `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`:\*\*
+-  \*\* Install `libiio <https://github.com/analogdevicesinc/libiio/releases/latest>`_:\*\*
 
-   -  Pick your Linux distribution from the list :git-libiio:`here <releases/latest>`.
+   -  Pick your Linux distribution from the list `here <https://github.com/analogdevicesinc/libiio/releases/latest>`_.
    -  Or install from source
 
-      -  :git-libiio:`README_BUILD`.md
+      -  :git-libiio:`README_BUILD.md`
       -  But change the git clone line to:
 
-         -  git clone https://github.com/analogdevicesinc/libiio.git --branch libiio-v0
+         -  git clone :git-libiio:`libiio` --branch libiio-v0
          -  libiio-v0 is always the latest, stable, branch. This command as of (Sept 2024) will install libiio v0.25
          -  If you run into any errors with install, try repeating that command with sudo
 
@@ -49,11 +49,11 @@ Sometimes it can be difficult to navigate all of the documentation to install th
 
    -  https://analogdevicesinc.github.io/pyadi-iio/guides/quick.html
 
--  **libad9361-iio library** : You will need the https://github.com/analogdevicesinc/libad9361-iio library.
+-  **libad9361-iio library** : You will need the :git-libad9361-iio:`libad9361-iio` library.
 
    -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
--  **IIO-Scope:** Linux users will need to build from `source <https://github.com/analogdevicesinc/iio-oscilloscope>`_. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+-  **IIO-Scope:** Linux users will need to build from :git-iio-oscilloscope:`source <iio-oscilloscope>`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
 -  **Install GNU Radio** (optional): https://wiki.gnuradio.org/index.php/UbuntuInstall
 
 --------------

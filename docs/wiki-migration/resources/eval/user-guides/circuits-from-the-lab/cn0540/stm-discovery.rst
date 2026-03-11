@@ -40,26 +40,31 @@ Porting the EVAL-CN0540-ARDZ MBED Example program to DISCO-F746NG Board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  The first step in interfacing the EVAL-CN0540-ARDZ to DISCO-F746NG board is importing the EVAL-CN0540-ARDZ into your online compiler. Refer to this link for the instructions: `Importing the EVAL-CN0540-ARDZ MBED Example program <https://wiki.analog.com/[[/resources/eval/user-guides/circuits-from-the-lab/cn0540/sdp-k1>`_
--  Then click the "Platform Selection" section of your online IDE.\
+-  Then click the "Platform Selection" section of your online IDE.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm1.png
+   :align: center
 
--  After that, select the "Add Board" option.\
+-  After that, select the "Add Board" option.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm2.png
+   :align: center
 
--  Then, search for the DISCO-F746NG board on the available platforms.\
+-  Then, search for the DISCO-F746NG board on the available platforms.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm3.png
+   :align: center
 
--  Next is to add the DISCO-F746NG board to your online compiler.\
+-  Next is to add the DISCO-F746NG board to your online compiler.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm4.png
+   :align: center
 
 -  After that, the DISCO-F746NG board will be available to your available platforms.
--  Then select it and recompile the code.\
+-  Then select it and recompile the code.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm5.png
+   :align: center
 
 -  The extracted binary can be loaded to the DISCO-F746NG board by dragging and dropping the binary file to the DISCO-F746NG directory.
 
@@ -72,12 +77,13 @@ Following are the steps then required to be completed to set up the :adi:`EVAL-C
 
 -  Download the `ST-LINK/V2 driver <https://os.mbed.com/teams/ST/wiki/ST-Link-Driver>`_ and run the .exe file. Follow the instructions on the window that appears to install the drives. **(Note: This requires a free account for my.st.com)**
 
-
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/f746gdisco_download.png
+   :align: center
 
 -  Plug the USB cables from the PC into the **32F746G Discovery board**. If installation was successful a new device named DIS_F746NG should appear under 'This PC' in Windows File Explorer.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_f746gdiscopc.png
+   :align: center
 
 -  Download the AD7768_demo.bin firmware.
 -  Copy and paste or drag and drop the AD7768_demo.bin file into the DIS_F746NG device/folder. This will load the firmware onto the board.
@@ -91,7 +97,7 @@ Designing User Interface using the 32F746NG Discovery board
 One of the major features of the 32F746G Discovery board is the on-board touchscreen, which can be used by the CN0540 board. User can design their own User Interface (UI) by by adding the `DISCOF746NG Board Support Package (BSP) <https://os.mbed.com/teams/ST/code/BSP_DISCO_F746NG/#85dbcff443aa>`_. Using the DISCOF746NG BSP custom UI can be done as shown in the images below.
 
 
-|image9|
+|image2|
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_gui_data.png
    :align: center
@@ -105,12 +111,5 @@ One of the major features of the 32F746G Discovery board is the on-board touchsc
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_f746gdisco.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm1.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm2.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm3.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm4.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_stm5.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/f746gdisco_download.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_f746gdiscopc.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_gui_menu.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cn0540_gui_menu.png
    :width: 600px

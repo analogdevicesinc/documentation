@@ -5,17 +5,17 @@ Building the PlutoSDR or M2k Firmware Image involves several components managed 
 
 Firmware image components (Submodules):
 
--  :git-linux>`__
--  `FPGA HDL <https::`Linux Kernel </github.com/analogdevicesinc/hdl>`
--  :git-buildroot>`__
--  `u-boot Bootloader <https::`Buildroot User Space </github.com/analogdevicesinc/u-boot-xlnx/tree/pluto>`
+-  :git-linux:`Linux Kernel <linux>`
+-  :git-hdl:`FPGA HDL <hdl>`
+-  :git-buildroot:`Buildroot User Space <buildroot>`
+-  :git-u-boot-xlnx:`u-boot Bootloader <tree/pluto>`
 
 Submodules allow you to keep a Git repository as a subdirectory of another, the main Git repository.
 
 The main repositories can be found here:
 
--  :git-plutosdr-fw>`__
--  `M2k-fw <https::`PlutoSDR-fw </github.com/analogdevicesinc/m2k-fw>`
+-  :git-plutosdr-fw:`PlutoSDR-fw <plutosdr-fw>`
+-  :git-m2k-fw:`M2k-fw <m2k-fw>`
 
 Cloning the repository
 ----------------------

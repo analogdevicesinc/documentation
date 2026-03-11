@@ -5,10 +5,10 @@ Migrating Stack to Linux/QNX
 
 This document is a comprehensive guide for migrating stack from ADI_A2B_Software-Rel19.X.Y / ADI_A2B-SSPlus_Software-RelX.Y.Z versions to a Linux/QNX environment. Please follow the steps below.
 
--  Copy the “a2bstack” folder from the following Windows directory: C:\\Analog Devices\\ADI_A2B-SSPlus_Software-RelX.Y.Z\\Target Or C:\\Analog Devices\\ADI_A2B_Software-Rel19.X.Y\\Target.\
+-  Copy the “a2bstack” folder from the following Windows directory: C:\\Analog Devices\\ADI_A2B-SSPlus_Software-RelX.Y.Z\\Target Or C:\\Analog Devices\\ADI_A2B_Software-Rel19.X.Y\\Target.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2b_stack.png
+   :align: center
 
 -  Copy the a2bapp.c and a2bapp.h files from the following Windows directory “C:\\Analog Devices\\ADI_A2B-SSPlus_Software-RelX.Y.Z\\Target\\examples\\demo\\app-plugin” or C:\\Analog Devices\\ADI_A2B_Software-Rel19.X.Y\\Target\\ examples\\demo\\app-plugin.
 -  Transfer the copied “a2bstack” folder, a2bapp.c and a2bapp.h files to the Linux/QNX machine.
@@ -19,11 +19,8 @@ This document is a comprehensive guide for migrating stack from ADI_A2B_Software
    Compare this a2bapp.c and a2bapp.h files with your current version in Linux/QNX distribution and merge your project-specific application file modifications to this version.
 
 
-\
-
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2b_stack_linux_folder.png
+   :align: center
 
 -  Refer to the user guide's Linux/QNX application compile section, which explains how to compile the application.
 
@@ -31,6 +28,3 @@ This document is a comprehensive guide for migrating stack from ADI_A2B_Software
 
    This document assumes that no modifications have been made under the "a2bstack" folder. If any modifications have been made, it is necessary to merge those changes accordingly.
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2b_stack.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2b_stack_linux_folder.png

@@ -15,7 +15,7 @@ A Practical Use Case
 
 One great use case to illustrate the benefits of device tree overlays is utilizing ADI's Kuiper Linux distribution to evaluate hardware with a Raspberry PI.   The Kuiper Linux kernel comes pre-installed with all of ADI's Linux device drivers pre-loaded.   This is a great feature, and time saver for customers, as rebuilding a Linux kernel can be cumbersome and problematic.  However, since most (if not all) of our devices sit on non-enumerable buses (I2C, SPI, etc), a device tree entry must exist for the devices present.  This is where overlays come in.  An overlay for each device can be created, allowing customers to mix and match which overlays are included at boot to support their hardware.  Similarly, if a device parameter needs to be modified, a new overlay for that device can simply be created, versus a full device tree modification.   This can also facilitate testing multiple device configurations easily.
 
-A listing of the overlays that come pre-included with Kuiper Linux can be found here: :git-linux:`tree/rpi-6`.1.y/arch/arm/boot/dts/overlays
+A listing of the overlays that come pre-included with Kuiper Linux can be found here: https://github.com/analogdevicesinc/linux/tree/rpi-6.1.y/arch/arm/boot/dts/overlays
 
 Overlay Format
 --------------

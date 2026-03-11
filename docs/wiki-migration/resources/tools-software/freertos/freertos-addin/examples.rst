@@ -14,7 +14,7 @@ The Analog Devices FreeRTOS product supports a couple of reference development b
 
 Below is a list of the hardware involved.
 
-\*\* ADI reference board: **\* ADSP-BF707 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-bf707.html\ **\* ADZS-21569 EZ-kit:** :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADZS-21569-EZKIT`.html\ **\* ADSP-SC589 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589.html\ **\* ADSP-SC584 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584.html\ **\* ADSP-SC573 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT.html Jtag debugger:**
+\*\* ADI reference board: **\* ADSP-BF707 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-bf707.html\ **\* ADZS-21569 EZ-kit:** :adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADZS-21569-EZKIT.html` **\* ADSP-SC589 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589.html\ **\* ADSP-SC584 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584.html\ **\* ADSP-SC573 EZ-kit:** http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT.html Jtag debugger:**
 
 -  ICE1000/2000: http://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html
 
@@ -32,27 +32,27 @@ A mainstream configuration of Windows PC is required. Verify that your PC has th
 Get the Source Code Ready
 -------------------------
 
-You can get examples for FreeRTOS (with and without the Add-In) from `freertos-examples <https://github.com/analogdevicesinc/freertos-examples>`_
+You can get examples for FreeRTOS (with and without the Add-In) from :git-freertos-examples:`freertos-examples`
 
 --------------
 
 References & External Links
 ---------------------------
 
-::
 
-   ; ** Processor Hardware Reference **
-   : [[:adi:`en/products/adsp-bf707`.html#product-documentation|ADSP-BF707 Hardware Reference Manual]]
-   : [[:adi:`en/products/adsp-21569`.html#product-documentation|ADSP-21569 Hardware Reference Manual]]
-   : [[:adi:`en/products/adsp-sc573`.html#product-documentation|ADSP-SC573 Hardware Reference Manual]]
-   : [[:adi:`en/products/adsp-sc584`.html#product-documentation|ADSP-SC584 Hardware Reference Manual]]
-   : [[:adi:`en/products/adsp-sc589`.html#product-documentation|ADSP-SC589 Hardware Reference Manual]]
-   ; ** Evaluation Kits Schematic **
-   :[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-bf707`.html#eb-documentation|ADSP-BF707 EZ-Kit Schematic]]
-   :[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADZS-21569-EZKIT`.html#eb-documentation|ADSP-21569 EZ-Kit Schematic]]
-   :[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT`.html#eb-documentation|ADSP-SC573 EZ-Kit Schematic]]
-   :[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584`.html#eb-documentation|ADSP-SC584 EZ-Kit Schematic]]
-   :[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589`.html#eb-documentation|ADSP-SC589 EZ-Kit Schematic]]
-   ; ** FreeRTOS Manual **
-   :[[https://www.freertos.org/Documentation/RTOS_book.html|FreeROS Documentation]]
-   :[[https://www.freertos.org/a00102.html|FreeRTOS Demo Applications]]
+
+; ** Processor Hardware Reference **
+: :adi:`ADSP-BF707 Hardware Reference Manual <en/products/adsp-bf707.html#product-documentation>`
+: :adi:`ADSP-21569 Hardware Reference Manual <en/products/adsp-21569.html#product-documentation>`
+: :adi:`ADSP-SC573 Hardware Reference Manual <en/products/adsp-sc573.html#product-documentation>`
+: :adi:`ADSP-SC584 Hardware Reference Manual <en/products/adsp-sc584.html#product-documentation>`
+: :adi:`ADSP-SC589 Hardware Reference Manual <en/products/adsp-sc589.html#product-documentation>`
+; ** Evaluation Kits Schematic **
+::adi:`ADSP-BF707 EZ-Kit Schematic <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-bf707.html#eb-documentation>`
+::adi:`ADSP-21569 EZ-Kit Schematic <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADZS-21569-EZKIT.html#eb-documentation>`
+::adi:`ADSP-SC573 EZ-Kit Schematic <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT.html#eb-documentation>`
+::adi:`ADSP-SC584 EZ-Kit Schematic <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584.html#eb-documentation>`
+::adi:`ADSP-SC589 EZ-Kit Schematic <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589.html#eb-documentation>`
+; ** FreeRTOS Manual **
+:`FreeROS Documentation <https://www.freertos.org/Documentation/RTOS_book.html>`_
+:`FreeRTOS Demo Applications <https://www.freertos.org/a00102.html>`_

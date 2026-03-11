@@ -42,14 +42,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_image_1.png
+   :alt: lab_11_image_1.png
+   :align: center
+   :width: 800px
 
-|lab_11_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard. Note that this circuit has been added to the CE amplifier breadboard from the "Class A NPN Common-Emitter Amplifier" lab.
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard. Note that this circuit has been added to the CE amplifier breadboard from the "Class A NPN Common-Emitter Amplifier" lab.\
-
-|lab_11_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_assembly_image_1.png
+   :alt: lab_11_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -62,13 +67,19 @@ Procedure
 -  Remove the input signal and measure the DC bias voltages at the base, emitter, and collector, and verify that these are at their designed levels, allowing for resistor tolerances
 -  Calculate the voltage gain, power gain, and efficiency of this amplifier; compare the power dissipation of this circuit with that of the CE amplifier in the "Class A NPN Common-Emitter Amplifier" lab
 -  Set up Channel A source waveform for a 500 Hz “Sine” output that swings between 2.43 V and 2.57 V
--  Remove the AC-coupling capacitor and bias resistors from the amplifier input and connect it to the output of the CE amplifier from the "Class A NPN Common-Emitter Amplifier" lab as shown in the schematic. Note the change in the emitter-follower bias point\
+-  Remove the AC-coupling capacitor and bias resistors from the amplifier input and connect it to the output of the CE amplifier from the "Class A NPN Common-Emitter Amplifier" lab as shown in the schematic. Note the change in the emitter-follower bias point
 
-|lab_11_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_image_2.png
+   :alt: lab_11_image_2.png
+   :align: center
+   :width: 800px
 
--  Refer to the illustration below for one way to interconnect the two amplifiers on the solderless breadboard\
+-  Refer to the illustration below for one way to interconnect the two amplifiers on the solderless breadboard
 
-|lab_11_assembly_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_assembly_image_2.png
+   :alt: lab_11_assembly_image_2.png
+   :align: center
+   :width: 1000px
 
 -  Verify that the voltage across the 47 Ω load resistor is swinging +/- 0.5V about the 2.5 V bias voltage
 -  Calculate the rms power dissipation in the load resistor
@@ -93,7 +104,7 @@ The input resistance looking into the base of the transistor used in the emitter
 
 Using β = 200 from the Introduction to Transistors lab, and substituting numbers from this lab, we have
 
-:math:`\displaystyle R_{i,base} = 200\frac{26 mV}{{25 mA}} + (1 + 200)({68 Ω}||{47 Ω}) ≈ 208 Ω + 11.5 KΩ ≈ 5.6 KΩ`
+:math:`\displaystyle R_{i,base} = 200\frac{26 mV}|25 mA| + (1 + 200)({68 Ω}||{47 Ω}) ≈ 208 Ω + 11.5 KΩ ≈ 5.6 KΩ`
 
 When we use the voltage divider to provide base bias, we need to include the resistors in the divider in parallel with the input resistance looking into the base, so the total input resistance R\ :sub:`i`\ is
 
@@ -155,7 +166,7 @@ It is important to note that the voltage divider losses between the emitter-foll
 
 We can calculate the power gain of the two cascaded amplifiers with the 47 Ω load using the results obtained in the "Class A NPN Common-Emitter Amplifier" lab. The voltage gain is essentially the same as it was for the CE amplifier because the voltage gain of the emitter-follower amplifier is very close to unity and the input resistance of the CE is unchanged. The power gain is therefore
 
-:math:`\displaystyle A_P = A_V^2\frac{R_i}{{R_L}} = (-5.1)^2\frac{1.2 KΩ}{{47 Ω}} ≈ 664`
+:math:`\displaystyle A_P = A_V^2\frac{R_i}|R_L| = (-5.1)^2\frac{1.2 KΩ}|47 Ω| ≈ 664`
 
 :math:`A_P(dB) = 10log_10(664) ≈ 28 dB`
 
@@ -172,11 +183,6 @@ Observations and Conclusions
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
 
-.. |lab_11_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_image_1.png
-   :width: 800px
-.. |lab_11_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_assembly_image_1.png
-   :width: 1000px
-.. |lab_11_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_image_2.png
-   :width: 800px
-.. |lab_11_assembly_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_11_assembly_image_2.png
-   :width: 1000px
+.. |25 mA| image:: https://wiki.analog.com/_media/25 mA
+.. |47 Ω| image:: https://wiki.analog.com/_media/47 Ω
+.. |R_L| image:: https://wiki.analog.com/_media/R_L

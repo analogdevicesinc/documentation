@@ -22,9 +22,8 @@ Analog to Digital converters are typically made up of two sections. The first se
 
 Regardless of the circuit details or type of THA in question, all such devices have four major components. The input buffer amplifier, switching circuit, energy storage device (capacitor), and output buffer are common to all THAs. The basic idea of a simple track-and-hold circuit is shown below:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -38,9 +37,8 @@ Materials:
 
 ADALM1000 hardware module LTC1043 Switched Capacitor Building Block OP484 Quad Rail-Rail Op-amp AD8542 Dual CMOS Op-amp C\ :sub:`H` 4.7 nF capacitor (472) C\ :sub:`H` 100 pF capacitor (101) C\ :sub:`H` 39 pF capacitor (39) Cosc 4.7 nF capacitor (472)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -49,9 +47,9 @@ ADALM1000 hardware module LTC1043 Switched Capacitor Building Block OP484 Quad R
 
 With Sine wave AWG channel A set to 250 Hz with Max value set to 4.6 and Min value set to 0.2, use a 10 nF capacitor for C\ :sub:`H` and a 4.7 nF capacitor for C\ :sub:`OSC`. You should see an output waveform on channel B that looks something like what is shown in figure 3. The 4.7 nF C\ :sub:`OSC` capacitor slows down the internal oscillator in the LTC1043 to about 1.5 KHz (see notes on adjusting the frequency at the end of this document).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-3.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -77,9 +75,8 @@ For the second measurement:
 
 Both results are within the OP484 input bias current specification which is 60 nA typical and 450 nA maximum.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -90,9 +87,8 @@ The OP484 is not a low input bias current amplifier and we could use a much larg
 
 To measure how this difference will affect the droop rate, switch out the OP484 amplifiers with the AD8542 as shown in figure 5. If you don't have the AD8542 dual you can use a AD8541 single for the second amplifier in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -101,9 +97,9 @@ To measure how this difference will affect the droop rate, switch out the OP484 
 
 Repeat the droop measurements using a 39 pF capacitor for C\ :sub:`H` to start with. As before, capture the channel A S/H input waveform and the THA output waveform on channel B. Now change C\ :sub:`H` to a 100 pF capacitor. The droop rate should now be as much as 1000 times lower to the point of being basically not measurable as can be seen in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-6.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -117,9 +113,8 @@ Testing Pedestal Error:
 
 There are certain parasitic capacitances associated with an analog switch as depicted in figure 7. Capacitor C\ :sub:`Q` is of interest when designing a THA because it acts to couple some of the switch control signal to the switch output. A step in the control voltage of as much as the supply voltage appears on C\ :sub:`Q` when the switch turns off. The change in the voltage across C\ :sub:`Q` causes a small amount of charge to flow onto C\ :sub:`LOAD` in figure 7 which is the hold capacitor C\ :sub:`H` in our case. Hopefully, C\ :sub:`Q` is much smaller than C\ :sub:`H`. The charge that is injected onto the hold capacitor causes a step in the output voltage. This unwanted step is called pedestal error.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -128,9 +123,9 @@ There are certain parasitic capacitances associated with an analog switch as dep
 
 The LTC1043 contains 4 single pole double throw (SPDT) switches to select from to build our THA. In figure 8 we show the pinout for one of the SPDT switches. The center pole is pin 3 and the normally close switch direction (closed when pin 16 is low) is on pin 18 with the normally open switch direction (closed when pin 16 is high) on pin 15. We can connect the switch in four possible ways.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-8.png
-   :align: center
-   :width: 300px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -141,9 +136,8 @@ The LTC1043 contains 4 single pole double throw (SPDT) switches to select from t
 
 A few comments on building the breadboard for these circuits, in general you should avoid using the long flexible jumper wires supplied in the ADALP2000 Analog Parts Kit as much as possible. It is better to use the short "staple" like jumpers from wire kits like the one shown in figure 9. Neatness and careful arrangement of the components on the breadboard are key to obtaining accurate results.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-jumper-wire-kit.png
-   :align: center
-   :width: 300px
+
+|image9|
 
 .. container:: centeralign
 
@@ -154,9 +148,8 @@ The hold capacitor node is a very high impedance node when in the Hold mode and 
 
 We can choose to drive any of the three pins from the first buffer amplifier stage. We can then choose to connect the hold capacitor to other end of the switch. Based on what we know from the example in figure 7, the logical assumption would be that the parasitic capacitance would be larger on pin 3 and that would be the best choice for the driven node with the hold cap connected to either pin 18 (pin 16 low for Hold mode) or pin 15 (pin 16 high for Hold mode). Figure 10 is a screen shot for this arrangement with 39 pF and 100 pF C\ :sub:`H`. The pedestal error for 39 pF is 8 mV and 5 mV for 100 pF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -165,9 +158,9 @@ We can choose to drive any of the three pins from the first buffer amplifier sta
 
 In figure 11 we have interchanged the two pins and the first buffer amplifier now drive pin 18 with C\ :sub:`H` on pin 3 for both 39 pF and 100 pF. The pedestal error for 39 pF is -100 mV and -58 mV for 100 pF or about a factor of 10 times worse. Clearly the charge injection from the parasitic capacitance is much large now. Also note that the pedestal error step is now negative which means the injected charge is in the opposite direction.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -176,9 +169,9 @@ In figure 11 we have interchanged the two pins and the first buffer amplifier no
 
 Now let's check the normally open switch on pin 15. In the screen shot shown as figure 12 we are back to driving pin 3 but now with C\ :sub:`H` on pin 15. Because the S/H signal is now inverted the triggering was changes to the falling edge. The pedestal error for 39 pF is 61 mV and 36 mV for 100 pF. We should expect results more like figure 10 than figure 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-12.png
-   :align: center
-   :width: 600px
+
+
+|image12|
 
 .. container:: centeralign
 
@@ -187,9 +180,9 @@ Now let's check the normally open switch on pin 15. In the screen shot shown as 
 
 For completeness we need to check the fourth arrangement with the buffer amplifier driving pin 15 and C\ :sub:`H` on pin 3 as shown in the figure 13 screen shot. The pedestal error for 39 pF is -11 mV and -4 mV for 100 pF. The pedestal error is much closer to figure 9 in magnitude but again in the negative direction.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-13.png
-   :align: center
-   :width: 600px
+
+
+|image13|
 
 .. container:: centeralign
 
@@ -203,9 +196,8 @@ Extra Credit: Charge injection cancelation
 
 As an extra credit exercise read through this :adi:`Circuit Design Note <media/en/technical-documentation/application-notes/an-1515.pdf>` on a technique to reduce or cancel the charge injection from the sampling switch. Figure 14 is from the document. The suggested design in the document uses different components. Your task is to implement the same design but using the same AD8542 amplifiers, the LTC1043 as the switches and same size Hold capacitor while using a single +5 V power supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-14.png
-   :align: center
-   :width: 700px
+
+|image14|
 
 .. container:: centeralign
 
@@ -219,9 +211,8 @@ Inverting THA configuration:
 
 A second inverting THA configuration is shown in figure 15. The second amplifier is now configured as an inverting integrator with the Hold capacitor C\ :sub:`H` acting as the integrator capacitor. The DC gain of the stage is set by resistors R\ :sub:`1` and R\ :sub:`2` and they are 1.5 KΩ. Also try using 10 KΩ for R\ :sub:`1` and R\ :sub:`2` and 1 nF for C\ :sub:`H`. How does that change the response of the circuit?
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-15.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -239,9 +230,8 @@ Another alternative would be to use some other signal source. One possible sourc
 
 It is important to note that the ground of the audio connector will likely be shorted to the USB ground that the ALM1000 uses if both are connected to the same computer. So be careful how you connect the ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-16.png
-   :align: center
-   :width: 600px
+
+|image16|
 
 .. container:: centeralign
 
@@ -262,3 +252,36 @@ The Cosc pin can be used with an external capacitor, Cosc, connected from Pin 16
 :adi:`MT-090: Sample-and-Hold Amplifiers <media/en/training-seminars/tutorials/MT-090.pdf>` :adi:`AN270: Applying IC Sample-Hold Amplifiers <media/en/technical-documentation/application-notes/4886613927731859762198006746AN270.pdf>` :adi:`CN0058: Sample-and-Hold Circuit Note <media/en/technical-documentation/application-notes/an-1515.pdf>` :adi:`MT-088: Analog Switches and Multiplexer Basics <media/en/training-seminars/tutorials/MT-088.pdf>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-signals-labs-list>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-8.png
+   :width: 300px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-jumper-wire-kit.png
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-13.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-14.png
+   :width: 700px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-15.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-signals-labs/alm-tha-fig-16.png
+   :width: 600px

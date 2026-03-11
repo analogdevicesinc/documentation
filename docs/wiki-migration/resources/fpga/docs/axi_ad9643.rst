@@ -8502,17 +8502,17 @@ The example design uses a processor to program all the registers. If no processo
 Software Guidelines
 -------------------
 
-The software for this IP can be found as part of the FMCOMMS1 Reference Design at: `No-Os Software <https://github.com/analogdevicesinc/no-OS/tree/2016_R1/fmcomms1>`_. Linux is supported also using :git-linux>`__
+The software for this IP can be found as part of the FMCOMMS1 Reference Design at: `No-Os Software <https://github.com/analogdevicesinc/no-OS/tree/2016_R1/fmcomms1>`_. Linux is supported also using :git-linux:`ADI Linux repository <linux>`
 
 References
 ----------
 
--  `AD9643 IP source code <https::`ADI Linux repository </github.com/analogdevicesinc/hdl/tree/hdl_2016_r1/library/axi_ad9643>`
+-  `AD9643 IP source code <https://github.com/analogdevicesinc/hdl/tree/hdl_2016_r1/library/axi_ad9643>`_
 -  :adi:`AD9643 chip information <AD9643>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  `No-Os Software <https://github.com/analogdevicesinc/no-OS/tree/2016_R1/fmcomms1>`_.
--  :git-linux>`__
--  `7 Series IO <https::`ADI Linux repository </www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`
+-  :git-linux:`ADI Linux repository <linux>`
+-  `7 Series IO <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_
 -  `7 Series Clocking <https://www.xilinx.com/support/documentation/user_guides/ug472_7Series_Clocking.pdf>`_
 -  `7 Series libraries <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2016_2/ug953-vivado-7series-libraries.pdf>`_
 

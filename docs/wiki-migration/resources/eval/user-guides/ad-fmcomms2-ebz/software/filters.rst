@@ -42,7 +42,7 @@ In order to get the wizard, please go to Analog Devices GitHub. Different releas
    :class: download
 
    
-   -  :git-ad936x-filter-wizard:`releases`
+   -  https://github.com/analogdevicesinc/ad936x-filter-wizard/releases
    -  For each release, the wizard is available as a MATLAB App installer (mlappinstall) or in archive form (zip or tarball).
    
 
@@ -151,7 +151,7 @@ Assume that you choose the "LTE10 (Rx & Tx)" profile, after you click it, all th
 
 As soon as the design process completes, you will see a magnitude plot displayed on the top half of the GUI, where the specified Fpass, Fstop, Apass and Astop are highlighted in the plot. The x-axis is from 0 to half of the data rate. Below it, on the right, you will see a "Filter Results" portion, where the actual Apass, Astop, the number of FIR taps and the pass band group delay variance are shown. From these numbers, you will get an idea whether the design meets the requirements quantitatively.
 
-If you are interested in more details of the design performance, you can click the "FVTool" buttons left to "Filter Results" to launch the `Filter Visualization Tool (fvtool) <https://www.mathworks.com//help/signal/ref/fvtool.html>`_ provided by The MathWorks. For your convenience, we provide this tool on two different frequency scales. One is from 0 Hz to half of the data rate, the other is from 0 Hz up to half of the converter rate.
+If you are interested in more details of the design performance, you can click the "FVTool" buttons left to "Filter Results" to launch the `Filter Visualization Tool (fvtool) <https://www.mathworks.com/help/signal/ref/fvtool.html>`_ provided by The MathWorks. For your convenience, we provide this tool on two different frequency scales. One is from 0 Hz to half of the data rate, the other is from 0 Hz up to half of the converter rate.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/3basicdesign.png
    :alt: Block diagram
@@ -322,8 +322,8 @@ In MATLAB command window, the command is:
    In order to use this method, you need to download the whole ad936x-filter-wizard repository from GitHub. The following are the two most important functions for this method:
 
    
-   -  Main function: :git-ad936x-filter-wizard:`design_filter`.m
-   -  Design file: :git-ad936x-filter-wizard:`internal_design_filter`.m
+   -  Main function: :git-ad936x-filter-wizard:`design_filter.m`
+   -  Design file: :git-ad936x-filter-wizard:`internal_design_filter.m`
    
 
 
@@ -428,7 +428,7 @@ The AD9361 filter design file can be found here:
    :class: download
 
    
-   -  :git-ad936x-filter-wizard:`internal_design_filter`.m
+   -  :git-ad936x-filter-wizard:`internal_design_filter.m`
    
 
 
@@ -498,7 +498,7 @@ On passband, the required response *rg* and the weight *w* is:
    For the analog filters, unlike digital filter, there is no "cascade" function to combine them and quickly calculate the composite response, so we made a helper function *analogresp* to calculate the overall response of the two analog filters and the converter. On the Tx side, the DAC is represented by a *sinc* function. While on the Rx side, the ADC is represented by a *sinc*\ ^3 function.
 
    
-   :git-ad936x-filter-wizard:`analogresp`.m
+   :git-ad936x-filter-wizard:`analogresp.m`
 
 
 On stopband, the required response *rg* = 0 and the weight *w* is:
@@ -567,7 +567,7 @@ Generally speaking, dBstop_FIR plays a more important role in narrow bandwidth f
 C/C++ Source For Internal Designer
 ==================================
 
-For users wishing to deploy or embed this filter designer into their own C/C++ source two options are available. First a GPL licensed C version of the ``internal_filter_designer`` function is provided as part of the :git-libad9361-iio>`__ library. This includes all the necessary source to generate filter coefficients. Alternatively, if you do not want to utilize a GPL license with your eventual code or product the MATLAB source, which has been enhanced for code generation, can be found in the codegen-support branch of `ad936x-filter-wizard <https::`lib9361-iio </github.com/analogdevicesinc/ad936x-filter-wizard>`. A secondary designer function called ``internal_filter_designer_cg`` which supports code generation is provided in this branch. This function will only provide filter coefficients and will numerically match outputs of the non-codegen designer except when the AD9361 FIR is turned off. However, this mode is still supported and will generate filters with flat magnitude responses.
+For users wishing to deploy or embed this filter designer into their own C/C++ source two options are available. First a GPL licensed C version of the ``internal_filter_designer`` function is provided as part of the :git-libad9361-iio:`lib9361-iio <libad9361-iio>` library. This includes all the necessary source to generate filter coefficients. Alternatively, if you do not want to utilize a GPL license with your eventual code or product the MATLAB source, which has been enhanced for code generation, can be found in the codegen-support branch of :git-ad936x-filter-wizard:`ad936x-filter-wizard`. A secondary designer function called ``internal_filter_designer_cg`` which supports code generation is provided in this branch. This function will only provide filter coefficients and will numerically match outputs of the non-codegen designer except when the AD9361 FIR is turned off. However, this mode is still supported and will generate filters with flat magnitude responses.
 
 Getting MATLAB Source and Testing
 ---------------------------------
@@ -579,12 +579,12 @@ Required MathWorks Toolboxes and Products:
 -  `Fixed-Point Designer <https://www.mathworks.com/products/fixed-point-designer/>`_
 -  `MATLAB Coder <https://www.mathworks.com/products/matlab-coder/>`_
 
-The MATLAB source with code generation support is provided in the codegen-support branch of :git-ad936x-filter-wizard>`__, which can be found here:
+The MATLAB source with code generation support is provided in the codegen-support branch of :git-ad936x-filter-wizard:`ad936x-filter-wizard`, which can be found here:
 
 .. admonition:: Download
    :class: download
 
-   \ https::`ad936x-filter-wizard </github.com/analogdevicesinc/ad936x-filter-wizard/archive/codegen-support.zip\
+   \ https://github.com/analogdevicesinc/ad936x-filter-wizard/archive/codegen-support.zip
 
 
 To make sure the code is functional and your local compilers are set up correctly, automated testing has been added to this repository. To run these tests first make sure you are in the root of the downloaded codegen-support branch and run:
@@ -617,7 +617,7 @@ These tests evaluate the numerical output of the generated designer with respect
 Generating C/C++ Source Code From MATLAB
 ----------------------------------------
 
-For convenience, an example script called ``generate_internal_designer.m`` is provided in the repository to generate C/C++ source and optionally compile a DLL. This script utilizes the ``coder.Config`` class to configure MATLAB Coder. For additional configuration options not used in the script consult `coder.CodeConfig <https://www.mathworks.com/help/coder/ref/coder.codeconfig.html?searchHighlight=coder.codeconfig-class&s_tid=srchtitle>`. MATLAB Coder can be used to generate source code only, compile the generate code into a library, or compile external code with the newly generated code.
+For convenience, an example script called ``generate_internal_designer.m`` is provided in the repository to generate C/C++ source and optionally compile a DLL. This script utilizes the ``coder.Config`` class to configure MATLAB Coder. For additional configuration options not used in the script consult `coder.CodeConfig <https://www.mathworks.com/help/coder/ref/coder.codeconfig.html?searchHighlight=coder.codeconfig-class&s_tid=srchtitle>`_. MATLAB Coder can be used to generate source code only, compile the generate code into a library, or compile external code with the newly generated code.
 
 In the provided script, which we show a portion of here, a ``coder.config`` object is created and configured to generate C code with the majority of the code output to a single file. We disable binary compilation and turn off OpenMP calls which are enabled by default. Since MATLAB Coder requires knowledge of input types they are provided as the ``args`` input to the codegen call.
 

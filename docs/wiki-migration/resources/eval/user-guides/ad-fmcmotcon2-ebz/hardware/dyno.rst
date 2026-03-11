@@ -8,13 +8,11 @@ Dynamometer Drive System
 Features
 --------
 
-::
-
-   *[[http://www.anaheimautomation.com/products/brushless/brushless-motor-item.php?sID=143&pt=i&tID=96&cID=22|Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and BLY171D-24V-4000)]]
-   * Electronically adjustable load – the load value is set using the onboard buttons + LCD
-   * Programmable step and ramp load changes
-   * Measurement and display of load motor phase currents
-   * Measurement and display of load motor speed
+-  `Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and BLY171D-24V-4000) <http://www.anaheimautomation.com/products/brushless/brushless-motor-item.php?sID=143&pt=i&tID=96&cID=22>`_
+-  Electronically adjustable load – the load value is set using the onboard buttons + LCD
+-  Programmable step and ramp load changes
+-  Measurement and display of load motor phase currents
+-  Measurement and display of load motor speed
 
 +---+
 +---+

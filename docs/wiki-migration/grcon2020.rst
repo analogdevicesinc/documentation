@@ -5,21 +5,21 @@ For those attending the PlutoSDR workshop at GRCon 2020, hosted by ADI, thanks. 
 
 -  **libIIO library:**
 
-   -  Packages for Linux and Windows are available here: :git-libiio:`releases/latest`
-   -  For macOS users select the PKG closest to your version of macOS for **libiio v0.17**. :git-libiio:`High Sierra 10.13.6 <releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.13.6.pkg>` or :git-libiio:`Sierra 10.12.6 <releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.12.6.pkg>`. Mojave will work fine with the High Sierra release.
-   -  Source available here: https://github.com/analogdevicesinc/libiio. If you want to build from source, feel free; master works fine.
+   -  Packages for Linux and Windows are available here: https://github.com/analogdevicesinc/libiio/releases/latest
+   -  For macOS users select the PKG closest to your version of macOS for **libiio v0.17**. `High Sierra 10.13.6 <https://github.com/analogdevicesinc/libiio/releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.13.6.pkg>`_ or `Sierra 10.12.6 <https://github.com/analogdevicesinc/libiio/releases/download/v0.17/libiio-0.17.g5bdc242-darwin-10.12.6.pkg>`_. Mojave will work fine with the High Sierra release.
+   -  Source available here: :git-libiio:`libiio`. If you want to build from source, feel free; master works fine.
    -  Documentation: :doc:`What is libiio? </wiki-migration/resources/tools-software/linux-software/libiio>`
 
 -  **libad9361-iio library**
 
-   -  For linux users only, you will need the https://github.com/analogdevicesinc/libad9361-iio library.
-   -  :git-libad9361-iio:`For macOS users <releases/download/v0.2/libad9361-0.2.pkg>`
+   -  For linux users only, you will need the :git-libad9361-iio:`libad9361-iio` library.
+   -  `For macOS users <https://github.com/analogdevicesinc/libad9361-iio/releases/download/v0.2/libad9361-0.2.pkg>`_
    -  Instructions for building it are :doc:`here </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
 
 -  **IIO-Scope:**
 
-   -  Windows installers are available here: :git-iio-oscilloscope:`releases`
-   -  Linux users will need to build from source: https://github.com/analogdevicesinc/iio-oscilloscope. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
+   -  Windows installers are available here: https://github.com/analogdevicesinc/iio-oscilloscope/releases
+   -  Linux users will need to build from source: :git-iio-oscilloscope:`iio-oscilloscope`. Build instructions are :doc:`here </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You can skip the build of libiio and libad9361-iio steps, since you already did that.
    -  macOS users use brew. ``brew install tfcollins/homebrew-formulae/i-i-o-oscilloscope``
 
       -  To launch IIO-Scope run this from a terminal: ``osc``
@@ -30,7 +30,7 @@ For those attending the PlutoSDR workshop at GRCon 2020, hosted by ADI, thanks. 
 
    -  A prebuilt binary for Windows users is available here: https://github.com/tfcollins/GNURadio_Windows_Build_Scripts/releases/tag/1.5.0
 
-      -  If you need the Windows version of GNU Radio, you likely need the Windows driver from :git-plutosdr-m2k-drivers-win:`releases/latest`.
+      -  If you need the Windows version of GNU Radio, you likely need the Windows driver from https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases/latest.
 
    -  Installation instructions for Linux users are here: :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
    -  For macOS GNU Radio and gr-iio can be installed from macports

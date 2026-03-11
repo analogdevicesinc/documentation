@@ -45,5 +45,5 @@ Below is a sample schematic showing the basic operation of the Stopwatch. The DC
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchpic4.png
    :alt: stopwatchpic4.png
 
-.. |stopwatchpic1.png| image:: https://wiki.analog.com/_media/stopwatchpic1.png
-.. |stopwatchpic2.png| image:: https://wiki.analog.com/_media/stopwatchpic2.png
+.. |stopwatchpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchpic1.png
+.. |stopwatchpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/stopwatchpic2.png

@@ -23,9 +23,8 @@ Directions:
 
 The good way to measure the characteristics of the current mirror is to reuse the same basic configuration that was used in the common source FET curve tracer experiments. Diode connected transistor M\ :sub:`1` is connected across the gate and source terminals of M\ :sub:`2`. I\ :sub:`in` will be equal to the Channel A output current. Iout will be the current measured by channel B.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6m_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -65,3 +64,6 @@ Try building a PMOS version of the current mirror from the PMOS devices in the C
 `The Current Mirror <https://en.wikipedia.org/wiki/Current_mirror>`_ :doc:`/wiki-migration/university/courses/electronics/text/chapter-11`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab6m_f1.png
+   :width: 600px

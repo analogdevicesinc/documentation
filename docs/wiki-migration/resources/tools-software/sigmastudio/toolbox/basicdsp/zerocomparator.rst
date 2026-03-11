@@ -109,6 +109,6 @@ Algorithm Addition Information
 | Parameter RAM Repetition | 1 per add                                                                                                                                                       |                          |
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+
 
-.. |zerocomparatorpic1.png| image:: https://wiki.analog.com/_media/zerocomparatorpic1.png
-.. |zerocomparatorpic4.png| image:: https://wiki.analog.com/_media/zerocomparatorpic4.png
-.. |zerocomparatorpic5.png| image:: https://wiki.analog.com/_media/zerocomparatorpic5.png
+.. |zerocomparatorpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic1.png
+.. |zerocomparatorpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic4.png
+.. |zerocomparatorpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/zerocomparatorpic5.png

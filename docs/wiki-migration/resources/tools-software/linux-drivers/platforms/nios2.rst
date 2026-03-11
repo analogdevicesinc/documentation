@@ -14,11 +14,11 @@ Download the pre-built image for you setup:
 +----------------------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | FPGA Carrier               | FMC Card    | Download                                                                                                                                              |
 +============================+=============+=======================================================================================================================================================+
-| A10GX (10AX115S2F45I1SG)   | ADRV9009    | |adrv9009_a10gx_2019_r2.zip|                                                                                                                          |
+| A10GX (10AX115S2F45I1SG)   | ADRV9009    | `adrv9009_a10gx_2019_r2.zip <https://swdownloads.analog.com/cse/nios2/2019_r2/adrv9009_a10gx.zip>`_                                                   |
 +----------------------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| A10GX (10AX115S2F45I1SG)   | ADRV9371x   | |adrv9371x_a10gx_2019_r2.zip|                                                                                                                         |
+| A10GX (10AX115S2F45I1SG)   | ADRV9371x   | `adrv9371x_a10gx_2019_r2.zip <https://swdownloads.analog.com/cse/nios2/2019_r2/adrv9371x_a10gx.zip>`_                                                 |
 +----------------------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| A10GX (10AX115S2F45I1SG)   | FMCDAQ2     | |daq2_a10gx_2019_r2.zip|                                                                                                                              |
+| A10GX (10AX115S2F45I1SG)   | FMCDAQ2     | `daq2_a10gx_2019_r2.zip <https://swdownloads.analog.com/cse/nios2/2019_r2/daq2_a10gx.zip>`_                                                           |
 +----------------------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | A10GX (10AX115S2F45I1SG)   | FMCDAQ2     | `daq2_a10gx_2018_r1.zip <https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/nios2/daq2_a10gx_2018_r1.zip>`_              |
 +----------------------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,7 +252,7 @@ Get Linux Kernel Source
    
    ::
    
-      user@pc:~/nios2$ git clone https://github.com/analogdevicesinc/linux.git
+      user@pc:~/nios2$ git clone :git-linux:`linux`
       Cloning into 'linux'...
       remote: Counting objects: 4331580, done.
       remote: Compressing objects: 100% (23/23), done.
@@ -365,9 +365,6 @@ Quickstart Guides
 -  :doc:`ADRV9371x Arria10GX Quickstart </wiki-migration/resources/eval/user-guides/adrv9371x/quickstart/a10gx>`
 -  :doc:`ADRV9009 Arria10GX Quickstart </wiki-migration/resources/eval/user-guides/adrv9009/quickstart/a10gx>`
 
-.. |adrv9009_a10gx_2019_r2.zip| image:: https://swdownloads.analog.com/cse/nios2/2019_r2/adrv9009_a10gx.zip
-.. |adrv9371x_a10gx_2019_r2.zip| image:: https://swdownloads.analog.com/cse/nios2/2019_r2/adrv9371x_a10gx.zip
-.. |daq2_a10gx_2019_r2.zip| image:: https://swdownloads.analog.com/cse/nios2/2019_r2/daq2_a10gx.zip
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/nios2/a10gx_daq2_iio_scope.png
    :width: 500px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/platforms/nios2/a5gt_fmcjesdadc1_iio_scope.png

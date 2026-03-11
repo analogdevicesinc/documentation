@@ -16,7 +16,9 @@ The :adi:`AD9265` data sheet provide additional information and should be consul
 Typical Measurement Setup
 -------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_fmc_125ebz_typical_setup.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -98,21 +100,33 @@ Setting up the ADC Data Capture
 
 After configuring the board, set up the ADC data capture using the following steps:
 
--  Start Visual Analog. |image2|\
+-  Start Visual Analog.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_start_button.png
+   :align: center
+   :width: 100px
 
 .. container:: centeralign
 
    \ *Figure 2. VisualAnalog, Start Button*\
 
 
--  Select AD9265 and double click FFT |image3|\
+-  Select AD9265 and double click FFT
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_new_canvas.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 3. VisualAnalog, New Canvas Window*\
 
 
--  Click settings under ADC Data Capture section. |image4|\
+-  Click settings under ADC Data Capture section.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_adc_data_capture_2.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -121,7 +135,11 @@ After configuring the board, set up the ADC data capture using the following ste
 
 -  Set device to AD9265.
 -  Navigate to Capture Board and browse your file directory for the FPGA Image called. (ad9265_sdph1.bin)
--  Click Program and check if LED0 on the SDP-H1 lights up. Then, click OK. |image5|\
+-  Click Program and check if LED0 on the SDP-H1 lights up. Then, click OK.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_adc_data_capture_setting_fpga.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -134,49 +152,77 @@ Evaluation And Test
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Start SPIController |image6|\
+-  Start SPIController
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_start_button.png
+   :align: center
+   :width: 100px
 
 .. container:: centeralign
 
    \ *Figure 6. SPIController Start Button*\
 
 
--  If a message opens saying "Read Test Failure", select Ignore. |image7|\
+-  If a message opens saying "Read Test Failure", select Ignore.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_msg_ignore.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 7. 1st Ignore Test Failure*\
 
 
--  Click File > Cfg Open then find the file named "ad9265_16bit_125MSspiR03.cfg" and double click it. |image8|\
+-  Click File > Cfg Open then find the file named "ad9265_16bit_125MSspiR03.cfg" and double click it.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_cfg_open.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 8. Configuration Settings*\
 
 
--  Again, if a message opens saying "Read Test Failure", select Ignore. |image9|\
+-  Again, if a message opens saying "Read Test Failure", select Ignore.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_msg_ignore.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 9. 2nd Ignore Test Failure*\
 
 
--  Click Config > Controller Dialog. |image10|\
+-  Click Config > Controller Dialog.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_controller_dialog.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 10. Controller Dialog Guide*\
 
 
--  Un-select SDO Active and click OK. |image11|\
+-  Un-select SDO Active and click OK.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_unselect_sdo_2.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 11. Controller Dialog Setting*\
 
 
--  Click Read chip ID and Read Chip Grade. |image12|\
+-  Click Read chip ID and Read Chip Grade.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_read_chip_id_grade.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -190,18 +236,27 @@ Adjusting the Amplitude of the Input Signal
 
 The next step is to adjust the amplitude of the input signal for each channel as follows:
 
--  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9265 Average FFT** window (see Figure 13) to verify this.\ |image13|\
+-  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9265 Average FFT** window (see Figure 13) to verify this.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_typical_window_2.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
-   //Figure 13. Graph Window of VisualAnalog *
+   //Figure 13. Graph Window of VisualAnalog //
 
 
-- Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file. \
+-  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_disk_icon.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
-   *Figure 14. VisualAnalog Disk Icon*
+   //Figure 14. VisualAnalog Disk Icon //
+
 
 Testing Additional AD9265 Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,30 +286,3 @@ If the FFT window remains blank after **Run** is clicked, do the following:
 -  Make sure the correct FPGA bin file was used to program the FPGA.
 -  Be sure that the correct sample rate is programmed. Click on the **Settings** button in the **ADC Data Capture** block in VisualAnalog and verify that he **Clock Frequency** is properly set.
 -  Ensure that he ADC has valid clock input.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9265_fmc_125ebz_typical_setup.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_start_button.png
-   :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_new_canvas.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_adc_data_capture_2.png
-   :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9265_va_adc_data_capture_setting_fpga.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_start_button.png
-   :width: 100px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_msg_ignore.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_cfg_open.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_msg_ignore.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_controller_dialog.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_unselect_sdo_2.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9265_spicontroller_read_chip_id_grade.png
-   :width: 300px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad9265_typical_window_2.png
-   :width: 500px

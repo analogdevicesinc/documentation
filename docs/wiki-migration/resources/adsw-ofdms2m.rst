@@ -17,9 +17,8 @@ Figure 1 illustrates the high-level ADSW-OFDM2M architecture. The communication 
 
 A demonstration GUI application runs on :doc:`ADI Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`. For the PHY layer to communicate with user space applications, it reuses existing upper-level protocols such as TCP/IP stack and loadable drivers.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/high-level_architecture_block_diagram.png
-   :align: center
-   :width: 800px
+
+|image1|
 
 .. container:: center
 
@@ -99,7 +98,7 @@ The ADSW-OFDMS2M evaluation platform can be operated using the following use cas
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 | 
-| ===== Demo Application ===== |image1|
+| ===== Demo Application ===== |image2|
 
 The ADSW-OFDMS2M demo application has two operating modes which emulate functions for the drone and controller side. The drone mode is expected to start the video streaming and receive the telemetry commands. The controller mode will be sending the telemetry commands while receiving and performing video playback.
 
@@ -119,5 +118,7 @@ Additional Resources
 -  :doc:`Linux on RF SoM </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynq>`
 -  :doc:`Analog Devices Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/dronetrx_demo_application_as_run_in_kuiper_linux.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/high-level_architecture_block_diagram.png
+   :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dronetrx/dronetrx_demo_application_as_run_in_kuiper_linux.png
    :width: 800px

@@ -20,11 +20,9 @@ Any other driver related documentation can be found on GitHub by following the n
 .. container:: round
 
    
-   -
-
-
+   -  :git-no-OS:`Documentation of MAX22196 Driver. <drivers/digital-io/max22196/README.rst>`
    
-   |Documentation of MAX22196 Driver.|
+
 
 Downloads
 ---------
@@ -33,16 +31,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of MAX22196 Driver. <drivers/digital-io/max22196/max22196.c>`
+   -  :git-no-OS:`Header file of MAX22196 Driver. <drivers/digital-io/max22196/max22196.h>`
    
-   |Implementation of MAX22196 Driver.|
 
-   -
-
-   |Header file of MAX22196 Driver.|
-
-.. |Documentation of MAX22196 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/digital-io/max22196/README`.rst
-.. |Implementation of MAX22196 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/digital-io/max22196/max22196`.c
-.. |Header file of MAX22196 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/digital-io/max22196/max22196`.h

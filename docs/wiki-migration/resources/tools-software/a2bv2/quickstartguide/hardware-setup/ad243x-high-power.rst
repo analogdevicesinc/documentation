@@ -147,7 +147,10 @@ For Aardvark, download and install the “USB Drivers – Windows” from Total 
 -  Connect separate audio sources (e.g., output from an iPod) to ‘Audio Line- in’ ports, shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad243x-high-power>`, on A2B sub boards.
 -  Connect separate audio sinks (e.g., headphones and speakers) to ‘Audio Line-out’ and output of Class-D amplifier ports as shown in :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad243x-high-power>`, on A2B main and sub boards.
 
-|Sample Audio Configuration figure|
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/ad2435_audio_config.png
+   :alt: Sample Audio Configuration figure
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -155,5 +158,3 @@ For Aardvark, download and install the “USB Drivers – Windows” from Total 
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/img_20241009_141342.jpg
-.. |Sample Audio Configuration figure| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/ad2435_audio_config.png
-   :width: 600px

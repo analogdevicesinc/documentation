@@ -37,29 +37,38 @@ Running an Example Project
 
 -  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a yellow LED turn on by default.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/img_20171030_180904.jpg
+   :align: center
+   :width: 200px
 
-|image2|
-
--  In CCES IDE, click CMSIS Pack Manager icon |image3|.
+-  In CCES IDE, click CMSIS Pack Manager icon |image2|.
 -  Select EV-COG-AD4050LZ from the Boards tab on the Left panel. (see below image)
 -  Copy button_press example from the Examples tab on the Right panel.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/tools/cmsis_pack_manager.jpg
+   :align: center
 
 -  Click C/C++ perspective icon
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/c_persp.jpg
+
+-  Under Project Explorer select button_press example, click build icon |image3|.
+-  Click on Debug icon |image4| once build is complete. Below are the Debug Configuration settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/debug.jpg
+   :align: center
+   :width: 700px
+
+-  Click "ok" on Perspective Switch and Semihosting Enabled window.
+
+
 |image5|
 
--  Under Project Explorer select button_press example, click build icon |image6|.
--  Click on Debug icon |image7| once build is complete. Below are the Debug Configuration settings.
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/perspective_switch.jpg
+   :align: center
+   :width: 500px
 
-|image8|
-
--  Click "ok" on Perspective Switch and Semihosting Enabled window. |image9|
-
-|image10|
-
--  Click run |image11| on the Debug perspective.
+-  Click run |image6| on the Debug perspective.
 -  Now press BTN1 or BTN2 on EV-COG-AD4050LZ and inspect corresponding LED.
 
 You are all set!
@@ -70,17 +79,9 @@ You are all set!
 | End Document
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/import_existing_packs_icon.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/img_20171030_180904.jpg
-   :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/pack_manager.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/tools/cmsis_pack_manager.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/c_persp.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/build_icon.jpg
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/debug_icon.jpg
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/debug.jpg
-   :width: 700px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/semihosting.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/pack_manager.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/build_icon.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/debug_icon.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/semihosting.jpg
    :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad4050lz/perspective_switch.jpg
-   :width: 500px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/run_icon.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/run_icon.jpg

@@ -19,7 +19,7 @@ There are 3 MCAPI inter-operability demos included in the libmcapi tests, curr
 
 There are 2 ways to load the MCAPI baremetal project: loaded by remoteproc and loaded by ICE1000 in CCES.
 
-For more information about "**loaded by Remoteproc**", please refer to ``Multicore loading using the Remoteproc`` For more information about "**loaded by ICE1000 in CCES**", please refer to ``Run Linux on ARM and bare-metal application on SHARC``
+For more information about "**loaded by Remoteproc**", please refer to :doc:`Multicore loading using the Remoteproc </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/remoteproc/remoteproc>` For more information about "**loaded by ICE1000 in CCES**", please refer to :doc:`Run Linux on ARM and bare-metal application on SHARC </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/mcapi/mcapi_example>`
 
 MCAPI Baremetal test examples
 -----------------------------

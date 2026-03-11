@@ -52,7 +52,7 @@ The emission plots were captured with a 2 layer PCB without internal PCB cap. Th
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image2|\
 
 
 .. container:: centeralign
@@ -62,7 +62,7 @@ The emission plots were captured with a 2 layer PCB without internal PCB cap. Th
 
 .. container:: centeralign
 
-   \ |image3|\
+   |image3|\
 
 
 .. container:: centeralign
@@ -127,30 +127,22 @@ https://www.daycounter.com/Calculators/Plate-Capacitor-Calculator.phtml
 
 **Layer 4** No copper under isolated side
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/layer_1_and_2.png
-   :alt: layer_1_and_2.png
-   :align: center
-   :width: 400px
+
+|layer_1_and_2.png|
 
 .. container:: centeralign
 
    \ **Figure 5: Layer 2 (AGND_1) Shields layer 1(Signal) from layer 3 (Dgnd)**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_1_2_3.jpg
-   :alt: cap_area_optimized_layer_1_2_3.jpg
-   :align: center
-   :width: 400px
+   |cap_area_optimized_layer_1_2_3.jpg|
 
 .. container:: centeralign
 
    \ **Figure 6: Capacitor is made up of the overlap of Layer 2 (AGND_1) and Layer 3(Dgnd)**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_2.jpg
-   :alt: cap_area_optimized_layer_2.jpg
-   :align: center
-   :width: 400px
+   |cap_area_optimized_layer_2.jpg|
 
 .. container:: centeralign
 
@@ -164,7 +156,7 @@ https://www.daycounter.com/Calculators/Plate-Capacitor-Calculator.phtml
 
 .. container:: centeralign
 
-   \ |image4|\
+   |image4|\
 
 
 .. container:: centeralign
@@ -179,7 +171,7 @@ https://www.daycounter.com/Calculators/Plate-Capacitor-Calculator.phtml
 
 .. container:: centeralign
 
-   \ |image5|\
+   |image5|\
 
 
 .. container:: centeralign
@@ -197,7 +189,7 @@ Emissions with Recommended PCB Cap
 
 .. container:: centeralign
 
-   \ |vertical_ets_3143b_cispr32_ed2.png|\
+   |vertical_ets_3143b_cispr32_ed2.png|\
 
 
 .. container:: centeralign
@@ -207,7 +199,7 @@ Emissions with Recommended PCB Cap
 
 .. container:: centeralign
 
-   \ |horizontal_ets_3143b_cispr32_ed2.png|\
+   |horizontal_ets_3143b_cispr32_ed2.png|\
 
 
 .. container:: centeralign
@@ -344,6 +336,12 @@ Emissions with Recommended PCB Cap
    :width: 800px
 .. |rev_f_channel_a.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/rev_f_channel_a.jpg
    :width: 800px
+.. |layer_1_and_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/layer_1_and_2.png
+   :width: 400px
+.. |cap_area_optimized_layer_1_2_3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_1_2_3.jpg
+   :width: 400px
+.. |cap_area_optimized_layer_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_2.jpg
+   :width: 400px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/critical_vias.png
    :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/cap_area_optimized_layer_3.jpg

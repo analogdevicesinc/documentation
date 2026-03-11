@@ -11,9 +11,8 @@ Background:
 
 Negative feedback is commonly used in control systems. Figure 1 shows a simple system with negative feedback.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ Using a suitable injection transformer ( the ADALP2000 Analog Parts kit contains
 
 Figure 2 shows a setup using the voltage injection method to measure the loop gain of a feedback system. A low value resistor is inserted in the feedback loop at the injection-point. The injection transformer secondary winding is connected across the injection resistor to apply the test voltage. This allows the injection of a test voltage without changing the DC-bias operating point of the system.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -87,9 +85,8 @@ Using negative ( shunt ) feedback for bias
 
 :doc:`Chapter 9 section 7 </wiki-migration/university/courses/electronics/text/chapter-9>` of the online Electronics I text introduced a biasing technique for the common emitter amplifier, called shunt feedback. This is accomplished by the introduction of some fraction of the collector signal back to the input at the base. This is done via the biasing resistor (R\ :sub:`B`), as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acelg_f3.png
-   :align: center
-   :width: 300px
+
+|image3|
 
 .. container:: centeralign
 
@@ -98,9 +95,9 @@ Using negative ( shunt ) feedback for bias
 
 The negative feedback loop from the output at the collector and the input at the base can be broken at three different points to inject the test voltage as shown in figure 4. Scheme ( a ) breaks the loop by inserting the test voltage in series with the collector of the transistor. Scheme ( b ) breaks the loop in series with the feedback resistor between the output ( junction of the collector and R\ :sub:`C` ) and R\ :sub:`B`. The third scheme ( c ) inserts the test voltage between the feedback resistor and the base of the transistor. Each of these schemes meets Condition 1 above to a greater or lesser extent and will give slightly different results for the loop response.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acelg_f4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -121,9 +118,8 @@ There are three resistors, R\ :sub:`C`, R\ :sub:`B`, R\ :sub:`E` and one capacit
 
 Voltage divider R\ :sub:`2` and R\ :sub:`3` serves two purposes. First the 10 Ω R\ :sub:`2` matches the impedance of the resistor inserted in the feedback loop, R\ :sub:`1`. The AWG in the ADALM2000 cannot directly drive the 10 Ω resistor so the 100 Ω R\ :sub:`3` increases the load resistance to a value high enough for the AWG to safely drive. The attenuation of the divider also allows us to set the amplitude of the AWG high enough to provide a low noise signal while still injecting a small signal into the loop.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/acelg_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -174,3 +170,14 @@ Why did the unity gain frequency change for the cases with C\ :sub:`M` equal to 
 Measurement of loop gain in feedback systems. Middlebrook, R.D. s.l. : International Journal of Electronics, 1975, Bd. 38. http://scholar.google.com/scholar?cluster=5040596387593898653 http://en.wikipedia.org/wiki/Nyquist_stability_criterion http://en.wikipedia.org/wiki/Phase_margin http://en.wikipedia.org/wiki/Bode_plot http://www.edn.com/electronics-blogs/analog-bytes/4434609/Loop-gain-measurements-
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/amlg_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/acelg_f3.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/acelg_f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/acelg_f5.png
+   :width: 600px

@@ -3,27 +3,22 @@ ADALM1000 Breadboard Adapters
 
 All of the analog connections to the ADALM1000 learning module are made though the 6/8 pin single row female header (0.1" centers) connector. The 6/8 pin female header provides +5 V and +2.5 V power supplies along with two ground connection points in the center of the header. The two analog input / output pins are on the two outside end pins. A very simplified block diagram of one of the analog channels is shown in figure 1. There are two additional optional input only pins that are not populated on the standard 6 pin header (rev D board), shown with white circles around them in figure 2. The user can optionally populate these extra two pin locations to separate the analog output and input functions which by default share the common analog channel pin. There are extra switches not shown in the figure 1 diagram which allow the voltage measuring "oscilloscope" hardware ( volt meter in diagram ) to be brought out along with the 1 MΩ input load resistor to a separate pin from the analog output source. Note figure 3 extracted from revision D schematic.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_analog_input_f1.png
-   :align: center
-   :width: 250px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1 ALM1000 analog input/output diagram
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f1.png
-   :align: center
-   :width: 400px
+   |image2|
 
 .. container:: centeralign
 
    Figure 2 Analog I/O connector (left Rev D, right Rev F)
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f3.png
-   :align: center
-   :width: 600px
+   |image3|
 
 .. container:: centeralign
 
@@ -39,9 +34,8 @@ Adapter board
 
 A more convenient arrangement would be an adapter PC board that connects to the female connector of ALM1000 and slips over the end of the breadboard connecting the two power supplies and ground to the four common rails of the breadboard. An example 1" by 2" adapter PC board layout is shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f4.jpg
-   :align: center
-   :width: 160px
+
+|image4|
 
 .. container:: centeralign
 
@@ -50,18 +44,16 @@ A more convenient arrangement would be an adapter PC board that connects to the 
 
 The schematic of the adapter board is shown in figure 5. Solder-less breadboards commonly come with double rows of common bused sockets along the top and bottom. See figure 6. These power and ground busses are usually labeled with + and - signs and colored red and black or blue lines. It is assumed that the adapter is inserted into the left hand end of the solder-less breadboard with the + red line marked bus on the top. The +5 V (red) power supply and ground (blue) will be connected to the top two power rails and the +2.5 V (red) and ground (blue) will be connected to the bottom two power rails.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f5.jpg
-   :align: center
-   :width: 400px
+
+
+|image5|
 
 .. container:: centeralign
 
    Figure 5 Breadboard adapter schematic
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f6.jpg
-   :align: center
-   :width: 400px
+   |image6|
 
 .. container:: centeralign
 
@@ -79,9 +71,8 @@ Another adapter board
 
 Another possibility is to configure a larger PCB with a prototyping area and bring all the ADALM1000 connections to female headers positioned right alongside the breadboard area. By using female headers simple 22 gauge wire jumpers can be used to connect to the breadboard rather than the long female to female fly-wires supplied with the kit. An example 3.1" by 3.4" adapter PC board layout is shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f7.jpg
-   :align: center
-   :width: 400px
+
+|image7|
 
 .. container:: centeralign
 
@@ -92,9 +83,8 @@ The board consists of a grid of 21 by 30 plated through holes on 0.1" centers wh
 
 Space for a 6 pin male header for connecting the ALM1000 digital I/O pins to the breadboard is provided. It simply directly connects to a 6 pin female header slot also positioned alongside the breadboard area. These digital pins will not plug directly into the ALM1000 digital connector because it is not on the same side of the module as the analog connector. A short set of male to female jumper wires can be used for those connections. Figure 8 shows the prototyping adapter schematic.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f8.jpg
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -103,9 +93,9 @@ Space for a 6 pin male header for connecting the ALM1000 digital I/O pins to the
 
 The pin mapping for the 2X8 and 2X6 female header connectors are shown in figure 9. The right hand side of the 2X8 header follows the 8 analog pins of the ALM1000 exactly. The left and side provides access to the two resistor dividers. The 2X6 female header breaks-out the connections to the on board dual op-amp and provides connections to the various power and ground rails, GND, +2.5 V, +5 V and the external +9 V and -9 V.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f9.png
-   :align: center
-   :width: 500px
+
+
+|image9|
 
 .. container:: centeralign
 
@@ -118,9 +108,8 @@ This adapter board provides a place to connect external power sources such as a 
 
 The amplifiers can be easily configured as a two amplifier instrumentation amplifier as shown in figure 10. In addition to doing differential to single ended conversion this In-amp can add an offset to center the output voltage swing on the 0 to +5 V input range of the ALM1000.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f10.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -132,3 +121,24 @@ Another possible use would be to generate complementary or differential signals 
 The ADALM1000 hardware itself is rather small and light weight and special care should be taken when using this adapter. It might be useful to add small stick on rubber feet to the underside of the adapter board to help prevent it from tipping or sliding around on the work surface.
 
 Eagle CAD schematic and board files for both breadboard adapters are attached to this document below: `m1000_breadboard_adapters.zip <https://wiki.analog.com/_media/university/tools/m1000_breadboard_adapters.zip>`_
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k_analog_input_f1.png
+   :width: 250px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/m2k-convert-f1.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f4.jpg
+   :width: 160px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f5.jpg
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f6.jpg
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f7.jpg
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f8.jpg
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f9.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/m1k_adapter_f10.png
+   :width: 500px

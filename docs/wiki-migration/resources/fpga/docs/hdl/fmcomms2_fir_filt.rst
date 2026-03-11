@@ -5,7 +5,7 @@ This wiki page describes how to add a custom processing module into the FMCOMMS2
 
 .. important::
 
-   This example was build using `fmcomms2_fir_filters <https://wiki.analog.com/https/github.com/analogdevicesinc/hdl/releases/tag/eg_fmcomms2_fir_filter>`_ GitHub HDL branch, using Vivado 16.2 and 16.4 versions.
+   This example was build using `fmcomms2_fir_filters <https://github.com/analogdevicesinc/hdl/releases/tag/eg_fmcomms2_fir_filter>`_ GitHub HDL branch, using Vivado 16.2 and 16.4 versions.
 
 
 Let’s presume we want to transmit a sinewave with the AD9361 ADI Integrated RF transceiver, the sinewave frequency is below 6 MHz, for this, we can use a lower system data rate than the reference design. But, by simply lowering the data rate of the system we will increase the equalization error. To avoid this issue we can add some interpolation filters for transmitting. A similar problem is encountered on the ADC side when receiving a low-frequency signal. This can be solved with the use of decimation filters. In our example, these filters were already implemented in “util_fir_int” and “util_fir_dect” HDL IP core, which are wrappers for the FIR Compiler Xilinx IP. The wrappers are used to manage the data rates entering the filter and to facilitate the configuration of the filter parameters for a specific application (Tx/Rx).
@@ -412,7 +412,7 @@ Download
 ========
 
 -  `boot.zip <https://wiki.analog.com/_media/resources/fpga/docs/hdl/boot.zip>`_
--  :git-hdl:`releases/tag/eg_fmcomms2_fir_filter`
+-  https://github.com/analogdevicesinc/hdl/releases/tag/eg_fmcomms2_fir_filter
 
 References
 ==========

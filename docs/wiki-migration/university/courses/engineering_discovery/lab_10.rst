@@ -44,14 +44,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_image_1.png
+   :alt: lab_10_image_1.png
+   :align: center
+   :width: 800px
 
-|lab_10_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
-
-|lab_10_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_assembly_image_1.png
+   :alt: lab_10_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -102,7 +107,7 @@ The efficiency is therefore:
 
 The voltage gain, A\ :sub:`V`, of a CE amplifier can be determined using a transistor model and circuit theory, but it can also be estimated by simply inspecting the circuit. It's important to remember that with transistor analysis, we have DC bias analysis and AC signal analysis. In the AC analysis, used to calculate the voltage gain, we can view the large bypass capacitors as AC short circuits and ignore the DC bias conditions (as long as we stay within the forward active region of operation). We start by observing that the input signal voltage v\ :sub:`i` is applied to the base, along with the required DC bias voltage. The signal voltage at the emitter is approximately equal to v\ :sub:`i` (it is in fact a little smaller than v\ :sub:`i` due to the finite β of the transistor, but for β ≥ 100 this is a reasonable approximation), shifted down by one base-emitter voltage drop of approximately 0.7 VDC. The signal voltage at the emitter produces a signal current in R\ :sub:`E`, and when R\ :sub:`E` is connected to ground, as it is in this lab, the signal current in R\ :sub:`E` is approximately equal to v\ :sub:`i`/R\ :sub:`E`. For β ≥ 100 we saw earlier that i\ :sub:`C` ≈ i\ :sub:`E`, so essentially the same current level that flows through R\ :sub:`E` flows through R\ :sub:`C`. The output signal voltage v\ :sub:`o` is equal to i\ :sub:`c`\ R\ :sub:`C`, which is approximately equal to i\ :sub:`e`\ R\ :sub:`C`. We can combine these results as follows to get the approximate voltage gain, remembering that the output voltage is 180 degrees out-of-phase with the input signal, so the gain includes a (-) sign.
 
-:math:`\displaystyle v_o = i_cR_C ≈ \frac{-v_i}{{R_E}}{R_C} = -v_i\frac{R_C}{{R_E}}`
+:math:`\displaystyle v_o = i_cR_C ≈ \frac{-v_i}|R_E|{R_C} = -v_i\frac{R_C}|R_E|`
 
 :math:`A_V = v_o/v_i ≈ -R_C/R_E`
 
@@ -116,21 +121,21 @@ The approximate voltage gain for the simple CE amplifier in this lab is therefor
 
 Accounting for the voltage divider loss incurred by the 470 Ω amplifier output resistance and the 1 KΩ load resistance, we can calculate the loaded gain as
 
-:math:`\displaystyle A_V(loaded) ≈ -7.5\frac{1 kΩ}{{1470 Ω}} ≈ -5.1`
+:math:`\displaystyle A_V(loaded) ≈ -7.5\frac{1 kΩ}|1470 Ω| ≈ -5.1`
 
 One problem encountered with this simple circuit is the interdependence of bias setting and gain setting. Both depend on R\ :sub:`E` and R\ :sub:`C`, and large gain requires large R\ :sub:`C` and/or small R\ :sub:`E`. The output resistance is R\ :sub:`C`, so making R\ :sub:`C` large produces a large output resistance, which is undesirable. Since R\ :sub:`E` is part of what sets the quiescent current, a low value of R\ :sub:`E` used to obtain a large gain can require high quiescent current and/or a low base voltage. A technique that adds a degree of independence between bias setting and gain setting involves bypassing all or part of R\ :sub:`E` with a (typically large) bypass capacitor. This allows us more freedom in setting the bias point and gain. As a simple example, a large capacitor could be placed between the 10 Ω in the emitter circuit and ground, increasing the AC gain and keeping the DC bias point unchanged. Doing this does change the circuit's AC behavior, and this must be taken account when using this technique.
 
 The last topic we will address is the *power gain* of the CE amplifier, but first we must introduce the *decibel*. Back in the early days of telephony, the *bel* unit was introduced to express the common logarithm of a power ratio, and was named after Alexander Graham Bell. Expressing quantities in logarithmic form is useful for many reasons, and allows a wide range of quantities to be compressed into a smaller range, simplifying things like graphing functions. The bel is defined as
 
-:math:`\displaystyle number of bels = log_10\frac{P_2}{{P_1}}`
+:math:`\displaystyle number of bels = log_10\frac{P_2}|P_1|`
 
 The bel is a relatively large quantity so it was divided into tenths, called a *decibel* or "tenth of a bel" and abbreviated as *dB*. Since there are ten dB in one bel, we must multiply the number of bels by 10 to get the number of decibels
 
-:math:`\displaystyle number of dB = 10log_10\frac{P_2}{{P_1}}`
+:math:`\displaystyle number of dB = 10log_10\frac{P_2}|P_1|`
 
 In our study of the power gain of CE amplifiers, we are concerned with the ratio of the output power P\ :sub:`o` to the input power P\ :sub:`i`. This is defined as the power gain of the amplifier, A\ :sub:`P`, which is often specified in dB
 
-:math:`\displaystyle A_P(dB) = 10log_10\frac{P_o}{{P_i}}`
+:math:`\displaystyle A_P(dB) = 10log_10\frac{P_o}|P_i|`
 
 We need to determine the input resistance R\ :sub:`i` of the amplifier in order to calculate the power into the amplifier. R\ :sub:`i` is equal to the equivalent resistance presented by the voltage divider base bias network in parallel with the resistance looking onto the transistor base. The input resistance looking into the base, R\ :sub:`i,base` is calculated as follows:
 
@@ -146,19 +151,19 @@ We can see that the second term in this expression dominates, as is often the ca
 
 The rms power into the amplifier for any periodic input voltage is [kv\ :sub:`i`]\ :sup:`2`/R\ :sub:`i` = k\ :sup:`2`\ v\ :sub:`i`\ :sup:`2`/R\ :sub:`i` where k is a constant that depends on the waveform (k = 1/√2 for a sine wave). The rms output power into the load is [kv\ :sub:`o`]\ :sup:`2`/R\ :sub:`L` = k\ :sup:`2`\ v\ :sub:`o`\ :sup:`2`/R\ :sub:`L`. We know that v\ :sub:`o` = A\ :sub:`V`\ v\ :sub:`i`, and if we make that substitution, we can calculate the power gain based simply on A\ :sub:`V`, R\ :sub:`i`, and R\ :sub:`L` as follows
 
-:math:`\displaystyle A_P = P_o/P_i = {{k^2}({A_V}{v_i})^2}/{R_L}/{{k^2}{v_i}^2}/{R_i} = {k^2}{{A_V}^2}{{v_i}^2}/R_L/{{k^2}{v_i}^2}/{R_i} = A_V^2\frac{R_i}{{R_L}}`
+:math:`\displaystyle A_P = P_o/P_i = {{k^2}({A_V}{v_i})^2}/{R_L}/{{k^2}{v_i}^2}/{R_i} = {k^2}{{A_V}^2}{{v_i}^2}/R_L/{{k^2}{v_i}^2}/{R_i} = A_V^2\frac{R_i}|R_L|`
 
-:math:`\displaystyle A_P(dB) = 10log_10[A_V^2\frac{R_i}{{R_L}}] = 20log_10{|A_V|} + 10log_10\frac{R_i}{{R_L}}`
+:math:`\displaystyle A_P(dB) = 10log_10[A_V^2\frac{R_i}|R_L|] = 20log_10{|A_V|} + 10log_10\frac{R_i}|R_L|`
 
 We need to use the magnitude of the voltage gain in case the amplifier produces a phase inversion. Since the M1K provides a very low output resistance when sourcing voltage, the voltage loss incurred due to input loading the M1K source resistance is insignificant so we can ignore this. We can now calculate the power gain of the CE amplifier for our circuit as follows
 
-:math:`\displaystyle A_P = A_V^2\frac{R_i}{{R_L}} = (-5.1)^2\frac{1.2 KΩ}{{1 KΩ}} ≈ 31.2`
+:math:`\displaystyle A_P = A_V^2\frac{R_i}|R_L| = (-5.1)^2\frac{1.2 KΩ}|1 KΩ| ≈ 31.2`
 
 :math:`A_P(dB) = 10log_10(31.2) ≈ 15 dB`
 
 We can also use the dB formula to get the result directly in dB
 
-:math:`\displaystyle A_P(dB) = 20log_10{5.1) + 10log_10\frac{1.2 KΩ}{{1 KΩ}} ≈ 15 dB`
+:math:`\displaystyle A_P(dB) = 20log_10{5.1) + 10log_10\frac{1.2 KΩ}|1 KΩ| ≈ 15 dB`
 
 Observations and Conclusions
 ----------------------------
@@ -177,7 +182,9 @@ Observations and Conclusions
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
 
-.. |lab_10_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_image_1.png
-   :width: 800px
-.. |lab_10_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_assembly_image_1.png
-   :width: 1000px
+.. |1 KΩ| image:: https://wiki.analog.com/_media/1 KΩ
+.. |1470 Ω| image:: https://wiki.analog.com/_media/1470 Ω
+.. |P_1| image:: https://wiki.analog.com/_media/P_1
+.. |P_i| image:: https://wiki.analog.com/_media/P_i
+.. |R_E| image:: https://wiki.analog.com/_media/R_E
+.. |R_L| image:: https://wiki.analog.com/_media/R_L

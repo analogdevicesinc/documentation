@@ -8,7 +8,8 @@ A2B Software Stack or simply referred as A2B Stack is a collection of functional
 A2b Software Stack Architecture
 -------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bsoftwarestackarchitecture_a2bplus.jpg
+   :align: center
 
 .. container:: centeralign
 
@@ -74,7 +75,7 @@ Once an A2B schematic, corresponding to the Target system is modeled, and valida
 The Host-Target software workflow in building an A2B application is shown in the Figure below
 
 
-|image2|
+|image1|
 
 .. container:: centeralign
 
@@ -86,5 +87,4 @@ The Host-Target software workflow in building an A2B application is shown in the
    1.3.x stack differs from 19.11.x stack on the addition of new transceiver support for AD2430, AD2437 and AD2438
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/a2bsoftwarestackarchitecture_a2bplus.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/target_software_workflow.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/target_software_workflow.png

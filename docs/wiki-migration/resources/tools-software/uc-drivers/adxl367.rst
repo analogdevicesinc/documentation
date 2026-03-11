@@ -51,15 +51,10 @@ The source code for ADXL367 driver can be found here:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADXL367 Driver <drivers/accel/adxl367/adxl367.h>`
+   -   :git-no-OS:`Implementation of ADXL367 Driver <drivers/accel/adxl367/adxl367.c>`
    
-   |Header file of ADXL367 Driver|
 
-   -
-
-   |Implementation of ADXL367 Driver|
 
 The driver also uses the ADI util, delay and print_log libraries, so make sure you also add the necessary files in your project. The source code for the libraries can be found here:
 
@@ -67,27 +62,13 @@ The driver also uses the ADI util, delay and print_log libraries, so make sure y
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
+   -  :git-no-OS:`Header of ADI delay library <util/no_os_delay.h>`
+   -  :git-no-OS:`Implementation file of ADI delay library for Xilinx (use the one for the used platform) <drivers/platform/xilinx/delay.c>`
+   -  :git-no-OS:`Header of ADI print_log library <util/no_os_print_log.h>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
-
-   -
-
-   |Header of ADI delay library|
-
-   -
-
-   |Implementation file of ADI delay library for Xilinx (use the one for the used platform)|
-
-   -
-
-   |Header of ADI print_log library|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADXL367 driver and have to be implemented:
 
@@ -118,15 +99,10 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for SPI Communication APIs|
 
-   -
-
-   |Generic header file for I2C Communication APIs|
 
 ADXL367 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -381,13 +357,3 @@ ADXL367 IIO Driver Initialization Example
    };
 
    return iio_app_run(iio_devices, NO_OS_ARRAY_SIZE(iio_devices));
-
-.. |Header file of ADXL367 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl367/adxl367`.h
-.. |Implementation of ADXL367 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl367/adxl367`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Header of ADI delay library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_delay`.h
-.. |Implementation file of ADI delay library for Xilinx (use the one for the used platform)| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/platform/xilinx/delay`.c
-.. |Header of ADI print_log library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_print_log`.h
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

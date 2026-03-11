@@ -6,9 +6,8 @@ Overview
 
 The :adi:`High Speed ADC FMC Interposer <en/evaluation/eval-adc-fmc-int/eb.html>` allows ADC evaluation boards to interface with Xilinx's evaluation platforms (FMC carriers). The combination (evaluation board + interposer) may not work with all carriers. In some cases, even if there is a complete map of all the evaluation boards I/O to the carrier (through the interposer), the location and nature of the I/O might prevent the system to be functional.
 
-.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/hints/eval-adc-fmc-int.jpg
-   :alt: High Speed ADC FMC Interposer (B)
-   :align: left
+
+|High Speed ADC FMC Interposer (B)|
 
 .. note::
 
@@ -2729,3 +2728,5 @@ ZED FMC LPC
 +--------------------------+---------+-----+-------------------+------+-------------------------+-------+
 | Sat May 18 12:28:03 2013 |         |     |                   |      |                         |       |
 +--------------------------+---------+-----+-------------------+------+-------------------------+-------+
+
+.. |High Speed ADC FMC Interposer (B)| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/hints/eval-adc-fmc-int.jpg

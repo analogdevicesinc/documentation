@@ -58,10 +58,8 @@ To test the USB 2.0 functionality of the EVAL-CN0590-EBZ, follow below steps:
 
 2. Connect the type C USB cable to **P1** of the EVAL-CN0590-EBZ and then the other end of the cable to the computer USB port. Wait for the USB flash drive to be detected on the computer.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high_speed_data_transfer_test_setup.png
-   :alt: Figure 1: High Speed Data Transfer Test Setup
-   :align: right
-   :width: 1000px
+
+|Figure 1: High Speed Data Transfer Test Setup|
 
 .. container:: center
 
@@ -70,10 +68,9 @@ To test the USB 2.0 functionality of the EVAL-CN0590-EBZ, follow below steps:
 
 3. Validate the speed of the USB flash drive using a USB device tree viewer. Figure 2 shows an example device tree of a high-speed USB device.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high-speed_device_connection_speed.png
-   :alt: Example USB Device Tree Viewer Screen for a High-Speed USB Device
-   :align: right
-   :width: 2000px
+
+
+|Example USB Device Tree Viewer Screen for a High-Speed USB Device|
 
 .. container:: center
 
@@ -117,3 +114,8 @@ Hardware Registration
 
 
 // End of Document //
+
+.. |Figure 1: High Speed Data Transfer Test Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high_speed_data_transfer_test_setup.png
+   :width: 1000px
+.. |Example USB Device Tree Viewer Screen for a High-Speed USB Device| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0590/high-speed_device_connection_speed.png
+   :width: 2000px

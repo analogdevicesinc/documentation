@@ -33,10 +33,10 @@ The variety and range of filters are remarkable, as can be seen from the followi
    Note: For n curves, the selected index should not exceed n - 1, i.e., the index range is 0 to n - 1. If you select an n th curve, misbehavior or errors may result.
 
 
-.. |general2ndlookpic1.png| image:: https://wiki.analog.com/_media/general2ndlookpic1.png
-.. |general2ndlookpic2.png| image:: https://wiki.analog.com/_media/general2ndlookpic2.png
-.. |general2ndlookpic3.png| image:: https://wiki.analog.com/_media/general2ndlookpic3.png
-.. |general2ndlookpic4.png| image:: https://wiki.analog.com/_media/general2ndlookpic4.png
-.. |general2ndlookpic5.png| image:: https://wiki.analog.com/_media/general2ndlookpic5.png
-.. |general2ndlookpic6.png| image:: https://wiki.analog.com/_media/general2ndlookpic6.png
-.. |general2ndlookpic7.png| image:: https://wiki.analog.com/_media/general2ndlookpic7.png
+.. |general2ndlookpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic1.png
+.. |general2ndlookpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic2.png
+.. |general2ndlookpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic3.png
+.. |general2ndlookpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic4.png
+.. |general2ndlookpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic5.png
+.. |general2ndlookpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic6.png
+.. |general2ndlookpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general2ndlookpic7.png

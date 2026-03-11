@@ -39,12 +39,16 @@ Installing the CN-0393 Evaluation Software
 -  The destination directory window will open, with a default installation destination for the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_. If a different destination is desired, it can be selected here. When the destination directory is selected, press **Next**. // |image1| //
 -  The installation review window will appear. Press **Next** to begin installing the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_. (The installation progress window will then appear.) // |image2| //
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install3.png
+   :align: center
+   :width: 600px
 
--  Upon completion of the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ installation, a notification window will appear. Click **Next** to initiate the installation of the **ADI SDP Drivers** (version 2.2.118.111). // |image4| //
--  The **ADI SDP Drivers** installation wizard will appear. Press **Next** and then **Install** to begin the installation. (An installation progress window will then appear.) // |image5| //
+-  Upon completion of the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ installation, a notification window will appear. Click **Next** to initiate the installation of the **ADI SDP Drivers** (version 2.2.118.111). // |image3| //
+-  The **ADI SDP Drivers** installation wizard will appear. Press **Next** and then **Install** to begin the installation. (An installation progress window will then appear.) // |image4| //
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install6.png
+   :align: center
+   :width: 600px
 
 -  When the **ADI SDP Drivers** installation is complete, press **Close** to close the installation wizard. The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ is now installed.
 
@@ -222,7 +226,9 @@ To establish a USB connection link between the software and hardware:
 -  If the hardware is properly connected to the PC, the evaluation software will automatically establish a connection with the SDP-H1 controller board. A window with a progress bar will appear to indicate that the connection is being established. Another progress bar will appear to indicate that the SDP-H1 is being configured for the CN-0393 hardware. When the connection and configuration is complete, the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ Status bar will indicate “Hardware Connection and Initialization Complete.”
 -  If the software does not detect the hardware, a pop-up will appear with options to reattempt the connection or to run the software in stand-alone mode (see **Standalone Mode**). This can happen if the SDP-H1 board was recently connected and is not finished booting. Selecting **Rescan** will attempt to establish the USB connection again. Selecting **Cancel** will instruct the software to run in stand-alone mode.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_no_hardware_detected.png
+   :align: center
+   :width: 600px
 
 -  If the USB connection to the hardware is lost at any point during operation, a pop-up will appear to indicate this. Selecting **Rescan** will attempt to reestablish the USB connection. Selecting **Cancel** will instruct the software to run in standalone mode (see **Standalone Mode**).
 
@@ -270,7 +276,7 @@ The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub
 Standalone mode is initiated when the evaluation software does not establish a connection with the evaluation hardware, and the user selects **Cancel** in the pop-up that appears. This can occur at start-up or if the software loses an established connection with the hardware. A pop-up will appear to indicate when software enters standalone mode.
 
 
-|image8|
+|image5|
 
 The software will exit standalone mode if it can establish or reestablish a connection to the hardware (see **Establishing Hardware USB Connection Link**).
 
@@ -278,15 +284,9 @@ The software will exit standalone mode if it can establish or reestablish a conn
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install2.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install3.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install4.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install4.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install5.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install5.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install6.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_no_hardware_detected.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_standalone_notification.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_standalone_notification.png
    :width: 800px

@@ -97,7 +97,7 @@ Complete instructions for how to write it to the SD card and how to configure an
 
 .. note::
 
-   Switch to `ADI Kuiper Imager <https://github.com/analogdevicesinc/adi-kuiper-imager>`_ once it's stable and documented on the wiki.
+   Switch to :git-adi-kuiper-imager:`ADI Kuiper Imager <adi-kuiper-imager>` once it's stable and documented on the wiki.
 
 
 After writing the image, if a window pops up saying "this card needs to be formatted, would you like to format it now?", the answer is **NO.** Eject the card and insert it into the Raspberry Pi's SD card slot.
@@ -206,7 +206,7 @@ Appendix: Pluto Setup
 
 The Pluto that ships with the phaser kit has been pre-configured. In case something goes wrong, here is how to update the firmware and settings. For the CN0566, the TDD engine and additional control signals are required for some configurations, and were added as of Pluto firmware 0.38. The latest firmware is available from:
 
-:git-plutosdr-fw:`releases`
+`releases <https://github.com/analogdevicesinc/plutosdr-fw/releases>`_
 
 The next step is to update the Pluto configuration to enable the AD9361's second channel. Follow the directions at: :doc:`Updating to the AD9364, </wiki-migration/university/tools/pluto/users/customizing>` For **setting the mode of a Rev. C PlutoSDR to 2r2t, the following would be sequence of commands:**
 
@@ -275,7 +275,7 @@ Appendix: Configuration Script Notes
 
 *End of Document*
 
-.. |youtube>a6MeTsatTUg| image:: https://wiki.analog.com/_media/youtube>a6MeTsatTUg
+.. |youtube>a6MeTsatTUg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/youtube>a6MeTsatTUg
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/calibration/find_hb100_step_1.png
    :width: 800px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0566/phaser_gui_screenshot.png

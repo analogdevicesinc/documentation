@@ -16,7 +16,7 @@ Previous versions of ADI FreeRTOS are available via Github.
 
 There is a branch containing the latest ADI version for each FreeRTOS version : :git-FreeRTOS:`branches`
 
-There is a tag for each ADI released version : :git-FreeRTOS:`tags`
+There is a tag for each ADI released version : `tags <https://github.com/analogdevicesinc/FreeRTOS/tags>`_
 
 User Guides
 ===========

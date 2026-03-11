@@ -286,10 +286,6 @@ No-OS Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`adxl372 source and header files. <drivers/accel/adxl372>`
    
-   |adxl372 source and header files.|
 
-.. |adxl372 source and header files.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/accel/adxl372`

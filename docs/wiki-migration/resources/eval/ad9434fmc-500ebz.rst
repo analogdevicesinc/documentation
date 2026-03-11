@@ -16,7 +16,9 @@ The :adi:`AD9434` data sheet provide additional information and should be consul
 Typical Measurement Setup
 -------------------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_fmc_500ebz_typical_setup.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -98,35 +100,55 @@ Setting up the ADC Data Capture
 
 After configuring the board, set up the ADC data capture using the following steps:
 
--  Start Visual Analog. |image2|\
+-  Start Visual Analog.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_start_button.png
+   :align: center
+   :width: 100px
 
 .. container:: centeralign
 
    \ *Figure 2. VisualAnalog, Start Button*\
 
 
--  Select AD9434 and double click FFT |image3|\
+-  Select AD9434 and double click FFT
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_new_canvas_2.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 3. VisualAnalog, New Canvas Window*\
 
 
--  Click settings under ADC Data Capture. |image4|\
+-  Click settings under ADC Data Capture.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    \ *Figure 4. VisualAnalog, ADC Data Capture*\
 
 
--  Set device to Default. |image5|\
+-  Set device to Default.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture_setting_2.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 5. VisualAnalog, ADC Data Capture General Section*\
 
 
--  Navigate to Capture Board and browse your file directory for the FPGA Image called. (ad9434_sdph1.bin)\ |image6|\
+-  Navigate to Capture Board and browse your file directory for the FPGA Image called. (ad9434_sdph1.bin)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture_board_2.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -141,49 +163,77 @@ Evaluation And Test
 Setting up the SPI Controller Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Start SPIController |image7|\
+-  Start SPIController
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_start_button.png
+   :align: center
+   :width: 100px
 
 .. container:: centeralign
 
    \ *Figure 7. SPIController Start Button*\
 
 
--  If a message opens saying "Read Test Failure", select Ignore. |image8|\
+-  If a message opens saying "Read Test Failure", select Ignore.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 8. 1st Ignore Test Failure*\
 
 
--  Click File > Cfg Open then find the file named "ad9434_12bit_500MSspiR03.cfg" and double click it. |image9|\
+-  Click File > Cfg Open then find the file named "ad9434_12bit_500MSspiR03.cfg" and double click it.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_cfg_open.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 9. Configuration Settings*\
 
 
--  Again, if a message opens saying "Read Test Failure", select Ignore. |image10|\
+-  Again, if a message opens saying "Read Test Failure", select Ignore.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 10. 2nd Ignore Test Failure*\
 
 
--  Click Config > Controller Dialog. |image11|\
+-  Click Config > Controller Dialog.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_controller_dialog.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 11. Controller Dialog Guide*\
 
 
--  Un-select SDO Active and click OK. |image12|\
+-  Un-select SDO Active and click OK.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_unselect_sdo.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 12. Controller Dialog Setting*\
 
 
--  Click Read chip ID and Read Chip Grade. |image13|\
+-  Click Read chip ID and Read Chip Grade.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_read_chip_id_grade.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -197,18 +247,27 @@ Adjusting the Amplitude of the Input Signal
 
 The next step is to adjust the amplitude of the input signal for each channel as follows:
 
--  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9434 Average FFT** window (see Figure 14) to verify this.\ |image14|\
+-  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9434 Average FFT** window (see Figure 14) to verify this.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_typical_fft_2.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
-   //Figure 14. Graph Window of VisualAnalog *
+   //Figure 14. Graph Window of VisualAnalog //
 
 
-- Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file. \
+-  Click the disk icon within the **Graph** window to save the performance plot data as .csv formatted file.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_disk_icon_2.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
-   *Figure 15. VisualAnalog Disk Icon*
+   //Figure 15. VisualAnalog Disk Icon //
+
 
 Testing Additional AD9434 Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,18 +284,20 @@ SNR Performance of AD9434
 
 With reference to :adi:`an-501` and :adi:`an-756`, the SNR performance as shown in Figure 17 gives insight on the effect of clock jitter to the AD9434's signal-to-noise ratio (SNR) performed in evaluation board clock set-up depicted in Figure 16. The external signal generator clock circuitry provides the best performance among other clock configurations, which uses Rhode and Schwarz SMA100B. The CCS575S oscillator ranks second in terms of SNR performance, followed by LVPECL with voltage swing 960mVpp, then LVDS with 3.5mA current set-up. Both LVPECL and LVDS clock configurations were leveraged by :adi:`ad9517-4`. As an implication, the external signal generator has the lowest clock jitter among others.
 
-|image15|\
+
+|image1|
 
 .. container:: centeralign
 
-   //Figure 16. AD9434 Clocking Set-up *
+   //Figure 16. AD9434 Clocking Set-up //
 
 
-\
+   |image2|
 
 .. container:: centeralign
 
-   *Figure 17. AD9434 SNR Performance using Different Clock Configurations*
+   //Figure 17. AD9434 SNR Performance using Different Clock Configurations //
+
 
 As a trade-off in getting the best SNR performance, the material cost and resources are higher for external signal generator clock configuration. However, the user can get a better performance (almost -1 dB less than the external signal generator) with optimized material cost in oscillator clock configuration using CCS575S. For the lowest material cost compared to oscillator, the :adi:`ad9517-4` can offer a good functionality in using either LVPECL or LVDS configurations. In design considerations, the user should get a good balance between ease of resources and ADC performance.
 
@@ -265,98 +326,150 @@ How to use SPIController for AD9517-4 Register Setting
 After configuring the SPIController for AD9434 using FIFO Select 1, this section shows how to configure the SPIController by writing and reading values in :adi:`ad9517-4`. Below are the following steps:
 
 -  Start another SPIController
--  If a pop-up message saying **"Read Test Failure"**, select**Ignore**. |image16|\
+-  If a pop-up message saying **"Read Test Failure"**, select**Ignore**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 18. 1st Ignore Test Failure*\
 
 
--  Click File > Cfg Open, then find a file named **"AD9517spiR03.cfg"** and double click it. |image17|\
+-  Click File > Cfg Open, then find a file named **"AD9517spiR03.cfg"** and double click it.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_cfg_open.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 19. Configuration Settings*\
 
 
--  Again, if a message pop up saying **"Read Test Failure"**, select again**Ignore**. |image18|\
+-  Again, if a message pop up saying **"Read Test Failure"**, select again**Ignore**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 20. 2nd Ignore Test Failure*\
 
 
--  Click Config > Controller Dialog. |image19|\
+-  Click Config > Controller Dialog.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_controller_dialog.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 21. Controller Dialog Guide*\
 
 
--  Click **FIFO Chip Sel#** and choose **2**, and unselect **SDO Active** then click OK. |image20|\
+-  Click **FIFO Chip Sel#** and choose **2**, and unselect **SDO Active** then click OK.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_contdialog_fifo2.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 22. Configuring the FIFO Chip Select in Controller Dialog Section*\
 
 
--  Go to **Global** tab and click **Reset**. |image21|\
+-  Go to **Global** tab and click **Reset**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_global.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 23. Chip Port Configuration Section*\
 
 
--  Configure the **PLL** tab of the SPIController to the user desired settings. |image22|\
+-  Configure the **PLL** tab of the SPIController to the user desired settings.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_pll_control.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 24. Configuring the PLL Section*\
 
 
--  For the **Output** tab, the user can select on either LVPECL or LVDS. For LVPECL clock path connected to :adi:`ad9434`, configure **Output3 LVPECL(0x0F5)**, and set the differential voltage swing and the power modes to **Normal Operation**. For the rest of LVPECL outputs, set them to **Safe LVPECL power-down**, and also **check the Power-down Output** of all the LVDS outputs. |image23|\
+-  For the **Output** tab, the user can select on either LVPECL or LVDS. For LVPECL clock path connected to :adi:`ad9434`, configure **Output3 LVPECL(0x0F5)**, and set the differential voltage swing and the power modes to **Normal Operation**. For the rest of LVPECL outputs, set them to **Safe LVPECL power-down**, and also **check the Power-down Output** of all the LVDS outputs.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_outputs_lvpecl.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 25. Output LVPECL Section*\
 
 
--  For LVDS clock path connected to :adi:`ad9434`, configure the **Output5 (0x141)** by unchecking the power-down output with output polarity of **CMOS = A, CMOS B = N, LVDS = N** and setting the LVDS output current level to **3.5mA at 100 ohms** and all the LVPECL outputs to **Safe LVPECL power-down**. |image24|\
+-  For LVDS clock path connected to :adi:`ad9434`, configure the **Output5 (0x141)** by unchecking the power-down output with output polarity of **CMOS = A, CMOS B = N, LVDS = N** and setting the LVDS output current level to **3.5mA at 100 ohms** and all the LVPECL outputs to **Safe LVPECL power-down**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_outputs_lvds.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 26. Output LVDS Section*\
 
 
--  Configure the desired LVPECL divider settings shown in Figure 27 or configure the desired LVDS divider settings shown in Figure 28. |image25|\
+-  Configure the desired LVPECL divider settings shown in Figure 27 or configure the desired LVDS divider settings shown in Figure 28.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_lvpecl_divider.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 27. LVPECL Divider Section*\
 
 
-|image26|\
+   |image3|
 
 .. container:: centeralign
 
    \ *Figure 28. LVDS Divider Section*\
 
 
--  For internal VCO mode, configure the **VCO divider** to desired value and set the **Input to VCO divider** to **VCO**. |image27|\
+-  For internal VCO mode, configure the **VCO divider** to desired value and set the **Input to VCO divider** to **VCO**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_vco_settings.png
+   :align: center
+   :width: 500px
 
 .. container:: centeralign
 
    \ *Figure 29. VCO and REFCLK Section*\
 
 
--  After setting the desired register addresses, go back to **PLL** tab specifically the **PLL CTRL 3 (0x18)** and click the **VCO Cal Now**. |image28|\
+-  After setting the desired register addresses, go back to **PLL** tab specifically the **PLL CTRL 3 (0x18)** and click the **VCO Cal Now**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_vco_cal_now.png
+   :align: center
+   :width: 250px
 
 .. container:: centeralign
 
    \ *Figure 30. VCO Calibration Section*\
 
 
--  Click the **Update DUT from Controller** in the icon shown in Figure 31 and wait if the LED CR300 will lit up. Insert a REFCLK in J201 in order for the PLL in the :adi:`ad9517-4` to lock. |image29|\
+-  Click the **Update DUT from Controller** in the icon shown in Figure 31 and wait if the LED CR300 will lit up. Insert a REFCLK in J201 in order for the PLL in the :adi:`ad9517-4` to lock.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9517_update_dut.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -394,61 +507,9 @@ If the FFT appears normal but the analog input frequency is not matched in VA co
 -  Check and probe clock frequency in the ADC. Make sure the correct value is matched to the Clock Frequency Setting in ADC Data Capture Box of VA canvas.
 -  For LVPECL and LVDS configurations using :adi:`ad9517-4`, reset the board and redo the SPIcontroller settings for :adi:`ad9517-4`.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9434_fmc_500ebz_typical_setup.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_start_button.png
-   :width: 100px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_new_canvas_2.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture.png
-   :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture_setting_2.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9434_va_adc_data_capture_board_2.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_start_button.png
-   :width: 100px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_cfg_open.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_controller_dialog.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_unselect_sdo.png
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_read_chip_id_grade.png
-   :width: 300px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad9434_typical_fft_2.png
-   :width: 500px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ad9434_clock_setup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9434_clock_setup.png
    :width: 800px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
-   :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_cfg_open.png
-   :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_msg_ignore.png
-   :width: 400px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ad9434_spicontroller_controller_dialog.png
-   :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ad9517_contdialog_fifo2.png
-   :width: 400px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ad9517_global.png
-   :width: 400px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/ad9517_pll_control.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9434_snr_performance.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/ad9517_outputs_lvpecl.png
-   :width: 400px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/ad9517_outputs_lvds.png
-   :width: 400px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/ad9517_lvpecl_divider.png
-   :width: 400px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/ad9517_lvds_divider.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9517_lvds_divider.png
    :width: 500px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/ad9517_vco_settings.png
-   :width: 500px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/ad9517_vco_cal_now.png
-   :width: 250px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/ad9517_update_dut.png
-   :width: 400px

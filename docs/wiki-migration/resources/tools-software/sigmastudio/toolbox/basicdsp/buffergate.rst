@@ -117,6 +117,6 @@ Algorithm Addition Information
 | Parameter RAM Repetition | 1 per add                                                                                                                                                       |                      |
 +--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 
-.. |buffergatepic1.png| image:: https://wiki.analog.com/_media/buffergatepic1.png
-.. |buffergatepic3.png| image:: https://wiki.analog.com/_media/buffergatepic3.png
-.. |buffergatepic4.png| image:: https://wiki.analog.com/_media/buffergatepic4.png
+.. |buffergatepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/buffergatepic1.png
+.. |buffergatepic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/buffergatepic3.png
+.. |buffergatepic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/buffergatepic4.png

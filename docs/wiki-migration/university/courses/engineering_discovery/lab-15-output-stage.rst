@@ -29,29 +29,43 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_1.png
+   :alt: lab_14_image_1.png
+   :align: center
+   :width: 800px
 
-|lab_14_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
-
-|lab_14_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_assembly_image_1.png
+   :alt: lab_14_assembly_image_1.png
+   :align: center
+   :width: 1000px
 
 -  Plug in the M1K using the supplied USB cable and launch software
 -  Set up the M1K to source voltage/measure current on Channel A and measure voltage on Channel B
 -  Set up Channel A source waveform for a 50 Hz “Sine” output that swings between 0.5 V and of 4.5 V
--  Observe the output voltage at the connection between the two emitters on Channel B and observe the large amount of crossover distortion that is present in the output signal as shown in the image below\
+-  Observe the output voltage at the connection between the two emitters on Channel B and observe the large amount of crossover distortion that is present in the output signal as shown in the image below
 
-|lab_14_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_2.png
+   :alt: lab_14_image_2.png
+   :align: center
+   :width: 1000px
 
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
-|lab_14_image_3.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_3.png
+   :alt: lab_14_image_3.png
+   :align: center
+   :width: 800px
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
-|lab_14_assembly_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_assembly_image_2.png
+   :alt: lab_14_assembly_image_2.png
+   :align: center
+   :width: 1000px
 
 -  Set up Channel A source waveform for a 50 Hz “Sine” output that swings between 1.0 V and of 4.0 V
 -  Observe the output voltage at the connection between the two emitters on Channel B and observe how the crossover distortion has been significantly improved due to the addition of the level shifting transistors, connected as diodes
@@ -91,15 +105,5 @@ Observations and Conclusions
 -  In order to minimize the likelihood of thermal runaway, all devices should be kept at the same temperature; one way to implement this is to thermally connect all devices to the same heat sink
 -  Small resistors can be placed in series with the emitters of Class AB emitter-follower amplifier stages in order to provide positive feedback in the bias circuit that can help prevent thermal runaway
 
-.. |lab_14_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_1.png
-   :width: 800px
-.. |lab_14_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_assembly_image_1.png
-   :width: 1000px
-.. |lab_14_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_2.png
-   :width: 1000px
-.. |lab_14_image_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_3.png
-   :width: 800px
-.. |lab_14_assembly_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_assembly_image_2.png
-   :width: 1000px
 .. |lab_14_image_4.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_14_image_4.png
    :width: 200px

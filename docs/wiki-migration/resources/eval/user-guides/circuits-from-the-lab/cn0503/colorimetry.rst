@@ -156,10 +156,9 @@ Using Microsoft Excel, it is easy to generate the measurement curve by following
 
 |image20|
 
-   -  To get the RRAT measurement of a solution, select either path 2 or 3 and RRAT in the display units, and click Start Measurement
+-  To get the RRAT measurement of a solution, select either path 2 or 3 and RRAT in the display units, and click Start Measurement
 
-
-   |image21|
+|image21|
 
    -  Use the average or median of the measurement values.
 

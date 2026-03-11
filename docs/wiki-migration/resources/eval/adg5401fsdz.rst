@@ -32,9 +32,7 @@ Additional Documents Required
 Software Required
 -----------------
 
-::
-
-   *[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-development-platforms`.html|ACE]] software for control
+-  :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms.html>` software for control
 
 General Description
 -------------------
@@ -224,12 +222,8 @@ To set up the EVAL-ADG5401FSDZ, take the following steps:
 
 .. container:: centeralign
 
-   \
-
-
-   |image3|
-
-   *Figure 3. EVAL-AD5423SDZ Plug-In Not Installed*
+   
+   |image3| *Figure 3. EVAL-AD5423SDZ Plug-In Not Installed*
 
 
 -  When setting up the evaluation board for the first time, the EVAL-AD5423SDZ plug-in may need to be installed. If the plug-in appears as shown in Figure 6, go to Step 7. If the plugin appears as shown in Figure 3, click the button that is circled in red in Figure 3. After clicking this button, the pop-up window shown in Figure 4 appears. Click Yes.
@@ -244,7 +238,7 @@ To set up the EVAL-ADG5401FSDZ, take the following steps:
 
 .. container:: centeralign
 
-   \ |image5| *Figure 5. Plug-In Manager Window* |image6| *Figure 6. Attached Hardware Pane with EVAL-AD5423SDZ Connection*
+   |image5| *Figure 5. Plug-In Manager Window* |image6| *Figure 6. Attached Hardware Pane with EVAL-AD5423SDZ Connection*
 
 
 -  Double-click **EVAL-AD5423SDZ** to open the :adi:`AD5423` block diagram (see Figure 7). The **INITIAL CONFIGURATION** pane appears on the left side of the window. Several register settings can be configured in this pane and are written to the device in the appropriate order. The **DIG_DIAG_STATUS, RESET_OCCURED**, and **CAL_MEM_UNREFRESHED** LED indicators in the window are illuminated red by default.
@@ -380,7 +374,7 @@ A full description of each block and register setting is available in the :adi:`
 
 .. container:: centeralign
 
-   \ |image9| *Figure 9.* :adi:`AD5423` *Memory Map in the* :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` *Software*
+   |image9| *Figure 9.* :adi:`AD5423` *Memory Map in the* :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` *Software*
 
 
 Initial Configuration

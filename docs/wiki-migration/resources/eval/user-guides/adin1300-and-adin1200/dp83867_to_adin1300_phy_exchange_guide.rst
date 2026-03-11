@@ -58,8 +58,12 @@ PHY Exchange Guide, DP83867 to ADIN1300 Gb
    .. container:: half column
 
          
-         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/figure2_isolating_using_discrete_magnetics_dp83867.png
-         
+
+   
+      ..
+
+   |image1|
+
          **MDIO/Management Interface**
 
          
@@ -123,7 +127,7 @@ PHY Exchange Guide, DP83867 to ADIN1300 Gb
          **RMII Interface**
 
          
-         The DP83867 does not support the RMII interface. RMII is a reduced MII interface using fewer pins as shown in Table 6. The pin count for this interface is 8 pins. |image1| In RMII mode, the ADIN1300 requires an external 50MHz clock applied to XTAL_I. This clock could come from the MAC.
+         The DP83867 does not support the RMII interface. RMII is a reduced MII interface using fewer pins as shown in Table 6. The pin count for this interface is 8 pins. |image2| In RMII mode, the ADIN1300 requires an external 50MHz clock applied to XTAL_I. This clock could come from the MAC.
          
 
    
@@ -163,8 +167,8 @@ PHY Exchange Guide, DP83867 to ADIN1300 Gb
    
    .. container:: half column
 
-         
-         |image2| |image3|
+      |image3| |image4|
+
          
          **Hardware Configuration of Auto-MDIX**
 
@@ -179,7 +183,7 @@ PHY Exchange Guide, DP83867 to ADIN1300 Gb
          The ADIN1300 uses two hardware pins, MACIF_SEL0 and MACIF_SEL1 to provide user ability to select different MAC interfaces. These two pins have internal weak pull downs, therefore the default operation would be RGMII with delays as shown in Table 12. To configure any other MAC interface mode, use 10kΩ pull up or pull down resistors to select accordingly.
 
          
-         |image4|
+         |image5|
 
          **Hardware Configuration of PHY Address**
 
@@ -281,7 +285,7 @@ Side by Side Package/Pinout Comparison
 The following is a side-by-side comparison of the package and pinouts, showing the position of the corresponding functional pins on each device
 
 
-|image5|
+|image6|
 
 --------------
 
@@ -317,8 +321,9 @@ The following list summarizes an RGMII auto negotiate, 10 Mbps, 100 Mbps, or 100
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/figure6_rmii_auto_neg_allspeeds_half_or_full_duplex_dp83867.png
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table6_rmii_mac_interface_pin_mode_comparison_dp83867.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table9_autoneg_speeds_1300_dp83867.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table10_forced_neg_speeds_1300_dp83867.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table12_mac_interface_selection_1300_dp83867.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/figure5_pinout_comparison_dp83867.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/figure2_isolating_using_discrete_magnetics_dp83867.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table6_rmii_mac_interface_pin_mode_comparison_dp83867.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table9_autoneg_speeds_1300_dp83867.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table10_forced_neg_speeds_1300_dp83867.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/table12_mac_interface_selection_1300_dp83867.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adin1300-and-adin1200/figure5_pinout_comparison_dp83867.png

@@ -69,7 +69,7 @@ Test setup
 
        *//If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply//
    * Connect the USB cable supplied with the SDP board to the USB port on the PC
-   * Apply power to the +6 V supply (or “wall wart”) connected to [[:adi:`EVAL-CN0150A-SDPZ|EVAL-CN0150A-SDPZ` Evaluation Board]]
+   * Apply power to the +6 V supply (or “wall wart”) connected to :adi:`EVAL-CN0150A-SDPZ Evaluation Board <EVAL-CN0150A-SDPZ>`
    * Launch the evaluation software
    * Connect the USB cable from the PC to the USB mini connector on the SDP board
 
@@ -83,10 +83,11 @@ Calibration
 
 Because the slope and intercept of the system vary from device to device, a system level calibration is **required**.
 
--  Apply two known signal levels PIN_1 and PIN_2 close to the endpoints of the AD8318 linear input range. Note that it should be well within the linear operating range of the device (**-50 dBm to -10 dBm for this device**)\
+-  Apply two known signal levels PIN_1 and PIN_2 close to the endpoints of the AD8318 linear input range. Note that it should be well within the linear operating range of the device (**-50 dBm to -10 dBm for this device**)
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/14.png
+   :align: center
+   :width: 400px
 
 -  Measure the corresponding output codes CODE_1 and CODE_2 from the ADC
 -  Calculate SLOPE_ADC and INTERCEPT using the following equations:
@@ -111,17 +112,18 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you install the `CN0150 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0150>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0150\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-   |image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/1.png
+   :width: 500px
 
 -  **Accept** the license agreement to proceed to the installation review page
-   |image4|}
+   |image2|}
    \* Click **Next** to view the installation review page
 
-   |image5|
+   |image3|
 
    \* Click **Next** to start the installation
 
-   |image6|
+   |image4|
 
    \* Upon completion of the installation of the **CN-0150 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -130,7 +132,7 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-   |image7|
+   |image5|
 
    \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
@@ -141,11 +143,11 @@ Installing the Evaluation Software
    **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
 
 
-   |image8|
+   |image6|
 
    \* Press **“Install”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
-   |image9|
+   |image7|
 
 --------------
 
@@ -164,7 +166,7 @@ Main Window
 -  **Sample Data Graph** Tab - Shows the XY plot of ADC code and output error (%) versus input signal power. Also contains the plot options where you can edit plot display and options like interpolation and color of output waveform
 -  **Test Setup** Tab
 
-|image10|
+|image8|
 
    -  **Data Acquisition**
 
@@ -193,15 +195,14 @@ Main Window
 -  **Configure** Tab
 
 
-|image11|
+|image9|
 
-   -  **SDP Connector** - Selects which 120-pin connection of the SDP-B Board to use
-
-      -  **SCLK Frequency** - Sets the SPI clock frequency for the data transfers used by the evaluation board
-      -  **AD7887 Voltage Reference** - Select between internal or external 2.5 volts voltage reference
-      -  **SPI Byte to Write** - Buffer of unsigned 16-bit elements for SPI write transfer
-      -  **Flash LED** - Flashes the LED on the SDP controller board
-      -  **Read Firmware** - Reads the firmware of CN0150 Evaluation Board
+-  **SDP Connector** - Selects which 120-pin connection of the SDP-B Board to use
+-  **SCLK Frequency** - Sets the SPI clock frequency for the data transfers used by the evaluation board
+-  **AD7887 Voltage Reference** - Select between internal or external 2.5 volts voltage reference
+-  **SPI Byte to Write** - Buffer of unsigned 16-bit elements for SPI write transfer
+-  **Flash LED** - Flashes the LED on the SDP controller board
+-  **Read Firmware** - Reads the firmware of CN0150 Evaluation Board
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -256,23 +257,19 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/cn0150-hw-1024.jpg
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/14.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/2.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/3.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/4.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/5.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/6.png
    :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/6.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/8.png
    :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/8.png
-   :width: 500px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/12.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/12.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/15.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/15.png
    :width: 600px

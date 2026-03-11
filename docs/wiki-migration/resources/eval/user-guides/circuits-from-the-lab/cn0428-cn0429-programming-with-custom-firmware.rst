@@ -16,10 +16,10 @@ Additional Wiki Resources
 
 This guide focuses on programming and debugging the Sensor Board. General information about the Sensor Board can be found at :doc:`EVAL-CN0428-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0428>` and :doc:`EVAL-CN0429-EBZ </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0429>`, depending on which Sensor Board is used.
 
-::
 
-   *For additional info on configuring the switches and using the debug connector on the [[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT`.html|EVAL-M355-ARDZ-INT]] arduino interposer shield, consult the [[/resources/eval/user-guides/circuits-from-the-lab/aducm355_arduino_interposer|EVAL-M355-ARDZ-INT wiki page]].
-   *For additional info about the switches and connectors on the [[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029`.html|EVAL-ADICUP3029]], consult the [[/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029|EVAL-ADICUP3029 Base Board Hardware wiki page]].
+
+- For additional info on configuring the switches and using the debug connector on the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>` arduino interposer shield, consult the :doc:`EVAL-M355-ARDZ-INT wiki page </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/aducm355_arduino_interposer>`.
+- For additional info about the switches and connectors on the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>`, consult the :doc:`EVAL-ADICUP3029 Base Board Hardware wiki page </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>`.
 
 Programming the Sensor Board Using a Stand-Alone Debugger such as a J-Link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

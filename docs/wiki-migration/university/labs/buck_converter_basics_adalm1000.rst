@@ -210,9 +210,8 @@ To measure this circuit with the ADALM1000 module you will need to use the Equiv
 
 An assembled PC board version of the buck converter circuit is available as the ADALM-BUCK-ARDZ experiment board.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -234,7 +233,7 @@ While there are a number of connections required to construct this test circuit,
    
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -245,7 +244,7 @@ The circuit could also be constructed on a solderable breadboard which matches t
 
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -254,9 +253,9 @@ The circuit could also be constructed on a solderable breadboard which matches t
 
 Measure the ripple current for different numbers of series-connected inductors. The figure below shows the ripple current for 2, 3, 4, 5, and 6 inductors. How well does this match the LTspice simulation?
 
-.. image:: https://wiki.analog.com/_media/university/labs/m1k-buck-ardz-ripple-current.png
-   :align: center
-   :width: 650px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -267,9 +266,8 @@ Measure the ripple current for different numbers of series-connected inductors. 
 
 Measure the ripple voltage at the output of the converter, with a 22uF output capacitor. Then place an additional 47uF capacitor in parallel, for a total of 69uF. Does the measured ripple match the simulated ripple reasonably well? Note that both the inductor and electrolytic capacitors can have a very wide tolerance - tolerances of +/-20% are common for inductors, and -20%/+80% is a common tolerance for electrolytic capacitors. The animated figure below shows the ripple voltage for output capacitances of 22uF and 22uF+47uF.
 
-.. image:: https://wiki.analog.com/_media/university/labs/m1k-buck-ardz-ripple-voltage.png
-   :align: center
-   :width: 650px
+
+|image5|
 
 .. container:: centeralign
 
@@ -309,7 +307,7 @@ Circuit Testing
 Connect the buck output to the A0 analog pin on the Arduino and the Arduino's D3 digital signal to the buck converter's control input. Figure A2.17 shows connections to an Arduino Uno clone. The yellow wire connects the buck output to the Arduino's A0 input, and the blue wire connects the Arduino's PWM output on Digital Pin 3 to the oscillator override input. (Using two ground wires ensures a lower inductance connection between circuit grounds.)
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -328,9 +326,10 @@ Copy this Arduino sketch into your Arduino sketchbook (and restart the Arduino I
 
 The following figure shows the operation of the closed-loop circuit. The set point voltage is 3.141V, and the purple trace starts out close to this value at the left hand side of the screen shot. A 50 ohm load is then connected to the output, drawing approximately 120mA, and producing a dip in the output voltage. The Arduino loop detects this and increases the PWM frequency accordingly, restoring the voltage to its correct value. Then the resistor is removed, producing an increase in the output voltage. Once again, the Arduino loop detects this disturbance and compensates.
 
-.. image:: https://wiki.analog.com/_media/university/labs/m1k-buck-ardz-transient-step.png
-   :align: center
-   :width: 650px
+   
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -380,9 +379,17 @@ A slide deck is provided as a companion to this exercise, and can be used to hel
 
 **Return to Lab Activity** :doc:`Power Lab Table of Contents </wiki-migration/university/labs/power>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_2_to_1_bb.png
-   :width: 700px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_perma_proto_sm.jpg
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_arduino_in_loop.jpg
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_2_to_1_bb.png
+   :width: 700px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_buck_perma_proto_sm.jpg
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/m1k-buck-ardz-ripple-current.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/m1k-buck-ardz-ripple-voltage.png
+   :width: 650px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/buck_basics/lt1054_arduino_in_loop.jpg
    :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/m1k-buck-ardz-transient-step.png
+   :width: 650px

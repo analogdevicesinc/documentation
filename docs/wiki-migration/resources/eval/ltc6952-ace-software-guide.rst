@@ -41,7 +41,8 @@ You can install the LTC6952 plug-in from the ACE start-up page. You can install 
 -  Select Available Packages from the panel second sidebar
 -  Search for Board.LTC6952 and install plug-in
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace-plugin-search-screen.png
+   :align: center
 
 .. note::
 
@@ -54,9 +55,13 @@ Evaluation Board Set-Up
 -  Connect J30, J32, and J33 to the appropriate power supplies and apply power (see Figure 1 and the Typical DC2609A Requirements and Characteristics table).
 -  Connect the DC2026 to the DC2609A with the provided ribbon cable
 -  Run the ACE application. Double click the LTC6952 icon that appears on the Attached Hardware tab when the DC2026 board is connected and attached to the board. If the icon does not appear, consider re-installing the LTC6952 plug-in or try refreshing the Attached hardware icon.
--
 
-|image4|
+::
+
+   -
+
+.. image:: https://wiki.analog.com/_media/resources/eval/board.ltc6952-plugin-attached-hardware-screen.png
+   :align: center
 
 .. note::
 
@@ -67,7 +72,8 @@ Evaluation Board Set-Up
 -  Double click the LTC6952 Board Icon and the tab shown in Figure 5 appears.
 -  Double click the LTC6952 icon that appears on the LTC6952 Board tab to open the main control window shown in Figure 6
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/ltc6952-boardview-on-ace.png
+   :align: center
 
 .. note::
 
@@ -93,7 +99,7 @@ The main controls are available in the high-level register map shown in Figure 7
 By clicking Proceed to Memory Map button or Memory Map Side-By-Side button, register values can be seen.
 
 
-|image6|
+|image3|
 
 .. note::
 
@@ -193,7 +199,7 @@ Troubleshooting
 To verify communication with the DC2609A, Go to the start page or system view page and click the button shown below.
 
 
-|image7|
+|image4|
 
 .. note::
 
@@ -216,8 +222,5 @@ If QuickEval does not find a DC590B, reload the DC590 Linduino sketch To use the
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc2609a-board-view.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc2026-connector-location.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace-plugin-search-screen.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/board.ltc6952-plugin-attached-hardware-screen.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ltc6952-boardview-on-ace.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ltc6952-chipview-on-ace.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ltc6952-verify-comm.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ltc6952-chipview-on-ace.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ltc6952-verify-comm.png

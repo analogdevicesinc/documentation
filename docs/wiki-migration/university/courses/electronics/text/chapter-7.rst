@@ -10,9 +10,8 @@ Another property of the diode is that the small signal conductance (or resistanc
 
 The simplest form of a peak detector circuit is the series connection of a diode and a capacitor which outputs a DC voltage across the capacitor equal to the peak value of the input AC signal (minus the forward bias voltage drop of the diode). A switch of some sort in parallel with the capacitor is generally needed to periodically reset the output voltage such as when a new peak detection is desired.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -21,9 +20,9 @@ The simplest form of a peak detector circuit is the series connection of a diode
 
 With the diode facing as shown in figure 7.1.1 the circuit detects the positive peaks. If the direction of the diode were reversed then the circuit will detect the negative peaks of the input. The output of the simple peak detector is not actually the true peak value of the input due to the inherent built-in voltage drop of the diode. By including an op-amp as in figure 7.1.2 the error due to the diode drop is greatly reduced by the forward gain of the op-amp.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f2.png
-   :align: center
-   :width: 600px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,9 +41,8 @@ In this section we investigate absolute value circuits. Rectifiers, or 'absolute
 
 The inverting op-amp circuit can be converted into an "ideal" (linear precision) half-wave rectifier by adding two diodes as shown in figure 7.2.1. For the negative half of the input swing, diode D\ :sub:`1` is reverse biased and diode D\ :sub:`2` is forward biased and the circuit operates as a conventional inverter with a gain of -1, assuming that R\ :sub:`1`\ =R\ :sub:`2`. For the positive half of the input swing, diode D\ :sub:`1` is forward biased, closing the feedback around the amplifier. Diode D\ :sub:`2` is reverse biased disconnecting the output from the amplifier. The output will be at the virtual ground potential (- input terminal) through resistor R\ :sub:`2`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -53,9 +51,9 @@ The inverting op-amp circuit can be converted into an "ideal" (linear precision)
 
 The peak of the rectified output, as seen in figure 7.2.2, is now equal to the peak value of the input. There is also a sharp transition as the input crosses zero. The reader should investigate the waveforms at different points in the circuit, such as the op amp output, to explain why this circuit works better than the simple diode half wave rectifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f4.png
-   :align: center
-   :width: 600px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -67,9 +65,8 @@ An Application Example: Measuring the peak value of an AC Voltage
 
 We only have access to a DC voltmeter and need to design a circuit that can measure the peak voltage of an AC signal. We can use the precision half wave rectifier to provide just the negative half of the input signal and then low pass filter the rectified output as shown in figure 7.2.3. What is the DC output voltage of the following circuit if R\ :sub:`1` = 3.24 kΩ, R\ :sub:`2` = 10.2 kΩ, R\ :sub:`3`\ = 20 kΩ and R\ :sub:`4` = 20 kΩ Assume Vp = 1 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -93,9 +90,8 @@ The first order low pass filter will remove the AC content and pass the DC compo
 
 The circuit shown figure 7.2.4 is// //an absolute value circuit, often called a precision full-wave rectifier. It should operate like a full wave rectifier circuit constructed with ideal diodes (the voltage across the diode, in forward conduction, equals 0 volts). The actual diodes used in the circuit will have a forward voltage of around 0.6 V. In order for both halves of the input waveform to have the same gain from the input to the output resistor R\ :sub:`2` = R\ :sub:`3` and R\ :sub:`4` = R\ :sub:`5`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -108,9 +104,8 @@ The input impedance of the circuit is equal to the value of R\ :sub:`1`, and is 
 
 The peak of the rectified output, as seen in figure 7.2.5, is again equal to the peak value of the input. There is the sharp transition as the input crosses zero. The reader should investigate the waveforms at different points in the circuit, such as the op amp output and across the diodes, to explain why this circuit works better than the diode full wave or bridge rectifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f7.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -126,18 +121,15 @@ An envelope detector is a circuit that takes a high-frequency amplitude modulate
 
 Most practical envelope detectors use either half-wave or full-wave rectification of the signal to convert the AM input into a pulsed DC signal where the peaks of the DC pulses represent the modulating signal. Low pass filtering is then used to smooth the final result, leaving the low frequency modulating signal component. This filtering is rarely perfect and some "ripple" is likely to remain on the envelope detector output, particularly for low frequency inputs such as notes from a bass guitar. More filtering gives a smoother result, but decreases the high frequency response to the original modulating signal. Real world designs must be optimized for the given application.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 7.3.1 Envelope detector
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f9.png
-   :align: center
-   :width: 600px
+   |image9|
 
 .. container:: centeralign
 
@@ -161,9 +153,8 @@ A clamp is an electronic circuit that prevents a signal from going above or belo
 
 The clamp circuit will fix either the upper or lower peak of a signal waveform to a fixed DC voltage level. This circuit is also sometimes referred to as a DC voltage restorer for obvious reasons. When unbiased, clamp circuit will fix the output voltage lower limit (or upper limit, in the case of negative clampers) to 0 Volts. By including a fixed bias voltage in series with the diode the circuit will clamp the peak of a waveform to a specific DC level.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
@@ -172,9 +163,9 @@ The clamp circuit will fix either the upper or lower peak of a signal waveform t
 
 The schematic of a diode clamp as shown in figure 7.4.2 reveals that it is a relatively simple device. The two components creating the clamping effect are a capacitor, followed by a diode in parallel with the output. The clamp circuit relies on a change in the capacitor's time constant; this is the result of the diode changing current path, either conducting or non-conducting, with the changing input voltage. The value of C\ :sub:`1` and the magnitude of any external load R are chosen so that Τ = RC is large enough to ensure that the voltage across the capacitor does not discharge significantly during the diode's non-conducting interval. During the first negative phase of the AC input voltage, the capacitor in the positive clamper charges rapidly. As V\ :sub:`IN` becomes positive, the capacitor serves as a voltage doubler; since it has stored the equivalent of the peak value of V\ :sub:`IN` during the negative cycle, it provides nearly that voltage during the positive cycle; this essentially doubles the voltage seen at the output V\ :sub:`OUT`. As V\ :sub:`IN` becomes negative, the capacitor acts as a battery of the same voltage of V\ :sub:`IN`. The input voltage and the capacitor counteract each other, resulting in a net voltage of zero as seen at the output V\ :sub:`OUT`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f11.png
-   :align: center
-   :width: 600px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -188,9 +179,8 @@ Op-amp clamp circuit
 
 The schematic in figure 7.4.3 includes an op-amp clamp circuit with a non-zero reference clamping voltage. The very large op amp open loop gain provides the advantage that the clamping level is at very nearly the reference voltage. There is no need to take into account the forward volt drop of the diode (which is necessary in the previous simple circuits as this adds to the reference voltage). The effect of the diode volt drop on the circuit output will be reduced by the open loop gain of the amplifier, resulting in an insignificant error.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f12.png
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -202,18 +192,15 @@ The schematic in figure 7.4.3 includes an op-amp clamp circuit with a non-zero r
 
 A diode clipping circuit can be used to limit the voltage swing of a signal. The input vs. output transfer function of an ideal clipping circuit is shown in figure 7.5.1. V\ :sub:`OUT` is equal to V\ :sub:`IN` as long as V\ :sub:`IN` is less than V\ :sub:`L+` and greater than V\ :sub:`L-`. When V\ :sub:`IN` is outside these limiting voltages V\ :sub:`OUT` is clipped or limited to V\ :sub:`L+` or V\ :sub:`L-`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f13.png
-   :align: center
-   :width: 600px
+
+|image13|
 
 .. container:: centeralign
 
    Figure 7.5.1 Voltage clipping characteristic
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f14.png
-   :align: center
-   :width: 600px
+   |image14|
 
 .. container:: centeralign
 
@@ -224,9 +211,8 @@ Figure 7.5.3 shows a diode circuit that clips both the positive and negative vol
 
 Depending on the features of the diode, the positive or negative region of the input signal is "clipped" off and accordingly the diode clippers may be positive or negative clippers.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f15.png
-   :align: center
-   :width: 600px
+
+|image15|
 
 .. container:: centeralign
 
@@ -235,9 +221,9 @@ Depending on the features of the diode, the positive or negative region of the i
 
 There are two general forms of clippers: series and parallel (or shunt). The shunt clipper has the diode in a branch parallel to the load while the series configuration, figure 7.5.4, is defined as one where the diode is in series with the load.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f16.png
-   :align: center
-   :width: 600px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -255,9 +241,8 @@ Electronically controllable variable RF attenuators are common in the design of 
 
 By changing the bias current through a PN diode, it's possible to change the RF resistance. At high frequencies, the diode appears as a resistor whose resistance is an inverse function of its forward current. In addition a diode can be used in some variable attenuator designs as amplitude modulators or output leveling (automatic gain control) circuits. An example attenuator circuit configuration is shown in figure 7.6.1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f17.png
-   :align: center
-   :width: 650px
+
+|image17|
 
 .. container:: centeralign
 
@@ -320,9 +305,8 @@ Note that this implementation does not consider the temperature drift of the dio
 
 To illustrate the input voltage to output voltage characteristics of the diode log amplifier the circuit of figure 7.7.1 was simulated with R set to 1 kΩ and a 1N4148 diode. The results are plotted in figure 7.7.2. The bottom green curve is a linear sweep of V\ :sub:`IN` from 0 to 5V. With a 1 kΩ resistor the current through the diode is thus swept from 0 to 5 mA. The top blue curve shows the characteristic logarithmic shape we are expecting.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f19.png
-   :align: center
-   :width: 600px
+
+|image18|
 
 .. container:: centeralign
 
@@ -369,9 +353,8 @@ The output voltage is given by:
 
 To illustrate the input voltage to output voltage characteristics of the diode anti-logarithmic amplifier the circuit of figure 7.8.1 was simulated with R set to 1 kΩ and a 1N4148 diode. The results are plotted in figure 7.8.2. The bottom green curve is a linear sweep of V\ :sub:`IN` from 0 to 660 mV. By using the same diode as we did in section 7.7 on log amps we know that 660 mV will result in a 1 mA current through the diode and with the same 1 kΩ resistor output voltage will be 5V. The top blue curve shows the characteristic exponential shape we are expecting.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f21.png
-   :align: center
-   :width: 600px
+
+|image19|
 
 .. container:: centeralign
 
@@ -383,3 +366,42 @@ To illustrate the input voltage to output voltage characteristics of the diode a
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-8>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f7.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f8.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f11.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f13.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f14.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f15.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f16.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f17.png
+   :width: 650px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f19.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr7-f21.png
+   :width: 600px

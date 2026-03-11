@@ -16,9 +16,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1 below. The output of the function generator drives one end of resistor R\ :sub:`4`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as in previous zero gain amplifier section. Resistor R\ :sub:`3` and transistor Q\ :sub:`2` are added as in the stabilized current source section. If the SSM2212 matched NPN pair is used it is best that it be used for devices Q\ :sub:`1` and Q\ :sub:`2`. Q\ :sub:`3` is added with its emitter grounded, its base connected to the collector of Q\ :sub:`2` and collector connected to the combined node of R\ :sub:`1`, R\ :sub:`3` R\ :sub:`4` and scope input 2+.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a10_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -44,7 +43,7 @@ The regulated output voltage should be observed as the variable resistor R\ :sub
 
 .. container:: centeralign
 
-   \ |image1|\
+   \ |image2|\
 
 
 .. container:: centeralign
@@ -52,9 +51,7 @@ The regulated output voltage should be observed as the variable resistor R\ :sub
    Figure 3 output voltage vs. input voltage
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a10_f2.png
-   :align: center
-   :width: 500px
+   |image3|
 
 .. container:: centeralign
 
@@ -92,5 +89,9 @@ All the emitters can be tired to ground ( pins 3,7,10,13 ). Devices Q\ :sub:`1`,
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/bandgap_sh_reg-wav.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a10_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/bandgap_sh_reg-wav.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a10_f2.png
    :width: 500px

@@ -13,10 +13,12 @@ When the short parameter name is enabled the parameter will be shortened as foll
 
 This option available under Action Menu.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/action.jpg
-   :align: center
+
+|image1|
 
 .. important::
 
    Parameter names in export may not be unique when 'Short Parameter Name for Export' option is enabled in the following cases. 1. Same module label is used across multiple hierarchy boards in the schematic.
 
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/action.jpg

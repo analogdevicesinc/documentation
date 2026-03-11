@@ -100,4 +100,4 @@ Algorithm Details
 | Parameter RAM              | 6                                                                            |
 +----------------------------+------------------------------------------------------------------------------+
 
-.. |offlinepic1.png| image:: https://wiki.analog.com/_media/offlinepic1.png
+.. |offlinepic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/offlinepic1.png

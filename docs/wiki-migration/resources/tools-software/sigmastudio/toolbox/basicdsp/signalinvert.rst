@@ -7,4 +7,4 @@ Signal Invert
 
 For a sample design using this block, see the :doc:`Basic DSP </wiki-migration/resources/tools-software/sigmastudio/tutorials/basicdspexamples>` example.
 
-.. |signalinvertpic1.png| image:: https://wiki.analog.com/_media/signalinvertpic1.png
+.. |signalinvertpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/signalinvertpic1.png

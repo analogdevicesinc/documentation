@@ -48,7 +48,9 @@ Schematic:
 Evaluation Board
 ----------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_eval_board.jpg
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -58,7 +60,9 @@ Evaluation Board
 Evaluation Board Schematic
 --------------------------
 
-|image2|\
+.. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_eval_schematic.png
+   :align: center
+   :width: 1600px
 
 .. container:: centeralign
 
@@ -89,7 +93,9 @@ For tests other than the accuracy tests, open the 680 Ω resistor connections by
 Test Circuit 1
 ~~~~~~~~~~~~~~
 
-|image3|\
+.. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_test_circuit1.png
+   :align: center
+   :width: 1600px
 
 .. container:: centeralign
 
@@ -99,18 +105,11 @@ Test Circuit 1
 Test Circuit 2
 ~~~~~~~~~~~~~~
 
-|image4|\
+.. image:: https://wiki.analog.com/_media/resources/eval/adum3190s_test_circuit2.png
+   :align: center
+   :width: 1600px
 
 .. container:: centeralign
 
    \ *Figure 2. ADuM3190S Test Circuit 2—*\ :adi:`EVAL-ADUM3190S <ADUM3190S>`\
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/adum3190s_eval_board.jpg
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/adum3190s_eval_schematic.png
-   :width: 1600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/adum3190s_test_circuit1.png
-   :width: 1600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/adum3190s_test_circuit2.png
-   :width: 1600px

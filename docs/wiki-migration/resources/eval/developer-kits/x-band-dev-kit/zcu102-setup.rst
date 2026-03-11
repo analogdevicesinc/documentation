@@ -14,7 +14,7 @@ SD Card Setup
 
    <details><summary>Click to expand
 
--  Follow the instructions on one of the below pages to install the |latest Linux kernel| on the SD card.
+-  Follow the instructions on one of the below pages to install the `latest Linux kernel <http://swdownloads.analog.com/cse/2019_R1-2020_06_22.img.xz>`_ on the SD card.
 
    -  :doc:`Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
    -  :doc:`Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
@@ -108,5 +108,4 @@ Network Configuration
 
 The ZCU102 uses a RJ45 ethernet cable to connect the ethernet port on the board a host PC or network port to enable network access. Modifications to the network settings can be made following the guidance detailed on the :doc:`Network Configuration </wiki-migration/resources/tools-software/linux-software/network-config>` wiki.
 
-.. |latest Linux kernel| image:: http://swdownloads.analog.com/cse/2019_R1-2020_06_22.img.xz
 .. |SW6 Configuration for SD Card Boot| image:: https://wiki.analog.com/_media/resources/eval/developer-kits/x-band-dev-kit/zcu102_sw6_sdcard.jpg

@@ -127,11 +127,13 @@ Software Control and Indicator Descriptions
 Main Tab
 ^^^^^^^^
 
-| |image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/14.png
+
+
 
 .. tip::
 
-   \ **NOTE:** Blocks 6,7,8 and 10 have expand buttons (|image10|) that when clicked brings up the window shown in these blocks' description.
+   \ **NOTE:** Blocks 6,7,8 and 10 have expand buttons (|image9|) that when clicked brings up the window shown in these blocks' description.
 
 
 | \**Analysis Ch**
@@ -144,16 +146,28 @@ Main Tab
    **Single Capture** Initiates the sampling and readback of the defined number of measurements.
    **Continuous Capture** Continuously captures and updates the display and chart. Click a second time to stop sampling.
    **Device Status** Displays the device generic and operating mode.
-   **I/P MUX** Writes to the channel register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:15.png?direct|}}
-   **2.5 Vref** Source of the Reference Input. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:16.png?direct|}}
-   **Control Logic and Registers** Writes to the configuration Register. \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:17.png?direct|}}
+   **I/P MUX** Writes to the channel register. \\
+
+     |resources-eval-user-guides-circuits-from-the-lab-cn0372-15.png|
+
+   **2.5 Vref** Source of the Reference Input. \\
+
+     |resources-eval-user-guides-circuits-from-the-lab-cn0372-16.png|
+
+   **Control Logic and Registers** Writes to the configuration Register. \\
+
+     |resources-eval-user-guides-circuits-from-the-lab-cn0372-17.png|
+
    **SCL Rate**
      * Selects the SCL clock rate. Standard mode is 100 kHz. Fast mode is 400 kHz. Fast mode is the default configuration.
-   **Alert Register** Writes to the Alert Register \\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0372:18.png?direct|}}
+   **Alert Register** Writes to the Alert Register \\
+
+     |resources-eval-user-guides-circuits-from-the-lab-cn0372-18.png|
+
    **DPS Duty Cycle** Duty cycle dropdown menu. Options from 10% to 90%.
    **Reference Settings** Displays current reference setting. If **External Reference** is selected, provide an off-board external reference. If this option is selected, the supplied reference value must be entered in **Ref. Value**.
-   **DPS** Toggles dynamic power scaling when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
-   **Amp PD** Toggles power down of buffer when [[:adi:`ADA4805-1|ADA4805-1]]` is used.
+   **DPS** Toggles dynamic power scaling when :adi:`ADA4805-1` is used.
+   **Amp PD** Toggles power down of buffer when :adi:`ADA4805-1` is used.
    **Flash LED** Flashes **LED1A** on the **SDP-B board**, useful for debugging purposes.
    **Reset** Resets ADC and places the default configuration in the control register.
    **Status Bar** Displays a message to the user detailing the current state of the software.
@@ -242,7 +256,7 @@ Saving Data to a Spreadsheet File
 -  Click on **File** Menu.
 
 
-|image11|
+|image10|
 
 -  Select **Save Analysis Data**
 -  Select data to save.
@@ -303,6 +317,10 @@ Registration
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/11.png
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/12.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/13.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/14.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/expandnew.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/29-1.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/expandnew.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/29-1.png
+
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0372-15.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/15.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0372-16.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/16.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0372-17.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/17.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0372-18.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0372/18.png

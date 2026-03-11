@@ -56,11 +56,11 @@ Source Code
 Status
 ------
 
-+------------------------------------------------------+------------------------------------------------------+
-| Source                                               | Mainlined?                                           |
-+======================================================+======================================================+
-| `git </git.linux.org>drivers/iio/gyro/adxrs450.c>`__ | `Yes </git.linux.org>drivers/iio/gyro/adxrs450.c>`__ |
-+------------------------------------------------------+------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| Source                                                                                                        | Mainlined?                                                                                                    |
++===============================================================================================================+===============================================================================================================+
+| `git <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/gyro/adxrs450.c>`_  | `Yes <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/gyro/adxrs450.c>`_  |
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Files
 -----
@@ -320,5 +320,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-gyroscope/youtube>p_VntEwUe24
 

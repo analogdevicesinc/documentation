@@ -172,7 +172,7 @@ Note :
 
 -  The filter algorithm used is a 2nd Order General Filter (Double Precision) based on a Direct Form II structure
 
-.. |idxpic1.png| image:: https://wiki.analog.com/_media/idxpic1.png
-.. |idxpic2.png| image:: https://wiki.analog.com/_media/idxpic2.png
-.. |idxpic3.png| image:: https://wiki.analog.com/_media/idxpic3.png
-.. |idxpic4.png| image:: https://wiki.analog.com/_media/idxpic4.png
+.. |idxpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/idxpic1.png
+.. |idxpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/idxpic2.png
+.. |idxpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/idxpic3.png
+.. |idxpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/idxpic4.png

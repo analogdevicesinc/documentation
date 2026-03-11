@@ -53,9 +53,8 @@ Installation
 
 DPG Lite is installed as an option along ACE:
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/ace/dpgliteinstall.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. note::
 
@@ -97,15 +96,15 @@ Buttons
 ^^^^^^^
 
 +-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| |image6|  | Adds a vector from an existing file. See `#loading_data_files <https://wiki.analog.com/>`_ for more information. Clicking the down arrow will display a list of the last 10 data files that were loaded.                                        |
+| |image7|  | Adds a vector from an existing file. See `#loading_data_files <https://wiki.analog.com/>`_ for more information. Clicking the down arrow will display a list of the last 10 data files that were loaded.                                        |
 +-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| |image7|  | Displays a drop-down list of the available vector generators. See `#generating_data_vectors <https://wiki.analog.com/>`_ for more information.                                                                                                  |
+| |image8|  | Displays a drop-down list of the available vector generators. See `#generating_data_vectors <https://wiki.analog.com/>`_ for more information.                                                                                                  |
 +-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| |image8|  | Removes the selected vector. The selected vector is highlighted with a border. If the selected vector is from a data file, removing the vector from DPG Lite will not delete the file itself. The data file can be added back at any time.      |
+| |image9|  | Removes the selected vector. The selected vector is highlighted with a border. If the selected vector is from a data file, removing the vector from DPG Lite will not delete the file itself. The data file can be added back at any time.      |
 +-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| |image9|  | Removes all vectors from the list.                                                                                                                                                                                                              |
+| |image10| | Removes all vectors from the list.                                                                                                                                                                                                              |
 +-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| |image10| | Displays both a time-domain and frequency-domain graph of the selected vector(s). See `#graphing_vectors <https://wiki.analog.com/>`_ for more information.                                                                                     |
+| |image11| | Displays both a time-domain and frequency-domain graph of the selected vector(s). See `#graphing_vectors <https://wiki.analog.com/>`_ for more information.                                                                                     |
 +-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Selecting Vectors
@@ -185,11 +184,11 @@ Multi-Tone
 The Multi-Tone generator creates vectors that are composed of multiple sine wave vectors. Each tone can have its own frequency, amplitude, and phase. As with the Single Tone generator, the Multi-Tone generator always generates individual tones which will loop properly. In the tone list, the desired frequency and amplitude are listed first. In dark gray, the calculated frequency and number of cycles are displayed. If the tone cannot be generated (for example, the Sample Rate is too low), the tone will appear red in the tone list, and the dark gray text will change to an explanation of why the tone cannot be generated.
 
 +-----------+------------------------------------------------------------------------------------+
-| |image14| | **Add Tone:** Click this button to add a new tone to the tone list.                |
+| |image15| | **Add Tone:** Click this button to add a new tone to the tone list.                |
 +-----------+------------------------------------------------------------------------------------+
-| |image15| | **Edit Selected Tone:** Click this button to edit the selected (highlighted) tone. |
+| |image16| | **Edit Selected Tone:** Click this button to edit the selected (highlighted) tone. |
 +-----------+------------------------------------------------------------------------------------+
-| |image16| | **Remove Selected Tone:** Removes the selected tone from the tone list.            |
+| |image17| | **Remove Selected Tone:** Removes the selected tone from the tone list.            |
 +-----------+------------------------------------------------------------------------------------+
 
 When multiple sine vectors are summed together, the possibility for clipping (data out of range) occurs. When clipping is detected, a warning is displayed:
@@ -546,34 +545,36 @@ Graphing Controls
 ^^^^^^^^^^^^^^^^^
 
 +-----------+-----------------------------------------------------------------------+
-| |image20| | **Pan:** Click and Drag to move the graph window                      |
+| |image21| | **Pan:** Click and Drag to move the graph window                      |
 +-----------+-----------------------------------------------------------------------+
-| |image21| | **Zoom:** Drag a box to select the region to zoom in to               |
+| |image22| | **Zoom:** Drag a box to select the region to zoom in to               |
 +-----------+-----------------------------------------------------------------------+
-| |image22| | **Reset:** Reverts the pan and zoom settings to their original values |
+| |image23| | **Reset:** Reverts the pan and zoom settings to their original values |
 +-----------+-----------------------------------------------------------------------+
 
 The range of the axes can also be changed by clicking on the first or last value in the range.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_adddatafile.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_addgeneratedwaveform.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeselected.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeall.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphselectedvector.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_adddatafile.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_addgeneratedwaveform.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeselected.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeall.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphselectedvector.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_addtone.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_edittone.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_removetone.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_addtone.png
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_edittone.png
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_removetone.png
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphpan.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphzoom.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphreset.png
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphpan.png
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphzoom.png
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphreset.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ace/dpgliteinstall.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_adddatafile.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_addgeneratedwaveform.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeselected.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeall.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphselectedvector.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_adddatafile.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_addgeneratedwaveform.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeselected.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_removeall.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphselectedvector.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_addtone.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_edittone.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_removetone.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_addtone.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_edittone.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_multitone_removetone.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphpan.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphzoom.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphreset.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphpan.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphzoom.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpgdownloader_graphreset.png

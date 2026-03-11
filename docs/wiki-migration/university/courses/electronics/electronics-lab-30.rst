@@ -11,9 +11,8 @@ Background:
 
 To construct the logic functions in this lab activity you will be using the CD4007 CMOS array and discrete NMOS and PMOS transistors (ZVN2110A NMOS and ZVP2110A PMOS) from the ADALP2000 Analog Parts Kit. The CD4007 consists of 3 pairs of complimentary MOSFETs, as shown in figure 1. Each pair shares a common gate (pins 6,3,10). The substrates of all PMOSFETs are common (positive supply pin 14), as well as those of the NMOSFETs (ground pin 7). For the left pair, the NMOS Source terminal is tied to the NMOS substrate (pin 7), and the PMOS Source terminal is tied to PMOS substrate (pin 14). The other two pairs are more general purpose. For the right pair, the Drain terminal of the NMOS is tied to the Drain terminal of the PMOS on pin 12.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -22,9 +21,9 @@ To construct the logic functions in this lab activity you will be using the CD40
 
 The CD4007 is a very versatile IC with many uses as we saw in the previous lab activity[1]. For example, a single CD4007 can be used to make three inverters, an inverter plus two transmission gates, or other complex logic functions such as NAND and NOR gates. Inverters and transmission gates are particularly useful for building transmission gate exclusive OR (XOR) and XNOR logic functions. The schematic symbols for XOR and XNOR logic gates are shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/axor_f2.png
-   :align: center
-   :width: 500px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,9 +49,8 @@ Build the XOR/XNOR circuit shown in figure 3 on your solder-less breadboard. Use
 
 There are two logic inputs A, and B to the circuit. The non-inverting XOR output is at node C and an inverting version of the output is at node Cbar to form the XNOR function.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/axor_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -64,8 +62,8 @@ Hardware Setup:
 
 Configure both AWG outputs as DC sources for the first steps of the lab. The scope channels are to be used to monitor the inputs and outputs of the circuit as needed. The fixed +5 V power supply is to be used to power your circuit. The fixed -5V supply should be disabled during this Lab.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_hardware_setup.png
-   :align: center
+
+|image4|
 
 .. container:: centeralign
 
@@ -80,7 +78,7 @@ Connect pin 6, which serves as the A input to AWG1. Connect pins 1,9, which serv
 First apply logic Low to A by opening the AWG control screen and setting AWG1 to 0 V DC. Apply logic low to the B input by setting AWG2 to 0 V DC.
 
 
-|image1|
+|image5|
 
 .. container:: centeralign
 
@@ -128,7 +126,7 @@ Directions:
 Add the RC low pass filter shown in figure 4 to your XOR breadboard circuit. Connect scope channel 1 to the output of the RC filter.
 
 
-|image2|
+|image6|
 
 .. container:: centeralign
 
@@ -141,7 +139,7 @@ Hardware Setup:
 Configure both AWG channels as square waves with 5 V amplitudes peak-to-peak and 2.5 V offsets ( 0 to 5 V swings). Set both AWG1 and AWG2 to a frequency of 1 KHz. Also be sure to start with the phase of both AWG1 and AWG2 set to 0°. Be sure to set the AWGs to run synchronously.
 
 
-|image3|
+|image7|
 
 .. container:: centeralign
 
@@ -154,7 +152,7 @@ Procedure:
 Connect scope channel 1 to the output of the RC filter at C\ :sub:`1` to observe the filtered (DC) output of the phase detector. Connect scope channel 2 to output C of the XOR gate to observe the pulse width of the output of the logic gate. Record the DC output voltage in the table below. Set the phase of AWG 2 to the values listed in the table and record the DC voltage you observe at the output of the phase detector.
 
 
-|image4|
+|image8|
 
 .. container:: centeralign
 
@@ -203,8 +201,15 @@ The pair of inverters made using the four individual NMOS and PMOS transistors (
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_scopeshot1.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/axor_f4.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/axor_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/axor_f3.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_hardware_setup2.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_scopeshot2.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_hardware_setup.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_scopeshot1.png
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/axor_f4.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_hardware_setup2.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/cmos_logic_gate_xor_and_xnor_scopeshot2.png

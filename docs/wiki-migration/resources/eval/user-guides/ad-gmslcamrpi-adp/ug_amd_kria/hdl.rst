@@ -49,7 +49,7 @@ Using the HDL reference design
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Choose the required interface (see caption **Switching between interface types**)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
@@ -113,10 +113,7 @@ ap_rstn_frmbuf_3 92   5
 HDL Project
 -----------
 
--
-
-
-|MAX96724 HDL Project.|
+-  :git-hdl:`MAX96724 HDL Project. <projects/max96724/kv260>`
 
 User Guide
 ----------
@@ -139,5 +136,4 @@ Support
    
 
 
-.. |MAX96724 HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/max96724/kv260`
 .. |Project's User Guide.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmslcamrpi-adp/ug_amd_kria

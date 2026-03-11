@@ -22,7 +22,7 @@ Windows
    Latest releases (goto this page to download the file):
 
    
-   -  :git-iio-oscilloscope:`releases`
+   -  https://github.com/analogdevicesinc/iio-oscilloscope/releases
    
 
 
@@ -43,10 +43,10 @@ To build on a development host (e.g. x86 laptop or desktop) do the following:
 
 
 -  Optionally build and install the libad9166-iio and libad9361-iio libraries, by following :doc:`these instructions </wiki-migration/resources/eval/user-guides/ad-fmcomms5-ebz/multi-chip-sync>`.
--  Download the source using git: ``$ git clone https://github.com/analogdevicesinc/iio-oscilloscope.git
+-  Download the source using git: ``$ git clone :git-iio-oscilloscope:`iio-oscilloscope`
    $ cd iio-oscilloscope
    $ git checkout origin/main``
--  Or, :git-iio-oscilloscope:`download a zip <archive/main.zip>`, and uncompress it: ``$ wget :git-iio-oscilloscope:`archive/main`.zip
+-  Or, `download a zip <https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip>`_, and uncompress it: ``$ wget https://github.com/analogdevicesinc/iio-oscilloscope/archive/main.zip
    $ unzip main.zip
    $ cd iio-oscilloscope``
 -  Build and install: ``$ mkdir build && cd build
@@ -77,7 +77,7 @@ If you'd like to build the previous version of IIO-Oscilloscope, which is based 
 
 ::
 
-   git clone https://github.com/analogdevicesinc/iio-oscilloscope.git --branch 2021_R2 
+   git clone :git-iio-oscilloscope:`iio-oscilloscope` --branch 2021_R2 
 
 The other prerequisites and build steps are identical.
 
@@ -134,10 +134,8 @@ The application can be used to connect to another platform that has a connected 
 
 -  Settings -> Connect and enter "**ip:**" and then the IP address in the popup window, and click "OK" or "Refresh".
 
-   
-
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_connect_tab.jpg
+   :width: 300px
 
 -  Settings -> Connect and click "Refresh" with a blank IP number. If your network supports `zeroconf <http://avahi.org/>`_\  [1]_, you will be connected to the device on the network.
 
@@ -337,7 +335,7 @@ Source code
 Files
 -----
 
-The source code for the entire application is at `github <https://github.com/analogdevicesinc/iio-oscilloscope>`_. You can ask questions about it on the :ez:`EngineerZone <community/linux-device-drivers>`.
+The source code for the entire application is at :git-iio-oscilloscope:`github <iio-oscilloscope>`. You can ask questions about it on the :ez:`EngineerZone <community/linux-device-drivers>`.
 
 Internals
 ~~~~~~~~~
@@ -359,8 +357,6 @@ More information
 .. [1]
    also referred to as multicast DNS/DNS-SD service discovery
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iio_connect_tab.jpg
-   :width: 300px
 .. |IIO Oscilloscope disconnect plugins| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/plugin_disconnect_button.png
    :width: 400px
 .. |IIO Oscilloscope plot window| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/osc_plot_window.png

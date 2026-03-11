@@ -7,4 +7,4 @@ ABSMAX
 | The ABSMax algorithm compares two (or more) inputs and routes the absolute value of the input with the greatest absolute value to the output. | |absmax1.png| |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+---------------+
 
-.. |absmax1.png| image:: https://wiki.analog.com/_media/absmax1.png
+.. |absmax1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/absmax1.png

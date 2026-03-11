@@ -73,6 +73,6 @@ Each filter's response can be independently adjusted using the graph controls or
 
 -  The plot view can be modified by changing the **Frequency** and **Magnitude** settings. These settings apply to the interface only and do not affect filter response.
 
-.. |parametricpic1.png| image:: https://wiki.analog.com/_media/parametricpic1.png
-.. |parametricpic7.png| image:: https://wiki.analog.com/_media/parametricpic7.png
-.. |parametricpic2.png| image:: https://wiki.analog.com/_media/parametricpic2.png
+.. |parametricpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/parametricpic1.png
+.. |parametricpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/parametricpic7.png
+.. |parametricpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/parametricpic2.png

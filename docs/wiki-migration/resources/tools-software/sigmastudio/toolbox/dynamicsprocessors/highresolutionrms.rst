@@ -30,9 +30,9 @@ Shown below are the curves of the Hi-Resolution RMS dynamics processor (right) a
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic7.png
    :alt: highrespic7.png
 
-.. |highrespic1.png| image:: https://wiki.analog.com/_media/highrespic1.png
-.. |highrespic2.png| image:: https://wiki.analog.com/_media/highrespic2.png
-.. |highrespic3.png| image:: https://wiki.analog.com/_media/highrespic3.png
-.. |highrespic4.png| image:: https://wiki.analog.com/_media/highrespic4.png
-.. |highrespic5.png| image:: https://wiki.analog.com/_media/highrespic5.png
-.. |highrespic6.png| image:: https://wiki.analog.com/_media/highrespic6.png
+.. |highrespic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic1.png
+.. |highrespic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic2.png
+.. |highrespic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic3.png
+.. |highrespic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic4.png
+.. |highrespic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic5.png
+.. |highrespic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/highrespic6.png

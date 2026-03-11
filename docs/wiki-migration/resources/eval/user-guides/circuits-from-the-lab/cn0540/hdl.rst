@@ -42,7 +42,7 @@ The reference design uses the standard :doc:`SPI Engine Framework </wiki-migrati
 
 In order to build the HDL design the user has to go through the following steps:
 
--  Confirm that you have the right tools (see :git-hdl:`Release notes <releases>`)
+-  Confirm that you have the right tools (see `Release notes <https://github.com/analogdevicesinc/hdl/releases>`_)
 -  Clone the HDL GitHub repository (see :doc:`/wiki-migration/resources/fpga/docs/git`)
 -  Build the project (see :doc:`/wiki-migration/resources/fpga/docs/build`)
 
@@ -53,11 +53,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`CN0540 HDL Project. <projects/cn0540>`
    
-   |CN0540 HDL Project.|
+
 
 Software sources
 ----------------
@@ -66,21 +64,8 @@ Software sources
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Cora Z7-07S No-OS Project. <tree/master>`
+   -  :git-linux:`Cora Z7-07S Linux Project. <tree/master>`
+   -  :git-linux:`DE10-Nano Linux Project. <tree/master>`
    
-   |Cora Z7-07S No-OS Project.|
 
-   -
-
-   |Cora Z7-07S Linux Project.|
-
-   -
-
-   |DE10-Nano Linux Project.|
-
-.. |CN0540 HDL Project.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/cn0540`
-.. |Cora Z7-07S No-OS Project.| image:: https://wiki.analog.com/_media/:git-no-OS:`tree/master`
-.. |Cora Z7-07S Linux Project.| image:: https://wiki.analog.com/_media/:git-linux:`tree/master`
-.. |DE10-Nano Linux Project.| image:: https://wiki.analog.com/_media/:git-linux:`tree/master`

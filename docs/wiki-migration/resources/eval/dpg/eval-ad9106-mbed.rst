@@ -24,7 +24,7 @@ Software Needed
 ---------------
 
 -  `Keil Studio Cloud <https://studio.keil.arm.com/>`_
--  `EVAL-AD910x Example Mbed Program <https://github.com/analogdevicesinc/eval-ad910x>`_
+-  :git-eval-ad910x:`EVAL-AD910x Example Mbed Program <eval-ad910x>`
 
 Useful Links
 ------------
@@ -58,7 +58,7 @@ Single-Board Evaluation
 
 -  Connect SDP-K1 to PC over USB. DS1 and DS2 on SDP-K1 and DS1 on the evaluation board should **light up**. If DAC outputs are connected to the on-board amplifiers, connect a 7-V-to-12-V, 30-W wall wart to SDP-K1 DC jack or to P15 on the evaluation board.
 -  Connect the **outputs** of the evaluation board to an **oscilloscope** using SMA-to-BNC cables. Apply one of the oscilloscope settings shown in the waveform captures of the example patterns in Figures 9a to 9b and Figures 10a to 10c.
--  Go to the EVAL-AD910x example code in `GitHub repository <https://github.com/analogdevicesinc/eval-ad910x>`_ and copy its HTTPS URL through the **Code** dropdown button as shown in Figure 2. Log on to https://studio.keil.arm.com/ and import the codes by going to File > **Clone…** then pasting the repository link in the URL field of the **Clone** window as depicted in Figure 3. Make sure to input the desired **Project name** and tick the **Make this active project** checkbox before clicking the **Add project** button.
+-  Go to the EVAL-AD910x example code in :git-eval-ad910x:`GitHub repository <eval-ad910x>` and copy its HTTPS URL through the **Code** dropdown button as shown in Figure 2. Log on to https://studio.keil.arm.com/ and import the codes by going to File > **Clone…** then pasting the repository link in the URL field of the **Clone** window as depicted in Figure 3. Make sure to input the desired **Project name** and tick the **Make this active project** checkbox before clicking the **Add project** button.
 
 .. container:: centeralign
 
@@ -67,7 +67,7 @@ Single-Board Evaluation
 
 .. container:: centeralign
 
-   \ |image2|\ *Figure 3. Importing the Project to Keil Studio Cloud*\
+   |image2|\ *Figure 3. Importing the Project to Keil Studio Cloud*\
 
 
 -  In Keil Studio Cloud, configure the following settings under File > **Preferences**, as shown in Figure 4:
@@ -152,7 +152,7 @@ Single-Board Evaluation
 
 .. container:: centeralign
 
-   \ |ad910x_mbed_wiki_ug_figure_12a.png|\ |ad910x_mbed_wiki_ug_figure_12b.png|\
+   |ad910x_mbed_wiki_ug_figure_12a.png|\ |ad910x_mbed_wiki_ug_figure_12b.png|\
 
 
 .. container:: centeralign
@@ -162,7 +162,7 @@ Single-Board Evaluation
 
 .. container:: centeralign
 
-   \ |ad910x_mbed_wiki_ug_figure_12c.png|\ *Figure 12c. AD9102 Example 6 out of an RF transformer*\
+   |ad910x_mbed_wiki_ug_figure_12c.png|\ *Figure 12c. AD9102 Example 6 out of an RF transformer*\
 
 
 -  After playing the selected pattern, either generate another or exit the program. If the former is selected, pattern generation will stop and program will restart like in Figure 13a. Otherwise, after terminating the program like in Figure 13b, repeat Step 10 to restart the program.
@@ -242,7 +242,7 @@ Multi-Board Evaluation / Multichip Synchronization Evaluation
 
 .. container:: centeralign
 
-   \ |ad910x_mbed_wiki_ug_figure_16c.png|\ *Figure 16c. Channel 1 Example 6 out of 2 AD9102 / 2 AD9106*\
+   |ad910x_mbed_wiki_ug_figure_16c.png|\ *Figure 16c. Channel 1 Example 6 out of 2 AD9102 / 2 AD9106*\
 
 
 -  After playing the patterns, either generate another set or exit the program. If the former is selected, pattern generation will stop and program will restart like in Figure 17a. Otherwise, after terminating the program like in Figure 17b, repeat Step 6 to restart the program.
@@ -260,9 +260,9 @@ Multi-Board Evaluation / Multichip Synchronization Evaluation
 Using the Example Mbed Codes
 ----------------------------
 
-The EVAL-AD910x Example Mbed Codes can be used as a starting point for developing firmware for targeted applications. The eval-ad910x codes in the :git-eval-ad910x>`__ demonstrate how to set up SPI communication between the ARM-based Mbed-enabled hardware, SDP-K1, and the waveform generator DAC, AD9106:`ADI GitHub repository <AD9102.
+The EVAL-AD910x Example Mbed Codes can be used as a starting point for developing firmware for targeted applications. The eval-ad910x codes in the :git-eval-ad910x:`ADI GitHub repository <eval-ad910x>` demonstrate how to set up SPI communication between the ARM-based Mbed-enabled hardware, SDP-K1, and the waveform generator DAC, AD9106/AD9102.
 
-To import the codes to Keil Studio Cloud as discussed in the Quick Start Guide, the user should have an Arm or Mbed account and is logged on to https://studio.keil.arm.com/. After successful project import, the user is free to use and modify the codes as needed, in compliance with the terms and conditions outlined in the `LICENSE <https://github.com/analogdevicesinc/eval-ad910x/blob/main/LICENSE>` file.
+To import the codes to Keil Studio Cloud as discussed in the Quick Start Guide, the user should have an Arm or Mbed account and is logged on to https://studio.keil.arm.com/. After successful project import, the user is free to use and modify the codes as needed, in compliance with the terms and conditions outlined in the :git-eval-ad910x:`LICENSE` file.
 
 Each file and function has a short description/brief. This section focuses on how several files and functions can be modified using the Keil Studio Cloud.
 
@@ -276,7 +276,10 @@ Instructions on setting the **SPI clock (SCLK)** frequency are already provided 
 -  `SDP-K1 system_clock.c <https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F469xI/system_clock.c#L152>`_
 -  `Spi_api.c <https://github.com/ARMmbed/mbed-os/blob/master/targets/TARGET_STM/TARGET_STM32F4/spi_api.c>`_
 
-|ad910x_mbed_wiki_ug_figure_18.png|\
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_mbed_wiki_ug_figure_18.png
+   :alt: ad910x_mbed_wiki_ug_figure_18.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -285,7 +288,9 @@ Instructions on setting the **SPI clock (SCLK)** frequency are already provided 
 
 Initialization of digital I/O pins connected to the DAC being evaluated, and declaration of SPI register addresses and device-specific functions are in **ad910x.h**. See Figure 19. The functions are implemented in **ad910x.cpp**. The Mbed platform drivers allow setup of 4-wire SPI interface. Refer to Mbed documentation for other configurations.
 
-|ad910x_mbed_wiki_ug_figure_19.png|\
+
+
+|ad910x_mbed_wiki_ug_figure_19.png|
 
 .. container:: centeralign
 
@@ -301,14 +306,14 @@ Although the SRAM vectors can be modified manually, it will be more convenient t
 
 When creating data vectors for AD9106 and AD9102, make sure to choose the proper DAC resolution and leave the *Unsigned Data* box unchecked. Shown in Figures 20a and 20b are the types of waveforms that can be generated using DPG Lite and ACE's Vector Generator, respectively, and Figures 21a and 21b are three vectors with a combined record length of 4096 generated using the same software programs which can be uploaded to the SRAM. These can be saved as text files and integrated into the source code.
 
-|ad910x_mbed_wiki_ug_figure_20a.png|\ |ad910x_mbed_wiki_ug_figure_20b.png|\
+|ad910x_mbed_wiki_ug_figure_20a.png| |ad910x_mbed_wiki_ug_figure_20b.png|
 
 .. container:: centeralign
 
    \ *Figure 20a. Waveforms that can be generated using DPG Lite \| Figure 20b. Waveforms that can be generated using ACE's Vector Generator*\
 
 
-|ad910x_mbed_wiki_ug_figure_21a.png|\ |ad910x_mbed_wiki_ug_figure_21b.png|\
+|ad910x_mbed_wiki_ug_figure_21a.png| |ad910x_mbed_wiki_ug_figure_21b.png|
 
 .. container:: centeralign
 
@@ -327,7 +332,7 @@ SRAM data format or code follows two’s complement notation. Refer to Table 2 f
    \ *Table 2. Range of SRAM Data Values*\ |ad910x_table3.png|\
 
 
-|ad910x_mbed_wiki_ug_figure_22.png|\
+   |ad910x_mbed_wiki_ug_figure_22.png|
 
 .. container:: centeralign
 
@@ -347,7 +352,8 @@ Other I/Os like the ones connected to the EN pin of the on-board oscillator supp
 
 As shown in Figure 23, if external or off-board clock source is chosen, *en_cvddx = 0* and no power is supplied to CVDDX. If the on-board oscillator is chosen, *en_cvddx = 1* and 3.3V is supplied to CVDDX.
 
-|ad910x_mbed_wiki_ug_figure_23.png|\
+
+|ad910x_mbed_wiki_ug_figure_23.png|
 
 .. container:: centeralign
 
@@ -408,8 +414,6 @@ As shown in Figure 23, if external or off-board clock source is chosen, *en_cvdd
    :width: 395px
 .. |ad910x_mbed_wiki_ug_figure_17b.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_mbed_wiki_ug_figure_17b.png
    :width: 355px
-.. |ad910x_mbed_wiki_ug_figure_18.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_mbed_wiki_ug_figure_18.png
-   :width: 800px
 .. |ad910x_mbed_wiki_ug_figure_19.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_mbed_wiki_ug_figure_19.png
    :width: 800px
 .. |ad910x_mbed_wiki_ug_figure_20a.png| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad910x_mbed_wiki_ug_figure_20a.png

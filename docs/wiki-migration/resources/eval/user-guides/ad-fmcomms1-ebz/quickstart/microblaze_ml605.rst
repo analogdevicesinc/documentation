@@ -92,10 +92,14 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
    -  Line 1: Target IP Address
    -  Line2: XCOMM LPC if device is present
 
--  Open up your favourite Web Browser and enter the XCOMM target IP address into the URL/Address bar.\ |image1|\
+-  Open up your favourite Web Browser and enter the XCOMM target IP address into the URL/Address bar.\
 
 
-|image2|
+|image1|
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/quickstart/fmcomms1_netscope_fd.png
+   :align: center
+   :width: 600px
 
 -  If you are interested in the Linux console messages and command line interface, connect a USB cable to the ML605 port USB UART (12). Terminal settings are 57600,8N1. You should see the kernel startup messages as follows. (password is **root**)
 
@@ -241,6 +245,4 @@ Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should b
 .. |LCD image| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/ml605-lcd.png
    :width: 200px
 .. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/quickstart/fmcomms1_netscope_td.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/quickstart/fmcomms1_netscope_fd.png
    :width: 600px

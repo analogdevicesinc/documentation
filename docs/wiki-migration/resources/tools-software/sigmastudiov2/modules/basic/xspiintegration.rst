@@ -43,35 +43,22 @@ xSPI Integration Steps within the Target Application
 
 **Application code updates:**
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate1.png
-   :alt: xspicodeupdate1.png
-   :align: center
-   :width: 1080px
+
+|xspicodeupdate1.png|
 
 .. note::
 
    The ADSP-21568 xSPI memory mapping is 0x60000000 to 0x7FFFFFFF. The end address is depends on the size of the external RAM used in the target platform.
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate2.png
-   :alt: xspicodeupdate2.png
-   :align: right
-   :width: 1080px
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate3.png
-   :alt: xspicodeupdate3.png
-   :align: right
-   :width: 1080px
+|xspicodeupdate2.png| |xspicodeupdate3.png|
 
 .. note::
 
    The **xSPI_RAM_Init** function is responsible for configuring the xSPI interface and initializing the external memory by setting its contents to zero. On the ADSP-21568 SOM EVAL board, which includes 32MB of external RAM, the size is defined as 0x02000000 bytes. This size should be adjusted to match the actual RAM capacity used on the target platform.
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate4.png
-   :alt: xspicodeupdate4.png
-   :align: right
-   :width: 1080px
+   |xspicodeupdate4.png|
 
 .. note::
 
@@ -111,4 +98,12 @@ Supported Processor
 
 -  ADSP-21568
 
+.. |xspicodeupdate1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate1.png
+   :width: 1080px
+.. |xspicodeupdate2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate2.png
+   :width: 1080px
+.. |xspicodeupdate3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate3.png
+   :width: 1080px
+.. |xspicodeupdate4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/xspicodeupdate4.png
+   :width: 1080px
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/modules/basic/speedsettings.png

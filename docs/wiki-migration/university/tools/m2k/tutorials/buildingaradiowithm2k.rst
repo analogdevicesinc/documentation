@@ -39,16 +39,15 @@ Power Supplies
 
 The last thing necessary, from a hardware point of view, is the power supply. Using an external supply and some voltage regulators is possible to implement an easy solution. In this case, with a 12V supply and simple voltage regulators together with their bypass capacitors you can implement the 5V and 9V supplies needed for the boards.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalm2000/supplies.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 3. Power Supplies schematic
 
 
-   |image3|
+   |image4|
 
 .. container:: centeralign
 
@@ -72,7 +71,9 @@ Connections to M2k
      DIO2 - ADF4351 LE
      DIO3 - ADF4351 MUXOUT
 
-     |image4|
+.. image:: https://wiki.analog.com/_media/university/tools/adalm2000/pinout.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -291,14 +292,14 @@ This block is a sink for messages, not streams. To specify this create the follo
      cd ../..
      sudo ldconfig
 
-The source code can be found on the gr-m2k :git-gr-m2k>`__. In order to build it, make sure to enable digital option (cmake -DDIGITAL=ON ..).
+The source code can be found on the gr-m2k :git-gr-m2k:`github page <gr-m2k>`. In order to build it, make sure to enable digital option (cmake -DDIGITAL=ON ..).
 
 GNURadio-Companion Flowgraph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://wiki.analog.com/_media/university/tools/m2k/tutorials/:`github page <university/tools/m2k/tutorials/m2k_fm.png
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/tutorials/m2k_fm.png
 
-The file `m2k_fm.zip <https://wiki.analog.com/_media/university/tools/m2k/tutorials/m2k_fm.zip>` contains the gnuradio flowgraph. The gnuradio flowgraph acquires the data from the M2K and sets the ADF4350 PLL frequency. When changing the PLL frequency slider, the gnuradio ADF4350 block that we just written, encodes SPI messages to the PLL in order to change the frequency that is fed into the mixer. The data acquired from the mixer is captured by the M2k using GNURadio. The flow then shifts the frequency by a smaller offset in the "offset" slider. The offset slider allows fine tuning of the signal before it gets demodulated by the WBFM receiver block. Eventually the data is sent to an audio sink which plays back the radio in the speakers.
+The file `m2k_fm.zip <https://wiki.analog.com/_media/university/tools/m2k/tutorials/m2k_fm.zip>`_ contains the gnuradio flowgraph. The gnuradio flowgraph acquires the data from the M2K and sets the ADF4350 PLL frequency. When changing the PLL frequency slider, the gnuradio ADF4350 block that we just written, encodes SPI messages to the PLL in order to change the frequency that is fed into the mixer. The data acquired from the mixer is captured by the M2k using GNURadio. The flow then shifts the frequency by a smaller offset in the "offset" slider. The offset slider allows fine tuning of the signal before it gets demodulated by the WBFM receiver block. Eventually the data is sent to an audio sink which plays back the radio in the speakers.
 
 This project was presented in GRCon 2019. Slides are available `here <https://www.gnuradio.org/grcon/grcon19/presentations/Building_a_radio_with_M2K_and_spare_parts/>`_
 
@@ -306,9 +307,9 @@ This project was presented in GRCon 2019. Slides are available `here <https://ww
    :width: 700px
 .. |image2| image:: https://wiki.analog.com/_media/university/tools/adalm2000/eval.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/university/tools/adalm2000/power_supplies.png
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/adalm2000/supplies.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/adalm2000/power_supplies.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/tools/adalm2000/pinout.png
-   :width: 400px
 .. |image5| image:: https://wiki.analog.com/_media/university/tools/adalm2000/final_circ.png
    :width: 800px

@@ -170,25 +170,9 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AD5766 Driver. <drivers/dac/ad5766/ad5766.c>`
+   -  :git-no-OS:`Header file of AD5766 Driver. <drivers/dac/ad5766/ad5766.h>`
+   -  :git-hdl:`HDL Reference Design. <projects/ad5766_sdz>`
+   -  :git-no-OS:`No-OS Reference Design. <projects/ad5766-sdz>`
    
-   |Implementation of AD5766 Driver.|
 
-   -
-
-   |Header file of AD5766 Driver.|
-
-   -
-
-   |HDL Reference Design.|
-
-   -
-
-   |No-OS Reference Design.|
-
-.. |Implementation of AD5766 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5766/ad5766`.c
-.. |Header file of AD5766 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5766/ad5766`.h
-.. |HDL Reference Design.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad5766_sdz`
-.. |No-OS Reference Design.| image:: https://wiki.analog.com/_media/:git-no-OS:`projects/ad5766-sdz`

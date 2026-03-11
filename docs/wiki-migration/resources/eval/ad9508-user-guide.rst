@@ -171,12 +171,8 @@ Power up and connect the evaluation board to the PC. See the Evaluation Board Ha
 
 .. container:: centeralign
 
-
-   ..
-
-|figure2_device_hardware_instal.png|
-
-   *Figure 2. Device Hardware Installation*\
+   
+   |figure2_device_hardware_instal.png| *Figure 2. Device Hardware Installation*\
 
 
 -  Double-click **AD9508 Evaluation Software** to run the AD9508 software. If the evaluation board is found by the software, the lower left corner of the main window (see Figure 4) displays **AD9508 Evaluation Board** in green. If the evaluation board is not found, the lower left corner of the window displays **No Hardware Connected!** in red.

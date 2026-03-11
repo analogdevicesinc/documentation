@@ -15,9 +15,8 @@ http://en.wikipedia.org/wiki/Quadrature_amplitude_modulation
 
 Figure 1 shows a simplified first order polyphase circuit, as implemented in many quadrature demodulators such as the ADL5380. This simple polyphase circuit consists of complementary RC subcircuits. A low-pass transfer function from the input to one output shifts the phase by -45º at the corner frequency, and a high-pass transfer function to the other output shifts the phase by +45º at the corner frequency. The net phase difference between the two outputs will be 90º. If the R and C values of the two paths are matched, then both paths have the same corner frequency and, more importantly, the phase of one output tracks the other with a 90° phase shift for all frequencies. The relative amplitudes of the two output signals, ( LO I 0º and LO Q 90º ) will be only equal at the -3dB corner frequency of the two RC paths.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/appf_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,9 +35,8 @@ Directions:
 
 Build the polyphase filter circuit shown in figure 2 on your solder-less breadboard.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/appf_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -51,7 +49,7 @@ Hardware Setup:
 The green squares indicate where to connect the ADALM2000 module AWG, and scope channels.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -62,7 +60,7 @@ Open the Network Analyzer software tool in Scopy. Configure the frequency sweep 
 
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -92,9 +90,8 @@ Directions:
 
 Build the circuit shown in figure 5 on your solder-less breadboard. Use the SSM2212 matched transistor pair for Q\ :sub:`1` and Q\ :sub:`2`. Transistors Q\ :sub:`3` and Q\ :sub:`4` can be 2N3904 devices. Set L\ :sub:`1` = L\ :sub:`2` = 100 uH and C\ :sub:`1` = C\ :sub:`2` = 1nF. R\ :sub:`1` should be equal to R\ :sub:`2` and use 470 Ω for their value. Likewise, R\ :sub:`3` should be equal to R\ :sub:`4` and use 150 Ω for their value.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/appf_f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -107,7 +104,7 @@ Hardware Setup:
 The green squares indicate where to connect the ADALM2000 module AWG, scope channels and power supplies. Be sure to turn on the power supplies only after you double check your wiring.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -126,28 +123,28 @@ Turn on the power supplies. Connect scope input channel 2 through an AC coupling
 Using the scope and function generator software instruments ( in the time domain ) set the AWG frequency to the resonate frequency with the amplitude set to 1V peak-to-peak. Trigger on scope channel 1. Observe the relative amplitudes and phases of the four outputs and store each waveform on channel 2 as a reference channel to compare the amplitude and phase of each output.
 
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
    Figure 7. 0-degree Phase Shift
 
 
-   |image5|
+   |image8|
 
 .. container:: centeralign
 
    Figure 8. 90-degree Phase Shift
 
 
-   |image6|
+   |image9|
 
 .. container:: centeralign
 
    Figure 9. 180-degree Phase Shift
 
 
-   |image7|
+   |image10|
 
 .. container:: centeralign
 
@@ -174,15 +171,21 @@ http://www.microwavejournal.com/ext/resources/pdf-downloads/IQTheory-of-Operatio
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf3.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf4.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_f1.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf6.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf7.png
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_f2.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf8.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf3.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf4.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf9.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_f3.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf6.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf7.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf10.png
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf9.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/appf_nf10.png
    :width: 500px

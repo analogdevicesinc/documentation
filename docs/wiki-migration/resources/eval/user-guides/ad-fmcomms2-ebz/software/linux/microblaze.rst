@@ -75,7 +75,7 @@ Get Linux kernel source
    
    ::
    
-      $ git clone https://github.com/analogdevicesinc/linux.git
+      $ git clone :git-linux:`linux`
       Cloning into 'linux'...
       remote: Counting objects: 2757163, done.
       remote: Compressing objects: 100% (495484/495484), done.

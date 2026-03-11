@@ -21,9 +21,8 @@ Materials:
 
 ADALM1000 Hardware Module Solder-less Breadboard 1 - 100 Ω Resistor 1 - Small signal enhancement mode NMOS transistor (CD4007 CMOS array) 1 - Small signal enhancement mode PMOS transistor (CD4007 CMOS array)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -35,9 +34,8 @@ NMOS Directions:
 
 The current vs. voltage characteristics of the gate source of an enhancement mode NMOS transistor can be measured using the ALM1000 hardware and the following connections. Set up the breadboard with the channel A generator attached to one end of resistor R\ :sub:`1`. Connect the Gate and Drain of M\ :sub:`1` to the opposite end of R\ :sub:`1` as shown in the diagram. The Source of M\ :sub:`1` is connected to GND (V\ :sub:`SS` pin 7). Connect scope channel B to the gate - drain node of M\ :sub:`1` (pins 6 and 8 for example). Remember to ensure that both power supply pins (device backgates), V\ :sub:`SS` pin 7 and V\ :sub:`DD` pin 14 are connected appropriately to GND and +5 V respectively. All other pins can be left floating. Be sure that the power supply is not connected while you build your circuit. Once you are sure all your connections are correct then connect the supply last.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3m_f1.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -64,9 +62,8 @@ PMOS Directions:
 
 Repeat the experiment using one of the PMOS devices in the CD4007. The connections are similar and as shown on figure 2 below. The Source of M\ :sub:`1` is connected to +5V (V\ :sub:`DD` pin 14). Connect scope input B to the gate - drain node of M1 (pins 6 and 13 for example). Remember to ensure that both supply pins (device backgates), V\ :sub:`SS` pin 7 and V\ :sub:`DD` pin 14 are connected appropriately to ground and +5 V respectively. All other pins can be left floating. Be sure that the power supply is not connected while you build your circuit. Once you are sure all your connections are correct then connect the supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3m_f2.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -98,3 +95,10 @@ By plotting the data measured for I\ :sub:`D` vs V\ :sub:`GS`, find and report v
 http://en.wikipedia.org/wiki/Field-effect_transistor http://en.wikipedia.org/wiki/MOSFET
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3m_f1.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab3m_f2.png
+   :width: 600px

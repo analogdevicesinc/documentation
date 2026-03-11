@@ -122,9 +122,9 @@ Data RAM Repetition      1 per growth
 Parameter RAM Repetition none
 ======================== =========================================
 
-.. |genericpic1.png| image:: https://wiki.analog.com/_media/genericpic1.png
-.. |genericpic2.png| image:: https://wiki.analog.com/_media/genericpic2.png
-.. |genericpic3.png| image:: https://wiki.analog.com/_media/genericpic3.png
-.. |genericpic4.png| image:: https://wiki.analog.com/_media/genericpic4.png
-.. |genericpic5.png| image:: https://wiki.analog.com/_media/genericpic5.png
-.. |genericpic6.png| image:: https://wiki.analog.com/_media/genericpic6.png
+.. |genericpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/genericpic1.png
+.. |genericpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/genericpic2.png
+.. |genericpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/genericpic3.png
+.. |genericpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/genericpic4.png
+.. |genericpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/genericpic5.png
+.. |genericpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/genericpic6.png

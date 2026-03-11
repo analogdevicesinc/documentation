@@ -178,7 +178,10 @@ This is a very high-quality frequency demodulator and was limited to expensive t
 Quadrature Detectors
 ~~~~~~~~~~~~~~~~~~~~
 
-|Quadrature Detector|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/fmd_f14.png
+   :alt: Quadrature Detector
+   :align: center
+   :width: 700px
 
 .. container:: centeralign
 
@@ -251,7 +254,5 @@ Some additional resources:
    :width: 700px
 .. |Pulse-Averaging Discriminator’s Waveforms| image:: https://wiki.analog.com/_media/university/courses/electronics/fmd_f11.png
    :width: 800px
-.. |Quadrature Detector| image:: https://wiki.analog.com/_media/university/courses/electronics/fmd_f14.png
-   :width: 700px
 .. |Phase-Locked Loop| image:: https://wiki.analog.com/_media/university/courses/electronics/fmd_f17.png
    :width: 700px

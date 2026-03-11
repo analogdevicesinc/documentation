@@ -61,8 +61,8 @@ Enabling Sequence Chart in Sample Demo Applications
 
       -  C:\\Program Files (x86)\\Java\\jre<<xx>>\\bin
 
-
-      |image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/environmental_settings.png
+   :align: center
 
 .. container:: centeralign
 
@@ -74,7 +74,8 @@ Enabling Sequence Chart in Sample Demo Applications
 -  Run the ‘Target\\tools\\SeqChartProcess\_<platform>.jar’ once discovery is done and nodes are configured
 -  ‘SequenceFile.detailed.png’ is created in ‘Target/examples/demo/<a2b-xx>>’ folder
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/sequence_chart.png
+   :align: center
 
 .. container:: centeralign
 
@@ -174,6 +175,3 @@ A2B stack is scalable for small micro-controllers to large SoC running complex O
 -  Use compressed BCF export.
 
    -  Ensure ADI_A2B_BCF_COMPRESSED is defined in a2bapp_defs.h
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/environmental_settings.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/sequence_chart.png

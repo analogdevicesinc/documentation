@@ -8539,7 +8539,7 @@ PWM Generator (axi_pwm_gen)
 Software Guidelines
 -------------------
 
-The software for this IP can be found as part of the ZCU102 Reference Design at: `ADI Linux repository <https://github.com/analogdevicesinc/linux>`_. The IP expects the software run a calibration at least once. It has to find out what value for the SMP_DLY (see in datasheet) is good for the PRBS to work.
+The software for this IP can be found as part of the ZCU102 Reference Design at: :git-linux:`ADI Linux repository <linux>`. The IP expects the software run a calibration at least once. It has to find out what value for the SMP_DLY (see in datasheet) is good for the PRBS to work.
 
 References
 ----------
@@ -8549,8 +8549,8 @@ References
 -  :doc:`EVAL-AD9783 with ZCU102 reference design description </wiki-migration/resources/fpga/xilinx/interposer/ad9783>`
 -  :doc:`ADI Reference designs architecture </wiki-migration/resources/fpga/docs/arch>`
 -  :git-hdl:`AD9783 IP source code <library/axi_ad9783>`
--  :git-linux>`__
--  `Ultrascale SelectIO <https::`ADI Linux repository </www.xilinx.com/support/documentation/user_guides/ug571-ultrascale-selectio.pdf>`
+-  :git-linux:`ADI Linux repository <linux>`
+-  `Ultrascale SelectIO <https://www.xilinx.com/support/documentation/user_guides/ug571-ultrascale-selectio.pdf>`_
 -  `UltraScale Architecture Clocking Resources User Guide <https://www.xilinx.com/support/documentation/user_guides/ug572-ultrascale-clocking.pdf>`_
 
 .. image:: https://wiki.analog.com/_media/resources/fpga/docs/navigation HDL User Guide#ip_cores

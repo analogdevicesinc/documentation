@@ -11,23 +11,23 @@ There are a few `Interwiki link <https://wiki.analog.com/syntax>`_ shortcuts whi
 Link to the mainline linux kernel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``[[https://github.com/analogdevicesinc/linux/blob/branch/path|path]]`` translates to ``http://github.com/analogdevicesinc/linux/blob/{branch}/{path}``
+-  ```path <https://github.com/analogdevicesinc/linux/blob/branch/path>`_`` translates to ``http://github.com/analogdevicesinc/linux/blob/{branch}/{path}``
 
-   -  Example: ``[[:git-linux:`arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd`.dts|device tree]]`` makes :git-linux:`device tree <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>` in the wiki.
+   -  Example: ``:git-linux:`device tree <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>``` makes :git-linux:`device tree <arch/arm/boot/dts/zynq-adrv9361-z7035-fmc-rfcard-tdd.dts>` in the wiki.
 
 Link to a repo on github
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``[[https://github.com/analogdevicesinc/repository|repository]]`` translates to ``http://github.com/analogdevicesinc/{repository}``
+-  ``:git-repository:`repository``` translates to ``http://github.com/analogdevicesinc/{repository}``
 
-   -  Example: ``[[https://github.com/analogdevicesinc/HighSpeedConverterToolbox|HighSpeedConverterToolbox]]`` makes :git-HighSpeedConverterToolbox>`__ in the wiki.
+   -  Example: ``:git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox``` makes :git-HighSpeedConverterToolbox:`HighSpeedConverterToolbox` in the wiki.
 
 Link to a specific file on github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``[[https::`HighSpeedConverterToolbox </github.com/repository?branch/path|path]]`` translates to ``http://github.com/analogdevicesinc/{repository}/blob/{branch/path}``
+-  ```path <https://github.com/repository?branch/path>`_`` translates to ``http://github.com/analogdevicesinc/{repository}/blob/{branch/path}``
 
-   -  Example: ``[[https://github.com/hdl?hdl_2016_r2/projects/pluto| Files]]`` creates this link : `Files <https://github.com/hdl?hdl_2016_r2/projects/pluto>`
+   -  Example: ```Files <https://github.com/hdl?hdl_2016_r2/projects/pluto>`_`` creates this link : `Files <https://github.com/hdl?hdl_2016_r2/projects/pluto>`_
 
 Downloads
 ---------
@@ -47,6 +47,6 @@ On the wiki – for things that are in sub directories of repositories, where yo
 
 which can be used in the wiki, like `here <https://analogdevicesinc.github.io/DownGit/#/home?url=:git-scopy:`js>`_` that way – end users still get the zip file, but the code is maintained in github.
 
-There is also a shortlink for this ``[[:git-repo:`path/|]]``` which means in the wiki, you can do ``[[:git-scopy:`js|zipfile]]``` like :git-scopy:`zipfile <js>`, and it will zip up the file, and download it.
+There is also a shortlink for this ``[[:git-repo:`path/|]]``` which means in the wiki, you can do ``:git-scopy:`zipfile <js>``` like :git-scopy:`zipfile <js>`, and it will zip up the file, and download it.
 
 If it is just a single file (like the examples), we can just point to the top level directory, and people can download from github what they want.

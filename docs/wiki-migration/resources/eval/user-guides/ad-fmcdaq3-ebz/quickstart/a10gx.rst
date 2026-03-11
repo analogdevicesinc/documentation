@@ -1,7 +1,10 @@
 AD-FMCDAQ3-EBZ Arria 10 GX Quick Start Guide
 ============================================
 
-|arria10-fpga_daq3.jpg|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/arria10-fpga_daq3.jpg
+   :alt: arria10-fpga_daq3.jpg
+   :align: center
+   :width: 330px
 
 .. warning::
 
@@ -27,7 +30,7 @@ Required Software
 -  You need a Host PC (Windows)
 -  Intel Quartus 21.2
 -  Bitfile and Linux ELF image
--  IIO Scope `Download <https://wiki.analog.com/https/github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+-  IIO Scope `Download <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 .. tip::
 
@@ -42,14 +45,12 @@ You will need to:
 
 |arria10-fpga-kit.jpg|
 
-::
-
-   -Get the [[https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx|A10GX]] board.
-   -Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** socket(J1).
-   -Connect the USB JTAG J3 (Micro USB) to your Host PC.
-   -Connect the Ethernet cable.
-   -Plug the Power Supply into 12V Power input connector (DC Input).
-   -Turn it on.
+-Get the `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_ board.
+-Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** socket(J1).
+-Connect the USB JTAG J3 (Micro USB) to your Host PC.
+-Connect the Ethernet cable.
+-Plug the Power Supply into 12V Power input connector (DC Input).
+-Turn it on.
 
 
 .. note::
@@ -304,30 +305,30 @@ Useful links
 
 ::
 
-         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
-         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
-         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
-         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
-           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
-         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
-         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
-   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
-        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
-   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
-        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
-        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
-        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+         - :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         - :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+         - :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         - :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
+         - :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+           - :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+         - :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         - :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+   * :doc:`MATLAB Support </wiki-migration/resources/tools-software/hsx-toolbox>`
+        * MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`
+   * :doc:`Python Support </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+        * PYTHON support is provided through the :doc:`Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` 
+        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
+        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
    * Product Datasheet
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
-       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
-   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
+       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
+       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
+   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
 
 Support
 -------
@@ -340,7 +341,5 @@ Software support
 -  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
 
 
-.. |arria10-fpga_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/arria10-fpga_daq3.jpg
-   :width: 330px
 .. |arria10-fpga-kit.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/arria10-fpga-kit.jpg
    :width: 330px

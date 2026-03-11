@@ -387,7 +387,7 @@ All three connectors used are based off the 10-pin ARM Cortex standard pin out(0
 
 |image7|
 
-Many debugger tools (such as Segger J-Link) will typically only provide the 20-pin ARM connector(0.1" pin spacing) as an output. This connector has many of the same pins as the 10-pin version, but also provides other non essential functions for JTAG or SWD MCU devices. So you may have to do a translation from the 20-pin connector to the 10-pin connector using an adaptor. The following image shows the 20-pin connector pin out:|image8| And here is an example image of a 20-pin to 10-pin adapter system.\
+Many debugger tools (such as Segger J-Link) will typically only provide the 20-pin ARM connector(0.1" pin spacing) as an output. This connector has many of the same pins as the 10-pin version, but also provides other non essential functions for JTAG or SWD MCU devices. So you may have to do a translation from the 20-pin connector to the 10-pin connector using an adaptor. The following image shows the 20-pin connector pin out:|image8| And here is an example image of a 20-pin to 10-pin adapter system.
 
 
 |image9|

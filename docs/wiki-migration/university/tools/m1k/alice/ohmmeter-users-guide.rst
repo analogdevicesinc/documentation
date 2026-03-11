@@ -34,7 +34,7 @@ Windows:
 Linux:
 ~~~~~~
 
-`libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+:git-libsmu:`libpysmu.so <libsmu>`
 
 Directions:
 -----------
@@ -50,9 +50,8 @@ Screen Setup:
 
 Once the program is running the main screen, as shown in figure 1, should appear. Be sure that the ALM1000 is plugged into the USB port before starting the program.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-0.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -68,9 +67,8 @@ The program starts with all the gain calibration factors set to 1.0 and all the 
 
 With the CA and CB pins open circuit ( i.e. the resistance is infinity ) press the Run button. The screen should look something like figure 2 with some small non-zero values for CA current and CB current. Note that the voltage calibration factors (VA, VB) have already been filled in from using the Voltmeter Tool. You can pause (stop button) the program after a few seconds and it looks like you are getting a steady reading.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-1.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -79,9 +77,9 @@ With the CA and CB pins open circuit ( i.e. the resistance is infinity ) press t
 
 The second calibration step is to enter the CA current reading into the CA current offset entry window ( IA should have had 0.0 in it ) and enter the CB current reading into the CB current offset entry window. Press the Run button. The screen should look something like figure 3 with some small nearly zero values for CA current and CB current. The CA and CB resistance should be some large value in the 100's KOhms range ( might even be a large negative value ). You can pause (stop button) the program after a few seconds and it looks like you are getting a steady current reading.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-2.png
-   :align: center
-   :width: 500px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -92,9 +90,8 @@ The third calibration step is to measure a known resistance. The resistors provi
 
 Connect the test resistors between ground and the Channel A input ( 2K ) and ground and the Channel B input ( 1K ). Plugging the resistors into your solderless breadboard and connecting to the ALM1000 connector with jumper wires is a good way to do this. After double checking your connections press the Run button. The screen should look something like figure 4 with values for CA KOhms and CB KOhms close to your test resistor values ( 2K and 1K in this example ).
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-3.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -103,9 +100,9 @@ Connect the test resistors between ground and the Channel A input ( 2K ) and gro
 
 We want to calculate values for the channel A and B current gain such that the measurements displayed are equal to the actual test resistor values. The Gain correction factor is simply the un adjusted measured value divided by the actual resistor value (measured resistance from the DMM if you don't have precession resistors to use). In the case for channel A in figure 4 we get 2.038/2.000 or 1.019. We do that for both channels and enter the results in the gain entry windows as shown in figure 5. Press the Run button. The screen should look something like figure 5 with values for CA KOhms and CB KOhms almost exactly equal to 2K and 1K. To get the best results you need to wait for the ALM1000 to warm up for some time and small adjustments to the gain and offset factors may be required. Also the offset current will change based on the test voltage so readjusting the current offset factors will be needed as the test voltage is changed.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-4.png
-   :align: center
-   :width: 500px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -123,9 +120,8 @@ Alternate Method:
 
 The above approach is based on Ohm's Law where both the voltage across and the current through the test resistance is known or measured. The accuracy of the measured resistance is based on the measurement accuracy of the voltage and current and both must be calibrated. This second method is based on the voltage divider configuration shown in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
-   :align: center
-   :width: 450px
+
+|image6|
 
 .. container:: centeralign
 
@@ -162,9 +158,8 @@ Calibrating the Ohmmeter
 
 The program starts with all the gain calibration factors set to 1.0 and all the offset calibration factors set to 0.0. The first step in the calibration procedure is again to set the calibration setting for Channel A and B voltage gain and offset. The program uses the same calibration file naming scheme so the Save and Load buttons are used as in the earlier program. The current measurements are not used in the calculation and the current calibration settings are included for completeness. The CH-A current is displayed for informational purposes only.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-7.png
-   :align: center
-   :width: 240px
+
+|image7|
 
 .. container:: centeralign
 
@@ -175,9 +170,8 @@ Figure 7 shows the voltage divider Ohm meter screen with the voltage calibration
 
 Figure 8 shows the voltage divider Ohm meter screen using the internal "50" Ohm resistor switched in from the I/O pin of CH B and ground. The Test voltage is set to 5 V and the **internal** R\ :sub:`2` value is set to 51.04 Ohms. The 2.000 KOhm resistance standard is connected as R\ :sub:`1`. As we see the measured result is spot on. As indicated the value entered for R\ :sub:`2` is larger than 50 Ohms when the switch resistance is included.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-8.png
-   :align: center
-   :width: 240px
+
+|image8|
 
 .. container:: centeralign
 
@@ -192,3 +186,20 @@ There may be times when the user wishes to customize the program to add addition
 **For Further Reading:**
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-0.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-1.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-2.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-3.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-4.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
+   :width: 450px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-7.png
+   :width: 240px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-screen-8.png
+   :width: 240px

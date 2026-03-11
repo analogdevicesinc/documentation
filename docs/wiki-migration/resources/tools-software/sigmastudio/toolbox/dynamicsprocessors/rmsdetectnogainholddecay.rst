@@ -32,7 +32,7 @@ Controls
 | Show Graph    | |rmsnogainholdpic4.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +---------------+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |rmsnogainholdpic1.png| image:: https://wiki.analog.com/_media/rmsnogainholdpic1.png
-.. |rmsnogainholdpic2.png| image:: https://wiki.analog.com/_media/rmsnogainholdpic2.png
-.. |rmsnogainholdpic3.png| image:: https://wiki.analog.com/_media/rmsnogainholdpic3.png
-.. |rmsnogainholdpic4.png| image:: https://wiki.analog.com/_media/rmsnogainholdpic4.png
+.. |rmsnogainholdpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnogainholdpic1.png
+.. |rmsnogainholdpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnogainholdpic2.png
+.. |rmsnogainholdpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnogainholdpic3.png
+.. |rmsnogainholdpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsnogainholdpic4.png

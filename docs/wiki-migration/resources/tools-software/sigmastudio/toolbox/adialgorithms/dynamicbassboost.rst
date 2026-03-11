@@ -26,4 +26,4 @@ Seven parameters, described below, control this block's performance. Enter their
 
 **Bass Freq.** - This field below the boost slider ranges from 20 to 300Hz and designates the center frequency for the boosting filter. Enter your desired value directly into the field or use the two horizontal arrows at the sides of the slider. Note: When the slider is all the way down at 0dB, the block is still not truly bypassed.
 
-.. |DynamicBasspic1.png| image:: https://wiki.analog.com/_media/DynamicBasspic1.png
+.. |DynamicBasspic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/DynamicBasspic1.png

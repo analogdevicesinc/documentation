@@ -182,7 +182,9 @@ Note that this schematic still contains many simplifications - the gate driver i
 -  Inductance: 4 Taps
 -  Load Resistors: enable 2x200Ω, 100Ω, 50Ω (25Ω total)
 
-|image9|
+.. image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/sr1_config_ol_dc_boost.png
+   :align: center
+   :width: 1000px
 
 .. container:: centeralign
 
@@ -212,14 +214,14 @@ Ramp the Power Input to 5V and observe the current sense and switch node wavefor
 
 
 
-|image10|
+|image9|
 
 .. container:: centeralign
 
    Figure 10. Open-Loop Boost Simulation, 20kHz, 25% Duty Cycle, 25Ω Load
 
 
-   |image11|
+   |image10|
 
 .. container:: centeralign
 
@@ -230,14 +232,14 @@ Next, increase the duty cycle to 50%. Figures 12 and 13 show simulated vs. measu
 
 
 
-|image12|
+|image11|
 
 .. container:: centeralign
 
    Figure 12. Open-Loop Boost Simulation, 20kHz, 50% Duty Cycle, 25Ω Load
 
 
-   |image13|
+   |image12|
 
 .. container:: centeralign
 
@@ -267,7 +269,7 @@ Activity 4: Discontinuous Conduction Mode
 With the circuit still configured as in Activity 2, reduce, or "lighten", the output load by **removing** the 50Ω and 100Ω load resistor jumpers, leaving the two 200Ω jumpers in place for a total load resistance of 100Ω. You should notice the switch node and inductor current take on a drastically different shape. Figure X shows the switch node and inductor current at a 25% duty cycle. The output voltage jumps to 7.74V, HIGHER than the 6.67V predicted by the output voltage equation above (even with the drop of the boost diode and the IxR drop of the sense resistors and inductors.)
 
 
-|image14|
+|image13|
 
 .. container:: centeralign
 
@@ -278,7 +280,7 @@ Figure X shows the switch node and inductor current at a 50% duty cycle. The out
 
 
 
-|image15|
+|image14|
 
 .. container:: centeralign
 
@@ -300,7 +302,7 @@ Controlling a switch's duty cycle in order to adjust the output voltage of a swi
 Open OL_boost_peak_current_control.asc, shown in Figure X.
 
 
-|image16|
+|image15|
 
 .. container:: centeralign
 
@@ -311,7 +313,7 @@ The implemenation of the ADALM-SR1 peak current control circuit differs from tha
 
 
 
-|image17|
+|image16|
 
 .. container:: centeralign
 
@@ -329,7 +331,7 @@ Both the LT1930 and ADALM-SR1 current signals also begin to ramp up as inductor 
 That is quite a lot of text to describe a rather strange (for those who've never seen it before), so the best thing to do is start out running the LTspice simulation, which is configured to modulate ITH with a 2kHz sinusoid. Results are shown in Figure X. Note that we can "trick" LTspice into displaying the ITH and Ihigh signals as the current they represent by adding some arithmetic to the traces - right-click the label (V(ith), for example), then add " \*(1A/0.7V) ", which is the gain of the current sense circuit.
 
 
-|image18|
+|image17|
 
 .. container:: centeralign
 
@@ -340,7 +342,7 @@ Next, configure the ADALM-SR1 for open-loop boost, peak current control as shown
 
 
 
-|image19|
+|image18|
 
 .. container:: centeralign
 
@@ -351,7 +353,7 @@ There is indeed provision on the ADALM-SR1 to modulate the ITH signal exactly as
 
 
 
-|image20|
+|image19|
 
 .. container:: centeralign
 
@@ -382,7 +384,7 @@ Appendix: Current Sense Techniques
 There are several methods of measuring current in a circuit. Like any electrical measurement, the act of measuring the current will have some effect on the circuit's operation. One of the least obtrusive when a convenient measuring point is physically accessible is a current probe. A wideband current probe that sensitive to DC (a steady-state current) uses a combination of a current transformer that is sensitive at high frequencies and a Hall-effect sensor that is sensitive to DC. Fine tuning the frequency responses of these curcuits such that the combined response is "flat" over all frequencies is a delicate task, and is one reason current probes tend to be very expensive. Also, current probes require that the curent flow through the probe's head, so an extra wire may need to be introduced into the circuit. If the added inductance of the extra wire is significant compared to other inductances in the cirucit, then circuit operation may be significantly impacted. Figure X shows a current probe being used to measure the ADALM-SR1 inductor current. The inductance selection jumper is replaced with a short jumper wire that is looped through the current probe twice to double the sensitivity (twice the current effectively flows through the probe.)
 
 
-|image21|
+|image20|
 
 .. container:: centeralign
 
@@ -412,7 +414,7 @@ The MOSFETs in the LTspice simulations in this exercise are all either directly 
 Driving the gate of the low-side (boost) MOSFET seems like such a simple job - Ground the gate, and the MOSFET is off. If you measure the resistance from the gate to ground, the resistance is so high that it is likely that your meter will overrange (assuming the board is clean from flux or other contamination.) And the low threshold voltage of the IRF7470 makes it compatible with 5V logic-level signals. But there are subtleties to driving a MOSFET: Even the boost MOSFET can be tricky to drive - as the MOSFET is turning on, the gate-drain capacitance will draw significant current. And if for some reason the gate drive voltage is too low, due to a collapsing housekeeping supply for example, the MOSFET may not be driven fully on, resulting in excessive power dissipation. The high side (buck) MOSFET is much trickier - the ground-referred gate control signal needs to be "level-shifted" and referred to the MOSFET's source, which toggles back and forth between about -0.4V and the input voltage - quite a challenge. For these reasons, LTC7001s were used. The LTC7001 is specifically designed to drive N-channel MOSFETS, addressing all of these issues. Figure X shows LTspice simulations of both the LTC7001 gate driver, as well as its VCVS "equivalent".
 
 
-|image22|
+|image21|
 
 .. container:: centeralign
 
@@ -428,7 +430,7 @@ With that in mind, run the OL_gate_drivers.asc simulation, the results of which 
 
 
 
-|image23|
+|image22|
 
 .. container:: centeralign
 
@@ -495,33 +497,31 @@ A slide deck is provided as a companion to this exercise, and can be used to hel
    :width: 400px
 .. |image8| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sch.png
    :width: 800px
-.. |image9| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/sr1_config_ol_dc_boost.png
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sim.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_scopy.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_sim.png
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_scopy.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_100ohm_scopy.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_100ohm_scopy.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sch.PNG
+   :width: 800px
+.. |image16| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/LT1930_block_diagram.PNG
+   :width: 800px
+.. |image17| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sim.PNG
+   :width: 800px
+.. |image18| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/SR1_config_OL_peak_curr_boost.png
    :width: 1000px
-.. |image10| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sim.png
-   :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_scopy.png
-   :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_sim.png
-   :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_scopy.png
-   :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_100ohm_scopy.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_100ohm_scopy.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sch.PNG
+.. |image19| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_peak_current_animated.gif
    :width: 800px
-.. |image17| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/LT1930_block_diagram.PNG
-   :width: 800px
-.. |image18| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sim.PNG
-   :width: 800px
-.. |image19| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/SR1_config_OL_peak_curr_boost.png
-   :width: 1000px
-.. |image20| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_peak_current_animated.gif
-   :width: 800px
-.. |image21| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/adalm-sr1_current_probe.jpg
+.. |image20| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/adalm-sr1_current_probe.jpg
    :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers.png
+.. |image21| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers_sim.png
+.. |image22| image:: https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers_sim.png
    :width: 600px

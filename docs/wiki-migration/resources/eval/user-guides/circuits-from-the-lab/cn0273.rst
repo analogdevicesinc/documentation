@@ -69,8 +69,9 @@ Output Measurement
 
     Oscilloscope can be used to measure the output of the evaluation board with a gain of 14db below 10Mhz input as indicited in the graph below.
 
-
-    |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0273/gain_output.png
+   :align: center
+   :width: 400px
 
 .. note::
 
@@ -129,6 +130,3 @@ Registration
 
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0273/gain_output.png
-   :width: 400px

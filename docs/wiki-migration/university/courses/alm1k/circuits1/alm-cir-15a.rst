@@ -552,9 +552,8 @@ Directions:
 
 First step is to build a 1.5V power supply ( to simulate a single cell battery ) as shown in figure 1. Build the circuit on one end of your solder-less breadboard being sure to leave space for the rest of this lab’s circuits. Note, if you have a 1.5 Volt battery (AA) and a battery holder with wires attached, you could substitute that as the 1.5 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -573,9 +572,8 @@ You can use a 1N4001 or a 1N3064 for the rectifier diode D\ :sub:`1` and the snu
 
 The ground connections in figure 2 shown in the dashed green boxes will sometimes be connected directly to the ground of the ALM1000. At other times, they will either be connected to the main ground or the CH-B connector pin on the ALM1000 depending which branch current is being measured. So as you construct the circuit keep the "ground #2" connections separate from the "ground #3" connections (and the "ground #1" connections from figure 1), i.e. don’t use one of the common power bus strips for all the "grounds".
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_f2.png
-   :align: center
-   :width: 650px
+
+|image2|
 
 .. container:: centeralign
 
@@ -636,9 +634,8 @@ The output impedance ( load regulation ) of the simple emitter follower in figur
 
 There is also the added benefit that the base current of Q\ :sub:`1` is now much smaller and its effect on the voltage divider of R\ :sub:`1` and R\ :sub:`2` is much smaller.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_fa1.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -647,9 +644,9 @@ There is also the added benefit that the base current of Q\ :sub:`1` is now much
 
 Even better load regulation can be achieved by using an op-amp to provide high gain. As shown in figure A2, the output of the op-amp drives the base of transistor Q\ :sub:`1` to whatever bias voltage is need to maintain the emitter voltage ( negative input of the op-amp ) equal to the voltage set at the positive input of the op-amp by the voltage divider. The circuit can essentially source current up to the maximum current limit of the transistor or the +5V power supply with very little change in the +1.5V output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_fa2.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -666,3 +663,12 @@ Even better load regulation can be achieved by using an op-amp to provide high g
 `Boost_converter <https://en.wikipedia.org/wiki/Boost_converter>`_ `Compound Transistor <https://en.wikipedia.org/wiki/Sziklai_pair>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/circuits>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_f1.png
+   :width: 550px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_f2.png
+   :width: 650px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_fa1.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab15a_fa2.png
+   :width: 500px

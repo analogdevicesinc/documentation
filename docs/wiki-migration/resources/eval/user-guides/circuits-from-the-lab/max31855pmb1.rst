@@ -49,7 +49,7 @@ There are two device driver solutions that are provided for controlling the **MA
 
 -  **MAX31855 no-OS Driver**
 
-   -  The MAX32655FTHR or MAX32650FTHR example application uses the :doc:`MAX31855 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/max31855>` and emulates the Linux IIO framework through the :git-libtinyiiod>`__. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
+   -  The MAX32655FTHR or MAX32650FTHR example application uses the :doc:`MAX31855 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/max31855>` and emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
 System Setup Using MAX32655FTHR or MAX32650FTHR
 -----------------------------------------------
@@ -63,7 +63,7 @@ The following is the list of items needed in order to replicate this demo.
 
 -  \*\* Hardware \*\*
 
-   -  `MAX32655FTHR <https::`tinyiiod daemon library </www.maximintegrated.com/MAX32655FTHR>` or
+   -  `MAX32655FTHR <https://www.maximintegrated.com/MAX32655FTHR>`_ or
    -  `MAX32650FTHR <https://www.maximintegrated.com/MAX32650FTHR>`_ with `MAX32625PICO <https://www.maximintegrated.com/MAX32625PICO>`_
    -  :adi:`FTHR-PMD-INTZ`
    -  :adi:`MAX31855PMB1`
@@ -75,12 +75,12 @@ The following is the list of items needed in order to replicate this demo.
 
    -  For MAX32655FTHR,
 
-      -  Pre-built hex file "max31855_maxim_basic_example_max32655.hex" in :git-no-OS:`max31855_max32655 <releases/download/Latest/max31855.zip>`
+      -  Pre-built hex file "max31855_maxim_basic_example_max32655.hex" in `max31855_max32655 <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/max31855.zip>`_
       -  PuTTY or other similar software
 
    -  For MAX32650FTHR,
 
-      -  Pre-built hex file "max31855_maxim_basic_example_max32650.hex" in :git-no-OS:`max31855_max32650 <releases/download/Latest/max31855.zip>`
+      -  Pre-built hex file "max31855_maxim_basic_example_max32650.hex" in `max31855_max32650 <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/max31855.zip>`_
       -  PuTTY or other similar software
 
 MAX32655FTHR
@@ -110,7 +110,7 @@ The final setup should look similar as shown below.
 
 4. Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK. If the transfer was not completed, update the firmware for the DAPLINK. Follow the steps here: https://github.com/MaximIntegrated/max32625pico-firmware-images/
 
-5. Open PuTTY or other similar software. Check the Device Manager to set correct COM for the **MAX32655FTHR**. Set baud rate to **57600** when running max31855_maxim_basic_example_max32655.hex available in :git-no-OS:`max31855_max32655 <releases/download/Latest/max31855.zip>`.
+5. Open PuTTY or other similar software. Check the Device Manager to set correct COM for the **MAX32655FTHR**. Set baud rate to **57600** when running max31855_maxim_basic_example_max32655.hex available in `max31855_max32655 <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/max31855.zip>`_.
 
 The expected output viewed in the PuTTY is shown below.
 
@@ -144,7 +144,7 @@ The final setup should look similar as shown below.
 
 5. Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK. If the transfer was not completed, update the firmware for the DAPLINK. Follow the steps here: https://github.com/MaximIntegrated/max32625pico-firmware-images/
 
-6. Open PuTTY or other similar software. Check the Device Manager to set correct COM for the **MAX32650FTHR**. Set baud rate to **57600** when running max31855_maxim_basic_example_max32650.hex available in :git-no-OS:`max31855_max32650 <releases/download/Latest/max31855.zip>`.
+6. Open PuTTY or other similar software. Check the Device Manager to set correct COM for the **MAX32650FTHR**. Set baud rate to **57600** when running max31855_maxim_basic_example_max32650.hex available in `max31855_max32650 <https://github.com/analogdevicesinc/no-OS/releases/download/Latest/max31855.zip>`_.
 
 The expected output viewed in the PuTTY is shown below.
 
@@ -162,7 +162,7 @@ The Libiio is a library used for interfacing with IIO devices and is required to
 .. admonition:: Download
    :class: download
 
-   Download and install the latest :git-libiio:`Libiio package <releases>` on your machine.
+   Download and install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the MAX31855PMB1 is attached. One platform is currently supported for the MAX31855PMB1: the MAX32655FTHR and MAX32650FTHR running the no-OS MAX31855 demo project. The user needs to supply a **URI**, which will be used in the context creation.
@@ -211,7 +211,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO Oscilloscope, open the application.  The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -254,9 +254,8 @@ After installing and configuring PYADI-IIO in your machine, you are now ready to
 
 In a Windows machine, you can check the port of your MAX32655FTHR and MAX32650FTHR via Device Manager in the Ports (COM & LPT) section. If your device is in COM8, you have to use "python pyadi-iio/examples/max31855.py serial:COM8,57600".
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31855/max31855_pyadi_2.png
-   :align: center
-   :width: 700px
+
+|image7|
 
 .. admonition:: Download
    :class: download
@@ -286,7 +285,7 @@ Datasheet, Schematic, Layout
 Additional Information
 ----------------------
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -317,3 +316,5 @@ Registration
    :width: 300px
 .. |MAX31855PMB1 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/max31855/max31855_max32655_iio_dmm_panel.png
    :width: 300px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max31855/max31855_pyadi_2.png
+   :width: 700px

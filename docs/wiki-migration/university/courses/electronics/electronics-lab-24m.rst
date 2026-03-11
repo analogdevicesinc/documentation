@@ -24,16 +24,15 @@ Directions:
 
 Construct the circuit as shown in figure 1 on your solder-less breadboard. The green boxes indicate connections to the ADALM2000. Note: there is no input from the ADALM2000 board just the power supply. The first inverting amplifier stage consists of M\ :sub:`1` with R\ :sub:`1` and the Red LED serving as the output load. The second inverting amplifier stage consists of M\ :sub:`2` with R\ :sub:`2` and the Green LED serving as the load. C\ :sub:`1` couples the output of the first stage at the drain of M\ :sub:`1` to the input of the second stage at the gate of M\ :sub:`2`. Similarly, C\ :sub:`2` couples the output of the second stage at the drain of M\ :sub:`2` back to the input of the first stage at the gate of M\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24m_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1, Astable Multivibrator
 
 
-   |image1|
+   |image2|
 
 .. container:: centeralign
 
@@ -72,17 +71,15 @@ Directions:
 
 Construct the circuit as shown in figure 4 on your solder-less breadboard. The green boxes indicate connections to the ADALM2000. Starting with the circuit from experiment 1, remove one of the 20K? resistors (old R\ :sub:`3`) and replace capacitor C\ :sub:`1` with a 1K? resistor (new R\ :sub:`3`). Add diode D\ :sub:`1` and resistor R\ :sub:`5` as shown to the base of M\ :sub:`2`. Be sure to replace C\ :sub:`2` with the original 47 uF capacitor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24m_f2.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
    Figure 4, Monostable Multivibrator
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_monostablemultivibrator_hardwaresetup.png
-   :align: center
+   |image4|
 
 .. container:: centeralign
 
@@ -117,9 +114,8 @@ Directions:
 
 Construct the circuit as shown in figure 7 on your solder-less breadboard. The green boxes indicate connections to the ADALM2000.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a24m_f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -153,4 +149,11 @@ http://en.wikipedia.org/wiki/Multivibrator
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_astablemultivibrator_hardwaresetup.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a24m_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_astablemultivibrator_hardwaresetup.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a24m_f2.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/nmos_monostablemultivibrator_hardwaresetup.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a24m_f3.png
+   :width: 600px

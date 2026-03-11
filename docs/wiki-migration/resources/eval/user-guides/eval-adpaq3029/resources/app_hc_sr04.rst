@@ -13,13 +13,17 @@ EVAL-ADPAQ3029 - HC-SR04 demo
 
 
 -  Follow the same steps as given `here <https://wiki.analog.com/../first_app>`_
--  In this project, an Ultrasonic Sensor – HC-SR04 has been used.\
+-  In this project, an Ultrasonic Sensor – HC-SR04 has been used.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app5.png
+   :align: center
+   :width: 300px
 
--  The connections between the Ultrasonic Sensor and ADPAQ module are made as described in the table below.\
+-  The connections between the Ultrasonic Sensor and ADPAQ module are made as described in the table below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app6.png
+   :align: center
+   :width: 400px
 
 .. container:: round box
 
@@ -40,9 +44,4 @@ EVAL-ADPAQ3029 - HC-SR04 demo
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile10.png
    :align: center
-   :width: 400px
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app5.png
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app6.png
    :width: 400px

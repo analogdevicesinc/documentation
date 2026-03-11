@@ -21,7 +21,7 @@ Required Software
 -  A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
 -  Xilinx Vivado 2019.1 or later - Xilinx Software Commandline Tool(XCST)
 -  Bitfile and Linux ELF image
--  IIO Scope `Download <https://wiki.analog.com/https/github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+-  IIO Scope `Download <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 .. tip::
 
@@ -33,18 +33,20 @@ Setting up the hardware (KCU105)
 
 You will need to:
 
-::
 
-   -Get the [[https://www.xilinx.com/KCU105| Xilinx KCU105]] board
 
-::
+-Get the ` Xilinx KCU105 <https://www.xilinx.com/KCU105>`_ board
 
-   {{ resources:eval:user-guides:ad-fmcdaq3-ebz:quickstart:kcu105_daq3.jpg?500 }}
-   -Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** HPC socket (**J22**)
-   -Connect USB UART J4 (Micro USB) and USB JTAG J87 (Micro USB) to your host PC
-   -Make sure you have pin 6 of SW15 on 0 and pin 5 on 0 to be able to use the board with JTAG (see [[https://www.xilinx.com/support/documents/boards_and_kits/kcu105/ug917-kcu105-eval-bd.pdf|UG917 - KCU105 Board User Guide]] > FPGA Configuration section)
-   -Plug the Power Supply into 12V Power input connector (J15)
-   -Turn it on
+
+
+
+|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-kcu105_daq3.jpg|
+
+-Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** HPC socket (**J22**)
+-Connect USB UART J4 (Micro USB) and USB JTAG J87 (Micro USB) to your host PC
+-Make sure you have pin 6 of SW15 on 0 and pin 5 on 0 to be able to use the board with JTAG (see `UG917 - KCU105 Board User Guide <https://www.xilinx.com/support/documents/boards_and_kits/kcu105/ug917-kcu105-eval-bd.pdf>`_ > FPGA Configuration section)
+-Plug the Power Supply into 12V Power input connector (J15)
+-Turn it on
 
 
 .. note::
@@ -336,3 +338,5 @@ More Information
 .. |KCU105_console_ifconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/KCU105_console_ifconfig.png
    :width: 600px
 .. |iio_scope_board_ip-kcu105.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-kcu105.png
+
+.. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-kcu105_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/kcu105_daq3.jpg

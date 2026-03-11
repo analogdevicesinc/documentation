@@ -92,5 +92,5 @@ This can be used to divide complex signals
 
 |image1|
 
-.. |divisionpic1.png| image:: https://wiki.analog.com/_media/divisionpic1.png
+.. |divisionpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/divisionpic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/cdiv2.jpg

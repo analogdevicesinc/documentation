@@ -62,7 +62,8 @@ There are three functions which are called by the AD74xx driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -84,8 +85,6 @@ The following functions are implemented in this version of AD74xx driver:
 +------------------------------------------------------------------+--------------------------------------------------+
 | float AD74xx_ConvertToVolts(unsigned short rawValue, float vRef) | Converts a raw sample to volts.                  |
 +------------------------------------------------------------------+--------------------------------------------------+
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
 
 
 
@@ -141,8 +140,8 @@ A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78
 
 PmodAD1 should not be inserted in the pmod connector like the other pmods because pin D1(J1 connector) of PmodAD1 is an output pin, same as MOSI pin(pin 2 of J11 connector) of YRDKRL78G13. Damage could result when connecting the two pins togheter. The MOSI pin cannot be changed to be an input pin, as it is used to display data on the LCD. Therefore the connection above should be used to avoid this situation.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g13.jpg
-   :align: center
+
+|image1|
 
 .. important::
 
@@ -212,8 +211,8 @@ A PmodAD1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78
 
 PmodAD1 should not be inserted in the pmod connector like the other pmods because pin D1(J1 connector) of PmodAD1 is an output pin, same as MOSI pin(pin 2 of J11 connector) of RDKRL78G14. Damage could result when connecting the two pins togheter. The MOSI pin cannot be changed to be an input pin, as it is used to display data on the LCD. Therefore the connection above should be used to avoid this situation.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g14.jpg
-   :align: center
+
+|image2|
 
 .. important::
 
@@ -299,8 +298,10 @@ More information
 -  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
 
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g13.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad1_rl78g14.jpg

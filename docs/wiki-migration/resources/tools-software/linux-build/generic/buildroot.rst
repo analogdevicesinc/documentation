@@ -1,15 +1,15 @@
 Building with buildroot
 =======================
 
-Aside from building the Linux kernel manually, there is also the possibility of building the ADI Linux kernel with :git-buildroot>`__.
+Aside from building the Linux kernel manually, there is also the possibility of building the ADI Linux kernel with :git-buildroot:`the ADI buildroot repository <buildroot>`.
 
-Ideally, you should already be familiar with `buildroot <https::`the ADI buildroot repository </www.buildroot.org>`, but even if not, the steps in this guide should be pretty straight forward.
+Ideally, you should already be familiar with `buildroot <https://www.buildroot.org/>`_, but even if not, the steps in this guide should be pretty straight forward.
 
 The starting point is to clone the ADI buildroot repository
 
 ::
 
-   git clone https://github.com/analogdevicesinc/buildroot
+   git clone :git-buildroot:`buildroot`
 
 Building for Microblaze
 -----------------------
@@ -33,8 +33,7 @@ Example:
 Building for Microblaze - rootfs only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
-   :alt: Root File-system
+`Root File-system <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_
 
 If building just the rootfs, go into the cloned buildroot directory
 
@@ -98,8 +97,7 @@ Example:
 Building for Nios2 - rootfs only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://swdownloads.analog.com/cse/nios2/rootfs/rootfs.cpio.gz
-   :alt: Root File-system
+`Root File-system <https://swdownloads.analog.com/cse/nios2/rootfs/rootfs.cpio.gz>`_
 
 If building just the rootfs, go into the cloned buildroot directory
 

@@ -16,9 +16,8 @@ Directions:
 
 The breadboard connections are shown in the diagram below. The output of the arbitrary waveform generator, W1, is connected to the base terminal of Q\ :sub:`1`. Scope input 1+ (Single Ended) is also connected to W1 output. The collector terminal is connected to the positive (Vp) supply. The emitter terminal is connected to both the 2.2 KΩ load resistor and Scope input 2+ (Single Ended). The other end of the load resistor is connected to the negative (Vn) supply. To measure the input to output error, channel 2 of the scope can be used differentially by connecting 2+ to the base of Q\ :sub:`1` and 2- to the emitter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f1.png
-   :align: center
-   :width: 350px
+
+|image1|
 
 .. container:: centeralign
 
@@ -30,7 +29,8 @@ Hardware Setup:
 
 The waveform generator should be configured for a 1 KHz Sine wave with 4 volt amplitude peak-to-peak and 0 offset. The Single ended input of scope channel 2 (2+) is used to measure the voltage at the emitter. The Scope configured with channel 1+ connected to display the AWG generator output. When measuring the input to output error, channel 2 of the scope should be connected to display 2+ and 2- differential.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/emit_flw-bb.png
+
+|image2|
 
 .. container:: centeralign
 
@@ -40,7 +40,7 @@ The waveform generator should be configured for a 1 KHz Sine wave with 4 volt am
 Procedure:
 ----------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/emit_flw-wav.png
 
 .. container:: centeralign
 
@@ -60,9 +60,8 @@ Additional Materials:
 
 1 – 3.2KΩ Resistor ( use a 1KΩ in series with a 2.2KΩ ) 1 – small signal NPN transistor ( Q\ :sub:`1` 2N3904) 2 – small signal NPN transistors ( Q\ :sub:`2`, Q\ :sub:`3` SSM2212) selected for best Vbe matching
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f3.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -89,9 +88,7 @@ Procedure:
    Figure 6 Improved Emitter Follower Waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f4.png
-   :align: center
-   :width: 500px
+   |image4|
 
 .. container:: centeralign
 
@@ -117,7 +114,7 @@ Directions:
 The circuit configuration below adds a resistor R\ :sub:`2` to inject a test signal from AWG1 into the emitter (output) of Q\ :sub:`1`. The input, base of Q\ :sub:`1`, is grounded.
 
 
-|image2|
+|image5|
 
 .. container:: centeralign
 
@@ -130,7 +127,7 @@ Hardware Setup:
 The waveform generator should be configured for a 1 KHz Sine wave with 2 volt amplitude peak-to-peak with the offset set equal to minus the V\ :sub:`BE` of Q\ :sub:`1` ( approximately -0.65V ). This injects a +/- 0.1mA (1V/10KΩ) current into Q\ :sub:`1`\ ‘s emitter. Scope input 2+ measures the change in voltage seen at the emitter.
 
 
-|image3|
+|image6|
 
 .. container:: centeralign
 
@@ -140,7 +137,7 @@ The waveform generator should be configured for a 1 KHz Sine wave with 2 volt am
 Procedure:
 ----------
 
-|image4|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-wav.png
 
 .. container:: centeralign
 
@@ -164,9 +161,8 @@ Directions:
 
 The breadboard connections are shown in the diagram below. The output of the function generator is connected to the base terminal of PNP transistor Q\ :sub:`1`. The collector terminal of Q\ :sub:`1` is connected to diode connected NPN Q\ :sub:`3` which is the input of a current mirror. The emitter terminal is connected to both resistor R\ :sub:`1`\ and the base terminal of NPN transistor Q\ :sub:`2`. Scope input 2+ is connected to both the emitter of Q\ :sub:`2` and the Collector of Q\ :sub:`4`. The emitters of both Q\ :sub:`3` and Q\ :sub:`4` are connected to the negative ( Vn ) supply. For best matching use the SSM2212 matched NPN pair for Q\ :sub:`3` and Q\ :sub:`4`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f7.png
-   :align: center
-   :width: 400px
+
+|image7|
 
 .. container:: centeralign
 
@@ -195,18 +191,14 @@ Procedure:
    Figure 13 Low offset follower Waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f8.png
-   :align: center
-   :width: 500px
+   |image8|
 
 .. container:: centeralign
 
    Figure 14
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f9.png
-   :align: center
-   :width: 500px
+   |image9|
 
 .. container:: centeralign
 
@@ -225,9 +217,8 @@ Materials:
 
 The circuit shown here in figure 10 uses feedback to adjust the current in the emitter follower as the current in the load changes. The current to pull the output negative can be as much as N times (the gain of the NPN mirror) the current in PNP Q\ :sub:`3`. For best matching use the SSM2220 matched PNP pair for Q\ :sub:`3` and Q\ :sub:`4`\ and the SSM2212 matched NPN pair for Q\ :sub:`5` and Q\ :sub:`6`\ (NPN mirror gain will be 1, add a second SSM2212 in parallel with Q\ :sub:`5` to increase the mirror gain).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f10.png
-   :align: center
-   :width: 400px
+
+|image10|
 
 .. container:: centeralign
 
@@ -254,34 +245,28 @@ Procedure:
    Figure 18 Balanced slew rate follower Waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/balanced_sr_flw-wav2.png
+   |image11|
 
 .. container:: centeralign
 
    Figure 19 Balanced slew rate follower Waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f11.png
-   :align: center
-   :width: 500px
+   |image12|
 
 .. container:: centeralign
 
    Figure 20
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f12.png
-   :align: center
-   :width: 500px
+   |image13|
 
 .. container:: centeralign
 
    Figure 21
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f13.png
-   :align: center
-   :width: 500px
+   |image14|
 
 .. container:: centeralign
 
@@ -295,9 +280,8 @@ Materials:
 
 1 – 2.2KΩ Resistor 1 – 10KΩ Resistor 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` ) 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f14.png
-   :align: center
-   :width: 400px
+
+|image15|
 
 .. container:: centeralign
 
@@ -307,7 +291,7 @@ Materials:
 Hardware Setup:
 ---------------
 
-|image5|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-bb.png
 
 .. container:: centeralign
 
@@ -317,7 +301,7 @@ Hardware Setup:
 Procedure:
 ----------
 
-|image6|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-wav.png
 
 .. container:: centeralign
 
@@ -331,9 +315,8 @@ Materials:
 
 2 – 1KΩ Resistors 1 – 2,2KΩ Resistor 1 – small signal NPN transistor ( 2N3904 Q\ :sub:`1` ) 1 – small signal PNP transistor ( 2N3906 Q\ :sub:`2` )
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f15.png
-   :align: center
-   :width: 400px
+
+|image16|
 
 .. container:: centeralign
 
@@ -343,7 +326,7 @@ Materials:
 Hardware Setup:
 ---------------
 
-|image7|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-bb.png
 
 .. container:: centeralign
 
@@ -353,16 +336,14 @@ Hardware Setup:
 Procedure:
 ----------
 
-|image8|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-wav.png
 
 .. container:: centeralign
 
    Figure 28 Follower with gain greater than 1 Waveforms
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f16.png
-   :align: center
-   :width: 500px
+   |image17|
 
 .. container:: centeralign
 
@@ -371,9 +352,9 @@ Procedure:
 
 In addition to the gain (or as a result of it) the DC level of the output is shifted positive as compared to the gain of 1 version. This limits the range of input voltage where the circuit can operate as shown by the negative shift in the input DC level. The next plot normalizes out the DC offset.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f17.png
-   :align: center
-   :width: 500px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -382,9 +363,9 @@ In addition to the gain (or as a result of it) the DC level of the output is shi
 
 To confirm that the gain is indeed about 3.2 the next plot divides the output by the gain and compares that to the input. In this example the actual gain is 3.16, most likely due to the resistor values not being exact.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f18.png
-   :align: center
-   :width: 500px
+
+
+|image19|
 
 .. container:: centeralign
 
@@ -405,9 +386,8 @@ Current Limit or Constant Current (Transistor Based)
 
 This is a modification of the emitter follower to limit the current output. If the output stage of an amplifier is an emitter follower it may be necessary to limit the maximum current that can be supplied to the output load. Circuit:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f19.png
-   :align: center
-   :width: 400px
+
+|image20|
 
 .. container:: centeralign
 
@@ -427,7 +407,7 @@ Hardware Setup:
 Procedure:
 ----------
 
-|image9|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/emit_curr_limit-wav.png
 
 .. container:: centeralign
 
@@ -460,13 +440,40 @@ The concept in this circuit is that R\ :sub:`2` acts as current sense resistor. 
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_flw-wav.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f5.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f1.png
+   :width: 350px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_flw-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f3.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-bb.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-wav.png
-.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-bb.png
-.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/compl_fb_flw-wav.png
-.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-bb.png
-.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/flw_gain_gr_one-wav.png
-.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/emit_curr_limit-wav.png
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f5.png
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/out_imp_test-bb.png
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f7.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f9.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f10.png
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/balanced_sr_flw-wav2.png
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f11.png
+   :width: 500px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f12.png
+   :width: 500px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f13.png
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f14.png
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f15.png
+   :width: 400px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f16.png
+   :width: 500px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f17.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f18.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/electronics/a11_f19.png
+   :width: 400px

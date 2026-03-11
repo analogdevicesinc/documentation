@@ -85,7 +85,7 @@ Evaluation Board Hardware
 
 .. container:: centeralign
 
-   \ |image2|\
+   |image2|\
 
 
 .. container:: centeralign

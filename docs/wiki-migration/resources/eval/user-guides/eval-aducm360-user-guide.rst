@@ -19,7 +19,8 @@ This guide works as a tutorial by providing a step-by-step account of how to dow
 
 Working through this guide brings the user to the stage where they can start to generate and download their own user code for use in their own unique end-system requirements.
 
-|EVAL-ADuCM360 Development System Connected to Analog Devices, inc. J-Link OB Emulator|\
+
+|EVAL-ADuCM360 Development System Connected to Analog Devices, inc. J-Link OB Emulator|
 
 .. container:: centeralign
 
@@ -47,14 +48,15 @@ J-LINK OB Emulator
 
 The J-Link OB emulator provides nonintrusive emulation via a serial wire, and also provides supply and UART communication with the ADuCM360 mini-board. Figure 2 shows a top view of the emulator board. J2 connector plugs into the ADuCM360mini board. The J2 connector pinout is shown in Figure 3.
 
-|Emulator Top View|\
+
+|Emulator Top View|
 
 .. container:: centeralign
 
    \ *Figure 2. Emulator Top View*\
 
 
-|J2 Connector|\
+   |J2 Connector|
 
 .. container:: centeralign
 
@@ -104,7 +106,8 @@ Perform the steps described in this section before plugging in any of the USB de
 
 The Segger J-Link software is selected by default in the installation menu and it is advised to leave it selected. This automatically installs the K-Link serial port driver (keep the default settings that appear in the next Segger messages windows).
 
-|Installing Segger J-Link Software|\
+
+|Installing Segger J-Link Software|
 
 .. container:: centeralign
 
@@ -124,7 +127,8 @@ The software described in this section has now been copied or installed.
 
 **Driver** The J-Link OB emulator requires a driver, which is installed automatically when the Segger J-Link Software is selected (see Step 4 of the :doc:`Software Installation Instructions </wiki-migration/resources/eval/user-guides/eval-aducm360-user-guide>` section). At this point, check that the driver is installed correctly. Plug in the emulator and check the device manager (see Figure 6). Check that it appears in the Windows Device Manager in both the communications port and the USB controllers lists.
 
-|Device Manager|\
+
+|Device Manager|
 
 .. container:: centeralign
 
@@ -154,21 +158,22 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 -  Select the path where you want the example code to be copied. For example: **C:\\Analog Devices\\ADuCM36x**. Leave **Use Pack Folder Structure** and **Launch μVision** selected and click **OK**
 -  Once the example has been copied, a new instance of Keil μVision5 with the example project opens. (Figure 9)
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_package_installer.png
+   :align: center
 
 .. container:: centeralign
 
    \ *Figure 7. Opening Keil Package Installer*\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
    \ *Figure 8. Copying an example into a new project*\
 
 
-   |image3|
+   |image2|
 
 .. container:: centeralign
 
@@ -177,11 +182,13 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 
 -  To compile and build all files, select the **Build All** icon.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/build.png
+   :align: center
 
+-  Once the build has completed, the code shown in Figure 10 appears.
 
-|image4|
-
--  Once the build has completed, the code shown in Figure 10 appears. |image5|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_build.png
+   :align: center
 
 .. container:: centeralign
 
@@ -191,9 +198,14 @@ From the **Start Menu**, choose **Keil μVision5**. This loads the μVision5 IDE
 -  To download the code to the :adi:`EVAL-ADuCM360MKZ <eval-aducm360>` board and begin a debug session, connect the K-Link OB emulator to the :adi:`EVAL-ADuCM360MKZ <eval-aducm360>` mini-board and to your PC using the provided USB cable.
 -  In μVision, click the **Start/Stop Debug** session icon.
 
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug_icon.png
+   :align: center
 
--  Begin debugging your source code. |image7|\
+-  Begin debugging your source code.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -218,46 +230,77 @@ The **File** toolbar is always available. The **Build** toolbar is active only w
 Starting a project
 ^^^^^^^^^^^^^^^^^^
 
--  From the **Project** menu, select **New μVision Project**. |image8|\
+-  From the **Project** menu, select **New μVision Project**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_new_project.png
+   :align: center
 
 .. container:: centeralign
 
-   // Project Menu\ *
+   // Project Menu//
 
 
-- Create a new folder (**ADIDemo**). To do so, go to **C:\\Analog Devices\\ADuCM36x\\ADIDemo** and enter **Demo** as the project name.\  \* In the **Select Device for Target 'Target 1'** window, select **Software Packs** and select **ADuCM360**\ *\ \
+-  Create a new folder (**ADIDemo**). To do so, go to **C:\\Analog Devices\\ADuCM36x\\ADIDemo** and enter **Demo** as the project name.
 
-.. container:: centeralign
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_new_project_name.png
+   :align: center
+   :width: 400px
 
-   * Select Device\ *
+-  In the **Select Device for Target 'Target 1'** window, select **Software Packs** and select **ADuCM360**
 
-
-- In the **Manage Run-Time Environment** select the desired drivers to import to the project. For our example, select **CMSIS -> CORE**,**Device -> Startup**, and all the drivers in **Device -> Drivers**, and click **OK**.\ \
-
-.. container:: centeralign
-
-   * Manage Run-Time Environment\ *
-
-
-- In the project window, right-click on **Target1** and select **Options for Target 'Target1...'*** Select the **Target** tab. \* Ensure the **IROM1** and **IRAM1 Start** and **Size** fields are filled as shown in the picture below \* In **ARM Compiler**, select **Use default compiler version 5**\* Ensure that the **Use MicroLIB** option is enabled. \
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_select_device.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   * Target Options\ *
+   // Select Device//
 
 
-- Select the **Linker** tab and then select **Use Memory Layout from Target Dialog**\ *\ \
+-  In the **Manage Run-Time Environment** select the desired drivers to import to the project. For our example, select **CMSIS -> CORE**, **Device -> Startup**, and all the drivers in **Device -> Drivers**, and click **OK**.
 
-.. container:: centeralign
-
-   * Linker Options\ *
-
-
-- In the **Output** tab, serlect **Create HEX File**. The hex file can be used by the JLINK Commander. Then select **OK**.\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_manage_runtime.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   * Output Options//
+   // Manage Run-Time Environment//
+
+
+-  In the project window, right-click on **Target1** and select **Options for Target 'Target1...'**
+
+   -  Select the **Target** tab.
+   -  Ensure the **IROM1** and **IRAM1 Start** and **Size** fields are filled as shown in the picture below
+   -  In **ARM Compiler**, select **Use default compiler version 5**
+   -  Ensure that the **Use MicroLIB** option is enabled.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_target.png
+   :align: center
+
+.. container:: centeralign
+
+   // Target Options//
+
+
+-  Select the **Linker** tab and then select **Use Memory Layout from Target Dialog**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_linker.png
+   :align: center
+
+.. container:: centeralign
+
+   // Linker Options//
+
+
+-  In the **Output** tab, serlect **Create HEX File**. The hex file can be used by the JLINK Commander. Then select **OK**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_output.png
+   :align: center
+
+.. container:: centeralign
+
+   // Output Options//
 
 
 -  Connect the emulator to the ADuCM360 mini-board and to your PC's USB port using a USB cable. Note that an LED on the J-Link OB emulator blinks several times before staying on, indicating that the emulator is communicating correctly with the PC.
@@ -266,32 +309,45 @@ Configuring the J-Link Debugger Driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  In the project window, right-clink on **Target1** and select **Options for Target 'Target1...**
--  In the **Debug** tab, select **Use:** and then select **J-LINK/J-Trace Cortex**, and tick **Run to main()**. Click on **Settings**. |image9|\
+-  In the **Debug** tab, select **Use:** and then select **J-LINK/J-Trace Cortex**, and tick **Run to main()**. Click on **Settings**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug_options.png
+   :align: center
 
 .. container:: centeralign
 
-   Selecting a debugger// *
+   Selecting a debugger// //
 
 
-- Configure the **Cortex JLink/JTrace Target Driver Setup** window as in the following picture:\
+-  Configure the **Cortex JLink/JTrace Target Driver Setup** window as in the following picture:
 
-.. container:: centeralign
-
-   J-Link Target Driver Setup* *
-
-
-- Select **OK*** Under the **Utilities** tab, select **Use Target Driver for Flash Programming**. Then, select **Use Debug Driver** and select the option **Update Target before Debugging**.\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_jlink_driver.png
+   :align: center
 
 .. container:: centeralign
 
-   Configuration of the Utilities Menu* *
+   J-Link Target Driver Setup// //
 
 
-- Click on **Settings**, and check that the **Flash Download**\ tab is configured as the following picture: \
+-  Select **OK**
+-  Under the **Utilities** tab, select **Use Target Driver for Flash Programming**. Then, select **Use Debug Driver** and select the option **Update Target before Debugging**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_utilities.png
+   :align: center
 
 .. container:: centeralign
 
-   Flash Download Setup* //
+   Configuration of the Utilities Menu// //
+
+
+-  Click on **Settings**, and check that the **Flash Download** tab is configured as the following picture:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_flash_download.png
+   :align: center
+
+.. container:: centeralign
+
+   Flash Download Setup// //
 
 
 -  Select **OK**. All the options should be properly configured to compile, assemble, download and debug using J-Link Lite.
@@ -303,7 +359,10 @@ At this point you can create and add your source code files necessary for your d
 
 Copy the file **C:\\Users\\rgrau\\AppData\\Local\\Arm\\Packs\\AnalogDevices\\ADuCM36x_DFP\\1.0.4\\Examples\\ADC\\ADCMeter.c** into the new project directory: **C:\\Analog Devices\\ADuCM36x\\ADIDemo**
 
--  To add the file to the project, right-click on the **Source Group** folder in the **Project** window, and select **Add Existing Files to Group 'Source Group 1...'**\ |image10|\
+-  To add the file to the project, right-click on the **Source Group** folder in the **Project** window, and select **Add Existing Files to Group 'Source Group 1...'**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_add_file.png
+   :align: center
 
 .. container:: centeralign
 
@@ -318,7 +377,10 @@ Assembling/Compiling/Downloading Code
 
 To compile/link ADCMeter.c, press **Ctrl+F7** or click on the **translate** icon in the toolbar. The file should compile correctly and the **Build Output** Window should say **"ADCMeter.c" - 0 Error(s), 0 Warning(s)**. If there are any errors in your source code, these appear in the status window. To identify the line of code that corresponds to the error, double-click on the error in the **Build Output** window and an arrow highlights the line of code in error.
 
-Before the code can be downloaded to the ADuCM360, the entire project must be build. This is done by clicking on the **Rebuild** icon on the toolbar. It will also create a demo.elf file used by the debugger.\ |image11|\
+Before the code can be downloaded to the ADuCM360, the entire project must be build. This is done by clicking on the **Rebuild** icon on the toolbar. It will also create a demo.elf file used by the debugger.
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -349,48 +411,61 @@ Follow the steps in this section to get up and running with the example code pro
 
 These steps use the default driver and compiler settings.
 
--  To open the prepared IAR example projects click on the **CMSIS-Pack Manager**\
+-  To open the prepared IAR example projects click on the **CMSIS-Pack Manager**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_cmsis_button.png
+   :align: center
 
-|image12|
+-  A prompt to create a new Workspace will appear. Select the desired Folder and name to save it. (Figure 11)
 
--  A prompt to create a new Workspace will appear. Select the desired Folder and name to save it. (Figure 11)\ |image13|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_workspace.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 11. Creation of a new Workspace*\
 
 
--  The CMSIS Manager will launch. Select the **Devices** tab, and search for **aducm** in the **Search Device** bar. Select **ADuCM360**\
+-  The CMSIS Manager will launch. Select the **Devices** tab, and search for **aducm** in the **Search Device** bar. Select **ADuCM360**
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_device_select.png
+   :align: center
+   :width: 600px
 
+-  With the **ADuCM360** device selected, change to the **Examples** tab. Import the desired example, for example **RTD_DEMO**
 
-|image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_import_example.png
+   :align: center
+   :width: 600px
 
--  With the **ADuCM360** device selected, change to the **Examples** tab. Import the desired example, for example **RTD_DEMO**\
+-  The example is imported into the workspace, as can be seen in Figure 12.
 
-|image15|
-
--  The example is imported into the workspace, as can be seen in Figure 12. |image16|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_example.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ *Figure 12. RTD_Demo example*\
 
 
--  To compile all files, select **Project -> Rebuild All**\
+-  To compile all files, select **Project -> Rebuild All**
 
-
-
-|image17|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_rebuild.png
+   :align: center
+   :width: 400px
 
 -  If the Build is successful, the information is displayed in the **Build** details window.
 
-|image18|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_build.png
+   :align: center
 
--  To program the device and begin debugging the source code, select **Project -> Download and Debug**\
+-  To program the device and begin debugging the source code, select **Project -> Download and Debug**
 
-|image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_program.png
+   :align: center
+   :width: 400px
 
 Downloading Code into Flash
 ---------------------------
@@ -443,30 +518,7 @@ Pull RESET low, then high (or float) on the mini-board to reset the ADuCM360 wit
 .. |J2 Connector| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/j2_connector.png
 .. |Installing Segger J-Link Software| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/segger.png
 .. |Device Manager| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/drivers.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_package_installer.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_copy_example.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/rtd_demo.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_copy_example.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/rtd_demo.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/build.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_build.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug_icon.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_new_project.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_debug_options.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_add_file.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_build_successful.png
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_cmsis_button.png
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_workspace.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_device_select.png
-   :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_import_example.png
-   :width: 600px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_example.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_rebuild.png
-   :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_build.png
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/iar_program.png
-   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-aducm360-user-guide/keil_build_successful.png

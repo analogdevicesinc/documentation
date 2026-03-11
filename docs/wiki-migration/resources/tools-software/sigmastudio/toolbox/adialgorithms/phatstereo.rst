@@ -13,4 +13,4 @@ Two parameters control the block:
 
 **Level** - Controls the output level of the filter; -80dB would basically be a passthrough with no signal modification.
 
-.. |phatpic1.png| image:: https://wiki.analog.com/_media/phatpic1.png
+.. |phatpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/phatpic1.png

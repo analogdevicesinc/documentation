@@ -13,7 +13,7 @@ Obtain the pre-built binary
 
 Currently, you may get the binary here:
 
-:git-micropython:`releases`
+https://github.com/analogdevicesinc/micropython/releases
 
 Flash it into the SHARC Audio Module
 ------------------------------------
@@ -48,4 +48,4 @@ Now MicroPython has been flashed into the board, follow these steps to connect t
 
 --------------
 
-`Faust and the SHARC Audio Module#..micropython|MicroPython Overview#.peripherals|Using Hardware Peripherals <https://wiki.analog.com/_media/navigation SHARC Audio Module#..faust>`_
+`Faust and the SHARC Audio Module#..micropython|MicroPython Overview#.peripherals|Using Hardware Peripherals <https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/micropython/navigation SHARC Audio Module#..faust>`_

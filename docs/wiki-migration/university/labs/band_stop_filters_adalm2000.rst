@@ -31,9 +31,8 @@ The Band Width of frequencies rejected is given by:
 
 All the frequencies below f\ :sub:`L`\ and above f\ :sub:`H` are allowed to pass and the frequencies between are attenuated by the filter. The series combination of an L and C as shown in figure 1 is such a filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -52,9 +51,8 @@ OR
 
 To show how a circuit responds to a range of frequencies a plot of the magnitude ( amplitude ) of the output voltage of the filter as a function of the frequency can be drawn. It is generally used to characterize the range of frequencies in which the filter is designed to operate within. Figure 2 shows a typical frequency response of a Band Pass filter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -72,14 +70,14 @@ Hardware setup
 Build on your solderless breadboard the Band reject filter circuit presented in Figure 3.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
    Figure 3: Band reject filter circuit
 
 
-   |image2|
+   |image4|
 
 .. container:: centeralign
 
@@ -92,7 +90,7 @@ Procedure
 The band stop filter's frequency response can be plotted using the Network Analyzer tool. Compute the center frequency of the filter using equation (4). According to this you will set the start and stop frequencies of the logarithmic sweep. For this filter the center frequency is 3.3 KHz. In the network analyzer set the start frequency at 1 KHz and the stop frequency at 10 KHz. Set the minimum phase at -90 the maximum phase at 90. Magnitude axis can be set from -30 dB to 10dB. In Figure 5 is presented the transfer function of the filter obtained by running the network analyzer.
 
 
-|image3|
+|image5|
 
 .. container:: centeralign
 
@@ -103,7 +101,7 @@ In the Signal Generator tool, on Channel 1, generate a waveform with the frequen
 
 
 
-|image4|
+|image6|
 
 .. container:: centeralign
 
@@ -128,11 +126,15 @@ Compute the cut-off frequencies for each Band reject filter constructed using th
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/bsf_circuit.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab12-fig2.png
    :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/bsf_bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/bsf_circuit.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/bsf_bb.png
    :width: 900px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/bsf_freq_plot.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/bsf_freq_plot.png
    :width: 900px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/bsf_3k_signal.png
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/bsf_3k_signal.png
    :width: 900px

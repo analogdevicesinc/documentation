@@ -41,15 +41,10 @@ The source code for the ADF4106 driver:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADF4106 Driver <drivers/frequency/adf4106/adf4106.h>`
+   -   :git-no-OS:`Implementation of ADF4106 Driver <drivers/frequency/adf4106/adf4106.c>`
    
-   |Header file of ADF4106 Driver|
 
-   -
-
-   |Implementation of ADF4106 Driver|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the ADF4106 driver and have to be implemented:
 
@@ -68,15 +63,10 @@ Example of a header file containing the prototypes of the functions which have t
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
+   -  :git-no-OS:`Generic header file for I2C Communication APIs <include/no_os_i2c.h>`
    
-   |Generic header file for SPI Communication APIs|
 
-   -
-
-   |Generic header file for I2C Communication APIs|
 
 ADF4106 Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,11 +90,9 @@ Initialization values example:
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`ADF4106 Initialization Values <drivers/frequency/adf4106/adf4106_cfg.h>`
    
-   |ADF4106 Initialization Values|
+
 
 Set Frequency
 ~~~~~~~~~~~~~
@@ -240,9 +228,3 @@ The **adf4106_set_frequency** function call sets the output frequency to 5.8 GHz
        pr_info("Setting frequency to 5800MHz.\n");
        set_f = adf4106_set_frequency(adf4106_desc, 5800000000);
        printf("Frequency set to %luMHz.\n", (int)(set_f/1000000));
-
-.. |Header file of ADF4106 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4106/adf4106`.h
-.. |Implementation of ADF4106 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4106/adf4106`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h
-.. |ADF4106 Initialization Values| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf4106/adf4106_cfg`.h

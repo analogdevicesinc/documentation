@@ -17,7 +17,7 @@ Continuous streaming of voltage and current measurements into a simple GUI allow
 
 .. tip::
 
-   To get the best performance out of your ADALM1000 device and ensure compatibility with the `MATLAB ADALM1000 support package <https://www.mathworks.com//hardware-support/analog-devices-adalm1000.html>`_ please make sure that the device is programmed with the :doc:`latest firmware </wiki-migration/university/tools/m1k/firmware-upgrade>`.
+   To get the best performance out of your ADALM1000 device and ensure compatibility with the `MATLAB ADALM1000 support package <https://www.mathworks.com/hardware-support/analog-devices-adalm1000.html>`_ please make sure that the device is programmed with the :doc:`latest firmware </wiki-migration/university/tools/m1k/firmware-upgrade>`.
 
 
 The following content is currently available:
@@ -34,7 +34,7 @@ The following content is currently available:
 
    -  :doc:`Hardware Manual </wiki-migration/university/tools/m1k/hw>`
    -  :doc:`Design Document </wiki-migration/university/tools/m1k/design>`
-   -  `Electrical CAD Documents <https://github.com/analogdevicesinc/m1k-cad>`_
+   -  :git-m1k-cad:`Electrical CAD Documents <m1k-cad>`
    -  :doc:`ADALM1000 Analog Inputs </wiki-migration/university/tools/m1k/analog-inputs>`
    -  :doc:`ADALM1000 Accessory Boards </wiki-migration/university/tools/adalm1000/accessory-boards-index>`
    -  :doc:`ADALM1000 Analog Multiplexers </wiki-migration/university/tools/m1k/analog-mux>`
@@ -45,7 +45,7 @@ The following content is currently available:
 
 -  Device Software/Firmware
 
-   -  `M1K Microcontroller Firmware Source <https://github.com/analogdevicesinc/m1k-fw>`_
+   -  :git-m1k-fw:`M1K Microcontroller Firmware Source <m1k-fw>`
    -  :doc:`Firmware Upgrade Procedures for the ADALM1000 </wiki-migration/university/tools/m1k/firmware-upgrade>`
 
 -  Host Software

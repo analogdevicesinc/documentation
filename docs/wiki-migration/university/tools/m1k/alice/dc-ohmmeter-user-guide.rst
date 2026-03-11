@@ -11,9 +11,8 @@ DC Ohmmeter Window:
 
 The method used to measure unknown resistance is based on the voltage divider configuration shown figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
-   :align: center
-   :width: 450px
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,9 +42,8 @@ The series resistance of the switch, which is approximately 1 Ohm, must be inclu
 
 Both ways can be used in the DC Ohmmeter tool. The test voltage can be adjusted as well as the value of the known resistor. The Ext Int selector picks which variation will be used to calculate the unknown resistance.
 
-.. image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dc-ohmmeter-screen.png
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -55,3 +53,8 @@ Both ways can be used in the DC Ohmmeter tool. The test voltage can be adjusted 
 **For Further Reading:**
 
 **Return to the** :doc:`ALICE Main Page </wiki-migration/university/tools/m1k/alice/desk-top-users-guide>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/ohm-meter-fig6.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/m1k/alice/dc-ohmmeter-screen.png
+   :width: 300px

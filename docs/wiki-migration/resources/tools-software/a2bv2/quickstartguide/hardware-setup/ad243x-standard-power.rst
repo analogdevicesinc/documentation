@@ -18,7 +18,9 @@ EVAL-AD2433WA1BZ
 -  Sigma DSP (ADAU1452) with Optical SPDIF I/O
 -  512K Self-Boot Memory (EEPROM)
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2433wa1bz.png
+   :align: center
+   :width: 1080px
 
 .. container:: centeralign
 
@@ -105,7 +107,7 @@ A2B Evaluation boards shall be connected in the following order
    This connection is recommended for running the standard power sample demo using PC as host.
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -126,7 +128,5 @@ Sample configuration
    :align: center
    :width: 400px
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2433wa1bz.png
-   :width: 1080px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433_setup.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2433_setup.png
    :width: 1000px

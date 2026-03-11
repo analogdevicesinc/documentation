@@ -11,8 +11,9 @@ After following the instructions in the :doc:`Software Procedures </wiki-migrati
 
    -  Using the Arduino Connectors
 
-
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170_sdpk1_connections.png
+   :align: center
+   :width: 450px
 
 Block Diagram
 =============
@@ -115,7 +116,7 @@ Hardware Link Options
 | LKVOCM78     | Black  | 4525             | VOCM ADA4945 Pos A: DACOUT Pos B: VBIAS Pos C: AD4525 Pos D: REFOUT       | Middle of board                  |
 +--------------+--------+------------------+---------------------------------------------------------------------------+----------------------------------+
 
-|image2| Resistor Jumpers need to be modified for the selection of AC or DC inputs on AIN3-AIN4 and AIN7-AIN8, below is the guide on the resistor population for the selection of input type,
+|image1| Resistor Jumpers need to be modified for the selection of AC or DC inputs on AIN3-AIN4 and AIN7-AIN8, below is the guide on the resistor population for the selection of input type,
 
 =========== ========= ========
 AC/DC input CH3-CH4   CH7-CH8
@@ -123,7 +124,7 @@ AC input    R41, R110 R27, R40
 DC input    R42, R111 R26,R39
 =========== ========= ========
 
-|image3| \*For configuring AIN3-AIN4 as AC inputs resistors R41, R110 must be populated and R42, R111 must not be populated. Similarly for configuring AIN3-AIN4 as AC inputs resistors R42, R111 must be populated and R41, R110 must not be populated. \*For configuring AIN7-AIN8 as AC inputs resistors R27, R40 must be populated and R26, R39 must not be populated. Similarly for configuring AIN7-AIN8 as AC inputs resistors R26, R39 must be populated and R27, R40 must not be populated.
+|image2| \*For configuring AIN3-AIN4 as AC inputs resistors R41, R110 must be populated and R42, R111 must not be populated. Similarly for configuring AIN3-AIN4 as AC inputs resistors R42, R111 must be populated and R41, R110 must not be populated. \*For configuring AIN7-AIN8 as AC inputs resistors R27, R40 must be populated and R26, R39 must not be populated. Similarly for configuring AIN7-AIN8 as AC inputs resistors R26, R39 must be populated and R27, R40 must not be populated.
 
 On Board Connections
 ====================
@@ -245,7 +246,7 @@ SDP 120 Pin Connector J6                  Arduino connector P1-P5
 **Connection**           \**Function** 
 3,4                      GND
 
-|image4|
+|image3|
 
 5                        V_USB            
 6,11,17,23,28,36,40      GND              
@@ -426,7 +427,7 @@ Silk Screen
 ======================================== ===========================
 Location of Reference related components Location of Reference Links
 ======================================== ===========================
-|image5|                                 |image6|
+|image4|                                 |image5|
 ======================================== ===========================
 
 GPIOs
@@ -483,7 +484,7 @@ MOSFET Circuit
 Below is the circuit for the AC excitation circuit. This Circuit outputs to EXC+ and EXC- on J2. This is enabled when LK22,LK23,LK24,LK25 are in posB
 
 
-|image7|
+|image6|
 
 Schematics
 ==========
@@ -545,7 +546,7 @@ Thermistor
 Loadcell with DC excitation
 ---------------------------
 
-|image8| \*Mount Resistors R111,R42 and depopulate R41, R110 to make AIN3-AIN4 compatible for DC measurements. \*Mount Resistors R26,R39 and depopulate R27,R40 to make AIN7-AIN8 compatible for DC measurements.
+|image7| \*Mount Resistors R111,R42 and depopulate R41, R110 to make AIN3-AIN4 compatible for DC measurements. \*Mount Resistors R26,R39 and depopulate R27,R40 to make AIN7-AIN8 compatible for DC measurements.
 
 Loadcell with AC excitation
 ---------------------------
@@ -557,21 +558,19 @@ Loadcell with AC excitation
 Accelerometer
 -------------
 
-|image9| \*Mount Resistors R24 and depopulate R25 to make AIN2 compatible for Accelerometer measurements.
+|image8| \*Mount Resistors R24 and depopulate R25 to make AIN2 compatible for Accelerometer measurements.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170_sdpk1_connections.png
-   :width: 450px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_links.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ad4170_links.png
    :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ain34_ain78_ac_dc_selection.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/ain34_ain78_ac_dc_selection.png
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4170/hardware_guide/ad170_arduino_connection.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4170/hardware_guide/ad170_arduino_connection.png
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/hardware_guide/ad4170_ref_silk.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/hardware_guide/ad4170_ref_silk.png
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/hardware_guide/ad4170_lkref_zoom_silk.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/hardware_guide/ad4170_lkref_zoom_silk.png
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/mosfet_circuit.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/mosfet_circuit.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4-wire_loadcell_dc_ch0.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/accelerometer_config_ch0.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/4-wire_loadcell_dc_ch0.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4170/accelerometer_config_ch0.png

@@ -16,9 +16,8 @@ Background:
 
 **Electromagnetic Induction**
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -45,9 +44,8 @@ Construction:
 
 Construct the circuit as shown in figure 2 on your solder-less breadboard. The two coils (inductors) can be either inserted in the breadboard as shown on the right at various distances from each other or inserted into one end of the three wire female to female header jumper wires (between the black and white wires) as shown on the left. Using the header jumper wires allows the distance and orientation between the two coils to be just about anything. Another option is to insert one coil in the breadboard (making it stationary) and using the second coil connected to a jumper wire so it can be moved around with respect to the first coil.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -72,9 +70,8 @@ Coils of wire wrapped around a core or “bobbin” in the form of a `solenoid <
 
 With the two coils very far apart, more then 1 inch, there will be very little coupling between the two coils as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -85,9 +82,8 @@ In figure 3 we see that voltage seen coupled on to coil 2, orange BIN trace, has
 
 With the coils connected with their polarity shown in figure 2 and positioned right next to each other the signal coupled from Coil 1 to Coil 2 will be as shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -100,9 +96,8 @@ Change the separation and orientation of the two coils and observe any changes i
 
 Now reverse the connections, polarity of Coil 2. The phase of the coupled voltage seen across Coil 2 should now be inverted as shown in figure 5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -114,9 +109,8 @@ Increasing the amount of coupling between the coils.
 
 If a small piece of magnetic material is placed such that is bridges between the ends of the two coils the magnetic field will be concentrated and coupling between the coils will be increased. A small chunk of ferrite such as shown in figure 3 works well is you have one. However, the shaft of the small screwdriver included in the Analog Parts kit is magnetic and can be used to demonstrate this effect as well. The amount the coupling increases will be smaller using the screwdriver over using a ferrite.
 
-.. image:: https://wiki.analog.com/_media/university/tools/adalp2000/screwdriver.png
-   :align: center
-   :width: 300px
+
+|image6|
 
 .. container:: centeralign
 
@@ -125,18 +119,16 @@ If a small piece of magnetic material is placed such that is bridges between the
 
 In figure 8 we show the effect of holding the screwdriver from Parts Kit across the tops of the two coils bridging or concentrating the magnetic fields between the two coils as in figure 7. The two darker reference traces (for BIN and CA-I) are for the case with out the screwdriver bridging the coils and the lighter traces are for the new case with the screwdriver bridging the coils.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig8.png
-   :align: center
-   :width: 500px
+
+
+|image7|
 
 .. container:: centeralign
 
    Figure 7, Screwdriver Bridged across coils.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig7.png
-   :align: center
-   :width: 600px
+   |image8|
 
 .. container:: centeralign
 
@@ -148,9 +140,8 @@ Turns Ratio:
 
 In this next part of the Activity you will replace the 10 mH Coil 2 (marked 103) with a 1 mH (marked 102) coil. The two coils look to be the same size (the ferrite bobbin at least) but with closer examination you will notice that thicker wire is used in the 1 mH coil. This means that the wire is wrapped fewer times around the bobbin and the overall length of the wire is shorter. A shorter, thicker wire will have less resistance. For comparison, figure 9 shows the coupled signals for both the original 10 mH Coil 2 (dark orange trace) and the new 1 mH Coil 2 (light orange trace). The fewer number of turns in the 1 mH coil vs the 10 mH coil results in the smaller amplitude.
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig9.png
-   :align: center
-   :width: 600px
+
+|image9|
 
 .. container:: centeralign
 
@@ -161,18 +152,15 @@ In this next part of the Activity you will also replace the 10 mH Coil 1 (marked
 
 We know that the strength of the magnetic field generated is proportional to the amount of current flowing so to remove that variable from the experiment we need to adjust the amplitude of the voltage applied to Coil 1. With the program paused (hit the Stop button), replace Coil 1 with the 1 mH coil. Lower the AWG A Max value to 2.6 and raise the Min value to 2.4, or 0.1 V either side of 2.5. Hit the Run again to start the scope sweeping. While monitoring the CA-I p-p current slowly increase the AWG Max value and lower the Min value, the same amount either side of 2.5 until the p-p current in Coil 1 is the same as it was with the 10 mH coil. (Min = 2.1, Max = 2.86)
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig10.png
-   :align: center
-   :width: 600px
+
+|image10|
 
 .. container:: centeralign
 
    Figure 10, 1 mH Coil 1, 1 mH Coil 2.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig11.png
-   :align: center
-   :width: 600px
+   |image11|
 
 .. container:: centeralign
 
@@ -193,3 +181,26 @@ What circuit device did you construct by placing the two inductors next to each 
 :doc:`Transformers Lab </wiki-migration/university/courses/alm1k/alm-lab-transformers>`
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/fieldsandwaves>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/adalp2000/screwdriver.png
+   :width: 300px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig8.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig7.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig9.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig10.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/fieldsandwaves/alm-fandw-mag-fig11.png
+   :width: 600px

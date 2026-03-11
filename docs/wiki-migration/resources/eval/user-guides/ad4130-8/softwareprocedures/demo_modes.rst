@@ -132,24 +132,31 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 -  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board view window. The demo wizard will be on the left, either as shown in the figure below (Label 1) or already expanded. Expand the wizard by clicking the arrow (Label 2).
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test.png
+   :align: center
+   :width: 600px
 
 -  With the wizard expanded, select the noise test button (Label 3).
 -  The settings required for the demo are displayed to be viewed prior to writing to the AD4130-8 (Label 4). Click apply (Label 5) to write these settings to the board.
 -  The summary is then displayed once the write is complete (Label 1).
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_summary.png
+   :align: center
+   :width: 600px
 
 -  From here navigate to the chip view by double-clicking the AD4130-8 chip (Label 2).
 -  To make further changes to the configuration click on the dark blue block in the chip view (Label 1) or double click the memory map option (Label 2)
 -  To begin capturing data double click the Analysis button (Label 3).
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
+   :align: center
+   :width: 600px
 
--  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a noise test.\
+-  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a noise test.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_data.png
+   :align: center
+   :width: 600px
 
 -  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 
@@ -192,7 +199,7 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 4-wire RTD Demo mode
 --------------------
 
-|image5| Links that need to be adjusted for 4-wire RTD demo mode.
+|image1| Links that need to be adjusted for 4-wire RTD demo mode.
 
 +--------------+--------+-------------------------------+---------------------------------------------------+---------------------------------------+
 | Link Numbers | Colour | 4-Wire RTD Demo mode Position | Description                                       | Rough Board Location                  |
@@ -215,25 +222,32 @@ If you have not set up/installed the ACE plugin before please go to :doc:`Instal
 
 -  Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board view window. The demo wizard will be on the left, either as shown in the figure below (Label 1) or already expanded. Expand the wizard by clicking the arrow (Label 2).
 
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_config_tab.png
+   :align: center
+   :width: 600px
 
 -  With the wizard expanded, select the RTD button (Label 3).
 -  In the Configuration Options tab (Label 4), select 4 Wire for Number of Wires, select your RTD type either PT100 or PT1000 and pick which AVDD voltage you have set on the board either 1.8V or 3.3V. This will configure the AD4130-8 registers to the optimum RTD setup.
 -  The settings required for the demo are displayed to be viewed prior to writing to the AD4130-8 (Label 5). Click apply (Label 6) to write these settings to the board.
 -  The summary is then displayed once the write is complete (Label 1).
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_config_tab_2.png
+   :align: center
+   :width: 600px
 
 -  From here navigate to the chip view by double-clicking the AD4130-8 chip (Label 2).
 -  To make further changes to the configuration click on the dark blue block in the chip view (Label 1) or double click the memory map option (Label 2)
 -  To begin capturing data double click the Analysis button (Label 3).
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
+   :align: center
+   :width: 600px
 
--  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a RTD demo mode.\
+-  To gather samples, change the Samples Count (Label 1) to the number of samples required, then click the Run Once button (Label 2) to acquire the samples from the ADC. The image below shows an example of the main window after running a RTD demo mode.
 
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_results_tab.png
+   :align: center
+   :width: 600px
 
 -  To display the waveform data in degrees Celsius pick DegC in y-axis units dropdown (Label 3)
 -  For more information on the Waveform window go to the software section :doc:`here </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
@@ -260,20 +274,4 @@ Find the waveforms resulting from the gathered samples in the Analysis tab. The 
 
 :doc:`Return to Software Guide </wiki-migration/resources/eval/user-guides/ad4130-8/softwareprocedures>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_summary.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_data.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/eval-ad4130-8wardz_block_diagram_with_4_wire_rtd_without_sdp_k1.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_config_tab.png
-   :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_config_tab_2.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_8_ace_noise_test_chip_view.png
-   :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/ad4130_rtd_results_tab.png
-   :width: 600px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad4130-8/softwareprocedures/eval-ad4130-8wardz_block_diagram_with_4_wire_rtd_without_sdp_k1.png

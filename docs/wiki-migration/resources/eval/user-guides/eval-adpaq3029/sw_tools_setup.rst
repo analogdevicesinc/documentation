@@ -21,12 +21,10 @@ The CCES software development environment for EVAL-ADPAQ3029 is based on open so
    **Getting CCES**
 
    
-   .. image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.8.0/ADI_CrossCoreEmbeddedStudio-Rel2.8.0.exe
-      :alt: CCES 2.8.0 Windows Installer(Executable)
-      :align: left
+   `CCES 2.8.0 Windows Installer(Executable) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.8.0/ADI_CrossCoreEmbeddedStudio-Rel2.8.0.exe>`_
+   
+   `CCES 2.8.0 Ubuntu Linux Installer(Debian) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.8.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.8.0.deb>`_
 
-
-   |CCES 2.8.0 Ubuntu Linux Installer(Debian)|
 
 Installing on Windows:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -80,30 +78,48 @@ CCES does not come with the Analog Device specific packs or the ARM CMSIS Pack f
 
    Download ``ADuCM3029 IoT Device Family pack``
 
+   
+   `ADuCM3029 IoT Device Family pack(PROD) – 1.0.0 R <https://starweb.ad.analog.com/default/IoT/latest/>`_
 
-   |ADuCM3029 IoT Device Family pack(PROD) – 1.0.0 R|
 
--  Open CCES and click on ``Window`` -> ``Perspective`` -> ``Open Perspective`` -> ``Other``, then select ``CMSIS Pack Manger``. `image1 <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw3.png>`_ `image2 <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw4.png>`_
--  Now close the Welcome Window and click on ``Check for Updates on Web``. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw5.png>`_
--  Now select ADuCM3029 from the Devices list.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw6.png>`_
--  In ``Packs`` -> ``Generic`` folder, install ``ARM CMSIS version 5.0.1``.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw7.png>`_
--  Now click on ``import existing packs`` and add the BSP and Device family packs downloaded from Starweb link provided above.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw8.png>`_
--  Ensure that you delete the default ``DFP`` -> ``Analog Devices ADuCM302x_DFP version 2.0.0``.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw9.png>`_
+-  Open CCES and click on ``Window`` -> ``Perspective`` -> ``Open Perspective`` -> ``Other``, then select ``CMSIS Pack Manger``. `image1 <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw3.png>`_
+
+`image2 <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw4.png>`_
+
+-  Now close the Welcome Window and click on ``Check for Updates on Web``.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw5.png>`_
+
+-  Now select ADuCM3029 from the Devices list.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw6.png>`_
+
+-  In ``Packs`` -> ``Generic`` folder, install ``ARM CMSIS version 5.0.1``.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw7.png>`_
+
+-  Now click on ``import existing packs`` and add the BSP and Device family packs downloaded from Starweb link provided above.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw8.png>`_
+
+-  Ensure that you delete the default ``DFP`` -> ``Analog Devices ADuCM302x_DFP version 2.0.0``.
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw9.png>`_
 
 The CCES is now ready for ADPAQ firmware development which is explained :doc:`here </wiki-migration/resources/eval/user-guides/eval-adpaq3029/fw_dev>`.
 
 mbed Serial port driver
 -----------------------
 
-The CrossCore Embedded Studio installer will also install the mBed windows serial driver. Check by going to ``Device manager`` -> ``Ports (COM and LPT)``, ``mbed Serial Port`` should be visible under ``Ports``. `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw15.png>`_
+The CrossCore Embedded Studio installer will also install the mBed windows serial driver. Check by going to ``Device manager`` -> ``Ports (COM and LPT)``, ``mbed Serial Port`` should be visible under ``Ports``. `image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw15.png>`_
 
--  If not, it can be installed separately by going to - https://developer.mbed.org/handbook/Windows-serial-configuration `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/sw16.png>`_
+-  If not, it can be installed separately by going to - https://developer.mbed.org/handbook/Windows-serial-configuration
+
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/sw16.png>`_
+
 -  open device manager to check mbed serial port is visible again.
 
 .. important::
 
    While installing the mbed serial driver, keep your ADPAQ Board connected to the computer.
 
-
-.. |CCES 2.8.0 Ubuntu Linux Installer(Debian)| image:: http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.8.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.8.0.deb
-.. |ADuCM3029 IoT Device Family pack(PROD) – 1.0.0 R| image:: https://starweb.ad.analog.com/default/IoT/latest/

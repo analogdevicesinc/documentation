@@ -20,9 +20,8 @@ Background:
 
 The schematic of a Transistor Transistor Logic (TTL) inverter is shown in figure 1. This circuit overcomes the limitations of the single transistor inverter circuit. The basic TTL inverter consists of three stages. A current steering input, a phase splitting stage and an output driver stage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,9 @@ The schematic of a Transistor Transistor Logic (TTL) inverter is shown in figure
 
 The input stage transistor Q\ :sub:`1` performs a current steering function. It can be thought of as a back-to-back diode arrangement. The transistor is operated in either forward or reverse mode to steer current to or from the second stage transistor's base, Q\ :sub:`2`. The forward current gain or ß\ :sub:`F`, is much larger than the reverse ß\ :sub:`R`. it provides a higher discharge current to discharge the base when turning it off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f2.png
-   :align: center
-   :width: 500px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,9 +41,9 @@ The input stage transistor Q\ :sub:`1` performs a current steering function. It 
 
 Second stage transistor, Q\ :sub:`2` in figure 1, is a phase splitter to drive both halves of the pull up and pull down output stage. It allows the input condition to be produced in opposite phases so that the output transistors can be driven in anti-phase. This allows Q\ :sub:`3` to be on when Q\ :sub:`4` is off and vice versa as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f3.png
-   :align: center
-   :width: 500px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -53,9 +52,9 @@ Second stage transistor, Q\ :sub:`2` in figure 1, is a phase splitter to drive b
 
 The output transistor pair, Q\ :sub:`3` and Q\ :sub:`4` along with diode D\ :sub:`1` are referred to as a totem-pole output as shown in figure 4. This output configuration provides the ability to both actively source or sink current and is useful for driving capacitive loads. Resistor R\ :sub:`4`, serves to limit the current available from V\ :sub:`CC`. Under steady-state conditions, only one transistor is on at a time.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f4.png
-   :align: center
-   :width: 500px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -74,9 +73,8 @@ Directions:
 
 Build the circuit shown in figure 5 on your solder-less bread board. The NPN transistors supplied with your ADALP2000 Parts Kit are limited to 5 2N3904 and 1 TIP31 power transistor. Use the 5 2N3904 transistors and a 1N914 diode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ttl_f5.png
-   :align: center
-   :width: 550px
+
+|image5|
 
 .. container:: centeralign
 
@@ -90,9 +88,8 @@ Measurements:
 
 The transfer characteristic can be deduced by applying a slowly ramping input voltage and determining the sequence of events which takes place with respect to changes in the states of conduction of each transistor and the critical points at which the onset of these changes happen. Consider the circuit input vs. output transfer characteristic curve shown in figure 6.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -149,3 +146,16 @@ The output circuitry of a typical TTL logic gate is commonly referred to a totem
 http://en.wikipedia.org/wiki/Transistor-transistor_logic
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-ttl_f5.png
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a27_f6.png
+   :width: 500px

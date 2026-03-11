@@ -18,9 +18,9 @@ Step 2a - Determine the Driver
 
 There are a couple different approaches to determining the compatible driver. The first step is looking at the Wiki driver listing page. Many devices have a sub wiki describing how to configure the device tree and use the device in Linux.  An example of this would be the `LTC2983 <:doc:`/wiki-migration/resources/tools-software/linux-drivers/iio-temperature/ltc2983`>`_.  Unfortunately the MAX31855 does not have a detailed page on the Wiki.
 
-The next alternative is to look at the device tree bindings within the Linux kernel tree.  This can be found in Documentation/devicetree/bindings/<device class>.  The MAX31855 is a temperature device, and would be located in iio/temperature.  As luck would have it, a documentation entry exists for the MAX31855: :git-linux:`Documentation/devicetree/bindings/iio/temperature/maxim%2Cmax31855k`.yaml
+The next alternative is to look at the device tree bindings within the Linux kernel tree.  This can be found in Documentation/devicetree/bindings/<device class>.  The MAX31855 is a temperature device, and would be located in iio/temperature.  As luck would have it, a documentation entry exists for the MAX31855: :git-linux:`Documentation/devicetree/bindings/iio/temperature/maxim%2Cmax31855k.yaml`
 
-If neither of these documentation sources exist, the next step would be to inspect the actual driver source code.  Similar structure to the bindings folder, the drivers are organized by device class. This part happens to be supported by maxim_thermocouple.c here: :git-linux:`drivers/iio/temperature/maxim_thermocouple`.c.  Code crawling is usually a last resort, and is outside the scope of this walkthrough.
+If neither of these documentation sources exist, the next step would be to inspect the actual driver source code.  Similar structure to the bindings folder, the drivers are organized by device class. This part happens to be supported by maxim_thermocouple.c here: :git-linux:`drivers/iio/temperature/maxim_thermocouple.c`.  Code crawling is usually a last resort, and is outside the scope of this walkthrough.
 
 Step 2b - Analyze the Bindings File
 -----------------------------------
@@ -193,11 +193,8 @@ Verification Hardware
 ---------------------
 
 -  Raspberry PI 3B+
-
-::
-
-   *[[:adi:`en/resources/evaluation-hardware-and-software/evaluation-boards-kits/pmd-rpi-intz`.html|PMD-RPI-INTZ]] Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT
-   *[[:adi:`en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max31855pmb1`.html|MAX31855PMB1]], also available in the [[:adi:`media/en/news-marketing-collateral/solutions-bulletins-brochures/maxim-analog-essentials-collection`.pdf|Analog Essentials Kit]]
+-  :adi:`PMD-RPI-INTZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/pmd-rpi-intz.html>` Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT
+-  :adi:`MAX31855PMB1 <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max31855pmb1.html>`, also available in the :adi:`Analog Essentials Kit <media/en/news-marketing-collateral/solutions-bulletins-brochures/maxim-analog-essentials-collection.pdf>`
 
 .. image:: https://wiki.analog.com/_media/software/learn/linux/980665904.png
    :alt: 980665904.png

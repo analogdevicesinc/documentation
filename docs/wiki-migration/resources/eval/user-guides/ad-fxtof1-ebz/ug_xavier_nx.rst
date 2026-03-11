@@ -17,8 +17,8 @@ Required hardware
 Prepare SD card
 ~~~~~~~~~~~~~~~
 
--  Download and flash on a SD card the latest image provided from the following link: :git-aditof_sdk#ad-fxtof1-ebz>`__
--  Download L4T BSP `L4T BSP <https::`aditof_sdk#ad-fxtof1-ebz </developer.nvidia.com/embedded/linux-tegra>` package (Tested release R32.3.1)
+-  Download and flash on a SD card the latest image provided from the following link: :git-aditof_sdk:`aditof_sdk#ad-fxtof1-ebz <aditof_sdk>`
+-  Download L4T BSP `L4T BSP <https://developer.nvidia.com/embedded/linux-tegra>`_ package (Tested release R32.3.1)
 -  Extract kernel_src from BSP package
 -  ADI ToF camera driver and devicetree should be taken from :git-aditof_sdk:`aditof_sdk <misc/nvidia>`.
 -  Copy paste and replace content of kernel_src folder from L4T BSP with the one downloaded from ADI ToF Repository
@@ -47,7 +47,9 @@ Power on sequence
    Password for "analog" user is "analog". This user has sudo rights
 
 
-   |Jetson Xavier nx connections|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/ad-fxtof1-ebz-xavier-nx-connection.jpg
+   :alt: Jetson Xavier nx connections
+   :align: center
 
 Power off sequence
 ~~~~~~~~~~~~~~~~~~
@@ -88,5 +90,3 @@ Unfortunately OpenCV does not provide binaries for this module so a manual build
 
 .. image:: https://wiki.analog.com/_media/navigation AD-FXTOF1-EBZ#none#./
    :alt: Overview#none#
-
-.. |Jetson Xavier nx connections| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fxtof1-ebz/ad-fxtof1-ebz-xavier-nx-connection.jpg

@@ -41,10 +41,10 @@ Controls
 | Show Graph    | |rmsgainpic7.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +---------------+-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |rmsgainpic1.png| image:: https://wiki.analog.com/_media/rmsgainpic1.png
-.. |rmsgainpic2.png| image:: https://wiki.analog.com/_media/rmsgainpic2.png
-.. |rmsgainpic3.png| image:: https://wiki.analog.com/_media/rmsgainpic3.png
-.. |rmsgainpic4.png| image:: https://wiki.analog.com/_media/rmsgainpic4.png
-.. |rmsgainpic5.png| image:: https://wiki.analog.com/_media/rmsgainpic5.png
-.. |rmsgainpic6.png| image:: https://wiki.analog.com/_media/rmsgainpic6.png
-.. |rmsgainpic7.png| image:: https://wiki.analog.com/_media/rmsgainpic7.png
+.. |rmsgainpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic1.png
+.. |rmsgainpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic2.png
+.. |rmsgainpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic3.png
+.. |rmsgainpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic4.png
+.. |rmsgainpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic5.png
+.. |rmsgainpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic6.png
+.. |rmsgainpic7.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/rmsgainpic7.png

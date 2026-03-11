@@ -27,9 +27,8 @@ Table 1. Standard resistor values: 2%, 5% and 10%
 
 Carbon-type resistors use color-coded bands to identify the resistor's ohmic value and tolerance: (For more on the resistor color code see the section below "A brief history of the resistor color code")
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f1.jpg
-   :align: center
-   :width: 300px
+
+|image1|
 
 .. container:: centeralign
 
@@ -38,9 +37,9 @@ Carbon-type resistors use color-coded bands to identify the resistor's ohmic val
 
 EXAMPLE: Red-Violet-Green-Gold would have a resistance of 2.7 megohm with 5% tolerance
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f2.png
-   :align: center
-   :width: 550px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -69,9 +68,8 @@ Table 3. Standard values for film-type resistors
 
 Metal film resistors use a 4 digit numbering sequence to identify the resistor value instead of the color band scheme used for carbon types:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f3.png
-   :align: center
-   :width: 300px
+
+|image3|
 
 .. container:: centeralign
 
@@ -87,9 +85,8 @@ High Frequency Effects:
 
 Unlike its "ideal" counterpart, a "real" resistor, like a real capacitor (Analog Dialogue 30-2), suffers from parasitics. (Actually, any two-terminal element may look like a resistor, capacitor, inductor, or damped resonant circuit, depending on the frequency it's tested at.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -103,9 +100,8 @@ Temperature effects: Should you always use resistors with the lowest temperature
 
 Not necessarily. A lot depends on the application. For the single resistor shown in figure 4, measuring current in a loop, the current produces a voltage across the resistor equal to I × R. In this application, the absolute accuracy of resistance at any temperature would be critical to the accuracy of the current measurement, so a resistor with a very low TC would be used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -114,9 +110,9 @@ Not necessarily. A lot depends on the application. For the single resistor shown
 
 A different example is the behavior of gain-setting resistors in a gain-of-100 op amp circuit, shown in figure 5. In this type of application, where gain accuracy depends on the ratio of resistances (a ratiometric configuration), resistance matching, and the tracking of the resistance temperature coefficients (TCRs), is more critical than absolute accuracy.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f6.png
-   :align: center
-   :width: 500px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -158,9 +154,8 @@ Wire-wound precision resistors have another problem. The junction of the resista
 
 This may be done by keeping both leads of equal length, to equalize thermal conduction through them, by insuring that any airflow (whether forced or natural convection) is normal to the resistor body, and by taking care that both ends of the resistor are at the same thermal distance (i.e., receive equal heat flow) from any heat source on the PC board.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f7.png
-   :align: center
-   :width: 450px
+
+|image7|
 
 .. container:: centeralign
 
@@ -172,18 +167,15 @@ Resistor Networks
 
 A resistor network is a single package that contains two or more resistors. The package will include multiple leads by which the network can be made part of a larger circuit. Figure 7 shows typical packages used for resistor networks. There are commonly two ways the resistors are connected in the array, isolated and bussed where one end of all the resistors share a common connection as shown in figure 8. The bussed arrangement is commonly used for pull up, pull down or bus termination on logic signals.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f8.png
-   :align: center
-   :width: 350px
+
+|image8|
 
 .. container:: centeralign
 
    Figure 7 SIP and DIP resistor network packages
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f9.png
-   :align: center
-   :width: 500px
+   |image9|
 
 .. container:: centeralign
 
@@ -231,9 +223,8 @@ Table 5. Substrate Materials
 
 In the example of the IC instrumentation amplifier shown figure 9, tight matching between resistors R\ :sub:`1`-R\ :sub:`1`', R\ :sub:`2`-R\ :sub:`2`', R\ :sub:`3`- R\ :sub:`3`' insures high common-mode rejection (as much as 120 dB, dc to 60 Hz). While it is possible to achieve higher common mode rejection using discrete op amps and resistors, the arduous task of matching the resistor elements is undesirable in a production environment.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f10.png
-   :align: center
-   :width: 500px
+
+|image10|
 
 .. container:: centeralign
 
@@ -242,9 +233,9 @@ In the example of the IC instrumentation amplifier shown figure 9, tight matchin
 
 Matching, rather than absolute accuracy, is also important in R-2R ladder networks (including the feedback resistor) of the type used in CMOS D/A converters. To achieve n-bit performance, the resistors have to be matched to within 1/2n, which is easily achieved through laser trimming. Absolute accuracy error, however, can be as much as ±20%. Shown in figure 10 is a typical R-2R ladder network used in a CMOS digital to analog converter.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f11.png
-   :align: center
-   :width: 500px
+
+
+|image11|
 
 .. container:: centeralign
 
@@ -288,3 +279,26 @@ For more info on passive components see:
 :adi:`AN-348: Avoiding Passive-Component Pitfalls <static/imported-files/application_notes/500824934643930414583807523874018494695982855668424783486554001060AN348.pdf>`
 
 \*\* Return to Lab Activity :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>` \*\*
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f1.jpg
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f3.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f7.png
+   :width: 450px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f8.png
+   :width: 350px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f9.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f10.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/arn_f11.png
+   :width: 500px

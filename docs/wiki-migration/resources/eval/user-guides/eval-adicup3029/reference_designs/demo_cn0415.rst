@@ -85,14 +85,17 @@ Setting up the Hardware
 
 -  Connect **EVAL-CN0415-ARDZ** board to the **EVAL-ADICUP3029**.
 
-
-|CN0415 docked on ADICUP3029|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0415_adicup3029_dock.jpeg
+   :alt: CN0415 docked on ADICUP3029
+   :align: center
 
 -  Connect a micro-USB cable to **P10** connector of the **EVAL-ADICUP3029** and connect it to a computer.
 -  Connect a solenoid actuator to the **P8** connector with the positive wire on pin 1 and negative wire on pin 2.
--  Connect a 12V power supply to the **P1** connector with the positive wire on pin 1 and negative wire on pin 2.\
+-  Connect a 12V power supply to the **P1** connector with the positive wire on pin 1 and negative wire on pin 2.
 
-|CN0415 power up|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0415_fully_connected.jpeg
+   :alt: CN0415 power up
+   :align: center
 
 -  Turn on power supply.
 
@@ -221,7 +224,7 @@ The software for the **ADuCM3029_demo_cn0415** can be found here:
    Prebuilt CN0415 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0415.Hex <releases/download/Latest/ADuCM3029_demo_cn0415.hex>`
+   -  `AduCM3029_demo_cn0415.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0415.hex>`_
    
    Complete CN0415 Source Files
    
@@ -276,6 +279,3 @@ The **main process** is the infinite loop in which the program implements **CLI*
    :align: center
 
 // End of Document //
-
-.. |CN0415 docked on ADICUP3029| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0415_adicup3029_dock.jpeg
-.. |CN0415 power up| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0415_fully_connected.jpeg

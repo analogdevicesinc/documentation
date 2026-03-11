@@ -63,7 +63,7 @@ Getting Started
 Equipment
 ~~~~~~~~~
 
--  :adi:`SmartMesh IP Manager (DC2274A) </en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2274a-a.html#eb-overview>`
+-  :adi:`SmartMesh IP Manager (DC2274A) <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2274a-a.html#eb-overview>`
 -  EV-CBM-VOYAGER3-1Z Hardware Module (referred to as “Mote”)
 -  JTAG Cable (only needed for firmware upgrade)
 -  Programming Board (Only needed for firmware upgrade)
@@ -101,9 +101,7 @@ Python
    :class: download
 
    
-   ::
-   
-       *[[https://github.com/analogdevicesinc/ev-cbm-voyager| ev-cbm-voyager GitHub]].
+   -  :git-ev-cbm-voyager:`ev-cbm-voyager GitHub <ev-cbm-voyager>`.
    
 
 
@@ -137,12 +135,10 @@ A setup guide has been created for the Wireless CBM tool which is available on t
    :class: download
 
    
-   ::
-   
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/cbm_setup.pdf|CBM Setup Guide]]
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/wcbm-01_firmware_guide.pdf|WCBM-01 Firmware Guide]]
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/developers_firmware_guide.pdf|Developers Firmware Guide]]
-      *[[https://wiki.analog.com/_media/resources/eval/user-guides/condition_based_monitoring_statistical_functions.pdf|Statistical Functions Guide]]
+   -  `CBM Setup Guide <https://wiki.analog.com/_media/resources/eval/user-guides/cbm_setup.pdf>`_
+   -  `WCBM-01 Firmware Guide <https://wiki.analog.com/_media/resources/eval/user-guides/wcbm-01_firmware_guide.pdf>`_
+   -  `Developers Firmware Guide <https://wiki.analog.com/_media/resources/eval/user-guides/developers_firmware_guide.pdf>`_
+   -  `Statistical Functions Guide <https://wiki.analog.com/_media/resources/eval/user-guides/condition_based_monitoring_statistical_functions.pdf>`_
    
 
 

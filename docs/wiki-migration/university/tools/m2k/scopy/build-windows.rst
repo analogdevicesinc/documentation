@@ -8,7 +8,7 @@ Building Scopy on Windows
    
    You can get the latest Windows release here:
    
-   :git-scopy:`releases`
+   https://github.com/analogdevicesinc/scopy/releases
 
 
 Installing MSYS2
@@ -47,7 +47,7 @@ Cloning the repository
 ::
 
    **cd ~
-   git clone https://github.com/analogdevicesinc/scopy.git**
+   git clone :git-scopy:`scopy`.git**
 
 This will fetch the latest sources from GitHub to a "scopy" directory.
 

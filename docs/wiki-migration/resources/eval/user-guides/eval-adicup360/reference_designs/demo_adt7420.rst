@@ -49,7 +49,14 @@ Setting up the hardware
 
 ::
 
-     - To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.{{ :resources:eval:user-guides:eval-adicup360:reference_designs:adt7420:aduicup360_switch_config.png?500 |}}
+     - To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/adt7420/aduicup360_switch_config.png
+   :align: center
+   :width: 500px
+
+::
+
      - Plug the EVAL-ADT7420-PMDZ PMOD in the EVAL-ADICUP360 base board, via the PMOD_I2C port (P10).
      - Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
 
@@ -73,7 +80,7 @@ The software for the **ADuCM360_demo_adt7420** demo can be found here:
    Prebuilt ADT7420 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`AduCM3029_demo_adt7420_pmdz.Bin <releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`
+   -  `AduCM3029_demo_adt7420_pmdz.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_
    
    Complete ADT7420 Source Files
    

@@ -20,9 +20,8 @@ Background Basics:
 
 When the current flowing in an inductor is quickly interrupted a large voltage spike is observed across the inductor. This large voltage spike can in fact be useful in some cases. One example is the DC to DC boost converter, which is a circuit that can create a larger DC voltage from a smaller one with very high efficiency. The basic idea is to combine an inductive spike generator (L\ :sub:`1` and Q\ :sub:`1`) with a rectifier circuit (D\ :sub:`1` and C\ :sub:`1`) to convert the repetitive voltage spikes into a DC or constant voltage as depicted in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -67,9 +66,8 @@ Construction Directions:
 
 Note, if you have a 1.5 Volt battery (AA) and a battery holder with wires attached, you can skip this step and use the battery as the 1.5 V supply. Otherwise you will need to make the circuit shown in figure 2 to simulate a single cell battery. This circuit makes a 1.5 V power supply using the fixed 2.5 V power supply on the ALM1000. Build the circuit on one end of your solder-less breadboard being sure to leave space for the rest of this lab's circuits. Improved versions of a 1.5 V power supply can be found in Appendix II below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -92,9 +90,8 @@ The 6 winding HPH1-1400L inductor, pinout shown below, can be configured for 6 d
 
 The two ground connections in figure 3 for the emitter of transistor Q\ :sub:`1` and the LEDs will sometimes be connected directly to the ground of the ALM1000. At other times, they will either be connected to the main ground or the CH-A connector pin on the ALM1000 depending which branch current is being measured. So as you construct the circuit keep the ground connections so that it will be easy to separate them from the main ground connection bus i.e. use a jumper wire to the common power bus strips.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig3.png
-   :align: center
-   :width: 400px
+
+|image3|
 
 .. container:: centeralign
 
@@ -108,9 +105,8 @@ Start with the three sections of ground all connected to the main ALM1000 ground
 
 Using CH-B in Hi-Z mode observe and save the voltage waveforms seen at the following circuit nodes. First, the 1.5 V input source. Second, the “boosted” output, V\ :sub:`OUT`\ at the collector of Q\ :sub:`1` (also the top of LED\ :sub:`1`). Third measure the voltage seen at the left end of resistor R\ :sub:`1`, pin 6 of the inductor. Fourth, measure the voltage at the base of transistor Q\ :sub:`1`. By also using CH-A in Hi-Z mode two of the four circuit nodes can be observed at the same time. In the example below while using CH-B to view the boosted output waveform we are also using CH-A to observe the base voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_voltage_free_run.png
-   :align: center
-   :width: 650px
+
+|image4|
 
 .. container:: centeralign
 
@@ -132,9 +128,8 @@ The first current we will measure is the current flowing in the inductor from th
 
 Hit the run button and you should see the same boosted output waveform on the CB-V trace, the constant 1.5V DC voltage on the CA-V trace and the inductor current on the CA-I trace. Adjust the CA-I vertical scale as needed to fit the peak amplitude of the current on the screen.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/supply_current_free_run.png
-   :align: center
-   :width: 650px
+
+|image5|
 
 .. container:: centeralign
 
@@ -147,9 +142,8 @@ Disconnect the inductor pins from CH-A and reconnect them to the 1.5V supply (ba
 
 Hit the run button and you should again see the same boosted output waveform on the CB-V trace, the constant 0V DC voltage on the CA-V trace and the Q\ :sub:`1` emitter current on the CA-I trace. Adjust the CA-I vertical scale as needed to fit the peak amplitude of the current on the screen. Note the polarity (direction) of the current. Display the saved inductor current trace and compare the two. What part of the inductor current flows in Q\ :sub:`1` and where in time does it flow? Save the CA-I trace of the emitter current. (or save the IBuffA array into another array variable).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/emitter_current_free_run.png
-   :align: center
-   :width: 650px
+
+|image6|
 
 .. container:: centeralign
 
@@ -160,9 +154,8 @@ Now we will measure the current in the LED load. Disconnect the emitter of Q\ :s
 
 Hit the run button and you should again see the same boosted output waveform on the CB-V trace, the constant 0V DC voltage on the CA-V trace and the LED load current on the CA-I trace. Adjust the CA-I vertical scale as needed to fit the peak amplitude of the current on the screen. Note the polarity (direction) of the current. Display the saved inductor current trace and compare the two. What part of the inductor current flows in LED load and where in time does it flow? Save the CA-I trace of the LED current. (or save the IBuffA array into another array variable).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/led_current_free_run.png
-   :align: center
-   :width: 650px
+
+|image7|
 
 .. container:: centeralign
 
@@ -180,9 +173,8 @@ To better investigate how the circuit operates we next need to break (open) the 
 
 The voltage waveform on the secondary side of the transformer might go outside the 0 to +5 V range of the ALM1000 input. To observe the voltage waveform we can AC couple the signal and use a :doc:`DC restoration circuit </wiki-migration/university/courses/electronics/text/chapter-7>`, using a diode and adjustable DC voltage from a voltage divider, to set the DC level of the AC coupled waveform to an appropriate value for the ALM1000 input range.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig4.png
-   :align: center
-   :width: 450px
+
+|image8|
 
 .. container:: centeralign
 
@@ -193,9 +185,8 @@ Start with a switching frequency of 2 kHz which is supplied by AWG Channel A, CA
 
 First with the CHB input connected to the boosted output you should see something like the next screen shot.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_current.png
-   :align: center
-   :width: 650px
+
+|image9|
 
 .. container:: centeralign
 
@@ -206,9 +197,8 @@ We see that the base current, light blue trace, peaks as the transistor first tu
 
 We need to also observe the collector current while this is happening. First take a snap-shot of the traces for reference and display the saved RB-V trace. Disconnect the 1.5V battery from pin 12 of the inductor. Connect the CHB AWG output to pin 12. Set CHB to SVMI mode, Shape DC, Max value to 1.5 V. Turn on the CB-I trace (all four traces should be selected at this point). Hit the Run button. You should now see something like the next screen shot.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/collector_current.png
-   :align: center
-   :width: 650px
+
+|image10|
 
 .. container:: centeralign
 
@@ -223,9 +213,8 @@ IBuffB[t]/IBuffA[t]
 
 Under the Math drop down menu click on Math Axis and change it to I-B to use the yellow axis for the Math trace. Under the Math drop down menu click on Formula to display the Math trace. You should now see something like the following.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/calculated_beta.png
-   :align: center
-   :width: 650px
+
+|image11|
 
 .. container:: centeralign
 
@@ -238,9 +227,8 @@ You might want to change the duty cycle of AWG A so that it spends more time wit
 
 With pin 12 connected back to the 1.5 V battery and Channel B in Hi_Z mode and connected to the output voltage, if we adjust the width of the CH-A pulse such that it is just wide enough to turn on Q\ :sub:`1` long enough for it to come out of saturation and the current in the inductor to stop increasing we have a display something like this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_current_min_width.png
-   :align: center
-   :width: 650px
+
+|image12|
 
 .. container:: centeralign
 
@@ -255,9 +243,8 @@ Now we want to examine the feedback signal. Put the CHA duty cycle back to 40%.
 
 Now move the CHB input to pin 6 of the transformer. Notice the following about the waveform. It looks like an inverted version of the boosted output waveform, note the winding polarity dots. Also note that it too has the flat (constant) portions of the signal centered at the 1.5 V battery voltage. Because of the larger negative going spike the waveform goes below 0V (ground). We can shift the signal up so we can see the negative peak by moving the CHB input to the other end of the AC coupling cap (end of diode D\ :sub:`1`).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_feedback_signal.png
-   :align: center
-   :width: 650px
+
+|image13|
 
 .. container:: centeralign
 
@@ -266,13 +253,12 @@ Now move the CHB input to pin 6 of the transformer. Notice the following about t
 
 Adjust the voltage divider pot until the signal is more centered in the display area. To correct the grid labels for CHB first adjust the channel offset value to 1.0 and the CHB position control to 1.5.
 
-|image1| |image2|
+|image14| |image15|
 
 Adjust the voltage divider pot until the flat portion of the signal is centered on the 1.5 V battery voltage on the display grid. Like the next screen shot. Now we can see that the negative peak is at about -1.0 volts. The peak-to-peak voltage swing on pin 12 should be the same as the peak-to-peak voltage swing on pin 7 (collector of Q\ :sub:`1`) because the winding ratio is 3:3 (or 1:1).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_feedback_signal_ls.png
-   :align: center
-   :width: 650px
+
+|image16|
 
 .. container:: centeralign
 
@@ -293,9 +279,8 @@ Changing the value of resistor R\ :sub:`1` changes the oscillation frequency. Ad
 
 Changing the 1.5 V supply voltage also changes the frequency. If you are using the circuit from figure 1 to generate the input supply voltage try adjusting the voltage. If you have been using a fixed 1.5 V battery substitute CHA set to DC mode as the input supply and try adjusting its voltage. How does the frequency change as the voltage is increased or decreased and why? The number of windings used in the primary and secondary of L\ :sub:`1` also changes the oscillation frequency. Experiment with using different combinations of the 6 windings in the HPH1-1400L. In the previous schematics there were 3 windings in series for both the primary and secondary or a 3:3 ratio. Try 2:4 and 4:2 combinations or others and see how the oscillation frequency and the circuit waveforms change for the different ratios.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig5.png
-   :align: center
-   :width: 400px
+
+|image17|
 
 .. container:: centeralign
 
@@ -309,9 +294,8 @@ Materials for figure 6:
 
 The second coupled winding of L\ :sub:`1` provides the necessary inversion in the feedback signal to cause the circuit to oscillate. An alternative to the two winding inductor is to include a common emitter inverter stage instead. In figure 6 we see that a PNP common emitter inverting stage, Q\ :sub:`2`, has been used. The output signal at the collector of Q\ :sub:`1` is AC coupled to the base of Q\ :sub:`2` by C\ :sub:`1` and the series combination of R\ :sub:`2` and the potentiometer. The RC time constant of this feedback network sets the oscillation frequency. Adjusting the potentiometer changes the frequency.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig6.png
-   :align: center
-   :width: 500px
+
+|image18|
 
 .. container:: centeralign
 
@@ -325,9 +309,8 @@ Materials for figure 7:
 
 Similarly, an NPN common emitter inverting stage can be used as shown in figure 7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig7.png
-   :align: center
-   :width: 500px
+
+|image19|
 
 .. container:: centeralign
 
@@ -339,9 +322,8 @@ Sampling effects.
 
 In digital sampling systems like the ADALM1000 a continuous analog input signal is sampled at discrete time intervals, t\ :sub:`s`\ =1/f\ :sub:`s`, which must be carefully chosen to ensure an accurate representation of the original analog signal. In the case of the ALM1000 samples are taken every 10 uSec or 100,000 samples per second. It becomes very clear exactly when the samples are taken if we change the traces to be displayed as zero-order hold rather than connecting the sample points with straight lines. Under the Options drop down menu select the Z-O-Hold option. The following screen shot example shows the waveform on the output (CH-B) and pin 6 of the inductor (CH-A) in zero-order hold mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/zero-order-hold-free_run.png
-   :align: center
-   :width: 650px
+
+|image20|
 
 .. container:: centeralign
 
@@ -354,9 +336,8 @@ It is clear that the more samples taken per cycle (a faster sampling rate), the 
 
 The analog voltage signals can be any value between the samples. To fill in the details between these samples we would normally need to sample faster. However, in the case of repeating waveforms like this we can observe that a slightly different set of points along the cycle are sampled each cycle. Note for example in the above screen shot the positive and negative peaks of the traces have slightly different values each cycle. We can use this to our advantage to fill in the details of the waveform if we can figure out how to assemble one representative cycle from the captured samples of many cycles. This technique of resorting the samples is called equivalent time sampling or ETS. For the most recent details on using this software feature always refer to the latest version of the :doc:`Equivalent Time Sampling Users Guide </wiki-migration/university/tools/m1k/alice/advanced-equivalent-time-sampling-guide>`. Appendix I explains how this is done in the ALICE desktop software. We can use the ETS feature by opening the ETS control screen like this.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/ets_controls_1.png
-   :align: center
-   :width: 200px
+
+|image21|
 
 .. container:: centeralign
 
@@ -365,9 +346,9 @@ The analog voltage signals can be any value between the samples. To fill in the 
 
 We know the input frequency is 6348 Hz so we need to pick a Divide Factor and Freq Multiplier that gives us a frequency as close to 6348 Hz as possible. In this case a Divide Factor of 47 and a Freq Multiplier of 3 gives us a frequency of 6383 Hz. The traces with the ETS enabled and still displayed in Z-O-Hold mode are shown next.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/zero-order-hold-free_run_ets.png
-   :align: center
-   :width: 650px
+
+
+|image22|
 
 .. container:: centeralign
 
@@ -376,9 +357,9 @@ We know the input frequency is 6348 Hz so we need to pick a Divide Factor and Fr
 
 The signal frequency has now been shifted down to about 1700 Hz and there are now about 57 samples per cycle vs the 16 samples per cycle before. We are now able to see much more detail in the waveforms. The equivalent sample rate is now (6348/1700)x100KSPS or about 364 KSPS. If we use the frequency adjustment ability shown in figure 5 we could fine tune the oscillator frequency and get even higher equivalent sample rates and get very detailed trace displays like this example.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/supply_current_free_run_ets.png
-   :align: center
-   :width: 650px
+
+
+|image23|
 
 .. container:: centeralign
 
@@ -416,9 +397,8 @@ Fortunately it is possible to use a different approach. Instead of trying to set
 
 To control all this ALICE has an ETS window. The real time sample rate of 100000 is shown at the top as a reminder. Next is a check box to turn on and off ETS. Next you enter the Divide factor, in this case 4 was used. From the divide factor entered ALICE picks an offset and record length to best display the input signal. The base or minimum frequency is shown, in this case 1/4 of the sample rate or 25,000 Hz. This is the frequency that will be shifted to DC. The user can then enter the frequency multiplier. Multiply factors from 1 to 75 are allowed in the program. The multiplied value is displayed. This does not really change anything in how ALICE displays the signal. It is handy to use this value when setting the frequency of the input source.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/ets_controls_2.png
-   :align: center
-   :width: 200px
+
+|image24|
 
 .. container:: centeralign
 
@@ -443,9 +423,8 @@ The output impedance (load regulation) of the simple emitter follower in figure 
 
 There is also the added benefit that the base current of Q\ :sub:`1` is now much smaller and its effect on the voltage divider of potentiometer R\ :sub:`POT` is much smaller.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-figa1.png
-   :align: center
-   :width: 500px
+
+|image25|
 
 .. container:: centeralign
 
@@ -454,9 +433,9 @@ There is also the added benefit that the base current of Q\ :sub:`1` is now much
 
 Even better load regulation can be achieved by using an op-amp to provide high gain. As shown in figure A2, the output of the op-amp drives the base of transistor Q\ :sub:`1` to whatever bias voltage is needed to maintain the emitter voltage (negative input of the op-amp) equal to the voltage set at the positive input of the op-amp by the voltage divider. The circuit can essentially source current up to the maximum current limit of the transistor or the +5V power supply with very little change in the +1.5V output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-figa2.png
-   :align: center
-   :width: 500px
+
+
+|image26|
 
 .. container:: centeralign
 
@@ -499,7 +478,55 @@ Inductance = Inductance\ :sub:`table` DCR = 1 ÷ [W\ :sub:`N` × (1 ÷ DCR\ :sub
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/labs/circuits>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/chb-offset-adj.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig3.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_voltage_free_run.png
+   :width: 650px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/supply_current_free_run.png
+   :width: 650px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/emitter_current_free_run.png
+   :width: 650px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/led_current_free_run.png
+   :width: 650px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig4.png
+   :width: 450px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_current.png
+   :width: 650px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/collector_current.png
+   :width: 650px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/calculated_beta.png
+   :width: 650px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_current_min_width.png
+   :width: 650px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_feedback_signal.png
+   :width: 650px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/chb-offset-adj.png
    :width: 150px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/chb-pos-adj.png
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/chb-pos-adj.png
    :width: 150px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/base_feedback_signal_ls.png
+   :width: 650px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig5.png
+   :width: 400px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig6.png
+   :width: 500px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-fig7.png
+   :width: 500px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/zero-order-hold-free_run.png
+   :width: 650px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/ets_controls_1.png
+   :width: 200px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/zero-order-hold-free_run_ets.png
+   :width: 650px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/supply_current_free_run_ets.png
+   :width: 650px
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/ets_controls_2.png
+   :width: 200px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-figa1.png
+   :width: 500px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-joule-thief-figa2.png
+   :width: 500px

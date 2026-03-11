@@ -67,8 +67,8 @@ If download is successful, the schematic status bar below the workspace will tur
 
 The schematic status bar and application status bars display the state of the schematic design as well as indicating USB communication status. There are five status states:
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic6.png
-   :alt: linkcompilepic6.png
+
+|linkcompilepic6.png|
 
 .. tip::
 
@@ -96,5 +96,6 @@ Sometimes user does not want the ADAU145x clock to be reset during download. Thi
 
 |image2|
 
+.. |linkcompilepic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/linkcompilepic6.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/regdownload.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/usingsigmastudio/regdownloadd.jpg

@@ -107,17 +107,25 @@ These are the steps to configure external mode support for Analog Devices platfo
 
 -  Use the **AnalogDevices.util.SDUpdater** tool to write to an SD card containing the latest ADI Linux image the device tree and uImage files for external mode support. To write the new files select the drive which corresponds to the SD card, select the appropriate board and just click on the *Write SD* button.
 
-
-|SD Updater|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/sdupdater.png
+   :alt: SD Updater
+   :align: center
+   :width: 400px
 
 -  Open the model's **Configuration Parameters** window by pressing *CTRL-E* in the external mode model window.
 -  In the **Hardware implementation** settings set the *Hardware Board* to *ZYNQ SDR* and the *IP address* to the IP address of the target hardware. The Analog Devices platforms are configured by default to get dynamic IP addresses. To find the address of your board just type *ifconfig* in a Linux terminal on your board.
 
-|Hardware implementation|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/zynq_sdr_option.png
+   :alt: Hardware implementation
+   :align: center
+   :width: 600px
 
 -  In the **Code Generation** settings set the toolchain to *Linaro Toolchain 4.8*.
 
-|Code generation|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/code_generation.png
+   :alt: Code generation
+   :align: center
+   :width: 600px
 
 Once all these steps are done the model can be ran in external mode by selecting the ‘External’ option in the model’s toolbar menu and pressing the **Play** button.
 
@@ -171,10 +179,3 @@ Help & Support
    -  Questions? :doc:`Ask Help & Support </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`.
    
 
-
-.. |SD Updater| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/sdupdater.png
-   :width: 400px
-.. |Hardware implementation| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/zynq_sdr_option.png
-   :width: 600px
-.. |Code generation| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/code_generation.png
-   :width: 600px

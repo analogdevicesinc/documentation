@@ -90,14 +90,18 @@ Open the SD Card Formatter application on your computer, and set the following f
 
 -  **Select Card** = SD Card drive you want to format (usually says "boot" or "volume")
 -  **Card Information** = Make sure the disc size approximately matches your SD Card capacity
--  **Formatting Options** = Select Quick Format\
+-  **Formatting Options** = Select Quick Format
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_formatter_gui.png
+   :align: center
+   :width: 400px
 
 -  Once set, click the **Format** button
--  The program will notify you that the formatting is complete.(could take several minutes)\
+-  The program will notify you that the formatting is complete.(could take several minutes)
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_format_success.png
+   :align: center
+   :width: 400px
 
 Using DISKPART via Windows command prompt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,14 +141,17 @@ There are several Windows applications that can flash SD Cards, we will describe
 Win32DiskImager
 ~~~~~~~~~~~~~~~
 
--  Open up the Win32DiskImager application on your PC\
+-  Open up the Win32DiskImager application on your PC
 
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_gui.png
+   :align: center
+   :width: 400px
 
-|image5|
+-  Using the small folder button in the **Image File** section, navigate to the location of your software image file you want to flash and select it.
 
--  Using the small folder button in the **Image File** section, navigate to the location of your software image file you want to flash and select it.\
-
-|image6|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_file_select.png
+   :align: center
+   :width: 400px
 
 -  Double check that the **Device** location in the upper-right corner, matches the SD Card drive location.
 
@@ -154,40 +161,59 @@ Win32DiskImager
 
 
 -  When you are ready to flash the SD Card, click on the "Write" button.
--  Win32DiskImager will also alert you to make sure you want to write to this drive, acting as another failsafe so that you don't accidently image the wrong drive.\
+-  Win32DiskImager will also alert you to make sure you want to write to this drive, acting as another failsafe so that you don't accidently image the wrong drive.
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_write_confirm.png
+   :align: center
+   :width: 400px
 
 -  Flashing the image to the SD Card typically take 10-15 minutes, but a progress bar is provided during the process. So grab yourself a coffee.
--  "Write Successful" will appear when the program is finished, letting you know the SD Card is ready.\
+-  "Write Successful" will appear when the program is finished, letting you know the SD Card is ready.
 
-|image8|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_success.png
+   :align: center
+   :width: 400px
 
 -  Exit the Win32DiskImager program, and use the Windows "safely remove hardware" function to eject the disk, before physically removing the SD card from the reader.
 
 Etcher
 ~~~~~~
 
--  Open Balena Etcher and select the .img file you want to write to the SD card.\ |image9|\
+-  Open Balena Etcher and select the .img file you want to write to the SD card.\
 
 
-|image10|
+|image3|
 
--  Select the drive you want to write your image to.(should display as an SD Card)\ |image11|\
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_file_select.png
+   :width: 400px
 
-|image12|
+-  Select the drive you want to write your image to.(should display as an SD Card)\
 
--  Review your selections and click 'Flash!' to begin writing data to the SD card.\ |image13|\
 
-|image14|
+|image4|
 
--  After flashing, Etcher will automatically validate the image flash correctly. You can either wait for this to finish or click skip.\
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_disk_selection.png
+   :width: 400px
 
-|image15|
+-  Review your selections and click 'Flash!' to begin writing data to the SD card.\
 
--  After the validation is complete, your SD card is finished and ready for use.\
 
-|image16|
+|image5|
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_flashing_sd_card.png
+   :width: 400px
+
+-  After flashing, Etcher will automatically validate the image flash correctly. You can either wait for this to finish or click skip.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_verifying.png
+   :align: center
+   :width: 400px
+
+-  After the validation is complete, your SD card is finished and ready for use.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_finished.png
+   :align: center
+   :width: 400px
 
 -  Go to the toolbar of your Windows OS, and click on "safely remove hardware", and remove your completed SD card.
 
@@ -197,31 +223,9 @@ Etcher
    :width: 400px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms1-ebz/quickstart/winmd5free2.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_formatter_gui.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_start.png
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_format_success.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_disk_select.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_gui.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_file_select.png
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_write_confirm.png
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/sd_card_flash_success.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_start.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_file_select.png
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_disk_select.png
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_disk_selection.png
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_sd_card_selected.png
-   :width: 400px
-.. |image14| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_flashing_sd_card.png
-   :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_verifying.png
-   :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_finished.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/zynq_images/etcher_sd_card_selected.png
    :width: 400px

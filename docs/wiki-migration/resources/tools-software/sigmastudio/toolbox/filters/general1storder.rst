@@ -43,4 +43,4 @@ For allpass filters,
 -  B0 = -gain \* A1
 -  B1 = gain
 
-.. |general1stpic1.png| image:: https://wiki.analog.com/_media/general1stpic1.png
+.. |general1stpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/general1stpic1.png

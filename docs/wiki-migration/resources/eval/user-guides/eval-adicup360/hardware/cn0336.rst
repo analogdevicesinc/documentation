@@ -17,14 +17,16 @@ The figure below shows how to properly connect EVAL-CN0336-PMDZ to EVAL-ADICUP36
 Input Interface
 ~~~~~~~~~~~~~~~
 
-The circuit consists of an input current-to-voltage converter, a level shifting circuit, an ADC stage, and an output isolation stage. The system can process 4 to 20 mA input signals by connecting the positive terminal to Pin 1 and the ground terminal to Pin 2 of J2 terminal block. A diode is connected to provide protection against an accidental reverse connection of the input current source. The calculation of gain and resistor values can be found in :adi:`CN0336 Circuit Note </media/en/reference-design-documentation/reference-designs/CN0336.pdf>`. The guide on how to use the two-point calibration can be found at the software demo :doc:`page </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0336>`.
+The circuit consists of an input current-to-voltage converter, a level shifting circuit, an ADC stage, and an output isolation stage. The system can process 4 to 20 mA input signals by connecting the positive terminal to Pin 1 and the ground terminal to Pin 2 of J2 terminal block. A diode is connected to provide protection against an accidental reverse connection of the input current source. The calculation of gain and resistor values can be found in :adi:`CN0336 Circuit Note <media/en/reference-design-documentation/reference-designs/CN0336.pdf>`. The guide on how to use the two-point calibration can be found at the software demo :doc:`page </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0336>`.
 
 .. note::
 
    The labels on the board can also be used as a guide
 
 
-   |image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0336/cn0336-hw-1024_2.jpg
+   :align: center
+   :width: 150px
 
 Power Supply Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,6 +80,3 @@ Schematics, PCB Layout, Bill of Materials
    -  `Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0336/eval-cn0336-pmdz-bom-rev0.xls>`_ (Excel)
    
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/hardware/cn0336/cn0336-hw-1024_2.jpg
-   :width: 150px

@@ -98,7 +98,8 @@ Algorithm Designer can be launched in 2 ways.
 -  Using the algorithm Designer module as mentioned in the :doc:`previous </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule>` section.
 -  Algorithm Designer can be also launched by selecting **Tools**\ ➔ **Algorithm Designer** from the menu bar as shown in below :doc:`figure </wiki-migration/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule>`.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/tools_algorithmdesigner.jpg
+   :align: center
 
 .. container:: centeralign
 
@@ -134,4 +135,3 @@ Kindly follow the sections mentioned below to understand the procedure used to c
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/algorithmdesignmodule.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/algorithmdesignmodule_legacy.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/lcd_algorithmdesigner.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/tools_algorithmdesigner.jpg

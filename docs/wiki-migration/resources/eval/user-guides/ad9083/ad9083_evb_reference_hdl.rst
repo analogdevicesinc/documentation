@@ -71,7 +71,7 @@ The design has one JESD receive chain with 4 lanes at rate of 10Gbps. The JESD r
 Building the HDL project
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository. Then go to the /projects/ad9083_evb/zcu102 location and run the make command by typing in your command prompt:
+ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl:`here <hdl>`. To get the source you must `clone <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>`_ the HDL repository. Then go to the /projects/ad9083_evb/zcu102 location and run the make command by typing in your command prompt:
 
 **Linux/Cygwin**
 
@@ -89,11 +89,9 @@ HDL Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-hdl:`AD9083_EVB HDL Project <projects/ad9083_evb>`
    
-   |AD9083_EVB HDL Project|
+
 
 Software sources
 ----------------
@@ -102,15 +100,10 @@ Software sources
    :class: download
 
    
-   -
-
-
+   -  :git-linux:`Linux Driver <linux>`
+   -  :git-no-OS:`No-OS project <projects/ad9083>`
    
-   |Linux Driver|
 
-   -
-
-   |No-OS project|
 
 More Information
 ~~~~~~~~~~~~~~~~
@@ -125,7 +118,3 @@ Support
 -------
 
 Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
-
-.. |AD9083_EVB HDL Project| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad9083_evb`
-.. |Linux Driver| image:: https://github.com/analogdevicesinc/linux
-.. |No-OS project| image:: https://wiki.analog.com/_media/:git-no-OS:`projects/ad9083`

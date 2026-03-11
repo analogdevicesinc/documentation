@@ -15,4 +15,4 @@ Controls:
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakrmspic2.png
    :alt: envelopepeakrmspic2.png
 
-.. |envelopepeakrmspic1.png| image:: https://wiki.analog.com/_media/envelopepeakrmspic1.png
+.. |envelopepeakrmspic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/envelopepeakrmspic1.png

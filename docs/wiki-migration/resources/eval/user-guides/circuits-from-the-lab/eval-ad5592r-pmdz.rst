@@ -125,7 +125,7 @@ The following is the list of items needed in order to replicate this demo.
 -  \*\* Software \*\*
 
    -  PuTTY or other similar software
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_AD5592R.hex <releases/download/Latest/ADuCM3029_demo_ad5592r_ad5593r.hex>`
+   -  `ADuCM3029_demo_AD5592R.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad5592r_ad5593r.hex>`_
 
 .. note::
 
@@ -150,7 +150,7 @@ The following is the list of items needed in order to replicate this demo.
    
    Prebuilt AD5592R Hex File
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_AD5592R.hex <releases/download/Latest/ADuCM3029_demo_ad5592r_ad5593r.hex>`
+   -  `ADuCM3029_demo_AD5592R.hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_ad5592r_ad5593r.hex>`_
    
    Complete AD5592R Source Files
    
@@ -242,19 +242,24 @@ To set up the circuit for evaluation, consider the following steps:
 
 -  Connect the P9 of the **PMOD to Raspberry Pi Interposer** board at the male header GPIO pin connector of the **Raspberry Pi** as shown below.
 
-
-|image9|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
+   :align: center
+   :width: 400px
 
 -  Connect the \*\* :adi:`EVAL-AD5592R-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5592r-pmdz.html>` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P1 or P2.
 
-|image10|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_rpi.jpg
+   :align: center
+   :width: 400px
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card into the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
 -  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
 
-|image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/setup_5592.png
+   :align: center
+   :width: 500px
 
 Application Software (All Platforms)
 ------------------------------------
@@ -267,7 +272,7 @@ The Libiio is a library used for interfacing with IIO devices and is required to
 .. admonition:: Download
    :class: download
 
-   Download and Install the latest :git-libiio:`Libiio package <releases>` on your machine.
+   Download and Install the latest `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-AD5592R-PMDZ is attached. Two platforms are currently supported for the AD5592R: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS AD5592R demo project. The user needs to supply a **URI** which will be used in the context creation.
@@ -335,7 +340,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen in the previous section.
@@ -415,7 +420,7 @@ Schematic, PCB Layout, Bill of Materials
 Additional Information
 ----------------------
 
--  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :git-pyadi-iio:`pyADI-IIO <pyadi-iio>`
 -  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
 -  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
@@ -447,12 +452,6 @@ Registration
 .. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/putty_5592.png
    :width: 300px
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/adicup_5592.png
-   :width: 500px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_rpi.jpg
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/setup_5592.png
    :width: 500px
 .. |AD5592R Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad5592r-pmod/5592_debug.png
    :width: 400px

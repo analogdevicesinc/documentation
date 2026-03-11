@@ -11,9 +11,8 @@ Background:
 
 Unlike the Clapp, Colpitts and Hartley oscillators which have a single transistor, the Peltz configuration uses two transistors. Looking at figure 1, we see that transistor Q\ :sub:`1` is configured as a common base amplifier stage. The resonate tank consisting of L\ :sub:`1` and C\ :sub:`1` provides the collector load. Its output at the collector feeds the base of transistor Q\ :sub:`2` which is configured as an emitter follower (common collector) stage. The positive feedback which is required for oscillation is formed when the output of the emitter follower ( emitter Q\ :sub:`2` ) is connected back to the input of the common base stage at the emitter of Q\ :sub:`1`. The voltage gain of the common base amplifier stage is a maximum at the parallel resonate frequency of the LC tank where its impedance approaches infinty. The gain of the emitter follower is always slightly less than one. The combined gain around the loop will be much greater than 1 at resonance to sustaine oscillation.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -28,9 +27,8 @@ The resonate frequency of the LC tank is given by:
 
 The peak to peak swing across the LC tank is limited in this oscillator configuration. As the voltage on the base of Q\ :sub:`2` swings more positive than ground, the collector of Q\ :sub:`2`, the collector base junction will forward bias limiting the maximum positive swing to around one forward diode drop. Similarly, for the peak negative swing, when the collector of Q\ :sub:`1` swings negative enough to forward bias the collector base junction of Q\ :sub:`1`. When the collector base junction of a BJT transistor is forward biased the base current increases dramatically. We can make use of this increased base current to increase the peak to peak swing seen across the LC tank. If we insert resistors in series with the base of both Q\ :sub:`1` and Q\ :sub:`2`, as shown in figure 2, the additional current through the resistors will lower the base voltage of Q\ :sub:`1` and Q\ :sub:`2` at the extremes of the LC tank voltage.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -52,9 +50,8 @@ Directions:
 
 Build the Peltz oscillator circuit shown in figure 3 on your solder-less breadboard. The green squares indicate where to connect the ADALM2000 module scope channels and power supply. Be sure to only turn on the power supply after you double check your wiring.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -67,7 +64,7 @@ Hardware Setup:
 Set both scope inputs to 200 mV/div and the time base to 1 uSec/div. Set the trigger on the rising edge of channel 1.
 
 
-|image1|
+|image4|
 
 .. container:: centeralign
 
@@ -80,7 +77,7 @@ Procedure:
 Turn on the -5V power supply. Observe the output waveform across the LC tank on scope channel 1. You can also observe the waveform seen at the emitters of Q\ :sub:`1` and Q\ :sub:`2` using scope channel 2.
 
 
-|image2|
+|image5|
 
 .. container:: centeralign
 
@@ -111,5 +108,11 @@ How does the measured output sinewave frequency compare to what you calculate us
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_bb.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_scopyshot.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_bb.png
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/apltz_scopyshot.png

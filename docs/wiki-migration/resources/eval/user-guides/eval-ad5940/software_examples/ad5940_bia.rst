@@ -34,13 +34,17 @@ Setting up the Hardware
 -----------------------
 
 -  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
--  Set S5 to Wall/USB to power the board from the USB cable\
+-  Set S5 to Wall/USB to power the board from the USB cable
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
+   :align: center
+   :width: 800px
 
--  Place the **EVAL-AD5940BIOZ** on top of the **EVAL-ADICUP3029**.\
+-  Place the **EVAL-AD5940BIOZ** on top of the **EVAL-ADICUP3029**.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/eval-ad5940bioz.jpg
+   :align: center
+   :width: 800px
 
 -  Connect the AD5940 Z Test board to the EVAL-AD5940BIOZ board
 -  All jumpers should be in their default position
@@ -196,7 +200,7 @@ The source code and include files for the project can be found on Git
    :class: download
 
    
-   `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
+   :git-ad5940-examples:`AD5940 Source Code <ad5940-examples>`
 
 
 Configuring the Software
@@ -225,8 +229,3 @@ The data on the terminal consists of the Frequency of the excitation signal, the
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/bia_terminal.png
    :align: center
    :width: 400px
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/img_20170612_144023_hdr.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad5940/software_examples/eval-ad5940bioz.jpg
-   :width: 800px

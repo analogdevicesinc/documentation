@@ -443,14 +443,7 @@ Measure constant voltage
 
 A quick way check if the ADC is working correctly is to generate a constant voltage on the input and measure it using the DMM feature of the IIO Oscilloscope. For example, if you generate a constant 3.5 V DC signal, you should see something like this:
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/scopy-3.5v-const-2.5v-common-mode.png
-   :alt: Scopy configured to generate constant 3.5 V signal with 2.5 V common mode signal
-   :align: center
-   :width: 800px
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-dmm-ad4696-voltage0-3.5v.png
-   :align: center
-   :width: 600px
+|Scopy configured to generate constant 3.5 V signal with 2.5 V common mode signal| |image1|
 
 .. tip::
 
@@ -543,3 +536,8 @@ This time, we can see that the white line exactly lines up with 0.
 And the result of the average is very close to 0 now.
 
 After calibrating the offset, a similar procedure can be done to calibrate the scale using the ``in_voltage3_calibgain`` attribute.
+
+.. |Scopy configured to generate constant 3.5 V signal with 2.5 V common mode signal| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/scopy-3.5v-const-2.5v-common-mode.png
+   :width: 800px
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad4695/osc-dmm-ad4696-voltage0-3.5v.png
+   :width: 600px

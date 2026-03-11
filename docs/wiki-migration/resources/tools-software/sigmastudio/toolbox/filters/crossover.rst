@@ -22,5 +22,5 @@ To open the filter's Control Window, Click the icon button:\*\*
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/crossoverpic3.png
    :alt: crossoverpic3.png
 
-.. |crossoverpic1.png| image:: https://wiki.analog.com/_media/crossoverpic1.png
-.. |crossoverpic2.png| image:: https://wiki.analog.com/_media/crossoverpic2.png
+.. |crossoverpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/crossoverpic1.png
+.. |crossoverpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/filters/crossoverpic2.png

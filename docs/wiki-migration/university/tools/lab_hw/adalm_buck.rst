@@ -10,9 +10,8 @@ This lab exercise can be done on a breadboard using parts from the ADALP2000 par
 
 Figure 1 shows the various connections, and along with the schematic below can be used as a guide as you work through the lab exercise.
 
-.. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_buck/adalm_buck_connections_rev2.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -59,9 +58,8 @@ Hardware Setup Procedure
 
 Figure 2 shows the ADALM2000 connections for measuring the switch node voltage on Channel 1 and ripple current on Channel 2. The ADALM-BUCK is installed on an Arduino UNO clone with LT1054_voltage_mode_buck_DC_ctrl.ino sketch uploaded (refer to Buck Basics lab exercise for details.)
 
-.. image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_buck/adalm-buck_m2k_connections.jpg
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -85,3 +83,8 @@ Schematic, PCB Layout, Bill of Materials
 
 
 *End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_buck/adalm_buck_connections_rev2.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/lab_hw/adalm_buck/adalm-buck_m2k_connections.jpg
+   :width: 600px

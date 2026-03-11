@@ -108,13 +108,13 @@ To install a plugin from ACE, follow these steps:
 
 To install the plugin from the web, follow these steps:
 
-::
 
-   -Ensure that the ACE software is installed.
-   -From the ACE software page on the Analog Devices, Inc.,[[:adi:`ace|ACE` web page]], navigate to the ACE Evaluation Board Plug-ins section and search for the device to evaluate.
-   -Click the AD9083 board plugin. The board plugin automatically downloads to the PC. When the download is complete, locate the downloaded file. Note that if the browser used for the plugin download is Internet Explorer, the file extension of the plugin file is .zip. If this occurs, right click the file and rename the file extension to .acezip.
-   -Double click the .acezip file to automatically install the plugin.
-   -The plugin installation process open the ACE software. Close ACE after plugin installation completes.
+
+-Ensure that the ACE software is installed.
+-From the ACE software page on the Analog Devices, Inc.,:adi:`ACE web page <ace>`, navigate to the ACE Evaluation Board Plug-ins section and search for the device to evaluate.
+-Click the AD9083 board plugin. The board plugin automatically downloads to the PC. When the download is complete, locate the downloaded file. Note that if the browser used for the plugin download is Internet Explorer, the file extension of the plugin file is .zip. If this occurs, right click the file and rename the file extension to .acezip.
+-Double click the .acezip file to automatically install the plugin.
+-The plugin installation process open the ACE software. Close ACE after plugin installation completes.
 
 Introduction to the AD9083 Plugin
 ---------------------------------

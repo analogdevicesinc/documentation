@@ -79,7 +79,7 @@ For questions and more information please contact us on the Analog Devices Engin
 
 .. hint::
 
-   :ez:`EngineerZone <>`
+   `EngineerZone <https://ez.analog.com/>`_
 
 
 

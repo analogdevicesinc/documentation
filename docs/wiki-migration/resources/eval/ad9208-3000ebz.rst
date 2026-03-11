@@ -61,28 +61,30 @@ Note: The FPGA image in ADS8-V1 does not support lane rates below 2Gbps. Hence, 
 Typical Setup
 =============
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/ce02b_fpga_connnections.png
+   :align: center
+   :width: 620px
 
 .. container:: centeralign
 
    *Figure 1a.* :adi:`AD9208-3000EBZ <AD9208>` */* :adi:`AD9689-2600EBZ <AD9689>` */* :adi:`AD9689-2000EBZ <AD9689>`\ *(Left) and* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>`\ *(Right)*\
 
 
-|image2|\
+   |image1|
 
 .. container:: centeralign
 
    *Figure 1b.* :adi:`AD9208-3000EBZ <AD9208>` */* :adi:`AD9689-2600EBZ <AD9689>` */* :adi:`AD9689-2000EBZ <AD9689>`\ *(Left) and* :adi:`ADS8-V1 <en/content/CU_High-Speed_ADC_FIFO_evaluation_tools/fca.html#ADS8-V1>`\ *(Right)*\
 
 
-|image3|\
+   |image2|
 
 .. container:: centeralign
 
    *Figure 2. Top-side of* :adi:`AD9208-3000EBZ <AD9208>` */* :adi:`AD9689-2600EBZ <AD9689>` */* :adi:`AD9689-2000EBZ <AD9689>` *Board*\
 
 
-|image4|\
+   |image3|
 
 .. container:: centeralign
 
@@ -154,14 +156,16 @@ This section provides quick start procedures for using the AD9208 evaluation boa
 Connector Layout
 ----------------
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/fpgapinlabeling.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
    \ *Figure 4.* :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` *Connector Layout*\
 
 
-   |image6|
+   |image4|
 
 .. container:: centeralign
 
@@ -181,7 +185,9 @@ Connector Layout
 Configuring the Board
 ---------------------
 
-|image7|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboardjumpers.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -193,7 +199,7 @@ Before using the software for testing, configure the evaluation boards as follow
 -  Before connecting the AD9208/AD9689 evaluation board to the ADS7-V2, jump the following pins: **P304, P305, P307, P308, P309, P311,** and **P312.** Do not jump **P7** (Temperature Sensor Enable) or **P100** (Power Down / Standby). Jump **P401** towards the inside of the board, to power the board via FMC. See Figure 6 for all jumper connections.
 -  Ensure that the data capture board is switched to “OFF.” (**S1** on the data capture board) Connect the evaluation board to the data capture board via the FMC connector found on the underside of the board, as shown in Figure 1. Connect the power supply and USB cable to the data capture board.
 -  Turn on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
--  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ should appear in the Device Manager as shown in Figure 7.\ |image8|\ 
+-  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ should appear in the Device Manager as shown in Figure 7.\ |image5|\ 
 
 .. container:: centeralign
 
@@ -260,7 +266,7 @@ ACE Setup
 
 
 
--  If the AD9208/AD9689 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.\ |image9|\ |image10|\ 
+-  If the AD9208/AD9689 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.\ |image6|\ |image7|\ 
 
 .. container:: centeralign
 
@@ -285,98 +291,98 @@ ACE Setup
 
 
 
-\ |image11|\ |image12|\ 
+|  |image8|\ |image9|\ 
 
 .. container:: centeralign
 
    \ *Figure 9. ACE's AD9208 / AD9689 Board View*
 
-   *Note: The plugin might display some warnings/errors. These can be ignored for now*\
+   | *Note: The plugin might display some warnings/errors. These can be ignored for now*\
 
 
-\ |image13|\ 
+|  |image10|\ 
 
 .. container:: centeralign
 
    \ *Figure 10. AD9208 Chip View*
 
-   *The AD9689 Chip view is similar to the AD9208 chip view*\
+   | *The AD9689 Chip view is similar to the AD9208 chip view*\
 
 
 Obtaining a Full Bandwidth Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Under Initial Configuration, change the number of Virtual Converters to 1. Click Apply to apply the chip settings. Set the reference clock to the appropriate frequency as recommended by the ACE plugin.\ |image14|\ |image15|\ 
+-  Under Initial Configuration, change the number of Virtual Converters to 1. Click Apply to apply the chip settings. Set the reference clock to the appropriate frequency as recommended by the ACE plugin.\ |image11|\ |image12|\ 
 
 .. container:: centeralign
 
    \ *Figure 11. Chip Settings, AD9208-3000 on top, AD9689-2600 on bottom*\
 
 
-\ |image16|\ 
+ |image13|\ 
 
 .. container:: centeralign
 
    \ *Figure 12. Apply Settings*\
 
 
--  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.\ |image17|\ 
+-  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the Read All button.\ |image14|\ 
 
 .. container:: centeralign
 
    \ *Figure 13. Read All*\
 
 
--  Issue a data path reset to the AD9208 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.\ |image18|\ 
+-  Issue a data path reset to the AD9208 by clicking its checkbox and clicking Apply Changes. The data path reset bit will automatically self clear.\ |image15|\ 
 
 .. container:: centeralign
 
    \ *Figure 14. Data path reset*\
 
 
-\ |image19|\ 
+ |image16|\ 
 
 .. container:: centeralign
 
    \ *Figure 15. Apply Changes*\
 
 
--   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.\ |image20|\ 
+-   If the PLL Lock Lost indicator lights up, you can reset it by powering down the JESD link using the Link Control dropdown box, and clicking Apply Changes.\ |image17|\ 
 
 .. container:: centeralign
 
    \ *Figure 16. PLL Lock Lost*\
 
 
-\ |image21|\ 
+ |image18|\ 
 
 .. container:: centeralign
 
    \ *Figure 17. Link Power Down*\
 
 
--  Enable the link again and Apply Changes.\ |image22|\ 
+-  Enable the link again and Apply Changes.\ |image19|\ 
 
 .. container:: centeralign
 
    \ *Figure 18. Link Enable*\
 
 
--  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on FFT and run one capture.\ |image23|\ 
+-  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on FFT and run one capture.\ |image20|\ 
 
 .. container:: centeralign
 
    \ *Figure 19. Analysis Tool*\
 
 
-\ |image24|\ 
+ |image21|\ 
 
 .. container:: centeralign
 
    \ *Figure 20. Display FFTs*\
 
 
-\ |image25|\ 
+ |image22|\ 
 
 .. container:: centeralign
 
@@ -392,14 +398,14 @@ Obtaining a Full Bandwidth Capture
 
 
 
--  A successful capture is shown below, with a filtered 255 MHz signal input to Channel A. \ |image26|\ 
+-  A successful capture is shown below, with a filtered 255 MHz signal input to Channel A. \ |image23|\ 
 
 .. container:: centeralign
 
    \ *Figure 22. AD9208-3000 FFT at 255MHz Analog Input to Channel A*\
 
 
--  In order to get a capture from Channel B, use the Register Debugger within ACE and write 0x01 to register 0x0564. Click the **Read All** button. Repeat Step 6. \ |image27|\ |image28|\ 
+-  In order to get a capture from Channel B, use the Register Debugger within ACE and write 0x01 to register 0x0564. Click the **Read All** button. Repeat Step 6. \ |image24|\ |image25|\ 
 
 .. container:: centeralign
 
@@ -411,49 +417,49 @@ Obtaining a DDC Capture
 
 The procedure to obtain a FFT using DDC is the same between AD9208 and AD9689. The steps below use the AD9208 as the example, but the same can be done to the AD9689 plugin with the sample rate set to 2.6GSPS.
 
--  This section explains the steps needed to setup the AD9208-3000EBZ in a DDC (Decimal Down Converter) setup as shown in Figure 24. \ |image29|\ 
+-  This section explains the steps needed to setup the AD9208-3000EBZ in a DDC (Decimal Down Converter) setup as shown in Figure 24. \ |image26|\ 
 
 .. container:: centeralign
 
    \ *Figure 24. AD9208 DDC setup block diagram*\
 
 
--  Under Initial Configuration, set the Chip Operating Mode for two DDCs. **For AD9699, set the DDC inputs to Channel A only.** The DDC settings will become available, and automatically set up for Decimate-by-4 mode. For the decimation, select "HB1_HB2_HB3 Complex" - three half-band filters, i.e. Decimate-by-8. Set the number of lanes to 4, the number of converters to 4, and the number of Octets per Frame to 2. Apply the settings. \ |image30|\ 
+-  Under Initial Configuration, set the Chip Operating Mode for two DDCs. **For AD9699, set the DDC inputs to Channel A only.** The DDC settings will become available, and automatically set up for Decimate-by-4 mode. For the decimation, select "HB1_HB2_HB3 Complex" - three half-band filters, i.e. Decimate-by-8. Set the number of lanes to 4, the number of converters to 4, and the number of Octets per Frame to 2. Apply the settings. \ |image27|\ 
 
 .. container:: centeralign
 
    \ *Figure 25. DDC Chip Settings*\
 
 
--  The chip view will update to reflect the changes. Click on the NCO block to change the Numerically Controlled Oscillator's frequency to 1300 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.\ |image31|\ 
+-  The chip view will update to reflect the changes. Click on the NCO block to change the Numerically Controlled Oscillator's frequency to 1300 MHz. Enable the 6dB gain for the DDC from the dropdown menu. Click Apply Changes to apply both.\ |image28|\ 
 
 .. container:: centeralign
 
    \ *Figure 26. NCO Frequency Setting*\
 
 
-\ |image32|\ 
+ |image29|\ 
 
 .. container:: centeralign
 
    \ *Figure 27. DDC Gain*\
 
 
--  Navigate to the second DDC (DDC1) and make the same changes.\ |image33|\ 
+-  Navigate to the second DDC (DDC1) and make the same changes.\ |image30|\ 
 
 .. container:: centeralign
 
    \ *Figure 28. DDC Selection*\
 
 
--  In Analysis, run a capture. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B.\ |image34|\ 
+-  In Analysis, run a capture. DDC0 can be selected from Channel A and DDC1 can be selected from Channel B.\ |image31|\ 
 
 .. container:: centeralign
 
    \ *Figure 29. DDC Selection*\
 
 
--  A successful capture is shown below, with a filtered 1305 MHz signal input to Channel A / DDC0.\ |image35|\ 
+-  A successful capture is shown below, with a filtered 1305 MHz signal input to Channel A / DDC0.\ |image32|\ 
 
 .. container:: centeralign
 
@@ -465,7 +471,7 @@ Setting up AD9208/AD9699 Fsx4 Mode
 
 Fsx4 mode on AD9208/AD9699 is only supported using :adi:`ADS8-V1 <en/content/CU_High-Speed_ADC_FIFO_evaluation_tools/fca.html#ADS8-V1>`. The procedure below shows how to use Fsx4 mode with ADC sampling frequency of 3GHz and a Reference clock of 600MHz.
 
--  On the Chip Application Mode tab, click on the Fsx4 Operation dropdown menu and select "L/M = 4/1" for AD9699, "L/M = 8/2" for AD9208. \ |image36|\ 
+-  On the Chip Application Mode tab, click on the Fsx4 Operation dropdown menu and select "L/M = 4/1" for AD9699, "L/M = 8/2" for AD9208. \ |image33|\ 
 
 .. container:: centeralign
 
@@ -474,7 +480,7 @@ Fsx4 mode on AD9208/AD9699 is only supported using :adi:`ADS8-V1 <en/content/CU_
 
 -  Source the required REFCLK to the :adi:`ADS8-V1 <en/content/CU_High-Speed_ADC_FIFO_evaluation_tools/fca.html#ADS8-V1>`.
 -  Click Proceed to Analysis. This is ACE's Analysis tool for data from the ADC, displaying both sample plots and FFTs. Click on FFT and run one capture.
--   A successful capture is shown below, with a filtered 255 MHz signal input to Channel A. \ |image37|\ 
+-   A successful capture is shown below, with a filtered 255 MHz signal input to Channel A. \ |image34|\ 
 
 .. container:: centeralign
 
@@ -525,76 +531,70 @@ EVALUATION BOARD FAILS TO CAPTURE DATA
    -  Check the reference clock and make sure it matches your JESD settings.
    -  Make sure P100 (Power Down / Standby Jumper, see Figure 6) is not jumped.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/ce02b_fpga_connnections.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ADS8-V1EBZ-AD9208 Typ Setup.png
    :width: 620px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ADS8-V1EBZ-AD9208 Typ Setup.png
-   :width: 620px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboard.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboard.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/bottomofboard.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/bottomofboard.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/fpgapinlabeling.png
-   :width: 300px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/pinlabeling.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/pinlabeling.png
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboardjumpers.png
-   :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/0.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/0.png
    :width: 300px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/1.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/1.png
    :width: 200px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ace_ad9689-2600_start.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ace_ad9689-2600_start.png
    :width: 200px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/a1.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/a1.png
    :width: 300px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ace_ad9689-2600_board_view.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ace_ad9689-2600_board_view.png
    :width: 200px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/fig_10.jpg
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/fig_10.jpg
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/fig_12.jpg
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/fig_12.jpg
    :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ace_ad9689-2600_summary.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ace_ad9689-2600_summary.png
    :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/figure_12.jpg
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/figure_12.jpg
    :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/5.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/5.png
    :width: 100px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/6.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/6.png
    :width: 250px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/7.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/7.png
    :width: 100px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/8.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/8.png
    :width: 100px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/9.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/9.png
    :width: 500px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/11.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/11.png
    :width: 500px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/screen_shot_01-04-18_at_04.37_pm.png
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/screen_shot_01-04-18_at_04.37_pm.png
    :width: 500px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/screen_shot_01-04-18_at_04.36_pm.png
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/screen_shot_01-04-18_at_04.36_pm.png
    :width: 200px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/14.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/14.png
    :width: 150px
-.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/15.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/15.png
    :width: 500px
-.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/15p0.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/15p0.png
    :width: 200px
-.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/5.png
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/5.png
    :width: 100px
-.. |image29| image:: https://wiki.analog.com/_media/resources/eval/lmfs_4421_generic.png
-.. |image30| image:: https://wiki.analog.com/_media/resources/eval/fig_25.jpg
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/lmfs_4421_generic.png
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/fig_25.jpg
    :width: 600px
-.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/17.png
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/17.png
    :width: 200px
-.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/18.png
+.. |image29| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/18.png
    :width: 200px
-.. |image33| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/19.png
+.. |image30| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/19.png
    :width: 200px
-.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/23.png
+.. |image31| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/23.png
    :width: 200px
-.. |image35| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/22.png
+.. |image32| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/22.png
    :width: 600px
-.. |image36| image:: https://wiki.analog.com/_media/resources/eval/fsx4_mode.jpg
+.. |image33| image:: https://wiki.analog.com/_media/resources/eval/fsx4_mode.jpg
    :width: 600px
-.. |image37| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/15.png
+.. |image34| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/15.png
    :width: 500px

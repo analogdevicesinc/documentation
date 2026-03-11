@@ -65,27 +65,36 @@ Test process
 -  Attach the RF loopback cable to the card. See the image in the Hardware Setup section for correct placement.
 -  Attach the card into the carrier board through the FMC HPC J37.
 -  Power on the carrier board.
--  A terminal window open and a dialog box will prompt with a message ensuring that the loopback cable is connected as instructed in step 2. Click OK if the RF loopback cable is already connected. If there is no dialog box, double-click the FMCOMMS11 Test icon in the desktop.\
+-  A terminal window open and a dialog box will prompt with a message ensuring that the loopback cable is connected as instructed in step 2. Click OK if the RF loopback cable is already connected. If there is no dialog box, double-click the FMCOMMS11 Test icon in the desktop.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/hardware_setup_reminder.png
+   :align: center
+   :width: 400px
 
--  When prompted with a window like the following image, enter the serial number found on the board. Pressing cancel will just cancel the test.\
+-  When prompted with a window like the following image, enter the serial number found on the board. Pressing cancel will just cancel the test.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/board_number_entry.png
+   :align: center
+   :width: 300px
 
--  After entering the serial number, the test will start, and progress will be shown on the terminal.\
+-  After entering the serial number, the test will start, and progress will be shown on the terminal.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/linux_terminal.png
+   :align: center
 
--  When tests pass, the following window should be shown\
+-  When tests pass, the following window should be shown
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/test_results.png
+   :align: center
+   :width: 200px
 
--  If tests fail, a window like the following image should be shown below. In either case, hit the OK button to end the test program. You may re-run the test software from the desktop to re-test.\
+-  If tests fail, a window like the following image should be shown below. In either case, hit the OK button to end the test program. You may re-run the test software from the desktop to re-test.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/test_results_2.png
+   :align: center
+   :width: 200px
 
--  In case of Program errors, the message box like the image below will appear:|image6|
+-  In case of Program errors, the message box like the image below will appear:|image1|
    The instructions on what to do with the error will be displayed on the message box. In the case above, the error might be solved by stopping all programs that are using the libiio. For example, when the IIO-Oscilloscope plot is running, this error will appear. So, stopping IIO-Oscilloscope might fix it. If the test has been restarted but the same error appears, the board under test has failed. If the next boards have the same problem, retest a board that was tested before that "passed" to check the state of the carrier board.
 -  If test ended but did not automatically shut down, Click the icon in top left, click the log-off icon, then, click the shutdown button. During shutdown, the desktop view will exit and turn black. After several seconds power off the carrier board via the physical switch. SW1.
 -  Once the carrier board is already powered down, remove the FMCOMMS11 that was tested and return to step 1 to continue with the next board.
@@ -102,14 +111,5 @@ Test process
    Re-running the test on the same board serial number will just overwrite the previous test results for that serial number. These files will be stored in /boot/test_results/. To backup these files, turn off the carrier board, remove the SD card, and insert the SD card to the computer. Locate the detected removable drive named “BOOT” and copy the test_results folder to computer. As alternative, if the carrier board is connected to the network, SSH or SCP can be used to copy the files from the ZC706 to the computer.
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/hardware_setup_reminder.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/board_number_entry.png
-   :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/linux_terminal.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/test_results.png
-   :width: 200px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/test_results_2.png
-   :width: 200px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/program_error_msg.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms11-ebz/program_error_msg.png
    :width: 300px

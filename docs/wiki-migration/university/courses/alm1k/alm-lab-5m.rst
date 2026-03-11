@@ -23,9 +23,8 @@ Directions:
 
 The configuration, shown in figure 1, demonstrates the NMOS transistor used as a common source amplifier. Output load resistor R\ :sub:`L` is chosen such that, for the desired nominal drain current I\ :sub:`D`, the voltage appearing at V\ :sub:`DS` is approximately half way between +5 V and ground (2.5 volts). Adjustable resistor Rpot sets the nominal bias operating point for the transistor (V\ :sub:`GS`) to set the required I\ :sub:`D`. Voltage divider R\ :sub:`1`/R\ :sub:`2` is chosen to provide a sufficiently large attenuation of the input stimulus from the channel A generator, CA-V, such that the amplitude is approximately the same as the signal amplitude seen at V\ :sub:`DS`.. This is done to more easily view the channel A generator signal, given the rather small signal that will appear at the gate of the transistor, V\ :sub:`GS`. The attenuated CA-V signal is AC coupled into the gate of the transistor with 4.7 uF C\ :sub:`1`\ so as not to disturb the DC bias condition.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -43,7 +42,7 @@ Procedure:
 The voltage gain, A, of the common source amplifier can be expressed as the ratio of load resistor R\ :sub:`L` to the small signal source resistance r\ :sub:`s`. The transconductance, g\ :sub:`m`, of the transistor is a function of the drain current I\ :sub:`D` and the so called gate overdrive voltage, V\ :sub:`GS`-V\ :sub:`th` where V\ :sub:`th` is the threshold voltage.
 
 
-|image1|
+|image2|
 
 .. container:: centeralign
 
@@ -54,7 +53,7 @@ The small signal source resistance is 1/g\ :sub:`m` and can be viewed as being i
 
 
 
-|image2|
+|image3|
 
 .. container:: centeralign
 
@@ -69,9 +68,8 @@ Objective:
 
 The purpose of this activity is to investigate effect of including negative feedback on the stability of the DC operating point.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f2.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -98,9 +96,8 @@ Directions:
 
 Disconnect the source of M\ :sub:`1` from ground and insert R\ :sub:`S`, a 5KΩ potentiometer, as shown in the following diagram. Adjust R\ :sub:`S` while noting the output signal seen at the drain of the transistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f3.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,9 +122,8 @@ Increasing AC gain of source degenerated amplifier
 
 Adding the source degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor C\ :sub:`2`\ across the degeneration resistor R\ :sub:`S` as shown in figure 4.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f4.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -145,7 +141,15 @@ http://en.wikipedia.org/wiki/Common_source_amplifier
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e1.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e1.png
    :width: 170px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e2.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_e2.png
    :width: 160px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f2.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f3.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab5m_f4.png
+   :width: 600px

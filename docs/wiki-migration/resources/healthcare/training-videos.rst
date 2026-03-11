@@ -55,15 +55,15 @@ On this page, there will be various training videos to help you get your ADI VSM
 
 | **How to Use Low Touch Logging** |youtube>8Dwd9iIrVOI|
 
-.. |youtube>JEm5utKxjrY| image:: https://wiki.analog.com/_media/youtube>JEm5utKxjrY
-.. |youtube>ojxdQEgQynA| image:: https://wiki.analog.com/_media/youtube>ojxdQEgQynA
-.. |youtube>OvM54pmgVuc| image:: https://wiki.analog.com/_media/youtube>OvM54pmgVuc
-.. |youtube>q0hRQZHGqFY| image:: https://wiki.analog.com/_media/youtube>q0hRQZHGqFY
-.. |youtube>1KhPx6qonRM| image:: https://wiki.analog.com/_media/youtube>1KhPx6qonRM
-.. |youtube>theDCJN5lMQ| image:: https://wiki.analog.com/_media/youtube>theDCJN5lMQ
-.. |youtube>52upPOkD2g0| image:: https://wiki.analog.com/_media/youtube>52upPOkD2g0
-.. |youtube>SIQyYwvXgYk| image:: https://wiki.analog.com/_media/youtube>SIQyYwvXgYk
-.. |youtube>4oUPaDURzBg| image:: https://wiki.analog.com/_media/youtube>4oUPaDURzBg
-.. |youtube>vRrNuFbJFGM| image:: https://wiki.analog.com/_media/youtube>vRrNuFbJFGM
-.. |youtube>63CXfqUO0m4| image:: https://wiki.analog.com/_media/youtube>63CXfqUO0m4
-.. |youtube>8Dwd9iIrVOI| image:: https://wiki.analog.com/_media/youtube>8Dwd9iIrVOI
+.. |youtube>JEm5utKxjrY| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>JEm5utKxjrY
+.. |youtube>ojxdQEgQynA| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>ojxdQEgQynA
+.. |youtube>OvM54pmgVuc| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>OvM54pmgVuc
+.. |youtube>q0hRQZHGqFY| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>q0hRQZHGqFY
+.. |youtube>1KhPx6qonRM| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>1KhPx6qonRM
+.. |youtube>theDCJN5lMQ| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>theDCJN5lMQ
+.. |youtube>52upPOkD2g0| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>52upPOkD2g0
+.. |youtube>SIQyYwvXgYk| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>SIQyYwvXgYk
+.. |youtube>4oUPaDURzBg| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>4oUPaDURzBg
+.. |youtube>vRrNuFbJFGM| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>vRrNuFbJFGM
+.. |youtube>63CXfqUO0m4| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>63CXfqUO0m4
+.. |youtube>8Dwd9iIrVOI| image:: https://wiki.analog.com/_media/resources/healthcare/youtube>8Dwd9iIrVOI

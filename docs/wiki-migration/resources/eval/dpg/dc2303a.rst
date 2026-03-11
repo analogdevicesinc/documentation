@@ -50,10 +50,10 @@ Typical Setup
 Helpful Files
 -------------
 
--  Demo Manual: `DC2303A Demo Manual <https://wiki.analog.com/_media/adi>media/en/technical-documentation/user-guides/855-DC2303A_REV01_DEMO_MANUAL.PDF>`__ and `DC2085A Demo Manual <https://wiki.analog.com/_media/adi>media/en/technical-documentation/user-guides/dc2085afb.pdf>`__ using Stratix IV.
--  Datasheet: `LTC2000 <https://wiki.analog.com/_media/adi>media/en/technical-documentation/data-sheets/2000fb.pdf>`__ / `LTC2000A <https://wiki.analog.com/_media/adi>media/en/technical-documentation/data-sheets/2000afb.pdf>`__
+-  Demo Manual: :adi:`DC2303A Demo Manual <media/en/technical-documentation/user-guides/855-DC2303A_REV01_DEMO_MANUAL.PDF>` and :adi:`DC2085A Demo Manual <media/en/technical-documentation/user-guides/dc2085afb.pdf>` using Stratix IV.
+-  Datasheet: :adi:`LTC2000 <media/en/technical-documentation/data-sheets/2000fb.pdf>` / :adi:`LTC2000A <media/en/technical-documentation/data-sheets/2000afb.pdf>`
 -  IBIS Model: :adi:`LTC2000 IBIS Model <media/en/package-pcb-model-library/ibis-models/ltc2000>` / :adi:`LTC2000A IBIS Model <media/en/package-pcb-model-library/ibis-models/ltc2000>`
--  Schematics: `DC2303A <https://wiki.analog.com/_media/adi>media/en/technical-documentation/eval-board-schematic/710-DC2303A_REV02_PCA_SCHEMATIC.PDF>`__
+-  Schematics: :adi:`DC2303A <media/en/technical-documentation/eval-board-schematic/710-DC2303A_REV02_PCA_SCHEMATIC.PDF>`
 -  Design Files: :adi:`DC2303A <media/en/evaluation-documentation/evaluation-design-files/dc2303a-a-b-c-d-e-f.zip>`
 
 Software Needed
@@ -115,19 +115,27 @@ Quick Start Guide
 -  Power up the DC2303A evaluation board by connecting it to a 5-Vdc, 2-A power supply through the +5V turret.
 -  Connect the continuous wave generator for clock input to **J4** using an SMA cable. Set the clock input to **2.5 GHz** and **10 dBm**.
 -  Connect the spectrum analyzer to **J3** of the DC2233A using an SMA cable.
--  Open **LTDACGen**. All status indicators should be green as shown in Figure 2.\ |image2|\
+-  Open **LTDACGen**. All status indicators should be green as shown in Figure 2.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dac/Launching_LTDACGen_(FPGA_Connected).png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
-   \ *Figure 2. Launching LTDACGen (FPGA Connected)*-  Select **Sine** from the dropdown menu under the*FPGA LVDS Data* panel then press **Add**. As can be seen in Figure 3, the frequency should be set to 400 MHz by default.\ |image3|\
+   \ *Figure 2. Launching LTDACGen (FPGA Connected)*-  Select **Sine** from the dropdown menu under the*FPGA LVDS Data* panel then press **Add**. As can be seen in Figure 3, the frequency should be set to 400 MHz by default.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dac/generating_a_sine_wave_pattern_using_ltdacgen.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 3. Generating a Sine Wave Pattern using LTDACGen*-  Change the*Center Frequency* to **200 MHz** then click the **Update FPGA** button to send the data to the FPGA and program the DAC.  The FFT plots similar to Figures 4 should appear in the signal/spectrum analyzer.
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_spectrumanalyzer.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -143,9 +151,3 @@ Troubleshooting
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_kc705.png
    :width: 500px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dac/Launching_LTDACGen_(FPGA_Connected).png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dac/generating_a_sine_wave_pattern_using_ltdacgen.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_spectrumanalyzer.png
-   :width: 600px

@@ -124,14 +124,19 @@ Turbidity measurement is sensitive to multiple factors including ambient light a
 |image15|
 
 -  Note the average value of the RRAT measured from the samples and stop measurement.
-   |image16|\ |image17|\ |image18|
+   |image16|\ |image17|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_800ftu.png
+   :width: 200px
+
 -  Two linear equations can be computed from the three turbidity (FTU) and average RRAT data points using the slope formula and point-slope form.
 
-|image19|
+
+|image18|
 
 -  You can also use this Excel file (`turbidity_calibration.xlsx <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity_calibration.xlsx>`_) which plots the calibration points and generates a linear equation from a trendline.
 
-|image20|
+|image19|
 
 .. important::
 
@@ -142,7 +147,7 @@ Turbidity measurement is sensitive to multiple factors including ambient light a
 
 
 
-|image21|
+|image20|
 
 .. important::
 
@@ -155,15 +160,15 @@ Performing a Turbidity Measurement
 -  Set the INS1 polynomial to the linear approximation for either low or high turbidity measurement. If you are unsure of the turbidity range of the sample, choose the low turbidity range and check if the measurement is greater than 100 FTU. If it is, set the INS polynomial to the linear approximation for high turbidity measurements.
 
 
-|image22|
+|image21|
 
 -  Place a prepared cuvette with the test sample to either path 4. The liquid sample should reach up to the marking as detailed in the :doc:`Linear Approximation using 3-Point Calibration </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity>` section.
 
-|image23|
+|image22|
 
 -  Go back to the Main Window by clicking Okay to both the Advanced Settings and Settings. Select path 4 and, set display mode to INS1, and press Start Measurement.
 
-|image24|
+|image23|
 
 
 
@@ -171,7 +176,7 @@ Performing a Turbidity Measurement
 
    Optionally, you can set the unit displayed in the plot to FTU by writing this in the primary unit field of path 4 found by clicking the Advanced button in the Settings window.
 
-   | |image25|\
+   | |image24|\
 
 
 Reference Links
@@ -215,19 +220,17 @@ Reference Links
    :width: 200px
 .. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_100ftu.png
    :width: 200px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_800ftu.png
-   :width: 200px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_eqtn.png
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_eqtn.png
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_calplot.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_calplot.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_polylincmd.png
    :width: 600px
 .. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_polylincmd.png
    :width: 600px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_polylincmd.png
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_sample.png
    :width: 600px
-.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_sample.png
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_meas.png
    :width: 600px
-.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_meas.png
-   :width: 600px
-.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_unit.png
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/tr_unit.png
    :width: 600px

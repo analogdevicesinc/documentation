@@ -209,7 +209,10 @@ Main Tab
 Histogram Tab
 ^^^^^^^^^^^^^
 
-| |image14|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_histogram_1.png
+   :width: 600px
+
+
 
 .. important::
 
@@ -237,7 +240,7 @@ Histogram Tab
 Configuration Tab
 ^^^^^^^^^^^^^^^^^
 
-Allows for ADC configuration of either channel |image15| **Input Type**
+Allows for ADC configuration of either channel |image14| **Input Type**
 
 -  PT100 - activates the Excitation current source and configures the ADC to read from PT100 RTD
 -  PT1000 - activates the Excitation current source and configures the ADC to read from PT1000 RTD
@@ -262,7 +265,7 @@ Advanced Configuration Tab
 Allows control of Excitation Current, Burnout Current, PGA Gain and for enabling ADC Error Checks
 
 
-|image16|
+|image15|
 
 Error Flags Tab
 ^^^^^^^^^^^^^^^
@@ -270,7 +273,7 @@ Error Flags Tab
 ADC Error Indicators. Please consult [ADI>AD7124-4] datasheet for information regarding the ADC Errors
 
 
-|image17|
+|image16|
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -335,11 +338,9 @@ Registration
 .. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-inactive.png
 .. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-busy.png
 .. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-error.png
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_histogram_1.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_config.png
    :width: 600px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_config.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_advconfig.png
    :width: 600px
 .. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_advconfig.png
-   :width: 600px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0376/software_advconfig.png
    :width: 600px

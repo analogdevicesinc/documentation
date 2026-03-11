@@ -154,7 +154,7 @@ There are two device driver solutions that are provided for controlling the **EV
 
 1. **EVAL-ADICUP3029**
 
--  The ADICUP3029 example application uses the :doc:`AD7746 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/ad7746>` and emulates the Linux IIO framework through the `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`_. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
+-  The ADICUP3029 example application uses the :doc:`AD7746 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/ad7746>` and emulates the Linux IIO framework through the :git-libtinyiiod:`tinyiiod daemon library <libtinyiiod>`. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
 
 2. **Raspberry Pi**
 
@@ -206,7 +206,7 @@ The software for the **ADICUP3029_CN0552** demo can be found here:
    Prebuilt CN0552 Hex File
 
    
-   -  :git-no-OS:`ADuCM3029_demo_cn0552.hex <releases/download/last_commit/cn0552.zip>`
+   -  `ADuCM3029_demo_cn0552.hex <https://github.com/analogdevicesinc/no-OS/releases/download/last_commit/cn0552.zip>`_
    
    Complete CN0552 Source Files
    
@@ -214,7 +214,7 @@ The software for the **ADICUP3029_CN0552** demo can be found here:
    
 
 
-To build the project from the source, follow the instructions in the :git-no-OS:`no-os wiki <wiki>`.
+To build the project from the source, follow the instructions in the `no-os wiki <https://github.com/analogdevicesinc/no-OS/wiki>`_.
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,16 +223,11 @@ Setting up the Hardware
 -  Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and connect it to a computer. The final setup should look similar to the picture below. |pmod-toadicup.png| *<fc>Figure 5. Hardware Setup*
 -  Make sure the following switches are as shown from the table below.
 
-|switch_config.png|
-
-*<fc>Figure 6. Switch Confuguration*
+|switch_config.png| *<fc>Figure 6. Switch Confuguration*
 
 -  From your PC, open My Computer and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
 
-
-|image2|
-
-*<fc>Figure 7. DAPLINK Drive*
+|image2| *<fc>Figure 7. DAPLINK Drive*
 
 -  Simply extract the provided zip file. Once extracted, you will see the pre-built hex file for the CN0552 demo. Then drag and drop this Hex file to the DAPLINK drive and your ADICUP3029 board will be programmed. The DS2 (red) LED will blink rapidly.
 -  The DS2 will stop blinking and will stay ON once the programming is done.
@@ -287,21 +282,24 @@ To set up the circuit for evaluation, consider the following steps:
 
 -  Connect the P9 of the **PMOD to Raspberry Pi Interposer** board at the male header GPIO pin connector of the **Raspberry Pi** as shown below.
 
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
+   :align: center
+   :width: 500px
 
 -  Connect the \*\* :adi:`EVAL-CN0552-PMDZ <CN0552>` \*\* on the PMOD to Raspberry Pi Interposer board either via Port P3 or P4.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-interposer.png
+   :align: center
+   :width: 300px
 
 -  Burn the SD card with the proper ADI Kuiper Linux image. Insert the burned SD card on the designated slot on the RPi.
 -  Connect the system to a monitor using an HDMI cable through the mini HDMI connector on the RPi.
 -  Connect a USB keyboard and mouse to the RPi through the USB ports.
 -  Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below.
 
-::
 
-   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0552:overall_setup.png?600 | }}
+
+
 
 Software (both ADICUP3029 and Raspberry Pi)
 -------------------------------------------
@@ -316,7 +314,7 @@ The Libiio is a library for interfacing with IIO devices.
 .. admonition:: Download
    :class: download
 
-   Install the :git-libiio:`Libiio package <releases>` on your machine.
+   Install the `Libiio package <https://github.com/analogdevicesinc/libiio/releases>`_ on your machine.
 
 
 The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
@@ -394,7 +392,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -466,7 +464,7 @@ Additional Information and Useful Links
 Reference Demos & Software
 ==========================
 
--  :git-no-OS:`CN0552 No-OS Build Instruction Guide <wiki>`
+-  `CN0552 No-OS Build Instruction Guide <https://github.com/analogdevicesinc/no-OS/wiki>`_
 -  :git-no-OS:`CN0552 No-OS Device Drivers <projects/cn0552>`
 -  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
 
@@ -482,16 +480,12 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/eval-cn0552-pmdztop-edited.png
    :width: 650px
-.. |youtube>6yjW-1EjQ0I| image:: https://wiki.analog.com/_media/youtube>6yjW-1EjQ0I
+.. |youtube>6yjW-1EjQ0I| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/youtube>6yjW-1EjQ0I
 .. |pmod-toadicup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-toadicup.png
    :width: 900px
 .. |switch_config.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/switch_config.png
    :width: 900px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/daplink.jpg
-   :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/interposer.png
-   :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/pmod-interposer.png
    :width: 300px
 .. |AD7746 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0552/debug_panel.png
    :width: 400px

@@ -73,6 +73,6 @@ Or simply print the value to the serial port; great for debugging.
 
 Example output: ``VALUE AT 0x35: 0x01 00 00 00``
 
-.. |dspreadbackpic1.png| image:: https://wiki.analog.com/_media/dspreadbackpic1.png
+.. |dspreadbackpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/dspreadbackpic1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/continuousreadactive.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/continuousreadinactive.jpg

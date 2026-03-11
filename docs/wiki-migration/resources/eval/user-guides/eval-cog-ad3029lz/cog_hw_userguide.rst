@@ -51,7 +51,8 @@ Power Muxing Options
 
 For details of the power muxing scheme, refer to the figure below.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/23062017-tile-revb-power-mux-scheme.png
+
+|image1|
 
 .. danger::
 
@@ -113,15 +114,15 @@ Expansion Connectors
 
 One of the USP of the MCU Cog is access to ALL GPIO via Expansion Connectors ("C1" and "C2") for an Add-on card to utilize in its Application. This enables developers to confidently build final form factor hardware without having to worry about porting their firmware. The figures below capture the pin-mapping and jumpers that need to be changed to get external access (via the expansion connectors) to GPIO (as well as power/reset, etc).
 
-|image1|\ |image2|
+|image2|\ |image3|
 
 Jumper Settings
 ---------------
 
-The MCU Cog offers flexibility in terms of power muxing options and the facility to route any GPIO externally via the expansion connectors "C1" and "C2". This is achieved with the use of jumpers. The MCU Cog has two types of jumpers - those labelled "JHx" and which are 2x2 1.27mm pitch headers and those labelled "JPx" and which are solder jumpers. The "JHx" jumpers are expected to be used more frequently than the "JPx" jumpers. The figures below capture the jumper settings. |power-jumpers.png| |image3|
+The MCU Cog offers flexibility in terms of power muxing options and the facility to route any GPIO externally via the expansion connectors "C1" and "C2". This is achieved with the use of jumpers. The MCU Cog has two types of jumpers - those labelled "JHx" and which are 2x2 1.27mm pitch headers and those labelled "JPx" and which are solder jumpers. The "JHx" jumpers are expected to be used more frequently than the "JPx" jumpers. The figures below capture the jumper settings. |power-jumpers.png| |image4|
 
 
-|image4|
+|image5|
 
 MCU Cog Design and Integration Files
 ------------------------------------
@@ -144,9 +145,10 @@ For developers designing a Cog add-on board, the template schematic/board files 
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/23062017-tile-revb-power-mux-scheme.png
 .. |direct| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/24072017-tile-revb-adp5300-gpio.png
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c1-conn-mapping.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c2-conn-mapping.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c1-conn-mapping.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/c2-conn-mapping.png
 .. |power-jumpers.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/power-jumpers.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/10082017-sensor-jumpers.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/10082017-debug-jumpers.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/10082017-sensor-jumpers.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-cog-ad3029lz/10082017-debug-jumpers.png

@@ -388,7 +388,8 @@ More information
 -  :ez:`ask questions about the FPGA reference design <community/fpga>`
 -  Example questions:
 
-|//ez.analog.com/community/feeds/allcontent/atom|
+.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+   :alt: //ez.analog.com/community/feeds/allcontent/atom
 
 .. |UART messeges| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu1.jpg
    :width: 600px
@@ -396,4 +397,3 @@ More information
    :width: 600px
 .. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodia_menu3.jpg
    :width: 600px
-.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

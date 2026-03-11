@@ -22,7 +22,9 @@ Features
 Functional Block Diagram
 ------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/quick-start/11253-001.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -34,13 +36,13 @@ Pin Configurations
 
 .. container:: column
 
-   |image2|\
+   |image1|\
 
 
 
 .. container:: column
 
-   |image3|\
+   |image2|\
 
 
 
@@ -107,7 +109,9 @@ Pin Configurations
 Input Shift Register Contents
 -----------------------------
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/quick-start/11253-044.png
+   :align: center
+   :width: 800px
 
 .. container:: CENTERALIGN
 
@@ -163,7 +167,7 @@ Simple Write: Example 1
    To update Channel A, write the following over the serial interface: 0001 0001 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`ad5697r`). This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
 
 
-   |image5|
+   |image3|
 
 .. container:: CENTERALIGN
 
@@ -178,7 +182,7 @@ Simple Write: Example 2
    To update both Channel A and Channel B, write the following over the serial interface: 0001 1001 1000000000000000. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
 
 
-   |image6|
+   |image4|
 
 .. container:: CENTERALIGN
 
@@ -189,13 +193,9 @@ Simple Write: Example 2
 
 I\ :sup:`2`\ C refers to a communications protocol originally developed by Philips Semiconductors (now NXP Semiconductors).
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/11253-001.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/11253-003.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/quick-start/11253-003.png
    :width: 300px
-.. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/11253-004.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/quick-start/11253-004.png
    :width: 300px
-.. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/11253-044.png
-   :width: 800px
-.. |image5| image:: https://wiki.analog.com/_media/resources/quick-start/example_1.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/quick-start/example_2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/quick-start/example_1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/quick-start/example_2.png

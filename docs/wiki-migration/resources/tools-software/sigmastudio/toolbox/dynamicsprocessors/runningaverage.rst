@@ -94,4 +94,4 @@ Algorithm Details
 | Parameter RAM              | 3                                                                  |
 +----------------------------+--------------------------------------------------------------------+
 
-.. |runningpic1.png| image:: https://wiki.analog.com/_media/runningpic1.png
+.. |runningpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/runningpic1.png

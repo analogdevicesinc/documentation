@@ -40,15 +40,7 @@ Source Code
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of AXI ADC Core Driver. <drivers/axi_core/axi_adc_core/axi_adc_core.c>`
+   -  :git-no-OS:`Header of AXI ADC Core Driver. <drivers/axi_core/axi_adc_core/axi_adc_core.h>`
    
-   |Implementation of AXI ADC Core Driver.|
 
-   -
-
-   |Header of AXI ADC Core Driver.|
-
-.. |Implementation of AXI ADC Core Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/axi_adc_core/axi_adc_core`.c
-.. |Header of AXI ADC Core Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/axi_core/axi_adc_core/axi_adc_core`.h

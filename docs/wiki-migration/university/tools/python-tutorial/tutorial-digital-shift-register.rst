@@ -49,9 +49,8 @@ Use the CD4094 to Light Up LEDs
 
 Insert a CD4094 shift register in your solder-less breadboard. Connect the chip V\ :sub:`DD` to power (3.3V) and V\ :sub:`SS` to ground. Connect LEDs to output pins Q1 to Q8 (don't forget to use current limiting resistors). Connect OUTPUT ENABLE to 3.3 V (high). Connect the CLOCK, DATA and STROBE pins to PIO 0,1,2 on the ALM1000 digital connector as shown in figure 1. Note that all the LED cathodes are tied to ground.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-sreg_f2.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -81,9 +80,8 @@ Background:
 
 The 7-Segment LED is an extension of the basic LED that uses 8 pins to control, 7 segments and 1 decimal point. 7-Segment displays are used in many electronic devices such as home appliances like microwaves, alarm clocks, and many other numeric display applications such as laboratory instruments. It is important to note that a 7-Segment LED behaves exactly the same as a basic single LED, which is a diode that only allows current to flow in one direction and we will need to limit the current by connecting a resistor in series. 7-segment displays come in two connection configurations, common anode and common cathode. As the names imply, in each case either all the LED cathodes or all the LED anodes share a common connection in the package. Common cathode means that the negative side of all the LEDs are connected together. Common anode means that the positive side of all the LEDs are connected together.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-sreg_f3.png
-   :align: center
-   :width: 150px
+
+|image2|
 
 .. container:: centeralign
 
@@ -92,9 +90,9 @@ The 7-Segment LED is an extension of the basic LED that uses 8 pins to control, 
 
 Each of the 7 segments is identified by a letter as can be seen in figure 3 as well as the pinout and schematic for reference.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-sreg_f4.png
-   :align: center
-   :width: 500px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -158,3 +156,10 @@ Where to get a 7 segment display:
 http://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_24782_-1 https://www.sparkfun.com/products/8546
 
 **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-sreg_f2.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-sreg_f3.png
+   :width: 150px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial-sreg_f4.png
+   :width: 500px

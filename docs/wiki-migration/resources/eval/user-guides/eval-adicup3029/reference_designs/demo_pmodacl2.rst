@@ -171,7 +171,7 @@ The source code and include files of the **ADuCM3029_demo_adxl362** demo can be 
    Prebuilt ADXL362 PMOD Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_adxl362.Hex <releases/download/Latest/ADuCM3029_demo_adxl362.hex>`
+   -  `AduCM3029_demo_adxl362.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_adxl362.hex>`_
    
    Complete ADXL362 PMOD Source Files
    

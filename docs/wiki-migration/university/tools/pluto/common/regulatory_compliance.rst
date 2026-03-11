@@ -33,7 +33,7 @@ This equipment complies with IC RF radiation exposure limits set forth for an un
 Declaration of Conformity
 -------------------------
 
-Signed version of this document is on file at ADI. If you would like an official copy, please contact us via robin.getz@analog.com `Declaration of Conformity for the ADALM-PLUTO <https://wiki.analog.com/_media/university/tools/pluto/common/declaration_of_conformity_with_rohs_2_-_analog_devices_-_adalm-pluto.pdf>`_ and `test results <https://wiki.analog.com/_media/analog_devices_adalm-pluto_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0_-_7_feb_2017.pdf>`_.
+Signed version of this document is on file at ADI. If you would like an official copy, please contact us via robin.getz@analog.com `Declaration of Conformity for the ADALM-PLUTO <https://wiki.analog.com/_media/university/tools/pluto/common/declaration_of_conformity_with_rohs_2_-_analog_devices_-_adalm-pluto.pdf>`_ and `test results <https://wiki.analog.com/_media/university/tools/pluto/common/analog_devices_adalm-pluto_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0_-_7_feb_2017.pdf>`_.
 
 Unofficially
 ------------

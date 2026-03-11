@@ -7,7 +7,7 @@ By using this common driver API, the no-OS is able to provide reference projects
 
 Thanks to the no-OS build system, no-OS users may generate standalone reference projects and use them as starting point for their own development.
 
-no-OS is an open-source software, and its official repository is :git-no-OS>`__. You are free to use and distribute no-OS, provided that you comply with the `license <https::`no-OS Github Repository </github.com/analogdevicesinc/no-OS/blob/master/LICENSE>`.
+no-OS is an open-source software, and its official repository is :git-no-OS:`no-OS Github Repository <no-OS>`. You are free to use and distribute no-OS, provided that you comply with the :git-no-OS:`license <LICENSE>`.
 
 Drivers and Projects
 --------------------

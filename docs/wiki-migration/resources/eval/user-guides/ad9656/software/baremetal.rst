@@ -35,7 +35,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -900,7 +900,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -1765,7 +1765,7 @@ Clone NO-OS with the ``--recursive`` flag:
 
 ::
 
-   git clone --recursive https://github.com/analogdevicesinc/no-OS
+   git clone --recursive :git-no-OS:`no-OS`
 
 If however you've already cloned NO-OS without the ``--recursive`` flag, you may initialize all the submodules in an existing NO-OS clone with:
 
@@ -3248,8 +3248,10 @@ GUI
 
 -  The new **Empty Application project** should look like:
 
-
-|Empty application project|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
+   :alt: Empty application project
+   :align: center
+   :width: 650px
 
 .. important::
 
@@ -3315,8 +3317,6 @@ GUI
 
 -  Your new bare metal application should run
 
-.. |Empty application project| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/empty_project.png
-   :width: 650px
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ad9361_no_os_microblaze_heap_size.png
 
 

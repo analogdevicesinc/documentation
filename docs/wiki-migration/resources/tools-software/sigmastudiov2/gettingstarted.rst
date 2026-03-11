@@ -8,15 +8,16 @@ This section contains information for first-time users of SigmaStudio+.
 Table of Contents
 -----------------
 
-::
+-  :doc:`Software Requirements and Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/swsetup>` : This section contains information on how to install SigmaStudio+ and other dependent software
+-  :doc:`Hardware Requirements and Setup </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/hwsetup>` : This section contains information on how to setup evaluation boards to execute SigmaStudio+.
 
-   *[[/resources/tools-software/sigmastudiov2/gettingstarted/swsetup|Software Requirements and Setup]] : This section contains information on how to install SigmaStudio+ and other dependent software
-   *[[/resources/tools-software/sigmastudiov2/gettingstarted/hwsetup|Hardware Requirements and Setup]] : This section contains information on how to setup evaluation boards to execute SigmaStudio+.
-     *[[/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx|ADSP-215xx and ADSP-SC5xx]]
-     *[[/resources/tools-software/sigmastudiov2/gettingstarted/adsp-214xx|ADSP-214xx]]
-     *[[/resources/tools-software/sigmastudiov2/gettingstarted/adau145x_and_adau146x|ADAU145x and ADAU146x]]
-   *[[/resources/tools-software/sigmastudiov2/gettingstarted/executeexampleproject|Execute Example Project]] : This section contains information on how to execute the provided example applications on a supported target using SigmaStudio+.
-     *[[/resources/tools-software/sigmastudiov2/tutorials|Tutorials and Examples]]
-     *[[/resources/tools-software/sigmastudiov2/gettingstarted/flash_the_loader_file|Flash the Loader File]]
-     *[[/resources/tools-software/sigmastudiov2/gettingstarted/load_executable_using_cces|Load Executable using CCES]]
-     *[[/resources/tools-software/sigmastudiov2/gettingstarted/executeexampleproject#download_and_tune_using_sigmastudio|Download and Tune using SigmaStudio+]]
+   -  :doc:`ADSP-215xx and ADSP-SC5xx </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-215xx_and_adsp-sc5xx>`
+   -  :doc:`ADSP-214xx </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adsp-214xx>`
+   -  :doc:`ADAU145x and ADAU146x </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/adau145x_and_adau146x>`
+
+-  :doc:`Execute Example Project </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/executeexampleproject>` : This section contains information on how to execute the provided example applications on a supported target using SigmaStudio+.
+
+   -  :doc:`Tutorials and Examples </wiki-migration/resources/tools-software/sigmastudiov2/tutorials>`
+   -  :doc:`Flash the Loader File </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/flash_the_loader_file>`
+   -  :doc:`Load Executable using CCES </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/load_executable_using_cces>`
+   -  :doc:`Download and Tune using SigmaStudio+ </wiki-migration/resources/tools-software/sigmastudiov2/gettingstarted/executeexampleproject>`

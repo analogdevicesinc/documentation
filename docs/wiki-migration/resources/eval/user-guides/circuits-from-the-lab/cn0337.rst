@@ -93,7 +93,10 @@ Installing the Software
    |image5|
 
 -  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
-   |image6|\ |image7|
+
+|image6|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/installing_sw6-b.png
 
 --------------
 
@@ -107,15 +110,15 @@ Connecting the Hardware
    \ **NOTE:** Make sure that the jumper is positioned as shown below!
 
 
-   |image8|
+   |image7|
 
    \* Connect the 120-pin connector on the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** to the 120-pin connector marked **“CON A”** on the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)**
 
-   |image9|
+   |image8|
 
    \* Connect the USB cable supplied with :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** to the USB port on the PC and the SDP Board
 
-   |image10|
+   |image9|
 
 .. tip::
 
@@ -126,15 +129,15 @@ Connecting the Hardware
 
 
 
-|image11|
+|image10|
 
    \* Connect the :adi:`EVAL-CN0337-PMDZ` **(CN0337 Board)** to the :adi:`SDP-PMD-IB1Z` **(Interposer Board)** via the 12 pin header PMOD connector.
 
-   |image12|
+   |image11|
 
    \* Connect the input current source (Current calibrator) to J2 Terminal Block. The polarity is shown on the picture below
 
-   |image13|
+   |image12|
 
 --------------
 
@@ -144,40 +147,40 @@ Using the Evaluation Software
 Software Control and Indicator Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| |image13|
 | |image14|
 | |image15|
-| |image16|
 
-::
 
-   -**Connect/Reconnect Button**
-   * When this button is pressed, the SDP-B Board makes a USB connection to the CN0337 Board.  A connection to the SDP-B Board must be made to use the software.
-   -**Run Button**
-   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
-   -**Stop Button**
-   * When this button is pressed, the software stop collecting data from the CN0337 Board
-   -**Clear Data Button**
-   * When this button is pressed, the software will clear all data collected from the chart history.
-   -**Save Data Button**
-   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
-   -**Control Tabs**
-   * __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
-   * __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
-   * __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
-   -**Numerical Indicator**
-   * This indicator displays the current reading value. The value units depend on the chosen graph units (10).
-   -**Graph**
-   * This graph displays the collected data. The units on the graph depend on the chosen graph units (10).
-   -**Graph Controls**
-   * These controls allow the user to zoon in, zoom out, and pan through the data collected.
-   -**Graph Units Radio Buttons**
-   * This control determines the units of the data displayed in the chart and the numerical indicator.
-   -**System Status String Indicator**
-   * This indicator displays a message to the user detailing the current state of the software.
-   -**System Status LED Indicator**
-   * This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0337:led_inactve.png?nolink|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0337:led_busy.png?nolink|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0337:led_error.png?nolink|}}Error\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0337:led_waiting.png?nolink|}}Waiting for user action
-   -**Calibrate System Controls**
-   * These controls allow the user to calibrate the CN0337 Board. For the calibration procedure two input resistance values are required. For best performance the inputs have to be selected “100Ω” and “212Ω” . To perform the calibration follow the instructions on the screen.\\ \\
+
+-**Connect/Reconnect Button**
+-  When this button is pressed, the SDP-B Board makes a USB connection to the CN0337 Board.  A connection to the SDP-B Board must be made to use the software.
+-**Run Button**
+-  When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+-**Stop Button**
+-  When this button is pressed, the software stop collecting data from the CN0337 Board
+-**Clear Data Button**
+-  When this button is pressed, the software will clear all data collected from the chart history.
+-**Save Data Button**
+-  When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
+-**Control Tabs**
+-  __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
+-  __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
+-  __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
+-**Numerical Indicator**
+-  This indicator displays the current reading value. The value units depend on the chosen graph units (10).
+-**Graph**
+-  This graph displays the collected data. The units on the graph depend on the chosen graph units (10).
+-**Graph Controls**
+-  These controls allow the user to zoon in, zoom out, and pan through the data collected.
+-**Graph Units Radio Buttons**
+-  This control determines the units of the data displayed in the chart and the numerical indicator.
+-**System Status String Indicator**
+-  This indicator displays a message to the user detailing the current state of the software.
+-**System Status LED Indicator**
+-  This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_inactve.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_error.png|Error\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_waiting.png|Waiting for user action
+-**Calibrate System Controls**
+-  These controls allow the user to calibrate the CN0337 Board. For the calibration procedure two input resistance values are required. For best performance the inputs have to be selected “100Ω” and “212Ω” . To perform the calibration follow the instructions on the screen.\\ \\
 
 .. tip::
 
@@ -185,8 +188,8 @@ Software Control and Indicator Descriptions
 
 
 \\ \\  \\ \\  \\
-   -**SDP Firmware Revision**
-   * Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+-**SDP Firmware Revision**
+-  Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
 
 --------------
 
@@ -207,7 +210,7 @@ Establishing a USB Connection Link
 
 
 
-|image17|
+|image16|
 
    \* Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
 
@@ -237,7 +240,7 @@ Saving Data to a Spreadsheet File
 -  **Capture Data**.
 -  Click the **Save Data Button**.
 
-|image18|
+|image17|
 
    \* Click the **OK Button**.
 -  Browse to the directory location where the spreadsheet file is to be saved.
@@ -265,24 +268,28 @@ Saving Data to a Spreadsheet File
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/installing_sw4.png
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/installing_sw5.png
 .. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/installing_sw6.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/installing_sw6-b.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw1.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw1.png
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw2.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw2.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw3.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw3.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw3a.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw3a.png
    :width: 600px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw4.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw4.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw5.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0336/cn0336-connectinghw5.png
    :width: 600px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/using_sw_1.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/using_sw_1.png
    :width: 900px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/using_sw_2.png
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/using_sw_2.png
    :width: 900px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/using_sw_3.png
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/using_sw_3.png
    :width: 900px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/establishing_usb_connection.png
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/saving_data_1.png
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/establishing_usb_connection.png
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/saving_data_1.png
+
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_busy.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/led_busy.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_error.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/led_error.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_inactve.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/led_inactve.png
+.. |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_waiting.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0337/led_waiting.png

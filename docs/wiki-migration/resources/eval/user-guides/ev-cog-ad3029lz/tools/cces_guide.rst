@@ -55,14 +55,15 @@ Follow below instructions to install packs using the CMSIS Pack Manager.
 -  Go to Windows -> Perspective -> Open Perspective -> Other...
 -  Select CMSIS Pack Manager and click OK.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/download_packs_online.png
+   :align: center
 
 -  On the left hand side of the window, under devices tab, expand **Analog Devices**.
 -  Expand **ADuCM302x Series**
 -  Select **ADuCM3029**
 -  On right hand side, under packs tab, click **Install** on respective packs to be installed.
 
-|image2| This will install the packs in CCES toolchain.
+|image1| This will install the packs in CCES toolchain.
 
 Download to Local Directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +186,7 @@ How to Import Existing Projects from the GIT Repository
 -  Open the GIT perspective by clicking "Open Perspective" icon on tool bar and selecting "Git" in the Open Perspective window (or choose the GIT perspective if already open).
 -  Clone the Git repository which contains all the latest code and projects associated with the ADuCM3029. Populate the URI field with the following address.
 
-   -   **URL:** - https://github.com/analogdevicesinc/EV-COG-AD3029LZ.git
+   -   **URL:** - :git-EV-COG-AD3029LZ:`EV-COG-AD3029LZ`
    -  Click *Next*, *Next* and then *Finish*. There may be a pause while the branches are fetched.
 
 -  In the Git Repositories window, *Right Click* on the *Projects* folder and select *Import Projects...*
@@ -336,5 +337,4 @@ How to create an Intel Hex (.hex) file from an ADuCM3029 application
 
 :doc:`Back </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz>`
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/download_packs_online.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/install_packs_online_new.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-ad3029lz/tools/install_packs_online_new.png

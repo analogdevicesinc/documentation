@@ -43,9 +43,9 @@ Controls
 | Show Graph   | |peakgainpic6.png| | Opens the Compression Curve editor window.                                                                                                                                                                                                                                                          |
 +--------------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |peakgainpic1.png| image:: https://wiki.analog.com/_media/peakgainpic1.png
-.. |peakgainpic2.png| image:: https://wiki.analog.com/_media/peakgainpic2.png
-.. |peakgainpic3.png| image:: https://wiki.analog.com/_media/peakgainpic3.png
-.. |peakgainpic4.png| image:: https://wiki.analog.com/_media/peakgainpic4.png
-.. |peakgainpic5.png| image:: https://wiki.analog.com/_media/peakgainpic5.png
-.. |peakgainpic6.png| image:: https://wiki.analog.com/_media/peakgainpic6.png
+.. |peakgainpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgainpic1.png
+.. |peakgainpic2.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgainpic2.png
+.. |peakgainpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgainpic3.png
+.. |peakgainpic4.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgainpic4.png
+.. |peakgainpic5.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgainpic5.png
+.. |peakgainpic6.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/dynamicsprocessors/peakgainpic6.png

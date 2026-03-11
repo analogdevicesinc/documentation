@@ -334,8 +334,8 @@ While running target application, the I2STEST register is exported to BCF (Bus
 
 Please find the discovery timing details below
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/discovry_timing.png
-   :align: center
+
+|image10|
 
 .. note::
 
@@ -422,11 +422,9 @@ To install the A2B Plugin X.Y.Z for SigmaStudio+, follow these steps:
 -  `Microsoft SQL Server 2014 SP2 Feature Pack <https://www.microsoft.com/en-us/download/details.aspx?id=42295&msockid=1dca99ea8d9f62fb361e8c9c8cc16326>`_ (SQLSysClrTypes.msi) – Download and install the correct version (32-bit or 64-bit) from the Microsoft website.
 -  `Microsoft Report Viewer 2015 Runtime <https://www.microsoft.com/en-us/download/details.aspx?id=45496>`_ (ReportViewer.msi) – Download and install the required package.
 -  Restart your system after installing these prerequisites.
--  After installation, verify that Microsoft System CLR Types for SQL Server 2014 and Microsoft Report Viewer 2015 Runtime appear in the Control Panel → Programs and Features.\
+-  After installation, verify that Microsoft System CLR Types for SQL Server 2014 and Microsoft Report Viewer 2015 Runtime appear in the Control Panel → Programs and Features.
 
-|image10|
-
-**Install A2B Plugin:**
+|image11| **Install A2B Plugin:**
 
 -  Download the A2B Plugin X.Y.Z from the :adi:`A2B Software <en/resources/evaluation-hardware-and-software/software/a2b-software.html#software-overview>`.
 -  Run the installer and follow the on-screen instructions.
@@ -446,4 +444,5 @@ To install the A2B Plugin X.Y.Z for SigmaStudio+, follow these steps:
 .. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/basic_auth_failed.png
 .. |image8| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/unknown_err.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/bandwidth_overshoot_error.png
-.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/sqlslrtypes_report_viewer.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/tools-software/discovry_timing.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/sqlslrtypes_report_viewer.png

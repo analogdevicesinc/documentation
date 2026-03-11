@@ -56,12 +56,10 @@ Schematic, Bill of Materials, Gerber Files and Layout Files
    :class: download
 
    
-   ::
-   
-        *[[https://wiki.analog.com/_media/resources/eval/user-guides/adm2587e_rasp-pi_adapter_a.pdf|PCB Layout and Mounting Diagram]]
-        *[[https://wiki.analog.com/_media/resources/eval/user-guides/adm2587e_rasp-pi_adapter_a_sch.pdf|Schematic]]
-        *[[https://wiki.analog.com/_media/resources/eval/eval-adm2587erpiz_a.xls|Bill of Materials for raspberry pi board]]
-        *[[https://wiki.analog.com/_media/resources/eval/eval-adm2587eardz_a.xls|Bill of Materials for arduino board]]
+   -  `PCB Layout and Mounting Diagram <https://wiki.analog.com/_media/resources/eval/user-guides/adm2587e_rasp-pi_adapter_a.pdf>`_
+   -  `Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/adm2587e_rasp-pi_adapter_a_sch.pdf>`_
+   -  `Bill of Materials for raspberry pi board <https://wiki.analog.com/_media/resources/eval/eval-adm2587erpiz_a.xls>`_
+   -  `Bill of Materials for arduino board <https://wiki.analog.com/_media/resources/eval/eval-adm2587eardz_a.xls>`_
    
 
 

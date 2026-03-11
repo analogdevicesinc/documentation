@@ -41,7 +41,7 @@ You will need to:
    -
 
 
-   |http://www.xilinx.com/images/product-images/zc706-base-board.jpg|
+   |http---www.xilinx.com-images-product-images-zc706-base-board.jpg|
 
 -  Prepare the SD card with the proper Linux image (from :doc:`here </wiki-migration/resources/tools-software/linux-software/zynq_images>` and pay attention to the Linux/Windows setup).
 -  Insert the SD-CARD into the SD Card Interface Connector (J30)
@@ -51,7 +51,10 @@ You will need to:
 -  Plug the Power Supply into 12V Power input connector (J22) (DO NOT turn the device on).
 -  Set the jumpers: The main one is: SW11 - Big Blue Switch in the middle, which controls the Boot Mode, it needs to be set: 1: Down, 2: Down, 3: Up, 4: Up, 5: Down. Other Jumpers can be checked via looking at the picture. (click the picture to make it bigger)
 
-|zc706plusfmcjesdadc1.png|
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
+   :alt: zc706plusfmcjesdadc1.png
+   :align: right
+   :width: 200px
 
 -  Turn it on.
 -  Wait ~30 seconds for the "DONE" LED to turn green. This is above the power switch.
@@ -65,18 +68,24 @@ Booting the SD Card
 -  You should see the following screen:
 
    -  IIO Scope tool:
-      |image1|\ |image2|
 
-      -  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
 
--  You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
+   |image1|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/fmcomms2-osc-plugin.png
+   :width: 200px
+
+
+
+-  Learn more about the :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`.
+   * You are done. You can interact with the GUI either over the network, or with the HDMI monitor/USB keyboard mouse.
 
 .. important::
 
    Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
 
 
-   |image3|
+   |image2|
 
 Setting up the hardware (ZED)
 -----------------------------
@@ -123,14 +132,12 @@ Setup/Wiring. (click to enlarge):
 .. [3]
    XC7Z020-CLG484 -1, 85K Logic Cells
 
-.. |http://www.xilinx.com/images/product-images/zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
-.. |zc706plusfmcjesdadc1.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcjesdadc1-ebz/zc706plusfmcjesdadc1.png
-   :width: 200px
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: http://www.xilinx.com/images/product-images/zc706-base-board.jpg
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/fmcomms2-iio-osc.png
    :width: 200px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/fmcomms2-osc-plugin.png
-   :width: 200px
-.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png
    :width: 300px
 .. |ZED Board prepared| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zed_sw.png
    :width: 400px
+
+.. |http---www.xilinx.com-images-product-images-zc706-base-board.jpg| image:: https://wiki.analog.com/_media/http///www.xilinx.com/images/product-images/zc706-base-board.jpg

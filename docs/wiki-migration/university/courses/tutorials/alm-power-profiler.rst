@@ -28,9 +28,8 @@ Simple Use Case:
 
 For testing devices that use supply voltages less than or equal to +5 V and currents up to +200 mA, the simplest way to connect the M1k SMU channel to a device under test (DUT) is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -46,9 +45,8 @@ The M1k SMU channels operate in two quadrants, positive voltage (0 to 5) and pos
 
 The offset current could be supplied by the second SMU channel as shown in figure 2. A series resistor is used to isolate the two SMU channels. SMU channel A is used as the voltage source, as in figure 1, in SVMI mode and SMU channel B is set in SIMV mode as the offsetting current source. In the example shown the 6.2 Ω power resistor from the :doc:`ADALP2000 </wiki-migration/university/tools/adalp2000/parts-index>` parts kit is used but any low value resistor greater than 2 Ω could be substituted. The output voltage of Channel B cannot go above the 5 V limit which forces the maximum usable voltage from Channel A to be 5 V minus the voltage drop across the series resistor. In this example the voltage drop would be up to 200mA times 6.2 Ω, or 1.24 V. The channel A output voltage would ideally need to be no higher than 5.0 – 1.24 = 3.76. Practically speaking the maximum usable voltage might be closer to 3.3 or 3.5 V. This is still a very useful supply voltage range in that many micro-controllers operate at 3.3V or even lower.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -59,9 +57,8 @@ The current from CHA can be both positive when the DUT current is greater than t
 
 If a 1.5 V AA battery, B\ :sub:`1`, for example is substituted for resistor R\ :sub:`1` as shown in figure 3 the voltage seen at the output of SMU Channel B will be 1.5 V lower (more negative) than the DUT voltage which is set by SMU Channel A. Now SMU Channel A can be set all the way up to the maximum +5.0 V. However, the lowest voltage that SMU Channel A can be set to now has to be greater than the battery voltage or +1.5V in this case. Other battery voltages can be used as long as the voltage seen at the output of SMU Channel B remains within the permitted 0 to +5 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -75,9 +72,8 @@ As an alternative, an externally powered current source such as the :adi:`LT3092
 
 With the externally powered current source it is possible to potentially drive the CHA output pin above the +5 V limit when the SMU channel is off or in the Hi-Z mode. To limit the current that would otherwise flow in the output protection diodes on the M1k board, clamp PNP transistor Q\ :sub:`1` is added to the output as shown. If the voltage on CHA where to go more than 0.6 V above +5 V the transistor will turn on shunting the current to ground. The resistor in the collector shares some of the power dissipation with Q\ :sub:`1`. Q\ :sub:`1` can be any PNP transistor capable of handling the possible 200 mA current.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -89,9 +85,8 @@ LT3080 variant
 
 The :adi:`LT3080` linear regulator can be used in a similar current source configuration with a slightly different pinout as in figure 5. Please refer to the LT3080 datasheet page 21 for more detail on use as a two terminal current source.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -103,9 +98,8 @@ Case for DUT powered by battery voltage greater than 5 V:
 
 Suppose the use case is to profile a DUT powered from a 9V battery, B\ :sub:`1`, as in figure 6. With SMU channel A set in the SVMI Split I/O mode and with the voltage source set to 0 V and with output pin CHA connected to the negative battery terminal it can measure the DUT current. The 9 V battery voltage is too high to measure directly with the AIN input. Voltage divider R\ :sub:`1` and R\ :sub:`2` in parallel with the internal 1 MΩ resistor forms a ratio of 2.47. This allows the AIN input to measure voltages up to 2.47 X 5.0 or 12.35 V which is more than enough to measure the 9 V battery (other resistor divider values can of course be used, more on using voltage divider can be found here: :doc:`Measuring voltages beyond 0 to 5V with the ADALM1000 (M1K) </wiki-migration/university/courses/alm1k/circuits1/alm-measure-outside-0-5-range>`).
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
@@ -121,9 +115,8 @@ The ALICE desktop software can of course be used to capture the test voltage and
 
 Once the program is running the main time trace display and controls, as shown in figure 7, should appear. Be sure that the ALM1000 is plugged into the USB port before starting the program. When first started the chart will be blank.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-7.png
-   :align: center
-   :width: 700px
+
+|image7|
 
 .. container:: centeralign
 
@@ -138,9 +131,8 @@ Normally the program records data continuously until the Stop button is clicked.
 
 The SMU channel controls are shown in figure 8. These are essentially the same as in the Meter-Source and Data Logger tools.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-8.png
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -150,3 +142,20 @@ The SMU channel controls are shown in figure 8. These are essentially the same a
 There are buttons to Save and Load the channel configuration.
 
 **For Further Reading**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-7.png
+   :width: 700px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/tutorials/alm-power-profile-fig-8.png
+   :width: 600px

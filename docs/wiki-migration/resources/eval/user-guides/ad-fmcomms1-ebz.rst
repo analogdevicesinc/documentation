@@ -7,9 +7,7 @@ AD-FMCOMMS1-EBZ User Guide
    See `wiki/common <https://wiki.analog.com/wiki/common#retired>`_
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcomms1_top_v.jpg
-   :align: right
-   :width: 250px
+   |image1|
 
 .. warning::
 
@@ -59,3 +57,6 @@ AD-FMCOMMS1-EBZ User Guide
 -  :doc:`Production Testing Process </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/testing>`
 -  :doc:`Additional Documentation about SDR Signal Chains </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/additional_docs>`
 -  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/help_and_support>`
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/fmcomms1_top_v.jpg
+   :width: 250px

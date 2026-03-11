@@ -77,8 +77,7 @@ ADALM2000 Active Learning Module and Scopy
 Additional Reading
 ------------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/:ez:`precision-technology-signal-chains/w/kwik-circuits/16183/1mhz-single-supply-photodiode-transimpedance-amplifier-tia-design`
-   :alt: 1MHz, Single Supply, Photodiode Transimpedance Amplifier (TIA) Design
+:ez:`1MHz, Single Supply, Photodiode Transimpedance Amplifier (TIA) Design <precision-technology-signal-chains/w/kwik-circuits/16183/1mhz-single-supply-photodiode-transimpedance-amplifier-tia-design>`
 
 :ez:`op-amp-stability-basics-part-1 - video <precision-technology-signal-chains/w/kwik-circuits/32237/op-amp-stability-basics-part-1>`
 
@@ -92,8 +91,7 @@ Additional Reading
 
 :ez:`op-amp-stability-basics-part-6 - video <precision-technology-signal-chains/w/kwik-circuits/32242/op-amp-stability-basics-part-6>`
 
-.. image:: https://youtu.be/ewAMs-FOYgQ
-   :alt: It's the Little Things That Get You; Light-to-Voltage Converters - video
+`It's the Little Things That Get You; Light-to-Voltage Converters - video <https://youtu.be/ewAMs-FOYgQ>`_
 
 :ez:`KWIK Circuits Main Page <precision-technology-signal-chains/w/kwik-circuits>`
 

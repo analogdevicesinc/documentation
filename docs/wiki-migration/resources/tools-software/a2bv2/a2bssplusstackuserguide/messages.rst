@@ -11,7 +11,8 @@ Request Message
 Request Message Example:-
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/request_message_example.jpg
+   :align: center
 
 .. container:: centeralign
 
@@ -95,7 +96,8 @@ To send a custom message, one must allocate the message, find the payload area, 
 Code Snippet: Sending Custom Message Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/sending_custom_message_example.jpg
+   :align: center
 
 .. container:: centeralign
 
@@ -114,13 +116,10 @@ Messages are handled exclusively through the Execute method of a plugin. A plugi
 Code snippet: Receiving Custom Message Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/receiving_custom_message_example.jpg
+   :align: center
 
 .. container:: centeralign
 
    \ **Code Snippet: Receiving Custom Message Example**\
 
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/request_message_example.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/sending_custom_message_example.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplusstackuserguide/receiving_custom_message_example.jpg

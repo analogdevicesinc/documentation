@@ -65,7 +65,9 @@ The BNC adapter board is simply plugged into the ADALM2000 and can be used strai
 AC/DC Coupling
 ~~~~~~~~~~~~~~
 
-|image7|
+.. image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/coupling_highlight.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
@@ -101,7 +103,7 @@ The :adi:`AD-M2KBNC-EBZ` inputs are reconfigurable. By default 1+ and 2+ channel
 | 2 3                        | 2 3 | 2 3 | 2 3 | 1+                                   | 2+ | 1- | 2- |
 +----------------------------+-----+-----+-----+--------------------------------------+----+----+----+
 
-|image8| |image9|
+|image7| |image8|
 
 .. container:: centeralign
 
@@ -133,9 +135,7 @@ Schematics and CAD Files
    :width: 250px
 .. |image6| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/20220314_104919.jpg
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/coupling_highlight.png
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/input_path_single_ended.png
    :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/input_path_single_ended.png
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/input_path_differential.png
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/m2k/accessories/input_path_differential.png
    :width: 400px

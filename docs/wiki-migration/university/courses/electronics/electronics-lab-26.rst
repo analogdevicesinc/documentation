@@ -16,9 +16,8 @@ Directions:
 
 Build the circuit shown in figure 1 on your solder-less breadboard using the 1N4735 6.1 volt zener diode. Use AWG1 (5V constant) and the -5V Vn user supply to establish the DC supply V\ :sub:`IN`. Use various fixed and variable resistors for R\ :sub:`L`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -27,8 +26,9 @@ Build the circuit shown in figure 1 on your solder-less breadboard using the 1N4
 
 Hardware Setup:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-bb.png
-   :align: center
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -42,8 +42,8 @@ Procedure:
 
 -  Open circuit
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav1.png
+   :align: center
 
 .. container:: centeralign
 
@@ -52,9 +52,8 @@ Procedure:
 
 -  10 kΩ
 
-
-
-|image2|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav2.png
+   :align: center
 
 .. container:: centeralign
 
@@ -63,9 +62,8 @@ Procedure:
 
 -  1 kΩ
 
-
-
-|image3|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav3.png
+   :align: center
 
 .. container:: centeralign
 
@@ -74,9 +72,8 @@ Procedure:
 
 -  100 Ω
 
-
-
-|image4|
+.. image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav4.png
+   :align: center
 
 .. container:: centeralign
 
@@ -105,9 +102,8 @@ Additional Materials:
 
 2 - NPN transistors (2N3904 and TIP31) 2 - small signal diodes (1N914 or similar)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f2.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -144,7 +140,8 @@ Zener Diodes http://en.wikipedia.org/wiki/Zener_diode
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav1.png
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav2.png
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav3.png
-.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-wav4.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/zener_reg-bb.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a26_f2.png
+   :width: 500px

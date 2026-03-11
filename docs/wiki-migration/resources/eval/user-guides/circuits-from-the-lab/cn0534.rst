@@ -19,13 +19,7 @@ The circuit includes a high speed overpower detector and switch that protects se
 General Setup
 -------------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/test_setup.gif
-   :align: center
-   :width: 400px
-
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_led_power_indicator.png
-   :align: center
-   :width: 300px
+|image3| |image4|
 
 .. note::
 
@@ -70,20 +64,24 @@ ADALM-Pluto Preparation
 Firmware Loading
 ^^^^^^^^^^^^^^^^
 
--  Download :git-plutosdr-fw:`Pluto firmware 0.30 version <releases/download/v0.30/plutosdr-fw-v0.30.zip>`
+-  Download `Pluto firmware 0.30 version <https://github.com/analogdevicesinc/plutosdr-fw/releases/download/v0.30/plutosdr-fw-v0.30.zip>`_
 -  Unzip downloaded folder.
 -  Connect Pluto to PC/Laptop using micro USB cable in the terminal with USB symbol.
 -  Open the Pluto mass storage device.
 -  Open the downloaded firmware file.
--  Copy the file, pluto.frm, to the Pluto mass storage device\
+-  Copy the file, pluto.frm, to the Pluto mass storage device
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/pluto_firmware_update.jpg
+   :align: center
+   :width: 600px
 
 -  This will cause LED1 to blink rapidly. This means programming is taking place. Do not remove power (or USB) while the device is blinking rapidly. It does take approximately 4 minutes to properly program the device.
 -  Once the device is done programming, it will re-appear as a mass storage device.
--  Eject (don't unplug) the Pluto mass storage device.\
+-  Eject (don't unplug) the Pluto mass storage device.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/eject_pluto.jpg
+   :align: center
+   :width: 300px
 
 -  Now the usb cable can now be safely disconnect in PC.
 
@@ -91,15 +89,19 @@ Updating to the AD9364
 ^^^^^^^^^^^^^^^^^^^^^^
 
 -  Connect again the Pluto to PC/Laptop using micro USB cable.
--  Open any serial application (ex. TeraTerm, Putty) and ssh to 192.168.2.1, username is root and the password is analog.\ |image5|\
+-  Open any serial application (ex. TeraTerm, Putty) and ssh to 192.168.2.1, username is root and the password is analog.\
 
-|image6|
+|image5|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/username_and_password.jpg
+   :align: center
+   :width: 400px
 
 -  To change things to the AD9364 configuration, type in the following commands, line by line:``# fw_setenv attr_name compatible
    # fw_setenv attr_val ad9364
    # reboot``\
 
-   |image7|
+   |image6|
 
 -  Eject (don't unplug) the Pluto mass storage device.
 -  Now the usb cable can now be safely disconnect in PC.
@@ -135,7 +137,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ :git-iio-oscilloscope:`releases`
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases
 
 
 -  Once done with the installation or an update of the latest IIO-Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
@@ -148,14 +150,14 @@ IIO Oscilloscope
 ADALM Pluto Loop-Back Operation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image8| The plot shown below is the ADALM Pluto output with the RF TX and RX connected directly with transmit power set to -30 dBFS producing a 63.5 dB RSSI RF power input reading:
+|image7| The plot shown below is the ADALM Pluto output with the RF TX and RX connected directly with transmit power set to -30 dBFS producing a 63.5 dB RSSI RF power input reading:
 
-|image9| And with transmit power set to -10 dBFS producing a 43.5 dB RSSI RF power input reading: |image10|
+|image8| And with transmit power set to -10 dBFS producing a 43.5 dB RSSI RF power input reading: |image9|
 
 Normal Operation
 ^^^^^^^^^^^^^^^^
 
-|image11| The plot is as shown below with transmit power set to -30 dBFS producing a 41.5 dB RSSI RF power input reading providing a gain of 22dB in reference with the loop back test operation:
+|image10| The plot is as shown below with transmit power set to -30 dBFS producing a 41.5 dB RSSI RF power input reading providing a gain of 22dB in reference with the loop back test operation:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n30_rfoutput_scale.png
    :align: center
@@ -167,7 +169,7 @@ Auto Shutdown Operation
 The plot is as shown below with transmit power set to -10 dBFS producing a 40.25 dB RSSI RF power input reading and showing a 20 dB attenuation in reference with the loop back test operation:
 
 
-|image12|
+|image11|
 
 --------------
 
@@ -179,7 +181,7 @@ WARNING
    Connecting the :adi:`EVAL-CN0534-EBZ Board <CN0534>` directly to the input (Rx) of a radio or other piece of RF equipment may exceed the absolute maximum ratings for the RF Input. (which is +2.5 dBm for the ADALM-PLUTO). Doing this may permanently damage the input.
 
    
-   |image13| Never do this in normal operation.
+   |image12| Never do this in normal operation.
 
 
 More Information and Useful Links
@@ -224,25 +226,23 @@ Schematic, PCB Layout, Bill of Materials
    :width: 900px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/eval-cn0534-ebzangle.jpg
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/pluto_firmware_update.jpg
-   :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/eject_pluto.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/test_setup.gif
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_led_power_indicator.png
    :width: 300px
 .. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/tera_term_connection.jpg
    :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/username_and_password.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/command_line_to_update_ad9364.jpg
    :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/command_line_to_update_ad9364.jpg
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/adalm_pluto_loop_back_test_measurement_setup.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/adalm_pluto_loop_back_test_measurement_setup.png
    :width: 200px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n30_rfoutput_scale_loop_back.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n30_rfoutput_scale_loop_back.png
    :width: 600px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n10_rfoutput_scale_loop_back.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n10_rfoutput_scale_loop_back.png
    :width: 600px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_adalm_pluto_test_measurement_setup.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_adalm_pluto_test_measurement_setup.png
    :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n10_rfoutput_scale.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/at_n10_rfoutput_scale.png
    :width: 600px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_sample_application.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_sample_application.png
    :width: 600px

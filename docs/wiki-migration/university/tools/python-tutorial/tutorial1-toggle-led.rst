@@ -68,9 +68,8 @@ Directions:
 
 On your solder-less breadboard connect the four digital I/O pins from the ADALM1000 digital connector to drive four LEDs as shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial1_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -110,3 +109,6 @@ Modify the program to display the binary representation of a user specified numb
 `LEDs <https://en.wikipedia.org/wiki/LED>`_ `LED circuit <https://en.wikipedia.org/wiki/LED_circuit>`_ `Charlieplexing <https://en.wikipedia.org/wiki/Charlieplexing>`_
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to Python Tutorial** :doc:`Table of Contents </wiki-migration/university/tools/python-tutorial/table-of-contents>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/python-tutorial/python_tutorial1_f1.png
+   :width: 500px

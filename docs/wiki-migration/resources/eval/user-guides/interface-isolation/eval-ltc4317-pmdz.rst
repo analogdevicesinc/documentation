@@ -153,7 +153,7 @@ Configuring the EVAL-ADICUP3029 to receive data from EVAL-ADT7420-PMDZ
 
 There are two basic ways to program the :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` with the software for the :adi:`EVAL-ADT7420-PMDZ <en/products/adt7420.html>`.
 
--  (Option 1 ) Dragging and Dropping the :git-EVAL-ADICUP360:`Bin B <releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>` file to the DAPLINK drive
+-  (Option 1 ) Dragging and Dropping the `Bin B <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_ file to the DAPLINK drive
 -  (Option 2 ) Building, Compiling, and Debugging using CCES
 
 Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design.
@@ -171,7 +171,7 @@ Software
    Bin/Hex files
 
    
-   -  :git-EVAL-ADICUP360:`Bin B <releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`, Binary file to program EVAL-ADICUP3029 to read ADT7420
+   -  `Bin B <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_adt7420_pmdz.bin>`_, Binary file to program EVAL-ADICUP3029 to read ADT7420
    -  `Hex B <https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltc4306_pmdz/hex_b.zip>`_, Hex file to program EVAL-ADICUP3029 to read ADT7420
    
    Complete ADT7420 Source Files
@@ -212,16 +212,14 @@ Schematic, PCB Layout, Bill of Materials
 Additional Information and Useful Links
 ---------------------------------------
 
-::
-
-   *[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4317`.html|EVAL-LTC4317-PMDZ]]
-   * [[:adi:`LTC4317|LTC4317` Product Page]]
-   * [[:adi:`en/analog-dialogue/articles/i2c-communication-protocol-understanding-i2c-primer-pmbus-and-smbus`.html| Understanding PMbus & SMbus]]
-   * [[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029`.html|EVAL-ADICUP3029 Product Page]]
-   * [[:adi:`en/products/adt7420`.html| ADT7420 Product Page]]
-   * [[/resources/eval/user-guides/eval-adicup3029/tools|Cross Core studio Tool and Driver details]]
-   * [[:adi:`media/en/technical-documentation/product-selector-card/4316`.pdf| Address Translator Selector Card]]
-   * [[:adi:`en/about-adi/news-room/press-releases/2015/i-c-bus-address-translators-resolve-address-conflicts-with-no-additional-software-coding-or-i-c`.html| Resolving Address Conflicts]]
+-  :adi:`EVAL-LTC4317-PMDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-LTC4317.html>`
+-  :adi:`LTC4317 Product Page <LTC4317>`
+-  :adi:`Understanding PMbus & SMbus <en/analog-dialogue/articles/i2c-communication-protocol-understanding-i2c-primer-pmbus-and-smbus.html>`
+-  :adi:`EVAL-ADICUP3029 Product Page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>`
+-  :adi:`ADT7420 Product Page <en/products/adt7420.html>`
+-  :doc:`Cross Core studio Tool and Driver details </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools>`
+-  :adi:`Address Translator Selector Card <media/en/technical-documentation/product-selector-card/4316.pdf>`
+-  :adi:`Resolving Address Conflicts <en/about-adi/news-room/press-releases/2015/i-c-bus-address-translators-resolve-address-conflicts-with-no-additional-software-coding-or-i-c.html>`
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/diagram2.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/interface-isolation/eval-ltc4317-pmdz/table1.png

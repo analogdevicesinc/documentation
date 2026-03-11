@@ -22,9 +22,8 @@ Voltage and Current division allow us to simplify the task of analyzing a circui
 
 :math:`V_2 = V_S R_2/(R_1 + R_2)` (2)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -33,9 +32,9 @@ Voltage and Current division allow us to simplify the task of analyzing a circui
 
 Current Division allows us to calculate what fraction of the total current into a parallel string of resistors flows through any one of the resistors.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig2.png
-   :align: center
-   :width: 500px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -70,9 +69,8 @@ c) Compare the results from steps 1a and 1b.
 
 a) Construct the circuit as shown in figure 2. Set R\ :sub:`1`\ = 470 Ω, R\ :sub:`2`\ = 1 KΩ. and Rs=470 Ω. Use the Meter Source tool to measure the currents Is, I\ :sub:`1` and I\ :sub:`2` Connect the Channel A generator output as voltage source Vs. Set CHA to source a DC voltage of +5V ( SVMI mode ). Use Channel B as an ammeter to alternately measure I\ :sub:`1` and I\ :sub:`2` by connecting the lower end of R\ :sub:`1` and R\ :sub:`2` to CHB with CHB set to 0 V ( SVMI mode ).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig4.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -92,18 +90,15 @@ Questions:
 
 2. Can you apply current division to obtain I\ :sub:`1` and I\ :sub:`2` for the circuit shown in figure 4? Explain briefly.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig3.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig5.png
-   :align: center
-   :width: 400px
+   |image5|
 
 .. container:: centeralign
 
@@ -115,9 +110,8 @@ The Potentiometer as voltage divider
 
 A potentiometer is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. The schematic symbol for the potentiometer is shown in figure 6. It is similar to the standard fixed resistor symbol with the sliding or rotating contact depicted by the arrow pointing at the body of the resistor. If voltages V\ :sub:`1` and V\ :sub:`2` are connected to the two fixed terminals of the potentiometer the voltage that appears at the wiper or adjustable terminal, V\ :sub:`3`, will be some value between V\ :sub:`1` and V\ :sub:`2`. V\ :sub:`3` will equal V\ :sub:`2` when the rotating contact is all the way toward the V\ :sub:`2` terminal and V\ :sub:`3` will equal V\ :sub:`1` when the rotating contact is all the way toward the V\ :sub:`1` terminal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig6.png
-   :align: center
-   :width: 200px
+
+|image6|
 
 .. container:: centeralign
 
@@ -142,9 +136,8 @@ When the potentiometer is adjusted all the way to the other end, near top termin
 
 When the potentiometer is centered (half way between the extremes).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig7.png
-   :align: center
-   :width: 175px
+
+|image7|
 
 .. container:: centeralign
 
@@ -162,3 +155,18 @@ DC Voltmeter `Quick Start Guide <https://wiki.analog.com/_media/university/tools
 `The Potentiometer <https://en.wikipedia.org/wiki/Potentiometer>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig4.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig3.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig5.png
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig6.png
+   :width: 200px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab2-fig7.png
+   :width: 175px

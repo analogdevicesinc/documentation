@@ -9,33 +9,27 @@ The DPD tab on the :adi:`ADRV9029 TES GUI <en/license/licensing-agreement/adrv90
    -  Ensure that the LO frequency matches the operating frequency range of the Power Amplifier in the Initialization Window of the ADRV9029 TES GUI as shown in the figure below. Set the Observation Receivers(ORx) to use the same LO as transmitters(ObsRxLO = TxLO).
       Also, ensure the Tx to ORx mapping selection is correct. Typically, a one to one Tx-ORx mapping is used as shown in the figure below.
 
-::
-
-      {{ :resources:eval:user-guides:adrv9029:adrv9029_initializationwindow.png?600 |}}
+      |resources-eval-user-guides-adrv9029-adrv9029_initializationwindow.png|
 
 -  Ensure that the Observation Receiver is not saturating by adjusting the ORx gain in the ORx tab shown below. In this example, the PA output is observed via ORx1 and the ORx gain index is set to 232, which provides an attenuation of 11.5 dB on the ORx front end. A gain index of 255 provides 0dB attenuation and decrementing the gain index by 1 increases the attenuation by 0.5dB.
 
-::
 
-       {{ :resources:eval:user-guides:adrv9029:adrv9029_orx_setup.png?400 |}}
+|resources-eval-user-guides-adrv9029-adrv9029_orx_setup.png|
 
 -  Bring the Power Amplifier to it's rated power by adjusting the ADRV9029 Tx Front End attenuation on the transmit tab highlighted in the figure below.
 
-::
 
-       {{ :resources:eval:user-guides:adrv9029:adrv9029_txattenadjust.png?400 |}}
+|resources-eval-user-guides-adrv9029-adrv9029_txattenadjust.png|
 
 -  Browse to the DFE Tab in the ADRV9029 GUI. Load a DPD model by clicking the "Load Model from file" button in the "DPD Model Setup" UI. The DPD model is a polynomial function that models the PA through memory terms(i,j) and polynomial degree 'k'. ADI provides a set of pre-calculated DPD models that can be accessed in the "Resources" folder of the ADRV9029 TES GUI Installation directory. After loading the DPD model, set the linear term coefficient corresponding to (i=1,j=1,k=0) to 1 + j0 as shown in the figure below. For evaluation purposes, any model can be chosen. To optimize the DPD model for a particular PA, follow the instructions on the DPD Model Optimization page.
 
-::
 
-         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpd_modelload.png?800 |}}
+|resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png|
 
 -  Configure ‘DPD Tracking Config’ parameters (default values provide a good starting point).
 
-::
 
-         {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingconfig.png?400 |}}
+|resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingconfig.png|
 
 -  In the DPD functions window, select desired Tx channel to apply settings(In this example Tx1 is selected).
 
@@ -45,9 +39,7 @@ The DPD tab on the :adi:`ADRV9029 TES GUI <en/license/licensing-agreement/adrv90
       -  Run Path Delay initial calibration using ‘Run Path Delay Init Cal’ button.
       -  Click ‘Enable DPD on selected channels (only)’ to enable DPD Tracking.
 
-::
-
-           {{ :resources:eval:user-guides:adrv9029:adrv9029_dpdtrackingcal_enable.png?400 |}}
+      |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png|
 
 -  Now the DPD tracking must be enabled and running. The DPD status can be monitored by selecting the Tx channel and clicking the "Get DPD Status and Statistics" button. Ensure that the error status returns "No Error" and the "Iteration Count" and "Update Count" fields are incrementing
 
@@ -57,3 +49,10 @@ The DPD tab on the :adi:`ADRV9029 TES GUI <en/license/licensing-agreement/adrv90
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#prerequisites
    :alt: Getting Started#resources:eval:user-guides:adrv9029|main page#dpd_error_troubleshooting|DPD error troubleshooting
+
+.. |resources-eval-user-guides-adrv9029-adrv9029_dpd_modelload.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpd_modelload.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingcal_enable.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingcal_enable.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_dpdtrackingconfig.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdtrackingconfig.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_initializationwindow.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_initializationwindow.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_orx_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_orx_setup.png
+.. |resources-eval-user-guides-adrv9029-adrv9029_txattenadjust.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_txattenadjust.png

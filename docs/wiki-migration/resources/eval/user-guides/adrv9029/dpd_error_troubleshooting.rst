@@ -266,7 +266,8 @@ ADI_ADRV9025_DPD_UNITY_MODEL_UNAVAILABLE_ERROR
 -  Inspect the DPD model and re-assign any DPD model entries assigned to LUT numbers 28, 29 or 30.
 -  The DPD Model entry LUT assignment can be found under the encircled column in a DPD model file as shown below.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/madurdpdmodel.jpg
+   :width: 400px
 
 ADI_ADRV9025_DPD_UNKNOWN_RPC_ERROR
 ----------------------------------
@@ -279,6 +280,3 @@ ADI_ADRV9025_DPD_UNKNOWN_RPC_ERROR
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/navigation ADRV9029 DPD USER GUIDE#evaluating_dpd_through_tes_gui
    :alt: TES GUI#resources:eval:user-guides:adrv9029|main page#none
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/madurdpdmodel.jpg
-   :width: 400px

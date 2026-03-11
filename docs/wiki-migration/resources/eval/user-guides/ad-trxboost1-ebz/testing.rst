@@ -11,7 +11,7 @@ Creating an SD test card
 
 First, write the latest available SD card image found at :doc:`/wiki-migration/resources/tools-software/linux-software/zynq_images` to a spare card and prepare the card to boot into Linux as detailed on that page for the target FMCOMMS and carrier boards. In this case copy the BOOT.BIN and devicetree.dtb files from the zynq-zc706-adv7511-ad9361-fmcomms2-3 folder into the base directory of the SD card's boot partition).
 
-Then the card needs to be modified to run the tests automatically on boot. Test scripts are provided in https://github.com/analogdevicesinc/linux_image_ADI-scripts that automate initializing osc with the correct profile and environment.
+Then the card needs to be modified to run the tests automatically on boot. Test scripts are provided in :git-linux_image_ADI-scripts:`linux_image_ADI-scripts` that automate initializing osc with the correct profile and environment.
 
 See the following example diff for required changes to the launcher to run the tests on boot:
 
@@ -49,21 +49,20 @@ The TRXBOOST1 testing should be done using the following steps:
 -  Make sure the ZC706 is plugged in with the testing SD card inserted and the HDMI monitor and keyboard/mouse are properly attached to the system and powered on.
 -  The TRXBOOST1 board should be mounted on the TX2A/RX2A jacks of the AD-FMCOMMS3-EBZ board and the power cable connected as seen in the following image.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/trxboost1_-_close_crop_-_copy.jpg
+   :align: center
+   :width: 800px
 
 -  Connect the RX_IN and TX_OUT jacks on the TRXBOOST1 board with the SMA loopback cable.
 -  Power on the ZC706 board.
 -  The board should boot into the ADI Linux environment and begin the tests automatically.
 -  When tests pass, the following window should be shown as seen in the image below. If tests fail, a error dialog will be shown instead. In either case, hit the confirmation button to halt Linux and after several seconds power off the carrier board via the physical switch on the ZC706.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-freqcvt1-ebz/freqcvt1-tests-passed.png
+   :align: center
+   :width: 800px
 
 -  Remove the TRXBOOST1 card and return to step 1 to continue with the next board.
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/navigation AD-TRXBOOST1-EBZ#Hardware
    :alt: Hardware#.:\|User Guide#.:help_and_support|Help and Support
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-trxboost1-ebz/trxboost1_-_close_crop_-_copy.jpg
-   :width: 800px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-freqcvt1-ebz/freqcvt1-tests-passed.png
-   :width: 800px

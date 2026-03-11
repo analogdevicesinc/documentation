@@ -13,13 +13,17 @@ EVAL-ADPAQ3029 - SHT20 [I2C] demo
 
 
 -  Follow the same steps as given `here <https://wiki.analog.com/../first_app>`_
--  In this project, SHT20 (Temperature and Humidity Sensor) is used.\
+-  In this project, SHT20 (Temperature and Humidity Sensor) is used.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app7.png
+   :align: center
+   :width: 300px
 
--  The connections between the SHT20 and the ADPAQ module are made as described below.\
+-  The connections between the SHT20 and the ADPAQ module are made as described below.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app8.png
+   :align: center
+   :width: 200px
 
 .. container:: round box
 
@@ -36,13 +40,12 @@ EVAL-ADPAQ3029 - SHT20 [I2C] demo
 
 
 -  Build and run the project
--  The Sensor will give the Temperature value in ``degree celsius`` and Humidity in ``%RH``.\ `image <https://wiki.analog.com/resources/eval/user-guides/eval-adpaq3029/tile11.png>`_
+-  The Sensor will give the Temperature value in ``degree celsius`` and Humidity in ``%RH``.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile12.png
-   :align: center
+`image <https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile11.png>`_
+
+
+|image1|
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/tile12.png
    :width: 400px
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app7.png
-   :width: 300px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adpaq3029/app8.png
-   :width: 200px

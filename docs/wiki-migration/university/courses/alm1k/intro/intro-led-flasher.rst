@@ -33,9 +33,8 @@ Directions:
 
 Construct the circuit as shown in figure 1 on your solder-less breadboard. Note: there is no input from the ALM1000 just the power supply. The first inverting amplifier stage consists of Q\ :sub:`1` with R\ :sub:`1` and the Red LED serving as the output load. The second inverting amplifier stage consists of Q\ :sub:`2` with R\ :sub:`2` and the Green LED serving as the load. C\ :sub:`1` couples the output of the first stage at the collector of Q\ :sub:`1` to the input of the second stage at the base of Q\ :sub:`2`. Similarly, C\ :sub:`2` couples the output of the second stage at the collector of Q\ :sub:`2` back to the input of the first stage at the base of Q\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -69,9 +68,8 @@ Directions:
 
 Construct the circuit as shown in figure 2 on your solder-less breadboard. The first inverting amplifier stage consists of M\ :sub:`1` with R\ :sub:`1` and the Red LED serving as the output load. The second inverting amplifier stage consists of M\ :sub:`2` with R\ :sub:`2` and the Green LED serving as the load. C\ :sub:`1` couples the output of the first stage at the drain of M\ :sub:`1` to the input of the second stage at the gate of M\ :sub:`2`. Similarly, C\ :sub:`2` couples the output of the second stage at the drain of M\ :sub:`2` back to the input of the first stage at the gate of M\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab24m_f1.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -95,3 +93,8 @@ What would be the effect of decreasing or increasing the values of both capacito
 `The Multivibrator <https://en.wikipedia.org/wiki/Multivibrator>`_ :doc:`BJT as a Switch </wiki-migration/university/courses/alm1k/alm-lab-4s>` :doc:`MOS as a Switch </wiki-migration/university/courses/alm1k/alm-lab-4ms>`
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-24_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab24m_f1.png
+   :width: 500px

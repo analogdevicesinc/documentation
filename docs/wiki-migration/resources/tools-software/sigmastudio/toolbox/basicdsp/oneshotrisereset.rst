@@ -93,4 +93,4 @@ Algorithm Details
 | Parameter RAM              | 1                                                |
 +----------------------------+--------------------------------------------------+
 
-.. |oneshotriseresetpic1.png| image:: https://wiki.analog.com/_media/oneshotriseresetpic1.png
+.. |oneshotriseresetpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/basicdsp/oneshotriseresetpic1.png

@@ -49,7 +49,7 @@ Useful Engineer Zone Threads
 
 :ez:`EVAL-ADAU1781Z GPIO Mapping in SigmaStudio <dsp/sigmadsp/w/documents/5192/eval-adau1781z-gpio-mapping-in-sigmastudio>`
 
-:ez:`General purpose input parameters controlled by an external microcontroller </dsp/sigmadsp/f/discussions/67296/general-purpose-input-parameters-controlled-by-an-external-microcontroller>`
+:ez:`General purpose input parameters controlled by an external microcontroller <dsp/sigmadsp/f/discussions/67296/general-purpose-input-parameters-controlled-by-an-external-microcontroller>`
 
 :ez:`SigmaDSP Products and Evaluation Boards - ROHS and REACH Compliance <dsp/sigmadsp/w/documents/5193/sigmadsp-products-and-evaluation-boards---rohs-and-reach-compliance>`
 

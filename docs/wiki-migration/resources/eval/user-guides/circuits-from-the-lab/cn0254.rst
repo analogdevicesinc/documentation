@@ -79,15 +79,17 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you install the `CN0254 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0254>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0254\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-   |image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/1.png
+   :width: 500px
 
 -  Click **Next** to view the installation review page
 
-|image3|
+
+|image2|
 
    \* Click **Next** to start the installation
 
-   |image4|
+   |image3|
 
    \* Upon completion of the installation of the **CN-0254 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -96,7 +98,7 @@ Installing the Evaluation Software
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-   |image5|
+   |image4|
 
    \* Press **“Next”** to set the installation location for the **SDP Drivers**.
 
@@ -107,11 +109,11 @@ Installing the Evaluation Software
    **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
 
 
-   |image6|
+   |image5|
 
    \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
-   |image7|
+   |image6|
 
 --------------
 
@@ -146,7 +148,7 @@ Main Window
 -  **Multi-Channel** Tab
 
 
-|image8|
+|image7|
 
    -  **Plot options per channel** - Edit plot display and options like interpolation and color of output waveform
 
@@ -157,7 +159,7 @@ Main Window
 -  **Single Channel** Tab
 
 
-|image9|
+|image8|
 
    -  **Time Domain** Tab - Shows the acquired measurement data in terms of ADC codes with respect to time
 
@@ -168,7 +170,7 @@ Main Window
 -  **Calibration** Tab - Contains the calibration instructions for the CN0254 Evaluation Board
 
 
-|image10|
+|image9|
 
    -  **Precision Voltages** - Set the low and high precision voltages to be used for calibration
 
@@ -181,11 +183,10 @@ Main Window
 -  **S/W Version Info** Tab
 
 
-|image11|
+|image10|
 
-   -  **Flash LED** - Flashes the LED on the SDP controller board
-
-      -  **Read Firmware** - Reads the firmware of CN0254 Evaluation Board
+-  **Flash LED** - Flashes the LED on the SDP controller board
+-  **Read Firmware** - Reads the firmware of CN0254 Evaluation Board
 
 Running the System
 ~~~~~~~~~~~~~~~~~~
@@ -247,23 +248,21 @@ Registration
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/cn0254-hw-1024.jpg
    :width: 650px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/1.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/2.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/2.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/3.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/3.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/4.png
    :width: 500px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/4.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/5.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/5.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/6.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/6.png
-   :width: 500px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/9.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/9.png
    :width: 700px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/10.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/10.png
    :width: 700px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/11.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/11.png
    :width: 700px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/12.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0254/12.png
    :width: 700px

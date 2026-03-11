@@ -29,36 +29,35 @@ Running the Software
 -  Connect the evaluation board to the SDP as described in the Evaluation Kit User Guide.
 -  To run the software, click Start Menu → All Programs → Analog Devices → AD5790 AD5780 AD5760 Evaluation Board Programmer.
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/intro.png
+   :align: center
+   :width: 400px
 
 -  Click 'Continue' to detect connected hardware.
--  If a supported evaluation board is not found, this message will appear. Reset the SDP board and wait for 30 seconds before clicking 'OK'. Click 'Cancel' to exit the software.\
+-  If a supported evaluation board is not found, this message will appear. Reset the SDP board and wait for 30 seconds before clicking 'OK'. Click 'Cancel' to exit the software.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/board_not_detected.png
+   :align: center
+   :width: 400px
 
--  When the evaluation board is identified by the software, a prompt will appear for the user to select the evaluation software to reprogram the board to. If the evaluation board is currently configured for use with legacy software, then the user must select the actual device on the board before clicking the 'ACE' button for the software to program it with the correct board ID.\
+-  When the evaluation board is identified by the software, a prompt will appear for the user to select the evaluation software to reprogram the board to. If the evaluation board is currently configured for use with legacy software, then the user must select the actual device on the board before clicking the 'ACE' button for the software to program it with the correct board ID.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/set_id_for_ace_sw.png
+   :align: center
+   :width: 400px
 
--  If the evaluation board is currently configured for use with the ACE software, the only option is 'Legacy' to configure the board ID for use with legacy evaluation software.\
+-  If the evaluation board is currently configured for use with the ACE software, the only option is 'Legacy' to configure the board ID for use with legacy evaluation software.
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/set_id_for_legacy_sw.png
+   :align: center
+   :width: 400px
 
 -  When programming is complete and successful this is reported to the user.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/successful_program.png
+   :align: center
+   :width: 400px
 
 -  Click 'OK' to close the application.
 
 The evaluation board is now ready for use with the selected evaluation platform.
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/intro.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/board_not_detected.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/set_id_for_ace_sw.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/set_id_for_legacy_sw.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5790_80_60_evb_prog/successful_program.png
-   :width: 400px

@@ -20,7 +20,7 @@ Hardware:
 Software
 
 -  `ADI Kuiper Image for CN0540 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`_
--  :git-iio-oscilloscope:`IIO-Oscilloscope <releases>`
+-  `IIO-Oscilloscope <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
 Setup
 -----
@@ -44,7 +44,7 @@ Once microSD card has been imaged, safely remove the hardware from the SD card w
 Download and Install IIO-Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Down the latest :git-iio-oscilloscope:`IIO-Oscilloscope release <releases>` from Github, and install it on your PC. (You may need to right-click the installer, and run as "Elevated" in order to get it to install. )
+Down the latest `IIO-Oscilloscope release <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_ from Github, and install it on your PC. (You may need to right-click the installer, and run as "Elevated" in order to get it to install. )
 
 CoraZ7-07s Hardware Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,9 +105,11 @@ Finding your CN0540
 Before you can start streaming data, you first must locate the CN0540 on your network.
 
 -  Setup a UART serial communication between your PC and the Cora board using the micro USB cable to USB type A
--  Using your device manager, locate the COM port assigned to the CoraZ7-07s board\
+-  Using your device manager, locate the COM port assigned to the CoraZ7-07s board
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/com_port.png
+   :align: center
+   :width: 600px
 
 -  Open Putty, Tera Term, or other serial terminal program and open a terminal between the COM port the Cora board by setting the Baud rate to 115200, and connect.
 -  The serial terminal connection will default to auto login and will place you in the root directory of the SD card.
@@ -116,14 +118,19 @@ Before you can start streaming data, you first must locate the CN0540 on your ne
    -  This should provide a list of devices along with their channels and attributes
 
 -  Type **ifconfig** into the terminal, hit "Enter"
--  That should echo back some information where you can pull out the inet address of eth0.\
+-  That should echo back some information where you can pull out the inet address of eth0.
 
-|image5|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
+   :align: center
+   :width: 600px
 
 -  Open up the IIO-Oscilloscope application on your PC
--  Set the radio button for “Remote Devices” and type the inet address you just found, hit the "Refresh" button, and then click "Ok".\ |image6|\
+-  Set the radio button for “Remote Devices” and type the inet address you just found, hit the "Refresh" button, and then click "Ok".\
 
-|image7|
+|image4|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_board_found.png
+   :width: 475px
 
 Using the System with IIO Oscilloscope
 --------------------------------------
@@ -142,7 +149,7 @@ If you want to re-calibrate the system, shut the system down, or modify individu
 
 Below is a picture of what the CN0540 IIO Plugin looks like.
 
-|image8|\ |image9|
+|image5|\ |image6|
 
 User interface
 ^^^^^^^^^^^^^^
@@ -195,7 +202,7 @@ For CbM applications, most customers are typically interested in the frequency d
 You should see a nice plot like this when connected to the CN0532 sensor.\
 
 
-|image10|
+|image7|
 
 *End of Document*
 
@@ -205,17 +212,11 @@ You should see a nice plot like this when connected to the CN0532 sensor.\
    :width: 400px
 .. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/cora_hw_config.jpg
    :width: 600px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/com_port.png
-   :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
-   :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_login.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_login.png
    :width: 300px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_board_found.png
-   :width: 475px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
    :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
    :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
    :width: 500px

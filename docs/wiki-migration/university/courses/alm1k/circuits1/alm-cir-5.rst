@@ -32,9 +32,8 @@ The relation between pulse width and frequency is then given by,
 
 :math:`f = 1/(2t_p)` (2)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ From Kirchhoff's laws, it can be shown that the charging voltage V\ :sub:`C` (t)
 
 where, V is the applied source voltage to the circuit at time t = 0. The product RC is the time constant. The response curve is increasing and is shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -62,9 +60,8 @@ The discharge voltage for the capacitor is given by:
 
 Where Vo is the initial voltage stored in capacitor at t = 0. The product RC is often referred to the so called time constant, τ. The response curve is a decaying exponential as shown in figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -81,16 +78,15 @@ Procedure:
 
 1. Set up the circuit shown in figure 4 on your solderless breadboard with the component values R\ :sub:`1` = 2.2 KΩ and C\ :sub:`1` = 1 µF. Open the ALICE Oscilloscope software.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4. Breadboard diagram of RC circuit R\ :sub:`1` = 2.2 KΩ and C\ :sub:`1` = 1 µF.
 
 
-   |image1|
+   |image5|
 
 .. container:: centeralign
 
@@ -101,9 +97,8 @@ Procedure:
 
 3. From the ALICE Curves drop down Menu select CA-V, and CB-V for display. From the Trigger drop down menu select CA-V and Auto Level. Adjust the time base until you have at approximately two cycles of the square wave on the display grid.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-screen1.png
-   :align: center
-   :width: 650px
+
+|image6|
 
 .. container:: centeralign
 
@@ -118,9 +113,8 @@ a. Pulse width >> 5t : Set the frequency of AWG A output such that the capacitor
 
 b. Pulse width = 5t : Set the frequency such that the pulse width = 5t (this should be approximately 45 Hz). Since the pulse width is 5t, the capacitor should just be able to fully charge and discharge during each pulse cycle. From the figure determine t (see figure 2 and figure 7 below.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig6.png
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -149,5 +143,17 @@ Questions:
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/breadboard_rc.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/breadboard_rc.png
    :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-screen1.png
+   :width: 650px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-cir-lab5-fig6.png
+   :width: 600px

@@ -11,7 +11,7 @@ Most people don't read `instructions <https://wiki.analog.com/../users>`_, and j
 
    -  `Windows <https://wiki.analog.com/../drivers/windows>`_ or `Linux <https://wiki.analog.com/../drivers/linux>`_ or `MAC <https://wiki.analog.com/../drivers/osx>`_
 
--  Install :doc:`IIO-Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>` for :git-iio-oscilloscope:`your host <releases/latest>`
+-  Install :doc:`IIO-Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>` for `your host <https://github.com/analogdevicesinc/iio-oscilloscope/releases/latest>`_
 -  Playback and capture data
 
    -  :doc:`Tune and play data </wiki-migration/resources/tools-software/linux-software/fmcomms2_plugin>` and :doc:`capture </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`

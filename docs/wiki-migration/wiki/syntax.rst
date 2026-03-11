@@ -49,38 +49,38 @@ External
 
 External links are recognized automagically: http://www.google.com or simply www.google.com - You can set the link text as well: `This Link points to google <http://www.google.com>`_. Email addresses like this one: andi@splitbrain.org are recognized, too.
 
-::
 
-   DokuWiki supports multiple ways of creating links. External links are recognized
-   automagically: http://www.google.com or simply www.google.com - You can set
-   link text as well: [[http://www.google.com|This Link points to google]]. Email
-   addresses like this one: <andi@splitbrain.org> are recognized, too.
+
+DokuWiki supports multiple ways of creating links. External links are recognized
+automagically: http://www.google.com or simply www.google.com - You can set
+link text as well: `This Link points to google <http://www.google.com>`_. Email
+addresses like this one: <andi@splitbrain.org> are recognized, too.
 
 Internal
 ~~~~~~~~
 
 Internal links are created by using square brackets. You can either just give a `pagename <https://wiki.analog.com/pagename>`_ or use an additional `link text <https://wiki.analog.com/pagename>`_.
 
-::
 
-   Internal links are created by using square brackets. You can either just give
-   a [[/pagename|pagename]] or use an additional [[/pagename|link text]].
+
+Internal links are created by using square brackets. You can either just give
+a `pagename <https://wiki.analog.com/pagename>`_ or use an additional `link text <https://wiki.analog.com/pagename>`_.
 
 `Wiki pagenames <https://www.dokuwiki.org/pagename>`_ are converted to lowercase automatically, special characters are not allowed.
 
 You can use `namespaces <https://wiki.analog.com/some/namespaces>`_ by using a colon in the pagename.
 
-::
 
-   You can use [[/some/namespaces|namespaces]] by using a colon in the pagename.
+
+You can use `namespaces <https://wiki.analog.com/some/namespaces>`_ by using a colon in the pagename.
 
 For details about namespaces see `namespaces <https://www.dokuwiki.org/namespaces>`_.
 
 Linking to a specific section is possible, too. Just add the section name behind a hash character as known from HTML. This links to `this Section <https://wiki.analog.com/syntax>`_.
 
-::
 
-   This links to [[/syntax#internal|this Section]].
+
+This links to `this Section <https://wiki.analog.com/syntax>`_.
 
 Notes:
 
@@ -93,10 +93,10 @@ Interwiki
 
 DokuWiki supports `Interwiki <https://www.dokuwiki.org/Interwiki>`_ links. These are quick links to other Wikis. For example this is a link to Wikipedia's page about Wikis: `Wiki <https://en.wikipedia.org/wiki/Wiki>`_.
 
-::
 
-   DokuWiki supports [[doku>Interwiki]] links. These are quick links to other Wikis.
-   For example this is a link to Wikipedia's page about Wikis: [[https://en.wikipedia.org/wiki/Wiki|Wiki]].
+
+DokuWiki supports `doku>Interwiki <doku>Interwiki>`__ links. These are quick links to other Wikis.
+For example this is a link to Wikipedia's page about Wikis: `Wiki <https://en.wikipedia.org/wiki/Wiki>`_.
 
 The icons are used beside the wiki links to help quickly visually identify the destination site of the link. This saves the reader a mouseover to understand where they are going to go.
 
@@ -110,27 +110,27 @@ Additionally to the default dokuwiki interwiki links the following are available
 Specific to the ADI website
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| Tag        | Description                        | Example                                                                                                                 |
-+============+====================================+=========================================================================================================================+
-| adi        | Link to the Analog Devices website | ``[[:adi:`AD5755|AD5755]]```                                                                            |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| maxim      | Linux to the Maxim website         | ``[[https://www.maximintegrated.com/MAX77840|MAX77840]]``                                                               |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| footprints | Link to ADI's footprints           | ``[[:adi:`media/en/package-pcb-model-library/AD5755|AD5755]]```                                         |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| export     | ADI's export info                  | ``[[:adi:`AD5755|AD5755]]```                                                                            |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| ez         | Link to the engineerzone           | ``[[:ez:`fpga|fpga]]```                                                                                 |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| reg        | Link to hardware registeration     | ``[[https://form.analog.com/Form_Pages/FeedBack/ADALM-PLUTO|ADALM-PLUTO]]``                                             |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| ADI buy    | shopping cart                      | ``[[:adi:`en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO|Buy]]``` |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| ibis       | Link to ibis models                | ``[[:adi:`media/en/package-pcb-model-library/ibis-models/LTC2876|LTC2876]]```                           |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| github     | ADI's open repos                   | ``[[https://github.com/libiio?master/CMakeLists.txt|CMakeLists.txt]]``                                                  |
-+------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| Tag        | Description                        | Example                                                                                                                  |
++============+====================================+==========================================================================================================================+
+| adi        | Link to the Analog Devices website | ``:adi:`AD5755```                                                                                                        |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| maxim      | Linux to the Maxim website         | ```MAX77840 <https://www.maximintegrated.com/MAX77840>`_``                                                               |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| footprints | Link to ADI's footprints           | ``:adi:`AD5755 <media/en/package-pcb-model-library/AD5755>```                                                            |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| export     | ADI's export info                  | ``:adi:`AD5755```                                                                                                        |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| ez         | Link to the engineerzone           | ``:ez:`fpga```                                                                                                           |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| reg        | Link to hardware registeration     | ```ADALM-PLUTO <https://form.analog.com/Form_Pages/FeedBack/ADALM-PLUTO>`_``                                             |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| ADI buy    | shopping cart                      | ``:adi:`Buy <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADALM-PLUTO>```                    |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| ibis       | Link to ibis models                | ``:adi:`LTC2876 <media/en/package-pcb-model-library/ibis-models/LTC2876>```                                              |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| github     | ADI's open repos                   | ```CMakeLists.txt <https://github.com/libiio?master/CMakeLists.txt>`_``                                                  |
++------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. tip::
 
@@ -140,15 +140,15 @@ Specific to the ADI website
 Distributors
 ^^^^^^^^^^^^
 
-+-------------+--------------------------------------------------------+----------------------------------------------------------------+
-| Tag         | Description                                            | Example                                                        |
-+=============+========================================================+================================================================+
-| ``arrow``   | Link to Arrow's search                                 | ``[[arrow>ADALM-PLUTO]]``                                      |
-+-------------+--------------------------------------------------------+----------------------------------------------------------------+
-| ``digikey`` | Link to the digikey search, with a Digikey part number | ``[[https://www.digikey.com/345-1146-ND|345-1146-ND]]``        |
-+-------------+--------------------------------------------------------+----------------------------------------------------------------+
-| ``mouser``  | Link to Arrow's search                                 | ``[[https://www.mouser.com/584-ADALM-PLUTO|584-ADALM-PLUTO]]`` |
-+-------------+--------------------------------------------------------+----------------------------------------------------------------+
++-------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Tag         | Description                                            | Example                                                                                                    |
++=============+========================================================+============================================================================================================+
+| ``arrow``   | Link to Arrow's search                                 | ```arrow>adalm-pluto <https://wiki.analog.com/arrow>adalm-pluto>`__``                                      |
++-------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| ``digikey`` | Link to the digikey search, with a Digikey part number | ```345-1146-ND <https://www.digikey.com/345-1146-ND>`_``                                                   |
++-------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| ``mouser``  | Link to Arrow's search                                 | ```584-ADALM-PLUTO <https://www.mouser.com/584-ADALM-PLUTO>`_``                                            |
++-------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. tip::
 
@@ -158,24 +158,24 @@ Distributors
 Others
 ^^^^^^
 
-+---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| oreilly       | Link to the O'Reilly book catalog | ``[[oreilly>9780596005900]]``                                                                                          | `Linux Devices Driver <oreilly>9780596005900>`__                                                                     |
-+---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| git.linux.org | Link to linux kernel tree         | ``[[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.c|adau1373.c]]`` | `adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.c>`_ |
-+---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| xilinx        | Xilinx Website                    | ``[[https://www.xilinx.com/kc705|kc705]]``                                                                             | `kc705 <https://www.xilinx.com/kc705>`_                                                                             |
-+---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| mw            | MathWorks Website                 | ``[[https://www.mathworks.com/hardware-support/adalm-pluto-radio.html|PlutoSDR]]``                                     | `PlutoSDR <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html>`_                                     |
-+---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
++---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| oreilly       | Link to the O'Reilly book catalog | ```oreilly>9780596005900 <https://wiki.analog.com/oreilly>9780596005900>`__``                                                                                          | `Linux Devices Driver <oreilly>9780596005900>`__                                                                     |
++---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| git.linux.org | Link to linux kernel tree         | ```adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.c>`_``|| `adau1373.c <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/adau1373.c>`_ |
++---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| xilinx        | Xilinx Website                    | ```kc705 <https://www.xilinx.com/kc705>`_``                                                                            || `kc705 <https://www.xilinx.com/kc705>`_                                                                             |
++---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| mw            | MathWorks Website                 | ```PlutoSDR <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html>`_``                                    || `PlutoSDR <https://www.mathworks.com/hardware-support/adalm-pluto-radio.html>`_                                     |
++---------------+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Windows Shares
 ~~~~~~~~~~~~~~
 
 Windows shares like `this <https://wiki.analog.com/\\server\share>`_ are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate `Intranet <https://en.wikipedia.org/wiki/Intranet>`_.
 
-::
 
-   Windows Shares like [[/\\server\share|this]] are recognized, too.
+
+Windows Shares like `this <https://wiki.analog.com/\\server\share>`_ are recognized, too.
 
 Notes:
 
@@ -187,12 +187,14 @@ Image Links
 
 You can also use an image to link to another internal or external page by combining the syntax for links and `images <https://wiki.analog.com/>`_ (see below) like this:
 
-::
-
-   [[http://www.php.net|{{wiki:dokuwiki-128.png}}]]
 
 
-   |dokuwiki-128.png|
+`|wiki-dokuwiki-128.png| <http://www.php.net>`_
+
+
+
+
+|dokuwiki-128.png|
 
 Please note: The image formatting is the only formatting syntax accepted in link names.
 
@@ -253,14 +255,24 @@ Resize to given width and height [2]_:
 Resized external image:
 
 
-|http://de3.php.net/images/php.gif|
+|http---de3.php.net-images-php.gif|
 
-::
+Real size:
 
-   Real size:                        {{wiki:dokuwiki-128.png}}
-   Resize to given width:            {{wiki:dokuwiki-128.png?50}}
-   Resize to given width and height: {{wiki:dokuwiki-128.png?200x50}}
-   Resized external image:           {{http://de3.php.net/images/php.gif?200x50}}
+
+|wiki-dokuwiki-128.png|
+
+Resize to given width:
+
+|wiki-dokuwiki-128.png|
+
+Resize to given width and height:
+
+|wiki-dokuwiki-128.png|
+
+Resized external image:
+
+|http---de3.php.net-images-php.gif|
 
 By using left or right whitespaces you can choose the alignment.
 
@@ -276,11 +288,11 @@ By using left or right whitespaces you can choose the alignment.
    :alt: dokuwiki-128.png
    :align: center
 
-::
 
-   {{ wiki:dokuwiki-128.png}}
-   {{wiki:dokuwiki-128.png }}
-   {{ wiki:dokuwiki-128.png }}
+|wiki-dokuwiki-128.png|
+
+|wiki-dokuwiki-128.png|
+|wiki-dokuwiki-128.png|
 
 Of course, you can add a title (displayed as a tooltip by most browsers), too.
 
@@ -288,9 +300,8 @@ Of course, you can add a title (displayed as a tooltip by most browsers), too.
    :alt: This is the caption
    :align: center
 
-::
 
-   {{ wiki:dokuwiki-128.png |This is the caption}}
+|This is the caption|
 
 If you specify a filename (external or internal) that is not an image (``gif, jpeg, png``), then it will be displayed as a link instead.
 
@@ -625,11 +636,12 @@ The refresh period defaults to 4 hours. Any value below 10 minutes will be treat
 
 **Example:**
 
-::
 
-   [[https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h|index.rss 5 author date 1h]]
+|rss>http://slashdot.org/index.rss 5 author date 1h|
 
-`index.rss 5 author date 1h <https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h>`__
+.. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h
+   :alt: //slashdot.org/index.rss 5 author date 1h
+   :align: left
 
 Control Macros
 --------------
@@ -663,6 +675,9 @@ DokuWiki's syntax can be extended by `Plugins <https://www.dokuwiki.org/plugins>
 .. |image3| image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png
    :width: 200px
    :height: 50px
-.. |http://de3.php.net/images/php.gif| image:: http://de3.php.net/images/php.gif
+.. |http---de3.php.net-images-php.gif| image:: http://de3.php.net/images/php.gif
    :width: 200px
    :height: 50px
+
+.. |http---de3.php.net-images-php.gif| image:: https://wiki.analog.com/_media/http///de3.php.net/images/php.gif
+.. |wiki-dokuwiki-128.png| image:: https://wiki.analog.com/_media/wiki/dokuwiki-128.png

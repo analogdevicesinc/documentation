@@ -12,4 +12,4 @@ This cell is intended chiefly for voice.
 
 After the default algorithm has been established, this cell is able to have other algorithms :doc:`added </wiki-migration/resources/tools-software/sigmastudio/usingsigmastudio/buildingschematics/algorithms>` to it. Right-click the cell and select **Add Algorithm > IC N > Reverb**, which will add another pair of stereo inputs/outputs. (If you are using more than one DSP processor, you will need to add an algorithm for the desired IC.)
 
-.. |vocalpic1.png| image:: https://wiki.analog.com/_media/vocalpic1.png
+.. |vocalpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/vocalpic1.png

@@ -31,9 +31,8 @@ Electrical model of a battery.
 
 We know that an ideal voltage source will produce a constant output voltage independent of the current supplied to the load, i.e. whatever current is needed to maintain the voltage at a constant value. However, real world voltage sources can only supply current up to some limit. The power supplies built into the M1000 lab hardware, for example, use active circuitry to maintain the output voltage at a constant value but only for load currents of < 200 mA. A relatively modest current because the board is powered from the computer USB port. Bench top laboratory supplies, powered from the wall socket, can supply much more, often many amps. Similarly, batteries store a finite amount of energy and have a limited current capability depending on the size of the battery. As the current increases the output voltage will begin to drop as the chemical reaction in the battery tries to maintain the current. In most cases this drop in output voltage with increasing load current can be accurately modeled by including a resistor, typically a few ohms at the most, in series with an ideal voltage source, as shown in figure 1. This is the "internal" resistance of the battery, R\ :sub:`int`. This simple model isn't perfect, because as the battery discharges its voltage will drop even without significant loading. But the internal resistance model does capture the characteristics at a given state of battery charge. Since this simple model is the same as a Thevenin equivalent, we can characterize it in the same way, by measuring the open-circuit voltage and short-circuit current. We do not want to damage the battery, so a current limiting resistor ( which also allows us to measure the current ) is added in series with the battery as shown in figure 2. When the output is "short-circuited", this resistor limits the maximum current that will flow.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labe1_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -50,9 +49,8 @@ Directions:
 
 In the parts Kit supplied for this Lab you should have a rechargeable battery ( typically a three cell 3.6V nominal output NiCd or NiMH ). Battery packs like the one shown in figure 1 generally are supplied with wires and a two pin female connector already attached. Add an external 100 Ω resistor in series with the battery as shown in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labe1_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -81,3 +79,8 @@ Questions:
 :adi:`Battery Chargers <media/en/training-seminars/design-handbooks/Practical-Design-Techniques-Power-Thermal/Section5.pdf>` `Rechargeable battery <https://en.wikipedia.org/wiki/Rechargeable_battery>`_ `Battery Specifications <http://web.mit.edu/evt/summary_battery_specifications.pdf>`_ :doc:`Electrochemical Impedance Spectroscopy </wiki-migration/university/courses/alm1k/alm-eis-lab>`
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labe1_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_labe1_f2.png
+   :width: 500px

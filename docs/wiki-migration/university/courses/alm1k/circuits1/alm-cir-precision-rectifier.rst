@@ -17,9 +17,8 @@ The ALM1000 generates and measures unipolar or single-ended signals in the range
 
 In the ALICE desktop software we can make the following adjustments. As shown in figure 1, on the right hand side of the scope screen, enter 2.5 for the CA-V and CB-V offset adjustment. This is because in this lab we are referencing all the measurements to the +2.5 V common rail. Also enter 0 for the CH-A and CH-B vertical position settings (along bottom of scope screen). The vertical scale should now be centered on 0 and go from -2.5 to +2.5.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-d1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ Directions:
 
 The inverting op-amp circuit can be converted into an “ideal” (linear precision) half-wave rectifier by adding two diodes as shown in figure 2. For the negative half of the input diode D\ :sub:`1` is reverse biased and diode D\ :sub:`2` is forward biased and the circuit operates as a conventional inverter with a gain of -1. For the positive half of the input, diode D\ :sub:`1` is forward biased, closing the feedback around the amplifier. Diode D\ :sub:`2` is reverse biased disconnecting the output from the amplifier. The output will be at the virtual ground potential ( - input terminal ) through the 10 KΩ resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-precision-rectifier-f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -81,9 +79,8 @@ Directions:
 
 The circuit shown in figure 3 is an absolute value circuit, often called a precision full-wave rectifier. It should operate like a full wave rectifier circuit constructed with ideal diodes ( the voltage across the diode, in forward conduction, equals 0 volts). The actual diodes used in the circuit will have a forward voltage of around 0.7 V.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-precision-rectifier-f3.png
-   :align: center
-   :width: 650px
+
+|image3|
 
 .. container:: centeralign
 
@@ -119,3 +116,10 @@ What happens if the direction of one diode is opposite of the other? Repeat expe
 :adi:`Half Wave Rectifier <media/en/training-seminars/tutorials/MT-212.pdf>` :adi:`Full Wave Rectifier <media/en/training-seminars/tutorials/MT-211.pdf>`
 
 **Return to the ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-lcres-d1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-precision-rectifier-f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/circuits1/alm-lab-precision-rectifier-f3.png
+   :width: 650px

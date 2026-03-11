@@ -35,7 +35,7 @@ Analog Devices uses six designations to inform our customers where a semiconduct
 Maintenance and Support
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-These drivers are a combinations of written and maintained by Analog Devices developers, and by many other open source volunteers (most times end-users of various devices). All these drivers (and their corresponding device trees), independent of origin, are supported by ADI Linux kernel Engineers, on-line at :ez:`linux-software-drivers`. This is a combination of drivers that are maintained at Analog Devices :git-linux>`__ and the mainline `mainline kernel <https::`github </wiki.analog.com/git.linux.org>` at https://kernel.org/.
+These drivers are a combinations of written and maintained by Analog Devices developers, and by many other open source volunteers (most times end-users of various devices). All these drivers (and their corresponding device trees), independent of origin, are supported by ADI Linux kernel Engineers, on-line at :ez:`linux-software-drivers`. This is a combination of drivers that are maintained at Analog Devices :git-linux:`github <linux>` and the mainline `mainline kernel <https://wiki.analog.com/git.linux.org>`_ at https://kernel.org/.
 
 It is a common practice during driver development to support a subset of what the hardware/chip is capable of. If you find a driver does not expose a feature you require in your design, please make a request in our :ez:`support forums <linux-software-drivers>`.
 
@@ -1397,22 +1397,22 @@ Sound
 -  :doc:`ADAU7118: 8 Channel, PDM to I2S or TDM Conversion IC </wiki-migration/resources/tools-software/linux-drivers/sound/adau7118>`
 -  :doc:`ADAV801: Audio Codec for Recordable DVD </wiki-migration/resources/tools-software/linux-drivers/sound/adav801>`
 -  :doc:`ADAV803: Audio Codec for Recordable DVD </wiki-migration/resources/tools-software/linux-drivers/sound/adav801>`
--  `MAX2165: Single-Conversion DVB-H Tuner <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/tuners/max2165.c>`_ `MAX2165 <https://www.maximintegrated.com/MAX2165>`_
--  `MAX2175: RF to Bits Automotive Radio Tuner <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/max2175.c>`_ `MAX2175 <https://www.maximintegrated.com/MAX2175>`_
--  `MAX9759: 3.2W, High-Efficiency, Low-EMI, Filterless, Class D Audio Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max9759.c>`_ `MAX9759 <https://www.maximintegrated.com/MAX9759>`_
+-  `MAX2165: Single-Conversion DVB-H Tuner <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/tuners/max2165.c>`_ `MAX2165 <https://www.maximintegrated.com/MAX2165>`_
+-  `MAX2175: RF to Bits Automotive Radio Tuner <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/max2175.c>`_ `MAX2175 <https://www.maximintegrated.com/MAX2175>`_
+-  `MAX9759: 3.2W, High-Efficiency, Low-EMI, Filterless, Class D Audio Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max9759.c>`_ `MAX9759 <https://www.maximintegrated.com/MAX9759>`_
 -  `MAX9768: 10W Mono Class D Speaker Amplifier with Volume Control <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max9768.c>`_ `MAX9768 <https://www.maximintegrated.com/MAX9768>`_
--  `MAX98088: Stereo Audio Codec with FlexSound Technology <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max98088.c>`_ `MAX98088 <https://www.maximintegrated.com/MAX98088>`_
--  `MAX98089: Stereo Audio Codec with FlexSound Technology <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max98088.c>`_ `MAX98089 <https://www.maximintegrated.com/MAX98089>`_
+-  `MAX98088: Stereo Audio Codec with FlexSound Technology <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98088.c>`_ `MAX98088 <https://www.maximintegrated.com/MAX98088>`_
+-  `MAX98089: Stereo Audio Codec with FlexSound Technology <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98088.c>`_ `MAX98089 <https://www.maximintegrated.com/MAX98089>`_
 -  `MAX98090: Ultra-Low Power Stereo Audio Codec <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98090.c>`_ `MAX98090 <https://www.maximintegrated.com/MAX98090>`_
--  `MAX98095: Audio Hub with FlexSound Processor <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max98095.c>`_ `MAX98095 <https://www.maximintegrated.com/MAX98095>`_
+-  `MAX98095: Audio Hub with FlexSound Processor <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98095.c>`_ `MAX98095 <https://www.maximintegrated.com/MAX98095>`_
 -  `MAX98357A: Tiny, Low-Cost, PCM Class D Amplifier with Class AB Performance <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98357a.c>`_ `MAX98357A <https://www.maximintegrated.com/MAX98357A>`_
--  `MAX98360A: Tiny, Cost-Effective, Plug-and-Play Digital Class-D Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/intel/boards/sof_da7219_max98373.c>`_ `MAX98360A <https://www.maximintegrated.com/MAX98360A>`_
--  `MAX98371: Digital Input Class D Speaker Amplifier with Dynamic Headroom Tracking <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max98371.c>`_ `MAX98371 <https://www.maximintegrated.com/MAX98371>`_
--  `MAX98390: Boosted Class-D Amplifier with Integrated Dynamic Speaker Management <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max98390.c>`_ `MAX98390 <https://www.maximintegrated.com/MAX98390>`_
--  `MAX9850: Stereo Audio DAC with DirectDrive® Headphone Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max9850.c>`_ `MAX9850 <https://www.maximintegrated.com/MAX9850>`_
--  `MAX9860: 16-Bit Mono Audio Voice Codec <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max9860.c>`_ `MAX9860 <https://www.maximintegrated.com/MAX9860>`_
--  `MAX9867: Low-Power, Stereo Audio Codec <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max9867.c>`_ `MAX9867 <https://www.maximintegrated.com/MAX9867>`_
--  `MAX9877: Low RF Susceptibility Mono Audio Subsystem with DirectDrive Headphone Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//sound/soc/codecs/max9877.c>`_ `Obsolete <https://www.maximintegrated.com/MAX9877>`_
+-  `MAX98360A: Tiny, Cost-Effective, Plug-and-Play Digital Class-D Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/intel/boards/sof_da7219_max98373.c>`_ `MAX98360A <https://www.maximintegrated.com/MAX98360A>`_
+-  `MAX98371: Digital Input Class D Speaker Amplifier with Dynamic Headroom Tracking <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98371.c>`_ `MAX98371 <https://www.maximintegrated.com/MAX98371>`_
+-  `MAX98390: Boosted Class-D Amplifier with Integrated Dynamic Speaker Management <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max98390.c>`_ `MAX98390 <https://www.maximintegrated.com/MAX98390>`_
+-  `MAX9850: Stereo Audio DAC with DirectDrive® Headphone Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max9850.c>`_ `MAX9850 <https://www.maximintegrated.com/MAX9850>`_
+-  `MAX9860: 16-Bit Mono Audio Voice Codec <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max9860.c>`_ `MAX9860 <https://www.maximintegrated.com/MAX9860>`_
+-  `MAX9867: Low-Power, Stereo Audio Codec <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max9867.c>`_ `MAX9867 <https://www.maximintegrated.com/MAX9867>`_
+-  `MAX9877: Low RF Susceptibility Mono Audio Subsystem with DirectDrive Headphone Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/max9877.c>`_ `Obsolete <https://www.maximintegrated.com/MAX9877>`_
 -  `SSM2305: Filterless, High Efficiency, Mono 2.8 W, Class-D Audio Amplifier <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/codecs/ssm2305.c>`_ :adi:`SSM2305`
 -  :doc:`SSM2518: Digital Input Stereo, 2 W, Class-D Audio Power Amplifier </wiki-migration/resources/tools-software/linux-drivers/sound/ssm2518>`
 -  :doc:`SSM2602: Low Power Audio Codec </wiki-migration/resources/tools-software/linux-drivers/sound/ssm2602>`
@@ -1445,15 +1445,15 @@ Video
 -  `ADV7175A: Digital PAL/NTSC Video Encoder with 10-Bit SSAF™ and Advanced Power Management <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7175.c>`_ :adi:`Obsolete <ADV7175A>`
 -  `ADV7176: Integrated Digital CCIR-601 YCrCb to PAL/NTSC Video Encoder <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7170.c>`_ :adi:`ADV7176`
 -  `ADV7180: 10-Bit, 4× Oversampling SDTV Video Decoder <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7180`
--  `ADV7182: 10-Bit, SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7182`
--  `ADV7182A: 10-Bit, SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7182A`
+-  `ADV7182: 10-Bit, SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7182`
+-  `ADV7182A: 10-Bit, SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7182A`
 -  `ADV7183: Advanced Video Decoder with 9-Bit ADC, & Component Input Support <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7183.c>`_ :adi:`Obsolete <ADV7183>`
--  `ADV7280: 10-Bit, 4× Oversampled SDTV Video Decoder with Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7280`
--  `ADV7280A: 10-Bit, 4× Oversampled SDTV Video Decoder with Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7280A`
--  `ADV7281: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7281`
--  `ADV7281A: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7281A`
--  `ADV7282: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs and Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7282`
--  `ADV7282A: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs and Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree//drivers/media/i2c/adv7180.c>`_ :adi:`ADV7282A`
+-  `ADV7280: 10-Bit, 4× Oversampled SDTV Video Decoder with Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7280`
+-  `ADV7280A: 10-Bit, 4× Oversampled SDTV Video Decoder with Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7280A`
+-  `ADV7281: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7281`
+-  `ADV7281A: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7281A`
+-  `ADV7282: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs and Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7282`
+-  `ADV7282A: 10-Bit, 4× Oversampled SDTV Video Decoder with Differential Inputs and Deinterlacer <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7180.c>`_ :adi:`ADV7282A`
 -  `ADV7481: Integrated Video Decoder and Dual-Mode HDMI/MHL Receiver <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv748x/adv748x-core.c>`_ :adi:`ADV7481`
 -  `ADV7482: Integrated Video Decoder and HDMI Receiver <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv748x/adv748x-core.c>`_ :adi:`ADV7482`
 -  `ADV7343: Multiformat Video Encoder with Six, 11-Bit, 297 MHz DACs <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/i2c/adv7343.c>`_ :adi:`ADV7343`

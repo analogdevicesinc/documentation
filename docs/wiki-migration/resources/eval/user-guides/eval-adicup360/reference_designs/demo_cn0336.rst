@@ -71,10 +71,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the hardware
 -----------------------
 
--  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.\
+-  To program the base board, set the jumpers/switches as shown in the next figure. The important jumpers/switches are highlighted in red.
 
-
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_3.png
+   :align: center
+   :width: 500px
 
 -  Plug the EVAL-CN0336-PMDZ PMOD in the EVAL-ADICUP360 base board, via the PMOD_SPI port (P4).
 -  Plug in the USB cable from the PC to the EVAL-ADICUP360 base board via the Debug USB.(P14)
@@ -99,7 +100,7 @@ The software for the **ADuCM360_demo_cn0336** demo can be found here:
    Prebuilt CN0336 Bin File
 
    
-   -  :git-EVAL-ADICUP360:`ADuCM360_demo_cn0336.Bin <releases/download/Release-1.0/ADuCM360_demo_cn0336.bin>`
+   -  `ADuCM360_demo_cn0336.Bin <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0336.bin>`_
    
    Complete CN0336 Source Files
    
@@ -211,6 +212,3 @@ The **RTE** folder contains device and system related files:
 -  **system.rteconfig** - Allows the user to select the peripherial components they need, along with the startup and ARM cmsis files needed for the project.
 
 // End of Document //
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup360/reference_designs/cn0336_demo_3.png
-   :width: 500px

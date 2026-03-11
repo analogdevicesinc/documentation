@@ -11,9 +11,8 @@ Background:
 
 Many communications system requirements exceed the high-frequency limits of op-amps. In cases such as these, discrete tuned amplifiers are often used. Discrete amplifiers are typically tuned using LC (parallel inductor-capacitor) resonant circuits in place of the collector (or drain) resistors. One such circuit is shown in figure 1.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata1_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -47,9 +46,8 @@ Build the circuit shown in figure 2 on your solder-less breadboard. Based on you
 
 The peak gain of this tuned amplifier can be very high. We will need to slightly attenuate the output signal of AWG1 by picking a value for R\ :sub:`S` that is 2 to 3 times larger than the parallel combination of R\ :sub:`1` and R\ :sub:`2` ( the input resistance of the amplifier). The value of the output load, R\ :sub:`L`, also determines the amplifier maximum gain. For the initial measurements leave R\ :sub:`L` out of the circuit. The approximate 1 MegΩ input resistance of the scope channel will serve as R\ :sub:`L`.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata1_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -62,7 +60,7 @@ Hardware Setup:
 The green squares indicate where to connect the ADALM2000 module AWG, scope channels and power supplies. Be sure to turn on the power supplies only after you double check your wiring.
 
 
-|image1|
+|image3|
 
 .. container:: centeralign
 
@@ -77,7 +75,7 @@ Open the network analyzer software instrument from the main Scopy window. Config
 Run a single frequency sweep. You should see amplitude and phase vs frequency plots that look very similar to your simulation results. Once you have determined that the maximum gain of the amplifier occurs near 500 KHz then you can reduce the frequency sweep range to start at 100 KHz and stop at 1 MHz. Be sure to export all the frequency sweep data to a .csv file for further analysis in either Excel or Matlab.
 
 
-|image2|
+|image4|
 
 .. container:: centeralign
 
@@ -109,7 +107,7 @@ Procedure:
 Frequency multipliers are operated by the pulses of collector current produced by a class C amplifier. Although the collector current flows in pulses, the alternating collector voltage is sinusoidal because of the action of the tank circuit. Use one of the scope channels to monitor the collector current pulses by measuring the voltage across emitter resistor R\ :sub:`3`.
 
 
-|image3|
+|image5|
 
 .. container:: centeralign
 
@@ -131,9 +129,8 @@ Directions:
 
 Build the circuit shown in figure 3 on your solder-less breadboard. Use the SSM2212 matched transistor pair for Q\ :sub:`1` and Q\ :sub:`2`. Pick values for bias resistors R\ :sub:`1` and R\ :sub:`2` from your parts kit such that with the 100 Ω emitter resistor, R\ :sub:`3`, the collector current in NPN transistor Q\ :sub:`3` is between 5 mA and 10 mA. Note in this case the R\ :sub:`1`, R\ :sub:`2` resistor divider is powered from ground and -5V power supply. Use the same combination of L\ :sub:`1` and C\ :sub:`1` as in the previous amplifier stage.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata1_f3.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -146,7 +143,7 @@ Hardware Setup:
 The green squares indicate where to connect the ADALM2000 module AWG, scope channels and power supplies. Be sure to turn on the power supplies only after you double check your wiring.
 
 
-|image4|
+|image7|
 
 .. container:: centeralign
 
@@ -161,7 +158,7 @@ Open the network analyzer software instrument from the main Scopy window. Config
 As in the first experiment, run a single frequency sweep. Once you have determined that the maximum gain of the amplifier occurs near 500 KHz then you can reduce the frequency sweep range to start at 100 KHz and stop at 1 MHz. Be sure to export the data to a .csv file for further analysis in either Excel or Matlab.
 
 
-|image5|
+|image8|
 
 .. container:: centeralign
 
@@ -208,9 +205,8 @@ Directions:
 
 Build the circuit shown in figure 4 on your solder-less breadboard. Use the same values for bias resistors R\ :sub:`1` and R\ :sub:`2` that you used in experiment 1 (figure 2). Use the same combination of L\ :sub:`1` and C\ :sub:`1` as in the previous amplifier stage. Using the formula above for the high pass cut off frequency F\ :sub:`O`, calculate values for C\ :sub:`2`, C\ :sub:`3` and R\ :sub:`4` that results in a frequency more than two octaves below the resonance frequency of L\ :sub:`1` and C\ :sub:`1`. For example if F\ :sub:`R` is equal to 500 KHz then base your calculations on F\ :sub:`O` equal to 125 KHz.
 
-.. image:: https://wiki.analog.com/_media/university/labs/ata1_f4.png
-   :align: center
-   :width: 500px
+
+|image9|
 
 .. container:: centeralign
 
@@ -223,7 +219,7 @@ Hardware Setup
 The green squares indicate where to connect the ADALM2000 module AWG, scope channels and power supplies. Be sure to turn on the power supplies only after you double check your wiring.
 
 
-|image6|
+|image10|
 
 .. container:: centeralign
 
@@ -236,7 +232,7 @@ Procedure:
 Open the network analyzer software instrument from the main Scopy window. Configure the sweep to start at 10 KHz and stop at 10 MHz. Set the Amplitude to 200 mV and the Offset to zero volts. Under the Bode scale set the magnitude top to 30 dB and range to 60 dB. Set the phase top to 180º and range to 360º. Under scope channels click on use channel 1 as reference. Set the number of steps to 100.
 
 
-|image7|
+|image11|
 
 .. container:: centeralign
 
@@ -262,14 +258,22 @@ http://en.wikipedia.org/wiki/LC_circuit http://en.wikipedia.org/wiki/Q_factor ht
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
 
-.. |image1| image:: https://wiki.analog.com/_media/university/labs/ata1_nf3.png
-.. |image2| image:: https://wiki.analog.com/_media/university/labs/ata1_nf4.png
+.. |image1| image:: https://wiki.analog.com/_media/university/labs/ata1_f1.png
    :width: 500px
-.. |image3| image:: https://wiki.analog.com/_media/university/labs/ata1_nf5.png
+.. |image2| image:: https://wiki.analog.com/_media/university/labs/ata1_f2.png
    :width: 500px
-.. |image4| image:: https://wiki.analog.com/_media/university/labs/ata1_nf7.png
-.. |image5| image:: https://wiki.analog.com/_media/university/labs/ata1_nf8.png
+.. |image3| image:: https://wiki.analog.com/_media/university/labs/ata1_nf3.png
+.. |image4| image:: https://wiki.analog.com/_media/university/labs/ata1_nf4.png
    :width: 500px
-.. |image6| image:: https://wiki.analog.com/_media/university/labs/ata1_nf10.png
-.. |image7| image:: https://wiki.analog.com/_media/university/labs/ata1_nf11.png
+.. |image5| image:: https://wiki.analog.com/_media/university/labs/ata1_nf5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/labs/ata1_f3.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/labs/ata1_nf7.png
+.. |image8| image:: https://wiki.analog.com/_media/university/labs/ata1_nf8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/labs/ata1_f4.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/labs/ata1_nf10.png
+.. |image11| image:: https://wiki.analog.com/_media/university/labs/ata1_nf11.png
    :width: 500px

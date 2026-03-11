@@ -104,14 +104,14 @@ Connecting the Hardware
 | |image9|
 | *Connector Configuration and Jumper*
 
-::
 
-   **Step 1**. Connect the [[:adi:`CN0287|EVAL-CN0287-SDPZ]](CN0287` Board) to [[:adi:`en/system-demonstration-platform/evaluation/index`.html|EVAL-SDP-CB1Z]](SDP Board) through the 120-pin SMD connector.\\
-   **Step 2**. Do the jumper setting correctly based on the type of temperature sensor for evaluation.\\
-   **Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on [[:adi:`en/system-demonstration-platform/evaluation/index`.html|SDP Board]] and leave the other side of the cable(USB Type A) floated.\\
-   **Step 4**. Connect the sensor correctly by the way shown in the figure "//Connector Configuration and Jumper Placements//".\\
-   **Step 5**. With DC power supply off, plug the [[:adi:`CN0287|EVAL-CFTL-6V-PWRZ]](6V` DC Power Supply)into J2 on [[:adi:`CN0287|CN0287` Board]]. (CN5 is also screw terminal for connecting to 6V power supply by ordinary wire.)\\
-   **Step 6**. Connect the USB-Type-A side of the USB cable to the PC.\\
+
+- **Step 1**. Connect the :adi:`EVAL-CN0287-SDPZ <CN0287>`(CN0287 Board) to :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/evaluation/index.html>`(SDP Board) through the 120-pin SMD connector.\\
+- **Step 2**. Do the jumper setting correctly based on the type of temperature sensor for evaluation.\\
+- **Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on :adi:`SDP Board <en/system-demonstration-platform/evaluation/index.html>` and leave the other side of the cable(USB Type A) floated.\\
+- **Step 4**. Connect the sensor correctly by the way shown in the figure "//Connector Configuration and Jumper Placements//".\\
+- **Step 5**. With DC power supply off, plug the :adi:`EVAL-CFTL-6V-PWRZ <CN0287>`(6V DC Power Supply)into J2 on :adi:`CN0287 Board <CN0287>`. (CN5 is also screw terminal for connecting to 6V power supply by ordinary wire.)\\
+- **Step 6**. Connect the USB-Type-A side of the USB cable to the PC.\\
 
 --------------
 
@@ -189,7 +189,7 @@ Configuration Tab
 -  **Advanced Settling Button**
 
    -  When this button is pressed, a window named **"CH[x] Advanced Settling"** pops up with more detailed settling for channel[x]. ([x] is the channel number with the one value of 1,2,3,4.)
-   -  `CH[x] Advanced Setting pop-up window <https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0287/Advanced Settling_with_notes.png>`_
+   -  `CH[x] Advanced Setting pop-up window <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/Advanced Settling_with_notes.png>`_
 
 .. tip::
 
@@ -206,7 +206,7 @@ Configuration Tab
 -  **Calibrate Button**
 
    -  When this button is pressed, a window named **"CH[x] Calibration"**\ pups up.([x] is the channel number with the one value of 1,2,3,4.) Follow the tips on the pop-up window to calibrate the current channel correctly.
-   -  `CH[x] Calibration pop-up window <https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0287/calibration_pop_up_windows.png>`_
+   -  `CH[x] Calibration pop-up window <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0287/calibration_pop_up_windows.png>`_
 
 --------------
 

@@ -26,9 +26,8 @@ Directions:
 
 The breadboard connections are shown in figure 1. The output of the channel A generator, is connected to the gate terminal of M\ :sub:`1`. The drain terminal is connected to the positive (+5V) supply. The source terminal is connected to both the 1.5 KΩ load resistor and Scope channel CB-H. The other end of the load resistor is connected to dround.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f1.png
-   :align: center
-   :width: 450px
+
+|image1|
 
 .. container:: centeralign
 
@@ -66,9 +65,8 @@ Additional Materials:
 
 1 - 1 KΩ Resistor 1 - small signal NMOS transistor (M\ :sub:`1`\ ZVN2110A) 2 - small signal NMOS transistors (M\ :sub:`2`, M\ :sub:`3`\ CD4007)
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -93,9 +91,8 @@ Directions:
 
 The circuit configuration in figure 3 adds a resistor R\ :sub:`2` to inject a test signal from AWG1 into the source (output) of M\ :sub:`1`. The input, gate of M\ :sub:`1`, is grounded.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f3.png
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
@@ -117,3 +114,10 @@ Plot the measured voltage amplitude seen at the source. The nominal source curre
 http://en.wikipedia.org/wiki/Common_drain
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f1.png
+   :width: 450px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab11m_f3.png
+   :width: 550px

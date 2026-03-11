@@ -26,9 +26,8 @@ Background:
 
 The simple two transistor CMOS inverter can also be viewed as a high gain amplifier. It consists of one PMOS device, M\ :sub:`1` and one NMOS device M\ :sub:`2`. Generally the CMOS fabrication process is designed such that the magnitude of the threshold voltage, V\ :sub:`TH`, of the NMOS and PMOS devices are roughly equal i.e. complementary. The designer of the inverter then adjusts the width to length ratio, W/L, of the NMOS and PMOS devices such that their respective transconductance is also equal.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -37,9 +36,9 @@ The simple two transistor CMOS inverter can also be viewed as a high gain amplif
 
 Below in figure 2 is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 400px
+
+
+|image2|
 
 .. container:: centeralign
 
@@ -48,9 +47,9 @@ Below in figure 2 is the schematic and pinout for the CD4007:
 
 As many as three individual inverters can be built from one CD4007 package. The simplest first one to configure as shown below is by connecting pins 8 and 13 together as the inverter output. Pin 6 will be the input. Be sure to connect pin 14 V\ :sub:`DD` to power and pin 7 V\ :sub:`SS` to ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -64,9 +63,8 @@ Directions:
 
 First build the simple example shown figure 4 to test the input to output transfer function of the simple CMOS amplifier. The green boxes indicate connections to the connector on ALM1000. Connect +5V power supply to V\ :sub:`CC` (pin 14) and ground to GND (pin 7). Connect the output of the channel A voltage generator to one of the inverter inputs (pin 6) and connect the inverter output (pin 8,13) to channel B scope input CB-H in Hi-Z mode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-lco_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -103,9 +101,8 @@ Directions:
 
 First, be sure the power supplies are switched off before modifying your circuit. Working from the single inverter you constructed in figure 4 add a second inverter stage along with capacitor C\ :sub:`1` and the NMOS transistor M\ :sub:`5`\ from the array to build the oscillator as shown in figure 5. The waveform generator is no longer needed but keep scope channels A and B in HI-Z mode connected as shown in the figure.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-vco_f5.png
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -136,3 +133,14 @@ Try substituting other higher and lower value capacitors for C\ :sub:`1` and aga
 `Multivibrator <https://en.wikipedia.org/wiki/Multivibrator>`_
 
 **Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab20_f6.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-lco_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-vco_f5.png
+   :width: 600px

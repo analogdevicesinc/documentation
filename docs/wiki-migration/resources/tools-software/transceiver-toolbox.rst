@@ -6,13 +6,13 @@ ADI maintains a set of tools to model, interface, and target with ADI transceive
 Quick Start with Toolbox
 ------------------------
 
-The current stable Toolbox can be downloaded from the :git-TransceiverToolbox:`Transceiver Toolbox GitHub Release Page <releases>`. Download the latest mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. Transceiver Toolbox" will appear in your `Add-Ons Explore <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
+The current stable Toolbox can be downloaded from the `Transceiver Toolbox GitHub Release Page <https://github.com/analogdevicesinc/TransceiverToolbox/releases>`_. Download the latest mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. Transceiver Toolbox" will appear in your `Add-Ons Explore <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
 
 .. admonition:: Download
    :class: download
 
    
-   -  :git-TransceiverToolbox:`Analog Devices Inc, Transceiver Toolbox Release Page <releases>`
+   -  `Analog Devices Inc, Transceiver Toolbox Release Page <https://github.com/analogdevicesinc/TransceiverToolbox/releases>`_
    
 
 
@@ -25,7 +25,7 @@ Libiio Installers
    :class: download
 
    
-   -  :git-libiio:`Installers and source for latest stable build <releases>`
+   -  `Installers and source for latest stable build <https://github.com/analogdevicesinc/libiio/releases>`_
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
@@ -100,7 +100,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone --recurse-submodules https://github.com/analogdevicesinc/TransceiverToolbox.git
+   git clone --recurse-submodules :git-TransceiverToolbox:`TransceiverToolbox`
    cd TransceiverToolbox
 
 To build the toolbox run the following:

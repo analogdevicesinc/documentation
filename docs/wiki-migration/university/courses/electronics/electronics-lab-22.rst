@@ -16,9 +16,8 @@ An optocoupler, or optical isolator, is an electronic device designed to transfe
 
 For more in-depth reading on optocouplers see: http://en.wikipedia.org/wiki/Opto-isolator
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f1.gif
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -30,18 +29,15 @@ Construction Directions:
 
 The first step in this activity is to construct your own optocoupler using the infra-red LED and NPN photo transistor supplied with the ADALP2000 Analog Parts Kit. If you are not using the Parts Kit for these lab activities similar devices may be substituted but your results may vary depending on the components used.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g1.jpg
-   :align: center
-   :width: 250px
+
+|image2|
 
 .. container:: centeralign
 
    **QED-123 Infrared LED**
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g2.jpg
-   :align: center
-   :width: 250px
+   |image3|
 
 .. container:: centeralign
 
@@ -50,9 +46,9 @@ The first step in this activity is to construct your own optocoupler using the i
 
 First bend the leads of both the LED and photo transistor 90 degrees so that when inserted into the solder-less breadboard they are facing each other and are at the same level. Too keep them properly aligned and to keep out stray ambient light it is best to use a short length of tubing or black electrical tape cut to the approprate width to wrap around the combined LED and photo transistor as indicated below.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g3.gif
-   :align: center
-   :width: 450px
+
+
+|image4|
 
 .. container:: centeralign
 
@@ -69,9 +65,8 @@ Directions:
 
 On your solder-less breadboard construct the circuit shown in figure 2. Notice that the NPN photo transistor is configured as a current sink with its emitter connected to ground. Note that the longer of the two leads on the photo transistor is the collector. Note that the shorter of the two LED leads is connected to ground. Double check the component datasheets to make sure you have made the correct connections.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f2.gif
-   :align: center
-   :width: 600px
+
+|image5|
 
 .. container:: centeralign
 
@@ -83,8 +78,8 @@ Hardware Setup:
 
 Configure the waveform generator for a 100 Hz triangle wave with 3V amplitude peak-to-peak and 2.5V offset. Both scope channels should be set to 1V/Div.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_bb.JPG
-   :align: center
+
+|image6|
 
 .. container:: centeralign
 
@@ -96,9 +91,8 @@ Procedure:
 
 Scope channel 1 measures the voltage across resistor R\ :sub:`1`. and thus the input current in the LED. Scope channel 2 measures the voltage across resistor R\ :sub:`2` and thus the output collector current in the NPN transistor. The Current Transfer Ratio or CTR is simply the ratio of these to currents. The CTR is a measure of the gain or efficiency or sensitivity of the device.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_wv.JPG
-   :align: center
-   :width: 600px
+
+|image7|
 
 .. container:: centeralign
 
@@ -152,9 +146,8 @@ Directions:
 
 On your solder-less breadboard modify what you have to look like the circuit shown in figure 3. Notice that the NPN photo transistor is now configured as a current source with its collector connected to the positive 5V power supply, Vp. This was done to show that it indeed does not matter how the voltages on the transistor terminals are configured.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f3.gif
-   :align: center
-   :width: 600px
+
+|image8|
 
 .. container:: centeralign
 
@@ -167,7 +160,7 @@ Hardware Setup:
 Configure the waveform generator for a 100 Hz triangle wave with 3V amplitude peak-to-peak and 2.5V offset. Both scope channels should be set to 1V/Div.
 
 
-|image1|
+|image9|
 
 .. container:: centeralign
 
@@ -180,7 +173,7 @@ Procedure:
 Repeat the same measurements you did on the simple resistor diver version on this circuit. Switch the AWG waveform to a square wave and remeasure the delay, rise and fall times for inclusion in your lab report. Switch the AWG to a sine wave ( same 1KHz frequency as before ) and again measure the harmonic distortion. Remember to adjust the AWG amplitude and offset to get a similar output waveform as you had in the previous circuit.
 
 
-|image2|
+|image10|
 
 .. container:: centeralign
 
@@ -209,9 +202,8 @@ Directions:
 
 Build the circuit shown in figure 4 on your solder-less breadboard. The exact wiring of the optocouplers might be different depending on which kind you use (4 pin packages or 6 pin packages etc.). The pin numbers shown are generally standard for 4 pin packages. Be sure to consult the manufacturer's datasheet for how to properly connect your specific device.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f4.gif
-   :align: center
-   :width: 600px
+
+|image11|
 
 .. container:: centeralign
 
@@ -233,9 +225,8 @@ Questions:
 
 Does it matter which order LEDs D\ :sub:`1` and D\ :sub:`2` are connected? Does it matter which photo transistor Q\ :sub:`1` or Q\ :sub:`2` is used for the feedback path? What purpose does C\ :sub:`1`\ serve and what will happen if it were removed and why? Compare your distortion measurements for this circuit to what you measure for the previous two circuits. How much have the harmonics improved?
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f5.gif
-   :align: center
-   :width: 600px
+
+|image12|
 
 .. container:: centeralign
 
@@ -270,6 +261,25 @@ Some models are in 6 pin packages and include a connection to the base terminal 
 
 FOD817 Series 4 pin photo transistor optocoupler from Fairchild Semi. Lite-On, Optocoupler DC-IN 1-CH Transistor DC-OUT 4-Pin PDIP (Avnet Part #:LTV-817) 4N25, 6 pin DIP package with Base terminal (Jameco Part no. 40985) 4N26, 6 pin DIP package with Base terminal (Jameco Part no. 41005) 4N28, 6 pin DIP package with Base terminal (Jameco Part no. 41013) 4N35, 6 pin DIP package with Base terminal (Jameco Part no. 41056) MCT6, MCT61,MCT62 dual photo transistor optocoupler from Fairchild Semi.
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_bb.JPG
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_wv.JPG
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f1.gif
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g1.jpg
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g2.jpg
+   :width: 250px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_g3.gif
+   :width: 450px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f2.gif
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_bb.JPG
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_oc_wv.JPG
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f3.gif
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_bb.JPG
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_drv_wv.JPG
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f4.gif
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/a22_f5.gif
    :width: 600px

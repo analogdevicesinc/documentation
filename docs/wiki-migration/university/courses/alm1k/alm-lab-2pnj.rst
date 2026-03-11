@@ -18,9 +18,8 @@ Background:
 
 Increasing the reverse bias voltage, V\ :sub:`J`, across a PN junction leads to the redistribution of charge away from the interface leaving a depleted region or layer, W in figure 1. This depleted layer acts like the insulator between the two conducting plates of a capacitor. The thickness, W, of this layer is a function of the applied electric field and the doping concentration. The PN junction capacitance is divided into two components, the barrier capacitance and the diffusion capacitance. Under the conditions of reverse bias free carrier injection does not occur therefore, the diffusion capacitance is equal to zero. The barrier capacitance is the dominant source of capacitance for reverse and small positive bias voltages less than the diode turn on voltage (0.6V for Si). In practice, the barrier capacitance can be as small as a fraction of a picofarad to hundreds of picofarads depending on the area of the junction and the doping concentration. The dependence of the junction capacitance to the applied bias voltage called the capacitance-voltage (CV) characteristic of the junction. In this lab you will measure and plot this characteristic for various PN junctions (diodes).
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -39,9 +38,8 @@ Hardware Setup:
 
 Build the test setup as shown in figures 2 and 3 on your solder-less bread board. Keep the jumper wires as short and neat as possible. Each row of contacts on the breadboard has a small stray capacitance to the adjacent rows on either side. In this setup we want to minimize these stray capacitances. One way to cancel out the effect of the row to row capacitance is to drive or boot-strap the adjacent rows with the output of a buffer amplifier. Now the stay capacitance will see the same signal on both sides and will thus not have any current through it.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,9 +48,9 @@ Build the test setup as shown in figures 2 and 3 on your solder-less bread board
 
 In figure 3 we can see that the amplifier input on pin 3 has pins 2 and 4 adjacent to it. Pin 2 is connected to the output and is inherently boot-strapped. Pin 4 is connected to ground and there is not anything we can do about that. We have shown a jumper wire from pin 3 to another row of pins to provide a place to connect the test devices. The two adjacent rows on either side are connected to the amplifier output and their stay capacitance will be boot-strapped out.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f3.png
-   :align: center
-   :width: 600px
+
+
+|image3|
 
 .. container:: centeralign
 
@@ -71,18 +69,15 @@ Procedure Step 2:
 
 Now we can measure a small value capacitor to verify the set up. From the Analog Parts Kit insert a 39 pF capacitor from pin 3 of the amplifier to ground as shown in figures 4 and 5. The display should change and the calculated capacitance at the bottom should read a value very close to 39 pF.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
    Figure 4, Schematic to measure small fixed capacitor
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f5.png
-   :align: center
-   :width: 600px
+   |image5|
 
 .. container:: centeralign
 
@@ -94,18 +89,15 @@ Directions Step 3:
 
 Now we are ready to measure the capacitance of the various diodes from the Analog Parts Kit under a range of reverse bias conditions. Modify the test setup as shown in figures 6 and 7 on your solder-less breadboard. Simply replace C\ :sub:`1` with D\ :sub:`1`, a 1N4001. Be sure to insert the diode with the correct polarity such that a positive offset in CHA will reverse bias the diode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f6.png
-   :align: center
-   :width: 600px
+
+|image6|
 
 .. container:: centeralign
 
    Figure 6, Step 3 setup to measure diode capacitance
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f7.png
-   :align: center
-   :width: 600px
+   |image7|
 
 .. container:: centeralign
 
@@ -153,3 +145,18 @@ Bipolar transistors (NPN, PNP) also contain PN junctions. The Base – Collector
 Include your calculations, a table and plot of your measured capacitance vs. voltage for each transistor in your lab report. Compare your measured C-B capacitance to the manufacturer’s data sheet for these transistors. Note, data sheets don’t often list the C-B capacitance directly. It is often included as part of the output capacitance or something similar.
 
 **Return to the ALM Lab Activity** :doc:`table of contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-pn-cap_f7.png
+   :width: 600px

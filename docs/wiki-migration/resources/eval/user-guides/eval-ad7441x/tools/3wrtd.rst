@@ -144,6 +144,6 @@ The IOUT open circuit fault is asserted when an open wire is present on either I
 
 :doc:`Back to AD74412R/AD74413R Table of Contents </wiki-migration/resources/eval/user-guides/ad7441x>`
 
-.. |74413R_ext_components.png| image:: https://wiki.analog.com/_media/74413R_ext_components.png
-.. |3w RTD extra components.png| image:: https://wiki.analog.com/_media/3w RTD extra components.png
-.. |3w RTD steps.png| image:: https://wiki.analog.com/_media/3w RTD steps.png
+.. |74413R_ext_components.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/74413R_ext_components.png
+.. |3w RTD extra components.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/3w RTD extra components.png
+.. |3w RTD steps.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7441x/tools/3w RTD steps.png

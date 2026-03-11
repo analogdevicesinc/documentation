@@ -28,9 +28,8 @@ First Step: Connecting DC Power:
 
 Op amps must always be supplied with DC power and therefore it is best to configure these connections first before adding any other circuit components. Figure 1.1 shows one possible power arrangement on your solder-less breadboard. We use two of the long rails for the positive supply voltage and ground, and one for 2.5 V mid supply connections that may be required. Included are the so-called "supply de-coupling" capacitor connected between the power-supply and ground rails. It is too early to discuss in great detail the purpose of these capacitors, but they are used to reduce noise on the supply lines and avoid parasitic oscillations. It is considered good practice in analog circuit design to always include small bypass capacitors close to the supply pins of each op amp in your circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -48,9 +47,8 @@ Unity-Gain Amplifier (Voltage Follower):
 
 Our first op amp circuit is a simple one, shown in figure 1.2. This is called a unity-gain buffer, or sometimes just a voltage follower, defined by the transfer function Vout = Vin. At first glance it may seem like a useless device, but as we will show later it finds use because of its high input resistance and low output resistance.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -66,9 +64,8 @@ Buffering Example:
 
 The high input resistance of the op-amp (zero input current) means there is very little loading on the generator; i.e., no current is drawn from the source circuit and therefore no voltage drops on any internal (Thevenin) resistance. Thus in this configuration the op-amp acts like a "buffer" to shield the source from the loading effects from other parts of the system. From the perspective of the load circuit the buffer transforms a non-ideal voltage source into a nearly ideal source. figure 1.3 describes a simple circuit that we can use to demonstrate this feature of a unity-gain buffer. Here the buffer is inserted between a voltage-divider circuit and some "load" resistance, the 10 KΩ resistor.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -89,9 +86,8 @@ Inverting Amplifier:
 
 Figure 1.4 shows the conventional inverting amplifier configuration with a 10 KΩ "load" resistor at the output.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f4.png
-   :align: center
-   :width: 500px
+
+|image4|
 
 .. container:: centeralign
 
@@ -118,9 +114,8 @@ For this circuit you will be using the four digital outputs, PIO 0-3 as input vo
 
 PIO 0 has the highest value and will have the smallest change in the output ( least significant bit ) and PIO 3 has the lowest value and will have the largest change in the output ( most significant bit ). Notice that the POI 3 resistor is made from 2 4.7 KΩ resistors in parallel.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f5.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -171,9 +166,8 @@ Non-Inverting Amplifier:
 
 The non-inverting amplifier configuration is shown in figure 1.6. Like the unity-gain buffer, this circuit has the (usually) desirable property of high input resistance, so it is useful for buffering non-ideal sources, however with a gain greater than one.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f6.png
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -195,9 +189,8 @@ The last step underscores an important consideration for high-gain amplifiers. H
 
 The high intrinsic gain of the op-amp and the output saturation effects can be exploited by configuring the op-amp as a comparator as in figure 1.7. This is essentially a binary-state decision-making circuit: if the voltage at the "+" terminal is greater than the voltage at the "-" terminal, Vin > Vref , the output goes "high" (saturates at its maximum value). Conversely if Vin < Vref the output goes "low". The circuit compares the voltages at the two inputs and generates an output based on the relative values. Unlike all the previous circuits there is no feedback between the input and output; we say that the circuit is operating "open-loop".
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f7.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -237,3 +230,18 @@ Some specific ideas for the report might be as follows: Slew rate: discuss how y
 `Operational amplifier <https://en.wikipedia.org/wiki/Operational_amplifier>`_ `Operational amplifier applications <https://en.wikipedia.org/wiki/Operational_amplifier_applications>`_ :adi:`Commonly Used Amplifier Configurations <media/en/news-marketing-collateral/product-selection-guide/Op_Amps_SG_2011-12_equations.pdf>`
 
 **Return to** :doc:`Introduction to Electrical Engineering </wiki-migration/university/labs/intro_ee>` **Lab Activity Table of Contents** **Return to** :doc:`Circuits </wiki-migration/university/courses/alm1k/alm_circuits_lab_outline>` **Lab Activity Table of Contents** **Return to Electronics Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab1_f7.png
+   :width: 500px

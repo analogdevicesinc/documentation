@@ -21,7 +21,7 @@ IIO System Object
    These interfaces are deprecated. Please use the :doc:`Transceiver Toolbox </wiki-migration/resources/tools-software/transceiver-toolbox>` or the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`\
 
 
-The **IIO System Object** is based on the `MATLAB System Objects™ <https://www.mathworks.com//help/matlab/matlab_prog/what-are-system-objects.html>`_ specification. It is designed to exchange data over Ethernet with an ADI hardware system connected to a FPGA/SoC platform running the ADI Linux distribution.
+The **IIO System Object** is based on the `MATLAB System Objects™ <https://www.mathworks.com/help/matlab/matlab_prog/what-are-system-objects.html>`_ specification. It is designed to exchange data over Ethernet with an ADI hardware system connected to a FPGA/SoC platform running the ADI Linux distribution.
 
 The **IIO System Object** is available in both MATLAB and Simulink:
 
@@ -125,7 +125,7 @@ Before using the IIO System Object, the **libiio** library must be installed in 
    **Windows libiio installer:**
 
    
-   -  :git-libiio:`libiio Windows Installer <releases>` (the .exe file)
+   -  `libiio Windows Installer <https://github.com/analogdevicesinc/libiio/releases>`_ (the .exe file)
    
    **Libiio source code:**
    
@@ -139,9 +139,9 @@ The IIO System object source code and example models can be found here:
    :class: download
 
    
-   -  :git-libiio-matlab>`__
+   -  :git-libiio-matlab:`IIO System Object <libiio-matlab>`
    
-      -  `iio_sys_obj.m <https::`IIO System Object </github.com/analogdevicesinc/libiio-matlab/blob/master/iio_sys_obj.m>` is for Simulink
+      -  :git-libiio-matlab:`iio_sys_obj.m` is for Simulink
       -  :git-libiio-matlab:`iio_sys_obj_matab.m <iio_sys_obj_matlab.m>` is for MATLAB
    
    -  :git-mathworks_tools:`Example models <hil_models>`

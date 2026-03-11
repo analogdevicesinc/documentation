@@ -23,14 +23,19 @@ Materials and Apparatus
 Procedure
 ---------
 
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_image_1.png
+   :alt: lab_13_image_1.png
+   :align: center
+   :width: 800px
 
-|lab_13_image_1.png|
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
-
-|lab_13_assembly_image_1.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_assembly_image_1.png
+   :alt: lab_13_assembly_image_1.png
+   :align: center
+   :width: 800px
 
 -  Run PixelPulse and plug in the M1K using the supplied USB cable
 -  Update M1K firmware, if necessary
@@ -41,13 +46,19 @@ Procedure
 -  Set up Channel A to source a "Sine" voltage that swings between 0.5 V and 4.5 V
 -  Observe the output voltage of the voltage divider on Channel B and verify that it close to its calculated value
 -  Verify that the current supplied by Channel A is swinging between its calculated values
--  Construct the following circuit on the solderless breadboard\
+-  Construct the following circuit on the solderless breadboard
 
-|lab_13_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_image_2.png
+   :alt: lab_13_image_2.png
+   :align: center
+   :width: 800px
 
--  Refer to the illustration below for one way to install the components in the solderless breadboard\
+-  Refer to the illustration below for one way to install the components in the solderless breadboard
 
-|lab_13_assembly_image_2.png|
+.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_assembly_image_2.png
+   :alt: lab_13_assembly_image_2.png
+   :align: center
+   :width: 1000px
 
 -  Set up Channel A to source a “Constant” current output of 5 mA
 -  Observe the output voltage across the current divider on Channel B and verify that it close to its calculated value
@@ -134,12 +145,3 @@ Observations and Conclusions
 -  The voltage divider and current divider rules can be extended to other types of circuit elements, provided the elements are in series and parallel, respectively
 
 **Return to** :doc:`Engineering Discovery Index </wiki-migration/university/courses/engineering_discovery>`
-
-.. |lab_13_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_image_1.png
-   :width: 800px
-.. |lab_13_assembly_image_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_assembly_image_1.png
-   :width: 800px
-.. |lab_13_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_image_2.png
-   :width: 800px
-.. |lab_13_assembly_image_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_13_assembly_image_2.png
-   :width: 1000px

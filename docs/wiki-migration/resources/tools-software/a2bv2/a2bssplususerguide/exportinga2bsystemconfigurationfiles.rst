@@ -277,7 +277,7 @@ This file stores network configuration as binary file. The order of bytes in the
 
 .. container:: centeralign
 
-   \ |image10|\
+   |image10|\
 
 
 Follow the following steps to use this binary file as input to A2B target software.

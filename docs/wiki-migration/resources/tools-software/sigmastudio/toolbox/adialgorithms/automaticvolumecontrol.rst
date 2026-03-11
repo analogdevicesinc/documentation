@@ -36,7 +36,7 @@ Example
 
 The following example test circuit shifts the AVC's input between two tone levels 20dB apart: |image1| The envelope of the input signal to the ALC is as follows: |image2| The envelope of the resulting output signal is as follows: |image3| This clearly shows that the AVC algorithm applies a rapid gain reduction when the input level jumps up. When the input level jumps back down, the AVC algorithm slowly brings up the gain until the target level is reached.
 
-.. |avc1.png| image:: https://wiki.analog.com/_media/avc1.png
+.. |avc1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/avc1.png
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/alc-test.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/drc-off.jpg
 .. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/drc-on.jpg

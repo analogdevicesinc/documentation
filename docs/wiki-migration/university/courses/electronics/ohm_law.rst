@@ -22,9 +22,8 @@ The three basic principles for this activity can be explained using electrons, o
 
 So, when we talk about these values, we're really describing the movement of charge, and thus, the behavior of electrons. A circuit is a closed loop that allows charge to move from one place to another. Components in the circuit allow us to control this charge and use it to do work.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/georg-ohm.png
-   :align: center
-   :width: 200px
+
+|image1|
 
 .. container:: centeralign
 
@@ -125,9 +124,8 @@ Dividing by zero results in infinite current! Not actually infinite in practice,
 
 Our circuit connections should look like this:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_power_5v.png
-   :align: center
-   :width: 400px
+
+|image2|
 
 .. container:: centeralign
 
@@ -154,9 +152,8 @@ So, the resistor value we need for R\ :sub:`1` is around 277 ohms to keep the cu
 
 277 Ohms is not a common value for off-the-shelf resistors, so for this experiment use a 470 ohm resistor (yellow purple brown) which is the next closest value greater than 277 in the ADALP2000 parts kit. Below is what your circuit should look like all put together.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/led_power_5v_bb.png
-   :align: center
-   :width: 900px
+
+|image3|
 
 .. container:: centeralign
 
@@ -172,7 +169,7 @@ Current Limiting Before or After the LED?
 
 To make things a little more complicated, you can place the current limiting resistor on either side of the LED, and it works just the same.
 
-|image1| Many readers learning electronics for the first time struggle with the idea that a current limiting resistor can be inserted on either side of the LED and the circuit will still function as usual. Try swapping the resistor and LED in your circuit. Does the LED still light up with the same brightness for both cases?
+|image4| Many readers learning electronics for the first time struggle with the idea that a current limiting resistor can be inserted on either side of the LED and the circuit will still function as usual. Try swapping the resistor and LED in your circuit. Does the LED still light up with the same brightness for both cases?
 
 Here is yet another water analogy, imagine a water pipe that is a continuous loop with a pump that continuously circulates the water. If we were to place a valve somewhere in the pipe, with the valve closed the water in entire pipe would stop flowing, not just one section. Now imagine we open the valve a little which restricts the flow of the water. It wouldn't matter where in the loop the partly open valve is inserted, it will still slow the flow in the entire pipe. The water does not back up behind the valve. The pressure in the section of the pipe between the outlet side of the pump and the valve increases while the pressure in the section of the pipe between the valve and the outlet side of the pump decreases. The pump is analogous to the voltage source increasing the voltage while the valve is analogous to the resistor decreasing the voltage.
 
@@ -186,7 +183,7 @@ Measuring the actual Voltage and Current
 The ADALM2000 also has two input channels that can be used as a voltmeter. We can connect them as shown in the next schematic to measure the actual voltages in the circuit, The Channel 1 voltmeter input is connected to measure the +5 V power supply and the Channel 2 voltmeter is connected to measure the voltage at the (+), positive, end of the diode.
 
 
-|image2|
+|image5|
 
 .. container:: centeralign
 
@@ -195,9 +192,9 @@ The ADALM2000 also has two input channels that can be used as a voltmeter. We ca
 
 Connect the voltmeter inputs as shown.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/measure_voltage_bb.png
-   :align: center
-   :width: 900px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -208,7 +205,7 @@ Start the Scopy Voltmeter tool. The interface looks like this.
 
 
 
-|image3|
+|image7|
 
 .. container:: centeralign
 
@@ -249,9 +246,17 @@ These concepts are just the tip of the iceberg. If you're looking to study furth
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/limiting_before_after.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/measure_voltage.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/intro/georg-ohm.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/led_power_5v.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/voltmeter_interface.png
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/led_power_5v_bb.png
+   :width: 900px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/limiting_before_after.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/measure_voltage.png
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/measure_voltage_bb.png
+   :width: 900px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/voltmeter_interface.png
    :width: 900px

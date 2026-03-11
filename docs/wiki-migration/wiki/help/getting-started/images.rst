@@ -33,6 +33,6 @@ Once you have uploaded your image or file, go to the area on the page you would 
 
 Alternatively, if you know the name of your image or file, you can also insert it manually by using the following Wiki syntax:
 
-::
 
-   [[https://wiki.analog.com/_media/imagename.xxx|imagename.xxx]]
+
+`imagename.xxx <https://wiki.analog.com/_media/wiki/help/getting-started/imagename.xxx>`_

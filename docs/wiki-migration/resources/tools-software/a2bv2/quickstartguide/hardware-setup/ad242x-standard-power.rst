@@ -253,8 +253,7 @@ A2B Evaluation boards shall be connected in the following order
    This connection is recommended for running the sample demo using PC as host. Refer :doc:`running sample demo </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/target>` for more details on using BF,ADSP-SC594 as host processor.
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval_ad2428_setup.png
-   :align: center
+   |image1|
 
 .. container:: centeralign
 
@@ -291,18 +290,16 @@ Local powered sub-nodes
 
 As per the above :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` two local powered nodes can be connected to each other to form an A2B network. One of them is a main node and the other is a sub node. This :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` represents one of the two audio stream configurations. The below :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad242x-standard-power>` represent the audio configurations with and without bypassing the 1452 DSP respectively. Connect audio sources and sinks as per these two figures.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/audiorouting_with_1452.png
-   :align: center
-   :width: 480px
+
+
+|image2|
 
 .. container:: centeralign
 
    \ **Figure:** Audio routing without 1452 DSP bypass
 
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/audiorouting_without_dsp.png
-   :align: center
-   :width: 480px
+   |image3|
 
 .. container:: centeralign
 
@@ -312,12 +309,17 @@ As per the above :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/qu
 Audio Configuration
 ^^^^^^^^^^^^^^^^^^^
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
    \ **Figure:** Sample Audio configuration for 3 node setup
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_a2b_demo_configuration_1.png
-   :width: 600px
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval_ad2428_setup.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/audiorouting_with_1452.png
+   :width: 480px
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/audiorouting_without_dsp.png
+   :width: 480px

@@ -16,14 +16,16 @@ The AD8418-EVALZ accommodates the :adi:`AD8418` in an MSOP package. The data she
 AD8418 Evaluation Board
 -----------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure1.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 1. Component Side*\
 
 
-   |image2|
+   |image1|
 
 .. container:: centeralign
 
@@ -70,7 +72,9 @@ By default, the output of the evaluation board is biased at midsupply, as shown 
 Evaluation Board Schematic
 --------------------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure3.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
@@ -80,14 +84,16 @@ Evaluation Board Schematic
 Evaluation Board Layout
 -----------------------
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure4.png
+   :align: center
+   :width: 400px
 
 .. container:: centeralign
 
    \ *Figure 4. Component Side Layout*\
 
 
-   |image5|
+   |image2|
 
 .. container:: centeralign
 
@@ -111,13 +117,7 @@ Quantity Reference Designator Package             Description
 1        U1                   8-lead MSOP         AD8418WBRMZ
 ======== ==================== =================== =================
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad8481_figure2.png
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad8481_figure2.png
-   :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure3.png
-   :width: 800px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure4.png
-   :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure5.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad8418_figure5.png
    :width: 400px

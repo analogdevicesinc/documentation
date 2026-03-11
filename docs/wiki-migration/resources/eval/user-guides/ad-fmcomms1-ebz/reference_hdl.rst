@@ -41,7 +41,7 @@ FPGA Reference Designs on GitHub :
    -  **Vivado Downloads**
    -  Main repository is always in sync with the latest release
    
-      -  https://github.com/analogdevicesinc/hdl
+      -  :git-hdl:`hdl`
    
    -  The latest stable version for Vivado 2015.2.1
    

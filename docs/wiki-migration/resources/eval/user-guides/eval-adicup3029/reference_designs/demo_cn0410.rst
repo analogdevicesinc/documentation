@@ -111,7 +111,7 @@ The software for the **ADuCM3029_demo_cn0410** can be found here:
    Prebuilt CN0410 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0410.Hex <releases/download/Latest/ADuCM3029_demo_cn0410.hex>`
+   -  `AduCM3029_demo_cn0410.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0410.hex>`_
    
    Complete CN0410 Source Files
    

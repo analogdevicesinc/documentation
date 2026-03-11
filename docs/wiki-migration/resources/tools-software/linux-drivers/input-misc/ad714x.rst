@@ -40,7 +40,7 @@ Implementing a capacitive touch sensor solution using the AD714x requires three 
 
 The sensor traces can be any number of different shapes and sizes. Buttons, wheels, scroll-bar, joypad, and touchpad shapes can be laid out as traces on the sensor PCB.
 
-|http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07A.jpg| |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07B.jpg| |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07C.jpg| |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07D.jpg| |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07E.jpg| |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07F.jpg|
+|http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07A.jpg| |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07B.jpg| |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07C.jpg| |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07D.jpg| |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07E.jpg| |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07F.jpg|
 
 Many options for implementing the user interface are available to the designer, ranging from simply replacing mechanical buttons with capacitive button sensors to eliminating buttons by using a joypad with eight output positions, or a scroll wheel that gives 128 output positions.
 
@@ -194,9 +194,16 @@ More Information
    See `resources/tools-software/linux-drivers/snippets <https://wiki.analog.com/resources/tools-software/linux-drivers/snippets#input_pointers>`_
 
 
-.. |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07A.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07A.jpg
-.. |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07B.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07B.jpg
-.. |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07C.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07C.jpg
-.. |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07D.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07D.jpg
-.. |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07E.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07E.jpg
-.. |http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07F.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07F.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07A.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07A.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07B.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07B.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07C.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07C.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07D.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07D.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07E.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07E.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07F.jpg| image:: http://www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07F.jpg
+
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07A.jpg| image:: https://wiki.analog.com/_media/http///www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07A.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07B.jpg| image:: https://wiki.analog.com/_media/http///www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07B.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07C.jpg| image:: https://wiki.analog.com/_media/http///www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07C.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07D.jpg| image:: https://wiki.analog.com/_media/http///www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07D.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07E.jpg| image:: https://wiki.analog.com/_media/http///www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07E.jpg
+.. |http---www.analog.com-library-analogDialogue-archives-40-10-AD40-10_07F.jpg| image:: https://wiki.analog.com/_media/http///www.analog.com/library/analogDialogue/archives/40-10/AD40-10_07F.jpg

@@ -49,30 +49,29 @@ Step #1
 
 The connection to the :adi:`ADIS16265/PCBZ <EVAL-ADIS16265>` is simple using J1 and a 16 pin cable included with the :adi:`EVAL-ADIS`.
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265pcbz.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. warning::
 
    **WARNING:** Make sure that the connector cable going from J1 on the :adi:`ADIS16265/PCBZ <EVAL-ADIS16265>` is properly aligned to the J1 connector on the :adi:`EVAL-ADIS`. The 16 pin cable is included with the :adi:`EVAL-ADIS` and proper mating has the last 4 cable connections open. The Black wire from from J2-12 of the :adi:`ADIS16265/PCBZ <EVAL-ADIS16265>` to the DIO1 test point on the :adi:`EVAL-ADIS` is only required for synchronous data.
 
 
-|image3| |image4|
+|image4| |image5|
 
 Step #2
 ~~~~~~~
 
 Mounting to the system frame is accomplished using 4 M2x.4x4mm machine screws included with the :adi:`ADIS16265/PCBZ <EVAL-ADIS16265>`. The mounting location holes are marked as an example in the picture below. Use the 4 A-location holes to secure the :adi:`ADIS16265/PCBZ <EVAL-ADIS16265>` to the :adi:`EVAL-ADIS`.
 
-|image5| |image6|
+|image6| |image7|
 
 Step #3
 ~~~~~~~
 
 The following picture (left side) shows JP1 in the **+3.3V** position (factory-default). That is not the correct JP1 jumper setting on the :adi:`EVAL-ADIS`) required for the :adi:`ADIS16265CCCZ <EVAL-ADIS16265>`\ and should be moved to the **\*+5V**\ \* position (right side).
 
-|image7| |image8|
+|image8| |image9|
 
 .. container:: center round box
 
@@ -955,15 +954,17 @@ This section currently has no :adi:`ADIS16265`-specific content, but the :adi:`A
    :width: 300px
 .. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16220cccz-dimensions.png
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265mnt-on-eval-adis-j1conn.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265pcbz.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265mnt-on-eval-adis-j1conn.png
    :width: 420px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265eval-adis-data-ready.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265eval-adis-data-ready.png
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265mnt-holes-on-eval-adis.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265mnt-holes-on-eval-adis.png
    :width: 350px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265-eval-adis-data-rdy.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/265-eval-adis-data-rdy.png
    :width: 500px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
    :width: 350px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/eval-adis-5v-setting.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/gyroscopes/eval-adis-5v-setting.png
    :width: 500px

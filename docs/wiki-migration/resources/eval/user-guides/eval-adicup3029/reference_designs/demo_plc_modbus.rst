@@ -560,7 +560,7 @@ The software for the **ADuCM3029_demo_cn0435** can be found here:
    Prebuilt CN0435 Hex File
 
    
-   -  :git-EVAL-ADICUP3029:`ADuCM3029_demo_cn0435.Hex <releases/download/Latest/ADuCM3029_demo_cn0435.hex>`
+   -  `ADuCM3029_demo_cn0435.Hex <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0435.hex>`_
    
    Complete CN0435 Source Files
    

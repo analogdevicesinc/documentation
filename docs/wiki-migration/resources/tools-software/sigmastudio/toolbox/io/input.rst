@@ -141,4 +141,4 @@ TDM8 (8 channel) Routing
 .. image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/adau1761_input_routing_003.jpg
    :align: center
 
-.. |inputpic1.png| image:: https://wiki.analog.com/_media/inputpic1.png
+.. |inputpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/io/inputpic1.png

@@ -72,7 +72,7 @@ Example device trees
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | dtsi     | :git-linux:`arch/arm/boot/dts/adi-fmcomms11-RevA.dtsi`                                                                                                    |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `rpi-cn0511-overlay.dts </linux.github>rpi-5.4.y/arch/arm/boot/dts/overlays/rpi-cn0511-overlay.dts>`__                                                    |
+| dts      | `rpi-cn0511-overlay.dts <https://github.com/analogdevicesinc/linux/blob/rpi-5.4.y/arch/arm/boot/dts/overlays/rpi-cn0511-overlay.dts>`_                    |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | dts      | :git-linux:`arch/arm/boot/dts/zynq-zc706-adv7511-fmcomms11.dts`                                                                                           |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -399,5 +399,5 @@ More Information
 .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
    :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+.. |libiio introduction| image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-pll/youtube>p_VntEwUe24
 

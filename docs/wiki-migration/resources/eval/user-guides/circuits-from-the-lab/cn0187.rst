@@ -50,19 +50,18 @@ How to Install the Evaluation Software
    \ **NOTE:** It is recommended that you install the `CN0187 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0187>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0187\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
 
 
-\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step1.png
+   :align: center
 
+-  Click **Next** to view the installation review page
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step2.png
+   :align: center
 
-|image1|
+-  Click **Next** to start the installation
 
--  Click **Next** to view the installation review page\
-
-|image2|
-
--  Click **Next** to start the installation\
-
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step3.png
+   :align: center
 
 -  Upon completion of the installation of the **CN0187 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
 
@@ -71,7 +70,7 @@ How to Install the Evaluation Software
    \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
 
 
-   |image4|
+   |image1|
 
    \* Press **“Next”** to set the installation location for the **SDP Drivers**.
    \\\\
@@ -89,9 +88,12 @@ How to Install the Evaluation Software
 
 |fig5.jpg|
 
--  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.{{ :resources:eval:user-guides:circuits-from-the-lab:cn0326:fig7.jpg?direct \|\
+-  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
 
-|image5|
+{{ :resources:eval:user-guides:circuits-from-the-lab:cn0326:fig7.jpg?direct \|\
+
+
+|image2|
 
 --------------
 
@@ -114,7 +116,7 @@ Using the Evaluation Software
 The following software section will help describe the steps you will need to go through when using the hardware and software together. There are some nationalizations and calibrations which must be done, and then some commands and instructions on how to use the software. Please read carefully to completely understand how to use the demo. Below are the list of available software controls grouped according to their location in the software GUI:
 
 
-|image6|
+|image3|
 
 Calibration
 ~~~~~~~~~~~
@@ -238,7 +240,7 @@ Advanced
 Graphical Output
 ~~~~~~~~~~~~~~~~
 
-|image7| |image8|
+|image4| |image5|
 
 .. note::
 
@@ -248,7 +250,7 @@ Graphical Output
    
 
 
-|image9| |image10|
+|image6| |image7|
 
 .. note::
 
@@ -279,18 +281,15 @@ Registration
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step1.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step2.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step3.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step4.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/step4.png
 .. |fig5.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig5.jpg
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig7.jpg
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/calibrate.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_vrms.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0326/fig7.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/calibrate.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_vrms.png
    :width: 410px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_peak.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_peak.png
    :width: 410px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_crest.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/sub_crest.png
    :width: 450px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/crest_factor_sample_output.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0187/crest_factor_sample_output.png
    :width: 380px

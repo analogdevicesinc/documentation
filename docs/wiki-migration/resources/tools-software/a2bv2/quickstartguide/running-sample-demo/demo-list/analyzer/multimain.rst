@@ -13,12 +13,11 @@ Hardware Setup
 Connections and audio configuration
 -----------------------------------
 
-|image1|
+.. image:: https://wiki.analog.com/_media/ajaxperflookupdelay/multimain_analyzer.png
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
    \ **Figure:** Connection and sample audio configuration
 
-
-.. |image1| image:: https://wiki.analog.com/_media/ajaxperflookupdelay/multimain_analyzer.png
-   :width: 800px

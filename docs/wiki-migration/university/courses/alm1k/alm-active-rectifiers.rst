@@ -34,18 +34,15 @@ Directions:
 
 Build the simple half wave rectifier circuit shown in figure 1 on your solder-less breadboard. An active gate drive circuit, such as shown in the figure, uses an op-amp (AD8541/2) to sense when the AC input waveform, from the output of the channel A voltage generator, CA-V is more positive than the output voltage, V\ :sub:`OUT`, and turn on the PMOS transistor, M\ :sub:`1`. The circuit provides active rectification for AC voltages as low as the minimum power supply voltage for the op-amp (2.7 volts for the AD8541/2) or the gate threshold voltage of the PMOS device (typically 1.5 V for the ZVP2110A). At lower input voltages, the MOSFET's back-gate to drain diode takes over as an ordinary diode rectifier.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-active-rectifier-fig-1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
    Figure 1 Active half wave rectifier with self-powered op amp
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-active-rectifier-fig-2.png
-   :align: center
-   :width: 200px
+   |image2|
 
 .. container:: centeralign
 
@@ -105,9 +102,8 @@ Active Rectifier based on transistors
 
 The op-amp that is being used in the first example circuit to compare the input and output sides of the rectifier can replaced by discrete transistors as shown in this next example circuit, figure 3. The simple diode based half wave rectifier circuit is shown for comparison. Two PNP transistors are configured as a current mirror but with the PMOS "rectifier" transistor between the emitters. As we know from our study of the current mirror, the current in the two transistors will be equal if their V\ :sub:`BE` voltages are the same. If the voltage on the emitter of Q\ :sub:`2`, Vout, is higher than the voltage on the emitter of Q\ :sub:`1`, Vin, more current will flow in Q\ :sub:`2`. At some point the current in Q\ :sub:`2` is large enough to pull up in the gate of PMOS device M\ :sub:`1` turning it off. Conversely, if Vin is equal to or greater than Vout Q\ :sub:`2` will not have enough current to pull Vgate high, or be completely turned off. Note that for the case where Vin is equal to Vout the current in both PNP transistors will be equal and equal to Vin-V\ :sub:`BE`/R\ :sub:`1`. Because R\ :sub:`1` is larger than R\ :sub:`2` the voltage on Vgate will be smaller, that closer to ground turning on M\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-active-rectifier-fig-3.png
-   :align: center
-   :width: 650px
+
+|image3|
 
 .. container:: centeralign
 
@@ -128,3 +124,10 @@ Build the circuit in figure 3 and the simple diode based rectifier. Compare the 
 `Active rectification <https://en.wikipedia.org/wiki/Active_rectification>`_
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-active-rectifier-fig-1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-active-rectifier-fig-2.png
+   :width: 200px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-active-rectifier-fig-3.png
+   :width: 650px

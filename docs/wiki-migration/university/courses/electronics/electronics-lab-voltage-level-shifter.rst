@@ -13,9 +13,8 @@ There are often many cases in digital systems where two or more sections of the 
 
 The simplest form of a voltage level shifter as shown in figure 1(a), uses a pass NMOS device and a pull up resistor ( pull down for PMOS configuration figure 1(b) ). If V\ :sub:`IN` at the input of the inverter is at a logic high its output goes to ground turning on enhancement mode device M\ :sub:`N1` and drives V\ :sub:`OUT` to ground. Conversely if V\ :sub:`IN` is at a logic low the inverter output goes to V\ :sub:`DDI`. With the gate of M\ :sub:`N1` also at V\ :sub:`DDI` it will now be off which allows V\ :sub:`OUT` to be pulled up to V\ :sub:`DDO` by resistor R\ :sub:`1`. Similarly for the negative level shifter in figure 1(b) if V\ :sub:`IN` is at a logic low the inverter output goes to V\ :sub:`DDI` turning on enhancement mode device M\ :sub:`P1` and drives V\ :sub:`OUT` to V\ :sub:`DDI`. With V\ :sub:`IN` is at a logic high the inverter output goes to ground. With the gate of M\ :sub:`P1` also at ground it will now be off which allows V\ :sub:`OUT` to be pulled down to the negative voltage, V\ :sub:`DDO` by resistor R\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f1.png
-   :align: center
-   :width: 600px
+
+|image1|
 
 .. container:: centeralign
 
@@ -26,9 +25,8 @@ The strength of the inverter devices, the on resistance of the pass FET, and the
 
 We can solve the DC current problem if we can replace the pull up load resistor R\ :sub:`1` with a transistor which can be turned on or off as needed. A second voltage level shifter using two complementary drivers and cross-coupled PMOS loads is shown in figure 2. The operation of circuit is as follows. When the input signal V\ :sub:`IN` is in a logic low state ( at ground ) and with V\ :sub:`INB` at V\ :sub:`DDI` because of the first inverter, M\ :sub:`N1` turns on ( M\ :sub:`N4` is off because of the second inverter ). This pulls the V\ :sub:`OUTB` signal to ground. This transition of V\ :sub:`OUTB` turns on M\ :sub:`P4` which pulls up the V\ :sub:`OUT` node to the V\ :sub:`DDO` voltage rail which turns off M\ :sub:`P3`. In the opposite case when V\ :sub:`IN` is at the V\ :sub:`DDI` rail ( V\ :sub:`INB` is at ground ), M\ :sub:`N1` is off and M\ :sub:`N4` is on, which turns on M\ :sub:`P3`. M\ :sub:`P3` pulls up V\ :sub:`OUTB` to the V\ :sub:`DDO` rail which turns off M\ :sub:`P4`. This design ensures that there is never a steady-state DC current path from V\ :sub:`DDI` or V\ :sub:`DDO` to ground, which insures very low quiescent current consumption. One design consideration is to size M\ :sub:`P3` and M\ :sub:`P4` to be weaker than M\ :sub:`N1` and M\ :sub:`N4` to reduce the potentially large current spikes when the circuit changes state.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -49,9 +47,8 @@ Build the circuit shown in figure 3 on your solder-less breadboard. Use AWG1 to 
 
 There are two versions of a positive level shifter circuit using pull-up resistors. The first version using INV1 to drive the source of M\ :sub:`N1` with the gate of M\ :sub:`N1` connected to the +5V supply rail produces a 0 to +9V swing inverted version of V\ :sub:`IN` at V\ :sub:`OUT1`. The second, simple open-drain, version using INV3 to drive the gate of M\ :sub:`N2` with the source of M\ :sub:`N2` connected to ground produces a 0 to +9V swing non-inverted version of the signal at the input of INV3 at V\ :sub:`OUT2`. INV2 is inserted between V\ :sub:`IN` and the input of INV3 so that V\ :sub:`OUT1` and V\ :sub:`OUT2` both have the same overall inverted phase relationship to V\ :sub:`IN`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -78,9 +75,8 @@ Directions:
 
 Build the circuit shown in figure 4 on your solder-less breadboard. Use AWG1 to drive V\ :sub:`IN` and use the positive power supply, Vp from the ADALM2000 board for V\ :sub:`DDI`. A 9 Volt battery supplies V\ :sub:`DDO`. Scope channel 1 can be used to display V\ :sub:`IN` and channel 2 will be used to view the V\ :sub:`OUT` waveform. You can also observe the complementary output at the drain ( pin 13 ) of MP\ :sub:`1`. Pin 7 of the CD4007 needs to be connected to ground and the rest of the unused pins should be connected to V\ :sub:`DDO`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -99,9 +95,8 @@ Appendix: Making an inverter with the CD4007 transistor array
 
 Below is the schematic and pinout for the CD4007:
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
-   :align: center
-   :width: 420px
+
+|image5|
 
 .. container:: centeralign
 
@@ -125,3 +120,14 @@ These three inverters can be used to construct the three inverters in figure 3 f
 http://en.wikipedia.org/wiki/Logic_level http://www.analog.com/static/imported-files/tutorials/MT-098.pdf
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/avls_f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/alm1k/cd4007_pinout.png
+   :width: 420px

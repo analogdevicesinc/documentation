@@ -18,20 +18,14 @@ S Parameters
    \ **Figure 1: RX High Gain Mode S11**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s21.png
-   :alt: rx_hg_s21.png
-   :align: center
-   :width: 400px
+   |rx_hg_s21.png|
 
 .. container:: centeralign
 
    \ **Figure 2: RX High Gain Mode S21**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s22.png
-   :alt: rx_hg_s22.png
-   :align: center
-   :width: 400px
+   |rx_hg_s22.png|
 
 .. container:: centeralign
 
@@ -128,20 +122,14 @@ S Parameters
    \ **Figure 6: RX Low Gain Mode S11**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s21.png
-   :alt: rx_lg_s21.png
-   :align: center
-   :width: 400px
+   |rx_lg_s21.png|
 
 .. container:: centeralign
 
    \ **Figure 7: RX Low Gain Mode S21**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s22.png
-   :alt: rx_lg_s22.png
-   :align: center
-   :width: 400px
+   |rx_lg_s22.png|
 
 .. container:: centeralign
 
@@ -238,20 +226,14 @@ S Parameters
    \ **Figure 11: TX Mode S11**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s21.png
-   :alt: tx_s21.png
-   :align: center
-   :width: 400px
+   |tx_s21.png|
 
 .. container:: centeralign
 
    \ **Figure 12: TX Mode S21**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s22.png
-   :alt: tx_s22.png
-   :align: center
-   :width: 400px
+   |tx_s22.png|
 
 .. container:: centeralign
 
@@ -270,9 +252,7 @@ IP3
    \ **Figure 14: TX Mode OIP3**\
 
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_iip3.png
-   :align: center
-   :width: 400px
+   |image1|
 
 .. container:: centeralign
 
@@ -334,3 +314,18 @@ All Modes            Rising    146.4   159.2   178.4
 
    Table 9 Switching Speed measurements captured for an RF Frequency of 10 GHz, LO Frequency of 14.5 GHz and IF Frequency of 4.5 GHz.
 
+
+.. |rx_hg_s21.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s21.png
+   :width: 400px
+.. |rx_hg_s22.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_hg_s22.png
+   :width: 400px
+.. |rx_lg_s21.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s21.png
+   :width: 400px
+.. |rx_lg_s22.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/rx_lg_s22.png
+   :width: 400px
+.. |tx_s21.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s21.png
+   :width: 400px
+.. |tx_s22.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_s22.png
+   :width: 400px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/xud1a/tx_iip3.png
+   :width: 400px

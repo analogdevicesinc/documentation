@@ -16,9 +16,9 @@ Installation of Contiki on the RL78/G14 Demonstration Kit
 Obtaining the sources
 ~~~~~~~~~~~~~~~~~~~~~
 
-Analog Devices has a fork of Contiki, with some basic support for the RL78/G14 Demonstration Kit from Renesas. The GIT tree is available on `Github <https://github.com/analogdevicesinc/contiki>`_.
+Analog Devices has a fork of Contiki, with some basic support for the RL78/G14 Demonstration Kit from Renesas. The GIT tree is available on :git-contiki:`Github <contiki>`.
 
-The latest sources can be obtained at the following URL: :git-contiki:`archive/master`.zip
+The latest sources can be obtained at the following URL: https://github.com/analogdevicesinc/contiki/archive/master.zip
 
 Extract the ZIP to the desktop (the extracted folder should be named 'contiki-master').
 

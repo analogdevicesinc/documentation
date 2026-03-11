@@ -8,13 +8,13 @@ Quick Start with Toolbox
 
 The current stable Toolbox can be downloaded from `MathWorks File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/125890-analog-devices-inc-precision-toolbox>`_.
 
-Alternatively, the toolbox can also be installed using the .mltbx installer file from :git-PrecisionToolbox:`Precision Toolbox GitHub Release Page <releases>`. Download the latest .mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. Precision Toolbox" will appear in your `Add-Ons Explorer <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
+Alternatively, the toolbox can also be installed using the .mltbx installer file from `Precision Toolbox GitHub Release Page <https://github.com/analogdevicesinc/PrecisionToolbox/releases>`_. Download the latest .mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. Precision Toolbox" will appear in your `Add-Ons Explorer <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
 
 .. admonition:: Download
    :class: download
 
    
-   -  :git-PrecisionToolbox:`Analog Devices Inc, Precision Toolbox Release Page <releases>`
+   -  `Analog Devices Inc, Precision Toolbox Release Page <https://github.com/analogdevicesinc/PrecisionToolbox/releases>`_
    -  `Analog Devices Inc, Precision Toolbox - MathWorks File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/125890-analog-devices-inc-precision-toolbox>`_
    
 
@@ -28,7 +28,7 @@ Libiio Installers
    :class: download
 
    
-   -  :git-libiio:`Installers and source for latest stable build <releases>`
+   -  `Installers and source for latest stable build <https://github.com/analogdevicesinc/libiio/releases>`_
    -  `Installer for latest nighty build (Windows 32-bit / 64-bit) <https://ci.appveyor.com/project/analogdevicesinc/libiio/build/artifacts?branch=master>`_ (may be unstable / buggy)
    
 
@@ -77,7 +77,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone https://github.com/analogdevicesinc/PrecisionToolbox.git
+   git clone :git-PrecisionToolbox:`PrecisionToolbox`
    cd PrecisionToolbox
 
 To build the toolbox run the following:

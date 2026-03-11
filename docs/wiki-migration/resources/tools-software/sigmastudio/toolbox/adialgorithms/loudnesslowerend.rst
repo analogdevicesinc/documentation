@@ -42,5 +42,5 @@ The parameters available for control on this block include the volume slider, LP
    :alt: loudnesslowpic6.png
    :align: center
 
-.. |loudnesslowpic1.png| image:: https://wiki.analog.com/_media/loudnesslowpic1.png
-.. |loudnesslowpic3.png| image:: https://wiki.analog.com/_media/loudnesslowpic3.png
+.. |loudnesslowpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudnesslowpic1.png
+.. |loudnesslowpic3.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/adialgorithms/loudnesslowpic3.png

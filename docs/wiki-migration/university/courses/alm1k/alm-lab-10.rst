@@ -23,9 +23,8 @@ Directions:
 
 The breadboard connections are as shown in figure 1. The output of the channel A voltage generator drives one end of resistor R\ :sub:`4`. Resistors R\ :sub:`1`, R\ :sub:`2` and transistor Q\ :sub:`1` are connected as in previous zero gain amplifier section. Resistor R\ :sub:`3` and transistor Q\ :sub:`2` are added as in the stabilized current source section. If the SSM2212 matched NPN pair is used it is best that it be used for devices Q\ :sub:`1` and Q\ :sub:`2`. Q\ :sub:`3`\ is added with its emitter grounded, its base connected to the collector of Q\ :sub:`2` and collector connected to the combined node of R\ :sub:`1`, R\ :sub:`3` R\ :sub:`4` and channel B scope input CB-H.
 
-.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab10_f1.png
-   :align: center
-   :width: 550px
+
+|image1|
 
 .. container:: centeralign
 
@@ -65,3 +64,6 @@ All the emitters can be tired to ground ( pins 3,7,10,13 ). Devices Q\ :sub:`1`,
 **For Further Reading:**
 
 **Return to Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm_lab10_f1.png
+   :width: 550px

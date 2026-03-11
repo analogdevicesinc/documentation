@@ -21,7 +21,7 @@ Windows: `libpysmu.pyd (64 bit) <https://ci.appveyor.com/api/projects/analogdevi
 
 Use of the :doc:`Windows installer </wiki-migration/university/tools/m1k/alice/install>` is highly recommended.
 
-Linux: `libpysmu.so <https://github.com/analogdevicesinc/libsmu>`_
+Linux: :git-libsmu:`libpysmu.so <libsmu>`
 
 Required Python version: Python version 2.7.8 or higher
 
@@ -36,9 +36,8 @@ The resistor, R\ :sub:`EXT`, is a known value. For the audio frequency range mea
 
 The unknown impedance to be measured is modeled as a series circuit consisting of an unknown series resistance, R\ :sub:`X`, and an unknown series reactance, jX\ :sub:`X`. The magnitude of the impedance is Z\ :sub:`X`.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -49,9 +48,8 @@ Three voltages are measured: 1. VA is the applied voltage ( from Channel A of th
 
 These three voltages are actually vectors and indicated in figure 2.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig2.png
-   :align: center
-   :width: 500px
+
+|image2|
 
 .. container:: centeralign
 
@@ -108,9 +106,8 @@ Making Measurements:
 
 Connections to the ALM1000 and the network to be measured are shown in figure 3. In this case we show a simple series connected resistor and capacitor. R\ :sub:`EXT` is 1000 Ohms and the series resistor R\ :sub:`S` is 100 Ohms and the capacitor C\ :sub:`S` is 1 uF.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig3.png
-   :align: center
-   :width: 500px
+
+|image3|
 
 .. container:: centeralign
 
@@ -122,9 +119,8 @@ Screen Setup:
 
 Be sure that the ALM1000 is plugged into the USB port before starting the program. Once the program is running, the main screen should appear, as shown in figure 4. It is sub divided into 3 sections.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-1.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -202,9 +198,8 @@ Example 1:
 
 As an example to show the frequency dependent impedance of a series LC circuit we will use ALICE-VVM to examine the combination shown in figure E1 with L\ :sub:`1` equal to 60 mH and C\ :sub:`1` equal to 1 uF. We will use a 100 Ω R\ :sub:`EXT` to be in line with the expected impedance level of the circuit.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige1.png
-   :align: center
-   :width: 500px
+
+|image5|
 
 .. container:: centeralign
 
@@ -213,9 +208,9 @@ As an example to show the frequency dependent impedance of a series LC circuit w
 
 The LC circuit is tested at three different frequencies, the first much lower than the resonate frequency where the impedance is dominated by the capacitor shown in figure E2.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e1c.png
-   :align: center
-   :width: 600px
+
+
+|image6|
 
 .. container:: centeralign
 
@@ -224,9 +219,9 @@ The LC circuit is tested at three different frequencies, the first much lower th
 
 The second much higher than the resonate frequency where the impedance is dominated by the inductor shown in figure E3.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e1i.png
-   :align: center
-   :width: 600px
+
+
+|image7|
 
 .. container:: centeralign
 
@@ -235,9 +230,9 @@ The second much higher than the resonate frequency where the impedance is domina
 
 The third at the resonate frequency where the negative impedance of the capacitor nearly cancels the positive impedance of the inductor shown in figure E4.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e1r.png
-   :align: center
-   :width: 600px
+
+
+|image8|
 
 .. container:: centeralign
 
@@ -251,9 +246,8 @@ Example 2:
 
 We can use ALICE-VVM to measure the input capacitance of channel B. We know that the input capacitance is small so we will need to use a large value for R\ :sub:`EXT` and measure at a high frequency. In figure E5 we show the connections used which is simply to connect CHA to CHB with a 47 KΩ resistor.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige2.png
-   :align: center
-   :width: 500px
+
+|image9|
 
 .. container:: centeralign
 
@@ -262,9 +256,9 @@ We can use ALICE-VVM to measure the input capacitance of channel B. We know that
 
 In the ALICE-VVM screen shot shown in figure E6 we see that Ext Res is set to 47000 and the test frequency is set to 19000 Hz. The calculated capacitance is 370 pF which agrees nicely with the capacitance reported in the document on the ALM1000 analog inputs.
 
-.. image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e2.png
-   :align: center
-   :width: 600px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -304,9 +298,8 @@ An FFT windowing function weights the samples from the beginning of the array to
 
 The reason why we need an FFT window can be seen figures B1-6 in the various spectrums using different FFT window functions. No FFT window (also called a Rectangular window), generates many side bands in the spectrum of the FFT calculation. That is very visible in the first spectrum plot of the Rectangular ( dark orange ) and Cosine ( light orange ) window functions. Very low amplitude signals close to the main signal cannot be measured. So the dynamic range around the large main signal is low. By using an FFT window, the side bands are much more attenuated, how much depends on the type of FFT window. The increased side band suppression is at the expense of the selectivity. FFT windows with a very high side band suppression and therefore a very high dynamic range, have much less selectivity.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
-   :align: center
-   :width: 550px
+
+|image11|
 
 .. container:: centeralign
 
@@ -315,36 +308,30 @@ The reason why we need an FFT window can be seen figures B1-6 in the various spe
 
 A Cosine window is a good compromise between a good selectivity and a good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
-   :align: center
-   :width: 550px
+
+
+|image12|
 
 .. container:: centeralign
 
    Figure B2 Rectangular vs Triangle window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
-   :align: center
-   :width: 550px
+   |image13|
 
 .. container:: centeralign
 
    Figure B3 Rectangular vs Hann window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
-   :align: center
-   :width: 550px
+   |image14|
 
 .. container:: centeralign
 
    Figure B4 Rectangular vs Blackman window function
 
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
-   :align: center
-   :width: 550px
+   |image15|
 
 .. container:: centeralign
 
@@ -353,9 +340,9 @@ A Cosine window is a good compromise between a good selectivity and a good dynam
 
 At the expense of a little wider bandwidth the Nuttall window function provides the best side band reduction and may be the optimal compromise between good selectivity and good dynamic range.
 
-.. image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
-   :align: center
-   :width: 550px
+
+
+|image16|
 
 .. container:: centeralign
 
@@ -373,9 +360,8 @@ Zero Stuffing
 
 With the menu button "Setup" you can set the factor for the Zero stuffing. What problem are trying to solve by Zero stuffing? The bandwidth of the FFT depends on the choice of the FFT window function. For a narrow FFT filter, the bandwidth is slightly larger than the difference between 2 FFT frequency bins. When the signal frequency is exactly between the 2 FFT frequency bins, the signal will be displayed lower than its actual value because half of the signal appears in each of the two bins. Figure B7 shows good example of this. The signal is slightly more than 1 KHz and lies exactly between the two FFT frequency bins. The actual peak value should be equal to 0 dB, but the displayed value of the two adjacent samples is lower. The signal level is not displayed correctly by either of the FFT frequency bins. This is called Scalloping loss.
 
-.. image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
-   :align: center
-   :width: 550px
+
+|image17|
 
 .. container:: centeralign
 
@@ -384,9 +370,9 @@ With the menu button "Setup" you can set the factor for the Zero stuffing. What 
 
 Zero stuffing provides a simple solution to this problem. For 1x Zero Stuffing, we double the size of the time sample array. The original array was say 2048 samples. We add 2048 samples with the value zero and we get a new array with 4096 samples. This may seem counterintuitive, when we add zero's we do not add extra measurement data. However, something happens in the FFT calculation with twice as many samples. The effect can be seen in figure B8. Extra FFT frequency bins have been added. Coincidentally, here the extra frequency bin coincides with the frequency of the signal and the level of the signal is displayed correctly. Also even if the signal frequency does not coincide with the frequency of the extra FFT bin, the measured error will be smaller. As we add samples with the value zero, the bandwidth of the FFT filter remains the same.
 
-.. image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
-   :align: center
-   :width: 550px
+
+
+|image18|
 
 .. container:: centeralign
 
@@ -400,3 +386,40 @@ In the program, you can choose a value between 0 and 5 for the Zero Stuffing. As
 https://en.wikipedia.org/wiki/Fast_Fourier_transform http://www.analog.com/media/en/training-seminars/design-handbooks/MixedSignal_Sect5.pdf https://en.wikipedia.org/wiki/Window_function http://docs.scipy.org/doc/numpy/reference/generated/numpy.fft.fft.html
 
 **Return to the** :doc:`Table of Contents </wiki-migration/university/tools/m1k>`\ **.**
+
+.. |image1| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fig3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-1.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige1.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e1c.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e1i.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e1r.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-fige2.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/tools/alice-vvm-screen-e2.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-cosine.png
+   :width: 550px
+.. |image12| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-triangle.png
+   :width: 550px
+.. |image13| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-hann.png
+   :width: 550px
+.. |image14| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-blackmann.png
+   :width: 550px
+.. |image15| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-nuttall.png
+   :width: 550px
+.. |image16| image:: https://wiki.analog.com/_media/university/tools/rect-win-vs-flattop.png
+   :width: 550px
+.. |image17| image:: https://wiki.analog.com/_media/university/tools/no-zero-stuffing.png
+   :width: 550px
+.. |image18| image:: https://wiki.analog.com/_media/university/tools/zero-stuffing-2.png
+   :width: 550px

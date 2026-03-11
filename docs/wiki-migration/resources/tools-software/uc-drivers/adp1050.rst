@@ -21,11 +21,9 @@ Any other driver related documentation can be found on GitHub by following the n
 .. container:: round
 
    
-   -
-
-
+   -  :git-no-OS:`Documentation of ADP1050 Driver. <drivers/power/adp1050/README.rst>`
    
-   |Documentation of ADP1050 Driver.|
+
 
 Downloads
 ---------
@@ -34,16 +32,7 @@ Downloads
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Implementation of ADP1050 Driver. <drivers/power/adp1050/adp1050.c>`
+   -  :git-no-OS:`Header file of ADP1050 Driver. <drivers/power/adp1050/adp1050.h>`
    
-   |Implementation of ADP1050 Driver.|
 
-   -
-
-   |Header file of ADP1050 Driver.|
-
-.. |Documentation of ADP1050 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/adp1050/README`.rst
-.. |Implementation of ADP1050 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/adp1050/adp1050`.c
-.. |Header file of ADP1050 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/power/adp1050/adp1050`.h

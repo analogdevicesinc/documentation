@@ -67,4 +67,4 @@ Data RAM                   3
 Parameter RAM              0
 ========================== ===================================
 
-.. |pulsecounterpic1.png| image:: https://wiki.analog.com/_media/pulsecounterpic1.png
+.. |pulsecounterpic1.png| image:: https://wiki.analog.com/_media/resources/tools-software/sigmastudio/toolbox/counters/pulsecounterpic1.png

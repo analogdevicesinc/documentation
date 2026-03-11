@@ -13,9 +13,8 @@ Background:
 
 Increasing the reverse bias voltage, V\ :sub:`J`, across a PN junction leads to the redistribution of charge away from the interface leaving a depleted region or layer, W in figure 1. This depleted layer acts like the insulator between the two conducting plates of a capacitor. The thickness, W, of this layer is a function of the applied electric field and the doping concentration. The PN junction capacitance is divided into two components, the barrier capacitance and the diffusion capacitance. Under the conditions of reverse bias free carrier injection does not occur therefore, the diffusion capacitance is equal to zero. The barrier capacitance is the dominant source of capacitance for reverse and small positive bias voltages less than the diode turn on voltage (0.6V for Si). In practice, the barrier capacitance can be as small as a fraction of a picofarad to hundreds of picofarads depending on the area of the junction and the doping concentration. The dependence of the junction capacitance to the applied bias voltage called the capacitance-voltage (CV) characteristic of the junction. In this lab you will measure and plot this characteristic for various PN junctions (diodes).
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f1.png
-   :align: center
-   :width: 500px
+
+|image1|
 
 .. container:: centeralign
 
@@ -36,9 +35,8 @@ Directions Step 1:
 
 Build the test setup as shown in figures 2 and 3 on your solder-less bread board. The first step is to measure the unknown capacitance C\ :sub:`m` with the known C\ :sub:`1`, we connected between the AWG output and Scope input. The two scope minus inputs 1- and 2- are both grounded. The Scope channel 1+ input is tied to the AWG 1 output, W1, using one row on breadboard. Scope channel 2+ is inserted into a bread board row 8 to 10 rows away from the row that the AWG output is inserted in. The row adjacent to scope channel 2+ and towards the AWG1 row is grounded. This is to minimize any unwanted stray coupling between AWG1 and Scope channel 2. Because the Fly-Wires are not shielded, try to keep the W1 and 1+ wires as far away from the 2+ wire as possible.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f2.png
-   :align: center
-   :width: 600px
+
+|image2|
 
 .. container:: centeralign
 
@@ -50,9 +48,8 @@ Hardware Setup:
 
 Using the Network Analyzer instrument in the Scopy software obtain a gain (attenuation) vs. frequency plot from 5 kHz to 10 MHz. Scope channel 1 is the "filter" input and scope channel 2 is the "filter" output. Set AWG offset to 1V and the Amplitude to 200mV peak-to-peak . The offset value is not important at this point when measuring a simple real capacitor but will be used as the reverse bias voltage when we measure diodes in later steps. Set the vertical scale to start at 1dB to -50 dB range. Run a single sweep and export the data to a .csv file. You should notice a high pass characteristic that has a high attenuation at very low frequencies where the impedance of the capacitor is large compared to R\ :sub:`1`. At the very high end of the frequency sweep there should be a relatively flat region where the impedance of the C\ :sub:`1`, C\ :sub:`m`\ capacitive voltage divider is much lower than R\ :sub:`1`.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f3.png
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. container:: centeralign
 
@@ -85,9 +82,8 @@ Directions Step 2:
 
 Now we will measure the capacitance of the various diodes from the ADALP2000 Analog Parts Kit under a range of reverse bias conditions. Build the test setup as shown in figures 4 and 5 on your solder-less bread board. Simply replace C\ :sub:`1` with D\ :sub:`1`, a 1N4001. Be sure to insert the diode with the correct polarity such that a positive offset in AWG1 will reverse bias the diode.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f4.png
-   :align: center
-   :width: 600px
+
+|image4|
 
 .. container:: centeralign
 
@@ -126,7 +122,7 @@ Offset Voltage G\ :sub:`HF` C\ :sub:`diode`
 Table 1 Capacitance vs. voltage data
 
 
-|image1|
+|image5|
 
 .. container:: centeralign
 
@@ -169,4 +165,12 @@ For Further Reading:
 
 **Return to the Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/electronics/labs>`
 
-.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f7_ss.png
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/apn_f7_ss.png

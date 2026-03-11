@@ -58,15 +58,10 @@ The source code for ADIS generic driver can be found here:
    :class: download
 
    
-   -
-
-
+   -   :git-no-OS:`Header file of ADIS Generic Driver <drivers/imu/adis.h>`
+   -   :git-no-OS:`Implementation of ADIS Generic Driver <drivers/imu/adis.c>`
    
-   |Header file of ADIS Generic Driver|
 
-   -
-
-   |Implementation of ADIS Generic Driver|
 
 The generic ADIS driver has to be used together with the chip-specific ADIS driver. The source code for the supported chips is listed below:
 
@@ -85,15 +80,8 @@ The source code for ADIS1650X driver can be found here:
    :class: download
 
    
-   -
-
-
-   
-   |Header file of ADIS1650X Driver|
-
-   -
-
-   |Implementation of ADIS1650X Driver|
+   -  :git-no-OS:`Header file of ADIS1650X Driver <drivers/imu/adis1650x.h>`
+   -   :git-no-OS:`Implementation of ADIS1650X Driver <drivers/imu/adis1650x.c>`
 
 .. raw:: html
 
@@ -115,15 +103,8 @@ The source code for ADIS1657X driver can be found here:
    :class: download
 
    
-   -
-
-
-   
-   |Header file of ADIS1657X Driver|
-
-   -
-
-   |Implementation of ADIS1657X Driver|
+   -  :git-no-OS:`Header file of ADIS1657X Driver <drivers/imu/adis1657x.h>`
+   -   :git-no-OS:`Implementation of ADIS1657X Driver <drivers/imu/adis1657x.c>`
 
 .. raw:: html
 
@@ -136,15 +117,10 @@ The driver also uses the ADI util library, so make sure you also add the necessa
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Header file of ADI util library <include/no_os_util.h>`
+   -  :git-no-OS:`Implementation file of ADI util library <util/no_os_util.c>`
    
-   |Header file of ADI util library|
 
-   -
-
-   |Implementation file of ADI util library|
 
 In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. For SPI communication, there are four functions which are called by the ADIS driver and have to be implemented:
 
@@ -165,11 +141,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for SPI Communication APIs <include/no_os_spi.h>`
    
-   |Generic header file for SPI Communication APIs|
+
 
 You will also have to provide specific APIs for GPIO handling. There are five functions which are called by the ADIS driver and have to be implemented:
 
@@ -189,11 +163,9 @@ An example of a header file containing the prototypes of the functions which hav
    :class: download
 
    
-   -
-
-
+   -  :git-no-OS:`Generic header file for GPIO APIs <include/no_os_gpio.h>`
    
-   |Generic header file for GPIO APIs|
+
 
 ADIS Code Driver Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -918,15 +890,10 @@ The source code for IIO ADIS generic driver can be found here:
    :class: download
 
    
-   -
-
-
+   -   :git-no-OS:`Header file of IIO ADIS Generic Driver <drivers/imu/iio_adis.h>`
+   -   :git-no-OS:`Implementation of IIO ADIS Generic Driver <drivers/imu/iio_adis.c>`
    
-   |Header file of IIO ADIS Generic Driver|
 
-   -
-
-   |Implementation of IIO ADIS Generic Driver|
 
 The generic IIO ADIS driver has to be used together with the chip-specific IIO ADIS driver. The source code for the supported chips is listed below:
 
@@ -945,15 +912,8 @@ The source code for IIO ADIS1650X driver can be found here:
    :class: download
 
    
-   -
-
-
-   
-   |Header file of IIO ADIS1650X Driver|
-
-   -
-
-   |Implementation of IIO ADIS1650X Driver|
+   -  :git-no-OS:`Header file of IIO ADIS1650X Driver <drivers/imu/iio_adis1650x.h>`
+   -   :git-no-OS:`Implementation of IIO ADIS1650X Driver <drivers/imu/iio_adis1650x.c>`
 
 .. raw:: html
 
@@ -975,15 +935,8 @@ The source code for IIO ADIS1657X driver can be found here:
    :class: download
 
    
-   -
-
-
-   
-   |Header file of IIO ADIS1657X Driver|
-
-   -
-
-   |Implementation of IIO ADIS1657X Driver|
+   -  :git-no-OS:`Header file of IIO ADIS1657X Driver <drivers/imu/iio_adis1657x.h>`
+   -   :git-no-OS:`Implementation of IIO ADIS1657X Driver <drivers/imu/iio_adis1657x.c>`
 
 .. raw:: html
 
@@ -1734,20 +1687,3 @@ IIO ADIS Driver Application Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below you can find an Application Example Projects for ADIS IIO drivers: `Evaluating the ADIS165XX Family <https://wiki.analog.com/resources/eval/user-guides/eval-adis165xx/no-os-setup>`_
-
-.. |Header file of ADIS Generic Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/adis`.h
-.. |Implementation of ADIS Generic Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/adis`.c
-.. |Header file of ADIS1650X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/adis1650x`.h
-.. |Implementation of ADIS1650X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/adis1650x`.c
-.. |Header file of ADIS1657X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/adis1657x`.h
-.. |Implementation of ADIS1657X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/adis1657x`.c
-.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
-.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
-.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
-.. |Generic header file for GPIO APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_gpio`.h
-.. |Header file of IIO ADIS Generic Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/iio_adis`.h
-.. |Implementation of IIO ADIS Generic Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/iio_adis`.c
-.. |Header file of IIO ADIS1650X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/iio_adis1650x`.h
-.. |Implementation of IIO ADIS1650X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/iio_adis1650x`.c
-.. |Header file of IIO ADIS1657X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/iio_adis1657x`.h
-.. |Implementation of IIO ADIS1657X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/imu/iio_adis1657x`.c

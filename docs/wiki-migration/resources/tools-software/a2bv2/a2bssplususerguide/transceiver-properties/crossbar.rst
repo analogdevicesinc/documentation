@@ -59,7 +59,8 @@ For example, considering the 3-node schematic with this stream configuration exa
 Sample Stream Definition & Assignment for 3 node schematics
 -----------------------------------------------------------
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sample_stream.png
+   :align: center
 
 .. container:: centeralign
 
@@ -82,7 +83,7 @@ Crossbar view at subnode1
 
 .. container:: centeralign
 
-   \ |image4|\
+   \ |image3|\
 
 
 .. container:: centeralign
@@ -97,7 +98,7 @@ The similar way Rx Interleave also works.
 
 .. container:: centeralign
 
-   \ |image5|\
+   \ |image4|\
 
 
 .. container:: centeralign
@@ -117,7 +118,7 @@ Crossbar supports the below options on Tx pin at the main node side as shown in 
 
 .. container:: centeralign
 
-   \ |image6|\
+   \ |image5|\
 
 
 .. container:: centeralign
@@ -135,7 +136,7 @@ Crossbar supports the below options on Rx pin as shown in the below snapshot:
 
 .. container:: centeralign
 
-   \ |image7|\
+   \ |image6|\
 
 
 .. container:: centeralign
@@ -145,8 +146,7 @@ Crossbar supports the below options on Rx pin as shown in the below snapshot:
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/tx_x-bar.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/ad243x_rx-x_bar.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/sample_stream.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_subnode1.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_main_tx_rx.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_tx_settings.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_rx_settings.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_subnode1.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/crossbar_view_main_tx_rx.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_tx_settings.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/contextmenu_rx_settings.png

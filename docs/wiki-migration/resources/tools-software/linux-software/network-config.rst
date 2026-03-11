@@ -10,9 +10,11 @@ Updating the networking configuration will require a serial connection (UART), e
 
 -  Open up a terminal window
 -  Type in the following command and hit <Enter> ``ifconfig``
--  Check the inet address of **eth 0** to view the IP address assigned\
+-  Check the inet address of **eth 0** to view the IP address assigned
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
+   :align: center
+   :width: 400px
 
 Dynamic Host Configuration Protocol (DHCP)
 ------------------------------------------
@@ -57,49 +59,49 @@ If you are returning from a static IP configuration, and require to have a new D
    -  Type in the user/password which is *analog/analog*
    -  Then type in the following commands:
    
-   ::
    
-      sudo cat > /usr/local/bin/enable_dhcp.sh
-      #!/bin/bash
-      #
-      # Re-enable the default DHCP-based NetworkManager support. Use to revert the
-      # static IP configuration performed by the enable_static_ip.sh script.
-      #
-      # Example usage:
-      # enable_dhcp.sh
-      #
-      # WARNING: Do not use this script if there is a custom network configuration
-      # set up in /etc/network/interfaces as it will be overwritten.
    
-      set -e
+   sudo cat > /usr/local/bin/enable_dhcp.sh
+   #!/bin/bash
+   #
+   # Re-enable the default DHCP-based NetworkManager support. Use to revert the
+   # static IP configuration performed by the enable_static_ip.sh script.
+   #
+   # Example usage:
+   # enable_dhcp.sh
+   #
+   # WARNING: Do not use this script if there is a custom network configuration
+   # set up in /etc/network/interfaces as it will be overwritten.
    
-      if [[/${uid}_-ne_0|${uid}_-ne_0]]; then
-          echo "This script must be run as root!"
-          exit 1
-      fi
+   set -e
    
-      if grep -qi kuiper "/etc/os-release"; then
-          cat <<-EOF > /etc/dhcpcd.conf
-              hostname
-          EOF
-          systemctl daemon-reload
-          systemctl restart dhcpcd.service
-      else
-          echo "Re-enabling DHCP via NetworkManager for all network interfaces"
+   if `${uid}_-ne_0 <https://wiki.analog.com/${uid}_-ne_0>`_; then
+       echo "This script must be run as root!"
+       exit 1
+   fi
    
-          cat <<-EOF > /etc/network/interfaces
-              # interfaces(5) file used by ifup(8) and ifdown(8)
-              # Include files from /etc/network/interfaces.d:
-              source-directory /etc/network/interfaces.d
-          EOF
+   if grep -qi kuiper "/etc/os-release"; then
+       cat <<-EOF > /etc/dhcpcd.conf
+           hostname
+       EOF
+       systemctl daemon-reload
+       systemctl restart dhcpcd.service
+   else
+       echo "Re-enabling DHCP via NetworkManager for all network interfaces"
    
-          # enable DHCP via NetworkManager (assumes the config file hasn't been touched much)
-          sed -i 's/^managed=true/managed=false/' /etc/NetworkManager/NetworkManager.conf
+       cat <<-EOF > /etc/network/interfaces
+           # interfaces(5) file used by ifup(8) and ifdown(8)
+           # Include files from /etc/network/interfaces.d:
+           source-directory /etc/network/interfaces.d
+       EOF
    
-          service network-manager restart
-      fi
-      #<Then Press "Ctrl + D" to save>
-      sudo chmod +x /usr/local/bin/enable_dhcp.sh
+       # enable DHCP via NetworkManager (assumes the config file hasn't been touched much)
+       sed -i 's/^managed=true/managed=false/' /etc/NetworkManager/NetworkManager.conf
+   
+       service network-manager restart
+   fi
+   #<Then Press "Ctrl + D" to save>
+   sudo chmod +x /usr/local/bin/enable_dhcp.sh
    
 
 
@@ -129,60 +131,60 @@ In order to change the default settings of ADI Kuiper Linux please use the follo
    -  Type in the user/password which is *analog/analog*
    -  Then type in the following commands:
    
-   ::
    
-      sudo cat > /usr/local/bin/enable_static_ip.sh
-      #!/bin/bash
-      #
-      # Enable a static IP for eth0 (or another interface) on Ubuntu-based setups.
-      # Note that the wanted IP address should be specified as the first argument;
-      # otherwise, it defaults to 192.168.0.101. Also, the interface can be specified
-      # as the second argument if the default (eth0) isn't wanted.
-      #
-      # Example usage:
-      # enable_static_ip.sh [10.66.99.101] [eth1]
-      #
-      # WARNING: Do not use this script if there is a custom network configuration
-      # set up in /etc/network/interfaces as it will be overwritten.
    
-      set -e
+   sudo cat > /usr/local/bin/enable_static_ip.sh
+   #!/bin/bash
+   #
+   # Enable a static IP for eth0 (or another interface) on Ubuntu-based setups.
+   # Note that the wanted IP address should be specified as the first argument;
+   # otherwise, it defaults to 192.168.0.101. Also, the interface can be specified
+   # as the second argument if the default (eth0) isn't wanted.
+   #
+   # Example usage:
+   # enable_static_ip.sh [10.66.99.101] [eth1]
+   #
+   # WARNING: Do not use this script if there is a custom network configuration
+   # set up in /etc/network/interfaces as it will be overwritten.
    
-      IP_ADDR=${1:-192.168.0.101}
-      ETH_DEV=${2:-eth0}
+   set -e
    
-      if [[/${uid}_-ne_0|${uid}_-ne_0]]; then
-          echo "This script must be run as root!"
-          exit 1
-      fi
+   IP_ADDR=${1:-192.168.0.101}
+   ETH_DEV=${2:-eth0}
    
-      echo "Enabling the static IP address ${IP_ADDR} on ${ETH_DEV}"
+   if `${uid}_-ne_0 <https://wiki.analog.com/${uid}_-ne_0>`_; then
+       echo "This script must be run as root!"
+       exit 1
+   fi
    
-      if grep -qi kuiper "/etc/os-release"; then
-          cat <<-EOF > /etc/dhcpcd.conf
-              interface ${ETH_DEV}
-              static ip_address=${IP_ADDR}/24
-          EOF
-          systemctl daemon-reload
-          systemctl restart dhcpcd.service
-      else
-          # disable NetworkManager (assumes the config file hasn't been touched much)
-          sed -i 's/^managed=false/managed=true/' /etc/NetworkManager/NetworkManager.conf
+   echo "Enabling the static IP address ${IP_ADDR} on ${ETH_DEV}"
    
-          # set up loopback and add static IP config for ${ETH_DEV} (defaults to eth0)
-          cat <<-EOF > /etc/network/interfaces
-              auto lo
-              iface lo inet loopback
+   if grep -qi kuiper "/etc/os-release"; then
+       cat <<-EOF > /etc/dhcpcd.conf
+           interface ${ETH_DEV}
+           static ip_address=${IP_ADDR}/24
+       EOF
+       systemctl daemon-reload
+       systemctl restart dhcpcd.service
+   else
+       # disable NetworkManager (assumes the config file hasn't been touched much)
+       sed -i 's/^managed=false/managed=true/' /etc/NetworkManager/NetworkManager.conf
    
-              auto ${ETH_DEV}
-              iface ${ETH_DEV} inet static
-              address ${IP_ADDR}
-              netmask 255.255.255.0
-          EOF
+       # set up loopback and add static IP config for ${ETH_DEV} (defaults to eth0)
+       cat <<-EOF > /etc/network/interfaces
+           auto lo
+           iface lo inet loopback
    
-          service network-manager restart
-      fi
-      #<Then Press "Ctrl + D" to save>
-      sudo chmod +x /usr/local/bin/enable_static_ip.sh
+           auto ${ETH_DEV}
+           iface ${ETH_DEV} inet static
+           address ${IP_ADDR}
+           netmask 255.255.255.0
+       EOF
+   
+       service network-manager restart
+   fi
+   #<Then Press "Ctrl + D" to save>
+   sudo chmod +x /usr/local/bin/enable_static_ip.sh
    
 
 
@@ -192,19 +194,25 @@ Windows Operating System
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Open up Control Panel > Network and Internet > Network and Sharing Center
--  Click on **Change Adaptor Settings**\
+-  Click on **Change Adaptor Settings**
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/network_sharing_adaptor.png
+   :align: center
+   :width: 600px
 
 -  Find the Ethernet Port and right-click and select **Properties**
--  Find the **Internet Protocol Version 4 (IPv4)** and click on **Properties**\
+-  Find the **Internet Protocol Version 4 (IPv4)** and click on **Properties**
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ipv4_properties.png
+   :align: center
+   :width: 400px
 
 -  Select the radio button that says **Use this IP Address**
--  Enter in the IP address you want to use. To connect with the host board above use an address such as the subnet is the same but the final address is different. For example **192.168.255.2**\
+-  Enter in the IP address you want to use. To connect with the host board above use an address such as the subnet is the same but the final address is different. For example **192.168.255.2**
 
-|image4|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/static_ip.png
+   :align: center
+   :width: 400px
 
 Now you will be ready to directly connect your ADI Kuiper Linux host directly to your PC using the Ethernet port of both devices.
 
@@ -214,12 +222,3 @@ Now you will be ready to directly connect your ADI Kuiper Linux host directly to
 
 
 *End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/serial_terminal_linux_ifconfig_inet.png
-   :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/network_sharing_adaptor.png
-   :width: 600px
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/ipv4_properties.png
-   :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/static_ip.png
-   :width: 400px

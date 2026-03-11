@@ -66,7 +66,7 @@ This section briefs on the usage of MBED firmware. This also explains the steps 
    Source code is hosted here:
 
    
-   -  `precision-converters-firmware <https://github.com/analogdevicesinc/precision-converters-firmware>`_
+   -  :git-precision-converters-firmware:`precision-converters-firmware`
    
    Build Guide for Precision Converters MBED firmware (Use below link):
    
@@ -124,9 +124,8 @@ Firmware allows user to perform the measurement for single or multiple (more tha
 
 User must ensure all sensors are connected to AD7124 evaluation board as per configurations specific in the software and on this wiki page (see subsequent sections). If user intend to change these configurations in the software, the hardware connections must be modified as per new configurations. The details about altering the software modules for modifying the configurations are given in 'Modifying Firmware' section.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/bypassing_lk6_link_on_legacy_board.jpg
-   :align: center
-   :width: 600px
+
+|image3|
 
 .. tip::
 
@@ -190,9 +189,8 @@ Calibrating 3-wire RTDs
 
 Firmware provides an option for user to perform calibrated measurement on 3-wire RTD sensors. There are two types of calibration options available in the firmware. User must modify sensor hardware connections according to configuration defined in the software. Based on selected calibration type, the sensors are first calibrated and then 3-wire RTD measurement is performed on them. For more information on the calibration scheme, refer the :adi:`design note <en/design-center/reference-designs/circuits-from-the-lab/CN0383.html>` on RTD measurement.
 
-.. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7124_3wire_rtd_calibration_menu.jpg
-   :align: center
-   :width: 700px
+
+|image4|
 
 .. tip::
 
@@ -273,3 +271,7 @@ The functionality related with No-OS drivers is covered in below 2 files:
    :width: 650px
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7124_temperature_measure_main_menu.jpg
    :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/bypassing_lk6_link_on_legacy_board.jpg
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/ad7124_3wire_rtd_calibration_menu.jpg
+   :width: 700px

@@ -174,7 +174,9 @@ Main Tab
 Histogram Tab
 ^^^^^^^^^^^^^
 
-| |image11|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-2.png
+   :width: 600px
+
 
 .. important::
 
@@ -352,5 +354,3 @@ More Information and Useful Links
 .. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-inactive.png
 .. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-busy.png
 .. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0357/cn0357-software-error.png
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0364/gui-2.png
-   :width: 600px

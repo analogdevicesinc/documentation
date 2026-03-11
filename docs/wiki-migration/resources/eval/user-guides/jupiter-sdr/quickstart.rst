@@ -15,7 +15,7 @@ Required Software
    -  :doc:`Building the ZynqMP / MPSoC Linux kernel and devicetrees from source </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
    -  :doc:`How to build the ZynqMP boot image BOOT.BIN </wiki-migration/resources/tools-software/linux-software/build-the-zynqmp-boot-image>`
 
--  When streaming data over USB3 interface is desired :git-plutosdr-m2k-drivers-win:`USB driver <releases>` need to be installed on the host computer
+-  When streaming data over USB3 interface is desired `USB driver <https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases>`_ need to be installed on the host computer
 -  UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).
 -  `IIO Osciloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope]>`_
 

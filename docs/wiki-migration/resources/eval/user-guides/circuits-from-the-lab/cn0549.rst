@@ -52,64 +52,99 @@ To prepare the SD-card for the DE10-Nano board:
 Putting together the CN0549
 ---------------------------
 
--  Take out the CN0532 sensor from its packaging, it will look like this.\
+-  Take out the CN0532 sensor from its packaging, it will look like this.
 
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_hw.jpg
+   :align: center
+   :width: 400px
+
+-  Cut the end of an SMA cable at one end, and solder the center tap to the ACC pad and the outside shield to the GND pad.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_soldered2.jpg
+   :align: center
+   :width: 400px
+
+-  Using the EVAL-XLMOUNT1, mount the CN0532 to the side of the cube using the screws provided. It doesn't matter which side you mount, because you will likely need to change the orientation at the customer.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_xlmount1_attached.jpg
+   :align: center
+   :width: 400px
+
+-  Take out the DE10-Nano, it will look like this.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_hw.jpg
+   :align: center
+   :width: 400px
+
+-  Make sure that the FPGA Configuration Mode Switch is set at the following positions.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_fpga_switch_matrix.png
+   :align: center
+   :width: 400px
+
+-  Insert the programmed micro SD Card into the slot provided on the bottom of the DE10-Nano board.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_sdcard_insert.jpg
+   :align: center
+   :width: 400px
+
+-  Make sure you push the SD card all the way into the slot, as its spring loaded and isn't inserted until it clicks all the way in.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_sdcard_connected.jpg
+   :align: center
+   :width: 400px
+
+-  Take of the CN0540 data acquisition(DAQ) board, it will look like this.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_hw.jpg
+   :align: center
+   :width: 400px
+
+-  Orient the CN0540 DAQ board so that the SMA connector is on the same end as the Ethernet jack of the DE10-Nano.
+-  Find the Arduino header pins on the CN0540 and line them up with the mating Arduino connectors found on the DE10-Nano.\
 
 |image1|
 
--  Cut the end of an SMA cable at one end, and solder the center tap to the ACC pad and the outside shield to the GND pad.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked_lineup.jpg
+   :align: center
+   :width: 400px
 
-|image2|
-
--  Using the EVAL-XLMOUNT1, mount the CN0532 to the side of the cube using the screws provided. It doesn't matter which side you mount, because you will likely need to change the orientation at the customer.\
+-  Once both rows of pins are lined up, push the CN0540 DAQ board down into the DE10-Nano so that the boards fit snuggly together.\ |image2| Note, the CN0540 will make solid contact with the DE10-Nano even with the plexiglass installed, so there is no need to remove that before connecting the two boards together.
+-  Connect the SMA cable from the CN0532 sensor board to the SMA connector on the CN0540 DAQ board.\
 
 |image3|
 
--  Take out the DE10-Nano, it will look like this.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_sma_connected.jpg
+   :width: 325px
+
+-  Next its time to connect the peripherals up to the DE10-Nano
+-  Connect up the USB On the GO(OTG) cable using the micro USB port on the DE10-Nano.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_otg_connected.jpg
+   :align: center
+   :width: 400px
+
+-  Place the wireless keyboard/mouse dongle into the end of the USB OTG cable.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_otg_connected_dongle.jpg
+   :align: center
+   :width: 400px
+
+-  Place one end of the HDMI cable into the HDMI connector on the DE10-Nano.\
+
 
 |image4|
 
--  Make sure that the FPGA Configuration Mode Switch is set at the following positions.\
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_hdmi_connected.jpg
+   :width: 400px
+
+-  Connect the 5V power supply to the power jack provided on the DE10-Nano.
+
 
 |image5|
 
--  Insert the programmed micro SD Card into the slot provided on the bottom of the DE10-Nano board.\
-
-|image6|
-
--  Make sure you push the SD card all the way into the slot, as its spring loaded and isn't inserted until it clicks all the way in.\
-
-|image7|
-
--  Take of the CN0540 data acquisition(DAQ) board, it will look like this.\
-
-|image8|
-
--  Orient the CN0540 DAQ board so that the SMA connector is on the same end as the Ethernet jack of the DE10-Nano.
--  Find the Arduino header pins on the CN0540 and line them up with the mating Arduino connectors found on the DE10-Nano.\ |image9|\
-
-|image10|
-
--  Once both rows of pins are lined up, push the CN0540 DAQ board down into the DE10-Nano so that the boards fit snuggly together.\ |image11| Note, the CN0540 will make solid contact with the DE10-Nano even with the plexiglass installed, so there is no need to remove that before connecting the two boards together.
--  Connect the SMA cable from the CN0532 sensor board to the SMA connector on the CN0540 DAQ board.\ |image12|\
-
-|image13|
-
--  Next its time to connect the peripherals up to the DE10-Nano
--  Connect up the USB On the GO(OTG) cable using the micro USB port on the DE10-Nano.\
-
-|image14|
-
--  Place the wireless keyboard/mouse dongle into the end of the USB OTG cable.\
-
-|image15|
-
--  Place one end of the HDMI cable into the HDMI connector on the DE10-Nano.\ |image16|\
-
-|image17|
-
--  Connect the 5V power supply to the power jack provided on the DE10-Nano.
-   |image18|\ |image19|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_power_connected.jpg
+   :width: 400px
 
 Booting
 -------
@@ -146,7 +181,7 @@ If you want to re-calibrate the system, shut the system down, or modify individu
 
 Below is a picture of what the CN0540 IIO Plugin looks like.
 
-|image20|\ |image21|
+|image6|\ |image7|
 
 User interface
 ^^^^^^^^^^^^^^
@@ -199,7 +234,7 @@ For CbM applications, most customers are typically interested in the frequency d
 You should see a nice plot like this when connected to the CN0532 sensor.\
 
 
-|image22|
+|image8|
 
 Additional Information and Useful Links
 ---------------------------------------
@@ -232,47 +267,19 @@ Standalone Demo Kit
 
 // End of Document //
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_hw.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_angled_lineup.jpg
    :width: 400px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_soldered2.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked.jpg
    :width: 400px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0532_xlmount1_attached.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_sma_insert.jpg
    :width: 400px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_hw.jpg
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_hdmi_insert.jpg
    :width: 400px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_fpga_switch_matrix.png
-   :width: 400px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_sdcard_insert.jpg
-   :width: 400px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/de10-nano_sdcard_connected.jpg
-   :width: 400px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_hw.jpg
-   :width: 400px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_angled_lineup.jpg
-   :width: 400px
-.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked_lineup.jpg
-   :width: 400px
-.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/cn0540_de10_stacked.jpg
-   :width: 400px
-.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_sma_insert.jpg
-   :width: 400px
-.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_sma_connected.jpg
-   :width: 325px
-.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_otg_connected.jpg
-   :width: 400px
-.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_otg_connected_dongle.jpg
-   :width: 400px
-.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_hdmi_insert.jpg
-   :width: 400px
-.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_hdmi_connected.jpg
-   :width: 400px
-.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_power_insert.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_power_insert.jpg
    :width: 330px
-.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0549/daq_power_connected.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
    :width: 400px
-.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_controls.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
    :width: 400px
-.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_cn0540_plugin_block_diagram.png
-   :width: 400px
-.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0540/iio_oscilloscope_capture_cn0532.png
    :width: 500px

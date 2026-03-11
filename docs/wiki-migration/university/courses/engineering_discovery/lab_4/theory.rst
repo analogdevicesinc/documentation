@@ -19,10 +19,8 @@ The amplifier is designed to operate from the single +5 V supply available from 
 
 The electret microphone in the ADALP2000 Parts Kit is similar to the Challenge Electronics CEM-C9745JAD462P2.54R microphone. This microphone includes an open-drain FET preamplifier, and requires a drain resistor, R\ :sub:`D`, with value between 680 Ω and 2.2 KΩ, connected between its output and the +5V supply as shown in Figure 1. The drain resistor is set at 2.2 KΩ in this design, which places the drain voltage at approximately +4.5 V with a +5.0 V supply.
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_1.png
-   :alt: audio_amplifier_theory_1.png
-   :align: center
-   :width: 250px
+
+|audio_amplifier_theory_1.png|
 
 .. container:: centeralign
 
@@ -33,10 +31,8 @@ The amplifier is operating on a single +5 V supply, therefore the op-amp DC leve
 
 The design goal is to drive a nominally 400 mV\ :sub:`P-P` signal into an eight ohm loudspeaker, following AC-coupling referenced to ground, requiring about ±25 mA. The emitter-follower is Class A, and thus requires a quiescent current (Q-point) of at least 25 mA, but for practical circuits with non-ideal transistors it should be biased higher. We will initially set the quiescent current at a minimum of 30 mA, allowing for variations due to component availability. The 2N3904 can handle collector current swings up to about 100 mA, with some moderate distortion; in this case the ideal collector current swing is zero to just under 60 mA (limited due to V\ :sub:`CE`\ (sat)). Since the emitter-follower is contained inside a negative feedback loop, the overall distortion will be reduced in proportion to the available loop gain. Clearly, clipping will occur when the 2N3904 collector current goes to zero. Refer to Figure 2 for a schematic diagram of the overall circuit.
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_2.png
-   :alt: audio_amplifier_theory_2.png
-   :align: center
-   :width: 900px
+
+|audio_amplifier_theory_2.png|
 
 .. container:: centeralign
 
@@ -78,10 +74,8 @@ The power supply bypass capacitor, C\ :sub:`BP`, provides a low power supply imp
 
 We’re now ready to complete the final amplifier schematic drawing, shown in Figure 3.
 
-.. image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_3.png
-   :alt: audio_amplifier_theory_3.png
-   :align: center
-   :width: 900px
+
+|audio_amplifier_theory_3.png|
 
 .. container:: centeralign
 
@@ -104,3 +98,10 @@ http://www.nxp.com/documents/data_sheet/2N3904_4.pdf
 CEM-C9745JAD462P2.54R Electret Microphone Data Sheet
 
 http://www.challengeelectronics.com/microphones/omni_directional/
+
+.. |audio_amplifier_theory_1.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_1.png
+   :width: 250px
+.. |audio_amplifier_theory_2.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_2.png
+   :width: 900px
+.. |audio_amplifier_theory_3.png| image:: https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_4/audio_amplifier_theory_3.png
+   :width: 900px

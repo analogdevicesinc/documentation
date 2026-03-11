@@ -16,9 +16,8 @@ TRANSISTORS
 
 A transistor is a solid-state three-terminal amplifying device. There is a terminal common to the input and output signals, and a signal on one of the remaining terminals controls the current in the other.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f1.jpg
-   :align: center
-   :width: 200px
+
+|image1|
 
 .. container:: centeralign
 
@@ -31,9 +30,8 @@ The most basic question of all when choosing a transistor, though, is not whethe
 
 Although FETs had been demonstrated and patented almost twenty years earlier than BJTs\ :sup:`1` the first practical transistors were bipolar\ :sup:`2`. An NPN transistor consists of a thin base of P-type semiconductor sandwiched between two N-type regions, the emitter and the collector. If a current flows from the base to the emitter and a positive bias is present on the collector, a larger current, proportional to the base current, flows in the collector.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f2.jpg
-   :align: center
-   :width: 300px
+
+|image2|
 
 .. container:: centeralign
 
@@ -46,9 +44,8 @@ There are two types of FET, junction FETs (JFETs) and Insulated Gate FETs (IGFET
 
 Today the MOSFET is the commoner device. The N-channel version consists of a strip of P-type silicon with two N-type diffusions. Over the strip between the diffusions is a very thin layer of silicon dioxide (or some other insulator) covered with a conducting film (usually aluminum or polycrystalline silicon). A positive potential on this conducting gate causes the P-type material just under the insulator to become N-type, joining the drain and source diffusions and allowing a current to flow. The amount of current varies with the applied voltage so the device works as an amplifier as well as a switch.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f3.jpg
-   :align: center
-   :width: 550px
+
+|image3|
 
 .. container:: centeralign
 
@@ -59,9 +56,8 @@ Normally MOSFETs are of this type - off when unbiased and turned on by a bias vo
 
 A depletion mode MOSFET has a shallow diffusion under the gate oxide, joining the drain and source and allowing current to flow without gate bias. When the gate is biased negative (for N-channel) this diffusion is pinched by the resulting electric field and the device ceases to conduct.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f4.jpg
-   :align: center
-   :width: 550px
+
+|image4|
 
 .. container:: centeralign
 
@@ -70,9 +66,9 @@ A depletion mode MOSFET has a shallow diffusion under the gate oxide, joining th
 
 An N-channel JFET consists of a strip of N-type silicon with connections (drain and source) at each end and a P-type gate diffusion between them. Without bias on the gate, current can flow in the N-type channel below the diffusion. When the gate is biased negative the depletion zone expands to fill the channel and the drain current is pinched off.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f5.jpg
-   :align: center
-   :width: 550px
+
+
+|image5|
 
 .. container:: centeralign
 
@@ -158,9 +154,8 @@ Most small-signal transistors have I\ :sub:`max` ratings greater than 100 mA - u
 
 A few of the more common transistor packages are shown in figure 6, together with a pair of very early British "Red Spot" audio frequency (f\ :sub:`t`\ =700kHz) germanium junction transistors in forged aluminum cans from the late 1950s. (The "Red Spots" are included for historical interest - as a teenager the author of this article used these "Red Spot" transistors, which were rejects from a production line making devices which actually had type numbers - despite being rejects they still cost about £1 each [over $20 at present day prices], to build a number of different radios and amplifiers, and a Geiger counter.)
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f6.jpg
-   :align: center
-   :width: 500px
+
+|image6|
 
 .. container:: centeralign
 
@@ -173,9 +168,8 @@ Higher power device packages have metal areas to allow thermal conduction to a h
 
 Different devices in the same package may have different pinouts. It is important to realize that two transistors with exactly the same electrical specification and package may not have the same pinout, and are therefore not immediately interchangeable. Figure 7 shows the six possible BJT connections of TO-92 & SOT-23 packages. Back in the 1990s the author managed to track down at least one device with each of these pinouts and although that list has been lost he has no reason to suppose that modern transistors are any less diverse.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f7.jpg
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -186,9 +180,8 @@ In high frequency design it may be useful to select a device with a pinout which
 
 **Collector/drain leakage current. Ice0 or Idss0**(Sometimes called the **"cutoff current"**.) This is the small leakage current which flows from collector to emitter or drain to source when the transistor is turned off. It is usually in the order of tens of nA but data sheets sometimes set rather larger worst case maximum values to reduce testing costs. Transistors used as very low level switches or amplifiers should be chosen for leakage below 50 nA but for most applications 200 nA or even more is quite satisfactory.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f8.jpg
-   :align: center
-   :width: 220px
+
+|image8|
 
 .. container:: centeralign
 
@@ -201,9 +194,8 @@ The low power inverter shown in figure 8 is an example of circuits requiring ver
 
 TUNs and TUPs have ß = 100, but high current and high voltage BJTs may have slightly lower (=40 or 50) minimum specified values.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ictrans_f9.jpg
-   :align: center
-   :width: 150px
+
+|image9|
 
 .. container:: centeralign
 
@@ -212,9 +204,9 @@ TUNs and TUPs have ß = 100, but high current and high voltage BJTs may have sli
 
 An emitter follower/source follower output stage, illustrated in figure 9, is equally accurate with a BJT or an MOSFET. In simple emitter followers it is assumed that the base/emitter or gate/source voltages V\ :sub:`be` or V\ :sub:`gs` remain constant, giving a fixed offset between the input and the load voltage, but in more accurate circuits feedback may be taken from the emitter (source)/load connection.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f10.jpg
-   :align: center
-   :width: 500px
+
+
+|image10|
 
 .. container:: centeralign
 
@@ -253,9 +245,8 @@ FETs are transconductance devices with infinitesimal DC input current so it is i
 
 **Capacitances. C\ ??** There are three capacitances associated with a transistor - the input capacitance C\ :sub:`in`, the output capacitance C\ :sub:`out` and the Miller\ :sup:`10` (or feedback) capacitance C\ :sub:`fb`. Different manufacturers use different names (therefore the C\ :sub:`??` in the heading) but which is which should be perfectly clear from figure 11.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f11.jpg
-   :align: center
-   :width: 500px
+
+|image11|
 
 .. container:: centeralign
 
@@ -339,3 +330,26 @@ http://www.mouser.com/Semiconductors/Discrete-Semiconductors/Transistors/Transis
 http://uk.farnell.com/transistors-bipolar-bjt-single and http://uk.farnell.com/mosfets
 
 http://uk.rs-online.com/web/c/semiconductors/discrete-semiconductors/bipolar-transistors/ and http://uk.rs-online.com/web/c/semiconductors/discrete-semiconductors/mosfet-transistors/
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f1.jpg
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f2.jpg
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f3.jpg
+   :width: 550px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f4.jpg
+   :width: 550px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f5.jpg
+   :width: 550px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f6.jpg
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f7.jpg
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f8.jpg
+   :width: 220px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ictrans_f9.jpg
+   :width: 150px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f10.jpg
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/ctrans_f11.jpg
+   :width: 500px

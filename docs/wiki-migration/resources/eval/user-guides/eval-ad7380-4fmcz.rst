@@ -221,46 +221,57 @@ To install the *ACE* software, take the following steps:
 
 .. container:: centeralign
 
-   \ |image4|//**Figure 4. ACE Software Installation Confirmation** *
+   \ |image4|//**Figure 4. ACE Software Installation Confirmation** //
+
+   
 
 
-- Read the software license agreement and click **I Agree** *(see Figure 5).
-
-.. container:: centeralign
-
-   \ **Figure 5. License Agreement**
-
-
-- Choose an installation location and click **Next** *> (see Figure 6).
+-  Read the software license agreement and click **I Agree** (see Figure 5).
 
 .. container:: centeralign
 
-   \ **Figure 6. Choose Installation Location**
+   \ |image5|//**Figure 5. License Agreement** //
+
+   
 
 
-- Select the **PreRequisites** checkbox to include the installation of the SDP-H1 driver and click **Install** *(see Figure 7).
-
-.. container:: centeralign
-
-   \ **Figure 7. Choose Components Section**
-
-
-- The **Windows Security** window appears. Click **Install** *(see Figure 8). The installation is in progress. No action is required (see Figure 9).
+-  Choose an installation location and click **Next** > (see Figure 6).
 
 .. container:: centeralign
 
-   \ **Figure 8. Windows Security Window**
+   \ |image6|//**Figure 6. Choose Installation Location** //
+
+   
+
+
+-  Select the **PreRequisites** checkbox to include the installation of the SDP-H1 driver and click **Install** (see Figure 7).
+
+.. container:: centeralign
+
+   \ |image7|//**Figure 7. Choose Components Section** //
+
+   
+
+
+-  The **Windows Security** window appears. Click **Install** (see Figure 8). The installation is in progress. No action is required (see Figure 9).
+
+.. container:: centeralign
+
+   \ |image8|//**Figure 8. Windows Security Window** //
+
+   
 
 
 .. container:: centeralign
 
-   \ **Figure 9. Installation in Progress**
+   |image9|//**Figure 9. Installation in Progress** //
+
 
 -  When the installation is complete (see Figure 10), click **Next** > and then click **Finish** to complete.
 
 .. container:: centeralign
 
-   \ |image5|//**Figure 10. Installation Completed** //
+   \ |image10|//**Figure 10. Installation Completed** //
 
 
 Evaluation Board Setup Procedures
@@ -283,15 +294,15 @@ Verifying Board Connection
 
 To verify the board connection, take the following steps:
 
-::
 
-     - When the SDP-H1 board is plugged into the PC, allow the **Found New Hardware Wizard** to run. If using Windows XP, search for the SDP-H1 drivers. If prompted by the operating system, choose to automatically search for the drivers for the SDP-H1 board.
-     - A window may appear asking for permission to allow the program to make changes to the computer. In this case, click **Yes**. The **Computer Management** window opens.
-     - Under System Tools, click **Device Manager** and use the **Device Manager** window to ensure that the SDP-H1 board is connected to the PC properly. If the SDP-H1 driver software is installed and the board is connected to the PC properly, **Analog Devices SDP-H1** appears under **ADI Development Tools** in the **Device Manager window**, as shown in Figure 11.
+
+- When the SDP-H1 board is plugged into the PC, allow the **Found New Hardware Wizard** to run. If using Windows XP, search for the SDP-H1 drivers. If prompted by the operating system, choose to automatically search for the drivers for the SDP-H1 board.
+- A window may appear asking for permission to allow the program to make changes to the computer. In this case, click **Yes**. The **Computer Management** window opens.
+- Under System Tools, click **Device Manager** and use the **Device Manager** window to ensure that the SDP-H1 board is connected to the PC properly. If the SDP-H1 driver software is installed and the board is connected to the PC properly, **Analog Devices SDP-H1** appears under **ADI Development Tools** in the **Device Manager window**, as shown in Figure 11.
 
 .. container:: centeralign
 
-   {{ :resources:eval:user-guides:ad7380-4_fig-011.jpg?nolink&600 |}}//**Figure 11. Device Manager Window** //
+   |resources-eval-user-guides-ad7380-4_fig-011.jpg|//**Figure 11. Device Manager Window** //
 
    
 
@@ -319,15 +330,14 @@ When the EVAL-AD7380-4FMCZ and SDP-H1 boards are properly connected to the PC, l
 
 .. container:: centeralign
 
-   {{ :resources:eval:user-guides:ad7380-4_fig-012.jpg?nolink&600 |}}
-
    
-   //**Figure 12. ACE Software Main Window** *
+   |image11| //**Figure 12. ACE Software Main Window** //
 
 
 .. container:: centeralign
 
-   \ **Figure 13. EVAL-AD7380-4FMCZ View**
+   |image12| //**Figure 13. EVAL-AD7380-4FMCZ View** //
+
 
 Chip View
 ~~~~~~~~~
@@ -343,12 +353,13 @@ See the Software Installation Procedures section and the Evaluation Board Setup 
 
 .. container:: centeralign
 
-   \ |image6| //**Figure 14. Chip View** *
+   \ |image13| //**Figure 14. Chip View** //
 
 
 .. container:: centeralign
 
-   \ **Figure 15. Pop-Up Configurable Window**
+   |image14| //**Figure 15. Pop-Up Configurable Window** //
+
 
 Memory Map Window Features
 --------------------------
@@ -392,7 +403,7 @@ To revert all register values back to the default values, click **Software Defau
 
 .. container:: centeralign
 
-   \ |image7| //**Figure 16. Memory Map View** *
+   \ |image15| //**Figure 16. Memory Map View** *
 
 
 ===== Analysis View ===== Click **Proceed to Analysis** in the bottom right corner of the chip view window (see Figure 14) to open the analysis view window shown in Figure 17. The analysis view contains the **Waveform tab**,**Histogram tab**, and **FFT tab.** *
@@ -442,7 +453,7 @@ The **Histogram** tab contains the histogram graph and the **Results** pane, as 
 
 .. container:: centeralign
 
-   \ |image8| //**Figure 19. Histogram Tab** //
+   \ |image16| //**Figure 19. Histogram Tab** //
 
 
 FFT Tab
@@ -452,7 +463,7 @@ The **FFT** tab displays FFT information for the last batch of samples gathered,
 
 .. container:: centeralign
 
-   \ |image9| //**Figure 20. FFT Tab** //
+   \ |image17| //**Figure 20. FFT Tab** //
 
 
 Analysis Pane
@@ -483,13 +494,31 @@ Board schematic, layout and BOM files. `eval-ad7380-4fmcz_design_files.zip <http
    :width: 600px
 .. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-004.jpg
    :width: 600px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-010.jpg
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-005.jpg
    :width: 600px
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-014.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-006.jpg
    :width: 600px
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-016.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-007.jpg
    :width: 600px
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-019.jpg
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-008.jpg
    :width: 600px
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-020.jpg
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-009.jpg
    :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-010.jpg
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-012.jpg
+   :width: 600px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-013.jpg
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-014.jpg
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-015.jpg
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-016.jpg
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-019.jpg
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-020.jpg
+   :width: 600px
+
+.. |resources-eval-user-guides-ad7380-4_fig-011.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-011.jpg

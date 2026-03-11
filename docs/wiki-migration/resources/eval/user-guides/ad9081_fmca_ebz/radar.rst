@@ -5,10 +5,10 @@ This page is dedicated to the details of building an OFDM radar on a ZCU102 + AD
 
 This was based on a paper pressented at:
 
--
+-  
 
-
-|youtube>hXLwt3q2evs|
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/youtube>hXLwt3q2evs
+   :alt: youtube>hXLwt3q2evs
 
 -  `slides <https://events.gnuradio.org/event/8/contributions/130/attachments/54/103/GRCON%202021%20Winter.pdf>`_
 
@@ -43,7 +43,7 @@ Depending on the age of your release, you may need to build a more recent kernel
 ::
 
    # First clone the repository
-   git clone https://github.com/analogdevicesinc/linux.git
+   git clone :git-linux:`linux`
    cd linux
 
    # First we need to make the Vitis arm64 gcc toolchain available and enable cross compilation
@@ -148,7 +148,7 @@ On account of being a GNU Radio module, the process to build gr-ofdmradar is qui
 ::
 
    # Checkout code
-   git clone https://github.com/analogdevicesinc/gr-ofdmradar.git
+   git clone :git-gr-ofdmradar:`gr-ofdmradar`
    cd gr-ofdmradar
 
    # Make sure this build command matches that of your GNU Radio installation!
@@ -214,8 +214,8 @@ For more details in general about the theoretical underpinnings of OFDM radar, p
 
 For more information about gr-ofdmradar system parameters check out the :git-gr-ofdmradar:`gr-ofdmradar/README.md <README.md>`
 
--  :git-gr-ofdmradar>`__
--  `GNU Radio branch with AD9081 blocks <https::`gr-ofdmradar </github.com/Yamakaja/gnuradio/tree/feature/gr-iio-tdd>`
+-  :git-gr-ofdmradar:`gr-ofdmradar`
+-  `GNU Radio branch with AD9081 blocks <https://github.com/Yamakaja/gnuradio/tree/feature/gr-iio-tdd>`_
 
 --------------
 
@@ -224,7 +224,7 @@ Using the OFDM Radar
 
 This section will describe how you can use the OFDM radar to get some actual returns, how you can tune the system and choose your parameters.
 
-Before going on, please make yourself familiar with the basic operating principles of an OFDM radar, and the meaning of the system parameters: https://github.com/analogdevicesinc/gr-ofdmradar#operating-principle
+Before going on, please make yourself familiar with the basic operating principles of an OFDM radar, and the meaning of the system parameters: :git-gr-ofdmradar#operating-principle:`gr-ofdmradar#operating-principle`
 
 To reinforce your understanding, lets take a look at this example set of parameters.
 
@@ -274,7 +274,7 @@ To explain the min and max value sliders, we need to take a look at how the visu
        x = (x-minV)/(maxV-minV)
        return max(min(x, 1.0), 0.0)
 
-This value is then fed though the turbo color map and shown on screen. For more information see the fragment shader in which all of this is happening: :git-gr-ofdmradar:`lib/resources/screen`.frag
+This value is then fed though the turbo color map and shown on screen. For more information see the fragment shader in which all of this is happening: :git-gr-ofdmradar:`lib/resources/screen.frag`
 
 To really get an understanding of the max and min sliders you may need to play around with them in a simulation, but at least now you should have an idea of what they're doing.
 
@@ -349,7 +349,7 @@ The HDL
 
 .. tip::
 
-   As of writing this document, not all HDL changes have made it into the `upstream <https://github.com/analogdevicesinc/hdl>`_ repository yet, thus you may either use my development branch, or make sure that the most recent commits from that branch have made it into master (Though at that point this paragraph should be updated): https://github.com/Yamakaja/hdl/tree/data_offload
+   As of writing this document, not all HDL changes have made it into the :git-hdl:`upstream <hdl>` repository yet, thus you may either use my development branch, or make sure that the most recent commits from that branch have made it into master (Though at that point this paragraph should be updated): https://github.com/Yamakaja/hdl/tree/data_offload
 
 
 On the HDL side we will be using a Timing Division Duplexing (TDD) core, which was originally developed to control the :adi:`ad9361.html <en/products/ad9361.html>` family of transceivers: See the :doc:`reference_hdl </wiki-migration/resources/eval/user-guides/ad-pzsdr2400tdd-eb/reference_hdl>` for more information about what the TDD core can do.
@@ -368,7 +368,8 @@ Now we should take a look at the "data offload", which is responsible for sampli
 
 The interesting part for us are the synchronization modes, which allows the data offload to remain in a waiting state, until it is triggered either by a write to a register or externally. The integration into the HDL is as follows:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ad9081_zcu102_bd_tdd_do.png
+
+|image1|
 
 .. tip::
 
@@ -380,7 +381,7 @@ As you can tell, the ``tdd_tx_valid`` line is simply connected to the external s
 For a more detailed look at the datapath with the M=8, L=4 configuration, take a look at the following illustration. Now however, that for our purposes the ``UTIL_DACFIFO`` and ``UTIL_ADCFIFO`` have both been replaced by data offloads.
 
 
-|image1|
+|image2|
 
 Synchronization on the RX side is a little more involved, to explain why we need to take a look at the data packing format and the cpack cores. Imagine the following situation (Which will be quite common ;) ), you've got the default JESD configuration running (Four complex channels), but only one of those channels is actually in use. It would obviously be a waste to transfer data which isn't used, which is why the [cu]pack cores take a parallel stream of samples (All four channels, no matter which are in use) and turn that into an interleaved stream of a lower rate. That is if only a single channel out of four is active, in the above situation the output of the CPACK core will be valid only once for every four samples, and that one valid sample of 128-bit will contain all 4 complex samples for that single channel. Because the cpack core is located before the data offload in the sample stream, this means that we can store more samples when fewer channels are active.
 
@@ -506,11 +507,11 @@ With some additional source/sink specific attributes:
 
 **AD9081 Sink Block**
 
-|image2| |image3| |image4| |image5|
+|image3| |image4| |image5| |image6|
 
 **AD9081 Source Block**
 
-|image6| |image7|
+|image7| |image8|
 
 .. tip::
 
@@ -522,7 +523,7 @@ TDD Control
 
 The TDD control block does not have any stream io, and only provides easy access to the underlying IIO attributes:
 
-|image8| |image9|
+|image9| |image10|
 
 gr-ofdmradar
 ^^^^^^^^^^^^
@@ -542,7 +543,8 @@ The ``OFDM Radar Transmitter`` block takes just the system parameters and a leng
 
 The ``OFDM Radar Receiver`` is very similar in terms of parameters, but takes an additional buffer size:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_rx.png
+
+|image11|
 
 .. tip::
 
@@ -553,7 +555,7 @@ Finally the ``OFDM Radar GUI`` block takes ofdm radar params and a GUI hint:
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_gui.png
 
-**For more information on the parameters and OFDM radar algorithm, take a look at the** `gr-ofdmradar/README.md <https://github.com/analogdevicesinc/gr-ofdmradar#operating-principle>`_\ **.**
+**For more information on the parameters and OFDM radar algorithm, take a look at the** :git-gr-ofdmradar:`gr-ofdmradar/README.md <gr-ofdmradar>`\ **.**
 
 DoA Blocks
 """"""""""
@@ -576,14 +578,15 @@ The Doa blocks are less integrated, but also don't come with many parameters. Th
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_esprit.png
 
-.. |youtube>hXLwt3q2evs| image:: https://wiki.analog.com/_media/youtube>hXLwt3q2evs
-.. |youtube>gtTILs929aU| image:: https://wiki.analog.com/_media/youtube>gtTILs929aU
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204b_m8l4.svg
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_general.png
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_channels.png
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_coarse_duc.png
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_fine_duc.png
-.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_source_general.png
-.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_source_coarse_ddc.png
-.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_tdd_general.png
-.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_tdd_primary_timing.png
+.. |youtube>gtTILs929aU| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/youtube>gtTILs929aU
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ad9081_zcu102_bd_tdd_do.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204b_m8l4.svg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_general.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_channels.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_coarse_duc.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_fine_duc.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_source_general.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_source_coarse_ddc.png
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_tdd_general.png
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_tdd_primary_timing.png
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_rx.png

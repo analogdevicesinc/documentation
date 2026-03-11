@@ -67,19 +67,28 @@ Quick Start Guide
 -  Connect the spectrum analyzer to SMA S6 on the evaluation board.
 -  Open DPG Downloader Lite. On the **SDP-H1 Unit 1 Panel**, select **LVCMOS-3.3V** on the Port Configuration. Double check if the **DCO Frequency** detected is 100MHz.
 -  Click on the **Add Generator Waveforms** pulldown menu select **Single Tone**. Set the **Data Rate** to 100MHz and **Desired Frequency** to 5MHz. Check the **Unsigned Data** box and the **Generate Complex Data (I & Q)**. Refer to Figure 2.
--  Select 16 bits **DAC Resolution** for all generics (AD9767, AD9765, AD9763, and AD9709). |image2|\
+-  Select 16 bits **DAC Resolution** for all generics (AD9767, AD9765, AD9763, and AD9709).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg_ad9767.jpg
+   :align: center
+   :width: 800px
 
 .. container:: centeralign
 
-   
-   //Figure 2. DPG Lite Session for AD9709/63/65/67 Evaluation Board] *
+   //Figure 2. DPG Lite Session for AD9709/63/65/67 Evaluation Board] //
 
 
-- Select the I/Q tone from the **I/Q Data Vector** pulldown menu. \* Press the **Download** arrow and then the **Play** button. The spectrum similar to Figure 3 should appear in the signal/spectrum analyzer.\ \
+-  Select the I/Q tone from the **I/Q Data Vector** pulldown menu.
+-  Press the **Download** arrow and then the **Play** button. The spectrum similar to Figure 3 should appear in the signal/spectrum analyzer.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9767_output.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
-   *Figure 3. Spectrum Output for AD9767; Fdac = 100MSPS, Fout = 5MHz*
+   //Figure 3. Spectrum Output for AD9767; Fdac = 100MSPS, Fout = 5MHz //
+
 
 =====Reconfiguring the Evaluation Board===== This section details how to configure the :adi:`AD9709/63/65/67 Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9767.html#eb-relatedhardware>` and allow user to evaluate AD9709, AD9763 and AD9765. Set up the board as shown in figure 4.
 
@@ -87,7 +96,9 @@ Quick Start Guide
 -  To evaluate AD9763, Remove RP6 for DAC channel 1 and RP8 for DAC channel 2 and add 2 22ohm resistors.
 -  To evaluate AD9765, Remove RP6 for DAC channel 1 and RP8 for DAC channel 2 and add 4 22ohm resistors.
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/eval/dpg/ad976x_lower_resolution.png
+   :align: center
+   :width: 600px
 
 .. container:: centeralign
 
@@ -107,8 +118,4 @@ This section lists items to check and practices to use when debugging any unexpe
 -  Disconnect and reconnect the SDP-H1 and AD9709/6x evaluation board. Reopen DPG Lite software.
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad9767_kit_setup.png
-   :width: 600px
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dpg/dpg_ad9767.jpg
-   :width: 800px
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dpg/ad976x_lower_resolution.png
    :width: 600px

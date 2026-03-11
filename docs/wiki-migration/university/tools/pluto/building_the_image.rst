@@ -3,7 +3,7 @@ Building the Firmware Image
 
 .. important::
 
-   It is recommenced to use the pre-build images, which can be found at :git-plutosdr-fw:`github.com/analogdevicesinc/plutosdr-fw/ <releases/latest>`. These are build and tested by Analog Devices, and should work on your PlutoSDR without issues. If you want to change functionality, you will need to follow these instructions. To test your image, it is recommended to use the :doc:`RAM Boot </wiki-migration/university/tools/pluto/devs/reboot>` rather than writing to flash the first time. This keep the default firmware while you are testing your image, so if something goes wrong - its a quick power cycle to fix things.
+   It is recommenced to use the pre-build images, which can be found at `github.com/analogdevicesinc/plutosdr-fw/ <https://github.com/analogdevicesinc/plutosdr-fw/releases/latest>`_. These are build and tested by Analog Devices, and should work on your PlutoSDR without issues. If you want to change functionality, you will need to follow these instructions. To test your image, it is recommended to use the :doc:`RAM Boot </wiki-migration/university/tools/pluto/devs/reboot>` rather than writing to flash the first time. This keep the default firmware while you are testing your image, so if something goes wrong - its a quick power cycle to fix things.
 
 
 Prerequisites

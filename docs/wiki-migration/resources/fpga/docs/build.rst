@@ -15,7 +15,7 @@ Setup and check your environment
 
 This section contains a guide about how to setup your environment in order to build any HDL project from the repository.
 
--  Install the required FPGA Design Suite. You can find information about the proper version in the :git-hdl:`release notes <releases>`. Make sure that you're always using the latest release.
+-  Install the required FPGA Design Suite. You can find information about the proper version in the `release notes <https://github.com/analogdevicesinc/hdl/releases>`_. Make sure that you're always using the latest release.
 -  The proper Vivado/Quartus version can be found in:
 
    -  Starting with the ``hdl_2021_r1`` release branch: :git-hdl:`scripts/adi_env.tcl`
@@ -24,7 +24,7 @@ This section contains a guide about how to setup your environment in order to bu
 -  Download the tools from the following links (it will take a lot of time and space):
 
    -  `Xilinx tools <https://www.xilinx.com/support/download.html>`_ (make sure you're downloading the proper installer! For full installation, it is better to choose the one that downloads and installs both Vivado and Vitis at the same time)
-   -  `Intel tools <https://wiki.analog.com/https/www.intel.com/content/www/us/en/programmable/downloads/download-center.html>`_
+   -  `Intel tools <https://www.intel.com/content/www/us/en/programmable/downloads/download-center.html>`_
 
 -  After you have installed the above mentioned tools, you will need the paths to those directories in the following steps, so have them in a note
 -  We are using `git <https://git-scm.com/>`_ for version control and `GNU Make <https://www.gnu.org/software/make/>`_ to build the projects. Depending on what OS you're using, you have these options:
@@ -465,7 +465,7 @@ Though the ADI libraries work across different versions of the tools, the projec
 
 .. note::
 
-   There are several ways to find out which tool version you should use. The easiest way is to check the :git-hdl:`release notes <releases>`. You may also check out or browse the desired branch, and verify the tool version in the base Tcl script (:git-hdl:`./hdl/projects/scripts/adi_project_xilinx.tcl <projects/scripts/adi_project_xilinx.tcl#L4>`) or (:git-hdl:`./hdl/projects/scripts/adi_project_intel.tcl <projects/scripts/adi_project_intel.tcl#L5>`), which build the projects.
+   There are several ways to find out which tool version you should use. The easiest way is to check the `release notes <https://github.com/analogdevicesinc/hdl/releases>`_. You may also check out or browse the desired branch, and verify the tool version in the base Tcl script (:git-hdl:`./hdl/projects/scripts/adi_project_xilinx.tcl <projects/scripts/adi_project_xilinx.tcl#L4>`) or (:git-hdl:`./hdl/projects/scripts/adi_project_intel.tcl <projects/scripts/adi_project_intel.tcl#L5>`), which build the projects.
 
 
 Environment

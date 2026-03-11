@@ -46,7 +46,8 @@ The SS4G target framework must be flashed on the board to facilitate proper down
 -  The batch script to flash the .ldr file is given as part of the SigmaStudio+ installer. It can be found in <<A2B plugin for SigmaStudio+ installation path>>\\Target\\Utility\\
 -  Run Flash_LDR.bat
 
-|image1|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/flashing_adzs-21569_ez-kit.png
+   :align: center
 
 .. container:: centeralign
 
@@ -62,8 +63,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 
 -  Open A2B schematic from (<<A2B plugin for SigmaStudio+ installation path>>\\Schematics\\PC\\adi_a2b_ADSP21569Demo.ssprj).
 
-
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pcmode.jpg
+   :align: right
 
 .. container:: centeralign
 
@@ -75,7 +76,8 @@ The following steps describe the procedure to run a sample demo in PC mode
 -  Make sure that .xml files are provided for programming codecs on sub A2B evaluation boards as described in step :doc:`Running sample demo: PC as Host </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/pc-as-host>`
 -  Select the schematic DXE for ADSP 21569 processor by going to the SharcXICore Settings as shown in Figure. The DXE can be found at - <<A2B plugin for SigmaStudio+ installation path>>\\Target\\LDR\\SS_App_Core1.dxe
 
-|image3|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/dxe_selection_for_adsp-21569.jpg
+   :align: right
 
 .. container:: centeralign
 
@@ -91,14 +93,11 @@ The following steps describe the procedure to run a sample demo in PC mode
    For creation of .dxe file with different settings, refer to :doc:`Appendix Building ADSP-2156x Project </wiki-migration/resources/tools-software/a2bv2/quickstartguide/appendix-d>`.
 
 
-   |image4|
+   |image1|
 
 .. container:: centeralign
 
    \ **Figure :** ADSP-21569 Audio schematic
 
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/flashing_adzs-21569_ez-kit.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/sample_demo_schematic_in_pcmode.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/dxe_selection_for_adsp-21569.jpg
-.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/adsp-21569_audio_schematic.jpg
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/adsp-21569_audio_schematic.jpg

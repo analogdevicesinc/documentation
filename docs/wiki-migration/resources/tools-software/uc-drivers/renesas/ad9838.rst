@@ -42,7 +42,8 @@ There are three functions which are called by the AD9838 driver:
 -  SPI_Write() – writes data to the device.
 -  SPI_Read() – reads data from the device.
 
-|image2|
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+   :align: center
 
 .. container:: centeralign
 
@@ -78,15 +79,9 @@ Downloads
    
    -  No-OS Driver:
    
-      -
-
+      -  :git-no-OS:`Implementation of AD9838 Driver. <drivers/ad9833/ad9833.c>`
+      -  :git-no-OS:`Header file of AD9838 Driver. <drivers/ad9833/ad9833.h>`
    
-      |Implementation of AD9838 Driver.|
-
-      -
-
-      |Header file of AD9838 Driver.|
-
    -  Older Drivers:
    
       -  `AD9838 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad9838_generic.zip>`_
@@ -248,6 +243,3 @@ More information
 
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad9838.jpg
-.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-.. |Implementation of AD9838 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/ad9833/ad9833`.c
-.. |Header file of AD9838 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/ad9833/ad9833`.h

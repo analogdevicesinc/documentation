@@ -4,7 +4,7 @@ ADRV9009-ZU11EG RF System-on-Module
 Introduction
 ------------
 
-The :adi:`ADRV9009-ZU11EG` :adi:`Export Info <ADRV9009-ZU11EG>` is a highly integrated RF System-On-Module(RF-SOM) based on the Analog Devices :adi:`ADRV9009` and Xilinx `Zynq UltraScale+ MPSoC <https://www.xilinx.com//products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`_. The RF-SOM is a platform for evaluation and prototyping. To use the RF-SOM a carrier board is required. The Analog Devices ADRV2CRR-FMC Carrier board is designed for this purpose. An additional RF Transceiver board can also be fitted to the carrier to further expand the system up to 8 Tx and Rx radio channels.
+The :adi:`ADRV9009-ZU11EG` :adi:`Export Info <ADRV9009-ZU11EG>` is a highly integrated RF System-On-Module(RF-SOM) based on the Analog Devices :adi:`ADRV9009` and Xilinx `Zynq UltraScale+ MPSoC <https://www.xilinx.com/products/silicon-devices/soc/zynq-ultrascale-mpsoc.html>`_. The RF-SOM is a platform for evaluation and prototyping. To use the RF-SOM a carrier board is required. The Analog Devices ADRV2CRR-FMC Carrier board is designed for this purpose. An additional RF Transceiver board can also be fitted to the carrier to further expand the system up to 8 Tx and Rx radio channels.
 
 **The RF-SOM box includes:**
 

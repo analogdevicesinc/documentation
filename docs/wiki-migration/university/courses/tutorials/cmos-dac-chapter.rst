@@ -13,9 +13,8 @@ Real-world analog signals such as temperature, pressure, sound, or images are ro
 
 A DAC produces a quantized (discrete step) analog output in response to a binary digital input code. The transfer function for an example 3 bit DAC is shown in Figure 1. The digital input may be TTL, ECL, CMOS, or LVDS, while the analog output may be either a voltage or a current. To generate the output, a reference quantity (either a voltage or a current) is divided into binary and/or linear fractions. Then the digital input drives switches that combine an appropriate number of these fractions to produce the output. The number and size of the fractions reflect the number of possible digital input codes, which is a function of converter resolution or the number of bits (N) in the input code. For N bits, there are 2\ :sup:`N` possible codes. The analog output of the DAC output is the digital fraction represented as the ratio of the digital input code divided by 2\ :sup:`N` times the analog reference value.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure1.png
-   :align: center
-   :width: 620px
+
+|image1|
 
 .. container:: centeralign
 
@@ -46,9 +45,8 @@ Conceptually, the simplest DACs use a binary-weighted architecture, where N bina
 
 The voltage divider architecture, shown in Figure 2, consists of 2\ :sup:`N` equal value resistors, simplifying matching compared with the binary-weighted approach. All the resistors are of equal value, so the input must be decoded. The output is determined by decoding 1 of 2\ :sup:`N` switches to tap into a particular location on the resistor string. This architecture has the advantage of being completely monotonic, voltage output, and low glitch (as only two switches operate during each code transition). It is also linear if all the resistors are of equal value. A related current-output architecture uses 2\ :sup:`N` equal current sources connected in parallel between a supply voltage and an output node where the currents are summed. The major disadvantage of this architecture is the large number or resistors or current sources required for higher resolutions. This becomes prohibitive in terms of size (and matching) for resolutions above about 8 bits. Nevertheless, while not practical for higher resolutions, these architectures (known as “fully decoded”) are often used as building blocks for high-resolution “segmented” DACs.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure2.png
-   :align: center
-   :width: 620px
+
+|image2|
 
 .. container:: centeralign
 
@@ -60,9 +58,8 @@ The voltage divider architecture, shown in Figure 2, consists of 2\ :sup:`N` equ
 
 Segmented architectures, where the full resolution of the converter is spread across two or more sub-DACs, can be used for both current-and voltage-output DACs. The voltage across the decoded resistor in a resistor string divider circuit can be further subdivided to build a voltage-segmented DAC. This subdivision can be achieved through a second voltage divider circuit or with even a different architecture, as shown in Figure 3. The output of the overall DAC remains monotonic as long as the individual segments are monotonic and the offsets of the two buffer amplifiers in Figure 3 are less than one LSB. Monotonicity is easy to achieve because the individual segments have lower resolution. Segmentation has the added benefit of reducing the number of resistors (or current sources)required to achieve a given resolution, allowing smaller die sizes. Thus, it is common for high-resolution DACs to be segmented. Overall linearity is still determined by the matching of individual elements.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure3.png
-   :align: center
-   :width: 620px
+
+|image3|
 
 .. container:: centeralign
 
@@ -74,9 +71,8 @@ Segmented architectures, where the full resolution of the converter is spread ac
 
 The R-2R, or ladder, architecture simplifies resistor-matching requirements since only two resistor values are required in a 2:1 ratio. The R-2R architecture can be used as a voltage-or current-mode DAC. Most R-2R current-mode architectures are based on the circuit shown in Figure 4a. An external reference is applied to the Vref pin. The R-2R ladder divides the input current into binary-weighted currents. These currents are steered to node 1 or node 2 depending on the digital input. The current-output node is often connected to an op amp configured as a current-to-voltage converter. For matching reasons, the op-amp feedback resistor is usually included on the DAC chip. The switches are always at ground potential, and their voltage rating does not affect the reference voltage rating. If the switches are designed to carry current in either direction, a variable or ac signal may be used as the reference, resulting in a multiplying DAC. The input impedance of Vref is constant and equal to R. The disadvantages of this architecture include the inversion introduced by the op amp requiring both positive and negative power supplies, and the complicated stabilization of the op amp, as the DAC output impedance, seen at node 1, varies with digital input. Current mode operation also results in higher glitch, since the switches connect directly to the output. Voltage-mode R-2R DACs switch resistors between Vref and ground. The reference voltage is applied to node 1. Each rung on the ladder provides a binary-scaled value with the output taken as the cumulative voltage at the end of the ladder as shown in Figure 4b. The output voltage has constant impedance, simplifying amplifier stabilization. A positive reference voltage will provide a positive output, so single supply operation is possible. Glitch generated by switch capacitance is minimized. The drawback is that the reference input impedance varies widely, so a low-impedance reference must be used. Also, the switches operate from ground to Vref , restricting the allowed range of the reference.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure4.png
-   :align: center
-   :width: 620px
+
+|image4|
 
 .. container:: centeralign
 
@@ -90,9 +86,8 @@ For high-resolution DACs, it is common to combine a R-2R ladder architecture wit
 
 A delta-sigma architecture (also called oversampling) can be used for DACs where linearity is preferred over bandwidth (for example, in audio DACs). The architecture consists of a digital interpolation filter, sigma-delta modulator and a 1 bit DAC, shown in Figure 5. The interpolation filter accepts an input data stream at a low rate and inserts zeros to increase the overall number of words in a particular time period, thus increasing the sampling rate of the D/A. The filter interpolates to assign values to the inserted words so that the noise in the output spectrum is concentrated at high frequency. This has the effect of pushing noise out of band, thus reducing the in-band noise and increasing the resolution. The modulator acts as a low-pass filter to the signal, converting it to a high-speed bit stream that is fed into a 1 bit DAC. Depending on the average number of ones or zeros in the bit stream, the DAC output will lie between the positive and negative reference voltages. Very high linearity can be achieved from the 1 bit DAC, which is theoretically perfectly linear. A major part of the converter uses digital circuits, so the chip area and power consumption can be kept small.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure5.png
-   :align: center
-   :width: 620px
+
+|image5|
 
 .. container:: centeralign
 
@@ -111,9 +106,8 @@ Submicron CMOS technologies have become the process of choice for high sample ra
 
 Almost universally, DACs with resolutions from 8 to 16 bits are split into two or more segments. The MSB segment is nearly always made from unit-weighted elements and is thermometer-coded. The number of bits in the MSB segment can vary from as few as 4 bits to as many as 8 bits, with 5 and 6 bits being the slightly more common choice. The rest of the bits may be binary coded but are often further segmented into a thermometer-coded intermediate significant bit (ISB) section and a LSB binary-coded section. A notable exception to the use of thermometer coding is proposed in Ref.[10]. Here competitive performance is achieved using unit elements but combined and switched in binary fashion. It also seems that P-channel metal oxide semiconductor (PMOS) currents and switches are used more often than N-channel metal oxide semiconductor (NMOS) currents, especially when the next circuit block in the signal chain does not reside on the same die as the DAC. Using PMOS devices on a standard twin-well process on P-type wafers provides the opportunity to isolate the back gates of the devices and bias them at some potential other than a power supply or ground. Within a system with only positive power supplies, PMOS provides the convenience of having the output load referenced to ground as well. Newer triple well processes have become available in deep submicron, which provide the ability to isolate the NMOS devices but poorer 1/f noise performance, as well as needing positive supply referred output loads, has limited the appeal of going with NMOS currents. Depicted in Figure 6 is the basic structure of a typical CMOS DAC [1,8]. This example provides 14 bits of overall resolution. The five MSBs are composed of 31 unit-weighted elements and are thermometer-coded. Each unit element consists of a cascoded PMOS current source and a PMOS differential current switch pair. The remaining nine bits of the DAC are further segmented into four thermometer-decoded intermediate bits with the five LSBs being binary coded. Because just five of the MSBs are thermometer-coded, leaving 9 bits remaining, the inclusion of the thermometer coding for the 4 intermediate bits helps insure these 9 bits have sufficient INL and DNL accuracy for the overall resolution of the DAC.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure6.png
-   :align: center
-   :width: 620px
+
+|image6|
 
 .. container:: centeralign
 
@@ -161,18 +155,16 @@ Reference Segmentation Process Node (µm) 14 Bit DNL 14 Bit INL
 
 The individual devices, which make up the unit current sources in the matrix, can be broken up and distributed around the matrix to cancel out process-induced gradients across the array. Figure 9a and 9b show two possible layout techniques to minimize matching errors in the current sources. The individual transistors, which make up each cell in the matrix, consists of two gate stripes sharing common source and drain diffusions, thus minimizing the overall area. Often included, but not shown here, are rows of dummy devices around the periphery. This insures that the local environment is uniform when the polygates are patterned. In the examples shown, the 64 elements of the 8×8 matrix are combined into eight current sources. In Figure 9a, the units are combined along diagonals of the matrix as proposed (by Reynolds) in Ref. [23]. This is a simple interconnect method and requires the fewest number of metal layers because each combination of elements has at least two members on an edge and all interior cells are adjacent to another member of their group.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure8.png
-   :align: center
-   :width: 550px
+
+
+|image7|
 
 .. container:: centeralign
 
    Figure 8 Floor plan arranged by functional block.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure9.png
-   :align: center
-   :width: 620px
+   |image8|
 
 .. container:: centeralign
 
@@ -183,9 +175,8 @@ In Figure 9b, the units are combined around a common centroid where the average 
 
 In order to insure optimal differential linearity the carry from an MSB to the sum of the remaining LSBs should be addressed. For low resolution LSB segments (4 to 5 bits) individual transistors in the matrix could be combined in a binary fashion to generate the desired current values. For higher resolution LSB segments, a popular way to accomplish this is by subdividing an extra MSB unit current source to provide the remaining lower bits of the DAC. This insures that the current from the total of all the LSBs closely matches the MSBs. A current-splitting array of transistors (sub-DAC) can be used in place of a single cascode device as used in an MSB cell. For example, a 9 bit sub-DAC splitter could be further segmented into a 4 bit thermometer-coded upper segment and with binary-weighted elements for the five LSBs. The current splitter gate rail could be driven by a control loop separate from that of the MSB cascodes as shown in Figure 10 [28], closing the loop on the drain of the current source. In this way, all the main MSB unit current source operating points now match even though the effective cascodes, MP1 for the MSBs and MP2 for the LSBs, have potentially different V\ :sub:`gs` operating points.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure10.png
-   :align: center
-   :width: 620px
+
+|image9|
 
 .. container:: centeralign
 
@@ -201,9 +192,8 @@ There are also two basic approaches to storing the correction factors for the in
 
 There are certain systematic sources of error in this technique. The operating conditions of trim device MN1 and the devices in the main current source Im potentially vary between the calibration and normal operation modes. The V\ :sub:`ds` of the devices is set equal to the V\ :sub:`gs` of MN1 while in calibration (Figure 11a). However, while in normal operation (Figure 11b), the V\ :sub:`ds` is set by whatever circuitry is connected to the terminal OUT. This could be a cascode device or the output switches of the DAC. Because of the finite output impedance of the current source devices, the current that results in the operating mode will be different than that flowing in the calibration configuration. Each cell is slightly different and the amount of adjustment needed, i.e., the gate voltage of MN1, will be different. The change in current between calibration and operation modes will depend on the level of the adjustment. This will limit the accuracy of the calibrated result. In order to maximize the headroom in designing current sources, the devices are often biased such that the V\ :sub:`ds` is marginally larger than the V\ :sub:`dsat` of the device. In this configuration, the V\ :sub:`ds` of MN1 and Im must be equal to the V\ :sub:`gs` of MN1 when in calibration.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure11.png
-   :align: center
-   :width: 620px
+
+|image10|
 
 .. container:: centeralign
 
@@ -214,18 +204,15 @@ Static storage of a digital correction value as used in Refs. [4,8] does not nee
 
 CAL DAC injects a small correction current in parallel with the main current source at the drain of MP1. The switches, which redirect the current either to the output node or the calibration hardware, act as the cascode devices and thus fix the drain voltage of the main current source device, MP1, to be the same, within the matching of the V\ :sub:`gs` of the two cascode switches, in both cases [27]. This can result in a much more accurate calibration. The additional circuitry used for the calibration is not clocked during normal operation and does not consume power or inject noise into the main signal path. The calibration algorithm in its first cycle calibrates the master current from MP7 to be the same as MSB current segment number 1 with its calibration DAC set to mid-scale. This in effect trims out any systematic offsets from either the NMOS mirror (MN1–4) or the voltage comparator. The trim range of the CAL DAC used to adjust the master Iref (not shown in Figure 12) is twice that of the other CAL DACs to allow for these offsets. In the second cycle, MSB current number 1 is trimmed against the now adjusted master current. This readjustment must be done because, as just indicated, the master current CAL DAC step size is twice that of all other CAL DACs and may result in a systematic difference between the value of MSB number 1 and the other MSBs. In the following cycles, the remaining MSB currents are adjusted in sequence to equal the master current. The configuration of the 6 bit calibration DAC is shown in Figure 13. The weight of MSB current MP1 is equal to 512 14 bit LSBs. A current equal to 16 LSBs is generated by the combination of MP2 and the splitting devices. From the typical raw DNL values from Table 1, we see a typical DNL of around than 3 LSB. Providing a trim range of ±8LSB or ±1.5% is sufficient to cover the worst-case matching errors. MP2 operates in the linear region and serves as a degeneration resistance for the devices in the splitting array. These devices are weighted as shown totaling 63 units.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure12.png
-   :align: center
-   :width: 620px
+
+|image11|
 
 .. container:: centeralign
 
    Figure 12 Static digital storage correction.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure13.png
-   :align: center
-   :width: 620px
+   |image12|
 
 .. container:: centeralign
 
@@ -245,9 +232,8 @@ An INL mechanism that results from the use of a switched multiple current source
 
 where Iunit is the magnitude of the unit current source RL is the load impedance Nu is the number of unit current elements Rsw is the impedance of a unit current source
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure14.png
-   :align: center
-   :width: 620px
+
+|image13|
 
 .. container:: centeralign
 
@@ -268,9 +254,8 @@ The parasitic capacitances shown in Figure 14b reduce the current source impedan
 
 Early work on a 16 bit DAC in BiCMOS in Ref.[18] pointed out that high-frequency operation requires not only that the switch common source node capacitance be small but also linear. A switch
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure15.gif
-   :align: center
-   :width: 620px
+
+|image14|
 
 .. container:: centeralign
 
@@ -286,9 +271,8 @@ The thermometer-coded segments of a switched current DAC are very much analogous
 
 One possible approach to this is propagation delay matching [4] illustrated in Figure 16a. Here if we assume that each cell has the same delay. and the delay along the clock distribution line from bottom cell 1 to top cell n is d1 and the delay along the output signal line is d2 then the sample timing is preserved if d1 = d2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure16.png
-   :align: center
-   :width: 620px
+
+|image15|
 
 .. container:: centeralign
 
@@ -315,18 +299,15 @@ An example of this effect is shown in Figure 18. The effect is made more pronoun
 
 We can get a workable solution by taking the shadow or mirror data paths concept of Ref. [25] and combining it with what we concluded from Ref. [16] and realize that by doubling the number of latches by simply adding the seconds a mirror path for each original latch and driving the mirror latch in such a way as to cause it to change state only when the main data latch does not. One way this mirror data can be generated is shown in Figure 19 [29]. By combining the main data signal with a clock signal at F\ :sub:`clock`/2, or one-half the main clock rate, with an exclusive OR gate the mirror data signal is created such that it changes only when the main data does not. By doubling the number of latches, we have doubled the load on the clock driver, but it is now independent of the incoming data pattern.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure17.png
-   :align: center
-   :width: 620px
+
+|image16|
 
 .. container:: centeralign
 
    Figure 17 Final latch circuit.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure18.gif
-   :align: center
-   :width: 520px
+   |image17|
 
 .. container:: centeralign
 
@@ -339,18 +320,15 @@ A more area-and power-efficient solution, which addresses this problem is shown 
 
 The gate current that the buffer driving CLK needs to supply to transistor MN1 is a function of the relative voltage levels present at input D and output Q. If the voltage on D is the same as on Q a slightly smaller amount of charge is needed to turn on MN1 than if D is not equal to Q. MN3 shares its drain connection with MN1 at input D, but the source is connected to the output of INV6. The voltage on the output of INV6 will be opposite INV1 because the input of INV6 is connected to the output of INV3, an inverted version of output QB. INV6 is a gated inverter and the output will be in a high impedance state when CLK is high and will be driven high or low when CLK is low.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure19.png
-   :align: center
-   :width: 620px
+
+|image18|
 
 .. container:: centeralign
 
    Figure 19 Constant clock load data path.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure20.png
-   :align: center
-   :width: 620px
+   |image19|
 
 .. container:: centeralign
 
@@ -366,9 +344,8 @@ Shortly after the CLK line goes high, the latch formed by cross-connected INV1 a
 
 The differential output switch pair (MP1,MP2; Figure 21) could be driven directly with full supply rail swing outputs of the CMOS logic, the Q, QB nodes in Figure 17 or Figure 20. This would be the lowest power solution. However, it is well known that for the best SFDR performance, the crossing point for the gate drive signals of the output current switch pair needs to be optimized [1,2]. The circuit that drives the differential switch should ensure that both switches are never completely off at the same time so that the current from the current source is always flowing at a constant value. This minimizes the excursion of the voltage on the switch common source node, Cs, during a transition. Any current lost to parasitic capacitor C1 causes output distortions. The disturbance on Cs should be symmetric around the nominal DC value as indicated in Figure 21. To the extent that the disturbance cannot be completely eliminated, as pointed out earlier, it is important that C1 be minimized [21]. It is also important to point out that it is not necessary to bring the gates of the switch devices any higher than the voltage on the common source node Cs, when turning off the device (V\ :sub:`gs` = 0). This reduces any feed through of the gate drive signals to the outputs or the common source node.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure21.png
-   :align: center
-   :width: 600px
+
+|image20|
 
 .. container:: centeralign
 
@@ -377,9 +354,9 @@ The differential output switch pair (MP1,MP2; Figure 21) could be driven directl
 
 Another source of dynamic error relates back to the fact that a small attenuated amount of the output signal leaks through the gds of the differential switch onto node Cs. The amplitude of the signal seen at node Cs is typically about 1/20 that seen at outputs IA and IB or 50 mV for a 1 V swing at the output. Each switch element turns on at a different point in the transfer function and as a result will have a different wave shape on node Cs. In Figure 22a, the complementary outputs IA and IB are shown. Referring to Figure 21, node Cs will have the attenuated version of IA when MP1 is on and the attenuated version of IB when MP2 is on. In Figure 22b, we see what the signal on
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure22.gif
-   :align: center
-   :width: 520px
+
+
+|image21|
 
 .. container:: centeralign
 
@@ -394,18 +371,15 @@ Simulation results of an example case is shown in Figure 23, where the normalize
 
 The circuit, which produces the appropriate signals at the gates, is shown in Figure 24. The full supply rail swing outputs from the final latch, Q,QB (Figure 20), are used to turn on and off NMOS devices MN1–4, which connect the two outputs G1 and G2 to either the node, which sets the output common mode level or the VSB bias node. The output common mode level is most often ground but in this example circuit can be adjusted, external to the die, to accommodate interfacing to other circuits, which may require that the common mode voltage be as much as 1.2 V or more such as a mixer or modulator. The amount of output shift can be traded off with increasing or decreasing the analog supply voltage. The VSB node is driven to a voltage approximately the V\ :sub:`gs` of the output switches above the output common mode level.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure23.gif
-   :align: center
-   :width: 460px
+
+|image22|
 
 .. container:: centeralign
 
    Figure 23 Switch timing delay versus output swing.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure24.png
-   :align: center
-   :width: 400px
+   |image23|
 
 .. container:: centeralign
 
@@ -416,9 +390,8 @@ For each transition of the data, a large narrow spike of current is drawn from t
 
 The switch driver bias generator is shown in Figure 25. PMOS device MP1 is scaled to mimic one of the output switches. The voltage on node VSB will be equal to the voltage on node OT_CM (output common mode level from Figure 24), plus the V\ :sub:`gs` of MP1. NMOS device MN1, driven from BIAS2, determines the overall current level in the block. A portion of MN1's current is diverted by MN2 and through the mirror gain of MP3 to MP2 (approximately 3 in this case) supplies the current to the source of MP1. This feedback provides some degree of regulation and lowers the dynamic impedance at node VSB.
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure25.png
-   :align: center
-   :width: 410px
+
+|image24|
 
 .. container:: centeralign
 
@@ -437,18 +410,15 @@ Return-to-zero switching can reduce the distortion from digital data noise-induc
 
 Dynamic element matching or distortion spreading techniques are popular methods of improving spurious-free dynamic range by smearing the distortion into a noise-like component in the output of the DAC. Random spreading produces a more white noise-like result. Other approaches can shape
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure26.png
-   :align: center
-   :width: 410px
+
+|image25|
 
 .. container:: centeralign
 
    Figure 26 Return-to-zero switching.
 
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure27.png
-   :align: center
-   :width: 410px
+   |image26|
 
 .. container:: centeralign
 
@@ -459,9 +429,8 @@ the noise characteristic to place it out of the band of interest, if there is so
 
 Ordinary differential current switching results in some data-dependent distortions arising from the jump or glitch on the common source node of the switch pair. This ordinary switch does not toggle every clock transition, and as a result, the switching event is dependent on the data pattern, introducing distortion in the band of interest. Another approach to the data pattern-dependent dynamic errors pointed out in Ref. [12], is a quad differential current switch proposed in Ref. [17]for an oversampling DAC and again in Ref. [5] for a multibit Nyquist DAC. By using four switches instead of the normal two, we are in effect interleaving two return-to-zero switches. The configuration of the quad switch is shown in Figure 27. There are four switch devices MP1, MP2, MP3, and MP4, which share a single common source connection Cs, which nearly doubles the parasitic capacitance compared to the conventional two switch scheme. The unit element current Imsb is supplied to node Cs as in the ordinary differential switch. Only one of the four switches is on at any given time as indicated by the switching waveforms of Figure 28. The gate of each switching transistor is driven by a signal shown in Figure 28, three of the four
 
-.. image:: https://wiki.analog.com/_media/university/courses/tutorials/figure28.png
-   :align: center
-   :width: 410px
+
+|image27|
 
 .. container:: centeralign
 
@@ -477,7 +446,7 @@ Quad switching like this incorporates some of the good points of both RZ switchi
 
 A number of major contributors to errors and distortion in modern switched current DACs have been discussed. Static device matching can be addressed either though statistical averaging or calibration. One or more cascodes can be included, along with insuring that the output switches remain in saturation, to reduce the effect of output impedance variation. The importance of gate drive signals was explored. Much like the flash ADC, clock distribution is a key factor. Digital data pattern generated noise needs to be addressed and the effect on clock noise can be a major source of distortion. Return-to-zero switching can be employed to retime the output sampling time. The use of a quad switch and constant data activity switching techniques can shift spurious outputs to the sampling frequency.
 
-**Return to** :adi:`Previous Chapter </media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter6.pdf>`
+**Return to** :adi:`Previous Chapter <media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter6.pdf>`
 
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-20>`
 
@@ -551,3 +520,58 @@ REFERENCES
 32. AD9744 data sheet.
 
 33. T. Chen et al., The analysis and improvement of a current-steering DACs dynamic SFDR—I: The cell- dependent delay differences, IEEE Trans. Circuits Syst.-I, 53(1), 3–15, 2006.
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure1.png
+   :width: 620px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure2.png
+   :width: 620px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure3.png
+   :width: 620px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure4.png
+   :width: 620px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure5.png
+   :width: 620px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure6.png
+   :width: 620px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure8.png
+   :width: 550px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure9.png
+   :width: 620px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure10.png
+   :width: 620px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure11.png
+   :width: 620px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure12.png
+   :width: 620px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure13.png
+   :width: 620px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure14.png
+   :width: 620px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure15.gif
+   :width: 620px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure16.png
+   :width: 620px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure17.png
+   :width: 620px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure18.gif
+   :width: 520px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure19.png
+   :width: 620px
+.. |image19| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure20.png
+   :width: 620px
+.. |image20| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure21.png
+   :width: 600px
+.. |image21| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure22.gif
+   :width: 520px
+.. |image22| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure23.gif
+   :width: 460px
+.. |image23| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure24.png
+   :width: 400px
+.. |image24| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure25.png
+   :width: 410px
+.. |image25| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure26.png
+   :width: 410px
+.. |image26| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure27.png
+   :width: 410px
+.. |image27| image:: https://wiki.analog.com/_media/university/courses/tutorials/figure28.png
+   :width: 410px

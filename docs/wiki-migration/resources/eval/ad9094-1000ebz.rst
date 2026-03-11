@@ -19,7 +19,8 @@ For additional information or questions, post a question on :ez:`Engineer Zone <
 AD9094 Evaluation Board
 -----------------------
 
-|image1|\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad90941000ebztop.png
+   :align: center
 
 .. container:: centeralign
 
@@ -31,14 +32,15 @@ Typical Measurement Setup
 
 The :adi:`AD9094-1000EBZ <AD9094>` can be evaluated using the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ FPGA data capture board. The figures below show the :adi:`AD9094-1000EBZ <AD9094>` connected to the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
 
-|image2|\
+
+|image1|
 
 .. container:: centeralign
 
    //:adi:`AD9094-1000EBZ <AD9094>` Jumpers Placement //
 
 
-|image3|\
+   |image2|
 
 .. container:: centeralign
 
@@ -110,7 +112,11 @@ Before using the software for testing, configure the evaluation board as follows
 -  Make sure the jumpers are placed on the evaluation board as highlighted in green in the figure **AD9094 Evaluation Board**.
 -  Ensure that the S1 on ADS7-V2 is off. Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01 supplied) to P4 on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ board. Connect the Standard-B USB port of the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ board to the PC with the supplied USB cable.
 -  Turn on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
--  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ will appear in the Device Manager.\ |image4|\
+-  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ will appear in the Device Manager.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/9694_ads7v2_devmgr.png
+   :align: center
+   :width: 300px
 
 .. container:: centeralign
 
@@ -164,14 +170,17 @@ ACE Setup
 
 
 -  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` ACE :math:`right` ACE
--  Once ACE opens the AD9094 evaluation board should appear in the **Attached Hardware** section. |image5|\
+-  Once ACE opens the AD9094 evaluation board should appear in the **Attached Hardware** section.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_plugin.png
+   :align: center
 
 .. container:: centeralign
 
-   //ACE Attached Hardware: AD9094 *
+   //ACE Attached Hardware: AD9094 //
 
 
-- If the AD9094 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed. 
+-  If the AD9094 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed. 
 
 .. warning::
 
@@ -180,11 +189,14 @@ ACE Setup
 
 
 
-- Double click on the **AD9094-1000EBZ** icon which will open up the Chip Configuration in Board View. The default conditions for the AD9094 are Full BW mode with a sample clock of 1 GHz and Combined AB/CD. From here both pairs of ADC channels (Pair AB and Pair CD) can be configured either identically or independently when ACE Plugin Mode is set to Independent AB/CD mode. \
+-  Double click on the **AD9094-1000EBZ** icon which will open up the Chip Configuration in Board View. The default conditions for the AD9094 are Full BW mode with a sample clock of 1 GHz and Combined AB/CD. From here both pairs of ADC channels (Pair AB and Pair CD) can be configured either identically or independently when ACE Plugin Mode is set to Independent AB/CD mode.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_initial_configuration.png
+   :align: center
 
 .. container:: centeralign
 
-   *ACE - AD9094 Chip Configuration and Board View*
+   \ *ACE - AD9094 Chip Configuration and Board View*\
 
 
 
@@ -196,46 +208,80 @@ ACE Setup
 
 
 
-- From the board view **Chip Configuration** the clock frequency, chip application mode (per pair), and the JESD204B settings can be quickly configured. The default conditions are: \* ACE Plugin Mode =**Combined AB/CD*** Clock Input =**1 GHz*** Chip Operating Mode =**Full Bandwidth Mode*** Clock Divider =**Divide by 1*** JESD204B Parameters:**L.M.F = 2.2.2** *;**N = 8** *;**N' = 8*** All these parameters can be seen below:\
+-  From the board view **Chip Configuration** the clock frequency, chip application mode (per pair), and the JESD204B settings can be quickly configured. The default conditions are:
+
+   -  ACE Plugin Mode = **Combined AB/CD**
+   -  Clock Input = **1 GHz**
+   -  Chip Operating Mode = **Full Bandwidth Mode**
+   -  Clock Divider = **Divide by 1**
+   -  JESD204B Parameters: **L.M.F = 2.2.2** ; **N = 8** ; **N' = 8**
+
+-  All these parameters can be seen below:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_configuration.png
+   :align: center
 
 .. container:: centeralign
 
-   *ACE - AD9094 Initial Configuration Wizard Showing JESD204B Parameters*
+   \ *ACE - AD9094 Initial Configuration Wizard Showing JESD204B Parameters*\
 
 
-- Double click the **AD9094** icon in the Board View to open the Chip View\ \
+-  Double click the **AD9094** icon in the Board View to open the Chip View
 
-.. container:: centeralign
-
-   *ACE - AD9094 Device Chip View*
-
-
-- You can access the **Memory Map** for both the Chip and FPGA from either the AD9094 Board View or Chip View. The **Memory Map** can be used to individually write registers in the AD9094.**Note: When writing individual registers it is imperative to first write the Pair Index register (0x0009) before any other write so that the correct ADC channel pair (Pair AB or Pair CD) is being addressed. If writing a local register, subsequently write the ADC channel index register (0x0008) so that the desired channel within the desired pair is written (Channel A/C or Channel B/D).** *\
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_chip_view.png
+   :align: center
 
 .. container:: centeralign
 
-   *Memory Map View (click to enlarge)*
+   \ *ACE - AD9094 Device Chip View*\
 
 
-==== Obtaining an FFT - Full BW Mode ==== \* The default Chip Application Mode for the* :adi:`AD9094-1000EBZ <AD9094>` *is Full BW mode. In this example the clock frequency will be set to **1000 MHz**, the clock divider set to **Divide by 1**, and the chip operating mode set to **Full BW Mode**. Once the settings have been entered, click **Apply**. This will configure the device with the selected settings and provide an **Chip Configuration Summary** which will summarize the settings that have been loaded into the AD9094 and also provide the frequency for the required FPGA reference clock. \
+-  You can access the **Memory Map** for both the Chip and FPGA from either the AD9094 Board View or Chip View. The **Memory Map** can be used to individually write registers in the AD9094. **Note: When writing individual registers it is imperative to first write the Pair Index register (0x0009) before any other write so that the correct ADC channel pair (Pair AB or Pair CD) is being addressed. If writing a local register, subsequently write the ADC channel index register (0x0008) so that the desired channel within the desired pair is written (Channel A/C or Channel B/D).**
 
-.. container:: centeralign
-
-   *Board View: Full BW Mode*
-
-
-- In this example, with an input clock of 1000MHz, the output lane rate is 10 Gbit/s. The default JESD204B lane configuration for the JESD204B link of each ADC Channel Pair is 2.2.2 (L.M.F). The required REFCLK frequency is 500 MHz (refer to step 8 in the \`section "Configuring the Board"). \* Double click the **AD9094** icon in the Board View to open the Chip View, where you can adjust analog input settings such as input buffer current, input full-scale voltage, VREF, and PLL settings. Once the settings are configured click **Apply Changes** in the upper left of the chip view. This will load the setting changes to the selected ADC pair and channel(s). If the settings are desired for all four channels, then click the **Apply** button in the **Analog Inputs** window on the left of the screen. This loads the current settings to all channels in the device.\ \
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_memory_map.png
+   :align: center
 
 .. container:: centeralign
 
-   *Chip View: Full BW Mode*
+   \ *Memory Map View (click to enlarge)*\
 
 
-- (W/Issue at ACE Plugin - Need to fix) Issue a **Datapath Reset** to the AD9094 by clicking the box and clicking **Apply Changes**. The datapath reset bit will automatically self-clear. * (W/Issue at ACE Plugin - Need to fix) If the **PLL Locked** lost indicator lights up, you can reset it by powering down the JESD link using the **JESD Link Power Cycle** box and clicking **Apply Changes**. * Click the **Proceed to Analysis** and then click "Run Once" to see the captured data. \* Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the Results panel of the Analysis View.) \
+Obtaining an FFT - Full BW Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The default Chip Application Mode for the :adi:`AD9094-1000EBZ <AD9094>` is Full BW mode. In this example the clock frequency will be set to **1000 MHz**, the clock divider set to **Divide by 1**, and the chip operating mode set to **Full BW Mode**. Once the settings have been entered, click **Apply**. This will configure the device with the selected settings and provide an **Chip Configuration Summary** which will summarize the settings that have been loaded into the AD9094 and also provide the frequency for the required FPGA reference clock.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_full_bw_mode_1.png
+   :align: center
 
 .. container:: centeralign
 
-   *AD9094 FFT with 155 MHz Input Frequency*
+   \ *Board View: Full BW Mode*\
+
+
+-  In this example, with an input clock of 1000MHz, the output lane rate is 10 Gbit/s. The default JESD204B lane configuration for the JESD204B link of each ADC Channel Pair is 2.2.2 (L.M.F). The required REFCLK frequency is 500 MHz (refer to step 8 in the \`section "Configuring the Board").
+-  Double click the **AD9094** icon in the Board View to open the Chip View, where you can adjust analog input settings such as input buffer current, input full-scale voltage, VREF, and PLL settings. Once the settings are configured click **Apply Changes** in the upper left of the chip view. This will load the setting changes to the selected ADC pair and channel(s). If the settings are desired for all four channels, then click the **Apply** button in the **Analog Inputs** window on the left of the screen. This loads the current settings to all channels in the device.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_full_bw_mode_2.png
+   :align: center
+
+.. container:: centeralign
+
+   \ *Chip View: Full BW Mode*\
+
+
+-  (W/Issue at ACE Plugin - Need to fix) Issue a **Datapath Reset** to the AD9094 by clicking the box and clicking **Apply Changes**. The datapath reset bit will automatically self-clear.
+-  (W/Issue at ACE Plugin - Need to fix) If the **PLL Locked** lost indicator lights up, you can reset it by powering down the JESD link using the **JESD Link Power Cycle** box and clicking **Apply Changes**.
+-  Click the **Proceed to Analysis** and then click "Run Once" to see the captured data.
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the Results panel of the Analysis View.)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_results_155_mhz_input.png
+   :align: center
+
+.. container:: centeralign
+
+   \ *AD9094 FFT with 155 MHz Input Frequency*\
+
 
 
 
@@ -291,10 +337,6 @@ EVALUATION BOARD FAILS TO CAPTURE DATA
       -  Check the reference clock and make sure it matches your JESD settings.
       -  Make sure P100 (Power Down / Standby Jumper) is not jumped.
 
-.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad90941000ebztop.png
-.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9694_jumpers_new_board.jpg
-.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9694_connection_new_board_v1.png
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9694_jumpers_new_board.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9694_connection_new_board_v1.png
    :width: 1000px
-.. |image4| image:: https://wiki.analog.com/_media/resources/eval/9694_ads7v2_devmgr.png
-   :width: 300px
-.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9094-ace_plugin.png

@@ -6,13 +6,13 @@ ADI maintains a set of tools to model, interface, and target with ADI time of fl
 Quick Start with Toolbox
 ------------------------
 
-The current stable Toolbox can be downloaded from the :git-TimeofFlightToolbox:`Time of Flight Toolbox GitHub Release Page <releases>`. Download the latest mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. Time of Flight Toolbox" will appear in your `Add-Ons Explore <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
+The current stable Toolbox can be downloaded from the `Time of Flight Toolbox GitHub Release Page <https://github.com/analogdevicesinc/TimeofFlightToolbox/releases>`_. Download the latest mltbx file then open that file within MATLAB. Opening the file will automatically install the Toolbox, adding the necessary components to your MATLAB path. The "Analog Devices, Inc. Time of Flight Toolbox" will appear in your `Add-Ons Explore <https://www.mathworks.com/help/matlab/matlab_env/manage-your-add-ons.html>`_ within MATLAB.
 
 .. admonition:: Download
    :class: download
 
    
-   -  :git-TimeofFlightToolbox:`Analog Devices Inc, Time of Flight Toolbox Release Page <releases>`
+   -  `Analog Devices Inc, Time of Flight Toolbox Release Page <https://github.com/analogdevicesinc/TimeofFlightToolbox/releases>`_
    
 
 
@@ -32,7 +32,7 @@ First clone the repo and move into it:
 
 ::
 
-   git clone https://github.com/analogdevicesinc/TimeofFlightToolbox.git
+   git clone :git-TimeofFlightToolbox:`TimeofFlightToolbox`
    cd TimeofFlightToolbox
 
 To create a installable tlbx file run:

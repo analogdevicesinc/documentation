@@ -6,9 +6,8 @@ Chapter 2: Introduction and Chapter Objectives
 
 The operational amplifier (op amp) is one of the basic building blocks of linear design. In its basic form it consists of two input terminals, one of which inverts the phase of the signal, the other preserves the phase, and an output terminal. The standard symbol for the op amp is shown in figure 2.1. This ignores the two power supply terminals, which are obviously required for operation. Op amps are often divided into two types, those that use both a positive and negative power supply and those that use only a single, usually positive power supply. Since all op amps have only two supply pins this distinction is often unnecessary.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f1.png
-   :align: center
-   :width: 400px
+
+|image1|
 
 .. container:: centeralign
 
@@ -41,9 +40,8 @@ None of these can be actually realized, of course. How close a real implementati
 
 The attributes of an ideal VFB op amp are summarized in figure 2.2.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f2.png
-   :align: center
-   :width: 550px
+
+|image2|
 
 .. container:: centeralign
 
@@ -62,13 +60,7 @@ There are two basic ways to configure the ideal voltage feedback op amp as an am
 
 Figure 2.3 shows what is known as the inverting configuration. With this circuit, the output is 180º out of phase with the input. The signal gain of this circuit is determined by the ratio of the resistors used and is given by:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e1.png
-   :align: center
-   :width: 120px
-
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f3.png
-   :align: center
-   :width: 500px
+|image3| |image4|
 
 .. container:: centeralign
 
@@ -83,13 +75,7 @@ The input impedance, as always, is the impedance to ground for an input signal. 
 
 Figure 2.4 shows what is known as the non-inverting configuration. With this circuit the output is in phase with the input. The signal gain of the circuit is also determined by the ratio of the resistors used and is given by:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e2.png
-   :align: center
-   :width: 120px
-
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f4.png
-   :align: center
-   :width: 500px
+|image5| |image6|
 
 .. container:: centeralign
 
@@ -115,9 +101,8 @@ From a practical sense, resistors below 10 Ω and above 1 MegΩ are more difficu
 
 Let us look at the case of an inverting amp in a little more detail. Referring to figure 2.5, the non-inverting terminal is connected to ground. We are assuming a bipolar (both positive and negative) power supply. Since the op amp will force the differential voltage across the inputs to zero, the inverting input will also appear to be at ground. In fact, this node is often referred to as a virtual ground.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f5.png
-   :align: center
-   :width: 500px
+
+|image7|
 
 .. container:: centeralign
 
@@ -181,9 +166,8 @@ In all of the discussions above, we referred to the gain setting components as r
 
 Multiple input voltages can be summed by the addition of multiple input resistors to the simple inverting op amp configuration as shown in figure 2.7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f7.png
-   :align: center
-   :width: 500px
+
+|image8|
 
 .. container:: centeralign
 
@@ -203,9 +187,8 @@ If all the input resistors R\ :sub:`1`, R\ :sub:`2`, ... R\ :sub:`n` are equal b
 
 The op amp differential gain stage (also known as a differential amplifier, or subtractor) is shown in figure 2.7.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f8.png
-   :align: center
-   :width: 500px
+
+|image9|
 
 .. container:: centeralign
 
@@ -230,9 +213,8 @@ The great fundamental utility that an op amp stage such as this allows is the pr
 
 A disadvantage of this stage is that the resistor networks load the V\ :sub:`1`-V\ :sub:`2` sources, potentially leading to additional errors if the driving impedance is not low compared to R\ :sub:`G`. A solution to this problem is to insert unity gain (non-inverting) follower stages before the input resistors as shown in figure 2.8.1
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f9.png
-   :align: center
-   :width: 550px
+
+|image10|
 
 .. container:: centeralign
 
@@ -246,9 +228,8 @@ A disadvantage of this stage is that the resistor networks load the V\ :sub:`1`-
 
 Instrumentation Amplifiers are high gain differential amplifiers with high input impedance and a single ended output. They are mainly used to amplify very small differential signals from certain kinds of transducers or sensors such as strain gauges, thermocouples or current sensing resistors in motor control systems. They also have very good common mode rejection (zero output when V\ :sub:`1` = V\ :sub:`2`) in excess of 100dB at DC. A typical example of an instrumentation amplifier with a high input impedance (Zin) is shown in figure 2.9. As you can see it is very similar to the configuration of figure 2.8.1 but with the two input buffers now serving as non-inverting gain stages.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f10.png
-   :align: center
-   :width: 550px
+
+|image11|
 
 .. container:: centeralign
 
@@ -273,9 +254,8 @@ To change the differential gain of the circuit we simply change the value of R\ 
 
 This assumes Vin- and Vin+ are referenced to Vcc/2 in the case of single supply op amps.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f11.png
-   :align: center
-   :width: 550px
+
+|image12|
 
 .. container:: centeralign
 
@@ -329,13 +309,7 @@ An integrator is a circuit which has an output voltage that is proportional to t
 
 Remembering that division by s in the complex frequency domain is equivalent to an integration in the time domain, it follows from this equation that the time domain output voltage is given by:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e18.png
-   :align: center
-   :width: 300px
-
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f12.png
-   :align: center
-   :width: 500px
+|image13| |image14|
 
 .. container:: centeralign
 
@@ -354,9 +328,8 @@ Many of these problems can be made less severe by adding a large resistor R\ :su
 
 To illustrate the operation of this integrator circuit we simulated the circuit with the input resistor R = 2.5 KΩ and the feedback capacitor C = 0.1µF. The input voltage V\ :sub:`in`, shown in green in figure 2.12 is a -1 volt to +1 volt square wave with a 1mSec period ( high for 500 µSec and low for 500 µSec). The integrator output voltage V\ :sub:`out` is shown in blue in figure 2.12. The simulation starts when the output voltage is zero and thus the voltage across the capacitor, C is also zero (V\ :sub:`initial` = 0). As we can see the output waveform is a triangle wave with a slope determined by the integrator time constant RC and V\ :sub:`in`. The RC time constant (250 mSec) was chosen such that given the -1 to +1 volt input V\ :sub:`in` the output will ramp up and down 2 volts in each of the 500 mSec half cycles of the input square wave.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f13.png
-   :align: center
-   :width: 500px
+
+|image15|
 
 .. container:: centeralign
 
@@ -376,13 +349,7 @@ A differentiator is a circuit which has an output voltage that is proportional t
 
 Again remembering that multiplication by s in the complex frequency domain is equivalent to a differentiation in the time domain, it follows from the above equation that the time domain output voltage is given by:
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e15.png
-   :align: center
-   :width: 230px
-
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f14.png
-   :align: center
-   :width: 500px
+|image16| |image17|
 
 .. container:: centeralign
 
@@ -401,9 +368,8 @@ Note that this configuration can also be viewed as a high-pass filter. It is a f
 
 To illustrate the operation of this differentiator circuit we simulated the circuit with the feedback resistor R = 2.5 KΩ and the input capacitor C = 0.1µF. The input voltage V\ :sub:`in`, shown in green in figure 2.14 is a -1 volt to +1 volt triangle wave with a 1mSec period ( ramp up for 500 µSec and ramp down for 500 µSec). The differentiator output voltage V\ :sub:`out` is shown in blue in figure 2.14. The simulation starts when the input voltage is zero and thus the voltage across the capacitor, C is also zero (V\ :sub:`initial` = 0). As we can see the output waveform is a square wave with an amplitude determined by the differentiator time constant RC and the slope (volts/sec) of V\ :sub:`in`. The RC time constant (250 mSec) was chosen such that given the -1 to +1 volt ramp of input V\ :sub:`in` the output will be + and - 1volt for each of the 500 mSec half cycles of the input square wave.
 
-.. image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f15.png
-   :align: center
-   :width: 500px
+
+|image18|
 
 .. container:: centeralign
 
@@ -417,3 +383,40 @@ The negative input terminal of the op amp is also plotted (V\ :sub:`sumjnc` red 
 **Go to** :doc:`Next Chapter </wiki-migration/university/courses/electronics/text/chapter-3>`
 
 **Return to** :doc:`Table of Contents </wiki-migration/university/courses/electronics/text/electronics-toc>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f1.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f2.png
+   :width: 550px
+.. |image3| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e1.png
+   :width: 120px
+.. |image4| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f3.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e2.png
+   :width: 120px
+.. |image6| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f4.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f5.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f7.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f8.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f9.png
+   :width: 550px
+.. |image11| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f10.png
+   :width: 550px
+.. |image12| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f11.png
+   :width: 550px
+.. |image13| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e18.png
+   :width: 300px
+.. |image14| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f12.png
+   :width: 500px
+.. |image15| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f13.png
+   :width: 500px
+.. |image16| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-e15.png
+   :width: 230px
+.. |image17| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f14.png
+   :width: 500px
+.. |image18| image:: https://wiki.analog.com/_media/university/courses/electronics/text/chptr2-f15.png
+   :width: 500px
