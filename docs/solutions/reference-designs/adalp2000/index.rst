@@ -121,7 +121,7 @@ Kit Contents
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: lt3080.png   | LT3080      | Adjustable     | :adi:`LT3080 <lt3080>`   |
 |    :width: 250 px        |             | 1.1A LDO       |                          |
-|    :height: 250 px       |             |                |                          |
+|                          |             |                |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: ltc1043.png  | LTC1043     | Precision Swit\| :adi:`LTC1043 <ltc1043>` |
 |    :width: 250 px        |             | ch-CAP Block   |                          |
@@ -164,11 +164,11 @@ Kit Contents
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: bb_small.png | solderless  | solderless     |                          |
 |    :width: 250 px        | Breadboard  | Breadboard     |                          |
-|    :height: 250 px       |             |                |                          |
+|                          |             |                |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: j_wires.png  | Jumper      | Male to Male   |                          |
 |    :width: 250 px        | Wires       | Jumper Wires   |                          |
-|    :height: 250 px       |             |                |                          |
+|                          |             |                |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: screwd.png   | Screwdriver | Flathead       |                          |
 |    :width: 250 px        |             | Screwdriver    |                          |
@@ -178,7 +178,7 @@ Kit Contents
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: speaker_f.png| Speaker     | 8 Ω Speaker    |                          |
 |    :width: 250 px        |             |                |                          |
-|    :height: 250 px       |             |                |                          |
+|                          |             |                |                          |
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: therm.jpg    | B57164K103J | 10 kΩ Thermist\| :download:`Datasheet     |
 |    :width: 250 px        |             | or 5mm lead    | <k164-1317145.pdf>`      |
@@ -190,7 +190,7 @@ Kit Contents
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: pots.png     | * 3386C-1-5\| * Single Turn  | :download:`Datasheet     |
 |    :width: 250 px        |   02LF      |   5 kΩ Poten\  | <3386t-1-503.pdf>`       |
-|    :height: 250 px       |             |   tiometer     |                          |
+|                          |             |   tiometer     |                          |
 |                          | * 3386C-1-1\|                |                          |
 |                          |   03LF      | * Single Turn  |                          |
 |                          |             |   10 kΩ Poten\ |                          |
@@ -275,7 +275,7 @@ Kit Contents
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: inductors.png| * RFB0807-1\| * 1uH Inductor | :download:`Datasheet     |
 |    :width: 250 px        |   R0L       |   5mm radial   | <rfb.pdf>`               |
-|    :height: 250 px       |             |   Link         |                          |
+|                          |             |   Link         |                          |
 |                          | * RFB0807-1\|                |                          |
 |                          |   00L       | * 10uH Inductor|                          |
 |                          |             |   5mm radial   |                          |
@@ -362,7 +362,7 @@ Kit Contents
 +--------------------------+-------------+----------------+--------------------------+
 | .. figure:: caps.jpg     |             | * 39 pF Ceramic| * Link Marking: 39       |
 |    :width: 250 px        |             |   Capacitor    |                          |
-|    :height: 250 px       |             |   Disc         | * Link Marking: 101      |
+|                          |             |   Disc         | * Link Marking: 101      |
 |                          |             |                |                          |
 |                          |             | * 100 pF Ceram\| * Link Marking: 102      |
 |                          |             |   ic Capacitor |                          |
