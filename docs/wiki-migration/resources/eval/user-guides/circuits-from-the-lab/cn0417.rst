@@ -54,7 +54,7 @@ Running the System
 
 
 
--After completing the setup, the :adi:`EVAL-CN0417-EBZ Board <CN0417>` will automatically turn on and output the amplified version of the input.
+- After completing the setup, the :adi:`EVAL-CN0417-EBZ Board <CN0417>` will automatically turn on and output the amplified version of the input.
 
 Normal Operation
 ~~~~~~~~~~~~~~~~

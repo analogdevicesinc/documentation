@@ -56,9 +56,9 @@ The SPI Engine can be implemented in two ways, either by placing and connecting 
 
 Using the script ensures that the correct connections are being made and that the IP cores will receive the correct parameter configuration since certain parameters need to be set to the same value. The function takes the following argumets
 
+::
 
-
-proc spi_engine_create {{name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0}}
+   proc spi_engine_create {{name "spi_engine"} {data_width 32} {async_spi_clk 1} {num_cs 1} {num_sdi 1} {sdi_delay 0} {echo_sclk 0}}
 
 **data_width** will set the width of the data bus / data line used by the SPI engine to connect to the DMA and which serves the purpose of sending ADC sample data to the DDR memory. The data_width value will also set the maximum word length for the SPI transfer. Valid values are are 8/16/24/32. The DMA valid values are 16/32/64/128[…]. Since the Pulsar_ADC devices are all single SDI/SDO and some of them require 18bit transfers, this value will be rounded to 32bit.
 

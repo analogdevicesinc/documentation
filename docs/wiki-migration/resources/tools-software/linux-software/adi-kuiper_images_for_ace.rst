@@ -119,7 +119,7 @@ Cora Z7
    
    
    
-   -  `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip>`_
+   - `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip>`_
       * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.zip    ''01BBDB4C174312A37E6566D8C0634019''
       * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r6-2024-08-14.img    ''39C8444BD9ADF25CAE928E25F7F84F2A''
    
@@ -157,7 +157,7 @@ Cora Z7
    
    
    
-   -  `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip>`_
+   - `Actual file <https://swdownloads.analog.com/cse/kuiper/2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip>`_
       * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.zip    ''56901ab486d6d3f1b5e62b2661f53827''
       * md5sum 2021-07-28-ADI-Kuiper-full-for-ace-r5-2024-04-02.img    ''33349d31cad19197ac706b80486e07f7''
 

@@ -67,7 +67,7 @@ Configure kernel with “make menuconfig” (alternatively use “make xconfig�
                [--snip--]
                  Temperature sensors --->
            [--snip--]
-               -*- Analog Devices Multi-Sensor Digital Temperature Measurement System
+               - *- Analog Devices Multi-Sensor Digital Temperature Measurement System
            [--snip--]
 
 Hardware configuration

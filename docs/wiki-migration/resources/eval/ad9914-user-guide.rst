@@ -6,9 +6,13 @@ Features
 
 
 
-- PC evaluation software for control and measurement \\ of the :adi:`AD9914` and :adi:`AD9915`
+- PC evaluation software for control and measurement
+
+of the :adi:`AD9914` and :adi:`AD9915`
 - USB connection to PC
-- Microsoft Windows-based evaluation software with simple \\  graphical user interface (supports 64-bit versions of Windows)
+- Microsoft Windows-based evaluation software with simple
+
+graphical user interface (supports 64-bit versions of Windows)
 
 Applications
 ------------
@@ -58,12 +62,12 @@ After the installation of the evaluation software is complete, follow these step
 
 
 
--Power up the evaluation board and apply the REF CLK source. See the :doc:`Evaluation Board Hardware </wiki-migration/resources/eval/ad9914-user-guide>` section for properly powering the evaluation board.
--  Connect the evaluation board to the computer via the USB port using the USB cable included in the evaluation board kit. When the USB connection is recognized, a green LED light (D200) illuminates and the **Found New Hardware Wizard** dialog box appears.
--  Click **Next** to continue installing the new driver.
--  Click **Continue Anyway** when the **Hardware Installation Warning** window appears.
--  Click **Finish** in the **Found New Hardware Wizard** when installation is complete. Note that another **Found New Hardware Wizard** dialog box usually appears to complete the device driver installation.
--  Repeat Step 3 to Step 5 in this section.
+- Power up the evaluation board and apply the REF CLK source. See the :doc:`Evaluation Board Hardware </wiki-migration/resources/eval/ad9914-user-guide>` section for properly powering the evaluation board.
+- Connect the evaluation board to the computer via the USB port using the USB cable included in the evaluation board kit. When the USB connection is recognized, a green LED light (D200) illuminates and the **Found New Hardware Wizard** dialog box appears.
+- Click **Next** to continue installing the new driver.
+- Click **Continue Anyway** when the **Hardware Installation Warning** window appears.
+- Click **Finish** in the **Found New Hardware Wizard** when installation is complete. Note that another **Found New Hardware Wizard** dialog box usually appears to complete the device driver installation.
+- Repeat Step 3 to Step 5 in this section.
 
 Confirming the Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,14 +194,14 @@ In profile mode, the three DDS signal control parameters (frequency, phase offse
 
 
 
--Power up the evaluation board and apply the REF CLK source to clock the :adi:`AD9914`/:adi:`AD9915`.
--Launch the evaluation software. After the software recongnizes the evaluation board, click the master reset icon in the main tool bar of the software GUI (labeled 1 in Figure 7). The master reset clears all memory elements and sets the registers to default values.
--Enter the desired REF CLK frequency value in the **External Clock** box. If the internal PLL is to be used, enable and load those desired PLL settings at this time.
--After the desired system clock frequency appears in the main tool bar of the software GUI, click the DAC calibration icon (labeled 3 in Figure 7). The DAC CAL is required once for the initial setup and/or every time the REF CLK frequency is changed.
--Click the **Profiles** tab to access the Profiles window and enable profile mode via the check box.
--Enter the desired output frequency in Profile 0. See Figure 5 for a view of an individual profile.
--Click the flashing **Load** button (labeled 5 in Figure 7) near the top of the GUI.
--View the DAC output single tone frequency performance via an oscilloscope or spectrum analyzer.
+- Power up the evaluation board and apply the REF CLK source to clock the :adi:`AD9914`/:adi:`AD9915`.
+- Launch the evaluation software. After the software recongnizes the evaluation board, click the master reset icon in the main tool bar of the software GUI (labeled 1 in Figure 7). The master reset clears all memory elements and sets the registers to default values.
+- Enter the desired REF CLK frequency value in the **External Clock** box. If the internal PLL is to be used, enable and load those desired PLL settings at this time.
+- After the desired system clock frequency appears in the main tool bar of the software GUI, click the DAC calibration icon (labeled 3 in Figure 7). The DAC CAL is required once for the initial setup and/or every time the REF CLK frequency is changed.
+- Click the **Profiles** tab to access the Profiles window and enable profile mode via the check box.
+- Enter the desired output frequency in Profile 0. See Figure 5 for a view of an individual profile.
+- Click the flashing **Load** button (labeled 5 in Figure 7) near the top of the GUI.
+- View the DAC output single tone frequency performance via an oscilloscope or spectrum analyzer.
 
 To select a profile other than Profile 0, use the **Selected Profile** drop-down menu. Note that, unfortunately, the profile pin signals are sent asynchronously from the buffer ICs on the evaluation board to the profile pins. Thus, it is possible that the profile found may not be the profile you selected because the profile signals are not synchronous to the SYNC_CLK. If the selected profile setting does not point to the correct profile settings chosen, send an IO_UPDATE or click **Load** tocorrect the issue. This would not be an issue if the profile signals were sychrnonously transmitted to the :adi:`AD9914`/:adi:`AD9915`.
 

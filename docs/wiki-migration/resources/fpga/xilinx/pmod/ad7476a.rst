@@ -20,9 +20,9 @@ Two reference designs are available for this part:
 
 
 
--  A design which demonstrates how to acquire a signal and reproduce it using Digilent PmodAD1 and PmodDA1. Four types of waveforms (Square, Sine, Sawtooth and Triangle) are generated using the **AD7303 DAC** present on the PmodDA1 board. Each waveform has a period of 25 ms, and lasts for 25 s (1000 periods). A loopback cable is connected between the output of the **AD7303 DAC** (A1 Output) and the input of the **AD7476 ADC** (A0 input) present on the PmodAD1 board. The Xilinx ChipScope Analyzer tool is used to verify the digitized waveforms.
-  **HW Platform(s):**
-    * `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+- A design which demonstrates how to acquire a signal and reproduce it using Digilent PmodAD1 and PmodDA1. Four types of waveforms (Square, Sine, Sawtooth and Triangle) are generated using the **AD7303 DAC** present on the PmodDA1 board. Each waveform has a period of 25 ms, and lasts for 25 s (1000 periods). A loopback cable is connected between the output of the **AD7303 DAC** (A1 Output) and the input of the **AD7476 ADC** (A0 input) present on the PmodAD1 board. The Xilinx ChipScope Analyzer tool is used to verify the digitized waveforms.
+  - **HW Platform(s):**
+    - `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
 
 AD7476A Pmod Reference Design
 =============================

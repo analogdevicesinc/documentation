@@ -140,18 +140,18 @@ Index of Pages
    
    
    Pre-release 6.1.0 documentation - these links have been deprecated:
-   -  :doc:`Start Up Guide </wiki-migration/eval-adtf3175d-nxz-startup>`
-   -  `Workflow <https://wiki.analog.com/resources/eval/user-guides/eval-adtf3175d-nxz/workflow>`_
-   -  System Maintenance
-     * :doc:`Installation </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-software-installation>`
-     * :doc:`System Update </wiki-migration/resources/eval/user-guides/eval-adtf3175d-nxz/system_update>`
-     * :doc:`Accessing the ADTF3175D </wiki-migration/resources/eval/user-guides/eval-adtf3175x-access>`
-     * :doc:`Troubleshooting Guide </wiki-migration/resources/eval/user-guides/aditofgui_ts>`
-   -  Tools
-     * :doc:`ADIToFGUI Tool </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui>`
-     * :doc:`Data Collect CLI Tool </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`
-     * :doc:`Python Tools </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/tof_auxtools_cli>`
-     * :doc:`Depth Compute CLI Tool (4.3.0 or older) </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/depthcompute_cli>`
+   - :doc:`Start Up Guide </wiki-migration/eval-adtf3175d-nxz-startup>`
+   - `Workflow <https://wiki.analog.com/resources/eval/user-guides/eval-adtf3175d-nxz/workflow>`_
+   - System Maintenance
+     - :doc:`Installation </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-software-installation>`
+     - :doc:`System Update </wiki-migration/resources/eval/user-guides/eval-adtf3175d-nxz/system_update>`
+     - :doc:`Accessing the ADTF3175D </wiki-migration/resources/eval/user-guides/eval-adtf3175x-access>`
+     - :doc:`Troubleshooting Guide </wiki-migration/resources/eval/user-guides/aditofgui_ts>`
+   - Tools
+     - :doc:`ADIToFGUI Tool </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui>`
+     - :doc:`Data Collect CLI Tool </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`
+     - :doc:`Python Tools </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/tof_auxtools_cli>`
+     - :doc:`Depth Compute CLI Tool (4.3.0 or older) </wiki-migration/resources/eval/user-guides/eval-adsd3100-nxz/depthcompute_cli>`
    
 
 

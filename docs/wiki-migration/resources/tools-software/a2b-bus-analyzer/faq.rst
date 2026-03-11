@@ -478,7 +478,7 @@ Follow Below steps:
 
 |resources-tools-software-a2b-bus-analyzer-remote_desktop.png|
 
--  Click OK and connect to the remote desktop.
+- Click OK and connect to the remote desktop.
 
 \*\* 24. Why is the A2B Bus Analyzer not being detected on the host PC? \*\* A: Ensure that standalone mode is disabled by having the Standalone switch down and reload the list of devices in the UI.
 

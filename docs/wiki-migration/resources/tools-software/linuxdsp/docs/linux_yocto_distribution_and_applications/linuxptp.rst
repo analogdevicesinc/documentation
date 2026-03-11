@@ -34,7 +34,7 @@ The Linux kernel can be configured using the following command:
    $ bitbake linux-adi -c menuconfig
 
    General Setup  --->
-       -*- Configure standard kernel features (expert users)  --->
+       - *- Configure standard kernel features (expert users)  --->
            [*]   Enable eventpoll support
            [*]   Enable timerfd() system call
 

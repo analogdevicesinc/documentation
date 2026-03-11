@@ -63,9 +63,15 @@ The EVAL-AD7386FMCZ is powered by the :doc:`SDP-H1 </wiki-migration/resources/ev
 
 -  Download and install the :adi:`ace` software, which is available on the AD7386 product page. Installation details are found on the internal label of the EVAL-AD7386FMCZ box. Ensure that the SDP-H1 board is disconnected from the USB port of the PC when installing the :adi:`ace` software. The PC may need to be restarted after the installation.
 -  Ensure that the link options are configured as detailed in Table 2.
--  Connect the **\ :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`**\\ board to the :adi:`EVAL-AD7386FMCZ` via the 160-way connector, as shown in Table 2.
--  Connect the **\ :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`**\\ board to the PC via the USB cable.
--  If using Windows® XP, search for the **\ :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`**\\ drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system.
+-  Connect the **\ :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`**
+
+board to the :adi:`EVAL-AD7386FMCZ` via the 160-way connector, as shown in Table 2.
+-  Connect the **\ :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`**
+
+board to the PC via the USB cable.
+-  If using Windows® XP, search for the **\ :doc:`SDP-H1 </wiki-migration/resources/eval/sdp>`**
+
+drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system.
 -  Copy the ACE plugins file, **Board.AD738x**, and the **Chip.AD738x** file from the EVAL-AD7386FMCZ evaluation board page to the **C:\ProgramData\Analog Devices\ACE\Plugins** folder.
 -  Launch the ACE software from the :adi:`ace` subfolder in the **Analog Devices** folder in the **All Programs** menu.
 -  Connect an input signal to AINA0, AINA1, AINB0, or AINB1.

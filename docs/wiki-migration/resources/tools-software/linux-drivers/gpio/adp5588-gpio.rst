@@ -95,12 +95,12 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 Device Drivers  --->
 [*] GPIO Support  --->
 
-    --- GPIO Support
+    - -- GPIO Support
     [ ]   Debug GPIO calls
     [*]   /sys/class/gpio/... (sysfs interface)
-          ** Memory mapped GPIO expanders: **
+          - ** Memory mapped GPIO expanders: **
     < >   IT8761E GPIO support
-          ** I2C GPIO expanders: **
+          - ** I2C GPIO expanders: **
     < >   Maxim MAX7300 GPIO expander
     < >   MAX7319, MAX7320-7327 I2C Port Expanders
     < >   PCA953x, PCA955x, TCA64xx, and MAX7310 I/O ports

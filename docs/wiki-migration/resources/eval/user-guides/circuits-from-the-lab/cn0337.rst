@@ -153,43 +153,50 @@ Software Control and Indicator Descriptions
 
 
 
--**Connect/Reconnect Button**
--  When this button is pressed, the SDP-B Board makes a USB connection to the CN0337 Board.  A connection to the SDP-B Board must be made to use the software.
--**Run Button**
--  When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
--**Stop Button**
--  When this button is pressed, the software stop collecting data from the CN0337 Board
--**Clear Data Button**
--  When this button is pressed, the software will clear all data collected from the chart history.
--**Save Data Button**
--  When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
--**Control Tabs**
--  __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
--  __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
--  __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
--**Numerical Indicator**
--  This indicator displays the current reading value. The value units depend on the chosen graph units (10).
--**Graph**
--  This graph displays the collected data. The units on the graph depend on the chosen graph units (10).
--**Graph Controls**
--  These controls allow the user to zoon in, zoom out, and pan through the data collected.
--**Graph Units Radio Buttons**
--  This control determines the units of the data displayed in the chart and the numerical indicator.
--**System Status String Indicator**
--  This indicator displays a message to the user detailing the current state of the software.
--**System Status LED Indicator**
--  This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_inactve.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_error.png|Error\\ |resources-eval-user-guides-circuits-from-the-lab-cn0337-led_waiting.png|Waiting for user action
--**Calibrate System Controls**
--  These controls allow the user to calibrate the CN0337 Board. For the calibration procedure two input resistance values are required. For best performance the inputs have to be selected “100Ω” and “212Ω” . To perform the calibration follow the instructions on the screen.\\ \\
+- **Connect/Reconnect Button**
+- When this button is pressed, the SDP-B Board makes a USB connection to the CN0337 Board.  A connection to the SDP-B Board must be made to use the software.
+- **Run Button**
+- When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+- **Stop Button**
+- When this button is pressed, the software stop collecting data from the CN0337 Board
+- **Clear Data Button**
+- When this button is pressed, the software will clear all data collected from the chart history.
+- **Save Data Button**
+- When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
+- **Control Tabs**
+- __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
+- __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
+- __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
+- **Numerical Indicator**
+- This indicator displays the current reading value. The value units depend on the chosen graph units (10).
+- **Graph**
+- This graph displays the collected data. The units on the graph depend on the chosen graph units (10).
+- **Graph Controls**
+- These controls allow the user to zoon in, zoom out, and pan through the data collected.
+- **Graph Units Radio Buttons**
+- This control determines the units of the data displayed in the chart and the numerical indicator.
+- **System Status String Indicator**
+- This indicator displays a message to the user detailing the current state of the software.
+- **System Status LED Indicator**
+- This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0337-led_inactve.png| Inactive
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0337-led_busy.png| Busy
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0337-led_error.png| Error
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0337-led_waiting.png| Waiting for user action
+- **Calibrate System Controls**
+- These controls allow the user to calibrate the CN0337 Board. For the calibration procedure two input resistance values are required. For best performance the inputs have to be selected “100Ω” and “212Ω” . To perform the calibration follow the instructions on the screen.
 
 .. tip::
 
    **NOTE:** If other temperature ranges or sensor are used the user has to look at the sensor’s    reference table to choose the resistance calibration values!
 
 
-\\ \\  \\ \\  \\
--**SDP Firmware Revision**
--  Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+- **SDP Firmware Revision**
+- Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
 
 --------------
 

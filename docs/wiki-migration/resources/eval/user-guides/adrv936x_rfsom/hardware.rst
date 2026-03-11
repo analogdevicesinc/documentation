@@ -33,7 +33,7 @@ The physical dimensions of the connectors, mounting holes and PCB is common betw
    
    
    
-   -  `Mounting holes and physical dimensions <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/08_038702d_conn_dim.pdf>`_
+   - `Mounting holes and physical dimensions <https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/08_038702d_conn_dim.pdf>`_
       * Carrier Card Connector Dimensions:
    
         .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv936x_rfsom/carrier_connector_locations.jpg

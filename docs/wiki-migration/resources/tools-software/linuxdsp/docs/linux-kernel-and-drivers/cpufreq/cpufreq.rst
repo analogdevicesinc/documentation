@@ -32,7 +32,7 @@ Run "**bitbake linux-adi -c menuconfig**" and configure the kernel as follows:
            <*>   CPU frequency translation statistics
            [*]   CPU frequency translation statistics details
                  Default CPUFreq governor (performance)  --->
-           -*-   'performance' governor
+           - *-   'performance' governor
            < >   'powersave' governor
            <*>   'userspace' governor for userspace frequency scaling
            < >   'ondemand' cpufreq policy governor

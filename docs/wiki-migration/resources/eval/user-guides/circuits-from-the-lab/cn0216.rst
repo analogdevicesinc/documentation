@@ -128,44 +128,50 @@ Software Control and Indicator Descriptions
 
 
 
--**Connect/Reconnect Button**
--  When this button is pressed, the SDP-B Board makes a USB connection to the CN-0216 Board.  A connection to the SDP-B Board must be made to use the software.
--**Run Button**
--  When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
--**Stop Button**
--  When this button is pressed, the software stop collecting data from the CN-0216 Board
--**Clear Chart Button**
--  When this button is pressed, the software will clear all data collected from the chart history.
--**Control Tabs**
--  __Main__ - Clicking this tab brings the data collection chart to the front.
--  __Calibrate System__ - Clicking this tab bring the system configuration settings to the front.
--**Current Weight Numerical Indicator**
--  This indicator displays the mass (in grams) on the load cell.
--**Chart Controls**
--  These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
--**Select Units Radio Buttons**
--  This control determines the Y-Axis units of the data displayed in the chart.
--**System Status String Indicator**
--  This indicator displays a message to the user detailing the current state of the software.
--**System Status LED Indicator**
--  This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-inactive.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-error.png|Error
--**Calibration Weight Numerical Control**
--  Set this control to the weight of the object used to calibrate the load cell.
--**Calibrate Button**
--  Pressing this button initiates the calibration of the load cell.
--**ADC Mode Radio Buttons**
--  This control is used to set the mode of the :adi:`AD7791`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Calibrate System Tab**.
-  * __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the :adi:`AD7791` **ON**.
-  * __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the :adi:`AD7791` **OFF**.
--**ADC Channel Select Radio Buttons**
--  This control is used to select the analog input channel of the :adi:`AD7791` for conversion.  The default value is __AIN(+)-AIN(-)__ and is highlighted in **bold** on the **Calibrate System Tab**.
-  * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the :adi:`AD7791`.
-  * __AIN(-)-AIN(-)__ - Selecting this radio button shorts the analog input channels of the :adi:`AD7791`.
-  * __Vdd Monitor__ - Selecting this radio button monitors the voltage applied to the Vdd pin of the :adi:`AD7791`.  The voltage is attenuated by 5 and the resultant voltage is applied to the ∑-Δ modulator using an internal 1.17 V reference for analog to digital conversion.
--**Update Rate Radio Buttons**
--  This control is used to change the output word rate of the :adi:`AD7791`.  The default value is __9.5 Hz__ and is highlighted in **bold** on the **Calibrate System Tab**.
--**Configure ADC Button**
--  When this button is pressed the current value of the **ADC Mode Radio Buttons**, **ADC Channel Select Radio Buttons**, and **Update Rate Radio Buttons** are used to configure the :adi:`AD7791`.
+- **Connect/Reconnect Button**
+- When this button is pressed, the SDP-B Board makes a USB connection to the CN-0216 Board.  A connection to the SDP-B Board must be made to use the software.
+- **Run Button**
+- When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+- **Stop Button**
+- When this button is pressed, the software stop collecting data from the CN-0216 Board
+- **Clear Chart Button**
+- When this button is pressed, the software will clear all data collected from the chart history.
+- **Control Tabs**
+- __Main__ - Clicking this tab brings the data collection chart to the front.
+- __Calibrate System__ - Clicking this tab bring the system configuration settings to the front.
+- **Current Weight Numerical Indicator**
+- This indicator displays the mass (in grams) on the load cell.
+- **Chart Controls**
+- These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
+- **Select Units Radio Buttons**
+- This control determines the Y-Axis units of the data displayed in the chart.
+- **System Status String Indicator**
+- This indicator displays a message to the user detailing the current state of the software.
+- **System Status LED Indicator**
+- This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-inactive.png| Inactive
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-busy.png| Busy
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0216-cn0216-software-error.png| Error
+- **Calibration Weight Numerical Control**
+- Set this control to the weight of the object used to calibrate the load cell.
+- **Calibrate Button**
+- Pressing this button initiates the calibration of the load cell.
+- **ADC Mode Radio Buttons**
+- This control is used to set the mode of the :adi:`AD7791`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Calibrate System Tab**.
+  - __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the :adi:`AD7791` **ON**.
+  - __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the :adi:`AD7791` **OFF**.
+- **ADC Channel Select Radio Buttons**
+- This control is used to select the analog input channel of the :adi:`AD7791` for conversion.  The default value is __AIN(+)-AIN(-)__ and is highlighted in **bold** on the **Calibrate System Tab**.
+  - __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the :adi:`AD7791`.
+  - __AIN(-)-AIN(-)__ - Selecting this radio button shorts the analog input channels of the :adi:`AD7791`.
+  - __Vdd Monitor__ - Selecting this radio button monitors the voltage applied to the Vdd pin of the :adi:`AD7791`.  The voltage is attenuated by 5 and the resultant voltage is applied to the ∑-Δ modulator using an internal 1.17 V reference for analog to digital conversion.
+- **Update Rate Radio Buttons**
+- This control is used to change the output word rate of the :adi:`AD7791`.  The default value is __9.5 Hz__ and is highlighted in **bold** on the **Calibrate System Tab**.
+- **Configure ADC Button**
+- When this button is pressed the current value of the **ADC Mode Radio Buttons**, **ADC Channel Select Radio Buttons**, and **Update Rate Radio Buttons** are used to configure the :adi:`AD7791`.
 
 --------------
 

@@ -14,13 +14,13 @@ General Setup
 
 
 - One EVAL-CN0323-SDPZ Evaluation Board
--  :adi:`EVAL-SDP-CB1Z` Evaluation board
+- :adi:`EVAL-SDP-CB1Z` Evaluation board
 - CN0323 Evaluation Software
 - One USB Type-A plug to USB Mini-B plug cable.
 - One diametrically magnetized Neodymium magnet
 - One of the following:
-  *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-  *DC power supply with a 0-6V output.  (HP6236B)
+  - 6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
+  - DC power supply with a 0-6V output.  (HP6236B)
 
 Minimum PC/System Requirements
 ------------------------------

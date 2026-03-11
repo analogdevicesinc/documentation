@@ -21,7 +21,7 @@ General Setup
 
 - One EVAL-CN0303-SDPZ Evaluation Board
 - One :adi:`ADXL001 <en/mems-sensors/mems-inertial-sensors/adxl001/products/EVAL-ADXL001/eb.html>` Evaluation Board
--  :adi:`EVAL-SDP-CB1Z` Evaluation board
+- :adi:`EVAL-SDP-CB1Z` Evaluation board
 - CN0303 Evaluation Software
 - One 6V wallwart.  (EVAL-CFTL-6V-PWRZ)
 - One DC power supply with a 0-6V output.  (HP6236B)

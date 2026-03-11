@@ -161,81 +161,81 @@ To understand what can be returned the please reference the definition of **avai
 
 For the Crosby, the frames are defined in the code block below. From this we can see the attached camera provides the following modes: lrqm, srqmp, lrmp and srmp. As well as the types of frames available for each mode and the sizes of the frames.
 
+::
 
-
-const std::vector<aditof::DepthSensorFrameType> availableFrameTypes = {
-{
-    "sr-native",
-    {{"raw", 1024, 4096},
-     {"depth", 1024, 1024},
-     {"ir", 1024, 1024},
-     {"conf", 1024, 1024},
-     {"xyz", 1024, 1024},
-     {"metadata", 1, 128}},
-    1024,
-    4096,
-},
-{
-    "lr-native",
-    {{"raw", 1024, 4096},
-     {"depth", 1024, 1024},
-     {"ir", 1024, 1024},
-     {"conf", 1024, 1024},
-     {"xyz", 1024, 1024},
-     {"metadata", 1, 128}},
-    1024,
-    4096,
-},
-{
-    "sr-qnative",
-    {{"raw", 2560, 512},
-     {"depth", 512, 512},
-     {"ir", 512, 512},
-     {"conf", 512, 512},
-     {"xyz", 512, 512},
-     {"metadata", 1, 128}},
-    2560,
-    512,
-},
-{
-    "lr-qnative",
-    {{"raw", 2560, 512},
-     {"depth", 512, 512},
-     {"ir", 512, 512},
-     {"conf", 512, 512},
-     {"xyz", 512, 512},
-     {"metadata", 1, 128}},
-    2560,
-    512,
-},
-{
-    "pcm-native",
-    |"ir", 1024, 1024|,
-    1024,
-    1024,
-},
-{
-    "sr-mixed",
-    {{"raw", 2560, 512},
-     {"depth", 512, 512},
-     {"ir", 512, 512},
-     {"conf", 512, 512},
-     {"xyz", 512, 512},
-     {"metadata", 1, 128}},
-    2560,
-    512,
-},
-{
-    "lr-mixed",
-    {{"raw", 2560, 512},
-     {"depth", 512, 512},
-     {"ir", 512, 512},
-     {"conf", 512, 512},
-     {"xyz", 512, 512},
-     {"metadata", 1, 128}},
-    2560,
-    512,
-}
+           const std::vector<aditof::DepthSensorFrameType> availableFrameTypes = {
+           {
+               "sr-native",
+               {{"raw", 1024, 4096},
+                {"depth", 1024, 1024},
+                {"ir", 1024, 1024},
+                {"conf", 1024, 1024},
+                {"xyz", 1024, 1024},
+                {"metadata", 1, 128}},
+               1024,
+               4096,
+           },
+           {
+               "lr-native",
+               {{"raw", 1024, 4096},
+                {"depth", 1024, 1024},
+                {"ir", 1024, 1024},
+                {"conf", 1024, 1024},
+                {"xyz", 1024, 1024},
+                {"metadata", 1, 128}},
+               1024,
+               4096,
+           },
+           {
+               "sr-qnative",
+               {{"raw", 2560, 512},
+                {"depth", 512, 512},
+                {"ir", 512, 512},
+                {"conf", 512, 512},
+                {"xyz", 512, 512},
+                {"metadata", 1, 128}},
+               2560,
+               512,
+           },
+           {
+               "lr-qnative",
+               {{"raw", 2560, 512},
+                {"depth", 512, 512},
+                {"ir", 512, 512},
+                {"conf", 512, 512},
+                {"xyz", 512, 512},
+                {"metadata", 1, 128}},
+               2560,
+               512,
+           },
+           {
+               "pcm-native",
+               |"ir", 1024, 1024|,
+               1024,
+               1024,
+           },
+           {
+               "sr-mixed",
+               {{"raw", 2560, 512},
+                {"depth", 512, 512},
+                {"ir", 512, 512},
+                {"conf", 512, 512},
+                {"xyz", 512, 512},
+                {"metadata", 1, 128}},
+               2560,
+               512,
+           },
+           {
+               "lr-mixed",
+               {{"raw", 2560, 512},
+                {"depth", 512, 512},
+                {"ir", 512, 512},
+                {"conf", 512, 512},
+                {"xyz", 512, 512},
+                {"metadata", 1, 128}},
+               2560,
+               512,
+           }
 
        };
 
@@ -443,3 +443,5 @@ Stop Cameras
     for camera in cameras:
        status = camera.stop()
        print("camera"+ IP_addr[cameras.index(camera)]+".stop()", status)
+
+.. |"ir", 1024, 1024| image:: https://wiki.analog.com/_media/"ir", 1024, 1024

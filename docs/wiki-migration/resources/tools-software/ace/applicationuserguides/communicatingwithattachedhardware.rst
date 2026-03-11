@@ -28,7 +28,7 @@ Each view toolbar contains a selection of the following communication options:
 
 
 
--   |resources-tools-software-ace-applicationuserguides-ResetChip.PNG| **Reset Device –** Reverts all components to their default state.***
+- |resources-tools-software-ace-applicationuserguides-ResetChip.PNG| **Reset Device –** Reverts all components to their default state.***
 
 -  |image1| **Poll Device –** If enabled causes the continuous polling of the device for state changes.**\*
 

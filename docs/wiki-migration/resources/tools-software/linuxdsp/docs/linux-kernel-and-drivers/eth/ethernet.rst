@@ -64,7 +64,7 @@ Different version's EZ-kit has the different Gigabit Ethernet PHY device on boar
    For ADSP-SC5xx EZ-kit boards which have DP83867 PHY on board:
    Device Drivers  --->
        [*] Network device support  --->
-           -*-   PHY Device support and infrastructure  --->
+           - *-   PHY Device support and infrastructure  --->
                <*>   Texas Instruments DP83867 Gigabit PHY
 
 ::
@@ -72,7 +72,7 @@ Different version's EZ-kit has the different Gigabit Ethernet PHY device on boar
    For other versions ADSP-SC5XX EZ-kit boards which have National PHY(DP83865):
    Device Drivers  --->
        [*] Network device support  --->
-           -*-   PHY Device support and infrastructure  --->
+           - *-   PHY Device support and infrastructure  --->
                <*>  National Semiconductor PHYs
 
 Configure Device Tree

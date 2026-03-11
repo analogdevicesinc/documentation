@@ -23,8 +23,8 @@ In order to have a relevant output, the input signal is passed through multiple 
 
 - Preamplifier - the output signal from the heartbeat measurement setup is decoupled through the series capacitor and amplified using a negative feedback resistor(R4).
 - Low-Pass Filter - RC filter that cuts the high frequencies (noise).
--  :doc:`Voltage Follower </wiki-migration/university/courses/electronics/electronics-lab-1>` - buffers the output of the low-pass filter and reproduces its voltage with a low impedance output;
--  :doc:`Inverting Amplifier </wiki-migration/university/courses/electronics/electronics-lab-1>` with Low-Pass Filter - amplifies the voltage signal and cuts the high frequencies (noise);
+- :doc:`Voltage Follower </wiki-migration/university/courses/electronics/electronics-lab-1>` - buffers the output of the low-pass filter and reproduces its voltage with a low impedance output;
+- :doc:`Inverting Amplifier </wiki-migration/university/courses/electronics/electronics-lab-1>` with Low-Pass Filter - amplifies the voltage signal and cuts the high frequencies (noise);
 
 Materials
 ---------

@@ -112,8 +112,8 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 
        Device Drivers > Search (COMMON_CLK) > Analog Devices Clock Drivers
 
-           -*- Analog Devices AD9545 via I2C
-           -*- Analog Devices AD9545 via SPI
+           - *- Analog Devices AD9545 via I2C
+           - *- Analog Devices AD9545 via SPI
 
 Driver testing
 ==============

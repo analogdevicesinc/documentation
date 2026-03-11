@@ -160,38 +160,46 @@ Software Control and Indicator Descriptions
 
 
 
--**Acquire Data Button**
--  When this button is pressed, the SDP-B Board will collect conversion data and present it in the graph.
--**Clear Data Button**
--  When this button is pressed, the software will clear all data collected from the graph history.
--**Save Data Button**
--  When this button is pressed, the software will save the captured data to a tab delimited ASCII spreadsheet file. The units of the saved data depends on the chosen graph units (6).
--**Control Tabs**
--  __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
--  __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
--  __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
--**Numerical Indicator**
--  This indicator displays the current reading value. The value units depend on the chosen graph units (6).
--**Graph Units Radio Buttons**
--  This control determines the units of the data displayed in the graph and the numerical indicator.
--**ADC Settings**
--  This control determines the settings of the SPI communication. The **Sample Rate (Hz)** control determines the conversion frequency and the **Samples** control determines the numbers of samples to be captures when clicking (1) button. The maximum sample rate is set to 620k and the maximum samples are set to 1M. Changing this controls changes automatically the x-axis time on the graph.
--**Graph**
--  This graph displays the collected data. The units on the graph depend on the chosen graph units (6).
--**Graph Controls**
--  These controls allow the user to zoom in, zoom out, and pan through the collected data.
--**System Status String Indicator**
--  This indicator displays a message to the user detailing the current state of the software.
--**System Status LED Indicator**
--  This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12inactive.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12error.png|Error\\  |resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12waiting.png|Waiting for user action
--**Calibration Coulombs Numerical Control**
--  Set this control to the input coulombs in **pC**, used to calibrate the board.
--**Calibrate Button**
--  Pressing this button initiates a calibration of the board.  After pressing this button follow the instructions to calibrate the board.
--**Sensor Sensitivity Numerical Control**
--  This control is used if a real piezoelectric sensor is used to capture data. Set the sensor sensitivity **pC/g** here to be able to display correctly the captured data as acceleration **(g)**. Another calibration is not needed for that purpose.
--**SDP Firmware Revision**
--  Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
+- **Acquire Data Button**
+- When this button is pressed, the SDP-B Board will collect conversion data and present it in the graph.
+- **Clear Data Button**
+- When this button is pressed, the software will clear all data collected from the graph history.
+- **Save Data Button**
+- When this button is pressed, the software will save the captured data to a tab delimited ASCII spreadsheet file. The units of the saved data depends on the chosen graph units (6).
+- **Control Tabs**
+- __Acquire DataMain__ - Clicking this tab brings the data collection graph to the front.
+- __Calibrate System __ - Clicking this tab brings the system calibration settings to the front.
+- __SDP Revision __ - Clicking this tab brings the SDP board information window to the front.
+- **Numerical Indicator**
+- This indicator displays the current reading value. The value units depend on the chosen graph units (6).
+- **Graph Units Radio Buttons**
+- This control determines the units of the data displayed in the graph and the numerical indicator.
+- **ADC Settings**
+- This control determines the settings of the SPI communication. The **Sample Rate (Hz)** control determines the conversion frequency and the **Samples** control determines the numbers of samples to be captures when clicking (1) button. The maximum sample rate is set to 620k and the maximum samples are set to 1M. Changing this controls changes automatically the x-axis time on the graph.
+- **Graph**
+- This graph displays the collected data. The units on the graph depend on the chosen graph units (6).
+- **Graph Controls**
+- These controls allow the user to zoom in, zoom out, and pan through the collected data.
+- **System Status String Indicator**
+- This indicator displays a message to the user detailing the current state of the software.
+- **System Status LED Indicator**
+- This indicator displays the current state of the software in the form of an LED.  There are four status LED colors.
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12inactive.png| Inactive
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12busy.png| Busy
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12error.png| Error
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0350-cn0350_using_sw_12waiting.png| Waiting for user action
+- **Calibration Coulombs Numerical Control**
+- Set this control to the input coulombs in **pC**, used to calibrate the board.
+- **Calibrate Button**
+- Pressing this button initiates a calibration of the board.  After pressing this button follow the instructions to calibrate the board.
+- **Sensor Sensitivity Numerical Control**
+- This control is used if a real piezoelectric sensor is used to capture data. Set the sensor sensitivity **pC/g** here to be able to display correctly the captured data as acceleration **(g)**. Another calibration is not needed for that purpose.
+- **SDP Firmware Revision**
+- Read only data. After the connection is established with the SDP Board, the basic information for the controller can be found here.
 
 --------------
 

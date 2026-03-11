@@ -36,9 +36,9 @@ The physical layer support, implementing the reconfiguration of the FPGA transce
        Device Drivers  --->
        <*>     Industrial I/O support --->
            --- Industrial I/O support
-           -*-   Enable ring buffer support within IIO
-           -*-     Industrial I/O lock free software ring
-           -*-   Enable triggered sampling support
+           - *-   Enable ring buffer support within IIO
+           - *-     Industrial I/O lock free software ring
+           - *-   Enable triggered sampling support
                <*>   JESD204 High-Speed Serial Interface Support  --->
                [--snip--]
                <*>   Altera Arria10 JESD204 PHY Support
@@ -53,9 +53,9 @@ The data link layer support, implementing reconfiguration of JESD204 specific pa
        Device Drivers  --->
        <*>     Industrial I/O support --->
            --- Industrial I/O support
-           -*-   Enable ring buffer support within IIO
-           -*-     Industrial I/O lock free software ring
-           -*-   Enable triggered sampling support
+           - *-   Enable ring buffer support within IIO
+           - *-     Industrial I/O lock free software ring
+           - *-   Enable triggered sampling support
            <*>   JESD204 High-Speed Serial Interface Support  --->
            [--snip--]
                <*>   Analog Devices AXI JESD204B RX Support
@@ -69,9 +69,9 @@ Transport layer support, implementing ADC/DAC chip configuration and HDL IP conf
        Device Drivers  --->
        <*>     Industrial I/O support --->
            --- Industrial I/O support
-           -*-   Enable ring buffer support within IIO
-           -*-     Industrial I/O lock free software ring
-           -*-   Enable triggered sampling support
+           - *-   Enable ring buffer support within IIO
+           - *-     Industrial I/O lock free software ring
+           - *-   Enable triggered sampling support
            [--snip--]
            <*>   Analog Devices AD9467 AD9643 High-Speed AXI ADC driver
            [--snip--]

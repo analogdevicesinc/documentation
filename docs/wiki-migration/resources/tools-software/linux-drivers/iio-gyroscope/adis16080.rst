@@ -93,7 +93,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        Device Drivers  --->
            <*>     Industrial I/O support --->
                --- Industrial I/O support
-               -*-   Enable ring buffer support within IIO
+               - *-   Enable ring buffer support within IIO
                ** Digital gyroscope sensors **
                [--snip--]
 

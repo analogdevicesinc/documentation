@@ -107,7 +107,12 @@ You will need to:
 -  Turn it on.
 -  Wait ~30 seconds for the “DONE” LED to turn blue. This is near the DISP1.
 
-|resources-eval-user-guides-dac-ad3552r_eval_zed-setup_diagram_eval_ad3552r.jpg|
+::
+
+
+   .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/setup_diagram_eval_ad3552r.jpg
+
+
 
 .. note::
 
@@ -261,5 +266,3 @@ Reference Demos & Software
    :width: 400px
 .. |zedboard.png| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/AD777x-ARDZ/zedboard.png
    :width: 600px
-
-.. |resources-eval-user-guides-dac-ad3552r_eval_zed-setup_diagram_eval_ad3552r.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/dac/ad3552r_eval_zed/setup_diagram_eval_ad3552r.jpg

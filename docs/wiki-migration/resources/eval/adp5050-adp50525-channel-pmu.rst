@@ -603,10 +603,10 @@ The :adi:`ADP5050` provides a dynamic voltage scaling function for Channel 1 and
 
 
 
--Connect FB1 and FB4 to the output by placing a 0 Ω resistor on RTOP. Replace R2 to 0 Ω. Remove R28 for CH1, and/or replace R5 to 0 Ω and remove R30 for CH4.
--Power up the demo board, connect the USB dongle, and turn on the GUI software.
--Use the :adi:`ADP5050` GUI software to set DVSx-INTVAL and enable DVSx-ON in Register 0x05.
--Use the :adi:`ADP5050` GUI software to change different VID options in the CHx VOUTx register to obtain a real-time output voltage step up or step down.
+- Connect FB1 and FB4 to the output by placing a 0 Ω resistor on RTOP. Replace R2 to 0 Ω. Remove R28 for CH1, and/or replace R5 to 0 Ω and remove R30 for CH4.
+- Power up the demo board, connect the USB dongle, and turn on the GUI software.
+- Use the :adi:`ADP5050` GUI software to set DVSx-INTVAL and enable DVSx-ON in Register 0x05.
+- Use the :adi:`ADP5050` GUI software to change different VID options in the CHx VOUTx register to obtain a real-time output voltage step up or step down.
 
 .. tip::
 

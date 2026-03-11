@@ -317,14 +317,14 @@ Application Menu
 
 
 
--  IMU
-  * This menu displays the temperature and acceleration measurements performed by the IMU.
-    *
+- IMU
+  - This menu displays the temperature and acceleration measurements performed by the IMU.
+    -
 
     |resources-eval-user-guides-pzsdr-carriers-adrv1cc-box-imu.jpg|
 
--  GPS
-  * Provides real time GPS coordinates after synchronization.
+- GPS
+  - Provides real time GPS coordinates after synchronization.
    * Push Button Switch - A ring illuminated switch to control the ADRV1CC-Box turn-on and turn-off.
      * The LED will blink twice in quick succession, every second (think heartbeat) when operating normally.
      * The LED will then blink faster if any fault is detected.

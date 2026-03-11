@@ -152,8 +152,8 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*>     Industrial I/O support --->
                --- Industrial I/O support
                [*]   Enable buffer support within IIO
-               -*-     Industrial I/O buffering based on kfifo
-               -*-   Enable triggered sampling support
+               - *-     Industrial I/O buffering based on kfifo
+               - *-   Enable triggered sampling support
                [--snip--]
                Inertial measurement units  --->
                    [--snip--]

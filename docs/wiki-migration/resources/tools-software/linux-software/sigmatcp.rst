@@ -147,7 +147,7 @@ In \`make menuconfig\`:
 ::
 
      Device Drivers  --->
-       -*- I2C support  --->
+       - *- I2C support  --->
           ...
           <*>   I2C device interface
           ...

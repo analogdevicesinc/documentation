@@ -221,9 +221,9 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
        Device Drivers  --->
        <*>     Industrial I/O support --->
            --- Industrial I/O support
-           -*-   Enable ring buffer support within IIO
-           -*-     Industrial I/O lock free software ring
-           -*-   Enable triggered sampling support
+           - *-   Enable ring buffer support within IIO
+           - *-     Industrial I/O lock free software ring
+           - *-   Enable triggered sampling support
 
                  ** Direct Digital Synthesis **
            [--snip--]

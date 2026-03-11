@@ -86,16 +86,22 @@ Software Control and Indicator Descriptions
 
 
 
--**LDAC COntrol**
--  Always check the box before starting any test
--**Write to DAC Button**
--  Enter the digital input code in “DIN”
--  When “WRITE TO DAC” button is clicked, the digital input code is sent to the DAC
--**Output Indicator**
--  The LED string indicates the digital input code being written to the DAC (from bit 15 to bit 0)
--**System Status String / LED Indicator**
--  The string indicator displays a message to the user detailing the current state of the software
--  The LED indicator displays the current state of the software in the form of an LED. There are three status LED colors\\ |resources-eval-user-guides-circuits-from-the-lab-black_led_button.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-green_led_button.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-red_led_button.png|Error\\  \\
+- **LDAC COntrol**
+- Always check the box before starting any test
+- **Write to DAC Button**
+- Enter the digital input code in “DIN”
+- When “WRITE TO DAC” button is clicked, the digital input code is sent to the DAC
+- **Output Indicator**
+- The LED string indicates the digital input code being written to the DAC (from bit 15 to bit 0)
+- **System Status String / LED Indicator**
+- The string indicator displays a message to the user detailing the current state of the software
+- The LED indicator displays the current state of the software in the form of an LED. There are three status LED colors
+
+|resources-eval-user-guides-circuits-from-the-lab-black_led_button.png| Inactive
+
+|resources-eval-user-guides-circuits-from-the-lab-green_led_button.png| Busy
+
+|resources-eval-user-guides-circuits-from-the-lab-red_led_button.png| Error
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software2.png
    :align: center
@@ -103,16 +109,16 @@ Software Control and Indicator Descriptions
 
 ::
 
-   -**Code Step Control**
+   - **Code Step Control**
    * Enter the code step between each digital input to be written to the DAC
-   -**Agilent 3458A GPIB Address Control**
+   - **Agilent 3458A GPIB Address Control**
    * Enter in the GPIB address of the multimeter
    * GPIB Address can be determined from the multimeter by manually pressing down on SHIFT+Local.  By default it should be 22
-   -**Current Code / Voltage Indicator**
+   - **Current Code / Voltage Indicator**
    * This indicates the current digital input code and output voltage of the DAC
-   -**File Directory Control**
+   - **File Directory Control**
    * This allows you to enter the file directory and name to save the INL/DNL measurement data
-   -**INL / DNL measurement graphs**
+   - **INL / DNL measurement graphs**
    * These graphs display the INL and DNL vs. input digital code when data collection is done\\ \\
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software3.png
@@ -121,7 +127,7 @@ Software Control and Indicator Descriptions
 
 ::
 
-   -**Transfer Function Graph**
+   - **Transfer Function Graph**
    * This graph shows the transfer function of the DAC output voltage vs. input digital code\\ \\
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/software4.png
@@ -130,7 +136,7 @@ Software Control and Indicator Descriptions
 
 ::
 
-   -**SDP Board Firmware Information**
+   - **SDP Board Firmware Information**
    * This gives you the up to date information on the SDP board firmware
 
 Connecting the Hardware and Taking Measurements

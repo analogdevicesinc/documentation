@@ -80,7 +80,7 @@ XHIDDENSTART Click to expand XHIDDENSTARTSTOP Virtual terminal & frame buffer su
             [*]   Virtual terminal
             [*]     Enable character translations in console
             [*]     Support for console on virtual terminal
-            -*-     Support for binding and unbinding console drivers
+            - *-     Support for binding and unbinding console drivers
            Graphics support  --->
                  Console display driver support  --->
                  [*] Framebuffer Console support

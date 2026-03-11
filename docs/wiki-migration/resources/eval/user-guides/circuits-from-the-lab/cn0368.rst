@@ -18,14 +18,14 @@ General Setup
 
 
 - One :adi:`EVAL-CN0368-SDPZ <CN0368>` Evaluation Board
--  :adi:`EVAL-SDP-CB1Z` Evaluation board
--  `CN0368 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0368>`_
+- :adi:`EVAL-SDP-CB1Z` Evaluation board
+- `CN0368 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0368>`_
 - One USB Type-A plug to USB Mini-B plug cable.
 - One of the following:
-  *6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
-  *DC power supply with a 0-6V output.  (HP6236B)
-  *One diametrically magnetized Neodymium magnet
-  *One Neodymium magnet approximately two inches in length, magnetized along the length of the magnet.
+  - 6V DC wallwart.  (EVAL-CFTL-6V-PWRZ)
+  - DC power supply with a 0-6V output.  (HP6236B)
+  - One diametrically magnetized Neodymium magnet
+  - One Neodymium magnet approximately two inches in length, magnetized along the length of the magnet.
 
 Minimum PC/System Requirements
 ------------------------------

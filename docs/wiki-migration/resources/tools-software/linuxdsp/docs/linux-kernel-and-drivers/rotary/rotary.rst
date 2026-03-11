@@ -87,7 +87,7 @@ Disable Ethernet PHY device driver in Linux kernel
 
    Device Drivers  --->
        [*] Network device support  --->
-           -*-   PHY Device support and infrastructure  --->
+           - *-   PHY Device support and infrastructure  --->
                <N>  National Semiconductor PHYs
 
 The driver provides two options. It can either send Key (KEY) or Relative (REL) events.

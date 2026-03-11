@@ -117,16 +117,16 @@ Linearity and Calibration Tabs
 
 ::
 
-   -**Calibration Tab**
+   - **Calibration Tab**
    * The system can be calibrated using a two point calibration.
    * The core should be placed at the maximum displacement. The displacement should then be entered in the Distance field. Then the Set new MAX button should be clicked.
    * The core should next be placed at the minimum displacement. The displacement should then be entered in the Distance field. Then the Set new MIN button should be clicked.
    * This completes the calibration.
-   -**Linearity Table**
+   - **Linearity Table**
    * The table can be filled out, and linearity automatically calculated as follows:
    * The core should be set to a known position. That position should be entered in the Distance (MM) field. The Get new data point button should be clicked. This creates a new entry in the Linearity table. The linearity is calculated and the data point is added to the Linearity plot.
    * Additional data points can be added in a similar manner. The data points do not need to be linearly spaced or taken in a particular order.
-   -**Error Calculation**
+   - **Error Calculation**
    * The linearity error is calculated based on the distance from an ideal straight line between the two calibration points taken.
 
 --------------
@@ -141,7 +141,7 @@ Live Measurement and Noise Data Tabs
 
 ::
 
-   -**Noise Data Tab**
+   - **Noise Data Tab**
    * Noise Data in volts (RMS), volts (p-p), ENOBs (RMS) and ENOBs (p-p) are displayed. The volts are calculated based on the 3.3V ADC reference. ENOB measurements are based on full-scale voltage in the settings tab.
 
 --------------

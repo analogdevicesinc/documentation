@@ -59,49 +59,49 @@ If you are returning from a static IP configuration, and require to have a new D
    -  Type in the user/password which is *analog/analog*
    -  Then type in the following commands:
    
+   ::
    
+      sudo cat > /usr/local/bin/enable_dhcp.sh
+      #!/bin/bash
+      #
+      # Re-enable the default DHCP-based NetworkManager support. Use to revert the
+      # static IP configuration performed by the enable_static_ip.sh script.
+      #
+      # Example usage:
+      # enable_dhcp.sh
+      #
+      # WARNING: Do not use this script if there is a custom network configuration
+      # set up in /etc/network/interfaces as it will be overwritten.
    
-   sudo cat > /usr/local/bin/enable_dhcp.sh
-   #!/bin/bash
-   #
-   # Re-enable the default DHCP-based NetworkManager support. Use to revert the
-   # static IP configuration performed by the enable_static_ip.sh script.
-   #
-   # Example usage:
-   # enable_dhcp.sh
-   #
-   # WARNING: Do not use this script if there is a custom network configuration
-   # set up in /etc/network/interfaces as it will be overwritten.
+      set -e
    
-   set -e
+      if `${uid}_-ne_0 <https://wiki.analog.com/${uid}_-ne_0>`_; then
+          echo "This script must be run as root!"
+          exit 1
+      fi
    
-   if `${uid}_-ne_0 <https://wiki.analog.com/${uid}_-ne_0>`_; then
-       echo "This script must be run as root!"
-       exit 1
-   fi
+      if grep -qi kuiper "/etc/os-release"; then
+          cat <<-EOF > /etc/dhcpcd.conf
+              hostname
+          EOF
+          systemctl daemon-reload
+          systemctl restart dhcpcd.service
+      else
+          echo "Re-enabling DHCP via NetworkManager for all network interfaces"
    
-   if grep -qi kuiper "/etc/os-release"; then
-       cat <<-EOF > /etc/dhcpcd.conf
-           hostname
-       EOF
-       systemctl daemon-reload
-       systemctl restart dhcpcd.service
-   else
-       echo "Re-enabling DHCP via NetworkManager for all network interfaces"
+          cat <<-EOF > /etc/network/interfaces
+              # interfaces(5) file used by ifup(8) and ifdown(8)
+              # Include files from /etc/network/interfaces.d:
+              source-directory /etc/network/interfaces.d
+          EOF
    
-       cat <<-EOF > /etc/network/interfaces
-           # interfaces(5) file used by ifup(8) and ifdown(8)
-           # Include files from /etc/network/interfaces.d:
-           source-directory /etc/network/interfaces.d
-       EOF
+          # enable DHCP via NetworkManager (assumes the config file hasn't been touched much)
+          sed -i 's/^managed=true/managed=false/' /etc/NetworkManager/NetworkManager.conf
    
-       # enable DHCP via NetworkManager (assumes the config file hasn't been touched much)
-       sed -i 's/^managed=true/managed=false/' /etc/NetworkManager/NetworkManager.conf
-   
-       service network-manager restart
-   fi
-   #<Then Press "Ctrl + D" to save>
-   sudo chmod +x /usr/local/bin/enable_dhcp.sh
+          service network-manager restart
+      fi
+      #<Then Press "Ctrl + D" to save>
+      sudo chmod +x /usr/local/bin/enable_dhcp.sh
    
 
 
@@ -131,60 +131,60 @@ In order to change the default settings of ADI Kuiper Linux please use the follo
    -  Type in the user/password which is *analog/analog*
    -  Then type in the following commands:
    
+   ::
    
+      sudo cat > /usr/local/bin/enable_static_ip.sh
+      #!/bin/bash
+      #
+      # Enable a static IP for eth0 (or another interface) on Ubuntu-based setups.
+      # Note that the wanted IP address should be specified as the first argument;
+      # otherwise, it defaults to 192.168.0.101. Also, the interface can be specified
+      # as the second argument if the default (eth0) isn't wanted.
+      #
+      # Example usage:
+      # enable_static_ip.sh [10.66.99.101] [eth1]
+      #
+      # WARNING: Do not use this script if there is a custom network configuration
+      # set up in /etc/network/interfaces as it will be overwritten.
    
-   sudo cat > /usr/local/bin/enable_static_ip.sh
-   #!/bin/bash
-   #
-   # Enable a static IP for eth0 (or another interface) on Ubuntu-based setups.
-   # Note that the wanted IP address should be specified as the first argument;
-   # otherwise, it defaults to 192.168.0.101. Also, the interface can be specified
-   # as the second argument if the default (eth0) isn't wanted.
-   #
-   # Example usage:
-   # enable_static_ip.sh [10.66.99.101] [eth1]
-   #
-   # WARNING: Do not use this script if there is a custom network configuration
-   # set up in /etc/network/interfaces as it will be overwritten.
+      set -e
    
-   set -e
+      IP_ADDR=${1:-192.168.0.101}
+      ETH_DEV=${2:-eth0}
    
-   IP_ADDR=${1:-192.168.0.101}
-   ETH_DEV=${2:-eth0}
+      if `${uid}_-ne_0 <https://wiki.analog.com/${uid}_-ne_0>`_; then
+          echo "This script must be run as root!"
+          exit 1
+      fi
    
-   if `${uid}_-ne_0 <https://wiki.analog.com/${uid}_-ne_0>`_; then
-       echo "This script must be run as root!"
-       exit 1
-   fi
+      echo "Enabling the static IP address ${IP_ADDR} on ${ETH_DEV}"
    
-   echo "Enabling the static IP address ${IP_ADDR} on ${ETH_DEV}"
+      if grep -qi kuiper "/etc/os-release"; then
+          cat <<-EOF > /etc/dhcpcd.conf
+              interface ${ETH_DEV}
+              static ip_address=${IP_ADDR}/24
+          EOF
+          systemctl daemon-reload
+          systemctl restart dhcpcd.service
+      else
+          # disable NetworkManager (assumes the config file hasn't been touched much)
+          sed -i 's/^managed=false/managed=true/' /etc/NetworkManager/NetworkManager.conf
    
-   if grep -qi kuiper "/etc/os-release"; then
-       cat <<-EOF > /etc/dhcpcd.conf
-           interface ${ETH_DEV}
-           static ip_address=${IP_ADDR}/24
-       EOF
-       systemctl daemon-reload
-       systemctl restart dhcpcd.service
-   else
-       # disable NetworkManager (assumes the config file hasn't been touched much)
-       sed -i 's/^managed=false/managed=true/' /etc/NetworkManager/NetworkManager.conf
+          # set up loopback and add static IP config for ${ETH_DEV} (defaults to eth0)
+          cat <<-EOF > /etc/network/interfaces
+              auto lo
+              iface lo inet loopback
    
-       # set up loopback and add static IP config for ${ETH_DEV} (defaults to eth0)
-       cat <<-EOF > /etc/network/interfaces
-           auto lo
-           iface lo inet loopback
+              auto ${ETH_DEV}
+              iface ${ETH_DEV} inet static
+              address ${IP_ADDR}
+              netmask 255.255.255.0
+          EOF
    
-           auto ${ETH_DEV}
-           iface ${ETH_DEV} inet static
-           address ${IP_ADDR}
-           netmask 255.255.255.0
-       EOF
-   
-       service network-manager restart
-   fi
-   #<Then Press "Ctrl + D" to save>
-   sudo chmod +x /usr/local/bin/enable_static_ip.sh
+          service network-manager restart
+      fi
+      #<Then Press "Ctrl + D" to save>
+      sudo chmod +x /usr/local/bin/enable_static_ip.sh
    
 
 

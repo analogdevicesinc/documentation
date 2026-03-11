@@ -173,9 +173,9 @@ Windows Shares
 
 Windows shares like `this <https://wiki.analog.com/\\server\share>`_ are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate `Intranet <https://en.wikipedia.org/wiki/Intranet>`_.
 
+::
 
-
-Windows Shares like `this <https://wiki.analog.com/\\server\share>`_ are recognized, too.
+   Windows Shares like `this <https://wiki.analog.com/\\server\share>`_ are recognized, too.
 
 Notes:
 
@@ -636,8 +636,11 @@ The refresh period defaults to 4 hours. Any value below 10 minutes will be treat
 
 **Example:**
 
+::
 
-|rss>http://slashdot.org/index.rss 5 author date 1h|
+
+   .. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h
+
 
 .. image:: https://wiki.analog.com/_media/rss>http///slashdot.org/index.rss 5 author date 1h
    :alt: //slashdot.org/index.rss 5 author date 1h

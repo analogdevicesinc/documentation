@@ -107,64 +107,71 @@ Software Control and Indicator Descriptions
 
 
 
--**Start Sampling**
--  When this button is pressed, the SDP-B Board makes a USB connection to the CN-0354 Board automatically.  A connection to the SDP-B Board must be made to use the software. Once a USB connection is established, the software starts sampling in real-time.
--**Configure System**
--  When this button is pressed, the system is configured based on the preferences in the **System Configuration** tab
+- **Start Sampling**
+- When this button is pressed, the SDP-B Board makes a USB connection to the CN-0354 Board automatically.  A connection to the SDP-B Board must be made to use the software. Once a USB connection is established, the software starts sampling in real-time.
+- **Configure System**
+- When this button is pressed, the system is configured based on the preferences in the **System Configuration** tab
 
 .. note::
 
-   \\ **NOTE:** Default values are provided in the **System Configuration** tab in order for the software to run even without specified preferences are inputted.
+   
+   **NOTE:** Default values are provided in the **System Configuration** tab in order for the software to run even without specified preferences are inputted.
 
 
--**Save Data**
--  When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
--**Control Tabs**
--  __Start Sampling__ - Clicking this tab brings the data collection chart to the front.
--  __Configure System__ - Clicking this tab brings the system configuration settings to the front.
--  __SDP Board Information__ - Clicking this tab brings the SDP Board revision information to the front.
--**Thermocouple Channels temperature numerical indicator**
--  This indicator displays the current temperature measurement in each active channel in degrees Celsius.
--**Channel Select checkboxes**
--  These checkboxes allow for the setting of the active thermocouple channels.
--**Chart Controls**
--  These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
--**System Status String and LED Indicators**
--  This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png|Inactive\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-busy.png|Busy\\ |resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png|Error\\ \\
+- **Save Data**
+- When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file.
+- **Control Tabs**
+- __Start Sampling__ - Clicking this tab brings the data collection chart to the front.
+- __Configure System__ - Clicking this tab brings the system configuration settings to the front.
+- __SDP Board Information__ - Clicking this tab brings the SDP Board revision information to the front.
+- **Thermocouple Channels temperature numerical indicator**
+- This indicator displays the current temperature measurement in each active channel in degrees Celsius.
+- **Channel Select checkboxes**
+- These checkboxes allow for the setting of the active thermocouple channels.
+- **Chart Controls**
+- These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
+- **System Status String and LED Indicators**
+- This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-inactive.png| Inactive
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-busy.png| Busy
+
+|resources-eval-user-guides-circuits-from-the-lab-cn0272-cn0272-software-error.png| Error
 
 .. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/CN0354/gui2.png
    :width: 900px
 
 
 
--**Temperature Range Dropdown Select**
--  This control is used to change the temperature range of the system.  The default value is __5'C to 880'C__.
--**Header setting Tab Display**
--  The tab shows the proper P1 header setting. The red box indicates where the shunt should be placed.\\ \\
+- **Temperature Range Dropdown Select**
+- This control is used to change the temperature range of the system.  The default value is __5'C to 880'C__.
+- **Header setting Tab Display**
+- The tab shows the proper P1 header setting. The red box indicates where the shunt should be placed.
 
 .. important::
 
    Everytime the temperature range is changed in the software, a corresponding change should be done in the hardware setting as well. Specifically, the **P1** header should have the correct setting as showed in the display tab of the **Adjust Temperature Range** section of the **System Configuration Tab**.
 
 
--**Low Calibration Temperature Numerical Control**
--  This control is used to modify the low calibration temperature setpoint. The greyed out value on the right is the millivolt equivalent of the specified temperature based on the NIST Table for Type K thermocouple.
--  The default value is 5°C.
--**High Calibration Temperature Numerical Control**
--  This control is used to modify the high calibration temperature setpoint. The greyed out value on the right is the millivolt equivalent of the specified temperature based on the NIST Table for Type K thermocouple.
--  The default value is 880°C.
--**Start Calibration**
--  Pressing this button calibrates the system using the values populated in the calibration temperature numerical controls.
--**Calibration Select Dropdown Menu**
--  The dropdown menu specifies whether to **Ignore Calibration** where the software ignores the calibration factors derived from the calibaration routine, or to **Use Calibration** where the software factors in the calibration values in the temperature calculations.
--**Update Rate Radio Buttons**
--  This control is used to change the output word rate of the :adi:`AD7787`.  The default value is __16 Hz__ and is highlighted in **bold** on the **Configure System Tab**.
--**Buffer Select Radio Buttons**
--  This control is used to set the mode of the :adi:`AD7787`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Configure System Tab**.
-  * __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the :adi:`AD7787` **ON**.
-  * __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the :adi:`AD7787` **OFF**.
--**Burnout Current Radio Buttons**
--  When this control is enabled the 100nA current sources in the signal path are enabled.\\ \\
+- **Low Calibration Temperature Numerical Control**
+- This control is used to modify the low calibration temperature setpoint. The greyed out value on the right is the millivolt equivalent of the specified temperature based on the NIST Table for Type K thermocouple.
+- The default value is 5°C.
+- **High Calibration Temperature Numerical Control**
+- This control is used to modify the high calibration temperature setpoint. The greyed out value on the right is the millivolt equivalent of the specified temperature based on the NIST Table for Type K thermocouple.
+- The default value is 880°C.
+- **Start Calibration**
+- Pressing this button calibrates the system using the values populated in the calibration temperature numerical controls.
+- **Calibration Select Dropdown Menu**
+- The dropdown menu specifies whether to **Ignore Calibration** where the software ignores the calibration factors derived from the calibaration routine, or to **Use Calibration** where the software factors in the calibration values in the temperature calculations.
+- **Update Rate Radio Buttons**
+- This control is used to change the output word rate of the :adi:`AD7787`.  The default value is __16 Hz__ and is highlighted in **bold** on the **Configure System Tab**.
+- **Buffer Select Radio Buttons**
+- This control is used to set the mode of the :adi:`AD7787`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Configure System Tab**.
+  - __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the :adi:`AD7787` **ON**.
+  - __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the :adi:`AD7787` **OFF**.
+- **Burnout Current Radio Buttons**
+- When this control is enabled the 100nA current sources in the signal path are enabled.
 
 .. important::
 

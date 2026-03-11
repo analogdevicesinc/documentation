@@ -65,19 +65,19 @@ The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
 
 
 
--  Quick Start Guides
-  * :doc:`FMCOMMS8 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide>`
-  * :doc:`ADRV9009-ZU11EG Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/quick-start-guide>`
-  * :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
--  Linux Applications
-  * :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
-    * :doc:`ADRV9009/ADRV9008 IIO Scope View </wiki-migration/resources/tools-software/linux-software/adrv9009_osc_main>`
-    * :doc:`ADRV9009/ADRV9008 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_plugin>`
-    * :doc:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
-  * :doc:`FRU EEPROM Utility </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
--  Push custom data into/out of the ADRV9009
-  * :doc:`Basic Data files and formats </wiki-migration/resources/eval/user-guides/adrv9009/software/basic_iq_datafiles>`
-  * :doc:`Stream data into/out of MATLAB </wiki-migration/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
+- Quick Start Guides
+  - :doc:`FMCOMMS8 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide>`
+  - :doc:`ADRV9009-ZU11EG Quick Start Guide </wiki-migration/resources/eval/user-guides/adrv9009-zu11eg/quick-start-guide>`
+  - :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+- Linux Applications
+  - :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+    - :doc:`ADRV9009/ADRV9008 IIO Scope View </wiki-migration/resources/tools-software/linux-software/adrv9009_osc_main>`
+    - :doc:`ADRV9009/ADRV9008 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_plugin>`
+    - :doc:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
+  - :doc:`FRU EEPROM Utility </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
+- Push custom data into/out of the ADRV9009
+  - :doc:`Basic Data files and formats </wiki-migration/resources/eval/user-guides/adrv9009/software/basic_iq_datafiles>`
+  - :doc:`Stream data into/out of MATLAB </wiki-migration/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
    * Design with the ADRV9009
      * :doc:`Understanding the ADRV9009 </wiki-migration/resources/eval/user-guides/adrv9009/adrv9009>`
        * :adi:`ADRV9009 Product page <ADRV9009>`

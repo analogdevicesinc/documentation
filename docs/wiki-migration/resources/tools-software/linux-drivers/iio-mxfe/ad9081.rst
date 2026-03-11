@@ -192,14 +192,14 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            <*> JESD204 High-Speed Serial Interface Framework
        <*>     Industrial I/O support --->
            --- Industrial I/O support
-           -*-   Enable ring buffer support within IIO
-           -*-     Industrial I/O lock free software ring
-           -*-   Enable triggered sampling support
+           - *-   Enable ring buffer support within IIO
+           - *-     Industrial I/O lock free software ring
+           - *-   Enable triggered sampling support
 
                  ** Analog to digital converters **
            [--snip--]
 
-           -*- Analog Devices High-Speed AXI ADC driver core
+           - *- Analog Devices High-Speed AXI ADC driver core
                    <*> Analog Devices AD9081 and similar Mixed Signal Front End (MxFE)
                    < > Analog Devices AD9208 and similar high speed ADCs
                    < > Analog Devices AD9361, AD9364 RF Agile Transceiver driver

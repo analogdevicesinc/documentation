@@ -85,9 +85,9 @@ For Sensor based application with BLE connectivity please download and install b
 
 
 
--  Download below packs
-  * ` Analog Devices Sensor Drivers and Examples <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_ - :doc:`Refer for more details </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/sensor>`
-  * `Analog Devices Bluetooth Low Energy Software <http://download.analog.com/tools/BLE_Software/Releases/AnalogDevices.ADI-BleSoftware.1.0.0.pack>`_ - :doc:`Refer for more details </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/connectivity>`
+- Download below packs
+  - ` Analog Devices Sensor Drivers and Examples <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_ - :doc:`Refer for more details </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/sensor>`
+  - `Analog Devices Bluetooth Low Energy Software <http://download.analog.com/tools/BLE_Software/Releases/AnalogDevices.ADI-BleSoftware.1.0.0.pack>`_ - :doc:`Refer for more details </wiki-migration/resources/eval/user-guides/ev-cog-ad3029lz/software/connectivity>`
    * Start CrossCore Embedded Studio.
    * Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
    * Install above downloaded packs by clicking Import Existing Packs icon  |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg|.

@@ -103,19 +103,19 @@ You will need to:
 
 
 
--Get the ` Terasic C5 SoCkit <https://www.arrow.com/en/products/sockit/arrow-development-tools >`_
+- Get the ` Terasic C5 SoCkit <https://www.arrow.com/en/products/sockit/arrow-development-tools >`_
 
 
 
 
 |resources-eval-user-guides-arradio-quickstart-terasic_c5_sockit.jpg|
 
--Insert the Micro-SD Card into the Micro-SD Card  Connector
--Connect the ARRADIO board to the FPGA carrier HSMC connector
--Plug your monitor device into the VGA Video Connector
--Plug your USB mouse/keyboard into the USB 2.0 OTG Port
--Plug the Power Supply into 12V Power Supply connector (DO NOT turn the device on)
--Set the jumpers according to the following table:
+- Insert the Micro-SD Card into the Micro-SD Card  Connector
+- Connect the ARRADIO board to the FPGA carrier HSMC connector
+- Plug your monitor device into the VGA Video Connector
+- Plug your USB mouse/keyboard into the USB 2.0 OTG Port
+- Plug the Power Supply into 12V Power Supply connector (DO NOT turn the device on)
+- Set the jumpers according to the following table:
 
 ======= ========= ========= ======== ======== ========
 \       CLOCKSEL0 CLOCKSEL1 BOOTSEL0 BOOTSEL1 BOOTSEL2

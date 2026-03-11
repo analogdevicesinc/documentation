@@ -47,21 +47,21 @@ You will need to:
 
 
 
--Get the ` Xilinx ZCU102 <https://www.xilinx.com/ZCU102>`_
+- Get the ` Xilinx ZCU102 <https://www.xilinx.com/ZCU102>`_
 
 
 
 
 |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-zcu102.jpg|
 
--Insert the SD-CARD into the SD Card Interface Connector (J100)
--Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier HPC0 FMC0 socket
--Plug your Display Port monitor device into the Display Port Video Connector (P11)
--Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/Micro-B Connector (J83)
--Plug the Power Supply into 12V Power input connector (J52) (DO NOT turn the device on)
--Set the jumpers of SW6 - which controls the Boot Mode: 1: **on**, 2: **off**, 3: **off**, 4: **off** as seen in the below picture|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw6_zcu102.jpg|
--Turn it on
--Wait ~30 seconds for the “DONE” LED to turn green. This is near the SD Card Interface Connector
+- Insert the SD-CARD into the SD Card Interface Connector (J100)
+- Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier HPC0 FMC0 socket
+- Plug your Display Port monitor device into the Display Port Video Connector (P11)
+- Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/Micro-B Connector (J83)
+- Plug the Power Supply into 12V Power input connector (J52) (DO NOT turn the device on)
+- Set the jumpers of SW6 - which controls the Boot Mode: 1: **on**, 2: **off**, 3: **off**, 4: **off** as seen in the below picture|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw6_zcu102.jpg|
+- Turn it on
+- Wait ~30 seconds for the “DONE” LED to turn green. This is near the SD Card Interface Connector
 
 
 .. note::

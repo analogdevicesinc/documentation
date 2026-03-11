@@ -7,8 +7,8 @@ SigmaStudio+ allows user to view the complete network once the platforms are con
 
 
 
--Create a valid A2B schematic as explained in :doc:`Drawing A2B schematics </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>` (or open an existing A2B Schematic project) in SigmaStudio+.
--Select the "Network View" option under Project window as shown in the figure.
+- Create a valid A2B schematic as explained in :doc:`Drawing A2B schematics </wiki-migration/resources/tools-software/a2bv2/a2bssplususerguide/drawinga2bschematics>` (or open an existing A2B Schematic project) in SigmaStudio+.
+- Select the "Network View" option under Project window as shown in the figure.
 
 .. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/a2bssplususerguide/network_view.png
    :alt: Network View

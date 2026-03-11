@@ -35,18 +35,18 @@ You will need to:
 
 
 
--Get the ` Xilinx KCU105 <https://www.xilinx.com/KCU105>`_ board
+- Get the ` Xilinx KCU105 <https://www.xilinx.com/KCU105>`_ board
 
 
 
 
 |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-kcu105_daq3.jpg|
 
--Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** HPC socket (**J22**)
--Connect USB UART J4 (Micro USB) and USB JTAG J87 (Micro USB) to your host PC
--Make sure you have pin 6 of SW15 on 0 and pin 5 on 0 to be able to use the board with JTAG (see `UG917 - KCU105 Board User Guide <https://www.xilinx.com/support/documents/boards_and_kits/kcu105/ug917-kcu105-eval-bd.pdf>`_ > FPGA Configuration section)
--Plug the Power Supply into 12V Power input connector (J15)
--Turn it on
+- Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC1** HPC socket (**J22**)
+- Connect USB UART J4 (Micro USB) and USB JTAG J87 (Micro USB) to your host PC
+- Make sure you have pin 6 of SW15 on 0 and pin 5 on 0 to be able to use the board with JTAG (see `UG917 - KCU105 Board User Guide <https://www.xilinx.com/support/documents/boards_and_kits/kcu105/ug917-kcu105-eval-bd.pdf>`_ > FPGA Configuration section)
+- Plug the Power Supply into 12V Power input connector (J15)
+- Turn it on
 
 
 .. note::

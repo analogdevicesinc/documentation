@@ -60,7 +60,7 @@ Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to 
 ::
 
    Device Drivers  --->
-       -*- Pin controllers  --->
+       - *- Pin controllers  --->
             <*> Microchip MCP23xxx I/O expander
 
 -  **Enable V4L2 display platform driver and ADV7343 video encoder drivers**

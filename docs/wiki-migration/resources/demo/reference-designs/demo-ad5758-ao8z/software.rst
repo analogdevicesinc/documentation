@@ -16,11 +16,15 @@ The demo board comes with the latest version of the firmware pre-installed. If y
 
 
 
--Set Target to "ADuCM302x".
--  Select firmware file “adi5758_20180910.hex” in the <File to download> field. (This is the file you downloaded and unzipped in steps 1 & 2.)
--  Apply 24 V to the "**24 V SYS**" connector
--  Plug the USB cable into the demo board.
--  Hold down S2 (Boot) button while briefly pressing the S1 (Reset) button. Then release S2. (See Figure 1) //This sequence is important//. \\ |Reset and Boot buttons| \\ //Figure 1 - **Reset** and **Boot** buttons//
+- Set Target to "ADuCM302x".
+- Select firmware file “adi5758_20180910.hex” in the <File to download> field. (This is the file you downloaded and unzipped in steps 1 & 2.)
+- Apply 24 V to the "**24 V SYS**" connector
+- Plug the USB cable into the demo board.
+- Hold down S2 (Boot) button while briefly pressing the S1 (Reset) button. Then release S2. (See Figure 1) //This sequence is important//.
+
+|Reset and Boot buttons|
+
+//Figure 1 - **Reset** and **Boot** buttons//
    * On the CrossCore SFP, select the correct COM port. (//Be sure to select the correct COM port here. It is usually the highest COMnn.//)
    * Press [Start] to program device. (If you get the message “Failed to open serial device”, then repeat step 5 above, taking care to follow the exact button press sequence.)
    * Programming the board takes about 10 seconds. When it is complete, you will see a message to that effect in the Status Window. (See Figure 2) \\ 

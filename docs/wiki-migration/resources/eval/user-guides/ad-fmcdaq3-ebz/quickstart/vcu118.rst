@@ -35,21 +35,21 @@ You will need to:
 
 
 
--Get the ` Xilinx VCU118 <https://www.xilinx.com/VCU118>`_
+- Get the ` Xilinx VCU118 <https://www.xilinx.com/VCU118>`_
 
 
 
 
 |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-vcu118.png|
 
--Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC+** socket(J22).
--Connect USB UART J4 (Micro USB) and USB JTAG J106 (Micro USB) to your host PC.
--Set the jumpers of SW16 - which controls the JTAG Mode: 1: **off**, 2: **on**, 3: **off**, 4: **on** as seen in the below picture
+- Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC+** socket(J22).
+- Connect USB UART J4 (Micro USB) and USB JTAG J106 (Micro USB) to your host PC.
+- Set the jumpers of SW16 - which controls the JTAG Mode: 1: **off**, 2: **on**, 3: **off**, 4: **on** as seen in the below picture
 
 |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw16_vcu118.jpg|
 
--Plug the Power Supply into 12V Power input connector (J15).
--Turn it on.
+- Plug the Power Supply into 12V Power input connector (J15).
+- Turn it on.
 
 
 .. note::

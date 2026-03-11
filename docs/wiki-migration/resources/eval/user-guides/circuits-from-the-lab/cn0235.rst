@@ -159,12 +159,12 @@ Connecting the Hardware
 
 
 
-- **Step 1**. Connect the :adi:`EVAL-CN0235-SDPZ` to :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/evaluation/index.html>`(SDP Board) through the 120-pin SMD connector. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.\\
-- **Step 2**. Do the jumper setting correctly based on desired setting for evaluation based on the jumper configuration provided on :doc:`Jumper Configuration section </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0179>`.\\
-- **Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on :adi:`SDP Board <en/system-demonstration-platform/evaluation/index.html>` and leave the other side of the cable(USB Type A) floated.\\
-- **Step 4**. Connect the battery stack on J1 and J2 based on the number of cells configured by the jumper SEL0 and SEL1. Refer to the jumper configuration on :doc:`General Setup section </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0179>`.\\
-- **Step 5**. Plug in the wallwart and connect it to the barrel jack connector of the :adi:`EVAL-CN0235-SDPZ` .\\
-- **Step 6**. Connect the USB-Type-A side of the USB cable to the PC.\\
+- **Step 1**. Connect the :adi:`EVAL-CN0235-SDPZ` to :adi:`EVAL-SDP-CB1Z <en/system-demonstration-platform/evaluation/index.html>`(SDP Board) through the 120-pin SMD connector. Nylon hardware should be used to firmly secure the two boards, using the holes provided at the ends of the 120-pin connectors.
+- **Step 2**. Do the jumper setting correctly based on desired setting for evaluation based on the jumper configuration provided on :doc:`Jumper Configuration section </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0179>`.
+- **Step 3**. Plug the mini-USB side of the cable into the mini-USB connector J1 on :adi:`SDP Board <en/system-demonstration-platform/evaluation/index.html>` and leave the other side of the cable(USB Type A) floated.
+- **Step 4**. Connect the battery stack on J1 and J2 based on the number of cells configured by the jumper SEL0 and SEL1. Refer to the jumper configuration on :doc:`General Setup section </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0179>`.
+- **Step 5**. Plug in the wallwart and connect it to the barrel jack connector of the :adi:`EVAL-CN0235-SDPZ` .
+- **Step 6**. Connect the USB-Type-A side of the USB cable to the PC.
 
 --------------
 
@@ -452,7 +452,7 @@ The advanced tab allows the user to read/write to the :adi:`ad7280A`\ ’s regis
 
 
 
--  This the list of the register address of :adi:`ad7280A` and its current content or configuration.
+- This the list of the register address of :adi:`ad7280A` and its current content or configuration.
    **Read Register**
      * This button updates the register address array of both devices.
    **Write Register**

@@ -150,12 +150,12 @@ Required items
 
 |resources-eval-user-guides-pzsdr-usb-sdp-cablez.png|
 
--  1 Custom Adapter for the USB-SDP-CABLEZ.
+- 1 Custom Adapter for the USB-SDP-CABLEZ.
 
 |resources-eval-user-guides-pzsdr-adapter_board_t_b.jpg|
 
--  :adi:`ADMxxxx Run Time Installer <en/products/power-management/sequencing/digital-sequencers/adm1166.html#product-requirement>`.
--  :adi:`Super Sequencer Configuration Tool <en/products/power-management/sequencing/digital-sequencers/adm1166.html#product-requirement>`.
+- :adi:`ADMxxxx Run Time Installer <en/products/power-management/sequencing/digital-sequencers/adm1166.html#product-requirement>`.
+- :adi:`Super Sequencer Configuration Tool <en/products/power-management/sequencing/digital-sequencers/adm1166.html#product-requirement>`.
 
 Software Setup
 ^^^^^^^^^^^^^^

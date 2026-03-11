@@ -50,7 +50,7 @@ Enable MSI Support
    Device Drivers
        MMC/SD/SDIO card support  --->
            <*> Synopsys DesignWare Memory Card Interface
-           -*-   Synopsys Designware MCI Support as platform device
+           - *-   Synopsys Designware MCI Support as platform device
            <*>   ADI specific extensions for Synopsys DW Memory Card Interface
 
 File System Support

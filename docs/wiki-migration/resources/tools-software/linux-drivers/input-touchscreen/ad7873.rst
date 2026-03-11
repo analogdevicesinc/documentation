@@ -123,7 +123,7 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
 ::
 
    Input device support
-     -*- Generic input layer (needed for keyboard, mouse, ...)
+     - *- Generic input layer (needed for keyboard, mouse, ...)
      < >   Support for memoryless force-feedback devices
      < >   Polled input device skeleton
      < >   Sparse keymap support library

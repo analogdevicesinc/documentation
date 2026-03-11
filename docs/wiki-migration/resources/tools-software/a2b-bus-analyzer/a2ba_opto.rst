@@ -90,12 +90,12 @@ Procedure to run a Branch Network (Opto A2B) from ADI A\ :sup:`2`\ B Analyzer:
 
 
 
--  Drag a OptoA2B platform from Toolbox.
+- Drag a OptoA2B platform from Toolbox.
 -
 
 |resources-tools-software-a2b-bus-analyzer-optoa2b_treetoolbox_.png|
 
--  Drag a A2B sub node as DUT & connect to branching chain and save the project.
+- Drag a A2B sub node as DUT & connect to branching chain and save the project.
 -
 
 |resources-tools-software-a2b-bus-analyzer-a2b_platform.png|

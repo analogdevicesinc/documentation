@@ -45,12 +45,12 @@ You will need to:
 
 |arria10-fpga-kit.jpg|
 
--Get the `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_ board.
--Connect the ADRV9371x FMC board to the FPGA carrier **FMC1** socket(J1).
--Connect the USB JTAG J3 (Micro USB) to your Host PC.
--Connect the Ethernet cable.
--Plug the Power Supply into 12V Power input connector (DC Input).
--Turn it on.
+- Get the `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_ board.
+- Connect the ADRV9371x FMC board to the FPGA carrier **FMC1** socket(J1).
+- Connect the USB JTAG J3 (Micro USB) to your Host PC.
+- Connect the Ethernet cable.
+- Plug the Power Supply into 12V Power input connector (DC Input).
+- Turn it on.
 
 
 .. note::

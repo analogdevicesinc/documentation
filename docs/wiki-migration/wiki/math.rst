@@ -187,15 +187,15 @@ Examples
 
 <code> :math:`S(f)(t)=a_{0}+sumn=1+inftya_{n} cos(n \omega t)+b_{n} sin(n \omega t)` </code> :math:`S(f)(t)=a_{0}+sumn=1+inftya_{n} cos(n \omega t)+b_{n} sin(n \omega t)`
 
+::
 
-
-<m 8>delim{lbrace}{matrix{3}{1}{{3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0}}}{ }</m>
+   <m 8>delim{lbrace}{matrix{3}{1}{{3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0}}}{ }</m>
 
 <m 8>delim{lbrace}{matrix{3}{1}\ |3x-5y+z=0} {sqrt{2}x-7y+8z=0} {x-8y+9z=0|}{ }</m>
 
+::
 
-
-<m 16>delim{|}{{1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt}}{|} <= epsilon/3</m>
+   <m 16>delim{|}{{1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt}}{|} <= epsilon/3</m>
 
 <m 16>delim{\|}\ |1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt|\ {\|} <= epsilon/3</m>
 

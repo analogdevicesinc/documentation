@@ -46,24 +46,24 @@ Nav Switch Installation
 
 
 
--  Place 4 pcs of M2.5 X 8mm screws through the belly plate.
-  * Apply loctite 242.
--  Place 4 pcs of `908-135 <https://www.digikey.com/908-135-ND>`_ onto the screws, to act as spacers.
--  Place the Nav Switch PCB into the circular opening, with the connector closer to the middle of the belly plate.
--  Attach 4 pcs of M2.5 nuts and tighten
-  *
+- Place 4 pcs of M2.5 X 8mm screws through the belly plate.
+  - Apply loctite 242.
+- Place 4 pcs of `908-135 <https://www.digikey.com/908-135-ND>`_ onto the screws, to act as spacers.
+- Place the Nav Switch PCB into the circular opening, with the connector closer to the middle of the belly plate.
+- Attach 4 pcs of M2.5 nuts and tighten
+  -
 
   |resources-eval-user-guides-pzsdr-carriers-packrf-nav_close.jpg|
 
-  *
+  -
 
   |resources-eval-user-guides-pzsdr-carriers-packrf-nav_switch.jpg|
 
--  Insert the ribbon cable into the connector on the Nav Switch so the ribbon cable extends towards the battery.
--  Now bend the cable towards the red line and pull it out to the left side.
--  Apply some hot glue to the connector and a fraction of the cable to secure everything.
-  * There is a clearance constraint between this cable header and a component on the bottom of the PCB.  As a result, any glue applied must be restricted to below the top of the cable header, when it is plugged into the Nav Switch PCB.
-  *
+- Insert the ribbon cable into the connector on the Nav Switch so the ribbon cable extends towards the battery.
+- Now bend the cable towards the red line and pull it out to the left side.
+- Apply some hot glue to the connector and a fraction of the cable to secure everything.
+  - There is a clearance constraint between this cable header and a component on the bottom of the PCB.  As a result, any glue applied must be restricted to below the top of the cable header, when it is plugged into the Nav Switch PCB.
+  -
 
   |resources-eval-user-guides-pzsdr-carriers-adrv1cc-box-belly_plate_with_battery_on_side.jpg|
 

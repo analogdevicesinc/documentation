@@ -23,15 +23,15 @@ EQUIPMENT AND HARDWARE NEEDED
 
 
 - Signal Generators
-  *Analog signal source: The frequency and power requirements depend on the tests to be performed. A bandpass filter is often used for single tone tests.
-  *500MHz Reference Clock source: The clock signal generator should have very low phase noise and be capable of supplying a 5dBm 500MHz clock signal.
+  - Analog signal source: The frequency and power requirements depend on the tests to be performed. A bandpass filter is often used for single tone tests.
+  - 500MHz Reference Clock source: The clock signal generator should have very low phase noise and be capable of supplying a 5dBm 500MHz clock signal.
 - PC running Windows with at least 2 USB ports and an Ethernet port
-  *Cables to connect to PC
-  *One mini-USB
-  *One micro-USB
-  *One Ethernet
+  - Cables to connect to PC
+  - One mini-USB
+  - One micro-USB
+  - One Ethernet
 - AD9213-DUAL-EBZ Evaluation Board
--  :doc:`AD9213-DUAL-EBZ Evaluation Board Hardware </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/hardware>`
+- :doc:`AD9213-DUAL-EBZ Evaluation Board Hardware </wiki-migration/resources/eval/user-guides/ad9213_dual_ebz/hardware>`
 - RF Power Splitter for splitting test tone to apply two equal signals to each of the two ADCs
 - Phase matched coaxial cables to connect power splitter to the ADC input board connectors
 - RF Balun for single-ended-to-differential conversion of 500MHz reference clock
@@ -58,8 +58,8 @@ SOFTWARE NEEDED
 
 
 - VisualAnalog Canvas for AD9213-DUAL-EBZ (supplied by ADI)
--  `libiio (required for using iio Client block in provided VisualAnalog Canvas) <https://github.com/analogdevicesinc/libiio/releases>`_
--  `IIO Plugin for Visual Analog <https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
+- `libiio (required for using iio Client block in provided VisualAnalog Canvas) <https://github.com/analogdevicesinc/libiio/releases>`_
+- `IIO Plugin for Visual Analog <https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
 
 ADI SOFTWARE DELIVERABLES
 -------------------------
@@ -362,8 +362,8 @@ ON           OFF               OFF              ON
 
 
 - One-Time IIO Installations Before Running VisualAnalog (only needed if VisualAnalog Canvas provided by ADI will be used)
-  *a. Install `libiio <https://wiki.analog.com/github.com/analogdevicesinc/libiio/releases>`_ (required for using iio Client block in VisualAnalog)
-  *b. Install `IIO Plugin for VisualAnalog <https://wiki.analog.com/_media/wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
+  - a. Install `libiio <https://wiki.analog.com/github.com/analogdevicesinc/libiio/releases>`_ (required for using iio Client block in VisualAnalog)
+  - b. Install `IIO Plugin for VisualAnalog <https://wiki.analog.com/_media/wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
 
 Run Visual Analog For Synchronized 10G Mode
 

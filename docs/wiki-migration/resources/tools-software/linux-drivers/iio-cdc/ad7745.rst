@@ -107,10 +107,10 @@ Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "ma
            [*] Staging drivers  --->
                <*>     Industrial I/O support --->
                    --- Industrial I/O support
-                   -*-   Enable ring buffer support within IIO
-                   -*-     Industrial I/O lock free software ri
+                   - *-   Enable ring buffer support within IIO
+                   - *-     Industrial I/O lock free software ri
    ng
-                   -*-   Enable triggered sampling support
+                   - *-   Enable triggered sampling support
 
                    [--snip--]
 

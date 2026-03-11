@@ -39,7 +39,7 @@ Run **bitbake linux-adi -c menuconfig** and configure the kernel as follows:
 ::
 
    Cryptographic API  --->
-       -*-   Cryptographic algorithm manager
+       - *-   Cryptographic algorithm manager
        {*}   HMAC support
        [*]   Hardware crypto devices  --->
            <*>   Support for ADI SC5XX CRC hareware

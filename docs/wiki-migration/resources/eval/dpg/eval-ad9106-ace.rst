@@ -102,8 +102,8 @@ There are six available sample waveform settings that can be loaded from the plu
 
 
 
--From chip view, click **Load Sample Waveforms** at lower left side of the window.
--Select an option from the sample waveforms shown in Figures 6a and 6b. Resulting waveforms are shown under  :doc:`Sample waveforms out of RF transformer and Onboard Amplifier </wiki-migration/resources/eval/dpg/eval-ad9106>`.
+- From chip view, click **Load Sample Waveforms** at lower left side of the window.
+- Select an option from the sample waveforms shown in Figures 6a and 6b. Resulting waveforms are shown under  :doc:`Sample waveforms out of RF transformer and Onboard Amplifier </wiki-migration/resources/eval/dpg/eval-ad9106>`.
 
 .. container:: centeralign
 

@@ -69,7 +69,7 @@ Debugging the ADuCM360_demo_blink project
 
 
 
--  A debug configuration must be set up for this project in order to have the possibility to program and to debug it. To do this, follow the instructions from :doc:`Setting up a Debug Configuration. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
+- A debug configuration must be set up for this project in order to have the possibility to program and to debug it. To do this, follow the instructions from :doc:`Setting up a Debug Configuration. </wiki-migration/resources/eval/user-guides/eval-adicup360/tools/cces_user_guide>`
 
 -  Make sure the target board is connected to the computer (via **DEBUG USB**) and using the tool bar, navigate to the small Debug icon\ |image1| and select the debugging session you created. The application will programmed and the program execution will stop at the beginning of the main() function.
 

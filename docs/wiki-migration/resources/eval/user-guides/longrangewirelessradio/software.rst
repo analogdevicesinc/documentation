@@ -19,12 +19,12 @@ Requirements
 
 
 
--  with downloaded:
-  * `AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`_
-    * `ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_
-      * `UART serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`_
-      * `Balena Etcher <https://etcher.balena.io>`_ image writing tool
-      * `Chirpstack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
+- with downloaded:
+  - `AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`_
+    - `ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`_
+      - `UART serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`_
+      - `Balena Etcher <https://etcher.balena.io>`_ image writing tool
+      - `Chirpstack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
    *  `RAK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`_ consisting of
      * One (1) RAK5146 SPI module
        * One (1) RAK5146 PiHAT
@@ -577,22 +577,22 @@ After you have successfully added a device (sensor node) and an application in t
 
 
 
-- **Smart Motor Sensor GUI** \\
+- **Smart Motor Sensor GUI**
 
 
 
 
 |resources-eval-user-guides-longrangewirelessradio-gui_smart_motor_sensor.png|
 
-- **Flow Meter Sensor GUI** \\
+- **Flow Meter Sensor GUI**
 
 |resources-eval-user-guides-longrangewirelessradio-gui_flow_meter_sensor.png|
 
-- **E-meter Sensor GUI** \\
+- **E-meter Sensor GUI**
 
 |resources-eval-user-guides-longrangewirelessradio-gui_e-meter_sensor.png|
 
-- **Cattle Tag Sensor GUI** \\
+- **Cattle Tag Sensor GUI**
 
 |resources-eval-user-guides-longrangewirelessradio-gui_cattletag.png|
 

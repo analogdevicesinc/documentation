@@ -76,11 +76,11 @@ Following are the steps involved :-
 - Download the  `Source code <https://bitbucket.analog.com/projects/IOTTGAPPS/repos/dust-ev-cog-ad3029lz/browse>`_.
 - Place the contents of the SmartMesh C-Library in the your project folder.
 - Here is a list of files of the SmartMesh C-Library you need to include in the project folder:-
--  dn_endianness.c
--   dn_hdlc.c
--  dn_ipmt.c
--  dn_lock.c
--  dn_serial_mt.c
+- dn_endianness.c
+- dn_hdlc.c
+- dn_ipmt.c
+- dn_lock.c
+- dn_serial_mt.c
 - Import the source into IAR and run the application software.
 
 Importing source file to IAR
